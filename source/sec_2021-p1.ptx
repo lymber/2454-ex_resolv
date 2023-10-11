@@ -42,8 +42,8 @@
       <solution>
 	<p>
 	  <ol marker="a">
-	    <li>Se <m>f</m> é par, então <m>f(−x)=f(x)</m> que,
-	    derivando em <m>x_0=0</m>, nos dá <m>−f'(−0)=f'(0)\implies
+	    <li>Se <m>f</m> é par, então <m>f(-x)=f(x)</m> que,
+	    derivando em <m>x_0=0</m>, nos dá <m>-f'(-0)=f'(0)\implies
 	    f'(0)=0</m>, mostrando que o coeficiente de <m>x</m> em
 	    <m>P_n</m> é nulo. Repetindo esse argumento para todas as
 	    derivadas de ordem ímpar temos o resultado.</li>
@@ -55,10 +55,10 @@
 	    dos coeficientes. Caso concreto: considere <m>f(x)=1</m> e
 	    <m>g(x)=\sin x</m>, então <m>f(x)g(x)=\sin x=g(x)</m> tem como
 	    polinômio de Taylor de ordem 3, centrado em <m>x_0=0</m>,
-	    <m>x−x^3/3!</m> (o mesmo de <m>g</m>), mas aplicando a fórmula
+	    <m>x-x^3/3!</m> (o mesmo de <m>g</m>), mas aplicando a fórmula
 	    proposta teríamos o polinômio nulo.</li>
 	    <li>Observando que <m>f^{(n+1)}(x_0)=(f')(n)(x_0)</m> e que
-	    <m>\dfrac{d}{dx}\left(\dfrac{(x−x0)^{k+1}}{(k+1)!}\right)=\dfrac{(x−x0)^k}{k!}</m>,
+	    <m>\dfrac{d}{dx}\left(\dfrac{(x-x0)^{k+1}}{(k+1)!}\right)=\dfrac{(x-x0)^k}{k!}</m>,
 	    segue-se que <m>R_n(x)=\dfrac{d}{dx}P_{n+1}(x)</m>.</li>
 	  </ol>
 	</p>
@@ -70,7 +70,7 @@
 	<p>Considere a curva <m>\gamma(t)=\left(15\cos t,\dfrac{\sin
 	t}{2+\cos t}\right)</m>, <m>t\in[0,2\pi]</m>, e o triângulo
 	delimitado delimitado pelas retas tangentes à <m>\gamma</m> nos
-	pontos <m>(−15,0)</m>,<m>(0,1/2)</m> e <m>(0,−1/2)</m>. A área
+	pontos <m>(-15,0)</m>,<m>(0,1/2)</m> e <m>(0,-1/2)</m>. A área
 	deste triângulo é:
 	<ol marker="a" cols="5">
 	  <li><m>15</m></li>
@@ -89,13 +89,13 @@
 	<p>
 	  Os pontos dados são atingidos pela curva quanto <m>t=\pi</m>,
 	  <m>t=\pi/2</m> e <m>t=3\pi/2</m>, respectivamente. Os vetores
-	  tangentes nesse pontos são <m>\gamma'(\pi)=(0,−1)</m>,
-	  <m>\gamma'(\pi/2)=(−15,1/4)</m> e
+	  tangentes nesse pontos são <m>\gamma'(\pi)=(0,-1)</m>,
+	  <m>\gamma'(\pi/2)=(-15,1/4)</m> e
 	  <m>\gamma'(3\pi/2)=(15,1/4)</m>. Com isso, temos as retas
-	  tangentes <me>r1\colon x=−15,\quad r2\colon
-	  x+60y=30\quad\text{e}\quad r3\colon x−60y=30</me>. As
-	  interseções são os pontos <m>(30,0)</m>, <m>(−15,3/4)</m> e
-	  <m>(−15,−3/4)</m>, que formam um triângulo de altura <m>45</m> e
+	  tangentes <me>r1\colon x=-15,\quad r2\colon
+	  x+60y=30\quad\text{e}\quad r3\colon x-60y=30</me>. As
+	  interseções são os pontos <m>(30,0)</m>, <m>(-15,3/4)</m> e
+	  <m>(-15,-3/4)</m>, que formam um triângulo de altura <m>45</m> e
 	  base <m>3/2</m>, com área <m>135/4</m>. Veja a figura:
 	  <figure xml:id="fig_gabp1q2-2021">
 	    <caption>Imagem de <m>\gamma</m> e tangentes.</caption>
@@ -123,7 +123,7 @@
     <exercise xml:id="p1q3-2021">
       <statement>
 	<p>Considere a função
-	<m>f(x,y)=\dfrac{7(x−1)^2+2(y−1)^2}{x^2+y^2}</m>, definida em
+	<m>f(x,y)=\dfrac{7(x-1)^2+2(y-1)^2}{x^2+y^2}</m>, definida em
 	<m>\R^2\setminus\big\{(0,0)\big\}</m>. As curvas de nível
 	<m>7</m> e <m>9/2</m> são, respectivamente: 
 	<ol marker="a">
@@ -142,7 +142,7 @@
       <solution>
 	<p>Escrevendo <m>f(x,y)=k</m>, para <m>(x,y)\neq (0,0)</m>,
 	temos
-	<me>\dfrac{7(x−1)^2+2(y−1)^2}{x^2+y^2}=k\iff
+	<me>\dfrac{7(x-1)^2+2(y-1)^2}{x^2+y^2}=k\iff
 	(7-k)x^2-14x+(2-k)y^2-4y+9=0.</me></p>
 	<p>Aplicando os valores de <m>k</m> indicados, a equação acima escreve-se
 	<ul>
@@ -182,18 +182,18 @@
 
     <exercise xml:id="p1q4-2021">
       <statement>
-	<p>Seja <m>f(x,y)</m> uma função diferenciável em <m>(3,−2)</m>
-	tal que <m>f(3,−2)=−3</m>. Sabe-se também que <m>\dfrac{\partial
-	f}{\partial \vec{u}}(3,−2)=1</m> e <m>\dfrac{\partial
-	f}{\partial \vec{v}}(3,−2)=-2</m>, onde
+	<p>Seja <m>f(x,y)</m> uma função diferenciável em <m>(3,-2)</m>
+	tal que <m>f(3,-2)=-3</m>. Sabe-se também que <m>\dfrac{\partial
+	f}{\partial \vec{u}}(3,-2)=1</m> e <m>\dfrac{\partial
+	f}{\partial \vec{v}}(3,-2)=-2</m>, onde
 	<m>\vec{u}=\left(-\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}}\right)</m>
 	e
 	<m>\vec{v}=\left(\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}}\right)</m>. A
 	equação do plano tangente ao gráfico de <m>f</m> no ponto
-	<m>(3,−2,−3)</m> é:
+	<m>(3,-2,-3)</m> é:
 	<me>\boxed{\phantom{AAA}}x+\boxed{\phantom{AAA}}y-z+\boxed{\phantom{AAA}}=0.</me></p>
 	<p>O valor máximo que uma derivada direcional de <m>f</m> no ponto
-	<m>(3,−2)</m> assume é <m>\boxed{\phantom{AAA}}</m>.
+	<m>(3,-2)</m> assume é <m>\boxed{\phantom{AAA}}</m>.
 	</p>
       </statement>
       <answer>
@@ -202,22 +202,22 @@
       </answer>
       <solution>
 	<p>Sabendo que <m>f</m> é diferenciável em
-	<m>(x_0,y_0)=(3,−2)</m> e dadas as derivadas direcionais no
-	enunciado, podemos determinar <m>\nabla f(3,−2)</m> através do
+	<m>(x_0,y_0)=(3,-2)</m> e dadas as derivadas direcionais no
+	enunciado, podemos determinar <m>\nabla f(3,-2)</m> através do
 	sistema de equações lineares <me>\begin{cases} \big\langle\nabla
 	f(3,-2),\vec{u}\big\rangle= \dfrac{\partial f}{\partial
-	\vec{u}}(3,−2)&amp;=1\\ \big\langle\nabla
+	\vec{u}}(3,-2)&amp;=1\\ \big\langle\nabla
 	f(3,-2),\vec{v}\big\rangle= \dfrac{\partial f}{\partial
-	\vec{v}}(3,−2)&amp;=-2, \end{cases}</me> que tem uma matriz de
+	\vec{v}}(3,-2)&amp;=-2, \end{cases}</me> que tem uma matriz de
 	coeficientes ortogonal (fica fácil resolver) e encontrar
 	<m>\nabla
-	f(3,−2)=\left(-\dfrac{3}{\sqrt{2}},-\dfrac{1}{\sqrt{2}}\right),</m>
+	f(3,-2)=\left(-\dfrac{3}{\sqrt{2}},-\dfrac{1}{\sqrt{2}}\right),</m>
 	cujas coordenadas são, respectivamente, os coeficientes da
 	equação do plano pedido, já que o coeficiente de <m>z</m> é
-	<m>−1</m>. O termo independente é
-	<m>d=f(x_0,y_0)−f_x(x_0,y_0)x_0−f_y(x_0,y_0)y_0=\dfrac{7\sqrt{2}-6}{2}</m>.</p>
+	<m>-1</m>. O termo independente é
+	<m>d=f(x_0,y_0)-f_x(x_0,y_0)x_0-f_y(x_0,y_0)y_0=\dfrac{7\sqrt{2}-6}{2}</m>.</p>
 	<p>O valor máximo da derivada direcional é precisamente
-	<m>\|\nabla f(3,−2)\|=\sqrt{5}</m>.
+	<m>\|\nabla f(3,-2)\|=\sqrt{5}</m>.
 	</p>
       </solution>
     </exercise>
@@ -368,10 +368,10 @@
 	  <li><m>\dfrac{\partial f}{\partial\vec{u}}(2,3)</m>, onde
 	  <m>\vec{u}</m> é o versor do vetor <m>\vec{v}=(3,2)</m></li>
 	  <li>a reta tangente ao gráfico da função
-	  <m>g(t)=f(3\sin(t)+t^4+2,2\cos(t)+e^{−3t})</m> no ponto de
+	  <m>g(t)=f(3\sin(t)+t^4+2,2\cos(t)+e^{-3t})</m> no ponto de
 	  abscissa <m>t_0=0</m>.</li>
-	  <li>o plano tangente ao gráfico de <m>h(u,v)=uf(u+v,u−v)</m>
-	  no ponto <m>\big(5/2,−1/2,h(5/2,−1/2)\big)</m>.</li>
+	  <li>o plano tangente ao gráfico de <m>h(u,v)=uf(u+v,u-v)</m>
+	  no ponto <m>\big(5/2,-1/2,h(5/2,-1/2)\big)</m>.</li>
 	</ol>
 	</p>
       </statement>
@@ -381,43 +381,43 @@
 	  <li><m>(-7/2.-3/2)</m></li>
 	  <li><m>-\dfrac{27}{2\sqrt{13}}</m></li>
 	  <li><m>y=-6x-14</m></li>
-	  <li><m>\pi\colon -\frac{53}{2}(x−5/2)-5(y+1/2)−z-35=0</m></li>
+	  <li><m>\pi\colon -\frac{53}{2}(x-5/2)-5(y+1/2)-z-35=0</m></li>
 	</ol>
       </answer>
       <solution>
 	<ol marker="a">
 	  <li>Substituindo <m>(2,3)</m> na equação do plano tangente
-	  dado temos <m>f(2,3)=z=−14</m>.</li>
+	  dado temos <m>f(2,3)=z=-14</m>.</li>
 	  <li>Da mesma equação do plano temos que <m>\nabla
-	  f(2,3)=(−7/2,−3/2)</m>.</li>
+	  f(2,3)=(-7/2,-3/2)</m>.</li>
 	  <li>Inicialmente notamos que
 	  <m>\vec{u}=\Big(\dfrac{3}{\sqrt{9+4}},\frac{2}{\sqrt{9+4}}\Big)</m>. Como
 	  <m>f</m> é diferenciável temos, pela regra da cadeia, que
 	  <m>/dfrac{\partial f}{\vec{u}}(2,3)=\big\langle\nabla
-	  f(2,3),\vec{u}\big\rangle=−\dfrac{27}{2\sqrt{13}}</m>.</li>
+	  f(2,3),\vec{u}\big\rangle=-\dfrac{27}{2\sqrt{13}}</m>.</li>
 	  <li>Precisamos dos valores de <m>g(0)</m> e
 	  <m>g'(0)</m>. Olhando <m>g(t)=(f\circ\gamma)(t)</m>, com
-	  <m>\gamma(t)=(3\sin(t)+t^4+2,2\cos(t)+e^{−3t})</m>, temos
-	  <m>g(0)=f\big(\gamma(0)\big)=f(2,3)=−14</m> e
+	  <m>\gamma(t)=(3\sin(t)+t^4+2,2\cos(t)+e^{-3t})</m>, temos
+	  <m>g(0)=f\big(\gamma(0)\big)=f(2,3)=-14</m> e
 	  <m>g'(0)=big\langle\nabla
-	  f(2,3),\gamma'(0)\big\rangle=\big\langle(−7/2,−3/2),(3,−3)\big\rangle=−6</m>. Assim
-	  a reta tangente procurada é <me>y=g(0)+g'(0)(x−0)\implies
-	  y=−6x−14.</me></li> <li>Finalmente, para o plano pedido
-	  precisamos de <m>d=h(5/2,−1/2)=5/2f(2,3)=−35</m> e de
-	  <m>\nabla h(5/2,−1/2)</m>, que pode ser calculado com a regra
+	  f(2,3),\gamma'(0)\big\rangle=\big\langle(-7/2,-3/2),(3,-3)\big\rangle=-6</m>. Assim
+	  a reta tangente procurada é <me>y=g(0)+g'(0)(x-0)\implies
+	  y=-6x-14.</me></li> <li>Finalmente, para o plano pedido
+	  precisamos de <m>d=h(5/2,-1/2)=5/2f(2,3)=-35</m> e de
+	  <m>\nabla h(5/2,-1/2)</m>, que pode ser calculado com a regra
 	  da cadeia. Escrevendo <m>h(u,v)=f(x,y)</m>, com
-	  <m>x=g_1(u,v)=u+v</m> e <m>y=g_2(u,v)=u−v</m>, temos, omitindo
+	  <m>x=g_1(u,v)=u+v</m> e <m>y=g_2(u,v)=u-v</m>, temos, omitindo
 	  os pontos de aplicação, <m>h_u=f_x x_u+f_y y_u</m> e
 	  <m>h_v=f_x xv+f_y y_v</m>. Explicitamente,
 	  <md>
-	    <mrow>h_u(u,v)&amp;=f(u+v,u−v)+u\big(f_x(u+v,u−v)\cdot
-	    1+f_y(u+v,u−v)\cdot 1\big)\text{ e}\\</mrow>
-	    <mrow>h_v(u,v)&amp;=u\big(f_x(u+v,u−v)\cdot
-	    1+f_y(u+v,u−v)\cdot(−1)\big).</mrow>
+	    <mrow>h_u(u,v)&amp;=f(u+v,u-v)+u\big(f_x(u+v,u-v)\cdot
+	    1+f_y(u+v,u-v)\cdot 1\big)\text{ e}\\</mrow>
+	    <mrow>h_v(u,v)&amp;=u\big(f_x(u+v,u-v)\cdot
+	    1+f_y(u+v,u-v)\cdot(-1)\big).</mrow>
 	  </md>
-	  No ponto <m>(5/2,−1/2)</m> temos <m>a=h_u(5/2,−1/2)=−53/2</m>
-	  e <m>b=hv(5/2,−1/2)=−5</m>.  O plano tem equação <me>\pi\colon
-	  \dfrac{53}{2}(x−5/2)-5(y+1/2)−z-35=0.</me></li>
+	  No ponto <m>(5/2,-1/2)</m> temos <m>a=h_u(5/2,-1/2)=-53/2</m>
+	  e <m>b=hv(5/2,-1/2)=-5</m>.  O plano tem equação <me>\pi\colon
+	  \dfrac{53}{2}(x-5/2)-5(y+1/2)-z-35=0.</me></li>
 	  </ol>
       </solution>
     </exercise>

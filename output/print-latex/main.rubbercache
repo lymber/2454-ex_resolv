@@ -1,58 +1,58 @@
 main.pdf
   C1E5BBE28E57AF5BE7D1DA366BE6F3D9 main.aux
-  9EA4AFFD42B142B2B0850643629A4CF8 main.tex
+  F645208722C3D50DB0653B3550B3A518 main.tex
   60907119E57060CBD789B6A93EBF5EC3 main.out
   ED3F7B4C2035215B19EBE7E643431A82 main.toc
-  6CB5E5984BC94FB6B26229635603BD69 ./generated/sageplot/taylor.pdf
+  32CF38A8714F90420500575D37AA1E29 ./generated/sageplot/taylor.pdf
   C0DA189DD5F721C59200AC128FD65117 ./generated/youtube/video-1.jpg
   B9509DFF6AB10150E6D42F4688888DB9 ./generated/qrcode/video-1.png
-  46D85D08E270614C7551E1C49FFE279D ./generated/asymptote/exfunca.pdf
-  70622F5B3BC030EBAE6625EFCC5D6095 ./generated/asymptote/exfuncb.pdf
-  E973E357C136DFF0F0043F03D1CF2054 ./generated/asymptote/surf_level.pdf
-  565966BBD32C9EEDD9286C8C3BAFF020 ./generated/asymptote/ex5-7b.pdf
-  FD46BCF1CA59D701951FC480945B9EC0 ./generated/asymptote/ex5-9.pdf
-  8030B5B3E22C71C21ED44E844B56268E ./generated/asymptote/ex5-14.pdf
-  31C030ECE9928DD2D1478290C60D3BDC ./generated/asymptote/ex5-17.pdf
-  D82396FB33E0B41441765378AEB9F0F2 ./generated/asymptote/ex2-4.pdf
-  438767D2EC94FC1C265FB32711B5B349 ./generated/asymptote/ex2-8.pdf
-  5BE1F75370240F6548FC6ACE6165D917 ./generated/asymptote/ex3-2a.pdf
-  BDAADEBBA36B0296B7E03FBB31F311B3 ./generated/asymptote/ex3-2d.pdf
-  8B769D8E906E5824C8EA3E6BD6C3BC07 ./generated/asymptote/ex4-3.pdf
-  93EEE94C4639E90F5B9F9157E09837CE ./generated/asymptote/ex4-5.pdf
-  BB968E009C663769B741F76DC1C20ED3 ./generated/asymptote/ex4-7.pdf
-  1C0D10C32A61916840B6D05C9D669FEA ./generated/asymptote/exmaxminlocapos.pdf
-  2D66F02D044751A101D344FBF48E6E1A ./generated/asymptote/exmaxminlocaneg.pdf
-  73CD128009E98B18185998A269BD63AB ./generated/asymptote/exmaxminlocanul.pdf
-  41E739AB6F1628A627DBE2CF3510672B ./generated/asymptote/gabp1q1c-2023.pdf
-  84D9A68EBD246A55BA8ACF0D913579B1 ./generated/asymptote/gabp2aq2-2022.pdf
-  A91A116C44CFC1CE6635A9C46066D12F ./generated/asymptote/gabpsubq21-2022.pdf
-  72635F7AF5B44B6B64137AA1CEF600CD ./generated/asymptote/gabpsubq22-2022.pdf
-  3794DCF297E04E70C36A2A571F2F56D6 ./generated/asymptote/gabpsubq23-2022.pdf
-  1E664761BAEA19155B0D0BC740B8096C ./generated/asymptote/gabpsubq24-2022.pdf
-  5E1404135A576CC609B97DB672DB47A4 ./generated/asymptote/gabpsubq25-2022.pdf
-  CD89CC60EE4CB83551DE5B6D650514CD ./generated/asymptote/gabpsubq26-2022.pdf
-  5F0EBEBC566B2E5E3770E81F8FEA6D53 ./generated/preview/interactive-1-preview.png
+  18F5CD89D66E0DC71E8CB0E7506026EA ./generated/asymptote/exfunca.pdf
+  EAC0DAD5A9D95C6FEA4E95C9F7FDE362 ./generated/asymptote/exfuncb.pdf
+  28FDA542CA0482B9D48CD41AD7D7D8AE ./generated/asymptote/surf_level.pdf
+  F16548807E7C11C16CFD9CDCBA9060A6 ./generated/asymptote/ex5-7b.pdf
+  47ECC228940112C6635DD9D156D26BB7 ./generated/asymptote/ex5-9.pdf
+  CEE97123486AF28801789B697A57D9DD ./generated/asymptote/ex5-14.pdf
+  22A3FC2F9C38F75DE53E9F9081B85ADD ./generated/asymptote/ex5-17.pdf
+  7F556780C21D3E02AFE0D9BCCD5B449F ./generated/asymptote/ex2-4.pdf
+  3ECE3E2F69EA95EFB986315F7E07815E ./generated/asymptote/ex2-8.pdf
+  0F9A335CA2A23CFBF0389D515E53FD20 ./generated/asymptote/ex3-2a.pdf
+  DE6D5ADC0AB698902810827C40909F20 ./generated/asymptote/ex3-2d.pdf
+  2DF560E2C04088D387FE7314E4D1CCD1 ./generated/asymptote/ex4-3.pdf
+  D26BB55430F61361A5F5F98FCC6D94C4 ./generated/asymptote/ex4-5.pdf
+  679374DC4F3FC7143FD0E928EC814AC0 ./generated/asymptote/ex4-7.pdf
+  065D85CF39933BD86FA8245486E65B28 ./generated/asymptote/exmaxminlocapos.pdf
+  D0ADBC14E007BE1CCBBA381254BE4915 ./generated/asymptote/exmaxminlocaneg.pdf
+  6AA52DB6214A403AFCAB3BE7BBD72A2D ./generated/asymptote/exmaxminlocanul.pdf
+  0E9944114E4FD9BD4263836B567E17AE ./generated/asymptote/gabp1q1c-2023.pdf
+  85AA0FB6B0D8261C09D2437D3A6E0832 ./generated/asymptote/gabp2aq2-2022.pdf
+  30F64C8A6CC7B58D7F1BD5AB025D09E8 ./generated/asymptote/gabpsubq21-2022.pdf
+  E857AC06120D3997F5E3EDF0069BB5B3 ./generated/asymptote/gabpsubq22-2022.pdf
+  61DA13B07583DC5FCC9A3F501244EC02 ./generated/asymptote/gabpsubq23-2022.pdf
+  3C48EA746670DA5237F7A9CAC0E5A1CC ./generated/asymptote/gabpsubq24-2022.pdf
+  28F43FEC7B866DFE4B6FEDB188558572 ./generated/asymptote/gabpsubq25-2022.pdf
+  21FA9CBEF73CD4F5A855FCAC9B9B077E ./generated/asymptote/gabpsubq26-2022.pdf
+  0F10EE5DF1EC433D0AE87A00627F7324 ./generated/preview/interactive-1-preview.png
   4E75CD255075025F488854185BFD9914 ./generated/qrcode/interactive-1.png
-  5DE34056165B6DD0C190B0245A64962B ./generated/asymptote/gabpsubq3.pdf
-  A2CA7FA52A822512777142CFBAC7B1C0 ./generated/asymptote/gabpsubq4.pdf
-  A3B39C2BBA3EB6400B3C4CB993FC10D3 ./generated/asymptote/gabprecq2-2022.pdf
-  A3DF408373AB91ED377A558A42DC726C ./generated/asymptote/gabprecq4-2022.pdf
-  5A8D6DAA191C2970728CB2F8EB38627C ./generated/asymptote/gabp1q7-2020.pdf
-  62BBFA6E5BCC0B14E07CCB5E8D981A68 ./generated/asymptote/gabp1q92-2020.pdf
-  ADF55B8DC1A55599E715381BDEB52DC8 ./generated/asymptote/fig_parabeli-graf.pdf
-  B77EEDFDBE663C0D63299DB4FF699BBE ./generated/asymptote/fig_parabhip-graf.pdf
-  E40B8A98EFB62CD84AA5FA65942254CE ./generated/asymptote/fig_exemplonivel-graf.pdf
+  09664A7A048E52ABA03A73D3879D00F9 ./generated/asymptote/gabpsubq3.pdf
+  5D8F84CC787A6B05B7246480F0C11669 ./generated/asymptote/gabpsubq4.pdf
+  4916F15D9F509FCA0FCBE1772049574F ./generated/asymptote/gabprecq2-2022.pdf
+  39751253F6848C879188DB47158BC72A ./generated/asymptote/gabprecq4-2022.pdf
+  CE58AFDA33095A7BF6F21F6F1C387784 ./generated/asymptote/gabp1q7-2020.pdf
+  9E32CC9F42EC0425B20FA06E7137062C ./generated/asymptote/gabp1q92-2020.pdf
+  354A6D9FF884FFAC2F436D0E34A6D024 ./generated/asymptote/fig_parabeli-graf.pdf
+  E35EACE014592332A93587184D8027C6 ./generated/asymptote/fig_parabhip-graf.pdf
+  029404C140B43C57B396FBFAD4D4BAD9 ./generated/asymptote/fig_exemplonivel-graf.pdf
   2A1D0DF287300CDB69CD37D772BE1A8B ./generated/youtube/video-2.jpg
   C325533DD1BAF490DCDB945373E7A7A4 ./generated/qrcode/video-2.png
-  077742DB312A3E2E7CE30D434D137030 ./generated/asymptote/apderpar.pdf
-  30A84FB98C28672A07E73F3277B649E4 ./generated/asymptote/dercont.pdf
-  6A9F9DC26D47DBA68771D8BB6D87B74A ./generated/asymptote/segder.pdf
+  1EED583BC97CFB61A4F4D626CDBCD0ED ./generated/asymptote/apderpar.pdf
+  10E873CB09CC037EC0B6441D7DE6AD9D ./generated/asymptote/dercont.pdf
+  6F9E963587C139524B18EC74D43FB622 ./generated/asymptote/segder.pdf
   754CA8233D47CCF4986505BD86E934CB ./generated/youtube/video-3.jpg
   C1B12E8E43617B919B974A4A30F53A05 ./generated/qrcode/video-3.png
-  9D680CDEAD7637A91DAA5F0E8B9065F1 ./generated/asymptote/apesffol.pdf
-  93128552CB6D8CF794BE02E85CB08366 ./generated/asymptote/aphipfol.pdf
-  AA0B008F6FCFD0C191D4667345C9B3F1 ./generated/asymptote/appltgsupniv.pdf
-  6452FA2F4070C5588F493703A68BD6D5 ./generated/asymptote/appltgintsupniv.pdf
+  76157007F349F7E2184E9BC1C0E34CD4 ./generated/asymptote/apesffol.pdf
+  FF459F4250A35CE6D8AE735A084AAB38 ./generated/asymptote/aphipfol.pdf
+  0B5ABC35287212D22F8A8287D6D31F0B ./generated/asymptote/appltgsupniv.pdf
+  04E09DF2B70A6AD090FB4F1B1ED2793B ./generated/asymptote/appltgintsupniv.pdf
   FB8DC6D338C1EEFBC829E169D24DEFB6 ./generated/youtube/video-4.jpg
   D794BE510F299FCDB8EB756283CB5CA3 ./generated/qrcode/video-4.png
   E6222AED236EDEFDCFE52A027B62FCEC ./generated/youtube/video-5.jpg

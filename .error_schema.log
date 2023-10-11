@@ -1,5 +1,5 @@
-/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx:69:0:ERROR:RELAXNGV:RELAXNG_ERR_ATTRVALID: Element url failed to validate attributes
-/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx:18:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element subtitle there
-/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx:15:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element book failed to validate content
-/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx:8:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element docinfo, got pretext
-/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx:8:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element pretext there
+/home/lymber/tmp/2454-ex_resolv/source/main.ptx:69:0:ERROR:RELAXNGV:RELAXNG_ERR_ATTRVALID: Element url failed to validate attributes
+/home/lymber/tmp/2454-ex_resolv/source/main.ptx:18:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element subtitle there
+/home/lymber/tmp/2454-ex_resolv/source/main.ptx:15:0:ERROR:RELAXNGV:RELAXNG_ERR_CONTENTVALID: Element book failed to validate content
+/home/lymber/tmp/2454-ex_resolv/source/main.ptx:8:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMNAME: Expecting element docinfo, got pretext
+/home/lymber/tmp/2454-ex_resolv/source/main.ptx:8:0:ERROR:RELAXNGV:RELAXNG_ERR_ELEMWRONG: Did not expect element pretext there

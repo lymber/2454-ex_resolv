@@ -16,7 +16,7 @@
 </h4>
 <div class="para logical">
 <div class="para">O valor da integral <span class="process-math">\(\displaystyle{\int_0^1 2x\left[\int_2^{2x^2}
-e^{−t^2}\,dt\right]\, dx}\)</span> é</div>
+e^{-t^2}\,dt\right]\, dx}\)</span> é</div>
 <ol class="lower-alpha cols3">
 <li><div class="para"><span class="process-math">\(\dfrac{e^{-4}-1}{4}\text{.}\)</span></div></li>
 <li><div class="para"><span class="process-math">\(\dfrac{1-e}{2}\text{.}\)</span></div></li>
@@ -27,12 +27,12 @@ e^{−t^2}\,dt\right]\, dx}\)</span> é</div>
 </div>
 <div class="solutions">
 <details class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Alternativa a.</div></div></details><details class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical">
-<div class="para">Usaremos aqui integração por parter, fazendo <span class="process-math">\(du=2x\)</span> e <span class="process-math">\(v=\int_2^{2x^2} e^{−t^2}\,dt\text{,}\)</span> donde <span class="process-math">\(u=x^2\)</span> e <span class="process-math">\(dv=4xe^{-4x^4}\text{.}\)</span> Assim,</div>
+<div class="para">Usaremos aqui integração por parter, fazendo <span class="process-math">\(du=2x\)</span> e <span class="process-math">\(v=\int_2^{2x^2} e^{-t^2}\,dt\text{,}\)</span> donde <span class="process-math">\(u=x^2\)</span> e <span class="process-math">\(dv=4xe^{-4x^4}\text{.}\)</span> Assim,</div>
 <div class="displaymath process-math">
 \begin{align*}
 \int_0^1 2x\left[\int_2^{2x^2}
-e^{−t^2}\,dt\right]\, dx&amp;=\left[x^2 \int_2^{2x^2}
-e^{−t^2}\,dt\right]_0^1-\int_0^1 (x^2)(4xe^{-4x^4})\, dx\\
+e^{-t^2}\,dt\right]\, dx&amp;=\left[x^2 \int_2^{2x^2}
+e^{-t^2}\,dt\right]_0^1-\int_0^1 (x^2)(4xe^{-4x^4})\, dx\\
 &amp;\stackrel{(\ast)}{=} 0-\int_0^{-4}
 \dfrac{e^{s}}{-4}\, dx\\
 &amp;=\dfrac{e^{-4}-1}{4}.

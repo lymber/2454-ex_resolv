@@ -455,7 +455,7 @@
 	  <m>\sigma\colon\R\to\R^2</m> dadas por <m>\gamma(t =(1,t)</m>
 	  e <m>\sigma(t)=(t,0)</m>, para todo <m>t\in\R</m>. Considere
 	  ainda <m>F\colon\R^2\to\R</m>, diferenciável e tal que
-	  <me>F\big(\gamma(t)\big)=−5t^2+t+1\quad \text{e}\quad
+	  <me>F\big(\gamma(t)\big)=-5t^2+t+1\quad \text{e}\quad
 	  F\big(\sigma(t)\big)=t^2, \forall t\in\R.</me> Dê a equação do
 	  plano tangente ao gráfico de <m>F</m> no ponto
 	  <m>(x_0,y_0)=(1,0)</m>.
@@ -498,7 +498,7 @@
 	  0}\dfrac{F(1,k)-F(1,0)}{t},</mrow>
 	</md>
 	que é, por definição, <m>(F\circ\gamma)'(0)</m>. Como
-	<m>F\big(\gamma(t)\big)=−5t^2+t+1</m>, então
+	<m>F\big(\gamma(t)\big)=-5t^2+t+1</m>, então
 	<m>(F\circ\gamma)'(t)=-10t+1</m> e
 	<m>(F\circ\gamma)'(0)=1</m>. Logo <m>\boxed{F_y(1,0)=1}</m>.
 	</p>

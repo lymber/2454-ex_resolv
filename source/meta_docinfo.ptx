@@ -22,6 +22,15 @@
 \newcommand{\R}{\mathbb R}
 </macros>
 
+<!-- Does this add the mathrsfs package to the main.tex in          -->
+<!-- print-latex target                                             -->
+
+<latex-preamble>
+  <package>
+    mathrsfs
+  </package>
+</latex-preamble>
+
 <!-- If you put any latex-image elements you can include preambles  -->
 <!-- for those in the next element.                                 -->
 <latex-image-preamble>

@@ -8,7 +8,7 @@
     <exercise xml:id="p1q1-2020">
       <statement>
 	<p>O valor da integral <m>\displaystyle{\int_0^1 2x\left[\int_2^{2x^2}
-	e^{−t^2}\,dt\right]\, dx}</m> é
+	e^{-t^2}\,dt\right]\, dx}</m> é
 	<ol marker="a" cols="3">
 	  <li><m>\dfrac{e^{-4}-1}{4}</m>.</li>
 	  <li><m>\dfrac{1-e}{2}</m>.</li>
@@ -22,12 +22,12 @@
       </answer>
       <solution>
 	<p>Usaremos aqui integração por parter, fazendo <m>du=2x</m> e
-	<m>v=\int_2^{2x^2} e^{−t^2}\,dt</m>, donde <m>u=x^2</m> e
+	<m>v=\int_2^{2x^2} e^{-t^2}\,dt</m>, donde <m>u=x^2</m> e
 	<m>dv=4xe^{-4x^4}</m>. Assim,
 	<md>
 	  <mrow>\int_0^1 2x\left[\int_2^{2x^2}
-	  e^{−t^2}\,dt\right]\, dx&amp;=\left[x^2 \int_2^{2x^2}
-	  e^{−t^2}\,dt\right]_0^1-\int_0^1 (x^2)(4xe^{-4x^4})\, dx</mrow>
+	  e^{-t^2}\,dt\right]\, dx&amp;=\left[x^2 \int_2^{2x^2}
+	  e^{-t^2}\,dt\right]_0^1-\int_0^1 (x^2)(4xe^{-4x^4})\, dx</mrow>
 	  <mrow>&amp;\stackrel{(\ast)}{=} 0-\int_0^{-4}
 	  \dfrac{e^{s}}{-4}\, dx</mrow>
 	  <mrow>&amp;=\dfrac{e^{-4}-1}{4}.</mrow>
@@ -64,11 +64,11 @@
 	<p>O ponto <m>(4,0)</m> está na imagem da curva <m>\gamma</m> e
 	é atingido quando <m>t=\pm2</m>. O vetor tangente em cada
 	instante de tempo <m>t</m> é <m>\gamma'(t)=\big(2t\cos(\pi
-	t)−\pi t^2\sin(\pi t),2t\sin(\pi t)+\pi t^2\cos(\pi
+	t)-\pi t^2\sin(\pi t),2t\sin(\pi t)+\pi t^2\cos(\pi
 	t)\big)</m>. Calculando nos dois pontos temos
-	<m>\gamma'(2)=(4,4\pi)</m> e <m>\gamma'(−2)=(−4,4\pi)</m>.</p>
+	<m>\gamma'(2)=(4,4\pi)</m> e <m>\gamma'(-2)=(-4,4\pi)</m>.</p>
 	<p>Logo,
-	<m>\big\langle\gamma'(2),\gamma'(−2)\big\rangle=4(4\pi^2−4)</m>.</p>
+	<m>\big\langle\gamma'(2),\gamma'(-2)\big\rangle=4(4\pi^2-4)</m>.</p>
 	<p>Apesar de desnecessário, segue um esboço da curva e os
 	vetores tangentes pedidos:
         <figure xml:id="fig_gabp1q2-2020">
@@ -97,9 +97,9 @@
 
     <exercise xml:id="p1q3-2020">
       <statement>
-	<p>Seja <m>F(x,y)=x^2y−5xy</m>. Sabe-se que o plano tangente ao
+	<p>Seja <m>F(x,y)=x^2y-5xy</m>. Sabe-se que o plano tangente ao
 	gráfico de <m>F</m> em um ponto <m>\big(x_0,y_0,F(x_0,y_0)\big)</m>
-	tem equação <m>−15x+50y−z−75=0</m>. Nestas condições, a soma das
+	tem equação <m>-15x+50y-z-75=0</m>. Nestas condições, a soma das
 	coordenadas <m>x_0+y_0</m> é igual a:
 	<ol marker="a" cols="5">
 	  <li><m>9</m>.</li>
@@ -114,21 +114,21 @@
       </answer>
       <solution>
 	<p>Derivando <m>F</m> diretamente em <m>(x_0,y_0)</m> temos
-	<m>F_x(x_0,y_0)=2x_0y_0−5y_0</m> e
-	<m>F_y(x_0,y_0)=x^2_0−5x_0</m>.</p>
+	<m>F_x(x_0,y_0)=2x_0y_0-5y_0</m> e
+	<m>F_y(x_0,y_0)=x^2_0-5x_0</m>.</p>
 	<p>Da equação do planotangente no enunciado concluímos que
-	<m>F_x(x_0,y_0)=−15</m> e <m>F_y(x_0,y_0)=50</m>. Com isso temos
+	<m>F_x(x_0,y_0)=-15</m> e <m>F_y(x_0,y_0)=50</m>. Com isso temos
 	o sistema 
 	<me>\begin{cases}
-	2x_0y_0−5y_0&amp;=15\\
-	x^2_0−5x_0&amp;=50,
+	2x_0y_0-5y_0&amp;=15\\
+	x^2_0-5x_0&amp;=50,
 	\end{cases}</me>
-	cujas soluções são <m>x_0=−5</m> e <m>y_0=1</m> ou
-	<m>x_0=10</m> e <m>y_0=−1</m>. Como o ponto
+	cujas soluções são <m>x_0=-5</m> e <m>y_0=1</m> ou
+	<m>x_0=10</m> e <m>y_0=-1</m>. Como o ponto
 	<m>\big(x0,y0,F(x0,y0)\big)</m> pertence ao plano tangente,
-	temos que <m>−15x_0+50y_0−F(x_0,y_0)−75=0</m>, que só é
-	verificado por <m>x_0=−5</m> e <m>y_0=1</m>, donde
-	<m>x_0+y_0=−4</m>.</p>
+	temos que <m>-15x_0+50y_0-F(x_0,y_0)-75=0</m>, que só é
+	verificado por <m>x_0=-5</m> e <m>y_0=1</m>, donde
+	<m>x_0+y_0=-4</m>.</p>
       </solution>
     </exercise>
 
@@ -139,7 +139,7 @@
 	são números reais fixados. Suponha que, para todo <m>(x,y)\in\R^2</m>, a
 	função <m>f</m> satisfaça
 	<me>\dfrac{\partial^2 f}{\partial x^2}(x,y)+2\dfrac{\partial^2
-	f}{\partial x\partial y}(x,y)−\dfrac{\partial^2 f}{\partial
+	f}{\partial x\partial y}(x,y)-\dfrac{\partial^2 f}{\partial
 	y^2}(x,y)=\dfrac{\partial f}{\partial x}(x,y)+\dfrac{\partial
 	f}{\partial y}(x,y).</me></p>
 	<p>Nestas condições o valor de <m>\dfrac{\alpha^2}{\beta^2}</m> é</p>

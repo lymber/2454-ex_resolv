@@ -1,13 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  11 OCT 2023 17:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2023.5.30)  11 OCT 2023 20:38
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
-**main.tex
-(./main.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-01-21>
-(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+**\nonstopmode \input{main.tex}
+(./main.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2021/10/04 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo
 File: bk10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
@@ -1182,24 +1178,24 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 615.
-LaTeX Font Info:    ... okay on input line 615.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 613.
+LaTeX Font Info:    ... okay on input line 613.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1261,18 +1257,18 @@ e
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-LaTeX Info: Redefining \microtypecontext on input line 615.
-Package microtype Info: Applying patch `item' on input line 615.
-Package microtype Info: Applying patch `toc' on input line 615.
-Package microtype Info: Applying patch `eqnum' on input line 615.
-Package microtype Info: Applying patch `footnote' on input line 615.
+LaTeX Info: Redefining \microtypecontext on input line 613.
+Package microtype Info: Applying patch `item' on input line 613.
+Package microtype Info: Applying patch `toc' on input line 613.
+Package microtype Info: Applying patch `eqnum' on input line 613.
+Package microtype Info: Applying patch `footnote' on input line 613.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 615.
+LaTeX Info: Redefining \showhyphens on input line 613.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1281,7 +1277,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-Package hyperref Info: Link coloring ON on input line 615.
+Package hyperref Info: Link coloring ON on input line 613.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1294,9 +1290,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count355
 )
-LaTeX Info: Redefining \ref on input line 615.
-LaTeX Info: Redefining \pageref on input line 615.
-LaTeX Info: Redefining \nameref on input line 615.
+LaTeX Info: Redefining \ref on input line 613.
+LaTeX Info: Redefining \pageref on input line 613.
+LaTeX Info: Redefining \nameref on input line 613.
 
 (./main.out) (./main.out)
 \@outlinefile=\write4
@@ -1313,48 +1309,48 @@ s been generated with the most recent feature set (\pgfplotsset{compat=1.18}).
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 64
-5.
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 10.0pt on input line 645.
+(Font)              scaled to size 10.0pt on input line 643.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6
-45.
+43.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6
-45.
+43.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-645.
+643.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-645.
+643.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 645.
+(Font)              <10> on input line 643.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 645.
+(Font)              <7> on input line 643.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 645.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 645
+(Font)              <5> on input line 643.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 643
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1363,7 +1359,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 645
+LaTeX Font Info:    Trying to load font information for U+msb on input line 643
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -1373,25 +1369,25 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Trying to load font information for U+stmry on input line 6
-45.
+43.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
 LaTeX Font Info:    Trying to load font information for U+rsfs on input line 64
-5.
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 645.
+(Font)              <8> on input line 643.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 645.
+(Font)              <6> on input line 643.
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 645.
+(Font)              scaled to size 9.0pt on input line 643.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 645.
+(Font)              <9> on input line 643.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 6
-46.
+44.
 
 (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1405,7 +1401,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 Agradecimentos Agradecimentos
 ************************************************
 
-Package hyperref Warning: Suppressing link with empty target on input line 670.
+Package hyperref Warning: Suppressing link with empty target on input line 668.
 
 
 ************************************************
@@ -1436,7 +1432,7 @@ Exercícios 1.1 Exercícios
 <generated/sageplot/taylor.pdf, id=329, 455.30101pt x 338.37286pt>
 File: generated/sageplot/taylor.pdf Graphic file (type pdf)
 <use generated/sageplot/taylor.pdf>
-Package pdftex.def Info: generated/sageplot/taylor.pdf  used on input line 788.
+Package pdftex.def Info: generated/sageplot/taylor.pdf  used on input line 786.
 
 (pdftex.def)             Requested size: 160.43626pt x 119.23256pt.
 [1
@@ -1452,13 +1448,13 @@ Exercícios 1.2 Exercícios
 <generated/youtube/video-1.jpg, id=369, 120.45pt x 90.3375pt>
 File: generated/youtube/video-1.jpg Graphic file (type jpg)
 <use generated/youtube/video-1.jpg>
-Package pdftex.def Info: generated/youtube/video-1.jpg  used on input line 883.
+Package pdftex.def Info: generated/youtube/video-1.jpg  used on input line 881.
 
 (pdftex.def)             Requested size: 61.14888pt x 45.8606pt.
 <generated/qrcode/video-1.png, id=370, 291.0875pt x 291.0875pt>
 File: generated/qrcode/video-1.png Graphic file (type png)
 <use generated/qrcode/video-1.png>
-Package pdftex.def Info: generated/qrcode/video-1.png  used on input line 886.
+Package pdftex.def Info: generated/qrcode/video-1.png  used on input line 884.
 (pdftex.def)             Requested size: 27.65454pt x 27.6536pt.
 [3
 
@@ -1470,12 +1466,12 @@ Seção 1.3 Funções de duas variáveis e curvas de nível
 Exercícios 1.3 Exercícios
 ************************************************
 
-Underfull \hbox (badness 10000) in paragraph at lines 983--984
+Underfull \hbox (badness 10000) in paragraph at lines 981--982
 \T1/lmr/m/n/10 (+20) s�o dadas pelas
  []
 
 
-Overfull \hbox (58.30019pt too wide) detected at line 988
+Overfull \hbox (58.30019pt too wide) detected at line 986
 []
  []
 
@@ -1483,13 +1479,13 @@ Overfull \hbox (58.30019pt too wide) detected at line 988
 File: generated/asymptote/exfunca.pdf Graphic file (type pdf)
 <use generated/asymptote/exfunca.pdf>
 Package pdftex.def Info: generated/asymptote/exfunca.pdf  used on input line 10
-54.
+52.
 (pdftex.def)             Requested size: 118.82721pt x 77.5409pt.
 <generated/asymptote/exfuncb.pdf, id=393, 286.06876pt x 204.74492pt>
 File: generated/asymptote/exfuncb.pdf Graphic file (type pdf)
 <use generated/asymptote/exfuncb.pdf>
 Package pdftex.def Info: generated/asymptote/exfuncb.pdf  used on input line 10
-60.
+58.
 (pdftex.def)             Requested size: 118.82721pt x 85.04565pt.
 [4 <./generated/youtube/video-1.jpg> <./generated/qrcode/video-1.png (PNG copy)
 >] [5] [6 <./generated/asymptote/exfunca.pdf> <./generated/asymptote/exfuncb.pd
@@ -1501,18 +1497,18 @@ Seção 1.4 Limites e Continuidade
 Exercícios 1.4 Exercícios
 ************************************************
 
-Underfull \hbox (badness 3209) in paragraph at lines 1089--1090
+Underfull \hbox (badness 3209) in paragraph at lines 1087--1088
 \T1/lmr/bx/n/10 (+20) Dica\T1/lmr/m/n/10 (+20) .[] Como voc� cal-cu-laria, sem 
 usar a re-gra de L'Hospital,
  []
 
 
-Overfull \hbox (44.78963pt too wide) detected at line 1103
+Overfull \hbox (44.78963pt too wide) detected at line 1101
 []
  []
 
 
-Overfull \hbox (38.29733pt too wide) detected at line 1119
+Overfull \hbox (38.29733pt too wide) detected at line 1117
 []
  []
 
@@ -1523,7 +1519,7 @@ Overfull \hbox (38.29733pt too wide) detected at line 1119
 Seção 1.5 Derivadas Parciais, Diferenciabilidade e Plano Tangente
 ************************************************
 
-Overfull \hbox (1.05685pt too wide) in paragraph at lines 1164--1164
+Overfull \hbox (1.05685pt too wide) in paragraph at lines 1162--1162
 |[]\T1/lmr/bx/n/14.4 (-20) Derivadas Par-ci-ais, Difer-en-cia-bil-i-dade e Plan
 o
  []
@@ -1532,7 +1528,7 @@ o
 Exercícios 1.5 Exercícios
 ************************************************
 
-Overfull \hbox (35.71657pt too wide) detected at line 1205
+Overfull \hbox (35.71657pt too wide) detected at line 1203
 [] \OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 ) = 
 [] [] = [] \OML/lmm/m/it/10 x \OMS/lmsy/m/n/10 ^^A [] [] \OT1/lmr/m/n/10 0 = \O
 ML/lmm/m/it/10 f\OT1/lmr/m/n/10 (0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0)\OML/lmm
@@ -1540,12 +1536,12 @@ ML/lmm/m/it/10 f\OT1/lmr/m/n/10 (0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0)\OML/lmm
  []
 
 
-Overfull \hbox (14.49666pt too wide) detected at line 1230
+Overfull \hbox (14.49666pt too wide) detected at line 1228
 []
  []
 
 
-Underfull \hbox (badness 2626) in paragraph at lines 1242--1245
+Underfull \hbox (badness 2626) in paragraph at lines 1240--1243
 \T1/lmr/m/n/10 (+20) A con-tinuidade dessas fun��es se dar� pela ver-i-fi-ca��o
  de
  []
@@ -1554,10 +1550,10 @@ Underfull \hbox (badness 2626) in paragraph at lines 1242--1245
 File: generated/asymptote/surf_level.pdf Graphic file (type pdf)
 <use generated/asymptote/surf_level.pdf>
 Package pdftex.def Info: generated/asymptote/surf_level.pdf  used on input line
- 1261.
+ 1259.
 (pdftex.def)             Requested size: 160.73627pt x 98.1239pt.
 [8] [9]
-Overfull \hbox (49.36786pt too wide) detected at line 1296
+Overfull \hbox (49.36786pt too wide) detected at line 1294
 [] [] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 h[] \OT1/lmr/m/n/10 = 0\OML/lmm/m/i
 t/10 ;
  []
@@ -1566,17 +1562,17 @@ t/10 ;
 File: generated/asymptote/ex5-7b.pdf Graphic file (type pdf)
 <use generated/asymptote/ex5-7b.pdf>
 Package pdftex.def Info: generated/asymptote/ex5-7b.pdf  used on input line 130
-6.
+4.
 (pdftex.def)             Requested size: 160.43626pt x 180.91434pt.
 [10 <./generated/asymptote/surf_level.pdf>]
-Overfull \hbox (2.06091pt too wide) detected at line 1329
+Overfull \hbox (2.06091pt too wide) detected at line 1327
 []
  []
 
 <generated/asymptote/ex5-9.pdf, id=538, 286.06876pt x 250.91742pt>
 File: generated/asymptote/ex5-9.pdf Graphic file (type pdf)
 <use generated/asymptote/ex5-9.pdf>
-Package pdftex.def Info: generated/asymptote/ex5-9.pdf  used on input line 1345
+Package pdftex.def Info: generated/asymptote/ex5-9.pdf  used on input line 1343
 .
 (pdftex.def)             Requested size: 160.43626pt x 140.72336pt.
 [11 <./generated/asymptote/ex5-7b.pdf>]
@@ -1584,13 +1580,13 @@ Package pdftex.def Info: generated/asymptote/ex5-9.pdf  used on input line 1345
 File: generated/asymptote/ex5-14.pdf Graphic file (type pdf)
 <use generated/asymptote/ex5-14.pdf>
 Package pdftex.def Info: generated/asymptote/ex5-14.pdf  used on input line 139
-2.
+0.
 (pdftex.def)             Requested size: 160.73627pt x 91.43547pt.
 <generated/asymptote/ex5-17.pdf, id=556, 119.42618pt x 284.06125pt>
 File: generated/asymptote/ex5-17.pdf Graphic file (type pdf)
 <use generated/asymptote/ex5-17.pdf>
 Package pdftex.def Info: generated/asymptote/ex5-17.pdf  used on input line 144
-5.
+3.
 (pdftex.def)             Requested size: 160.73627pt x 382.33049pt.
  [12 <./generated/asymptote/ex5-9.pdf> <./generated/asymptote/ex5-14.pdf>] [13]
 
@@ -1608,7 +1604,7 @@ Seção 1.7 Vetor Gradiente e Derivada direcional
 Exercícios 1.7 Exercícios
 ************************************************
 
-Overfull \hbox (35.36494pt too wide) detected at line 1655
+Overfull \hbox (35.36494pt too wide) detected at line 1653
 \OT1/lmr/m/n/10 0 = [] = [] \OML/lmm/m/it/10 ; \OMS/lmsy/m/n/10 8\OML/lmm/m/it/
 10 t \OMS/lmsy/m/n/10 2\OT1/lmr/m/n/10 ]0\OML/lmm/m/it/10 ; ^^Y=\OT1/lmr/m/n/10
  2[\OML/lmm/m/it/10 :
@@ -1617,11 +1613,11 @@ Overfull \hbox (35.36494pt too wide) detected at line 1655
 <generated/asymptote/ex2-4.pdf, id=636, 286.06876pt x 128.45993pt>
 File: generated/asymptote/ex2-4.pdf Graphic file (type pdf)
 <use generated/asymptote/ex2-4.pdf>
-Package pdftex.def Info: generated/asymptote/ex2-4.pdf  used on input line 1715
+Package pdftex.def Info: generated/asymptote/ex2-4.pdf  used on input line 1713
 .
 (pdftex.def)             Requested size: 320.27254pt x 143.8212pt.
 [16] [17]
-Overfull \hbox (3.63084pt too wide) detected at line 1743
+Overfull \hbox (3.63084pt too wide) detected at line 1741
 []\OT1/lmr/m/n/10 (0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0) = [](0\OML/lmm/m/it/1
 0 ; \OT1/lmr/m/n/10 0) = 0\OML/lmm/m/it/10 ;  []\OT1/lmr/m/n/10 (0\OML/lmm/m/it
 /10 ; \OT1/lmr/m/n/10 0) = [](0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0) = 0 [] [](
@@ -1629,7 +1625,7 @@ Overfull \hbox (3.63084pt too wide) detected at line 1743
  []
 
 
-Underfull \hbox (badness 4242) in paragraph at lines 1756--1758
+Underfull \hbox (badness 4242) in paragraph at lines 1754--1756
 \T1/lmr/m/n/10 (+20) uma apli-ca��o lin-ear de $\U/msb/m/n/10 R[]$ \T1/lmr/m/n/
 10 (+20) em $\U/msb/m/n/10 R$\T1/lmr/m/n/10 (+20) , usual-mente de-no-tada por
  []
@@ -1637,7 +1633,7 @@ Underfull \hbox (badness 4242) in paragraph at lines 1756--1758
 <generated/asymptote/ex2-8.pdf, id=680, 286.06876pt x 275.00743pt>
 File: generated/asymptote/ex2-8.pdf Graphic file (type pdf)
 <use generated/asymptote/ex2-8.pdf>
-Package pdftex.def Info: generated/asymptote/ex2-8.pdf  used on input line 1761
+Package pdftex.def Info: generated/asymptote/ex2-8.pdf  used on input line 1759
 .
 (pdftex.def)             Requested size: 320.27254pt x 307.89291pt.
 [18 <./generated/asymptote/ex2-4.pdf>]
@@ -1645,14 +1641,14 @@ Package pdftex.def Info: generated/asymptote/ex2-8.pdf  used on input line 1761
 Seção 1.8 Curvas no \(\mathbb R^3\)
 ************************************************
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 1774.
+(Font)              <14.4> on input line 1772.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1774.
+(hyperref)                removing `math shift' on input line 1772.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1774.
+(hyperref)                removing `superscript' on input line 1772.
 
 ************************************************
 Exercícios 1.8 Exercícios
@@ -1661,14 +1657,14 @@ Exercícios 1.8 Exercícios
 File: generated/asymptote/ex3-2a.pdf Graphic file (type pdf)
 <use generated/asymptote/ex3-2a.pdf>
 Package pdftex.def Info: generated/asymptote/ex3-2a.pdf  used on input line 180
-4.
+2.
 (pdftex.def)             Requested size: 320.27254pt x 419.66718pt.
 [19 <./generated/asymptote/ex2-8.pdf>] [20 <./generated/asymptote/ex3-2a.pdf>]
 <generated/asymptote/ex3-2d.pdf, id=721, 176.63992pt x 285.065pt>
 File: generated/asymptote/ex3-2d.pdf Graphic file (type pdf)
 <use generated/asymptote/ex3-2d.pdf>
 Package pdftex.def Info: generated/asymptote/ex3-2d.pdf  used on input line 183
-6.
+4.
 (pdftex.def)             Requested size: 320.27254pt x 516.90088pt.
 
 [21]
@@ -1676,7 +1672,7 @@ Package pdftex.def Info: generated/asymptote/ex3-2d.pdf  used on input line 183
 Seção 1.9 Superfícies de nível, planos tangente e derivadas direcionais
 ************************************************
 
-Overfull \hbox (13.06721pt too wide) in paragraph at lines 1849--1849
+Overfull \hbox (13.06721pt too wide) in paragraph at lines 1847--1847
 |[]\T1/lmr/bx/n/14.4 (-20) Superf�cies de n�vel, planos tan-gente e derivadas
  []
 
@@ -1686,21 +1682,21 @@ Exercícios 1.9 Exercícios
 <generated/asymptote/ex4-3.pdf, id=732, 251.92117pt x 282.05376pt>
 File: generated/asymptote/ex4-3.pdf Graphic file (type pdf)
 <use generated/asymptote/ex4-3.pdf>
-Package pdftex.def Info: generated/asymptote/ex4-3.pdf  used on input line 1886
+Package pdftex.def Info: generated/asymptote/ex4-3.pdf  used on input line 1884
 .
 (pdftex.def)             Requested size: 160.43626pt x 179.6358pt.
 [22 <./generated/asymptote/ex3-2d.pdf>]
 <generated/asymptote/ex4-5.pdf, id=744, 259.95119pt x 286.06876pt>
 File: generated/asymptote/ex4-5.pdf Graphic file (type pdf)
 <use generated/asymptote/ex4-5.pdf>
-Package pdftex.def Info: generated/asymptote/ex4-5.pdf  used on input line 1922
+Package pdftex.def Info: generated/asymptote/ex4-5.pdf  used on input line 1920
 .
 (pdftex.def)             Requested size: 160.43626pt x 176.56198pt.
  [23 <./generated/asymptote/ex4-3.pdf>]
 <generated/asymptote/ex4-7.pdf, id=761, 281.05pt x 260.95494pt>
 File: generated/asymptote/ex4-7.pdf Graphic file (type pdf)
 <use generated/asymptote/ex4-7.pdf>
-Package pdftex.def Info: generated/asymptote/ex4-7.pdf  used on input line 1969
+Package pdftex.def Info: generated/asymptote/ex4-7.pdf  used on input line 1967
 .
 (pdftex.def)             Requested size: 160.43626pt x 148.96486pt.
 
@@ -1710,17 +1706,17 @@ Seção 1.10 Classificação de pontos críticos em abertos de \(\mathbb R^2\)
 ************************************************
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1985.
+(hyperref)                removing `math shift' on input line 1983.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 1985.
+(hyperref)                removing `superscript' on input line 1983.
 
 ************************************************
 Exercícios 1.10 Exercícios
 ************************************************
 
-Overfull \hbox (36.56807pt too wide) detected at line 2020
+Overfull \hbox (36.56807pt too wide) detected at line 2018
 \OMS/lmsy/m/n/10 r\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 ) = (0\
 OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0)  \OMS/lmsy/m/n/10 ([])  []  ([])  [] \OML/
 lmm/m/it/10 :
@@ -1730,19 +1726,19 @@ lmm/m/it/10 :
 File: generated/asymptote/exmaxminlocapos.pdf Graphic file (type pdf)
 <use generated/asymptote/exmaxminlocapos.pdf>
 Package pdftex.def Info: generated/asymptote/exmaxminlocapos.pdf  used on input
- line 2070.
+ line 2068.
 (pdftex.def)             Requested size: 160.43626pt x 240.6846pt.
 <generated/asymptote/exmaxminlocaneg.pdf, id=782, 210.76743pt x 286.06876pt>
 File: generated/asymptote/exmaxminlocaneg.pdf Graphic file (type pdf)
 <use generated/asymptote/exmaxminlocaneg.pdf>
 Package pdftex.def Info: generated/asymptote/exmaxminlocaneg.pdf  used on input
- line 2076.
+ line 2074.
 (pdftex.def)             Requested size: 160.43626pt x 217.75497pt.
 <generated/asymptote/exmaxminlocanul.pdf, id=783, 225.82367pt x 286.06876pt>
 File: generated/asymptote/exmaxminlocanul.pdf Graphic file (type pdf)
 <use generated/asymptote/exmaxminlocanul.pdf>
 Package pdftex.def Info: generated/asymptote/exmaxminlocanul.pdf  used on input
- line 2082.
+ line 2080.
 (pdftex.def)             Requested size: 160.43626pt x 203.24554pt.
 [25 <./generated/asymptote/ex4-7.pdf>] [26] [27 <./generated/asymptote/exmaxmin
 locapos.pdf> <./generated/asymptote/exmaxminlocaneg.pdf>]
@@ -1750,7 +1746,7 @@ locapos.pdf> <./generated/asymptote/exmaxminlocaneg.pdf>]
 Seção 1.11 Máximos e mínimos em conjuntos compactos
 ************************************************
 
-Overfull \hbox (0.63551pt too wide) in paragraph at lines 2095--2095
+Overfull \hbox (0.63551pt too wide) in paragraph at lines 2093--2093
 |[]\T1/lmr/bx/n/14.4 (-20) M�ximos e m�n-i-mos em con-jun-tos com-pactos| 
  []
 
@@ -1758,7 +1754,7 @@ Overfull \hbox (0.63551pt too wide) in paragraph at lines 2095--2095
 Exercícios 1.11 Exercícios
 ************************************************
 [28 <./generated/asymptote/exmaxminlocanul.pdf>] [29] [30]
-Overfull \hbox (4.16403pt too wide) detected at line 2326
+Overfull \hbox (4.16403pt too wide) detected at line 2324
 []
  []
 
@@ -1767,7 +1763,7 @@ Overfull \hbox (4.16403pt too wide) detected at line 2326
 Seção 1.12 Máximos e mínimos em conjuntos arbitrários
 ************************************************
 
-Overfull \hbox (1.34636pt too wide) in paragraph at lines 2389--2389
+Overfull \hbox (1.34636pt too wide) in paragraph at lines 2387--2387
 |[]\T1/lmr/bx/n/14.4 (-20) M�ximos e m�n-i-mos em con-jun-tos ar-bi-tr�rios| 
  []
 
@@ -1775,7 +1771,7 @@ Overfull \hbox (1.34636pt too wide) in paragraph at lines 2389--2389
 Exercícios 1.12 Exercícios
 ************************************************
 
-Overfull \hbox (21.56789pt too wide) detected at line 2437
+Overfull \hbox (21.56789pt too wide) detected at line 2435
 []
  []
 
@@ -1796,7 +1792,7 @@ Exercícios 2.1 Exercícios
 File: generated/asymptote/gabp1q1c-2023.pdf Graphic file (type pdf)
 <use generated/asymptote/gabp1q1c-2023.pdf>
 Package pdftex.def Info: generated/asymptote/gabp1q1c-2023.pdf  used on input l
-ine 2577.
+ine 2575.
 (pdftex.def)             Requested size: 160.43626pt x 285.81488pt.
 [35
 
@@ -1813,7 +1809,7 @@ Seção 3.1 Primeira Prova
 Exercícios 3.1 Exercícios
 ************************************************
 
-Overfull \hbox (32.59724pt too wide) detected at line 2802
+Overfull \hbox (32.59724pt too wide) detected at line 2800
 \OML/lmm/m/it/10 f[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x\OT1/lmr/m/n/10 ) = []\O
 ML/lmm/m/it/10 ;  f[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x\OT1/lmr/m/n/10 ) = \OM
 S/lmsy/m/n/10 ^^@[]\OML/lmm/m/it/10 ; f[]\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x\OT
@@ -1824,14 +1820,14 @@ OT1/lmr/m/n/10 ) = \OMS/lmsy/m/n/10 ^^@[]\OML/lmm/m/it/10 ;
 [41
 
 ] [42]
-Overfull \hbox (39.0914pt too wide) detected at line 2947
+Overfull \hbox (39.0914pt too wide) detected at line 2945
 [] \OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 ) = 
 [] [] = [] \OML/lmm/m/it/10 x[] [] [] \OT1/lmr/m/n/10 0 = \OML/lmm/m/it/10 f\OT
 1/lmr/m/n/10 (0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/10 0)\OML/lmm/m/it/10 :
  []
 
 
-Overfull \hbox (20.53879pt too wide) detected at line 2978
+Overfull \hbox (20.53879pt too wide) detected at line 2976
 \OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 y\OMS/lmsy/m/n/10 j \OT1/lmr/m/n/10 = [] \OM
 S/lmsy/m/n/10 ^^T []  \OT1/lmr/m/n/10 =[]\OMS/lmsy/m/n/10 )  [] ^^T \OT1/lmr/m/
 n/10 1  =[]\OMS/lmsy/m/n/10 )  ^^@\OT1/lmr/m/n/10 1 \OMS/lmsy/m/n/10 ^^T [] ^^T
@@ -1839,7 +1835,7 @@ n/10 1  =[]\OMS/lmsy/m/n/10 )  ^^@\OT1/lmr/m/n/10 1 \OMS/lmsy/m/n/10 ^^T [] ^^T
  []
 
 [43]
-Underfull \hbox (badness 6592) in paragraph at lines 3011--3012
+Underfull \hbox (badness 6592) in paragraph at lines 3009--3010
 []$\OML/lmm/m/it/10 f$ \T1/lmr/m/n/10 (+20) � de classe $\U/rsfs/m/n/10 C[]$ \T
 1/lmr/m/n/10 (+20) em $\OT1/lmr/m/n/10 (+20) (0\OML/lmm/m/it/10 ; \OT1/lmr/m/n/
 10 (+20) 0)$\T1/lmr/m/n/10 (+20) : pre-cisamos mostrar que
@@ -1853,7 +1849,7 @@ Seção 3.2 Segunda Prova
 Exercícios 3.2 Exercícios
 ************************************************
 
-Overfull \hbox (10.94278pt too wide) detected at line 3081
+Overfull \hbox (10.94278pt too wide) detected at line 3079
 []
  []
 
@@ -1862,7 +1858,7 @@ Overfull \hbox (10.94278pt too wide) detected at line 3081
 File: generated/asymptote/gabp2aq2-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabp2aq2-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabp2aq2-2022.pdf  used on input l
-ine 3231.
+ine 3229.
 (pdftex.def)             Requested size: 160.43626pt x 116.87764pt.
  [47] [48] [49 <./generated/asymptote/gabp2aq2-2022.pdf>] [50]
 ************************************************
@@ -1872,7 +1868,7 @@ Seção 3.3 Prova Substitutiva
 Exercícios 3.3 Exercícios
 ************************************************
 
-Overfull \hbox (34.50896pt too wide) detected at line 3414
+Overfull \hbox (34.50896pt too wide) detected at line 3412
 [] [] \OT1/lmr/m/n/10 = [] []
  []
 
@@ -1881,55 +1877,55 @@ Overfull \hbox (34.50896pt too wide) detected at line 3414
 File: generated/asymptote/gabpsubq21-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabpsubq21-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabpsubq21-2022.pdf  used on input
- line 3510.
+ line 3508.
 (pdftex.def)             Requested size: 160.73627pt x 310.61029pt.
 <generated/asymptote/gabpsubq22-2022.pdf, id=1168, 141.50867pt x 286.06876pt>
 File: generated/asymptote/gabpsubq22-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabpsubq22-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabpsubq22-2022.pdf  used on input
- line 3516.
+ line 3514.
 (pdftex.def)             Requested size: 160.73627pt x 324.9563pt.
 <generated/asymptote/gabpsubq23-2022.pdf, id=1169, 179.65117pt x 285.065pt>
 File: generated/asymptote/gabpsubq23-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabpsubq23-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabpsubq23-2022.pdf  used on input
- line 3524.
+ line 3522.
 (pdftex.def)             Requested size: 160.73627pt x 255.06416pt.
 <generated/asymptote/gabpsubq24-2022.pdf, id=1170, 168.60992pt x 286.06876pt>
 File: generated/asymptote/gabpsubq24-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabpsubq24-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabpsubq24-2022.pdf  used on input
- line 3530.
+ line 3528.
 (pdftex.def)             Requested size: 160.73627pt x 272.70662pt.
 <generated/asymptote/gabpsubq25-2022.pdf, id=1171, 98.34743pt x 286.06876pt>
 File: generated/asymptote/gabpsubq25-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabpsubq25-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabpsubq25-2022.pdf  used on input
- line 3538.
+ line 3536.
 (pdftex.def)             Requested size: 160.73627pt x 467.55818pt.
 <generated/asymptote/gabpsubq26-2022.pdf, id=1172, 97.34367pt x 284.06125pt>
 File: generated/asymptote/gabpsubq26-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabpsubq26-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabpsubq26-2022.pdf  used on input
- line 3544.
+ line 3542.
 (pdftex.def)             Requested size: 160.73627pt x 469.11858pt.
 <generated/preview/interactive-1-preview.png, id=1173, 602.25pt x 603.25375pt>
 File: generated/preview/interactive-1-preview.png Graphic file (type png)
 <use generated/preview/interactive-1-preview.png>
 Package pdftex.def Info: generated/preview/interactive-1-preview.png  used on i
-nput line 3554.
+nput line 3552.
 (pdftex.def)             Requested size: 150.84648pt x 151.09842pt.
 <generated/qrcode/interactive-1.png, id=1175, 250.9375pt x 250.9375pt>
 File: generated/qrcode/interactive-1.png Graphic file (type png)
 <use generated/qrcode/interactive-1.png>
 Package pdftex.def Info: generated/qrcode/interactive-1.png  used on input line
- 3557.
+ 3555.
 (pdftex.def)             Requested size: 67.73338pt x 67.73488pt.
  [52] [53] [54 <./generated/asymptote/gabpsubq21-2022.pdf> <./generated/asympto
 te/gabpsubq22-2022.pdf>] [55 <./generated/asymptote/gabpsubq23-2022.pdf> <./gen
 erated/asymptote/gabpsubq24-2022.pdf>] [56 <./generated/asymptote/gabpsubq25-20
 22.pdf> <./generated/asymptote/gabpsubq26-2022.pdf>]
-Overfull \hbox (43.36221pt too wide) detected at line 3612
+Overfull \hbox (43.36221pt too wide) detected at line 3610
 []  \OT1/lmr/m/n/10 =[]\OMS/lmsy/m/n/10 )  []
  []
 
@@ -1937,7 +1933,7 @@ Overfull \hbox (43.36221pt too wide) detected at line 3612
 File: generated/asymptote/gabpsubq3.pdf Graphic file (type pdf)
 <use generated/asymptote/gabpsubq3.pdf>
 Package pdftex.def Info: generated/asymptote/gabpsubq3.pdf  used on input line 
-3638.
+3636.
 (pdftex.def)             Requested size: 320.27254pt x 219.55037pt.
 [57 <./generated/preview/interactive-1-preview.png> <./generated/qrcode/interac
 tive-1.png (PNG copy)>]
@@ -1945,7 +1941,7 @@ tive-1.png (PNG copy)>]
 File: generated/asymptote/gabpsubq4.pdf Graphic file (type pdf)
 <use generated/asymptote/gabpsubq4.pdf>
 Package pdftex.def Info: generated/asymptote/gabpsubq4.pdf  used on input line 
-3698.
+3696.
 (pdftex.def)             Requested size: 320.27254pt x 374.58055pt.
  [58 <./generated/asymptote/gabpsubq3.pdf>]
 ************************************************
@@ -1955,13 +1951,13 @@ Seção 3.4 Prova de Recuperação
 Exercícios 3.4 Exercícios
 ************************************************
 
-Overfull \hbox (73.76208pt too wide) in paragraph at lines 3738--3748
+Overfull \hbox (73.76208pt too wide) in paragraph at lines 3736--3746
 []$\OML/lmm/m/it/10 f[]\OT1/lmr/m/n/10 (-20) (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n
 /10 (-20) ) = []$
  []
 
 
-Overfull \hbox (0.9242pt too wide) detected at line 3764
+Overfull \hbox (0.9242pt too wide) detected at line 3762
 []
  []
 
@@ -1970,10 +1966,10 @@ Overfull \hbox (0.9242pt too wide) detected at line 3764
 File: generated/asymptote/gabprecq2-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabprecq2-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabprecq2-2022.pdf  used on input 
-line 3879.
+line 3877.
 (pdftex.def)             Requested size: 160.43626pt x 208.07396pt.
  [61] [62] [63 <./generated/asymptote/gabprecq2-2022.pdf>]
-Underfull \hbox (badness 1331) in paragraph at lines 3940--3941
+Underfull \hbox (badness 1331) in paragraph at lines 3938--3939
 []\T1/lmr/m/n/10 (+20) O vol-ume de tal par-alelep�pedo, se ex-i-s-tir, ser� $\
 OML/lmm/m/it/10 V\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 x; y; z\OT1/lmr/m/n/10
  (+20) ) =
@@ -1983,7 +1979,7 @@ OML/lmm/m/it/10 V\OT1/lmr/m/n/10 (+20) (\OML/lmm/m/it/10 x; y; z\OT1/lmr/m/n/10
 File: generated/asymptote/gabprecq4-2022.pdf Graphic file (type pdf)
 <use generated/asymptote/gabprecq4-2022.pdf>
 Package pdftex.def Info: generated/asymptote/gabprecq4-2022.pdf  used on input 
-line 3983.
+line 3981.
 (pdftex.def)             Requested size: 160.43626pt x 142.72577pt.
 [64]
 ************************************************
@@ -1998,7 +1994,7 @@ Seção 4.1 Primeira Prova
 Exercícios 4.1 Exercícios
 ************************************************
 
-Underfull \hbox (badness 10000) in paragraph at lines 4052--4053
+Underfull \hbox (badness 10000) in paragraph at lines 4050--4051
 []\T1/lmr/m/n/10 (+20) Observando que $\OML/lmm/m/it/10 f[]\OT1/lmr/m/n/10 (+20
 ) (\OML/lmm/m/it/10 x[]\OT1/lmr/m/n/10 (+20) ) = (\OML/lmm/m/it/10 f[]\OT1/lmr/
 m/n/10 (+20) )(\OML/lmm/m/it/10 n\OT1/lmr/m/n/10 (+20) )(\OML/lmm/m/it/10 x[]\O
@@ -2008,27 +2004,27 @@ T1/lmr/m/n/10 (+20) )$ \T1/lmr/m/n/10 (+20) e que
 [66
 
 ] [67] [68]
-Underfull \hbox (badness 10000) in paragraph at lines 4184--4185
+Underfull \hbox (badness 10000) in paragraph at lines 4182--4183
 []
  []
 
 
-Overfull \hbox (15.75046pt too wide) in paragraph at lines 4184--4185
+Overfull \hbox (15.75046pt too wide) in paragraph at lines 4182--4183
 \T1/lmr/m/n/10 (-20) inexistente. 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4196--4197
+Underfull \hbox (badness 10000) in paragraph at lines 4194--4195
 []
  []
 
 
-Overfull \hbox (15.75046pt too wide) in paragraph at lines 4196--4197
+Overfull \hbox (15.75046pt too wide) in paragraph at lines 4194--4195
 \T1/lmr/m/n/10 (-20) inexistente. 
  []
 
 [69]
-Overfull \hbox (26.15121pt too wide) detected at line 4316
+Overfull \hbox (26.15121pt too wide) detected at line 4314
 []
  []
 
@@ -2048,18 +2044,18 @@ Exercícios 5.1 Exercícios
 
 ] [73]
 
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 4506.
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 4504.
 
 
 
-Overfull \hbox (4.05382pt too wide) in paragraph at lines 4521--4522
+Overfull \hbox (4.05382pt too wide) in paragraph at lines 4519--4520
 []$\OT1/lmr/m/n/10 (-20) (5\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (-20) 1536\OML/lmm
 /m/it/10 ; \OT1/lmr/m/n/10 (-20) 25\OML/lmm/m/it/10 =\OT1/lmr/m/n/10 (-20) 6144
 )\OML/lmm/m/it/10 :$ 
  []
 
 [74] [75]
-Overfull \hbox (9.81213pt too wide) detected at line 4676
+Overfull \hbox (9.81213pt too wide) detected at line 4674
 [] [] \OT1/lmr/m/n/10 = [] [][][]\OML/lmm/m/it/10 ;
  []
 
@@ -2067,10 +2063,10 @@ Overfull \hbox (9.81213pt too wide) detected at line 4676
 File: generated/asymptote/gabp1q7-2020.pdf Graphic file (type pdf)
 <use generated/asymptote/gabp1q7-2020.pdf>
 Package pdftex.def Info: generated/asymptote/gabp1q7-2020.pdf  used on input li
-ne 4681.
+ne 4679.
 (pdftex.def)             Requested size: 147.93625pt x 67.98825pt.
 [76] [77] [78 <./generated/asymptote/gabp1q7-2020.pdf>]
-Package pgfplots info on input line 4851: fill between: activating layered grap
+Package pgfplots info on input line 4849: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box151
 \pgf@layerboxsaved@axis background=\box152
@@ -2088,20 +2084,20 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box164
 \pgf@layerbox@axis foreground=\box165
 \pgf@layerboxsaved@axis foreground=\box166
-Package pgfplots info on input line 4851: Setting layers 'axis background,axis 
+Package pgfplots info on input line 4849: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
-Package pgfplots info on input line 4851: the combination of 'axis on top' and 
+Package pgfplots info on input line 4849: the combination of 'axis on top' and 
 'activate layers' implies 'set layers=axis on top'. Deactivate 'axis on top' if
  you want other layers.
-Package pgfplots info on input line 4851: Setting layers 'axis background,pre m
+Package pgfplots info on input line 4849: Setting layers 'axis background,pre m
 ain,main,axis grid,axis ticks,axis lines,axis tick labels,axis descriptions,axi
 s foreground'...
 <generated/asymptote/gabp1q92-2020.pdf, id=1612, 286.06876pt x 191.69617pt>
 File: generated/asymptote/gabp1q92-2020.pdf Graphic file (type pdf)
 <use generated/asymptote/gabp1q92-2020.pdf>
 Package pdftex.def Info: generated/asymptote/gabp1q92-2020.pdf  used on input l
-ine 4890.
+ine 4888.
 (pdftex.def)             Requested size: 147.93625pt x 99.13266pt.
  [79] [80]
 ************************************************
@@ -2132,7 +2128,7 @@ Missing character: There is no ; in font nullfont!
 File: generated/asymptote/fig_parabeli-graf.pdf Graphic file (type pdf)
 <use generated/asymptote/fig_parabeli-graf.pdf>
 Package pdftex.def Info: generated/asymptote/fig_parabeli-graf.pdf  used on inp
-ut line 5033.
+ut line 5031.
 (pdftex.def)             Requested size: 137.43793pt x 134.53494pt.
 [84]
 <generated/asymptote/fig_parabhip-graf.pdf, id=1687, 247.90617pt x 286.06876pt>
@@ -2140,7 +2136,7 @@ ut line 5033.
 File: generated/asymptote/fig_parabhip-graf.pdf Graphic file (type pdf)
 <use generated/asymptote/fig_parabhip-graf.pdf>
 Package pdftex.def Info: generated/asymptote/fig_parabhip-graf.pdf  used on inp
-ut line 5073.
+ut line 5071.
 (pdftex.def)             Requested size: 137.43793pt x 158.60416pt.
 
 Missing character: There is no ; in font nullfont!
@@ -2152,10 +2148,10 @@ t>
 File: generated/asymptote/fig_exemplonivel-graf.pdf Graphic file (type pdf)
 <use generated/asymptote/fig_exemplonivel-graf.pdf>
 Package pdftex.def Info: generated/asymptote/fig_exemplonivel-graf.pdf  used on
- input line 5128.
+ input line 5126.
 (pdftex.def)             Requested size: 137.43793pt x 101.66158pt.
 
-Underfull \hbox (badness 3895) in paragraph at lines 5129--5130
+Underfull \hbox (badness 3895) in paragraph at lines 5127--5128
 []\T1/lmr/bx/n/10 (+20) Figura A.2.10 \T1/lmr/m/n/10 (+20) Gr�-fico de
  []
 
@@ -2165,7 +2161,7 @@ rabhip-graf.pdf>]
 Seção A.3 Cálculo de Limites
 ************************************************
 [86 <./generated/asymptote/fig_exemplonivel-graf.pdf>]
-Overfull \hbox (16.44547pt too wide) detected at line 5188
+Overfull \hbox (16.44547pt too wide) detected at line 5186
 [] [] \OT1/lmr/m/n/10 = [] \OML/lmm/m/it/10 f[]g\OT1/lmr/m/n/10 (\OML/lmm/m/it/
 10 x; y\OT1/lmr/m/n/10 )[] = \OML/lmm/m/it/10 f[] [] g\OT1/lmr/m/n/10 (\OML/lmm
 /m/it/10 x; y\OT1/lmr/m/n/10 )[] = \OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (0) = 1\OM
@@ -2175,17 +2171,17 @@ L/lmm/m/it/10 :
 <generated/youtube/video-2.jpg, id=1741, 120.45pt x 90.3375pt>
 File: generated/youtube/video-2.jpg Graphic file (type jpg)
 <use generated/youtube/video-2.jpg>
-Package pdftex.def Info: generated/youtube/video-2.jpg  used on input line 5226
+Package pdftex.def Info: generated/youtube/video-2.jpg  used on input line 5224
 .
 (pdftex.def)             Requested size: 160.68242pt x 120.52365pt.
 <generated/qrcode/video-2.png, id=1742, 291.0875pt x 291.0875pt>
 File: generated/qrcode/video-2.png Graphic file (type png)
 <use generated/qrcode/video-2.png>
-Package pdftex.def Info: generated/qrcode/video-2.png  used on input line 5229.
+Package pdftex.def Info: generated/qrcode/video-2.png  used on input line 5227.
 
 (pdftex.def)             Requested size: 72.12828pt x 72.12766pt.
 [87]
-Underfull \hbox (badness 5475) in paragraph at lines 5243--5246
+Underfull \hbox (badness 5475) in paragraph at lines 5241--5244
 \T1/lmr/m/n/10 (+20) Usando a [][]Proposi��o [][]A.3.1[][][][], temos que $[] \
 OMS/lmsy/m/n/10 ^^F\OML/lmm/m/it/10 M\OMS/lmsy/m/n/10 j\OML/lmm/m/it/10 g\OT1/l
 mr/m/n/10 (+20) (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 (+20) )\OMS/lmsy/m/n/10 j
@@ -2193,7 +2189,7 @@ mr/m/n/10 (+20) (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 (+20) )\OMS/lmsy/m/n/10 j
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 5247--5258
+Underfull \hbox (badness 3323) in paragraph at lines 5245--5256
 [][]\T1/lmr/bx/n/10 (+20) Teorema A.3.8 []\T1/lmr/m/it/10 (+20) Se-jam $\OML/lm
 m/m/it/10 f [] [] A \OMS/lmsy/m/n/10 ^^R \U/msb/m/n/10 R[] \OMS/lmsy/m/n/10 ! \
 U/msb/m/n/10 R$ \T1/lmr/m/it/10 (+20) uma fun��o tal que
@@ -2208,17 +2204,17 @@ Seção A.4 Derivadas Parciais e Diferenciabilidade
 File: generated/asymptote/apderpar.pdf Graphic file (type pdf)
 <use generated/asymptote/apderpar.pdf>
 Package pdftex.def Info: generated/asymptote/apderpar.pdf  used on input line 5
-325.
+323.
 (pdftex.def)             Requested size: 171.20001pt x 219.81529pt.
 [89 <./generated/asymptote/apderpar.pdf>]
 <generated/asymptote/dercont.pdf, id=1796, 284.06125pt x 216.78992pt>
 File: generated/asymptote/dercont.pdf Graphic file (type pdf)
 <use generated/asymptote/dercont.pdf>
 Package pdftex.def Info: generated/asymptote/dercont.pdf  used on input line 53
-64.
+62.
 (pdftex.def)             Requested size: 171.20001pt x 130.66045pt.
  [90 <./generated/asymptote/dercont.pdf>]
-Overfull \hbox (5.82777pt too wide) detected at line 5438
+Overfull \hbox (5.82777pt too wide) detected at line 5436
 \OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x[] \OT1/lmr/m/n/10 + \OML/
 lmm/m/it/10 h; y[] \OT1/lmr/m/n/10 + \OML/lmm/m/it/10 k\OT1/lmr/m/n/10 ) \OMS/l
 msy/m/n/10 ^^@ \OML/lmm/m/it/10 f\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x[]; y[]\OT1
@@ -2240,15 +2236,15 @@ Seção A.5 Derivadas de Segunda Ordem
 File: generated/asymptote/segder.pdf Graphic file (type pdf)
 <use generated/asymptote/segder.pdf>
 Package pdftex.def Info: generated/asymptote/segder.pdf  used on input line 559
-8.
+6.
 (pdftex.def)             Requested size: 171.20001pt x 232.3648pt.
  [94 <./generated/asymptote/segder.pdf>]
-Overfull \hbox (27.66331pt too wide) detected at line 5642
+Overfull \hbox (27.66331pt too wide) detected at line 5640
 []
  []
 
 
-Overfull \hbox (6.55817pt too wide) in paragraph at lines 5667--5671
+Overfull \hbox (6.55817pt too wide) in paragraph at lines 5665--5669
 [][]\T1/lmr/bx/n/10 (-20) Exemplo A.5.8 []\T1/lmr/m/n/10 (-20) A fun��o $\OML/l
 mm/m/it/10 f\OT1/lmr/m/n/10 (-20) (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 (-20) )
  = []$
@@ -2259,13 +2255,13 @@ mm/m/it/10 f\OT1/lmr/m/n/10 (-20) (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 (-20) )
 Seção A.6 Regras da Cadeia e Derivadas direcionais
 ************************************************
 
-Overfull \hbox (16.92192pt too wide) detected at line 5750
+Overfull \hbox (16.92192pt too wide) detected at line 5748
 \OML/lmm/m/it/10 ^^^\OT1/lmr/m/n/10 (\OML/lmm/m/it/10 x; y\OT1/lmr/m/n/10 ) = [
 ]
  []
 
 [96] [97] [98]
-Overfull \hbox (19.54872pt too wide) detected at line 5974
+Overfull \hbox (19.54872pt too wide) detected at line 5972
 []
  []
 
@@ -2273,13 +2269,13 @@ Overfull \hbox (19.54872pt too wide) detected at line 5974
 <generated/youtube/video-3.jpg, id=1967, 120.45pt x 90.3375pt>
 File: generated/youtube/video-3.jpg Graphic file (type jpg)
 <use generated/youtube/video-3.jpg>
-Package pdftex.def Info: generated/youtube/video-3.jpg  used on input line 6095
+Package pdftex.def Info: generated/youtube/video-3.jpg  used on input line 6093
 .
 (pdftex.def)             Requested size: 160.68242pt x 120.52365pt.
 <generated/qrcode/video-3.png, id=1968, 291.0875pt x 291.0875pt>
 File: generated/qrcode/video-3.png Graphic file (type png)
 <use generated/qrcode/video-3.png>
-Package pdftex.def Info: generated/qrcode/video-3.png  used on input line 6098.
+Package pdftex.def Info: generated/qrcode/video-3.png  used on input line 6096.
 
 (pdftex.def)             Requested size: 72.12828pt x 72.12766pt.
  [102 <./generated/youtube/video-3.jpg> <./generated/qrcode/video-3.png (PNG co
@@ -2288,7 +2284,7 @@ py)>]
 Seção A.7 Superfícies de nível e Curvas no espaço
 ************************************************
 
-Overfull \hbox (7.06215pt too wide) in paragraph at lines 6156--6157
+Overfull \hbox (7.06215pt too wide) in paragraph at lines 6154--6155
 []\T1/lmr/m/n/10 (-20) Lembramos que to-dos os re-sul-ta-dos ap-re-sen-ta-dos s
 o-bre con-tinuidade, derivadas
  []
@@ -2297,14 +2293,14 @@ o-bre con-tinuidade, derivadas
 File: generated/asymptote/apesffol.pdf Graphic file (type pdf)
 <use generated/asymptote/apesffol.pdf>
 Package pdftex.def Info: generated/asymptote/apesffol.pdf  used on input line 6
-176.
+174.
 (pdftex.def)             Requested size: 171.20001pt x 162.11867pt.
 [103]
 <generated/asymptote/aphipfol.pdf, id=1994, 284.06125pt x 277.01494pt>
 File: generated/asymptote/aphipfol.pdf Graphic file (type pdf)
 <use generated/asymptote/aphipfol.pdf>
 Package pdftex.def Info: generated/asymptote/aphipfol.pdf  used on input line 6
-194.
+192.
 (pdftex.def)             Requested size: 171.20001pt x 166.95839pt.
  [104 <./generated/asymptote/apesffol.pdf> <./generated/asymptote/aphipfol.pdf>
 ]
@@ -2312,10 +2308,10 @@ Package pdftex.def Info: generated/asymptote/aphipfol.pdf  used on input line 6
 File: generated/asymptote/appltgsupniv.pdf Graphic file (type pdf)
 <use generated/asymptote/appltgsupniv.pdf>
 Package pdftex.def Info: generated/asymptote/appltgsupniv.pdf  used on input li
-ne 6224.
+ne 6222.
 (pdftex.def)             Requested size: 170.90001pt x 142.91418pt.
  [105 <./generated/asymptote/appltgsupniv.pdf>] [106]
-Underfull \hbox (badness 10000) in paragraph at lines 6342--6342
+Underfull \hbox (badness 10000) in paragraph at lines 6340--6340
 [][]$\T1/zi4/m/n/9 https : / / en . wikipedia . org / wiki / Cramer % 27s _ rul
 e # Explicit _ formulas _ for _
  []
@@ -2324,7 +2320,7 @@ e # Explicit _ formulas _ for _
 File: generated/asymptote/appltgintsupniv.pdf Graphic file (type pdf)
 <use generated/asymptote/appltgintsupniv.pdf>
 Package pdftex.def Info: generated/asymptote/appltgintsupniv.pdf  used on input
- line 6352.
+ line 6350.
 (pdftex.def)             Requested size: 170.90001pt x 204.95303pt.
 [107]
 ************************************************
@@ -2332,33 +2328,33 @@ Seção A.8 Máximos e mínimos locais em abertos de \(\mathbb R^2\)
 ************************************************
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 6366.
+(hyperref)                removing `math shift' on input line 6364.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 6366.
+(hyperref)                removing `superscript' on input line 6364.
 
 [108 <./generated/asymptote/appltgintsupniv.pdf>]
 <generated/youtube/video-4.jpg, id=2073, 120.45pt x 90.3375pt>
 File: generated/youtube/video-4.jpg Graphic file (type jpg)
 <use generated/youtube/video-4.jpg>
-Package pdftex.def Info: generated/youtube/video-4.jpg  used on input line 6400
+Package pdftex.def Info: generated/youtube/video-4.jpg  used on input line 6398
 .
 (pdftex.def)             Requested size: 160.68242pt x 120.52365pt.
 <generated/qrcode/video-4.png, id=2074, 291.0875pt x 291.0875pt>
 File: generated/qrcode/video-4.png Graphic file (type png)
 <use generated/qrcode/video-4.png>
-Package pdftex.def Info: generated/qrcode/video-4.png  used on input line 6403.
+Package pdftex.def Info: generated/qrcode/video-4.png  used on input line 6401.
 
 (pdftex.def)             Requested size: 72.12828pt x 72.12766pt.
  [109 <./generated/youtube/video-4.jpg> <./generated/qrcode/video-4.png (PNG co
 py)>]
-Overfull \hbox (7.43578pt too wide) detected at line 6457
+Overfull \hbox (7.43578pt too wide) detected at line 6455
 []
  []
 
 
-Underfull \hbox (badness 2096) in paragraph at lines 6479--6481
+Underfull \hbox (badness 2096) in paragraph at lines 6477--6479
 [][]\T1/lmr/bx/n/10 (+20) Nota A.8.7 []\T1/lmr/m/it/10 (+20) Note que este re-s
 ul-tado nada afirma no caso em que
  []
@@ -2370,18 +2366,18 @@ Seção A.9 Máximos e mínimos condicionados
 <generated/youtube/video-5.jpg, id=2115, 120.45pt x 90.3375pt>
 File: generated/youtube/video-5.jpg Graphic file (type jpg)
 <use generated/youtube/video-5.jpg>
-Package pdftex.def Info: generated/youtube/video-5.jpg  used on input line 6551
+Package pdftex.def Info: generated/youtube/video-5.jpg  used on input line 6549
 .
 (pdftex.def)             Requested size: 160.68242pt x 120.52365pt.
 <generated/qrcode/video-5.png, id=2116, 291.0875pt x 291.0875pt>
 File: generated/qrcode/video-5.png Graphic file (type png)
 <use generated/qrcode/video-5.png>
-Package pdftex.def Info: generated/qrcode/video-5.png  used on input line 6554.
+Package pdftex.def Info: generated/qrcode/video-5.png  used on input line 6552.
 
 (pdftex.def)             Requested size: 72.12828pt x 72.12766pt.
  [111] [112 <./generated/youtube/video-5.jpg> <./generated/qrcode/video-5.png (
 PNG copy)>]
-Underfull \hbox (badness 2644) in paragraph at lines 6611--6617
+Underfull \hbox (badness 2644) in paragraph at lines 6609--6615
 \OML/lmm/m/it/10 B$ \T1/lmr/m/it/10 (+20) � um ponto de m�x-imo ou m�n-imo lo-c
 al de $\OML/lmm/m/it/10 f$ \T1/lmr/m/it/10 (+20) so-bre $\OML/lmm/m/it/10 B$\T1
 /lmr/m/it/10 (+20) , en-t�o
@@ -2400,13 +2396,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 60907119E57060CBD789B6A93EBF5EC3;7155.
  ) 
 Here is how much of TeX's memory you used:
- 48418 strings out of 478287
- 1129280 string characters out of 5849289
- 1592461 words of memory out of 5000000
- 64246 multiletter control sequences out of 15000+600000
+ 48420 strings out of 478287
+ 1129308 string characters out of 5849289
+ 1592622 words of memory out of 5000000
+ 64248 multiletter control sequences out of 15000+600000
  619005 words of font info for 346 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,21n,84p,1113b,3648s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 87i,21n,87p,1134b,3648s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
 ips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/shar
 e/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/l
@@ -2427,7 +2423,7 @@ hare/texmf/fonts/type1/public/lm/lmsy7.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/rsfs/rsfs10.pfb>
-Output written on main.pdf (122 pages, 2509456 bytes).
+Output written on main.pdf (122 pages, 2510723 bytes).
 PDF statistics:
  2491 PDF objects out of 2984 (max. 8388607)
  2140 compressed objects within 22 object streams

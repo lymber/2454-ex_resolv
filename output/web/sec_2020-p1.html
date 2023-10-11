@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch_2020.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="ch_2020.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="ch_antigas.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch_2020.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="ch_2020.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="ch_antigas.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\require{mathrsfs}\newcommand{\N}{\mathbb N}
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\Q}{\mathbb Q}
 \newcommand{\R}{\mathbb R}
@@ -254,7 +254,7 @@ window.MathJax = {
 <article class="exercise exercise-like" id="p1q1-2020"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
 <div class="para logical" id="p-354">
 <div class="para">O valor da integral <span class="process-math">\(\displaystyle{\int_0^1 2x\left[\int_2^{2x^2}
-e^{−t^2}\,dt\right]\, dx}\)</span> é</div>
+e^{-t^2}\,dt\right]\, dx}\)</span> é</div>
 <ol class="lower-alpha cols3">
 <li id="li-282"><div class="para" id="p-derived-li-282"><span class="process-math">\(\dfrac{e^{-4}-1}{4}\text{.}\)</span></div></li>
 <li id="li-283"><div class="para" id="p-derived-li-283"><span class="process-math">\(\dfrac{1-e}{2}\text{.}\)</span></div></li>
@@ -265,12 +265,12 @@ e^{−t^2}\,dt\right]\, dx}\)</span> é</div>
 </div>
 <div class="solutions">
 <details id="answer-48" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-355">Alternativa a.</div></div></details><details id="solution-53" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-356">
-<div class="para">Usaremos aqui integração por parter, fazendo <span class="process-math">\(du=2x\)</span> e <span class="process-math">\(v=\int_2^{2x^2} e^{−t^2}\,dt\text{,}\)</span> donde <span class="process-math">\(u=x^2\)</span> e <span class="process-math">\(dv=4xe^{-4x^4}\text{.}\)</span> Assim,</div>
+<div class="para">Usaremos aqui integração por parter, fazendo <span class="process-math">\(du=2x\)</span> e <span class="process-math">\(v=\int_2^{2x^2} e^{-t^2}\,dt\text{,}\)</span> donde <span class="process-math">\(u=x^2\)</span> e <span class="process-math">\(dv=4xe^{-4x^4}\text{.}\)</span> Assim,</div>
 <div class="displaymath process-math" id="md-47">
 \begin{align*}
 \int_0^1 2x\left[\int_2^{2x^2}
-e^{−t^2}\,dt\right]\, dx&amp;=\left[x^2 \int_2^{2x^2}
-e^{−t^2}\,dt\right]_0^1-\int_0^1 (x^2)(4xe^{-4x^4})\, dx\\
+e^{-t^2}\,dt\right]\, dx&amp;=\left[x^2 \int_2^{2x^2}
+e^{-t^2}\,dt\right]_0^1-\int_0^1 (x^2)(4xe^{-4x^4})\, dx\\
 &amp;\stackrel{(\ast)}{=} 0-\int_0^{-4}
 \dfrac{e^{s}}{-4}\, dx\\
 &amp;=\dfrac{e^{-4}-1}{4}.
@@ -293,9 +293,9 @@ t)\big)\text{.}\)</span> Sabe-se que a trajetória de <span class="process-math"
 <div class="solutions">
 <details id="answer-49" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-358">Alternativa c.</div></div></details><details id="solution-54" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
 <div class="para" id="p-359">O ponto <span class="process-math">\((4,0)\)</span> está na imagem da curva <span class="process-math">\(\gamma\)</span> e é atingido quando <span class="process-math">\(t=\pm2\text{.}\)</span> O vetor tangente em cada instante de tempo <span class="process-math">\(t\)</span> é <span class="process-math">\(\gamma'(t)=\big(2t\cos(\pi
-t)−\pi t^2\sin(\pi t),2t\sin(\pi t)+\pi t^2\cos(\pi
-t)\big)\text{.}\)</span> Calculando nos dois pontos temos <span class="process-math">\(\gamma'(2)=(4,4\pi)\)</span> e <span class="process-math">\(\gamma'(−2)=(−4,4\pi)\text{.}\)</span>
-</div> <div class="para" id="p-360">Logo, <span class="process-math">\(\big\langle\gamma'(2),\gamma'(−2)\big\rangle=4(4\pi^2−4)\text{.}\)</span>
+t)-\pi t^2\sin(\pi t),2t\sin(\pi t)+\pi t^2\cos(\pi
+t)\big)\text{.}\)</span> Calculando nos dois pontos temos <span class="process-math">\(\gamma'(2)=(4,4\pi)\)</span> e <span class="process-math">\(\gamma'(-2)=(-4,4\pi)\text{.}\)</span>
+</div> <div class="para" id="p-360">Logo, <span class="process-math">\(\big\langle\gamma'(2),\gamma'(-2)\big\rangle=4(4\pi^2-4)\text{.}\)</span>
 </div> <div class="para" id="p-361">Apesar de desnecessário, segue um esboço da curva e os vetores tangentes pedidos: <figure class="figure figure-like" id="fig_gabp1q2-2020"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
 <img src="generated/latex-image/gabp1q2-2020.svg" role="img" class="contained" alt="described in detail following the image" aria-describedby="gabp1q2-2020-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe873;</span></summary><div id="gabp1q2-2020-description">A  curva <span class="process-math">\(\gamma\)</span> e suas duas tangentes em <span class="process-math">\((4,0)\text{.}\)</span>
 </div></details>
@@ -306,7 +306,7 @@ t)\big)\text{.}\)</span> Calculando nos dois pontos temos <span class="process-m
 </div></details>
 </div></article><article class="exercise exercise-like" id="p1q3-2020"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
 <div class="para logical" id="p-363">
-<div class="para">Seja <span class="process-math">\(F(x,y)=x^2y−5xy\text{.}\)</span> Sabe-se que o plano tangente ao gráfico de <span class="process-math">\(F\)</span> em um ponto <span class="process-math">\(\big(x_0,y_0,F(x_0,y_0)\big)\)</span> tem equação <span class="process-math">\(−15x+50y−z−75=0\text{.}\)</span> Nestas condições, a soma das coordenadas <span class="process-math">\(x_0+y_0\)</span> é igual a:</div>
+<div class="para">Seja <span class="process-math">\(F(x,y)=x^2y-5xy\text{.}\)</span> Sabe-se que o plano tangente ao gráfico de <span class="process-math">\(F\)</span> em um ponto <span class="process-math">\(\big(x_0,y_0,F(x_0,y_0)\big)\)</span> tem equação <span class="process-math">\(-15x+50y-z-75=0\text{.}\)</span> Nestas condições, a soma das coordenadas <span class="process-math">\(x_0+y_0\)</span> é igual a:</div>
 <ol class="lower-alpha cols5">
 <li id="li-292"><div class="para" id="p-derived-li-292"><span class="process-math">\(9\text{.}\)</span></div></li>
 <li id="li-293"><div class="para" id="p-derived-li-293"><span class="process-math">\(-4\text{.}\)</span></div></li>
@@ -317,18 +317,18 @@ t)\big)\text{.}\)</span> Calculando nos dois pontos temos <span class="process-m
 </div>
 <div class="solutions">
 <details id="answer-50" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-364">Alternativa b.</div></div></details><details id="solution-55" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
-<div class="para" id="p-365">Derivando <span class="process-math">\(F\)</span> diretamente em <span class="process-math">\((x_0,y_0)\)</span> temos <span class="process-math">\(F_x(x_0,y_0)=2x_0y_0−5y_0\)</span> e <span class="process-math">\(F_y(x_0,y_0)=x^2_0−5x_0\text{.}\)</span>
+<div class="para" id="p-365">Derivando <span class="process-math">\(F\)</span> diretamente em <span class="process-math">\((x_0,y_0)\)</span> temos <span class="process-math">\(F_x(x_0,y_0)=2x_0y_0-5y_0\)</span> e <span class="process-math">\(F_y(x_0,y_0)=x^2_0-5x_0\text{.}\)</span>
 </div> <div class="para logical" id="p-366">
-<div class="para">Da equação do planotangente no enunciado concluímos que <span class="process-math">\(F_x(x_0,y_0)=−15\)</span> e <span class="process-math">\(F_y(x_0,y_0)=50\text{.}\)</span> Com isso temos o sistema</div>
+<div class="para">Da equação do planotangente no enunciado concluímos que <span class="process-math">\(F_x(x_0,y_0)=-15\)</span> e <span class="process-math">\(F_y(x_0,y_0)=50\text{.}\)</span> Com isso temos o sistema</div>
 <div class="displaymath process-math">
 \begin{equation*}
 \begin{cases}
-2x_0y_0−5y_0&amp;=15\\
-x^2_0−5x_0&amp;=50,
+2x_0y_0-5y_0&amp;=15\\
+x^2_0-5x_0&amp;=50,
 \end{cases}
 \end{equation*}
 </div>
-<div class="para">cujas soluções são <span class="process-math">\(x_0=−5\)</span> e <span class="process-math">\(y_0=1\)</span> ou <span class="process-math">\(x_0=10\)</span> e <span class="process-math">\(y_0=−1\text{.}\)</span> Como o ponto <span class="process-math">\(\big(x0,y0,F(x0,y0)\big)\)</span> pertence ao plano tangente, temos que <span class="process-math">\(−15x_0+50y_0−F(x_0,y_0)−75=0\text{,}\)</span> que só é verificado por <span class="process-math">\(x_0=−5\)</span> e <span class="process-math">\(y_0=1\text{,}\)</span> donde <span class="process-math">\(x_0+y_0=−4\text{.}\)</span>
+<div class="para">cujas soluções são <span class="process-math">\(x_0=-5\)</span> e <span class="process-math">\(y_0=1\)</span> ou <span class="process-math">\(x_0=10\)</span> e <span class="process-math">\(y_0=-1\text{.}\)</span> Como o ponto <span class="process-math">\(\big(x0,y0,F(x0,y0)\big)\)</span> pertence ao plano tangente, temos que <span class="process-math">\(-15x_0+50y_0-F(x_0,y_0)-75=0\text{,}\)</span> que só é verificado por <span class="process-math">\(x_0=-5\)</span> e <span class="process-math">\(y_0=1\text{,}\)</span> donde <span class="process-math">\(x_0+y_0=-4\text{.}\)</span>
 </div>
 </div>
 </div></details>
@@ -339,7 +339,7 @@ x}\sin(8\beta y)\text{,}\)</span> onde <span class="process-math">\(\alpha\)</sp
 <div class="displaymath process-math">
 \begin{equation*}
 \dfrac{\partial^2 f}{\partial x^2}(x,y)+2\dfrac{\partial^2
-f}{\partial x\partial y}(x,y)−\dfrac{\partial^2 f}{\partial
+f}{\partial x\partial y}(x,y)-\dfrac{\partial^2 f}{\partial
 y^2}(x,y)=\dfrac{\partial f}{\partial x}(x,y)+\dfrac{\partial
 f}{\partial y}(x,y).
 \end{equation*}
