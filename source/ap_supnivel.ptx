@@ -1,0 +1,497 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section  xml:id="ap_supnivel" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Superfícies de nível e Curvas no espaço</title>
+
+  <introduction>
+    <p>Extendemos aqui o conceito de curvas de nível de uma função
+    <m>f\colon A\subseteq\R^2\to\R</m>, visto na <xref ref="ap_func" />,
+    para funções de três variáveis reais, <m>f\colon
+    A\subseteq\R^3\to\R</m>.</p>
+
+    <p>Lembramos que todos os resultados apresentados sobre
+    continuidade, derivadas parciais, diferenciabilidade e derivadas
+    direcionais para funções de duas variáveis generalizam-se
+    naturalmente para funções de <m>n</m> variáveis (nosso caso de
+    interesse é <m>n=3</m>).</p>
+  </introduction>
+
+  <definition xml:id="sup_nivel">
+    <title>Superfície de nível</title>
+    Sejam <m>f\colon A\subseteq\R^3\to\R</m> e <m>c\in\R</m>. A
+    <term>superfície de nível</term> ou <term>conjunto de nível </term>
+    do nível <m>c</m> de <m>f</m> é o conjunto
+    <me>f^{-1}(c)=\{(x,y,z)\in A\colon f(x,y,z)=c\},</me>
+  </definition>
+
+  <p>Note que, nas condições acima, o gráfico de <m>f</m> está em
+  <m>\R^4</m>. Deste modo, as superfícies de nível vão nos ajudar a
+  entender melhor o comportamento de tais funções. Vejamos alguns
+  exemplo em analogia ao caso de funções a duas variáveis.</p>
+
+  <example>
+    <statement>
+      <p>
+        Determine as curvas nível da função <m>f\colon\R^3\to\R</m> dada
+        por <m>f(x,y)=x^2+y^2+z^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Começamos observando que o domínio de <m>f</m> é todo o
+        <m>\R^3</m> e sua imagem é o conjunto dos reais não-negativos,
+        indicado por <m>\R_{\geq 0}</m>. Com isso, temos
+        <m>f^{-1}(c)=\emptyset</m>, se <m>c&lt; 0</m>. Vejamos o que
+        acontece com <m>c\geq0</m>:
+        <ul>
+          <li><m>c=0</m>: <m>f(x,y,z)=0\iff x^2+y^2+z^2=0\iff
+          (x,y,z)=(0,0,0)</m>;</li>
+          <li><m>c&gt;0</m>: <m>f(x,y,z)=c\iff x^2+y^2+z^2=c</m>. Neste caso,
+          as soluções são exatamente pontos da esfera de raio
+          <m>\sqrt{c}</m>, centrada na origem.</li>
+        </ul>
+      Observamos então que cada ponto de <m>\R^3</m> pertence a um e
+      somente um conjunto de nível de <m>f(x,y,z)=x^2+y^2+z^2</m>.
+      <figure xml:id="fig_apesffol">
+	<caption>Conjuntos de nível de <m>f</m>.</caption>
+  
+	<image width="50%" xml:id="apesffol" archive="html">
+	  <description>Folheação por esferas</description>
+	  <asymptote>
+	    import graph3;
+	    size(10cm);
+      
+	    currentprojection=orthographic(5,2,3);
+	    limits((-2,-2,-2),(2,2,2));
+      
+	    currentlight=light(white,(2,2,2),(2,-2,-2));
+	    // uncomment for transparent background
+	    //currentlight.background=black+opacity(0);
+      
+	    triple esf(pair z) {
+	    real u=z.x;
+	    real v=z.y;
+	    real x=cos(u)*sin(v);
+	    real y=sin(u)*sin(v);
+	    real z=cos(v);
+	    return (x,y,z);
+	    }
+	    
+	    surface esfera =surface(esf,(pi/2,0),(2*pi,pi),Spline);
+	    
+	    for (int n=1; n&lt;=3;++n){
+	    draw(scale3(n/2)*esfera,blue+opacity(0.4));
+	    };
+	    
+	    dot(O);
+	    
+	    xaxis3("$x$",Arrow3);
+	    yaxis3("$y$",Arrow3);
+	    zaxis3("$z$",Arrow3);
+	  </asymptote>
+	</image>
+      </figure>
+      </p>
+    </solution>
+  </example>
+
+    <example>
+    <statement>
+      <p>
+        Determine as curvas nível da função <m>f\colon\R^3\to\R</m> dada
+        por <m>f(x,y)=x^2+y^2-z^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Começamos observando que o domínio de <m>f</m> é todo o
+        <m>\R^3</m> e sua imagem é o conjunto de todos os reais,
+        indicado por <m>\R_{\geq 0}</m>. Com isso, temos
+	<ul>
+	  <li><m>c&gt; 0</m>: <m>f(x,y,z)=c \iff
+	  x^2+y^2-z^2=c</m>. Neste caso, o conjunto solução é um
+	  <em>hiperboloide de uma folha</em>.</li>
+          <li><m>c=0</m>: <m>f(x,y,z)=0\iff x^2+y^2-z^2=0</m>, a equação
+	  do cone reto;</li>
+          <li><m>c&lt;0</m>: <m>f(x,y,z)=c\iff x^2+y^2-z^2=c</m>, que
+	  define um hiperboloide de duas folhas.</li>
+        </ul>
+      Novamente observamos então que cada ponto de <m>\R^3</m> pertence
+      a um e somente um conjunto de nível de
+      <m>f(x,y,z)=x^2+y^2-z^2</m>.
+      <figure xml:id="fig_aphipfol">
+	<caption>Conjuntos de nível de <m>f</m>.</caption>
+  
+	<image width="50%" xml:id="aphipfol" archive="html">
+	  <description>Folheação por hiperboloides.</description>
+	  <asymptote>
+	    import solids;
+	    size(10cm);
+
+	    currentprojection=orthographic(3,2,1);
+	    limits((-3,-3,-2),(3,3,2));
+      
+	    currentlight=light(white,(2,2,2),(2,-2,-2));
+	    // uncomment for transparent background
+	    // currentlight.background=black+opacity(0);
+
+	    path3 hiperbole=graph(new triple(real z) {
+	    return (0,sqrt(1+z^2),z);},-1.75,1.75,20,operator ..);
+
+	    revolution hip1frame=revolution(hiperbole,axis=Z);
+	    revolution hip2frame=revolution(rotate(90,X)*hiperbole, axis=Z) ;
+
+	    surface cone=surface(shift(0,0,2)*cone(2,-2));
+
+	    draw(surface(hip1frame), lightblue+opacity(0.6));
+	    draw(surface(surface(hip2frame),surface(reflect(O,X,Y)*hip2frame)),
+	    lightgreen+opacity(0.6));
+	    draw(surface(cone,reflect(O,X,Y)*cone),1,1,lightred+opacity(0.6));
+
+	    xaxis3("$x$",Arrow3); 
+	    yaxis3("$y$",Arrow3);
+	    zaxis3("$z$",Arrow3);
+	  </asymptote>
+	</image>
+      </figure>
+      </p>
+    </solution>
+  </example>
+
+  <p>Os dois exemplos acima são casos especiais das <em>superfícies
+  quádricas</em>. Um tabela com suas equações reduzidas para os casos não
+  degenerados pode ser vista <url
+  href="https://www.ime.usp.br/~lymber/teaching/quadricas/index.html"
+  visual="ime.usp.br/~lymber/teaching/quadriicas.html">aqui</url>. Em
+  Álgebra Linear II você verá um método que explicita um sistema de
+  coordenadas onde a equação de uma dada superfície quádrica se escreve
+  na forma reduzida.</p>
+
+  <p>Se <m>f\colon A\subseteq\R^3\to\R</m> é uma função diferenciável e
+  <m>\gamma\colon I\subseteq\R\to\R^3</m> é uma curva derivável tal que
+  a imagem de <m>\gamma</m> está contida na superfície de nível <m>c</m>
+  de <m>f</m>, então <m>f\big(\gamma(t)\big)=c</m>, para todo <m>t\in
+  I</m>. Utilizando uma generalização (relativamente óbvia) do <xref
+  ref="teo_cadeia" /> para o <m>\R^3</m> , temos que
+  <me>0=(f\circ\gamma)'(t)=\Big\langle\nabla
+  f\big(\gamma(t)\big),\gamma'(t)\Big\rangle.</me> Isto mostra que o
+  vetor <m>\nabla f</m> é ortogonal a todas as curvas cuja imagem está
+  contida numa superfície de nível de <m>f</m>, motivando naturalmente
+  a</p>
+
+  <definition xml:id="def_planotangente">
+    <title>Plano Tangente a uma superficie de nível</title> Sejam
+    <m>f\colon A\subseteq\R^3\to\R</m> uma função diferenciável e
+    <m>(x_0,y_0,z_0)\in f^{-1}(c)</m>. O <term>plano tangente à
+    superfície de nível <m>c</m> de <m>f</m> no ponto
+    <m>(x_0,y_0,z_0)</m></term> é o conjunto dos vetores tangentes a
+    todas as curvas cuja imagens contenham <m>(x_0,y_0,z_0)</m> e
+    estejam contidas em <m>f^{-1}(c)</m>.
+  </definition>
+
+  <p>Desta maneira, <m>\nabla f(x_0,y_0,z_0)</m> é o vetor normal a este
+  plano e, como <m>(x_0,y_0,z_0)</m> pertence a ele, terá equação geral
+  <me>\pi\colon \big\langle \nabla
+  f(x_0,y_0,z_0),(x,y,z)-(x_0,y_0,z_0)\big\rangle=0,</me> ou ainda,
+  <mdn>
+    <mrow number="no">\pi\colon f_x(x_0,y_0,z_0)(x-&amp;
+    x_0)+f_y(x_0,y_0,z_0)(y-y_0)</mrow>
+    <mrow xml:id="eq_pltgsupniv">&amp; +f_z(x_0,y_0,z_0)(z-z_0)=0.</mrow>
+  </mdn>
+  <figure xml:id="fig_appltgsupniv">
+    <caption>Superfície de nível <m>f</m> e seu plano tangente.</caption>
+  
+    <image width="50%" xml:id="appltgsupniv" archive="html">
+      <description>Superfície de nível e seu plano tangente.</description>
+      <asymptote>
+	import solids;
+	size(10cm);
+
+	currentprojection=orthographic(3,2,1);
+	limits((-1.5,-1.5,-1.5),(3,3,2));
+      
+	currentlight=light(white,(2,2,2),(2,-2,-2));
+	// uncomment for transparent background
+	// currentlight.background=black+opacity(0);
+
+	triple ponto=X;
+
+	//vectors and point for the plane
+	triple u=Y,v=Z,o=ponto;
+	surface plano=surface(plane(2*u,2*v,o-u-v));
+	
+	surface esfera= unitsphere;
+	
+	draw(esfera, lightblue);
+	draw(rotate(45,X-Y)*rotate(45,Z)*plano, lightgreen+opacity(0.6));
+	dot(rotate(45,X-Y)*rotate(45,Z)*ponto);
+	draw(Label("$\nabla f(x_0,y_0,z_0)$",position=EndPoint),
+	rotate(45,X-Y)*rotate(45,Z)*(ponto--3*ponto),Arrow3);
+	
+	xaxis3("$x$",Arrow3); 
+	yaxis3("$y$",Arrow3);
+	zaxis3("$z$",Arrow3);
+      </asymptote>
+    </image>
+  </figure>
+  </p>
+
+  <p>Esta equação generaliza a situação anterior, quando a superfície é
+  o gráfico de uma função de duas variáveis, <m>f\colon
+  A\subseteq\mathbb R^2\to\R</m>. Basta ver que a superfície de nível
+  <m>0</m> da função <m>F(x,y,z)=f(x,y)-z</m> é precisamente o gráfico
+  de <m>f</m> e que, para todo <m>(x,y,z)\in F^{-1}(0)</m>, ou seja,
+  <m>z=f(x,y)</m>, temos <m>\nabla
+  F(x,y,z)=\Big(f_x(x,y),f_y(x,y),-1\big)=n_f(x,y)</m>, de acordo com o
+  que se segue após a <xref ref="def_diff" />. É um bom exercício
+  recuperar a equação presente naquela definição a partir da equação
+  <xref ref="eq_pltgsupniv" />.</p>
+
+  <remark>
+    <p>
+    Observe que nem sempre uma curva de nível de uma função <m>F\colon
+    A\subseteq\R^2\to\R</m> é o gráfico de função <m>f\colon
+    I\subseteq\R\to\R</m>. O mesmo ocorre para superfícies de nível de
+    funções a três variáveis: a esfera acima é uma superfície de nível
+    que não é gráfico de uma função a duas variáveis (por quê?).</p>
+  </remark>
+
+  <p>Nos casos mais simples, quando as funções envolvidas são lineares,
+  as curvas e superfícies de nível são, respectivamente, retas a planos,
+  cujos vetores são normais são os gradientes das funções (constantes
+  nesse caso). Tais retas ou planos são determinados resolvendo-se um
+  sistema com uma equação e duas ou três variáveis. Para determinar,
+  nesses sistemas, quais são as variáveis dependentes ou livres
+  precisamos descobrir quais os coeficientes do vetor normal a esta reta
+  ou plano são não nulos. Isso equivale à projeção da reta
+  (respectivamente plano) de nível sobre os eixos das demais variáveis
+  ser bijetora.</p>
+  
+  <p>Se temos duas superfícies de nível, nesse caso mais simples planos,
+  que não são paralelos ou coincidentes, sua interseção é uma reta. Os
+  vetores normais de tais planos (os gradientes das funções lineares que
+  os definem) são linearmente independentes e a direção da reta de
+  interseção é justamente o produto vetorial desses vetores normais, já
+  que a reta está contida em ambos os planos e portanto ortogonal aos
+  dois vetores normais simultaneamente.</p>
+
+  <p>Algebricamente, encontrar esta reta consiste em resolver um sistema
+  linear com duas equações e três variáveis. A condição para dizer
+  quando uma das variáveis do sistema é a variável livre traduz-se na
+  componente correspondente do vetor diretor da solução (o produto
+  vetorial mencionado acima) ser não nula. Isso garante que a projeção
+  da solução sobre o eixo coordenado daquela variável é bijetora.</p>
+
+  <p>Quando as funções envolvidas não são lineares, as curvas ou
+  superfícies de nível deixam de ser retas ou planos, curvando-se de
+  alguma maneira, consequentemente as soluções dos sistemas, agora não
+  lineares, de ser retas ou planos, também curvando-se. A linearização
+  dessa situação (considerando-se as retas tangentes às curvas de nível
+  ou os planos tangentes às superfícies de nível) remontam aos
+  parágrafos anteriores. Apresentamos a seguir três resultados que nos
+  permitem, sob boas condições, escrever as retas tangentes a curvas de
+  nível ou interseção de superfícies de nível, bem como planos tangente
+  a uma superfície de nível.</p>
+
+  <proposition xml:id="prop_curvaniv">
+    <title>Retas tangentes a curvas de nível</title>
+    <statement>
+      Sejam <m>F\colon A\subseteq\R^2\to\R</m> uma função diferenciável
+      no aberto <m>A</m> e <m>(x_0,y_0)\in A</m> tal que
+      <m>F(x_0,y_0)=0</m>. Se existe uma função derivável <m>f\colon
+      I\subseteq\R\to J\subset\R</m>, com <m>x_0\in I</m>, <m>y_0\in
+      J</m>, tal que <m>y_0=f(x_0)</m>, <m>F\big(x,f(x)\big)=0</m> e
+      <m>F_y\big(x,f(x)\big)\neq 0</m>, para todo <m>x\in I</m>, então
+      <me>f'(x)=-\dfrac{F_x\big(x,f(x))}{F_y\big(x,f(x)\big)}.</me>
+    </statement>
+    <remark>
+      Caso tal <m>f</m> exista mesmo quando <m>F_y(x_0,y_0)</m>,
+    então devemos ter obrigatoriamente que <m>f_x(x_0,y_0)=0</m>.
+    </remark>
+    <proof>
+      <p>
+      Suponha a existência de tal <m>f</m>, podemos pensar na curva
+      <m>\gamma(x)=\big(x,f(x)\big)</m>, <m>x\in I</m> e usar a regra da
+      cadeia (<xref ref="teo_cadeia" />) para derivar a relação
+      <m>F(\big(x,f(x)\big)=0</m>, obtendo <me>0=\Big\langle\nabla
+      F\big(x,f(x)\big),\big(1,f'(x)\big)\Big\rangle\implies
+      F_x\big(x,f(x)\big)+F_y\big(x,f(x)\big)f'(x)=0.</me></p>
+      <p>Como <m>F_y\big(x,f(x)\big)\neq0</m>, temos a tese.</p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop_supniv">
+    <title>Planos tangentes a superfícies de nível</title>
+    <statement>
+      Sejam <m>F\colon A\subseteq\R^3\to\R</m> uma função diferenciável
+      no aberto <m>A</m> e <m>(x_0,y_0,z_0)\in A</m> tal que
+      <m>F(x_0,y_0,z_0)=0</m>. Se existe uma função derivável <m>f\colon
+      B\subseteq\R^2\to J\subset\R</m>, com <m>(x_0,y_0)\in B</m>, <m>z_0\in
+      J</m>, tal que <m>z_0=f(x_0,y_0)</m>, <m>F\big(x,y,f(x,y)\big)=0</m> e
+      <m>F_z\big(x,y,f(x,y)\big)\neq 0</m>, para todo <m>x\in I</m>, então
+      <me>\dfrac{\partial f}{\partial
+      x}(x,y)=-\dfrac{F_x\big(x,y,f(x,y))}{F_z\big(x,y,f(x,y)\big)}\quad\text{e}\quad\dfrac{\partial
+      f}{\partial
+      y}(x,y)=-\dfrac{F_y\big(x,y,f(x,y))}{F_z\big(x,y,f(x,y)\big)}
+      </me>
+    </statement>
+    <proof>
+      <p>A demonstração deste resultado é análoga à anterior,
+      considerando agora duas curvas: para cada <m>y</m> fixado,
+      <m>\gamma_1(x)=\big(x,y,f(x,y)\big)</m> e, para cada <m>x</m>
+      fixado, <m>\gamma_2(y)=\big(x,y,f(x,y)\big)</m>. Derive então, em
+      relação a <m>x</m> e <m>y</m>, respectivamente, as expressões
+      <m>F\big(\gamma_1(x)\big)=0</m> e
+      <m>F\big(\gamma_2(y)\big)=0</m>.</p>
+    </proof>
+  </proposition>
+
+  <proposition xml:id="prop_intsupniv">
+    <title>Retas tangentes a interseção de superfícies de nível</title>
+    <statement>
+      Sejam <m>F,G\colon A\subseteq\R^3\to\R</m> funções diferenciáveis
+      no aberto <m>A</m> e <m>(x_0,y_0,z_0)\in A</m> tal que
+      <m>F(x_0,y_0,z_0)=0=G(x_0,y_0,z_0)</m>. Se existe uma função
+      derivável <m>\gamma\colon I\subseteq\R\to \R^3</m>, com <m>x_0\in
+      I</m> tal que <m>\gamma(x_0)=(x_0,y_0,z_0)</m>,
+      <m>F\big(\gamma(x)\big)=0=G\big(\gamma(x)\big)</m> e
+      <m>\det\begin{bmatrix}F_y&amp;F_z\\G_y&amp;
+      G_z\end{bmatrix}\big(\gamma(x)\big)\neq 0</m>, para todo <m>x\in
+      I</m>, então <me>\gamma'(x)=\big(1,y'(x),z'(x)\big),</me> onde
+      <me> y'(x)=-\dfrac{\det\begin{bmatrix}
+        F_x&amp;F_z\\G_x&amp;
+        G_z\end{bmatrix}\big(\gamma(x)\big)}
+      {\det\begin{bmatrix}
+        F_y&amp;F_z\\G_y&amp;
+        G_z\end{bmatrix}\big(\gamma(x)\big)}
+      \quad\text{e}
+      \quad z'(x)=-\dfrac{\det\begin{bmatrix}
+        F_y&amp;F_x\\G_y&amp;
+        G_x\end{bmatrix}\big(\gamma(x)\big)}
+      {\det\begin{bmatrix}
+        F_y&amp;F_z\\G_y&amp;
+        G_z\end{bmatrix}\big(\gamma(x)\big)}
+      </me>
+    </statement>
+    <remark>
+      O determinante que pedimos ser não nulo nas hipóteses é o que
+      garante que podemos ter a primeira componente de <m>\gamma'(x)</m>
+      não nula, que é então paralelo vetor <me>\left(
+      \det\begin{bmatrix}
+        F_y&amp;F_z\\G_y&amp;
+        G_z\end{bmatrix},
+      \det\begin{bmatrix}
+        F_x&amp;F_z\\G_x&amp;
+        G_z\end{bmatrix},
+      \det\begin{bmatrix}
+        F_x&amp;F_y\\G_x&amp;
+        G_y\end{bmatrix}
+      \right)\big(\gamma(x)\big)
+	=(\nabla F\times\nabla
+	G)\big(\gamma(x)\big)</me>.
+    </remark>
+    <proof>
+      <p>Temos aqui um sistema não linear com duas equações:
+      <me>\begin{cases}
+      F\big(x,y(x),z(x)\big)&amp;=0\\
+      G\big(x,y(x),z(x)\big)&amp;=0.
+      \end{cases}</me> Derivando em relação a <m>x</m>, com a regra da
+      cadeia (<xref ref="teo_cadeia" />), obtemos, para cada <m>x</m>
+      fixado e omitindo os pontos de aplicação, um sistema
+      <em>linear</em> com duas equações nas incógnitas <m>y'(x)</m> e
+      <m>z'(x)</m>:
+      <me>\begin{cases}
+      F_yy'(x)+F_zz'(x)&amp;=-F_x\\
+      G_yy'(x)+G_zz'(x)&amp;=-G_x.
+      \end{cases}</me>
+      </p>
+
+      <p>
+	Aplicando a <url href="https://en.wikipedia.org/wiki/Cramer%27s_rule#Explicit_formulas_for_small_systems"
+	visual="https://en.wikipedia.org/wiki/Cramer%27s_rule#Explicit_formulas_for_small_systems">
+	regra de Cramer</url> para a solução de sistemas lineares, temos
+	as fórmulas do enunciado.</p>
+      </proof>
+  </proposition>
+
+  <p>Isto nos permite determinar a reta tangente a uma curva que é dada
+  pela interseção de duas superfícies de nível, mesmo que não consigamos
+  paramatrizá-la. Mas atenção: é <term>necessário</term> saber que tal
+  interseção é uma curva derivável! Retomamos, como exemplo, o <xref
+  ref="curvasR3-2a" />, para determinar a reta tangente à interseção das
+  duas superfícies no ponto <m>(1,1,2,)</m>: consideramos
+  <m>F(x,y,z)=x^2+y^2-z</m> e <m>G(x,y,z)=2y-z</m> que têm como
+  superfícies de nível <m>0</m> aquelas do exercício. Seus gradientes
+  são <m>\nabla F(x,y,z)=(2x,2y,-1)</m> e<m>\nabla
+  G=(0,2,-1)</m>. Assim, o vetor diretor da reta pedida é um múltiplo
+  não nulo de <me>\nabla F(1,1,2)\times \nabla
+  G(1,1,2)=(2,2,-1)\times(0,2,-1)=(0,2,4),</me> por exemplo
+  <m>\vec{v}=(0,1,2)</m>, e a reta tangente é <m>r\colon
+  (x,y,z)=(1,1,2)+\lambda(0,1,2)</m>, <m>\lambda\in\R</m>.
+  <figure xml:id="fig_appltgintsupniv">
+    <caption>Interseções de superfícies de nível e sua reta tangente.</caption>
+  
+    <image width="50%" xml:id="appltgintsupniv" archive="html">
+      <description>Interseções de superfícies de nível e sua reta tangente.</description>
+      <asymptote>
+	import solids;
+	size(10cm);
+	
+	currentprojection=orthographic(3,2,1);
+	limits((-3,-3,-1),(3,3,6));
+	
+	currentlight=light(white,(2,2,2),(2,-2,-2));
+	// uncomment for transparent background
+	// currentlight.background=black+opacity(0);
+	
+	path3 parayz=graph(new triple(real z) {
+	return (0,z,z*z);},-2.25,2.25,20,operator ..);
+	
+	revolution paraframe=revolution(parayz,axis=Z);
+	
+	draw(surface(paraframe), lightblue);
+	
+	//vectors and point for the plane
+	triple u=(1,0,0),v=(0,1,2),o=(0,0,0);
+	draw(surface(plane(3*u,3*v,o-3/2*u-1/2*v)),orange+opacity(0.4));
+	
+	//curve
+	path3 inter=graph(new triple(real t) {
+	return (cos(t),sin(t)+1,2*(sin(t)+1));},0,2*pi,20,operator ..);
+	
+	draw(inter,orange+1bp);
+	
+	draw(Label("$\nabla F(1,1,2)$",position=EndPoint),
+	(1,1,2)--(1,1,2)+(2,2,-1),lightblue,Arrow3);
+	draw(Label("$\nabla G(1,1,2)$",position=EndPoint),
+	(1,1,2)--(1,1,2)+(0,2,-1),orange,Arrow3);
+	draw(Label("$\vec{v}$",position=EndPoint),
+	(1,1,2)--(1,1,2)+(0,1,2),Arrow3);
+	
+	dot((1,1,2));
+	
+	xaxis3("$x$",Arrow3);
+	yaxis3("$y$",Arrow3);
+	zaxis3("$z$",Arrow3);
+      </asymptote>
+    </image>
+  </figure>
+  </p>
+
+  <p>Os três resultados acima admitem <em>recíprocas locais</em>, ou
+  seja, se as funções que definemas as curvas ou superfícies de nível do
+  enunciados são de classe <m>\mathscr{C}^1</m> (condição que pode ser
+  relaxada) e as derivadas parciais não nulas dos enunciados acontecem
+  num ponto da curva de nível, superfície de nível ou interseção de
+  superfícies de nível, então é possível exibir uma vizinhança de tal
+  objeto como gráfico de uma curva ou função, tambémm de classe
+  <m>\mathscr{C}^1</m>, com as derivadas dadas pelas fórmulas
+  acima. Estes resultados são os celebrados Teoremas das Funções
+  Implícitas, que admitem um enunciado unificado em contexto bem mais
+  gerais. Um texto com demonstrações simples e muitos exemplos para as
+  situações de interesse neste curso pode ser acessado <url
+  visual="https://www.ime.usp.br/~oliveira/ELE-IMPLI-EXEMPLOS.pdf"
+  href="https://www.ime.usp.br/~oliveira/ELE-IMPLI-EXEMPLOS.pdf">aqui</url>. Agradecemos
+  ao professor Oswaldo Rio Branco do IME-USP pelo excelente texto que
+  preparou.</p>
+</section>

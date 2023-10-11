@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">A.4.5</span><span class="period">.</span>
+</h3>
+<div class="para">A função <span class="process-math">\(f(x,y)=\begin{cases}
+\dfrac{xy}{x^2+y^2},&amp;(x,y)\neq (0,0);\\
+\hfill 0,&amp; (x,y)=(0,0)\end{cases}\)</span> admite derivadas parciais em <span class="process-math">\((0,0)\text{,}\)</span> mas não é contínua em <span class="process-math">\((0,0)\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Precisamos calcular as derivadas parciais pela definição, já que a regras de derivação do quociente não se aplica (denominador se anula no ponto estudado). Então</div>
+<div class="displaymath process-math">
+\begin{align*}
+\dfrac{\partial f}{\partial x}(0,0)
+&amp;=\lim\limits_{h\to 0}\dfrac{f(0+h,0)-f(0,0)}{h}
+=\lim\limits_{h\to 0}\dfrac{\dfrac{h\cdot 0}{h^2+0^2}-0}{h}
+=0;\\
+\dfrac{\partial f}{\partial y}(0,0)
+&amp;=\lim\limits_{k\to 0}\dfrac{f(0,0+k)-f(0,0)}{k}
+=\lim\limits_{k\to 0}\dfrac{\dfrac{0\cdot k}{0^2+k^2}-0}{k}
+=0,
+\end{align*}
+</div>
+<div class="para">o que era de se esperar, uma vez que <span class="process-math">\(f\)</span> é constante (nula) ao longo dos eixos coordenados.</div>
+</div> <div class="para logical">
+<div class="para">Porém, ao longo da curva <span class="process-math">\(\gamma(t)=(t,t)\text{,}\)</span> temos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_limcurvas.html">
+\begin{equation*}
+\lim\limits_{t\to 0}f\big(\gamma(t)\big)=\lim\limits_{t\to 0}
+\dfrac{t^2}{2t^2}=\dfrac{1}{2}\neq 0=f(0,0),
+\end{equation*}
+</div>
+<div class="para">mostrando, de acordo com o <a href="" class="xref" data-knowl="./knowl/teo_limcurvas.html" title="Teorema A.3.8">Teorema A.3.8</a>, que <span class="process-math">\(f\)</span> não é contínua em <span class="process-math">\((0,0)\text{.}\)</span>
+</div>
+</div> <div class="para">Veja o gráfico de <span class="process-math">\(f\)</span> e verifique que o comportamento ao longo dos eixos <span class="process-math">\(Ox\)</span> e <span class="process-math">\(Oy\)</span> não dertermina o que acontece em outras direções no domínio. <figure class="figure figure-like"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<div class="asymptote-box" style="padding-top: 76.3250883392226%"><iframe src="generated/asymptote/dercont.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/dercont.html">html</a></div>
+</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">A.4.6<span class="period">.</span></span><span class="space"> </span>Gráfico de função e cortes de nível</figcaption></figure>
+</div></article><span class="incontext"><a href="ap_diff.html#exemplo_parcont" class="internal">em contexto</a></span>
+</body>
+</html>

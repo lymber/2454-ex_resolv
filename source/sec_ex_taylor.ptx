@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Polinômios de Taylor</title>
+
+  <exercises xml:id="ex_taylor" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Polinômios de Taylor</title> -->
+  
+    <exercise number="1" xml:id="raiz_cubica">
+      <statement>
+	<p>
+          Utilizando o polinômio de Taylor de ordem <m>2</m>, calcule um
+	  valor aproximado para <m>\sqrt[3]{8.2}</m> e avalie o erro.
+	</p>
+      </statement>
+      <answer>
+	<p>
+          <m>\sqrt[3]{8,2}\approx \dfrac{14519}{7200}</m>, com erro
+          <m>E</m> na aproximação satisfazendo <m>1\times
+	  10^{-6}&lt;E &lt;2\times 10^{-6}</m>
+	</p>
+      </answer>
+      <hint>
+	<p>
+          Utilize a fórmula de Taylor de ordem <m>2</m> para
+	  <m>f(x)=\sqrt[3]{x}</m>, em torno de <m>x_0=8</m>. Para
+	  estimativa do erro, use o resto de Lagrange e estime os
+	  valores máximo e mínimo que o coficiente dependendo de
+	  <m>\overline{x}\in(8,8.2)</m> pode assumir.
+	</p>
+      </hint>
+      <solution>
+	<p>
+          Lembrando que se <m>f\colon A\subseteq\R\to\R</m> é uma função
+          <m>(n+1)</m> vezes derivável no ponto <m>x_0\in A</m>, então é
+          o <em>polynômio de Taylor</em> de ordem <m>n</m> para <m>f</m>
+          em torno de <m>x_0</m>, dado por <m>P_n</m> é aquele que tem o
+          mesmo valor de <m>f</m> em <m>x_0</m>, ou seja
+          <m>P_n(x_0)=f(x_0)</m> e, além disso, todas as derivadas até
+          ordem <m>n</m> de <m>P_n</m> e <m>f</m> também coincidem, ou
+          seja, <m>P_n^{(k)}(x_0)=f^{(k)}(x_0)</m>, para todo
+          <m>k\in\{1,\ldots,n\}</m>. Disto segue-se que
+          <me>P_n(x)=f(x_0)+f'(x_0)(x-x_0)+\dfrac{f''(x_0)}{2!}
+          (x-x_0)^2+\cdots+\dfrac{f^{(n)}(x_0)}{n!}(x-x_0)^n.</me>
+	</p>
+	<p>
+	  Para cada <m>x\in A</m> fixado, se <m>f</m> admite derivada de
+	  ordem <m>n+1</m> em todos os pontos do intervalo de extemos
+	  <m>x_0</m> e <m>x</m>, então o erro cometido na aproximação de
+	  <m>f(x)</m> por <m>P_n(x)</m>, <m>E_n(x)=f(x)-P_n(x)</m>, é
+	  dado por
+	  <men xml:id="err_taylor">E_n(x)=\dfrac{f^{(n+1)}(\overline{x})}{(n+1)!}(x-x_0)^{n+1}.</men>
+	  Para verificar isto basta aplicar sucessivamente o <xref
+	  ref="teo_cauchy" /> para as funções <m>E_n(x)</m> e
+	  <m>g(x)=(x-x_0)^{n+1}</m> e suas derivadas, observando que
+	  <m>E_n^{(k)}(x_0)=g^{(k)}(x_0)=0</m> para todo
+	  <m>k\in\{1,\ldots,n\}</m> e que <m>g^{(n+1)}(x)=(n+1)!</m>.
+	</p>
+	<p>
+	  No exercício em questão temos <m>n=2</m>,
+	  <m>f(x)=\sqrt[3]{x}</m>, e <m>x_0=8</m>. Com isso,
+	  <m>f'(x)=\dfrac{1}{3x^{2/3}}</m>,
+	  <m>f''(x)=\dfrac{-2}{9x^{5/3}}</m> e
+	  <m>f'''(x)=\dfrac{10}{27x^{8/3}}</m> e então <me>f(8)=2,\qquad
+	  f'(8)=\frac{1}{12}\qquad\text{e}\qquad
+	  f''(8)=-\dfrac{1}{144}.</me>
+	</p>
+	<p>
+	  Logo,
+	  <m>P_2(x)=f(8)+f'(8)(x-8)+\dfrac{f''(8)}{2!}(x-8)^2=2+\dfrac{x-8}{12}
+	  -\dfrac{(x-8)^2}{144}</m>
+	  e assim, <me>\boxed{\sqrt[3]{8.2}=f(8.2)\approx
+	  P_2(8.2)=2+\frac{8.2-8}{12}-\frac{(8.2-8)^2}{288}=\dfrac{14519}{7200}.}</me>
+	</p>
+	<p>
+	  Para estimar o erro nesta aproximação usaremos a expressão em
+	  <xref ref="err_taylor" />, que torna-se
+	  <me>E_2(8.2)=\dfrac{f'''(\overline{x}}{3!}(8.2-8)^2,</me> onde
+	  <m>\overline{x}\in (8,8.2)</m>. A função <m>f'''(x)</m> é
+	  estritamente descrescente nesse intervalo e portanto <me>
+	  \dfrac{10}{27\times 2^8}=f'''(8)&gt;f'''(\overline{x})&gt;
+	  f'''(8.2)&gt;f'''(9)=\dfrac{10}{3^8\times\sqrt[3]{3}}.</me>
+	  Daí, multiplicando toda a desigualdade acima por
+	  <m>\dfrac{(8.2-8)^3}{3!}=\dfrac{8}{3!\times 10^3}</m>, a fim
+	  de transformar o termo do meio no erro, <me>\dfrac{8\times
+	  10}{3!\times 10^3\times 27\times 2^8}&gt;E_2(8.2)&gt;
+	  \dfrac{8\times 10}{3!\times
+	  10^3\times3^8\times\sqrt[3]{3}}.</me> Simplificando,
+	  <m>\dfrac{8\times 10}{3!\times 10^3\times 27\times
+	  2^8}&lt;\dfrac{1}{2^9\times 10^3}&lt;\dfrac{1}{5\times
+	  10^5}=2\times 10^{-6}</m> e, usando que <m>\sqrt[3]{3}&lt;
+	  2</m>, <m>\dfrac{8\times 10}{3!\times
+	  10^3\times3^8\times\sqrt[3]{3}}&gt;\dfrac{1}{50\times
+	  3^9}&gt;1\times 10^{-6}</m>. Logo <me>\boxed{1\times
+	  10^{-6}&lt;E_2(8.2)&lt;2\times 10^{-6}.}</me>
+	  <figure xml:id="fig_taylor">
+	    <caption>O gráfico de <m>f(x)=\sqrt[3]{x}</m> e <m>P_2(x)</m>,
+	    centrado em <m>x_0=8</m>.</caption>
+	    <image xml:id="taylor" width="50%">
+	      <description>A parabola</description>
+	      <sageplot>
+		plot(x^(1/3),(x,0,12),color='blue')+plot(2+(x-8)/12-(x-8)^2/288,(x,-1,12),color='red')
+	      </sageplot>
+	    </image>
+	  </figure>
+	</p>
+
+	<p>
+	  Para "verificar" nossas estimativas, usamos uma boa
+	  calculadora e obtemos
+	  <md>
+	    <mrow>\dfrac{14519}{7200}\amp = 2.01652777\ldots</mrow>
+	    <mrow>\sqrt[3]{8.2}      \amp = 2.01652967\ldots,</mrow>
+	  </md>
+	  mostrando que a diferença entre os valores aparece somente na
+	  sexta casa decimal (<m>E_2(8.2)&gt; 1\times 10^{-6}</m>), mas
+	  o dígito da diferença nessa casa não é maior ou igual a
+	  <m>2</m> (<m>E_2(8.2)&lt;2\times 10^{-6}</m>).
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise number="7" xml:id="teste_segder">
+      <statement>
+	<p>Seja <m>f\colon]a,b[\to\R</m> uma função de classe
+	<m>\mathscr{C}^2</m> e suponha que <m>x_0\in]a,b[</m> seja um
+	ponto crítico de <m>f</m>. Mostre que:
+	<ol marker="a">
+	  <li>se <m>f'' (x_ 0)&gt;0</m>, então <m>x_ 0</m> é um ponto de
+	  mínimo local de <m>f</m>;</li>
+	  <li>se <m>f'' (x_ 0)&lt;0</m>, então <m>x_ 0</m> é um ponto de
+	  máximo local de <m>f</m>.</li>
+	</ol>
+	</p>
+	<remark>
+	  <p>Note que este é mais um caso onde a recíproca é falsa: se
+	  <m>x_0</m> é um ponto de mínimo local de <m>f</m> no interior
+	  de um intervalo aberto, não é verdade que necessariamente
+	  devemos ter <m>f''(x_0)&gt;0</m>. Um exemplo é o ponto
+	  <m>x_0=0</m> que é de mínimo para <m>f(x)=x^4</m>.</p>
+	  </remark>
+      </statement>
+      <hint>
+	<p>
+          Como fica a fórmula de Taylor de ordem <m>2</m> para
+	  <m>f(x)</m>, em torno do ponto crítico <m>x_0</m>? Como a
+	  continuidade (preservação do sinal) de <m>f''</m> ajuda a
+	  fechar a questão?
+	</p>
+      </hint>
+      <solution>
+	<p>Lembrando, a fórmula de Taylor de ordem para <m>f</m>, em
+	torno de <m>x_0</m>, é
+	<me>f(x)=f(x_0)+f'(x_0)(x-x_0)+\dfrac{f''(\overline{x})}{2}(x-x_0)^2,</me>
+	para algum <m>\overline{x}</m> entre <m>x_0</m> e <m>x</m>. Como
+	<m>x_0</m> é ponto crítico de <m>f</m>, então <m>f'(x_0)=0</m> e
+	a expressão acima reduz-se a <men
+	xml:id="taylor_crit">f(x)=f(x_0)+\dfrac{f''(\overline{x})}{2}(x-x_0)^2.</men>
+	<ol marker="a">
+	  <li>se <m>f'' (x_ 0)&gt;0</m>, então, da continuidade de
+	  <m>f''</m>, temos que <m>f'' (x)&gt;0</m>, para todo <m>x</m>
+	  em algum intervalo aberto <m>I</m>, contido em <m>]a,b[</m> e centrado
+	  em <m>x_0</m>. Desta forma, se <m>x\in I</m>, então, na expressão
+	  <xref ref="taylor_crit" />, temos <m>f''(\overline{x})&gt;0</m>,
+	  donde
+	  <me>f(x)=f(x_0)+\dfrac{f''(\overline{x})}{2}(x-x_0)^2&gt;f(x_0),</me>
+	  mostrando que <m>x_0</m> é ponto de mínimo local de
+	  <m>f</m>.</li>
+	  <li>É um argumento análogo ao anterior, redija-o para ter
+	  certeza de que entendeu.</li>
+	</ol>
+	</p>
+      </solution>
+    </exercise>
+
+    
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

@@ -1,0 +1,231 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section  xml:id="ap_maxmincond" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Máximos e mínimos condicionados</title>
+
+    <introduction>
+    <p>Agora vamos tratar do caso análogo ao do estudo de máximos e
+    mínimo de funções de uma variável real em intervalos
+    fechados. Começamos estabelecendo uma generalização para intervalos
+    em domínios de dimensão mais alta.</p>
+  </introduction>
+
+  <definition xml:id="compacto">
+    Um conjunto <m>A\subseteq\R^n</m> é <term>compacto</term> se for
+    fechado e limitado. Por <term>fechado</term> entendemos um conjunto
+    cujo complementar é aberto (todos os pontos de um aberto são pontos
+    interiores, ou seja, centros de bolas abertas inteiramente contidas
+    nele). Um conjunto é <term>limitado</term> se existe uma bola
+    aberta centrada na origem que o contém.
+  </definition>
+
+  <p>Como no Cálculo 1, temos o </p>
+  
+  <theorem xml:id="teo_wei">
+    <statement>
+      <p>Se <m>f\colon A\subseteq\R^2\to\R</m> é uma função contínua no
+      compacto <m>A</m> então existem <m>(x_0,y_0)</m> e
+      <m>(x_1,y_1)</m> em <m>A</m> tais que <me>f(x_0,y_0)\leq
+      f(x,y)\leq f(x_1,y_1).</me></p>
+      <p>Em outras palavras, toda função contínua definida num compacto
+      assume valores máximo e mínimo (globais).</p>
+    </statement>
+  </theorem>
+
+  <p>A prova deste resultado é um tanto técnica e pode ser negligenciada
+  (momentaneamente).
+  </p>
+
+  <example>
+    <statement>Decida se a função <m>f(x,y)=xy</m>, definida no
+    conjunto <m>A=\big\{(x,y)\in\R^2\colon x^2+y^2\leq 1\big\}</m>
+    admite valor máximo ou mínimo. Em caso afirmativo determine os
+    pontos onde isso ocorre.</statement>
+    <solution>
+      <p>Observamos que <m>f</m> é contínua (mais que isso até) e o
+      conjunto <m>A</m> é compacto. Pelo <xref ref="teo_wei" /> acima,
+      temos que a função assume valor máximo e também valor mínimo em
+      <m>A</m>.</p>
+      <p>Para determinar os pontos onde isso ocorre, notamos que o
+      conjunto <m>A</m> tem interior não vazio, que é o disco "aberto"
+      <m>\big\{(x,y)\in\R^2\colon x^2+y^2&lt; 1\big\}</m>,  e uma fronteira
+      não vazia, que é a circunferência <m>\big\{(x,y)\in\R^2\colon
+      x^2+y^2= 1\big\}</m>. No interior, os candidatos a máximo e mínimo
+      são determinados usando-se o <xref ref="teo_crit" />: <me>\nabla
+      f(x,y)=(y,x)=(0,0)\iff (x,y)=(0,0),</me> onde temos
+      <m>\boxed{f(0,0)=0}</m>.</p>
+      <p>A fronteira, neste caso especial, pode ser parametrizada por
+      <m>\gamma(t)=(\cos t, \sin t)</m>, <m>t\in [0,2\pi]</m>. Sobre os
+      pontos da froteira temos que <m>f</m> se comporta como
+      <me>f\big(\gamma(t)\big)=\cos t \sin t, \quad t\in [0,2\pi],</me>
+      que é uma função contínua de uma variável real definida num
+      intervalo fechado. Sabemos o que fazer!</p>
+      <p>Se <m>t_0</m> é ponto de máximo ou mínimo de
+      <m>f\big(\gamma(t)\big)</m> no interior do intervalo, devemos ter
+      <m>(f\circ\gamma)'(t_0)=0</m>. Nesse caso podemos calcular
+      explicitamente: <me>(f\circ\gamma)'(t_0)=0\iff\cos(2t)=0\iff
+      t=\dfrac{k\pi}{4}, k=1,3,5,7.</me> Anotamos os valores nesses
+      pontos:
+      <me>f\big(\gamma(\pi/4)\big)=\boxed{f(\sqrt{2}/2,\sqrt{2}/2)=1/2=f(-\sqrt{2}/2,-\sqrt{2}/2)}=f\big(\gamma(5\pi/4)\big)</me>
+      <me>f\big(\gamma(3\pi/4)\big)=\boxed{f(-\sqrt{2}/2,\sqrt{2}/2)=-1/2=f(\sqrt{2}/2,-\sqrt{2}/2)}=f\big(\gamma(7\pi/4)\big)</me></p>
+      <p>Comparando os valores em destaque temos que o valor máximo de
+      <m>f</m> em <m>A</m> é <m>1/2</m> e o mínimo é <m>-1/2</m>,
+      atingidos nos pontos indicados acima. O ponto <m>(0,0)</m> é um
+      candidato onde a função não atingiu seu valor máximo nem seu valor
+      mínimo (você já sabia isso da seção anterior).</p>
+      <p>Note que se usássemo a regra da cadeia para derivar
+      <m>f\circ\gamma</m>, observaríamos que os candidatos a máximo e
+      mínimo são aqueles onde o gradiente de <m>f</m> é ortogonal a
+      <m>\gamma'</m>. Guarde isso!</p> 
+    </solution>
+  </example>
+
+  <p>Considerando o exemplo acima (principalmente a observação ao final
+  da solução), assista o vídeo abaixo para motivar os resultados
+  seguintes.
+  <figure xml:id="vid_maxmincond">
+    <caption>Máximos e mínimos condicionados.</caption>
+    <video youtube="18GrQBXVlJ4" aspect="16:9" />
+  </figure>
+  </p>
+
+  <p>Agora estamos em condições de enunciar os resultados sobre máximos
+  e mínimos de funções a várias (duas ou três) variáveis com restrições
+  dadas por conjuntos de nível ou interseções deles.</p>
+  
+  <theorem xml:id="teo_lag2">
+    <statement>
+      Sejam <m>f,g\colon A\subseteq\R^2\to\R</m> de classe
+      <m>\mathscr{C}^1</m> e <m>B=\big\{(x,y)\in A\colon
+      g(x,y)=0\big\}</m>, com <m>\nabla g(x,y)\neq 0</m>, para todo
+      <m>(x,y)\in B</m>. Se <m>(x_0,y_0)\in B</m> é um ponto de máximo
+      ou mínimo local de <m>f</m> sobre <m>B</m> (detalhes do que é isso
+      ficam claros na demonstração), então <m>\big\{\nabla
+      f(x_0,y_0),\nabla g(x_0,y_0)\big\}</m> é um conjunto linearmente
+      dependente.
+    </statement>
+    <proof>
+      <p>
+	Apresentamos aqui apenas um esboço da demonstração. Como, em
+	particular, <m>\nabla g(x_0,y_0)\neq 0</m>, e <m>g</m> é de
+	classe <m>\mathscr{C}^1</m>, usamos o Teorema da Função
+	Implícita (veja <xref ref="prop_curvaniv" /> e a observação
+	sobre sua recíproca ao fim daquela seção) para exibir uma curva
+	de classe <m>\mathscr{C}^1</m>, <m>\gamma\colon I\to\R^2</m>,
+	com <m>I</m> um intervalo aberto contendo <m>t_0</m> tal que
+	<m>\gamma(t_0)=(x_0,y_0)</m>. Sabemos, inclusive, que tal curva
+	é o gráfico de <m>y</m> como função de <m>x</m> ou vice-versa).
+      </p>
+      <p>Tratamos aqui apenas o caso de máximo local (o outro é
+      análogo). Sendo <m>(x_0,y_0)\in B</m> é um ponto de máximo local
+      de <m>f</m> sobre <m>B</m>, ou seja,
+      <m>f\big(\gamma(t_0)\big)=f(x_0,y_0)\geq f\big(\gamma(t)\big)</m>
+      para todo <m>t\in J</m>, onde <m>J</m> é um intervalo aberto que
+      contém <m>t_0</m> e está contido em <m>I</m>, temos que
+      <me>(f\circ\gamma)'(t_0)=0\iff \langle\nabla
+      f(x_0,y_0),\gamma'(t_0)\rangle=0\iff \boxed{\nabla
+      f(x_0,y_0)\perp\gamma'(t_0)}.</me></p> <p>Agora, como
+      <m>\gamma</m> parametriza uma parte da curva de nível <m>0</m> de
+      <m>g</m> então, do <xref ref="cor_cadeiagradniv" />, temos que
+      <m>\boxed{\nabla g(x_0,y_0)\perp\gamma'(t_0)}</m>. As duas
+      expressões em destaque garantem, uma vez que estamos em
+      <m>\R^2</m>, que <me>\nabla f(x_0,y_0)\parallel\nabla
+      g(x_0,y_0)</me>, como desejado.</p>
+    </proof>
+    <remark>Lembramos que <m>\{\vec{u},\vec{v}\}</m> é linearmente
+    dependente em <m>\R^2</m> se, e somente se, a matriz <m>2\times
+    2</m>, com as coordenadas de tais vetores nas linhas, tem
+    determinante nulo.</remark>
+  </theorem>
+
+  <p>Uma outra maneira de enxergar esse resultado é que, num ponto de
+  máximo ou de mínimo de <m>f</m> sobre uma curva de nível de <m>g</m>,
+  a projeção de <m>\nabla f</m> na direção tangente à tal curva de nível
+  é nula. Em outras palavras, alguém que se desloca sobre a curva de
+  nível de <m>g</m> "não sente" as derivadas de <m>f</m> quando passa
+  por um de seus pontos de máximo ou mínimo.</p>
+
+  <p>Importante ressaltar que, como já estamos acostumados, não vale a
+  recíproca, ou seja, se os gradientes são paralelos num ponto, não
+  temos garantia que esse ponto é um de máximo ou mínimo local sobre
+  aquela restrição.</p>
+
+  <p>Um exemplo interessante onde o teorema ajuda, mas não é suficiente
+  para encontrar a solução está <url
+  href="./external/lagrange.pdf">aqui</url>.</p>
+  
+  <p>De maneira análoga, o resultado acima vale para máximos ou mínimos
+  locais de funções a três variáveis sobre uma superfície de nível de
+  outra função:</p>
+  
+  <theorem xml:id="teo_lag31">
+    <statement>
+      Sejam <m>f,g\colon A\subseteq\R^3\to\R</m> de classe
+      <m>\mathscr{C}^1</m> e <m>B=\big\{(x,y,z)\in A\colon
+      g(x,y,z)=0\big\}</m>, com <m>\nabla g(x,y,z)\neq 0</m>, para todo
+      <m>(x,y,z)\in B</m>. Se <m>(x_0,y_0,z_0)\in B</m> é um ponto de
+      máximo ou mínimo local de <m>f</m> sobre <m>B</m>, então
+      <m>\big\{\nabla f(x_0,y_0,z_0),\nabla g(x_0,y_0,z_0)\big\}</m> é
+      um conjunto linearmente dependente.
+    </statement>
+    <proof>
+      <p>A ideia aqui é essencialmente a mesma que a da proposição
+      anterior, observando que <m>(f\circ\gamma)'(t_0)=0</m> para toda
+      curva <m>\gamma</m> cuja imagem está contida na superfície de
+      nível <m>0</m> de <m>g</m>, <m>B=g^{-1}(0)</m>.</p>
+      <p>Isso mostra, como visto na <xref ref="def_planotangente" />,
+      que <m>\nabla f(x_0,y_0,z_0)</m> é ortogonal ao plano tangente à
+      <m>B</m> em <m>(x_0,y_0,z_0)</m>, assim como <m>\nabla
+      g(x_0,y_0,z_0)</m> é ortogonal ao plano tangente à <m>B</m> nesse
+      ponto. Dois vetores de <m>\R^3</m> ortogonais a uma mesmo plano
+      devem ser paralelos.</p>
+    </proof>
+    <remark>Lembramos que <m>\{\vec{u},\vec{v}\}</m> é linearmente
+    dependente em <m>\R^3</m> se, e somente se, o produto vetorial
+    <m>\vec{u}\wedge\vec{v}=\vec{0}</m>.</remark>
+  </theorem>
+
+  <p>Finalmente, estabelecemos o resultado para pontos de máximo ou
+  mínimo local sobre a interseção de duas superfícies de nível de duas
+  outras funções:</p>
+  
+  <theorem xml:id="teo_lag32">
+    <statement>
+      Sejam <m>f,g,h\colon A\subseteq\R^3\to\R</m> de classe
+      <m>\mathscr{C}^1</m> e <me>B=\big\{(x,y,z)\in A\colon
+      g(x,y,z)=h(x,y,z)=0\big\}</me>, com <m>\nabla g(x,y,z)\wedge\nabla
+      h(x,y,z)\neq\vec{0}</m>, para todo <m>(x,y,z)\in B</m>. Se
+      <m>(x_0,y_0,z_0)\in B</m> é um ponto de máximo ou mínimo local de
+      <m>f</m> sobre <m>B</m>, então <m>\big\{\nabla
+      f(x_0,y_0,z_0),\nabla g(x_0,y_0,z_0),\nabla
+      h(x_0,y_0,z_0)\big\}</m> é um conjunto linearmente dependente.
+    </statement>
+    <proof>
+      <p>
+      Nada inédito: como <m>g</m> e <m>h</m> são de classe
+      <m>\mathscr{C}^1</m>, a condição <m>\nabla
+      g(x_0,y_0,z_0)\wedge\nabla h(x_0,y_0,z_0)\neq\vec{0}</m> garante,
+      através do Teorema da Função Implícita, a existência de uma função
+      de classe <m>\mathscr{C}^1</m>, <m>\gamma\colon I\to\R^3</m>, onde
+      <m>I</m> é um intervalo aberto contendo <m>t_0</m> tal que
+      <m>\gamma(t_0)=(x_0,y_0,z_0)</m> e <m>\gamma(t)\in
+      B=g^{-1}(0)\bigcap h^{-1}(0)</m>. Já sabemos que
+      <me>\gamma'(t)\parallel \nabla g\big(\gamma(t)\big)\wedge\nabla
+      h\big(\gamma(t)\big)</me>.</p>
+      <p>Se <m>(x_0,y_0,z_0)</m> é máximo (ou mínimo) local de <m>f</m>
+      ao longo de <m>B</m>, então <me>(f\circ\gamma)'(t_0)=0\iff
+      \langle\nabla f(x_0,y_0),\gamma'(t_0)\rangle=0\iff \boxed{\nabla
+      f(x_0,y_0,z_0)\perp\gamma'(t_0)}.</me></p>
+      <p>A condição destacada acima, e a hipótese inicial sobre
+      independência linear dos gradientes de <m>g</m> e <m>h</m>,
+      garantem que <me>\nabla f(x_0,y_0,z_0)\in\big[\nabla
+      d(x_0,y_0,z_0),\nabla h(x_0,y_0,z_0)\big]</me>, ou seja,
+      <m>\big\{\nabla f(x_0,y_0,z_0)m\nabla f(x_0,y_0,z_0),\nabla
+      f(x_0,y_0,z_0)\big\}</m> é linearmente dependente, como desejado.</p>
+    </proof>
+    <remark>Lembramos que <m>\{\vec{u},\vec{v},\vec{w}\}</m> é linearmente
+    dependente em <m>\R^3</m> se, e somente se, o produto misto
+    <m>[\vec{u},\vec{v},\vec{w}]=\langle
+    \vec{u}\wedge\vec{v},\vec{w}\rangle=0</m>.</remark>
+  </theorem>
+</section>

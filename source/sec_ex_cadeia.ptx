@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_cadeia" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Regras da Cadeia</title>
+
+  <exercises xml:id="ex_cadeia" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="2" xml:id="cadeia2">
+      <statement>
+	<p>Sejam <m>f\colon\mathbb R^2\to\R</m> diferenciável em
+	<m>\R^2</m>, com <m>\nabla f(-2,-2)=(a,-4)</m> e
+	<me>g(t)=f(2t^3-4t, t^4-3t).</me> Determine <m>a</m> para que a
+	reta tangente ao gráfico de <m>g</m> no ponto de abscissa
+	<m>1</m> seja paralela à reta <m>y=2x+3</m>.
+	</p>
+      </statement>
+      <hint>
+	<p>Você consegue ver <m>g(t)</m> como uma composta para aplicar
+	a regra da cadeia? E mais: qual a condição para que duas retas
+	sejam paralelas?</p>
+      </hint>
+      <answer>
+	<p><m>a=3</m></p>
+      </answer>
+      <solution>
+	<p>A reta tangente ao gráfico de <m>g</m> no ponto de abscissa
+	<m>1</m> ser paralela à reta <m>y=2x+3</m> significa que
+	<m>g'(1)=2</m> (retas paralelas têm o mesmo coeficiente angular
+	e o coeficiente angular da reta tangente ao gráfico de uma
+	função real derivável é o valor de sua derivada no ponto de
+	tangência).</p>
+	<p>Isto posto, notamos que <m>g(t)=f\big(\gamma(t)\big)</m>,
+	onde <m>\gamma(t)=(2t^3-4t, t^4-3t)</m>. Usando o <xref
+	ref="teo_cadeia" /> e as observações iniciais, temos que
+	<me>2=g'(1)=\Big\langle \nabla
+	f\big(\gamma(1)\big),\gamma'(1)\Big\rangle.</me></p>
+	<p>Como <m>\gamma(1)=(-2,-2)</m> e
+	<m>\gamma'(t)=(6t^2-4,4t^3-3)\implies \gamma'(1)=(2,1)</m>,
+	temos <me>2=\big\langle \nabla
+	f(-2,-2),(2,1)\big\rangle=2a-4\implies \boxed{a=3}.</me></p>
+      </solution>
+    </exercise>
+
+    <exercise number="6" xml:id="cadeia6">
+      <statement>
+	<p> Seja <m>u=u(x,y)</m> função de classe <m>\mathscr{C}^2</m>
+	em <m>\R^2</m> e defina
+	<m>v(r,\theta)=u(r\cos\theta,r\sin\theta)</m>. Verifique que
+	<me>\dfrac{\partial^2 v}{\partial
+	r^2}(r,\theta)+\dfrac{1}{r}\dfrac{\partial v}{\partial
+	r}(r,\theta)+\dfrac{1}{r^2}\dfrac{\partial^2
+	v}{\partial\theta^2}(r,\theta)=\Delta
+	u(r\cos\theta,r\sin\theta),</me> sendo <m>\Delta u = u_{xx} +
+	u_{yy}</m> , o Laplaciano em coordenadas cartesianas da função
+	<m>u</m>.</p>
+      </statement>
+      <hint>
+	<p>Aplicação direta da Regra da Cadeia na segunda derivada, veja
+	a fórmula <xref ref="eq_cadeiadersegc2" />.</p>
+      </hint>
+      <solution>
+	<p>Basta aplicar (com calma e coragem!) a Regra da Cadeia,
+	usando que <me>x(r,\theta)=r\cos\theta\quad\text{e}\quad
+	y(r,\theta)=r\sin\theta.</me> Escrevendo, apenas desta vez,
+	todos os pontos de aplicação, temos
+	<me>
+	  \dfrac{\partial v}{\partial r}(r,\theta)
+	  =\dfrac{\partial u}{\partial x}(r\cos\theta,r\sin\theta)
+	  \dfrac{\partial x}{\partial r}(r,\theta)+
+	  \dfrac{\partial u}{\partial y}(r\cos\theta,r\sin\theta)
+	  \dfrac{\partial y}{\partial r}(r,\theta).
+	</me>
+	Sinteticamente, temos
+	<men xml:id="cadeia6_vr">
+	  v_r=u_x\cos\theta+u_y\sin\theta.</men>
+	</p>
+	<p>Derivando mais uma vez em <m>\theta</m>, usamos a regra do
+	produto em cada parcela e também a cadeia:
+	<me>v_{rr}=(u_{xx}\cos\theta+u_{xy}\sin\theta)\cos\theta 
+	  +(u_{yx}\cos\theta+u_{yy}\sin\theta)\sin\theta,
+	</me>
+	ou seja,
+	<men xml:id="cadeia6_vrr">v_{rr}=u_{xx}\cos^2\theta+
+	u_{yy}\sin^2\theta+2u_{xy}\sin\theta\cos\theta,</men> 
+	pois <m>u</m> é uma função de classe <m>\mathscr{C}^2</m> (veja
+	o <xref ref="teo_schwarz" />).
+	</p>
+	
+	<p>Agora, derivando em <m>\theta</m>:
+	<me>v_\theta =
+	u_xx_\theta+u_yy_\theta=-u_xr\sin\theta+u_yr\cos\theta,</me>
+	e mais uma vez
+	<md>
+	  <mrow number="no">v_{\theta\theta}=(-u_{xx}r\sin&amp;\theta+u_{xy}r\cos\theta)(-r\sin\theta)-u_xr\cos\theta</mrow>
+	  <mrow>&amp;+(-u_{yx}r\sin\theta+u_{yy}r\cos\theta)r\cos\theta-u_yr\sin\theta,</mrow>
+	</md>
+	ou seja,
+	<men xml:id="cadeia6_vtt">v_{\theta\theta}=u_{xx}r^2\sin^2\theta+
+	u_{yy}r^2\cos^2\theta-2u_{xy}r^2\cos\theta\sin\theta-
+	u_xr\cos\theta-u_yr\sin\theta.</men>
+	</p>
+	<p>Dividindo <xref ref="cadeia6_vtt" /> por <m>r^2</m>, <xref
+	ref="cadeia6_vr" /> por <m>r</m> e somando com <xref
+	ref="cadeia6_vrr" />, temos
+	<me>v_{rr}+\dfrac{v_r}{r}+\dfrac{v_{\theta\theta}}{r^2}=u_{xx}+u_{yy},</me>
+	como desejado.
+	</p>
+      </solution>
+    </exercise>
+
+    <remark>
+      <p>O sistema de coordenadas <m>(r,\theta)</m>, apresentado no
+      <xref ref="cadeia6" />, é chamado de <em>sistema de coordenadas
+      polares</em>, como pólo na origem. As relações
+      <m>x=r\cos\theta</m> e <m>y=r\sin\theta</m> podem ser visualizadas
+      na figura abaixo.
+      <figure xml:id="fig_polares">
+	<caption>Coordenadas polares e cartesianas.</caption>
+	<image width="90%" xml:id="polares">
+	  <latex-image>
+	    \begin{tikzpicture}
+	    \filldraw[fill=green,fill opacity=0.25,draw=red, dashed] (-4.5,0) rectangle (-2.5,1.5);
+	    \draw[->] (-5,0) -- (-2,0) node[below] {$r$};
+            \draw[->] (-4.5,-.5) -- (-4.5,2) node[right] {$\theta$};
+	    \filldraw (-3.5,1) circle (1pt);
+	    \draw[orange] (-2.5,1) -- (-4.5,1) node[left,black]{$\theta_0$};
+	    \draw[blue] (-3.5,1.5)--(-3.5,0) node[below,black]{$r_0$};
+	    
+	    \filldraw[fill=green,fill opacity=0.25,draw=red, dashed] (1.5,0) circle (1);
+	    \draw[->] (-.5,0) -- (3.5,0) node[below] {$x$};
+            \draw[->] (1.5,-2) -- (1.5,2) node[right] {$y$};
+            \filldraw ({1.5-sqrt(2)/4},{-sqrt(2)/4}) circle (1pt);
+	    \draw[blue] (1.5,0) circle (1/2);
+	    \draw[orange] (1.5,0) -- ({1.5-sqrt(2)/2},{-sqrt(2)/2});
+	    \end{tikzpicture}
+	  </latex-image>
+	</image>
+      </figure>
+      </p>
+      
+      <p>Uma aplicação interessante desse sistema é a numeração das
+      rodovias radiais e transversais do estado de São Paulo, como pode
+      ser verificado nas páginas 11 e 12 deste <url 
+          href="https://www.der.sp.gov.br/Website/Arquivos/MALHARODOVIARIA/codificacao.pdf"
+          visual="der.sp.gov.br/Website/Arquivos/MALHARODOVIARIA/codificacao.pdf">
+          documento</url>.</p>
+    </remark>
+
+    
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

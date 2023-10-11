@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercício</span><span class="space"> </span><span class="codenumber">2.d<span class="period">.</span></span>
+</h4>
+<div class="para">Calcule, caso exista, <span class="process-math">\(\lim\limits_{(x,y)\to(1,1)}
+x^2\ln(3x^2+y^2)\arctan\big(\dfrac{1}{y^2-x^2}\big)\text{.}\)</span> Justifique, caso não exista.</div>
+<div class="solutions">
+<details class="hint solution-like"><summary><span class="type">Dica</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para">Será que temos aqui uma indeterminação, como no exercício acima?</div></div></details><details class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">Não existe.</div></div></details><details class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Seguindo a ideia da dica, notamos que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{(x,y)\to(1,1)}
+x^2\ln(3x^2+y^2)=\ln(4).
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Para o termo <span class="process-math">\(\arctan\big(\dfrac{1}{y^2-x^2}\big)\text{,}\)</span> consideramos a curva <span class="process-math">\(\gamma(t)=(t,1)\text{,}\)</span> onde temos os limites laterais</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_limcurvas.html">
+\begin{equation*}
+\lim\limits_{t\to
+1^\pm}\arctan\big(\gamma(t)\big)=\lim\limits_{t\to
+1^\pm}\arctan\big(\dfrac{1}{1-t^2}\big)=\mp\frac{\pi}{2}.
+\end{equation*}
+</div>
+<div class="para">O <a href="" class="xref" data-knowl="./knowl/teo_limcurvas.html" title="Teorema A.3.8">Teorema A.3.8</a> garante que este fator não tem limite.</div>
+</div> <div class="para">Como a expressão original é composta pelo produto dos dois primeiros fatores, que tem limite não nulo, e o terceiro, que isoladamente não tem limite, o produto dos três fatores não pode ter limite.</div>
+</div></details>
+</div></article><span class="incontext"><a class="internal" href="sec_limcont.html#lim42d">em contexto</a></span>
+</body>
+</html>

@@ -1,0 +1,1423 @@
+\documentclass[a4paper,10pt,oneside,portuges]{article}
+\usepackage[left=2cm, right=2cm, top=2cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage[all]{xy}
+\usepackage{amsthm}
+\usepackage{textcomp}
+\usepackage{enumerate}
+\usepackage[noadjust]{cite}
+
+\makeatletter
+\def\th@plain{%
+  \thm@notefont{}% same as heading font
+  \itshape % body font
+}
+\def\th@definition{%
+  \thm@notefont{}% same as heading font
+  \normalfont % body font
+}
+\makeatother
+
+\newtheorem{teorema}{Teorema}[section] % reset theorem numbering for each chapter
+
+\newtheorem{definicao}[teorema]{Definição} % definition numbers are dependent on theorem numbers
+\newtheorem{exemplo}[teorema]{Exemplo}
+\newtheorem{proposicao}[teorema]{Proposição}
+%\newtheorem{teorema}[section]{Teorema}
+\newtheorem{corolario}[teorema]{Corolário}
+\newtheorem{obs}[teorema]{Observação}
+\newtheorem{lema}[teorema]{Lema}
+\newtheorem{conjectura}[teorema]{Conjectura}
+
+\newtheorem*{martin}{Axioma de Martin}
+
+\renewcommand{\thefootnote}{\Roman{footnote}}
+
+\newcommand{\funcaoponto}[5]{
+\begin{array}{rl}
+#1 \, \colon \: #2 \!\!\!\! &\longrightarrow #3 \\
+#4 \!\!\!\!&\longmapsto #5\,.
+\end{array}
+}
+\newcommand{\funcaovirg}[5]{
+\begin{array}{rl}
+#1 \, \colon \: #2 \!\!\!\! &\longrightarrow #3 \\
+#4 \!\!\!\!&\longmapsto #5\,,
+\end{array}
+}
+
+\newcommand{\funcao}[5]{
+\begin{array}{rl}
+#1 \, \colon \: #2 \!\!\!\! &\longrightarrow #3 \\
+#4 \!\!\!\!&\longmapsto #5\,
+\end{array}
+}
+
+%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{document}
+
+\section{Diferenciabilidade}\label{secdifvel}
+
+\begin{teorema}\label{diferenciavelcontinua}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $p \in A$ e $f : A \to \mathbb{R}$ uma função. Se $f$ é diferenciável em $p$, então $f$ é contínua em $p$.
+\end{teorema}
+\begin{proof}
+Escrevendo $F(h,k)= f(p+(h,k))-f(p) - \frac{\partial f}{\partial x}(p)h - \frac{\partial f}{\partial y}(p)k$, a diferenciabilidade de $f$ em $p$ nos diz que
+$$\lim_{(h,k)\to (0,0)} \frac{F(h,k)}{\sqrt{h^2+k^2}} = 0.$$
+Logo,
+\begin{align*}
+\lim_{(h,k)\to (0,0)} [f(p+(h,k))-f(p)] &= \lim_{(h,k)\to (0,0)} \left[ \underbrace{\frac{F(h,k)}{\sqrt{h^2+k^2}}}_{\to 0}\underbrace{\sqrt{h^2+k^2}}_{\to 0}+ \frac{\partial f}{\partial x}(p)h + \frac{\partial f}{\partial y}(p)k \right] =0,
+\end{align*}
+o que prova que $f$ é contínua em $p$.
+\end{proof}
+
+O teorema a seguir fornece um critério simples para verificar se uma função é diferenciável em um determinado ponto $p$ de seu domínio: basta verificar que as derivadas parciais de $f$ existem em $p$ e, além disso, que ao menos uma delas existe em uma vizinhança de $p$ e é \emph{contínua} em $p$. Em particular, toda função de classe $\mathcal{C}^1$ é automaticamente diferenciável.
+
+\begin{teorema}\label{C1diferenciavel}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $(x_0,y_0) \in A$ e $f : A \to \mathbb{R}$ uma função. Suponha que $\frac{\partial f}{\partial x}$ exista em todos os pontos de $A$. Se $\frac{\partial f}{\partial x}$ é contínua em $(x_0,y_0)$ e se $\frac{\partial f}{\partial y}$ existe em $(x_0,y_0)$, então $f$ é diferenciável em $(x_0,y_0)$.
+\end{teorema}
+\begin{proof}
+Como $A$ é aberto, podemos escolher um número real $\delta > 0$ de modo que o quadrado
+$$I \times J =\; \underbrace{]x_0-\delta, x_0+\delta[}_{I}\;\times \;\underbrace{]y_0-\delta, x_0+\delta[}_{J}$$
+esteja contido em $A$. Fixado um ponto $(h,k) \neq (0,0)$ pertencente ao quadrado $]-\delta,\delta[\; \times\; ]-\delta, \delta[$, definimos a função $\varphi : I \to \mathbb{R}$ por
+\begin{align*}
+\varphi(x) &= f(x,y_0+k).
+\end{align*}
+Antes de mais nada, é importante observarmos que $\varphi$ está bem definida. Com efeito, nossa escolha de $\delta$ garante que $y_0 + k \in J$. Assim, se $x \in I$, então o ponto $(x,y_0+k)$ pertence a $I \times J$ e, portanto, pertence a $A$. Desta maneira, podemos calcular $f$ em $(x,y_0+k)$.
+
+Como, por hipótese, $\frac{\partial f}{\partial x}$ existe em todos os pontos de $A$, sabemos que $\varphi$ é derivável no intervalo $I$ e
+\begin{align*}
+\varphi'(x)&=\frac{\partial f}{\partial x}(x,y_0+k).
+\end{align*}
+Se $h \neq 0$, podemos aplicar o Teorema do Valor Médio a $\varphi$ para obter um número real $\overline{h}$ estritamente entre $x_0$ e $x_0+h$ satisfazendo
+\begin{align*}
+\varphi(x_0+h)-\varphi(x_0) &= \varphi'(\overline{h})h.
+\end{align*}
+Por outro lado, se $h = 0$, então
+$$\varphi(x_0+h)-\varphi(x_0)=0$$
+e podemos escolher $\overline{h} = x_0$. Em ambos os casos, concluímos que
+\begin{align*}
+f(x_0+h,y_0+k) - f(x_0,y_0+k) &= \frac{\partial f}{\partial x}(\overline{h},y_0+k)h.
+\end{align*}
+Deste modo, temos
+\begin{align*}
+f(x_0+h,y_0+k)-f(x_0,y_0) &= [f(x_0+h,y_0+k) - f(x_0,y_0+k)] + [f(x_0,y_0+k) - f(x_0,y_0) ]\\
+&= \frac{\partial f}{\partial x}(\overline{h},y_0+k)h + f(x_0,y_0+k) - f(x_0,y_0).
+\end{align*}
+Substituindo esta igualdade na expressão
+$$\frac{f(x_0+h,y_0+k)-f(x_0,y_0) -\frac{\partial f}{\partial x}(x_0,y_0)h - \frac{\partial f}{\partial y}(x_0,y_0)k}{\sqrt{h^2+k^2}},$$
+obtemos
+$$\frac{1}{\sqrt{h^2+k^2}} \left( \frac{\partial f}{\partial x}(\overline{h},y_0+k)h -\frac{\partial f}{\partial x}(x_0,y_0)h + f(x_0,y_0+k) - f(x_0,y_0)  - \frac{\partial f}{\partial y}(x_0,y_0)k\right).$$
+A expressão acima pode ser reescrita de uma forma mais conveniente como
+\begin{equation}\label{eqC1}
+\left(\frac{\partial f}{\partial x}(\overline{h},y_0+k) -\frac{\partial f}{\partial x}(x_0,y_0)\right)\frac{h}{\sqrt{h^2+k^2}} + \left(f(x_0,y_0+k) - f(x_0,y_0)- k\frac{\partial f}{\partial y}(x_0,y_0)\right) \frac{1}{\sqrt{h^2+k^2}}.
+\end{equation}
+
+Vamos calcular o limite de \eqref{eqC1} quando $(h,k)$ tende a $(0,0)$. Notemos que $\overline{h}$ tende a $x_0$ e $y_0+k$ tende a $x_0$. Decorre da continuidade de $\frac{\partial f}{\partial x}$  em $(x_0,y_0)$, portanto, que
+$$\frac{\partial f}{\partial x}(\overline{h},y_0+k) -\frac{\partial f}{\partial x}(x_0,y_0)$$
+tende a zero. Logo, como a expressão $\frac{h}{\sqrt{h^2+k^2}}$ é limitada, concluímos que o primeiro termo de \eqref{eqC1} tende a zero.
+
+Vamos analisar, agora, o segundo termo de \eqref{eqC1}. Notemos primeiramente que se $k=0$, então o segundo termo é igual a zero. Caso contrário, podemos colocar $k$ em evidência e escrever
+$$\left(f(x_0,y_0+k) - f(x_0,y_0)- k\frac{\partial f}{\partial y}(x_0,y_0)\right) \frac{1}{\sqrt{h^2+k^2}} = \left(\frac{f(x_0,y_0+k) - f(x_0,y_0)}{k}- \frac{\partial f}{\partial y}(x_0,y_0)\right) \frac{k}{\sqrt{h^2+k^2}}.$$
+Pela definição de derivada parcial, a expressão
+$$\frac{f(x_0,y_0+k) - f(x_0,y_0)}{k}- \frac{\partial f}{\partial y}(x_0,y_0)$$
+tende a zero. Novamente, $\frac{k}{\sqrt{h^2+k^2}}$ é limitada; logo, o segundo termo de \eqref{eqC1} também tende a zero.
+
+Isto significa que
+$$\lim_{(h,k) \to (0,0)} \frac{f(x_0+h,y_0+k)-f(x_0,y_0) -f_x(x_0,y_0)h - f_y(x_0,y_0)k}{\sqrt{h^2+k^2}} =0,$$
+ou seja, $f$ é diferenciável em $(x_0,y_0)$.
+\end{proof}
+
+
+
+
+\vskip 25pt
+
+\section{O Teorema de Schwarz}
+
+O Teorema de Schwarz garante que se $f$ é uma função que admite derivadas parciais de segunda ordem em um aberto $A$, então $\frac{\partial^2 f}{\partial x \partial y}$ e $\frac{\partial^2 f}{\partial y \partial x}$ coincidem em todos os pontos nos quais elas são contínuas. Em particular, se $f$ é de classe $\mathcal{C}^2$, então suas derivadas parciais mistas coincidem em todos os pontos. Vamos provar um teorema um pouco mais forte, que exige existência (e continuidade) apenas de uma das derivadas parciais mistas de $f$. 
+
+%Usaremos o seguinte resultado auxiliar envolvendo \emph{limites iterados}.
+%
+%\begin{lema}\label{limiterados}
+%Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$ e $(x_0,y_0) \in A$. Seja $f : A_0 \to \mathbb{R}$ uma função definida no aberto
+%$A_0 = \{ (x,y) \in A : x \neq x_0\;\; \text{e}\;\; y \neq y_0\}$. Suponha que exista $\delta > 0$ tal que $B((x_0,y_0);\delta) \subset A$ e, além disso, para todo número real $x \in \; ]x_0 - \delta, x_0 + \delta[, x \neq x_0$, temos
+%$$\lim_{y \to y_0} f(x,y) = L(x),$$
+%isto é, o limite de $f(x,y)$ quando $y$ tende a $y_0$ existe e é igual ao número real $L(x)$. Se
+%$$\lim_{(x,y) \to (x_0,y_0)} f(x,y) = L$$
+%então
+%$$\lim_{x \to x_0} \lim_{y \to y_0} f(x,y) = \lim_{x \to x_0} L(x) = L.$$
+%\end{lema}
+%\begin{proof}
+%Vamos provar, usando a definição de limite, que
+%$$\lim_{x \to x_0} L(x) = L.$$
+%
+%Seja $\delta > 0$ como no enunciado e fixemos $\varepsilon > 0$. Como
+%$$\lim_{(x,y) \to (x_0,y_0)} f(x,y) = L,$$
+%existe um número real $\delta_1$ satisfazendo $0 < \delta_1 < \delta$ e
+%\begin{equation}\label{eqiterado1}
+%|f(x,y)-L| < \frac{\varepsilon}{2},
+%\end{equation}
+%para todo $(x,y) \in A$ tal que $0 < \|(x,y)-(x_0,y_0)\| < \delta_1$.
+%
+%Fixemos, agora, um número real $x$ tal que $0 < |x-x_0| < \delta_1$ e seja
+%$$\Delta = \sqrt{\delta_1^2 - (x-x_0)^2} > 0.$$
+%Como, por hipótese,
+%$$\lim_{y \to y_0} f(x,y) = L(x),$$
+%sabemos que existe um número real $\overline{y}$ tal que $0 < |\overline{y}-y_0| < \Delta$ e
+ %\begin{equation}\label{eqiterado2}
+%|f(x,\overline{y})-L(x)| < \frac{\varepsilon}{2}.
+%\end{equation}
+%A escolha de $\Delta$ implica que
+%$$\|(x,\overline{y})-(x_0,y_0)\| = \sqrt{(x-x_0)^2 + (\overline{y}-y_0)^2} < \sqrt{(x-x_0)^2 + \Delta^2} = \delta_1$$
+%e, portanto, usando \eqref{eqiterado1}, concluímos que
+%$$|f(x,\overline{y}) - L| < \frac{\varepsilon}{2}.$$
+%Combinando esta desigualdade com \eqref{eqiterado2} e usando a Desigualdade Triangular, obtemos
+%$$|L(x)-L| \leq |L(x) - f(x,\overline{y})| + |f(x,\overline{y}) - L| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.$$
+%
+%Provamos, deste modo, que
+%$$0 < |x-x_0| < \delta_1 \implies |L(x)-L| < \varepsilon,$$
+%ou seja,
+%$$\lim_{x \to x_0} L(x) = L,$$
+%como queríamos.
+%\end{proof}
+%
+%Convém observarmos que a hipótese de existência do limite
+%$$\lim_{y \to y_0} f(x,y)$$
+%não pode ser descartada do enunciado do lema anterior. Por exemplo, sabemos que
+%$$\lim_{(x,y) \to (0,0)} x \sin\left(\frac{1}{y}\right) = 0,$$
+%mas o limite
+%$$\lim_{y \to 0} x \sin\left(\frac{1}{y}\right)$$
+%não existe se $x\neq 0$.
+
+\begin{teorema}[Teorema de Peano]\label{schwarz}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $(x_0,y_0) \in A$ e $f : A \to \mathbb{R}$ uma função. Suponha que as derivadas parciais $\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}$ e $\frac{\partial^2 f}{\partial y \partial x}$ existam em todos os pontos de $A$. Se $\frac{\partial^2 f}{\partial y \partial x}$ é contínua em $(x_0,y_0)$, então $\frac{\partial^2 f}{\partial x \partial y}(x_0,y_0)$ existe e, além disso,
+$$\frac{\partial^2 f}{\partial x \partial y}(x_0,y_0)= \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0).$$
+\end{teorema}
+\begin{proof}
+
+%Nosso objetivo é provar que o limite
+%$$\lim_{h \to 0} \frac{\frac{\partial f}{\partial y}(x_0+h,y_0)- \frac{\partial f}{\partial y}(x_0,y_0)}{h} = \lim_{h \to 0} \lim_{k \to 0} \frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)-f(x_0,y_0+k)+  f(x_0,y_0)}{hk}$$
+%existe e é igual a $\frac{\partial^2 f}{\partial y \partial x}(x_0,y_0)$. Pelo Lema \ref{limiterados}, basta mostrarmos que
+%\begin{equation}\label{schwnova1}
+%\lim_{(h,k) \to (0,0)} \frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)-f(x_0,y_0+k)+  f(x_0,y_0)}{hk} = \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0).
+%\end{equation}
+%Isto será feito usando o Teorema do Valor Médio.
+%
+%Como $A$ é aberto, podemos escolher $\delta > 0$ de modo que o quadrado
+%$$I \times J =\; \underbrace{]x_0-\delta, x_0+\delta[}_{I}\;\times \;\underbrace{]y_0-\delta, x_0+\delta[}_{J}$$
+%esteja contido em $A$. Fixados dois números reais $h,k$ satisfazendo $0< |h| < \delta$ e $0 < |k| < \delta$, considere a função $\varphi : I \to \mathbb{R}$ definida por
+%$$\varphi(x) = f(x,y_0+k) - f(x,y_0).$$
+%Por hipótese, $\frac{\partial f}{\partial x}$ existe em todos os pontos de $A$. Portanto, $\varphi$ é derivável e
+%$$\varphi'(x) = \frac{\partial f}{\partial x}(x,y_0+k) - \frac{\partial f}{\partial x}(x,y_0).$$
+%Aplicando o Teorema do Valor Médio a $\varphi$ no intervalo de extremos $x_0$ e $x_0+h$, obtemos um número real $\overline{h}$ estritamente entre $x_0$ e $x_0+h$ que satisfaz
+%$$\varphi'(\overline{h})h = \varphi(x_0+h)-\varphi(x_0),$$
+%isto é,
+%\begin{equation}\label{schwnova2}
+	%\frac{\partial f}{\partial x}(\overline{h},y_0+k) - \frac{\partial f}{\partial x}(\overline{h},y_0)= \frac{\varphi(x_0+h)-\varphi(x_0)}{h}.
+%\end{equation}
+%Considere, agora, a função $\Phi : J \to \mathbb{R}$ definida por
+%$$\Phi(y) = \frac{\partial f}{\partial x}(\overline{h},y).$$
+%Por hipótese, $\frac{\partial^2 f}{\partial y\partial x}$ existe em todos os pontos de $A$. Logo, $\Phi$ é derivável e
+%$$\Phi'(y) = \frac{\partial^2 f}{\partial y\partial x}(\overline{h},y).$$
+%Aplicando o Teorema do Valor Médio a $\Phi$ no intervalo de extremos $y_0$ e $y_0+k$, obtemos um número real $\overline{k}$ estritamente entre $y_0$ e $y_0+k$ que satisfaz
+%$$\Phi'(\overline{k})k = \Phi(y_0+k)-\Phi(y_0),$$
+%ou seja,
+%\begin{equation}\label{schwnova3}
+	 %\frac{\partial^2 f}{\partial y\partial x}(\overline{h},\overline{k}) = \frac{\frac{\partial f}{\partial x}(\overline{h},y_0+k) - \frac{\partial f}{\partial x}(\overline{h},y_0)}{k}.
+%\end{equation}
+%Usando \eqref{schwnova2} e \eqref{schwnova3}, concluímos que
+%\begin{align*}
+%\lim_{(h,k) \to (0,0)} \frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)-f(x_0,y_0+k)+  f(x_0,y_0)}{hk} &= \lim_{(h,k)\to (0,0)} \frac{\varphi(x_0+h)-\varphi(x_0)}{hk}\\
+%&= \lim_{(h,k)\to (0,0)} \frac{\frac{\partial f}{\partial x}(\overline{h},y_0+k) - \frac{\partial f}{\partial x}(\overline{h},y_0)}{k}\\
+%&= \lim_{(h,k)\to (0,0)} \frac{\partial^2 f}{\partial y\partial x}(\overline{h},\overline{k})\\
+%&= \frac{\partial^2 f}{\partial y\partial x}(x_0,y_0),
+%\end{align*}
+%onde a última igualdade decorre da continuidade de $\frac{\partial^2 f}{\partial y\partial x}$ em $(x_0,y_0)$ e do fato de $(\overline{h},\overline{k})$ tender a $(x_0,y_0)$ quando $(h,k)$ tende a zero.
+%
+%Aplicando o Lema \ref{limiterados}, obtemos
+%\begin{align*}
+%\lim_{h \to 0} \frac{\frac{\partial f}{\partial y}(x_0+h,y_0)- \frac{\partial f}{\partial y}(x_0,y_0)}{h} &= \lim_{h \to 0} \lim_{k \to 0} \frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)-f(x_0,y_0+k)+  f(x_0,y_0)}{hk}\\
+%&=\lim_{(h,k) \to (0,0)} \frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)-f(x_0,y_0+k)+  f(x_0,y_0)}{hk}\\
+%&= \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0),
+%\end{align*}
+%como desejávamos.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Demonstração por epsilon e delta%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Nosso objetivo é provar que o limite
+$$\lim_{h \to 0} \frac{\frac{\partial f}{\partial y}(x_0+h,y_0)- \frac{\partial f}{\partial y}(x_0,y_0)}{h}$$
+existe e é igual a $\frac{\partial^2 f}{\partial y \partial x}(x_0,y_0)$. Faremos isso usando a definição de limite e aplicando o Teorema do Valor Médio de maneira conveniente.
+
+Fixemos $\varepsilon > 0$. Como $\frac{\partial^2 f}{\partial y \partial x}$ é contínua em $(x_0,y_0)$, existe $\delta > 0$ tal que o quadrado
+$$I \times J =\; \underbrace{]x_0-\delta, x_0+\delta[}_{I}\;\times \;\underbrace{]y_0-\delta, x_0+\delta[}_{J}$$
+está contido em $A$ e, além disso, temos
+\begin{equation}\label{eqschw1}
+	\left| \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0) - \frac{\partial^2 f}{\partial y \partial x}(x,y) \right| < \frac{\varepsilon}{2},
+\end{equation}
+para todo $(x,y) \in I \times J$. 
+
+Mostraremos que se $0 < |h| < \delta$, então
+\begin{equation}\label{eqschwfinal}
+	\left| \frac{\frac{\partial f}{\partial y}(x_0+h,y_0)- \frac{\partial f}{\partial y}(x_0,y_0)}{h} - \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0)\right| < \varepsilon.
+\end{equation}
+
+Fixemos, então, um número real $h$ satisfazendo $0 < |h| < \delta$. Por definição de $\frac{\partial f}{\partial y}$, temos
+\begin{align*}
+\frac{\partial f}{\partial y}(x_0+h,y_0) &= \lim_{k \to 0} \frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)}{k},  \\ 
+\frac{\partial f}{\partial y}(x_0,y_0) &= \lim_{k \to 0} \frac{f(x_0,y_0+k)-f(x_0,y_0)}{k}. 
+\end{align*}
+A definição de limite em uma variável fornece um número real $k$ (que depende de $h$) tal que $0 < |k| < \delta$ e
+\begin{align}
+\left| \frac{f(x_0+h,y_0+k)-f(x_0+h,y_0)}{k} - \frac{\partial f}{\partial y}(x_0+h,y_0)\right| &< \frac{\varepsilon|h|}{4}, \label{eqschw*1} \\
+\left| \frac{f(x_0,y_0+k)-f(x_0,y_0)}{k} - \frac{\partial f}{\partial y}(x_0,y_0)\right| &< \frac{\varepsilon|h|}{4}. \label{eqschw*2} 
+\end{align}
+
+Considere a função de uma variável real $\varphi : I \to \mathbb{R}$ definida por
+$$\varphi(x) = f(x,y_0+k) - f(x,y_0).$$
+As desigualdades \eqref{eqschw*1} e \eqref{eqschw*2} podem ser reescritas em termos de $\varphi$ como
+\begin{align}
+\left| \frac{\varphi(x_0+h)}{k} - \frac{\partial f}{\partial y}(x_0+h,y_0)\right| &< \frac{\varepsilon|h|}{4}, \label{eqschw*3} \\
+\left| \frac{\varphi(x_0)}{k} - \frac{\partial f}{\partial y}(x_0,y_0)\right| &< \frac{\varepsilon|h|}{4}. \label{eqschw*4} 
+\end{align}
+Por hipótese, $\frac{\partial f}{\partial x}$ existe em todos os pontos de $A$. Portanto, $\varphi$ é derivável e
+$$\varphi'(x) = \frac{\partial f}{\partial x}(x,y_0+k) - \frac{\partial f}{\partial x}(x,y_0).$$
+Aplicando o Teorema do Valor Médio a $\varphi$ no intervalo de extremos $x_0$ e $x_0+h$, obtemos um número real $\overline{h}$ estritamente entre $x_0$ e $x_0+h$ que satisfaz
+$$\varphi'(\overline{h})h = \varphi(x_0+h)-\varphi(x_0),$$
+isto é,
+\begin{equation}\label{eqschw2}
+	\frac{\partial f}{\partial x}(\overline{h},y_0+k) - \frac{\partial f}{\partial x}(\overline{h},y_0)= \frac{\varphi(x_0+h)-\varphi(x_0)}{h}.
+\end{equation}
+
+Considere, agora, a função $\Phi : J \to \mathbb{R}$ definida por
+$$\Phi(y) = \frac{\partial f}{\partial x}(\overline{h},y).$$
+Por hipótese, $\frac{\partial^2 f}{\partial y\partial x}$ existe em todos os pontos de $A$. Logo, $\Phi$ é derivável e
+$$\Phi'(y) = \frac{\partial^2 f}{\partial y\partial x}(\overline{h},y).$$
+Aplicando o Teorema do Valor Médio a $\Phi$ no intervalo de extremos $y_0$ e $y_0+k$, obtemos um número real $\overline{k}$ estritamente entre $y_0$ e $y_0+k$ que satisfaz
+$$\Phi'(\overline{k})k = \Phi(y_0+k)-\Phi(y_0),$$
+ou seja,
+\begin{equation}\label{eqschw3}
+	 \frac{\partial^2 f}{\partial y\partial x}(\overline{h},\overline{k}) = \frac{\frac{\partial f}{\partial x}(\overline{h},y_0+k) - \frac{\partial f}{\partial x}(\overline{h},y_0)}{k}.
+\end{equation}
+
+Combinando as equações \eqref{eqschw2} e \eqref{eqschw3}, concluímos que
+\begin{equation}\label{eqschw4}
+	\frac{\partial^2 f}{\partial y\partial x}(\overline{h},\overline{k}) = \frac{\varphi(x_0+h)-\varphi(x_0)}{hk}.
+\end{equation}
+Agora, usando \eqref{eqschw*3}, \eqref{eqschw*4}, \eqref{eqschw4} e a Desigualdade Triangular, obtemos
+\begin{align*}
+\left| \frac{\partial^2 f}{\partial y \partial x}(\overline{h},\overline{k}) - \frac{\frac{\partial f}{\partial y}(x_0+h,y_0)- \frac{\partial f}{\partial y}(x_0,y_0)}{h} \right| &= \left|  \frac{\varphi(x_0+h)-\varphi(x_0)}{hk} - \frac{\frac{\partial f}{\partial y}(x_0+h,y_0)- \frac{\partial f}{\partial y}(x_0,y_0)}{h}\right|\\
+&\leq \frac{1}{|h|} \left| \frac{\varphi(x_0+h)}{k} - \frac{\partial f}{\partial y}(x_0+h,y_0)\right|\\
+&+ \frac{1}{|h|} \left| \frac{\varphi(x_0)}{k} - \frac{\partial f}{\partial y}(x_0,y_0)\right|\\
+&< \frac{2}{|h|}\frac{\varepsilon|h|}{4} = \frac{\varepsilon}{2}.
+\end{align*}
+Por outro lado, a construção de $\overline{h}$ e de $\overline{k}$ nos diz que
+\begin{align*}
+|x_0 - \overline{h}| &< |h| < \delta,\\
+|y_0 - \overline{k}| &< |k| < \delta.
+\end{align*}
+Em outras palavras, $\overline{h} \in I$ e $\overline{k} \in J$, ou seja, o ponto $(\overline{h},\overline{k})$ pertence a $I \times J$. Decorre de \eqref{eqschw1}, portanto, que
+$$\left| \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0) - \frac{\partial^2 f}{\partial y \partial x}(\overline{h},\overline{k})\right| < \frac{\varepsilon}{2}.$$
+Combinando estas informações, concluímos que
+\begin{align*}
+\left| \frac{\frac{\partial f}{\partial y}(x_0+h,y_0)- \frac{\partial f}{\partial y}(x_0,y_0)}{h} - \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0)\right| &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon,
+\end{align*}
+estabelecendo \eqref{eqschwfinal}. Provamos, portanto, pela definição de limite, que
+$$\lim_{h \to 0} \frac{\frac{\partial f}{\partial y}(x_0+h,y_0)- \frac{\partial f}{\partial y}(x_0,y_0)}{h} =  \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0),$$
+ou seja,
+$$\frac{\partial^2 f}{\partial x \partial y}(x_0,y_0) = \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0),$$
+como queríamos.
+\end{proof}
+
+
+Outro resultado interessante que fornece uma condição suficiente para que as derivadas mistas coincidam é o seguinte.
+
+
+\begin{teorema}\label{mistasiguais}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $(x_0,y_0) \in A$ e $f : A \to \mathbb{R}$ uma função que admite derivadas parciais em todos os pontos de $A$. Se as funções $\frac{\partial f}{\partial x}$ e $\frac{\partial f}{\partial y}$ são diferenciáveis em $(x_0,y_0)$, então
+$$\frac{\partial^2 f}{\partial x \partial y}(x_0,y_0)= \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0).$$
+\end{teorema}
+\begin{proof}
+Como $A$ é aberto, existe $\delta > 0$ tal que o quadrado
+$$I \times J =\; \underbrace{]x_0-\delta, x_0+\delta[}_{I}\;\times \;\underbrace{]y_0-\delta, x_0+\delta[}_{J}$$
+está contido em $A$. Considere a função $\Delta :\; ]-\delta, \delta[\; \to \mathbb{R}$ dada por
+$$\Delta(t)= f(x_0+t,y_0+t) - f(x_0+t,y_0) -f(x_0,y_0+t) + f(x_0,y_0).$$
+Vamos mostrar que
+$$\lim_{t \to 0} \frac{\Delta(t)}{t^2} = \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0)$$
+e, usando um argumento análogo, que
+$$\lim_{t \to 0} \frac{\Delta(t)}{t^2} = \frac{\partial^2 f}{\partial x \partial y}(x_0,y_0).$$
+Pela unicidade do limite, vamos concluir que as derivadas mistas coincidem em $(x_0,y_0)$.
+
+Fixado um número real $t$ satisfazendo $0 < |t| < \delta$, definimos a função auxiliar $\varphi: I \to \mathbb{R}$ por
+$$\varphi(x) = f(x,y_0+t) - f(x,y_0).$$
+Como $\frac{\partial f}{\partial x}$ existe em todos os pontos de $A$, sabemos que $\varphi$ é derivável e
+$$\varphi'(x) = \frac{\partial f}{\partial x}(x,y_0+t) - \frac{\partial f}{\partial x}(x,y_0).$$
+Aplicando o Teorema do Valor Médio, obtemos um número real $\overline{x}$ estritamente entre $x_0$ e $x_0+t$ satisfazendo
+$$\varphi(x_0+t)-\varphi(x_0) = \varphi'(\overline{x})t.$$
+Observando que
+$$\varphi(x_0+t)-\varphi(x_0) = (f(x_0+t,y_0+t)  -f(x_0+t,y_0)) - (f(x_0,y_0+t) - f(x_0,y_0)) = \Delta(t),$$
+chegamos a
+\begin{equation}\label{eqmistasiguais1}
+\frac{\Delta(t)}{t} = \frac{\partial f}{\partial x}(\overline{x},y_0+t) - \frac{\partial f}{\partial x}(\overline{x},y_0).
+\end{equation}
+
+Considere, agora, a função $F: A \to \mathbb{R}$ dada por
+$$F(x,y) = \frac{\partial f}{\partial x}(x,y) - \frac{\partial f}{\partial x}(x_0,y_0) - \frac{\partial^2 f}{\partial x^2}(x_0,y_0)(x-x_0) - \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0)(y-y_0).$$
+Subtraindo as igualdades
+\begin{align*}
+F(\overline{x},y_0+t) &= \frac{\partial f}{\partial x}(\overline{x},y_0+t) - \frac{\partial f}{\partial x}(x_0,y_0) - \frac{\partial^2 f}{\partial x^2}(x_0,y_0)(\overline{x}-x_0) - \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0)t,\\
+F(\overline{x},y_0) &= \frac{\partial f}{\partial x}(\overline{x},y_0) - \frac{\partial f}{\partial x}(x_0,y_0) - \frac{\partial^2 f}{\partial x^2}(x_0,y_0)(\overline{x}-x_0),
+\end{align*}
+obtemos
+$$F(\overline{x},y_0+t) - F(\overline{x},y_0) = \frac{\partial f}{\partial x}(\overline{x},y_0+t) -\frac{\partial f}{\partial x}(\overline{x},y_0) - \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0)t.$$
+Substituindo \eqref{eqmistasiguais1}, isolando $\frac{\Delta(t)}{t}$ e dividindo por $t$, concluímos que
+\begin{equation}\label{eqmistasiguais2}
+\frac{\Delta(t)}{t^2} = \frac{F(\overline{x},y_0+t) - F(\overline{x},y_0)}{t} + \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0).
+\end{equation}
+
+Só nos resta calcular o limite
+$$\lim_{t \to 0} \frac{F(\overline{x},y_0+t) - F(\overline{x},y_0)}{t}.$$
+Como $\overline{x}$ pertence ao intervalo de extremos $x_0$ e $x_0+t$, sabemos que
+$$|\overline{x} - x_0| < |t|.$$
+Isto implica que
+$$(\overline{x}-x_0)^2 <t^2$$
+e, portanto,
+$$\sqrt{(\overline{x}-x_0)^2 + t^2} < \sqrt{2t^2} = \sqrt{2}|t|.$$
+Logo, as expressões
+$$0 < \frac{|\overline{x}-x_0|}{|t|} < \frac{\sqrt{(\overline{x}-x_0)^2+t^2}}{|t|}< \sqrt{2}$$
+são limitadas.
+
+Por outro lado, como $\frac{\partial f}{\partial x}$ é diferenciável em $(x_0,y_0)$, sabemos que
+$$\lim_{(x,y) \to (x_0,y_0)} \frac{F(x,y)}{\sqrt{(x-x_0)^2 + (y-y_0)^2}} = 0.$$
+Quando $t$ tende a zero, $\overline{x}$ tende a $x_0$ e $y_0+t$ tende a $y_0$. Logo,
+$$\lim_{t \to 0} \frac{F(\overline{x},y_0+t)}{\sqrt{(\overline{x}-x_0)^2 + t^2}} = 0 = \lim_{t \to 0} \frac{F(\overline{x},y_0)}{|\overline{x}-x_0|}.$$
+Desta forma,
+$$\lim_{t \to 0} \frac{F(\overline{x},y_0+t)}{t} = \lim_{t \to 0} \underbrace{\frac{F(\overline{x},y_0+t)}{\sqrt{(\overline{x}-x_0)^2 + t^2}}}_{\to 0} \underbrace{\frac{\sqrt{(\overline{x}-x_0)^2+t^2}}{t}}_{\text{limitada}} = 0$$
+e, analogamente,
+$$\lim_{t \to 0} \frac{F(\overline{x},y_0)}{t} = \lim_{t \to 0} \underbrace{\frac{F(\overline{x},y_0)}{|\overline{x}-x_0|}}_{\to 0} \underbrace{\frac{|\overline{x}-x_0|}{t}}_{\text{limitada}} = 0.$$
+
+Retornando à equação \eqref{eqmistasiguais2}, concluímos que
+$$\lim_{t \to 0} \frac{\Delta(t)}{t^2} = \frac{\partial^2 f}{\partial y \partial x}(x_0,y_0).$$
+Procedendo de maneira análoga\footnote{Use a função $\psi : J \to \mathbb{R}$ dada por $\psi(y) = f(x_0+t,y)-f(x_0,y)$.} e usando a diferenciabilidade de $\frac{\partial f}{\partial y}$ em $(x_0,y_0)$, resulta
+$$\lim_{t \to 0} \frac{\Delta(t)}{t^2} = \frac{\partial^2 f}{\partial x \partial y}(x_0,y_0)$$
+e, pela unicidade do limite, a demonstração está completa.
+\end{proof}
+
+
+
+\vskip 25pt
+
+
+
+
+
+\section{A Regra da Cadeia}
+
+\begin{teorema}[Regra da Cadeia I]\label{RCI}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $I$ um intervalo aberto, $(x_0, y_0) \in A$, $t_0 \in I$, $f : A \to \mathbb{R}$ uma função e $\gamma : I \to \mathbb{R}^2$ uma curva tal que $\gamma(I) \subset A$ e $\gamma(t_0)=(x_0,y_0)$. Se $f$ é diferenciável em $(x_0,y_0)$ e $\gamma = (\gamma_1, \gamma_2)$ é derivável em $t_0$, então $f \circ \gamma$ é derivável em $t_0$ e
+$$\frac{d}{dt}(f \circ \gamma)(t_0) = \nabla f(x_0,y_0) \cdot \gamma'(t_0).$$
+\end{teorema}
+\begin{proof}
+Consideremos a função $F: A \to \mathbb{R}$ dada por
+$$
+ F(x,y) =
+  \begin{cases} 
+      \hfill \frac{f(x,y) - f(x_0,y_0) - f_x(x_0,y_0)(x-x_0) - f_y(x_0,y_0)(y-y_0)}{\|(x,y)-(x_0,y_0)\|},   \hfill & \text{se $(x,y) \neq (x_0,y_0)$}, \\
+      \hfill 0, \hfill & \text{se $(x,y) = (x_0,y_0)$}. 
+  \end{cases}
+$$
+A diferenciabilidade de $f$ em $(x_0,y_0)$ garante que $F$ é contínua em $(x_0,y_0)$. Observe que
+$$f(x,y) - f(x_0,y_0) = F(x,y)\|(x,y)-(x_0,y_0)\| + f_x(x_0,y_0)(x-x_0) + f_y(x_0,y_0)(y-y_0)$$
+para todo $(x,y) \in A$ (com efeito, a igualdade acima é óbvia para $(x,y)=(x_0,y_0)$ e é verdadeira nos outros pontos de $A$ pela definição de $F$). Em particular, para todo $t \in I$ temos
+$$f(\gamma(t))-f(\gamma(t_0)) = F(\gamma(t))\|\gamma(t)-\gamma(t_0)\| + f_x(x_0,y_0)(\gamma_1(t)-\gamma_1(t_0)) + f_y(x_0,y_0)(\gamma_2(t)-\gamma_2(t_0))$$
+e, portanto,
+\begin{align*}
+\lim_{t \to t_0} \frac{f(\gamma(t))-f(\gamma(t_0))}{t-t_0} &= \lim_{t \to t_0} \left[ F(\gamma(t))\frac{\|\gamma(t)-\gamma(t_0)\|}{t-t_0} + f_x(x_0,y_0)\frac{\gamma_1(t)-\gamma_1(t_0)}{t-t_0} + f_y(x_0,y_0)\frac{\gamma_2(t)-\gamma_2(t_0)}{t-t_0}\right].
+\end{align*}
+Vamos calcular os limites de cada termo do segundo membro da equação acima. A derivabilidade de $\gamma$ em $t_0$ nos diz que
+\begin{align}
+\label{cadeia1} \lim_{t \to t_0} \frac{\gamma_1(t)-\gamma_1(t_0)}{t-t_0} &= \gamma'_1(t_0),\\ 
+\label{cadeia2} \lim_{t \to t_0} \frac{\gamma_2(t)-\gamma_2(t_0)}{t-t_0} &= \gamma'_2(t_0) 
+\end{align}
+e, pela continuidade da norma,
+$$\lim_{t\to t_0} \frac{\|\gamma(t)-\gamma(t_0)\|}{|t-t_0|} = \lim_{t \to t_0} \left\| \frac{\gamma(t)-\gamma(t_0)}{t-t_0} \right\| = \left\| \lim_{t \to t_0}  \frac{\gamma(t)-\gamma(t_0)}{t-t_0} \right\|=  \|\gamma'(t_0)\|.$$
+Como $\gamma$ e $F$ são contínuas em $t_0$ e em $(x_0,y_0)$, respectivamente, sabemos que
+$$\lim_{t \to t_0} F(\gamma(t)) = F(\gamma(t_0))=F(x_0,y_0)=0$$
+e, portanto,
+\begin{equation}\label{cadeia3}
+\lim_{t \to t_0} F(\gamma(t))\frac{\|\gamma(t)-\gamma(t_0)\|}{t-t_0} = \lim_{t \to t_0} \underbrace{F(\gamma(t))}_{\to 0}\underbrace{\frac{\|\gamma(t)-\gamma(t_0)\|}{|t-t_0|}}_{\to \|\gamma'(t_0)\|}\underbrace{\frac{|t-t_0|}{t-t_0}}_{\text{limitada}} = 0.
+\end{equation}
+Resulta de \eqref{cadeia1}, \eqref{cadeia2} e \eqref{cadeia3} que
+$$\lim_{t \to t_0} \frac{f(\gamma(t))-f(\gamma(t_0))}{t-t_0} = f_x(x_0,y_0)\gamma_1'(t_0)+ f_y(x_0,y_0)\gamma_2'(t_0),$$
+o que prova $f \circ \gamma$ é derivável em $t_0$ e fornece a igualdade prometida no enunciado.
+\end{proof}
+
+A proposição a seguir será útil nas demonstrações dos próximos dois resultados.
+
+\begin{proposicao}\label{proplimitaçao}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $(x_0, y_0) \in A$ e $f : A \to \mathbb{R}$ uma função diferenciável em $(x_0,y_0)$. Consideremos o conjunto aberto $B = \{ (h,k) \in \mathbb{R}^2 : (x_0+k,y_0+k) \in A\}$ e a função $\varphi : B \to \mathbb{R}$ dada por
+$$\varphi(h,k) =
+  \begin{cases} 
+      \hfill \frac{f(x_0+h,y_0+k)-f(x_0,y_0)}{\sqrt{h^2+k^2}},   \hfill & \text{se $(h,k) \neq (0,0)$}, \\
+      \hfill 0, \hfill & \text{se $(h,k) = 0$}. 
+  \end{cases}
+$$
+Então existe $r > 0$ tal que $\varphi$ é limitada em $B((0,0);r)$ (isto é, $\varphi$ é limitada em uma vizinhança de $(0,0)$).
+\end{proposicao}
+\begin{proof}
+Como $f$ é diferenciável em $(x_0,y_0)$ e $A$ é aberto, existe $r > 0$ tal que $B((0,0);r) \subset B$ e
+$$\frac{\left|f(x_0+h,y_0+k)-f(x_0,y_0)- f_x(x_0,y_0)h - f_y(x_0,y_0)k\right|}{\sqrt{h^2+k^2}} \leq 1,$$
+para todo $(h,k) \in B((0,0); r)$, $(h,k) \neq (0,0)$. Logo, pela Desigualdade Triangular,
+\begin{align*}
+0 \leq |\varphi(h,k)| &\leq \underbrace{\frac{\left|f(x_0+h,y_0+k)-f(x_0,y_0)-  f_x(x_0,y_0)h -  f_y(x_0,y_0)k\right|}{\sqrt{h^2+k^2}}}_{\leq 1}\\
+&+ \left| f_x(x_0,y_0)\right|\underbrace{\frac{|h|}{\sqrt{h^2+k^2}}}_{\leq 1} + \left| f_y(x_0,y_0)\right|\underbrace{\frac{|k|}{\sqrt{h^2+k^2}}}_{\leq 1}\\
+&\leq 1 + \left| f_x(x_0,y_0)\right| + \left| f_y(x_0,y_0)\right|,
+\end{align*}
+para todo $(h,k) \in B((0,0);r)$, $(h,k)\neq (0,0)$. Isto prova que $\varphi$ é limitada em $B((0,0);r)$.
+\end{proof}
+
+
+
+
+\begin{teorema}[Regra da Cadeia II]\label{RCII}
+Sejam $A, B$ subconjuntos abertos e não-vazios de $\mathbb{R}^2$, $(x_0, y_0) \in A$, $(u_0,v_0) \in B$ e $f : A \to \mathbb{R}$, $g, h : B \to \mathbb{R}$ funções tais que $(g(u,v), h(u,v)) \in A$ para todo $(u,v) \in B$, $g(u_0,v_0) = x_0$ e $h(u_0,v_0) = y_0$. Se $f$ é diferenciável em $(x_0,y_0)$ e $g, h$ são diferenciáveis em $(u_0,v_0)$, então a função $i : B \to \mathbb{R}$ dada por
+$$l(u,v) = f(g(u,v), h(u,v)),$$
+para todo $(u,v) \in B$, é diferenciável em $(u_0,v_0)$ e
+\begin{align*}
+\frac{\partial l}{\partial u}(u_0,v_0) &= \frac{\partial f}{\partial x}(x_0,y_0)\frac{\partial g}{\partial u}(u_0,v_0) + \frac{\partial f}{\partial y}(x_0,y_0)\frac{\partial h}{\partial u}(u_0,v_0),\\
+\frac{\partial l}{\partial v}(u_0,v_0) &= \frac{\partial f}{\partial x}(x_0,y_0)\frac{\partial g}{\partial v}(u_0,v_0) + \frac{\partial f}{\partial y}(x_0,y_0)\frac{\partial h}{\partial v}(u_0,v_0).
+\end{align*}
+\end{teorema}
+\begin{proof} Para simplificar a notação, vamos escrever $p=(x_0,y_0)$, $w=(u_0,v_0)$ e
+$$q(j,k)= (g(w+(j,k)),h(w+(j,k))).$$
+Nosso objetivo é provar que
+$$\lim_{(j,k)\to (0,0)} \frac{L(j,k)}{\sqrt{j^2 + k^2}} =0,$$
+onde
+\begin{align}
+\label{eqL} L(j,k) &= l(w+(j,k)) - l(w)- \alpha j - \beta k,\\
+\label{eqalpha} \alpha &= f_x(p)g_u(w) + f_y(p)h_u(w),\\
+\label{eqbeta} \beta &= f_x(p)g_v(w) + f_y(p)h_v(w).
+\end{align}
+Consideremos as funções $G, H$ dadas por
+\begin{align*}
+G(j,k) &= g(w+(j,k)) - x_0 - g_u(w)j - g_v(w)k,\\
+H(j,k) &= h(w+(j,k)) - y_0 - h_u(w)j - h_v(w)k.
+\end{align*}
+Como $g$ e $h$ são diferenciáveis em $(u_0,v_0)$, sabemos que
+$$\lim_{(j,k) \to (0,0)} \frac{G(j,k)}{\sqrt{j^2+k^2}} = 0 = \lim_{(j,k) \to (0,0)} \frac{H(j,k)}{\sqrt{j^2+k^2}}.$$
+Somando e subtraindo a expressão
+$$f_x(x_0,y_0)[g(u_0+j,v_0+k)-x_0] + f_y(x_0,y_0)[h(u_0+j,v_0+k)-x_0]$$
+em \eqref{eqL}, substituindo \eqref{eqalpha} e \eqref{eqbeta} e reordenando os termos de forma conveniente, obtemos
+$$L(j,k) =f_x(p)G(j,k)+f_y(p)H(j,k)+ R(j,k),$$
+onde
+$$R(j,k) = f(q(j,k)) - f(p) - f_x(p)[g(w+(j,k)) - x_0] - f_y(p)[h(w+(h,k))-y_0].$$
+Como
+$$\lim_{(j,k)\to (0,0)} \left[f_x(p)\frac{G(j,k)}{\sqrt{j^2+k^2}}+f_y(p)\frac{H(j,k)}{\sqrt{j^2+k^2}}\right]=0,$$
+só nos resta mostrar que
+$$\lim_{(j,k)\to (0,0)} \frac{R(j,k)}{\sqrt{j^2+k^2}} =0.$$
+Assim como na demonstração do Teorema \ref{RCI}, definimos a função $F: A \to \mathbb{R}$ por
+$$
+ F(x,y) =
+  \begin{cases} 
+      \hfill \frac{f(x,y) - f(p) - f_x(p)(x-x_0) - f_y(p)(y-y_0)}{\|(x,y)-p\|},   \hfill & \text{se $(x,y) \neq p$}, \\
+      \hfill 0, \hfill & \text{se $(x,y) = p$}. 
+  \end{cases}
+$$
+Mais uma vez, a diferenciabilidade de $f$ em $p$ implica a continuidade de $F$ em $p$. Como a igualdade
+$$F(x,y)\|(x,y)-p\| = f(x,y) - f(p) - f_x(p)(x-x_0) - f_y(p)(y-y_0)$$
+é válida para todo $(x,y) \in A$, em particular temos
+$$F(q(j,k))\|q(j,k)-p\| = f(q(j,k)) - f(p) - f_x(p)[g(w+(j,k)) - x_0] - f_y(p)[h(w+(h,k))-y_0]= R(j,k).$$
+Afirmamos que existe $r > 0$ tal que a expressão
+\begin{equation}\label{eqlimitada}
+\frac{\|q(j,k)-p\|}{\sqrt{j^2+k^2}}
+\end{equation}
+é limitada em $B((0,0);r) \setminus \{(0,0)\}$. Com efeito, observe que
+$$\frac{\|q(j,k)-p\|^2}{j^2+k^2} = \frac{(g(w+(j,k))-x_0)^2}{j^2+k^2} + \frac{(h(w+(j,k))-x_0)^2}{j^2+k^2}.$$
+Pela Proposição \ref{proplimitaçao}, existe $r> 0$ tal que os dois termos do segundo membro da equação acima são limitados em $B((0,0);r) \setminus \{(0,0)\}$. Portanto, \eqref{eqlimitada} também é limitada nesse conjunto. Assim,
+$$\lim_{(j,k)\to (0,0)} \frac{R(j,k)}{\sqrt{j^2+k^2}} = \lim_{(j,k)\to (0,0)} \underbrace{F(q(j,k))}_{\to 0}\underbrace{\frac{\|q(j,k)-p\|}{\sqrt{j^2+k^2}}}_{\text{limitada}}=0.$$
+Isto prova que
+$$\lim_{(j,k)\to (0,0)} \frac{L(j,k)}{\sqrt{j^2 + k^2}} =0,$$
+isto é, $l$ é diferenciável em $w$.
+\end{proof}
+
+\begin{teorema}[Regra da Cadeia III]\label{RCIII}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $I$ um intervalo aberto, $(x_0, y_0) \in A$, $t_0 \in I$ e $f : A \to \mathbb{R}$, $g : I \to \mathbb{R}$ funções tais que $f(A) \subset I$ e $f(x_0,y_0)=t_0$. Se $g$ é derivável em $t_0$ e $f$ é diferenciável em $(x_0,y_0)$, então $g \circ f$ é diferenciável em $(x_0,y_0)$ e
+\begin{align*}
+\frac{\partial (g \circ f)}{\partial x}(x_0,y_0) &= g'(t_0)\frac{\partial f}{\partial x}(x_0,y_0),\\
+\frac{\partial (g \circ f)}{\partial y}(x_0,y_0) &= g'(t_0)\frac{\partial f}{\partial y}(x_0,y_0).
+\end{align*}
+\end{teorema}
+\begin{proof} De forma análoga às demonstrações anteriores, devemos mostrar que
+$$\lim_{(h,k)\to (0,0)} \frac{H(h,k)}{\sqrt{h^2 + k^2}} =0,$$
+onde
+\begin{equation}\label{eqH}
+H(h,k) = g(f(x_0+h, y_0+k)) - g(t_0)- g'(t_0)f_x(x_0,y_0) h - g'(t_0)f_y(x_0,y_0) k.
+\end{equation}
+Consideremos a função $F$ dada por
+$$F(h,k)= f(x_0+h,y_0+k) - t_0 - f_x(x_0,y_0)h - f_y(x_0,y_0)k.$$
+A diferenciabilidade de $f$ em $(x_0,y_0)$ garante que
+$$\lim_{(h,k) \to (0,0)} \frac{F(h,k)}{\sqrt{h^2+k^2}} = 0.$$
+Somando e subtraindo a expressão
+$$g'(t_0)[f(x_0+h,y_0+k))-t_0]$$
+em \eqref{eqH} e reordenando os termos de maneira conveniente, obtemos
+$$H(h,k) = g'(t_0)F(h,k) + R(h,k),$$
+onde
+\begin{equation}\label{eqR}
+R(h,k)= g(f(x_0+h,y_0+k)) -g(t_0) - g'(t_0)[f(x_0+h,y_0+k)-t_0].
+\end{equation}
+Como
+$$\lim_{(h,k) \to (0,0)} g'(t_0)\frac{F(h,k)}{\sqrt{h^2+k^2}}=0,$$
+só nos resta mostrar que
+$$\lim_{(h,k) \to (0,0)} \frac{R(h,k)}{\sqrt{h^2+k^2}}=0.$$
+Seja $G : I \to \mathbb{R}$ dada por
+$$
+ G(t) =
+  \begin{cases} 
+      \hfill \frac{g(t) - g(t_0)}{t-t_0},   \hfill & \text{$t \neq t_0$} \\
+      \hfill g'(t_0), \hfill & \text{$t = t_0$}. \\
+  \end{cases}
+$$
+A derivabilidade de $g$ em $t_0$ garante que $G$ é contínua em $t_0$. Além disso, como a igualdade
+$$G(t)(t-t_0)= g(t)-g(t_0)$$
+é verdadeira para todo $t \in I$, em particular temos
+\begin{equation}\label{eqR2}
+G(f(x_0+h,y_0+k))[f(x_0+h,y_0+k)-t_0] = g(f(x_0+h,y_0+k)) - g(t_0).
+\end{equation}
+Substituindo \eqref{eqR2} em \eqref{eqR}, obtemos
+$$R(h,k) = [G(f(x_0+h,y_0+k)) - g'(t_0)][f(x_0+h,y_0+k)-t_0]$$
+e assim, para $(h,k) \neq (0,0)$,
+$$\frac{R(h,k)}{\sqrt{h^2+k^2}} = [G(f(x_0+h,y_0+k)) - g'(t_0)]\frac{f(x_0+h,y_0+k)-t_0}{\sqrt{h^2+k^2}}.$$
+Pela Proposição \ref{proplimitaçao}, existe $r > 0$ tal que a expressão
+$$\frac{f(x_0+h,y_0+k)-t_0}{\sqrt{h^2+k^2}}$$
+é limitada em $B((0,0);r) \setminus \{(0,0)\}$. Logo,
+$$\lim_{(h,k)\to (0,0)} \frac{R(h,k)}{\sqrt{h^2+k^2}} = \lim_{(h,k)\to (0,0)} \underbrace{[G(f(x_0+h,y_0+k)) - g'(t_0)]}_{\to 0}\underbrace{\frac{f(x_0+h,y_0+k)-t_0}{\sqrt{h^2+k^2}}}_{\text{limitada}} =0.$$
+Isto prova que $g \circ f$ é diferenciável em $(x_0,y_0)$, como desejado.
+\end{proof}
+
+
+\begin{corolario}\label{operaçoescomdiferenciaveis}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $p \in A$ e $f, g : A \to \mathbb{R}$ funções diferenciáveis em $p$. Então:
+\begin{enumerate}[(i)]
+\item $f+g$ é diferenciável em $p$;
+\item $fg$ é diferenciável em $p$;
+\item Se $f(p) \neq 0$, então $\frac{1}{f}$ é diferenciável em $p$.
+\end{enumerate}
+\end{corolario}
+\begin{proof}
+Consideremos as funções $S, P : \mathbb{R}^2 \to \mathbb{R}$ dadas por
+\begin{align*}
+S(u,v) &= u+v,\\
+P(u,v) &= uv.
+\end{align*}
+É imediato verificar que $S$ e $P$ são de classe $\mathcal{C}^1$ e, portanto, diferenciáveis. Logo, pela Regra da Cadeia, as funções
+\begin{align*}
+s(x,y) &= S(f(x,y),g(x,y)) = f(x,y)+g(x,y),\\
+p(x,y) &= P(f(x,y),g(x,y)) = f(x,y)g(x,y),
+\end{align*}
+são diferenciáveis em $p$. Isto prova $(i)$ e $(ii)$.
+
+Para provar $(iii)$, tomemos $I : \mathbb{R} \setminus \{0\} \to \mathbb{R}$ dada por
+$$I(t)=\frac{1}{t}.$$
+Como $I$ é derivável em $\mathbb{R} \setminus \{0\}$, novamente a Regra da Cadeia garante que
+$$i(x,y) = \frac{1}{f(x,y)}$$
+é diferenciável em $p$, como queríamos.
+\end{proof}
+
+
+\vskip 25pt
+
+\section{O Critério da Hessiana}
+
+Para enunciar as Proposições \ref{quadratica1} e \ref{quadratica2}, vamos considerar uma \emph{forma quadrática}
+$$Q(s,t) = as^2 + 2bst + ct^2,$$
+onde $a,b,c \in \mathbb{R}$.
+
+\begin{proposicao}\label{quadratica1}
+Se $a \neq 0$, então podemos escrever
+$$Q(s,t) = a \left(s+ \frac{b}{a}t\right)^2 + \begin{vmatrix}
+a & b \\ 
+b & c
+\end{vmatrix}\frac{t^2}{a}.$$
+\end{proposicao}
+\begin{proof}
+Completando quadrados, obtemos
+\begin{align*}
+Q(s,t) &= as^2 + 2bst + ct^2 = a\left( s^2 + \frac{2b}{a}st + \frac{c}{a}t^2\right)=\left( s^2 + \frac{2b}{a}st + \frac{b^2}{a^2}t^2 -\frac{b^2}{a^2}t^2 + \frac{c}{a}t^2\right)\\
+&=a\left(s + \frac{b}{a}t\right)^2 + \frac{ac-b^2}{a}t^2 = a \left(s+ \frac{b}{a}t\right)^2 + \begin{vmatrix}
+a & b \\ 
+b & c
+\end{vmatrix}\frac{t^2}{a},
+\end{align*}
+como desejado.
+\end{proof}
+
+\begin{proposicao}\label{quadratica2}
+Valem as seguintes propriedades:
+\begin{enumerate}[(i)]
+\item Se $a>0$ e $\begin{vmatrix}
+a & b \\ 
+b & c
+\end{vmatrix} >0$, então $Q(s,t) > 0$ para todo $(s,t) \neq (0,0)$;
+\item Se $\begin{vmatrix}
+a & b \\ 
+b & c
+\end{vmatrix} <0$, então existem $(s_1,t_1),(s_2,t_2)$ tais que $Q(s_1,t_1)<0<Q(s_2,t_2)$.
+\end{enumerate}
+\end{proposicao}
+\begin{proof}
+Dados $s \in \mathbb{R}$ e $t \neq 0$, a proposição anterior garante que
+$$Q(s,t) = \underbrace{a \left(s+ \frac{b}{a}t\right)^2}_{\geq 0} + \underbrace{\begin{vmatrix}
+a & b \\ 
+b & c
+\end{vmatrix}\frac{t^2}{a}}_{> 0} >0.$$
+Por outro lado, $Q(s,0)=as^2 >0$ para todo $s \neq 0$. Isto prova $(i)$.
+
+Para provar $(ii)$, suponhamos primeiramente $a=0$. Neste caso, temos
+$$-b^2 = \begin{vmatrix}
+0 & b \\ 
+b & c
+\end{vmatrix} <0,$$
+isto é, $b \neq 0$. Escolhendo o número real
+$$s_0 = \frac{|c|}{2|b|}+1,$$
+obtemos
+\begin{align*}
+Q(s_0,1) Q(s_0,-1) &= (2bs_0 + c)(-2bs_0 + c)= c^2 - 4b^2s_0^2 = c^2 -4b^2\left( \frac{c^2}{4b^2} +\frac{|c|}{|b|} + 1\right)= -4b^2\left(\frac{|c|}{|b|} + 1\right)<0,
+\end{align*}
+isto é, $Q(s_0,1)$ e $Q(s_0,-1)$ têm sinais contrários.
+
+Por outro lado, se $a\neq 0$, então $Q(1,0)=a$ e, pela proposição anterior,
+$$Q\left(\frac{b}{a},-1\right) = \frac{1}{a}\begin{vmatrix}
+a & b \\ 
+b & c
+\end{vmatrix}.$$
+Logo, $Q(1,0)Q\left(\frac{b}{a},-1\right) = \begin{vmatrix}
+a & b \\ 
+b & c
+\end{vmatrix} < 0$, como queríamos.
+\end{proof}
+
+Recordamos que o \emph{hessiano} de uma função $f$ de classe $\mathcal{C}^2$ em um ponto $(x,y)$ é o determinante
+$$H(x,y) = \begin{vmatrix}
+\frac{\partial^2 f}{\partial x^2}(x,y) & \frac{\partial^2 f}{\partial y\partial x}(x,y) \\ 
+\frac{\partial^2 f}{\partial x \partial y}(x,y) & \frac{\partial^2 f}{\partial y^2}(x,y)
+\end{vmatrix}.$$
+
+\begin{teorema}[Critério do Hessiano]\label{Hessiana}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $f : A \to \mathbb{R}$ uma função de classe $\mathcal{C}^2$ em $A$ e $(x_0,y_0) \in A$ um ponto crítico de $f$. Então:
+\begin{enumerate}[(i)]
+\item Se $\frac{\partial^2 f}{\partial x^2}(x_0,y_0)>0$ e $H(x_0,y_0) >0$, então $(x_0,y_0)$ é ponto de mínimo local de $f$;
+\item Se $\frac{\partial^2 f}{\partial x^2}(x_0,y_0)<0$ e $H(x_0,y_0) >0$, então $(x_0,y_0)$ é ponto de máximo local de $f$;
+\item Se $H(x_0,y_0)<0$, então $(x_0,y_0)$ é um ponto de sela de $f$.
+\end{enumerate}
+\end{teorema}
+\begin{proof}
+$(i)$ Como as funções $\frac{\partial^2 f}{\partial x^2}$ e $H$ são contínuas e $A$ é aberto, existe $\delta>0$ tal que $B((x_0,y_0);\delta)\subset A$ e, além disso,
+\begin{equation}\label{eqhessiana}
+\frac{\partial^2 f}{\partial x^2}(x,y)>0\;\;\; \text{e}\;\;\; H(x,y) > 0,
+\end{equation}
+para todo $(x,y) \in B((x_0,y_0);\delta)$. Fixado $(h,k) \neq (0,0)$ tal que $(x_0 +h, y_0+k) \in B((x_0,y_0);\delta)$, pela Fórmula de Taylor com resto de Lagrange, existe $(\overline{x}, \overline{y})$ pertencente ao segmento ligando $(x_0,y_0)$ a $(x_0+h,y_0+k)$ tal que
+$$f(x_0+h,y_0+k)-f(x_0,y_0) = \frac{1}{2}\frac{\partial^2 f}{\partial x^2}(\overline{x},\overline{y})h^2 +\frac{\partial^2 f}{\partial y\partial x}(\overline{x},\overline{y})hk + \frac{1}{2}\frac{\partial^2 f}{\partial y^2}(\overline{x},\overline{y})k^2,$$
+pois $\frac{\partial f}{\partial x}(x_0,y_0)=\frac{\partial f}{\partial y}(x_0,y_0)=0$.
+
+Agora, consideremos a forma quadrática
+$$Q(s,t) = \frac{1}{2}\left[\frac{\partial^2 f}{\partial x^2}(\overline{x},\overline{y})s^2 +2\frac{\partial^2 f}{\partial y\partial x}(\overline{x},\overline{y})st + \frac{1}{2}\frac{\partial^2 f}{\partial y^2}(\overline{x},\overline{y})t^2\right].$$
+Como $(\overline{x},\overline{y}) \in B((x_0,y_0);\delta)$, por \eqref{eqhessiana} temos $\frac{\partial^2 f}{\partial x^2}(\overline{x},\overline{y})>0$ e $H(\overline{x},\overline{y}) > 0$. Aplicando o item $(i)$ da Proposição \ref{quadratica2}, obtemos $Q(s,t) > 0$, para todo $(s,t) \neq (0,0)$. Em particular,
+$$f(x_0+h,y_0+k)-f(x_0,y_0) = Q(h,k) > 0,$$
+isto é,
+$$f(x_0+h,y_0+k) > f(x_0,y_0).$$
+
+Provamos, portanto, que $f(x,y) > f(x_0,y_0)$, para todo $(x,y) \in B((x_0,y_0);\delta), (x,y) \neq (x_0,y_0)$, ou seja, $(x_0,y_0)$ é um ponto de mínimo local de $f$.
+
+$(ii)$ Definamos $g: A \to \mathbb{R}$ por $g(x,y)=-f(x,y)$, para todo $(x,y) \in A$. É imediato verificar que $(x_0,y_0)$ é um ponto crítico de $g$, $\frac{\partial^2 g}{\partial x^2}(x_0,y_0)=-\frac{\partial^2 f}{\partial x^2}(x_0,y_0)>0$ e
+$$\begin{vmatrix}
+\frac{\partial^2 g}{\partial x^2}(x_0,y_0) & \frac{\partial^2 g}{\partial y\partial x}(x_0,y_0) \\ 
+\frac{\partial^2 g}{\partial x \partial y}(x_0,y_0) & \frac{\partial^2 g}{\partial y^2}(x_0,y_0)
+\end{vmatrix} = \begin{vmatrix}
+-\frac{\partial^2 f}{\partial x^2}(x_0,y_0) & -\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0) \\ 
+-\frac{\partial^2 f}{\partial x \partial y}(x_0,y_0) & -\frac{\partial^2 f}{\partial y^2}(x_0,y_0)
+\end{vmatrix} >0.$$
+Logo, pelo item $(i)$, $(x_0,y_0)$ é um ponto de mínimo local de $g$ (e, portanto, é um ponto de máximo local de $f$).
+
+$(iii)$ Consideremos a forma quadrática
+$$R(s,t) = \frac{\partial^2 f}{\partial x^2}(x_0,y_0)s^2 +2\frac{\partial^2 f}{\partial y\partial x}(x_0,y_0)st + \frac{\partial^2 f}{\partial y^2}(x_0,y_0)t^2.$$
+Como $H(x_0,y_0)<0$, pelo item $(ii)$ da Proposição \ref{quadratica2} existem $(s_1,t_1), (s_2,t_2) \neq (0,0)$ tais que
+$$R(s_1,t_1) < 0 < R(s_2,t_2).$$
+Seja $\delta>0$ tal que $B((x_0,y_0);\delta)\subset A$ e consideremos as funções $g_1, g_2: (-\Delta, \Delta) \to \mathbb{R}$ dadas por
+\begin{align*}
+g_1(u)&=f(x_0+us_1, y_0+ut_1),\\
+g_2(u)&=f(x_0+us_2,y_0+ut_2),
+\end{align*}
+onde
+$$\Delta =\min\left( \frac{ \delta}{\sqrt{s_1^2+t_1^2}}, \frac{ \delta}{\sqrt{s_2^2+t_2^2}}\right).$$
+Pela Regra da Cadeia, $g_1$ e $g_2$ são duas vezes deriváveis e
+\begin{align*}
+g_1'(u)&=\frac{\partial f}{\partial x}(x_0+us_1, y_0+ut_1)s_1 + \frac{\partial f}{\partial y}(x_0+us_1, y_0+ut_1)t_1,\\
+g_2'(u)&=\frac{\partial f}{\partial x}(x_0+us_2, y_0+ut_2)s_2 + \frac{\partial f}{\partial y}(x_0+us_2, y_0+ut_2)t_2,\\
+g_1''(u)&=\frac{\partial^2 f}{\partial x^2}(x_0+us_1, y_0+ut_1)s_1^2 +2\frac{\partial^2 f}{\partial y\partial x}(x_0+us_1, y_0+ut_1)s_1t_1 + \frac{\partial^2 f}{\partial y^2}(x_0+us_1, y_0+ut_1)t_1^2,\\
+g_2''(u)&=\frac{\partial^2 f}{\partial x^2}(x_0+us_2, y_0+ut_2)s_2^2 +2\frac{\partial^2 f}{\partial y\partial x}(x_0+us_2, y_0+ut_2)s_2t_2 + \frac{\partial^2 f}{\partial y^2}(x_0+us_2, y_0+ut_2)t_2^2,
+\end{align*}
+para todo $u \in (-\Delta, \Delta)$. Em particular, para $u=0$ temos $g_1'(0)=g_2'(0)=0$,
+\begin{align*}
+g_1''(0)&=\frac{\partial^2 f}{\partial x^2}(x_0, y_0)s_1^2 +2\frac{\partial^2 f}{\partial y\partial x}(x_0, y_0)s_1t_1 + \frac{\partial^2 f}{\partial y^2}(x_0, y_0)t_1^2 = R(s_1,t_1)<0,\\
+g_2(0)&=\frac{\partial^2 f}{\partial x^2}(x_0, y_0)s_2^2 +2\frac{\partial^2 f}{\partial y\partial x}(x_0, y_0+)s_2t_2 + \frac{\partial^2 f}{\partial y^2}(x_0, y_0)t_2^2 = R(s_2,t_2)>0.
+\end{align*}
+Isto prova que $(x_0,y_0)$ é um ponto de máximo local de $g_1$ e um ponto de mínimo local de $g_2$ e, portanto, não é extremante local de $f$.
+\end{proof}
+
+
+
+\vskip 25pt
+
+
+\section{Máximos e mínimos em conjuntos compactos}
+
+\begin{definicao}\label{acumulacao}
+Seja $A$ um subconjunto qualquer de $\mathbb{R}^n$. Um ponto $p \in \mathbb{R}^n$ é chamado de \emph{ponto de aderência de $A$} se para todo $\delta > 0$ temos $B(p;\delta) \cap A \neq \varnothing$.
+\end{definicao}
+
+Recordamos que um subconjunto $F$ de $\mathbb{R}^n$ é \emph{fechado} se seu complementar é um conjunto aberto. Notemos que $\mathbb{R}^n$ é fechado, já que o conjunto vazio é aberto. A proposição a seguir fornece uma definição equivalente deste conceito.
+
+\begin{proposicao}\label{fecho}
+Um subconjunto $F$ de $\mathbb{R}^n$ é fechado se, e somente se, $F$ contém todos os seus pontos de aderência.
+\end{proposicao}
+\begin{proof}
+Basta observarmos que
+$$B(p;\delta) \cap F = \varnothing$$
+se, e somente se,
+$$B(p;\delta) \subset (\mathbb{R}^n \setminus F)$$
+e usar a definição de aberto.
+\end{proof}
+
+Recordamos a seguinte importante propriedade.
+
+\begin{teorema}[Princípio dos Intervalos Encaixantes]\label{PIE}
+Seja $[a_1,b_1], [a_2,b_2],\ldots,[a_n,b_n],\ldots$ uma sequência de intervalos satisfazendo as seguintes propriedades:
+\begin{enumerate}[(i)]
+\item $[a_1,b_1] \supset [a_2, b_2] \supset \ldots \supset [a_n,b_n] \supset \ldots$ (isto é, cada intervalo contém o seguinte);
+\item Para todo $\varepsilon > 0$ existe $n \geq 1$ tal que $b_n - a_n < \varepsilon$ (isto é, os comprimentos dos intervalos tendem a zero).
+\end{enumerate}
+Nestas condições, existe um único número real $t \in \bigcap_{n=1}^\infty [a_n,b_n]$ (isto é, existe um único número real pertencente à intersecção de todos os intervalos).
+\end{teorema}
+\begin{proof}
+Consideremos o conjunto (não-vazio) $A = \{ a_n : n \geq 1\}$. Afirmamos que $A$ é limitado superiormente e que cada $b_n$ é limitante superior de $A$.\footnote{Seja $A$ um subconjunto não-vazio de $\mathbb{R}$. Dizemos que $A$ é \emph{limitado superiormente} se existe algum $M \in \mathbb{R}$ tal que $a \leq M$, para todo $a \in A$. Neste caso, $M$ é um \emph{limitante superior de $A$}. Uma das propriedades fundamentais de $\mathbb{R}$ é a \emph{Propriedade do Supremo}, que garante que todo subconjunto não-vazio e limitado superiormente de $\mathbb{R}$ admite um menor limitante superior. Tal limitante superior denomina-se \emph{supremo de $A$}.
+
+Analogamente, dizemos que $A$ é \emph{limitado inferiormente} se existe algum $m \in \mathbb{R}$ tal que $m \leq a$, para todo $a \in A$. Neste caso, $m$ é um \emph{limitante inferior} de $A$. Todo subconjunto não-vazio e limitado inferiormente admite um maior limitante inferior, que é chamado de \emph{ínfimo de $A$}.} De fato, dado $n \geq 1$, mostremos que $a_m \leq b_n$, para todo $m \geq 1$. Temos os seguintes dois casos a considerar:
+
+\textit{1º caso:} $1 \leq m \leq n$.
+
+Neste caso, pela propriedade $(i)$ sabemos que $[a_n,b_n] \subset [a_m,b_m]$ e, portanto,
+$$a_m \leq a_n \leq b_n.$$
+
+\textit{2º caso:} $m > n$.
+
+Neste caso, novamente pela propriedade $(i)$ temos $[a_n, b_n] \subset [a_m,b_m]$, ou seja,
+$$a_m \leq b_m \leq b_n.$$
+
+Provamos, portanto, que todo elemento de $A$ é menor ou igual a cada $b_n$, isto é, $A$ é limitado superiormente e cada $b_n$ é um limitante superior de $A$. Logo, pela Propriedade do Supremo, $A$ admite supremo, que denotaremos por $S$. Vamos mostrar que $S$ é o único número real pertencente à intersecção dos intervalos $[a_n,b_n]$.
+
+Como cada $b_n$ é limitante superior de $A$ e $S$ é o menor limitante superior de $A$, temos
+$$a_n \leq S \leq b_n,$$
+isto é, $S \in [a_n,b_n]$, para todo $n \geq 1$. Por outro lado, seja $R$ outro número real satisfazendo $a_n \leq R \leq b_n$, para todo $n \geq 1$. Dado $\varepsilon > 0$, pela propriedade $(ii)$ existe $N \geq 1$ tal que $b_N - a_N < \varepsilon$ e, portanto,
+$$R,S \in [a_N,b_N] \implies |R-S| \leq b_N - a_N < \varepsilon.$$
+Isto implica que $R=S$. (Caso contrário, tomando $\varepsilon = |R-S|/2 > 0$, teríamos
+$$0< |R-S| < \frac{|R-S|}{2},$$
+uma contradição.)
+\end{proof}
+
+\begin{teorema}\label{limitacao}
+Sejam $K$ um subconjunto fechado, limitado e não-vazio de $\mathbb{R}^n$ e $f : K \to \mathbb{R}$ uma função. Se $f$ é contínua, então $f$ é limitada.
+\end{teorema}
+\begin{proof}
+Faremos o caso $n=2$; os outros casos são análogos. Como $K$ é limitado, existe um retângulo $R_1 = [a_1,b_1] \times [c_1,d_1]$ tal que $K \subset R_1$. Suponhamos, por absurdo, que $f$ não seja limitada em $K$; então existe $(x_1,y_1) \in K$ tal que $|f(x_1,y_1)| > 1$. Agora, consideremos os retângulos
+\begin{align*}
+R^1_1 &= \left[a_1, \frac{a_1+b_1}{2}\right] \times \left[\frac{c_1+d_1}{2},d_1\right],\\
+R^1_2 &= \left[\frac{a_1+b_1}{2}, b_1\right] \times \left[\frac{c_1+d_1}{2},d_1\right],\\
+R^1_3 &= \left[a_1,\frac{a_1+b_1}{2}\right] \times \left[c_1, \frac{c_1+d_1}{2}\right],\\
+R^1_4 &= \left[\frac{a_1+b_1}{2}, b_1\right] \times \left[c_1, \frac{c_1+d_1}{2}\right].
+\end{align*}
+Como $f$ não é limitada em $K$, $f$ não é limitada em algum $K \cap R^1_{i_1}$, para algum $1 \leq i_1 \leq 4$. Para simplificar a notação, vamos denotar o retângulo $R^1_{i_1}$ simplesmente por $R_2$ e escrever
+$$R_2 = [a_2, b_2] \times [c_2,d_2].$$
+Notemos que, por construção, $b_2 - a_2 = (b_1-a_1)/2$ e $d_2 - c_2 = (d_1 - c_1)/2$. Além disso, como $f$ não é limitada em $K \cap R_2$, existe $(x_2,y_2) \in K \cap R_2$ tal que $|f(x_2,y_2)| > 2$.
+
+Definimos os retângulos
+\begin{align*}
+R^2_1 &= \left[a_2, \frac{a_2+b_2}{2}\right] \times \left[\frac{c_2+d_2}{2},d_2\right],\\
+R^2_2 &= \left[\frac{a_2+b_2}{2}, b_2\right] \times \left[\frac{c_2+d_2}{2},d_2\right],\\
+R^2_3 &= \left[a_2,\frac{a_2+b_2}{2}\right] \times \left[c_2, \frac{c_2+d_2}{2}\right],\\
+R^2_4 &= \left[\frac{a_2+b_2}{2}, b_2\right] \times \left[c_2, \frac{c_2+d_2}{2}\right].
+\end{align*}
+Novamente, como $f$ não é limitada em $K \cap R_2$, sabemos que $f$ não é limitada em algum $K \cap R^2_{i_2}, 1 \leq i_2 \leq 4$. Vamos denotar o retângulo $R^2_{i_2}$ por $R_3$ e escrever
+$$R_3 = [a_3, b_3] \times [c_3,d_3].$$
+Por construção, $b_3 - a_3 = (b_2-a_2)/2 = (b_1-a_1)/4$ e $d_3 - c_3 = (d_2 - c_2)/2 =(d_1 - c_1)/4$. Além disso, como $f$ não é ilimitada em $K \cap R_3$, existe $(x_3, y_3) \in K \cap R_3$ satisfazendo $|f(x_3,y_3)| > 3$.
+
+Procedendo por indução, construímos uma sequência de retângulos
+\begin{align*}
+R_1 &= [a_1,b_1] \times [c_1,d_1],\\
+R_2 &= [a_2,b_2] \times [c_2,d_2],\\
+\vdots\\
+R_n &= [a_n,b_n] \times [c_n,d_n],\\
+\vdots
+\end{align*}
+ e uma sequência de pontos
+$$(x_1,y_1),(x_2,y_2), \ldots, (x_n,y_n),\ldots$$
+satisfazendo as seguintes propriedades:
+\begin{enumerate}[(i)]
+\item $[a_1,b_1] \supset [a_2, b_2] \supset \ldots \supset [a_n,b_n] \supset \ldots$
+\item $[c_1,d_1] \supset [c_2, d_2] \supset \ldots \supset [c_n,d_n] \supset \ldots$
+\item O comprimento de $[a_{n+1}, b_{n+1}]$ é metade do comprimento de $[a_n,b_n]$;
+\item O comprimento de $[c_{n+1}, d_{n+1}]$ é metade do comprimento de $[c_n,d_n]$;
+\item $(x_n,y_n) \in K \cap R_n$;
+\item $|f(x_n,y_n)| > n$.
+\end{enumerate}
+
+Notemos que a propriedade (vi) implica que
+\begin{equation}\label{eqlim}
+\lim_{n \to +\infty} |f(x_n,y_n)| = \lim_{n\to +\infty} n = +\infty.
+\end{equation}
+
+Notemos também que as sequências de intervalos
+$$[a_1,b_1] \supset [a_2, b_2] \supset \ldots \supset [a_n,b_n] \supset \ldots$$
+$$[c_1,d_1] \supset [c_2, d_2] \supset \ldots \supset [c_n,d_n] \supset \ldots$$
+satisfazem as hipóteses do Princípio dos Intervalos Encaixantes (as propriedades (iii) e (iv) implicam que os comprimentos de $[a_n,b_n]$ e de $[c_n,d_n]$ tendem a zero) e, portanto, existem únicos números reais $x_0,y_0$ tais que
+$$a_n \leq x_0 \leq b_n\;\;\; \text{e}\;\;\; c_n \leq y_0 \leq d_n,$$
+para todo $n \geq 1$.
+
+Mostraremos, agora, que $(x_0,y_0)$ é um ponto de aderência de $K$ e que a sequência
+$$(x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n),\ldots$$
+converge para $(x_0,y_0)$ quando $n$ tende a infinito\footnote{Dizemos que uma sequência de pontos $p_1,\ldots,p_n,\ldots$ em $\mathbb{R}^n$ \emph{converge para um ponto} $p_0 \in \mathbb{R}^n$ se para todo $\varepsilon > 0$ existe $N \geq 1$ tal que $\|p_n - p_0\|< \varepsilon$, para todo $n \geq N$. Informalmente, os pontos da sequência ficam arbitrariamente próximos do ponto $p_0$.}. Dado $\delta > 0$, como os comprimentos de $[a_n,b_n]$ e de $[c_n,d_n]$ tendem a zero, existe $N \geq 1$ tal que
+$$b_n - a_n < \frac{\delta}{\sqrt{2}}\;\;\; \text{e}\;\;\; d_n - c_n < \frac{\delta}{\sqrt{2}},$$
+para todo $n \geq N$. Assim, temos
+\begin{align*}
+x_0,x_n \in [a_n,b_n] &\implies |x_n - x_0| < b_n - a_n < \frac{\delta}{\sqrt{2}}\\
+y_0,y_n \in [c_n,d_n] &\implies |y_n - y_0| < d_n - c_n < \frac{\delta}{\sqrt{2}}
+\end{align*}
+e, portanto,
+$$\|(x_n,y_n) - (x_0,y_0)\| = \sqrt{(x_n-x_0)^2 + (y_n-y_0)^2} < \delta,$$
+para todo $n \geq N$. Em outras palavras, provamos que
+$$(x_n,y_n) \in B((x_0,y_0);\delta),$$
+para todo $n \geq N$. Como $(x_n,y_n) \in K$, obtemos $B((x_0,y_0);\delta) \cap K \neq \varnothing$. Isto prova que $(x_0,y_0)$ é ponto de aderência de $K$ e, pela Proposição \ref{fecho}, $(x_0,y_0) \in K$, pois $K$ é fechado.
+
+Finalmente, como $f$ é contínua em $K$ e a sequência
+$$(x_1,y_1),(x_2,y_2),\ldots,(x_n,y_n),\ldots$$
+converge para $(x_0,y_0)$ quando $n$ tende a infinito, concluímos
+$$|f(x_0,y_0)| = \lim_{n \to +\infty} |f(x_n,y_n)| = + \infty,$$
+por \eqref{eqlim}. Provamos, assim, que supor que $f$ não é limitada em $K$ nos leva a uma contradição. Logo, $f$ é limitada em $K$.
+\end{proof}
+
+\begin{teorema}[Teorema de Weierstrass]\label{weierstrass}
+Sejam $K$ um subconjunto fechado, limitado e não-vazio de $\mathbb{R}^n$ e $f : K \to \mathbb{R}$ uma função. Se $f$ é contínua, então existem $p_1,p_2 \in K$ tais que $f(p_1) \leq f(p) \leq f(p_2)$, para todo $p \in K$.
+\end{teorema}
+\begin{proof}
+Pelo Teorema \ref{limitacao}, $f$ é limitada em $K$. Logo, o conjunto
+$$\text{Im}(f) = \{f(p) : p \in K\}$$
+é limitado superior e inferiormente em $\mathbb{R}$ e, portanto, admite supremo e ínfimo. Sejam $M$ e $m$ o supremo e o ínfimo de Im$(f)$, respectivamente. Pelas definições de supremo e de ínfimo, para todo $p \in K$ temos
+$$m \leq f(p) \leq M.$$
+
+Afirmamos que existe $p_1 \in K$ tal que $f(p_1)=m$. Caso contrário, temos $m < f(p)$, para todo $p \in K$, de modo que a função $g : K \to \mathbb{R}$ dada por
+$$g(p) = \frac{1}{f(p)-m},$$
+está bem definida e é contínua. Aplicando novamente o Teorema \ref{limitacao}, concluímos que $g$ é limitada, isto é, existe $L > 0$ tal que, para todo $p \in K$, 
+$$0 < g(p) \leq L$$
+e assim
+$$0 < \frac{1}{f(p)-m} \leq L \implies f(p)-m \geq \frac{1}{L} \implies f(p) \geq m+ \frac{1}{L}.$$
+Isto prova que $m + 1/L$ é, também, limitante inferior de Im$(f)$, contrariando o fato de $m$ ser o ínfimo de Im$(f)$ (pois $m + 1/L > m$). Logo, deve existir $p_1 \in K$ tal que $f(p_1)=m$.
+
+Procedendo de forma análoga, provamos que existe $p_2 \in K$ tal que $f(p_2)=M$, o que completa a demonstração.
+\end{proof}
+
+\vskip 25pt
+
+\section{O Teorema da Função Implícita}
+
+\begin{teorema}[Teorema da Função Implícita I]\label{implicita1}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^3$, $F : A \to \mathbb{R}$ uma função de classe $\mathcal{C}^1$ e $(x_0,y_0,z_0) \in A$ tal que $F(x_0,y_0,z_0) = 0$. Se $\frac{\partial F}{\partial z}(x_0,y_0,z_0) \neq 0$, então existem $B \subset \mathbb{R}^2$ uma bola aberta centrada em $(x_0,y_0)$ e $J \subset \mathbb{R}$ um intervalo aberto centrado em $z_0$ satisfazendo:
+\begin{enumerate}[(i)]
+\item $(B \times J) \subset A$;
+\item $\frac{\partial F}{\partial z}$ não se anula em $B \times J$;
+\item Para cada $(x,y) \in B$ existe um único número real $g(x,y) \in J$ tal que $F(x,y,g(x,y)) = 0$;
+\item A função $g : B \to J$ é de classe $\mathcal{C}^1$ e, além disso,
+$$\frac{\partial g}{\partial x}(x,y) = -\frac{\frac{\partial F}{\partial x}(x,y,g(x,y))}{\frac{\partial F}{\partial z}(x,y,g(x,y))}\;\;\; \text{e}\;\;\; \frac{\partial g}{\partial y}(x,y) = -\frac{\frac{\partial F}{\partial y}(x,y,g(x,y))}{\frac{\partial F}{\partial z}(x,y,g(x,y))},$$
+para todo $(x,y) \in B$.
+\end{enumerate}
+\end{teorema}
+\begin{proof}
+Dividimos a demonstração em 4 etapas.
+
+\textbf{Etapa 1: Construção dos abertos $B$ e $J$.}
+
+Sem perda de generalidade, podemos supor $\frac{\partial F}{\partial z}(x_0,y_0,z_0) > 0$. Como $\frac{\partial F}{\partial z}$ é contínua e $A$ é aberto, existem $R_1 > 0$ e $\delta_1 > 0$ tais que $(B_1 \times J_1) \subset A$ e
+\begin{equation}\label{eqimplicita1}
+\frac{\partial F}{\partial z}(x,y,z) >0,
+\end{equation}
+para todos $(x,y) \in B_1 = B((x_0,y_0); R_1)$ e $z \in J_1 = \;]z_0-\delta_1, z_0+\delta_1[$. Consideremos a função $h : J_1 \to \mathbb{R}$ dada por $h(z)=F(x_0,y_0,z)$. A função $h$ é derivável em $J_1$ e, por \eqref{eqimplicita1},
+$$h'(z)= \frac{\partial F}{\partial z}(x_0,y_0,z) >0,$$
+para todo $z \in J_1$. Logo, $h$ é estritamente crescente no intervalo $J_1$. Como $h(z_0)=F(x_0,y_0,z_0)=0$, em particular temos
+$$h(z_0-\delta) < 0 < h(z_0+\delta),$$
+onde $\delta = \frac{\delta_1}{2}$. Pela continuidade de $F$ e pela desigualdade
+$$F(x_0,y_0,z_0+\delta)=h(z_0+\delta)>0,$$
+existe $0<R_2 <R_1$ tal que
+\begin{equation}\label{eqimplicita2}
+F(x,y,z_0+\delta)>0, \; \text{para todo}\; (x,y) \in B((x_0,y_0); R_2).
+\end{equation}
+ Analogamente, a continuidade de $F$ e a desigualdade
+$$F(x_0,y_0,z_0-\delta)=h(z_0-\delta)<0$$
+garantem que existe $0 < R < R_2$ tal que
+\begin{equation}\label{eqimplicita3}
+F(x,y,z_0-\delta)<0, \;\text{para todo}\; (x,y) \in B((x_0,y_0); R).
+\end{equation}
+ Agora, estamos em condições de definir os conjuntos $B$ e $J$ do enunciado: tomemos $B = B((x_0,y_0); R)$ e $J = \;]z_0-\delta, z_0 + \delta[$. Como $B \subset B_1$ e $J \subset J_1$, obtemos
+$$(B \times J) \subset (B_1 \times J_1) \subset A,$$
+o que prova $(i)$. Além disso, $(ii)$ é consequência imediata de \eqref{eqimplicita1}.
+
+\textbf{Etapa 2: Definição da função $g$.}
+
+Dado $(x,y) \in B$, consideremos a função $h_{(x,y)} : [z_0-\delta,z_0+\delta] \to \mathbb{R}$ dada por $h_{(x,y)}(z) = F(x,y,z)$. Notemos que $h_{(x,y)}$ é derivável (em particular, é contínua) e
+$$h_{(x,y)}(z_0-\delta) < 0 < h_{(x,y)}(z_0+\delta),$$
+por \eqref{eqimplicita2} e \eqref{eqimplicita3}. Logo, pelo Teorema do Valor Intermediário, existe algum número real (que depende de $(x,y)$) pertencente ao intervalo $J$ no qual $h_{(x,y)}$ se anula. Notemos também que $h_{(x,y)}$ é estritamente crescente em $[z_0-\delta,z_0+\delta]$, pois, por \eqref{eqimplicita1}, $h'_{(x,y)} (z) >0$ para todo $z \in J$. Isto prova que existe um \emph{único} número real pertencente a $J$ no qual $h_{(x,y)}$ se anula, que denotaremos por $g(x,y)$.
+
+Assim fica definida, portanto, a função $g : B \to J$ desejada. Notemos que $g(x,y)$ é o único número real pertencente a $J$ satisfazendo
+$$F(x,y,g(x,y))= h_{(x,y)}(g(x,y))=0,$$
+ou seja, a propriedade $(iii)$ está provada.
+
+\textbf{Etapa 3: Continuidade de $g$.}
+
+Para provarmos que $g$ é de classe $\mathcal{C}^1$, será conveniente mostrarmos, antes, que $g$ é contínua. Fixemos então um ponto $(x_1,y_1) \in B$. Dado $\varepsilon > 0$, devemos provar que existe $r > 0$ tal que
+$$g(x_1,y_1)-\varepsilon< g(x,y)< g(x_1,y_1)+\varepsilon,$$
+para todo $(x,y) \in B$ com $\|(x,y)-(x_1,y_1)\| < r$.
+
+Definimos
+\begin{align*}
+\Delta &= R - \|(x_1,y_1)-(x_0,y_0)\| > 0,\\
+a &= \max\{ z_0-\delta, g(x_1,y_1)-\varepsilon\},\\
+b &= \min\{ z_0+\delta, g(x_1,y_1)+\varepsilon\}.
+\end{align*}
+Como $g(x_1,y_1) \in J = \;]z_0-\delta,z_0+\delta[$, sabemos que
+$$z_0 - \delta < g(x_1,y_1) < z_0+\delta.$$
+Além disso, é claro que
+$$g(x_1,y_1) - \varepsilon < g(x_1,y_1) < g(x_1,y_1)+\varepsilon.$$
+Combinamos estas desigualdades, concluímos que
+$$a < g(x_1,y_1) < b$$
+e, portanto,
+\begin{equation}\label{eqimplicita5}
+F(x_1,y_1,a)=h_{(x_1,y_1)}(a) < 0 < h_{(x_1,y_1)}(b) = F(x_1,y_1,b),
+\end{equation}
+pois a função $h_{(x_1,y_1)}$ é estritamente crescente e se anula em $g(x_1,y_1)$. Usando a continuidade de $F$ e a desigualdade \eqref{eqimplicita5},  obtemos um número real $r_1 > 0$ satisfazendo
+\begin{equation}\label{eqimplicita6}
+F(x,y,z)< 0, \; \text{para todo}\; (x,y,z) \in B \times [z_0-\delta,z_0+\delta] \;\text{tal que}\; \|(x,y,z)-(x_1,y_1,a)\| < r_1.
+\end{equation}
+Novamente pela continuidade de $F$ e pela desigualdade \eqref{eqimplicita5}, existe um número real $r_2 > 0$ satisfazendo
+\begin{equation}\label{eqimplicita6'}
+F(x,y,z)> 0, \; \text{para todo}\; (x,y,z) \in B \times [z_0-\delta,z_0+\delta] \;\text{tal que}\; \|(x,y,z)-(x_1,y_1,b)\| < r_2.
+\end{equation}
+Definimos, agora,
+$$r = \min\{ r_1,r_2, \Delta\} > 0.$$
+Notemos primeiramente que $B((x_1,y_1); r) \subset B$, pois, pela Desigualdade Triangular e pela escolha de $\Delta$,
+\begin{align*}
+(x,y) \in B((x_1,y_1); r) &\implies \|(x,y)-(x_1,y_1)\| < r\\
+&\implies \|(x,y)-(x_0,y_0)\| \leq \|(x,y)-(x_1,y_1)\| + \|(x_1,y_1)-(x_0,y_0)\| < R\\
+&\implies (x,y) \in B((x_0,y_0); R) = B.
+\end{align*}
+Notemos também que $[a,b] \subset [z_0-\delta,z_0+\delta]$, pela escolha de $a$ e de $b$. Deste modo, se $(x,y) \in B((x_1,y_1);r)$, então os pontos $(x,y,a)$ e $(x,y,b)$ pertencem a $B \times[z_0-\delta,z_0+\delta]$ e, além disso,
+$$\|(x,y,a)-(x_1,y_1,a)\| = \|(x,y,b)-(x_1,y_1,b)\| = \|(x,y)-(x_1,y_1)\| < r \leq \min\{r_1,r_2\}.$$
+Logo, aplicando as desigualdades \eqref{eqimplicita6} e \eqref{eqimplicita6'}, obtemos
+\begin{equation}\label{eqimplicita**}
+h_{(x,y)}(a) = F(x,y,a) < 0 < F(x,y,b)= h_{(x,y)}(b),\; \text{para todo}\; (x,y) \in B((x_1,y_1);r).
+\end{equation}
+Como $h_{(x,y)}$ é estritamente crescente e se anula em $g(x,y)$, a desigualdade \eqref{eqimplicita**} garante que $g(x,y)$ pertence ao intervalo aberto $(a,b)$, isto é,
+$$g(x_1,y_1)-\varepsilon \leq a < g(x,y) < b \leq g(x_1,y_1)+ \varepsilon.$$
+Isto prova que $g$ é contínua em $(x_1,y_1) \in B$. Como $(x_1,y_1)$ foi escolhido arbitrariamente, $g$ é contínua em $B$.
+
+\textbf{Etapa 4: $g$ é de classe $\mathcal{C}^1$.}
+
+Agora estamos em condições de provar que $g$ é de classe $\mathcal{C}^1$ em $B$ e concluir a demonstração. Fixemos $(x_1,y_1) \in B$ e seja, como antes, $\Delta =R- \|(x_1,y_1)-(x_0,y_0)\| >0$. Dados dois números reais $t$ e $s$ tais que $0 < |t| < \Delta$ e $s \in [0,1]$, afirmamos primeiramente que os pontos $p(t,s)=(x_1+st,y_1,g(x_1,y_1))$ e
+$$q(t,s)= (x_1+t,y_1, sg(x_1+t,y_1) + (1-s)g(x_1,y_1))$$
+pertencem a $B \times J$. De fato, observamos primeiramente que $(x_1+st,y_1) \in B$, pois
+\begin{align*}
+\|(x_1+st,y_1)-(x_0,y_0)\| &= \|(x_1-x_0,y_1-y_0) + (st,0)\| \leq \|(x_1,y_1)-(x_0,y_0)\| + \|(st,0)\|\\
+&= \|(x_1,y_1)-(x_0,y_0)\| + s|t|\\
+&\leq \|(x_1,y_1)-(x_0,y_0)\| + |t|\\
+&< \|(x_1,y_1)-(x_0,y_0)\| + \Delta =R.
+\end{align*}
+Isto implica imediatamente que $p(t,s) \in B \times J$.  Além disso, como os números reais $g(x_1+t,y_1)$ e $g(x_1,y_1)$ pertencem ao intervalo $J = \;]z_0-\delta,z_0+\delta[$, temos
+$$z_0-\delta < g(x_1+t,y_1) < z_0+\delta \implies s(z_0-\delta) < sg(x_1+t,y_1) < s(z_0+\delta)$$
+e, analogamente,
+$$z_0-\delta < g(x_1,y_1) < z_0+\delta \implies (1-s)(z_0-\delta) < (1-s)g(x_1+t,y_1) < (1-s)(z_0+\delta).$$
+Somando as desigualdades acima, obtemos
+$$z_0-\delta < sg(x_1+t,y_1) + (1-s)g(x_1,y_1) < z_0+\delta,$$
+isto é, o número real $sg(x_1+t,y_1) + (1-s)g(x_1,y_1)$ pertence a $J$. E, pelo que mostramos acima, o ponto $(x_1+t,y_1)$ pertence a $B$. Logo, $q(t,s) \in B \times J$ e a afirmação está provada.
+
+Assim, ficam bem definidas as funções $G_1, G_2 : [0,1] \to \mathbb{R}$ dadas por
+\begin{align*}
+G_1(s) &= F(x_1 + st,y_1,g(x_1,y_1)),\\
+G_2(s) &= F(x_1 + t, y_1, sg(x_1+t,y_1) + (1-s)g(x_1,y_1)).
+\end{align*}
+A diferenciabilidade de $F$ garante que $G_1$ e $G_2$ são contínuas em $[0,1]$, deriváveis em $]0,1[$ e, pela Regra da Cadeia,
+\begin{align}
+G_1'(s) &= t \frac{\partial F}{\partial x}(x_1 + st,y_1,g(x_1,y_1)),\label{eqimplicita7} \\ 
+G_2'(s) &= (g(x_1+t,y_1)-g(x_1,y_1))\frac{\partial F}{\partial z}(x_1 + t, y_1, sg(x_1+t,y_1) + (1-s)g(x_1,y_1)). \label{eqimplicita8}
+\end{align}
+Pelo Teorema do Valor Médio, existem números reais $s_1(t),s_2(t) \in\; ]0,1[$ satisfazendo
+\begin{align}
+G_1'(s_1(t)) &= G_1(1)-G_1(0)= F(x_1+t,y_1,g(x_1,y_1)) - F(x_1,y_1,g(x_1,y_1)), \label{eqimplicita9}\\
+G_2'(s_2(t)) &= G_2(1)-G_2(0) = F(x_1+t,y_1,g(x_1+t,y_1)) - F(x_1+t,y_1,g(x_1,y_1)).\label{eqimplicita10}
+\end{align}
+Substituindo \eqref{eqimplicita7} em \eqref{eqimplicita9} e \eqref{eqimplicita8} em \eqref{eqimplicita10} e lembrando que
+$$F(x_1,y_1,g(x_1,y_1)) = 0 = F(x_1+t,y_1,g(x_1+t,y_1)),$$
+obtemos
+\begin{align*}
+F(x_1+t,y_1,g(x_1,y_1)) &= t\frac{\partial F}{\partial x}(x_1 + s_1(t)t,y_1,g(x_1,y_1)),\\
+F(x_1+t,y_1,g(x_1,y_1)) &= -(g(x_1+t,y_1)-g(x_1,y_1))\frac{\partial F}{\partial z}(x_1 + t, y_1, s_2(t)g(x_1+t,y_1) + (1-s_2(t))g(x_1,y_1)),
+\end{align*}
+isto é,
+$$(g(x_1+t,y_1)-g(x_1,y_1))\frac{\partial F}{\partial z}(x_1 + t, y_1, s_2(t)g(x_1+t,y_1) + (1-s_2(t))g(x_1,y_1)) = - t\frac{\partial F}{\partial x}(x_1 + s_1(t)t,y_1,g(x_1,y_1)).$$
+Dividindo a igualdade acima por $t$ e por
+$$\frac{\partial F}{\partial z}(x_1 + t, y_1, s_2(t)g(x_1+t,y_1) + (1-s_2(t))g(x_1,y_1)) > 0,$$
+resulta
+\begin{equation}
+\frac{g(x_1+t,y_1)-g(x_1,y_1)}{t} = -\frac{\frac{\partial F}{\partial x}(x_1 + s_1(t)t,y_1,g(x_1,y_1))}{\frac{\partial F}{\partial z}(x_1 + t, y_1, s_2(t)g(x_1+t,y_1) + (1-s_2(t))g(x_1,y_1))}.\label{eqimplicita*}
+\end{equation}
+
+
+Vamos calcular o limite da expressão \eqref{eqimplicita*} quando $t$ tende a zero. Como $0 < s_1(t) < 1$, o Teorema do Confronto nos conta que
+$$\lim_{t \to 0} s_1(t) t = 0,$$
+ou seja,
+$$\lim_{t \to 0} (x_1+s_1(t)t) = x_1.$$
+Logo, pela continuidade de $\frac{\partial F}{\partial x}$,
+\begin{equation}
+\lim_{t\to 0} \frac{\partial F}{\partial x}(x_1 + s_1(t)t,y_1,g(x_1,y_1)) = \frac{\partial F}{\partial x}(x_1,y_1,g(x_1,y_1)). \label{eqimplicita11}
+\end{equation}
+Como $0 < s_2(t) < 1$ e $g$ é contínua, novamente podemos aplicar o Teorema de Confronto e concluir que
+\begin{align*}
+\lim_{t \to 0} (s_2(t)g(x_1+t,y_1) + (1-s_2(t))g(x_1,y_1)) &= g(x_1,y_1) +\lim_{t \to 0} (s_2(t)g(x_1+t,y_1) - s_2(t)g(x_1,y_1) )\\
+&=g(x_1,y_1)+ \lim_{t \to 0} s_2(t)\underbrace{(g(x_1+t,y_1)-g(x_1,y_1))}_{\to 0} =0.
+\end{align*}
+Portanto, pela continuidade de $\frac{\partial F}{\partial z}$,
+\begin{equation}
+\lim_{t\to 0} \frac{\partial F}{\partial z}(x_1 + t, y_1, s_2(t)g(x_1+t,y_1) + (1-s_2(t))g(x_1,y_1)) = \frac{\partial F}{\partial z}(x_1,y_1,g(x_1,y_1)) > 0.\label{eqimplicita12}
+\end{equation}
+Combinando \eqref{eqimplicita*}, \eqref{eqimplicita11} e \eqref{eqimplicita12}, obtemos
+$$\lim_{t \to 0} \frac{g(x_1+t,y_1) - g(x_1,y_1)}{t} = - \frac{\frac{\partial F}{\partial x}(x_1,y_1,g(x_1,y_1))}{\frac{\partial F}{\partial z}(x_1,y_1,g(x_1,y_1))}.$$
+Isto prova que $g$ admite derivada parcial em relação a $x$ em $(x_1,y_1)$. Procedendo de forma análoga, concluímos que
+$$\frac{\partial g}{\partial y}(x_1,y_1) = - \frac{\frac{\partial F}{\partial y}(x_1,y_1,g(x_1,y_1))}{\frac{\partial F}{\partial z}(x_1,y_1,g(x_1,y_1))}.$$
+Finalmente, notemos que as funções
+$$\frac{\frac{\partial F}{\partial y}(x,y,g(x,y))}{\frac{\partial F}{\partial z}(x,y,g(x,y))}\;\;\; \text{e}\;\;\; \frac{\frac{\partial F}{\partial y}(x,y,g(x,y))}{\frac{\partial F}{\partial z}(x,y,g(x,y))}$$
+são (por hipótese) contínuas em $B$ e, portanto, as derivadas parciais de $g$ são contínuas em $B$. Provamos, assim, que $g$ é de classe $\mathcal{C}^1$ em $B$, e a demonstração está completa.
+\end{proof}
+
+Nas condições do teorema anterior, é conveniente observarmos que
+$$g(x_0,y_0)=z_0.$$
+Com efeito, $g(x_0,y_0)$ é o único número real pertencente ao intervalo $J$ que satisfaz
+$$F(x_0,y_0,g(x_0,y_0))=0.$$
+Como, por hipótese, $z_0$ tem esta propriedade, concluímos que $g(x_0,y_0)=z_0$.
+
+O Teorema da Função Implícita em duas variáveis pode ser facilmente obtido como um caso particular do teorema anterior.  Apesar de seu enunciado ser muito similar ao do Teorema \ref{implicita1}, ele será útil na demonstração de um terceiro resultado, mais adiante. Por este motivo, faremos sua demonstração.
+
+\begin{corolario}[Teorema da Função Implícita em duas variáveis]\label{implicitaR2}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^2$, $F : A \to \mathbb{R}$ uma função de classe $\mathcal{C}^1$ e $(x_0,y_0) \in A$ tal que $F(x_0,y_0) = 0$. Se $\frac{\partial F}{\partial y}(x_0,y_0) \neq 0$, então existem intervalos abertos $I, J \subset \mathbb{R}$ centrados  em $x_0$ e em $y_0$, respectivamente, e satisfazendo:
+\begin{enumerate}[(i)]
+\item $(I \times J) \subset A$;
+\item $\frac{\partial F}{\partial y}$ não se anula em $I \times J$;
+\item Para cada $x \in I$ existe um único número real $g(x) \in J$ tal que $F(x,g(x)) = 0$;
+\item A função $g : I \to J$ é de classe $\mathcal{C}^1$ e, para todo $x \in I$,
+$$g'(x) = -\frac{\frac{\partial F}{\partial x}(x,g(x))}{\frac{\partial F}{\partial y}(x,g(x))}.$$
+\end{enumerate}
+\end{corolario}
+\begin{proof}
+Consideremos o conjunto aberto
+$$A_0 = \{ (u,v,w) \in \mathbb{R}^3 : (u,w) \in A\}.$$
+Seja $H: A_0 \to \mathbb{R}$ dada por $H(u,v,w) = F(u,w)$. As derivadas parciais de $H$ são
+\begin{align*}
+\frac{\partial H}{\partial u}(u,v,w) &= \frac{\partial F}{\partial x}(u,w),\\
+\frac{\partial H}{\partial v}(u,v,w) &= 0,\\
+\frac{\partial H}{\partial w}(u,v,w) &= \frac{\partial F}{\partial y}(u,w).
+\end{align*}
+Logo, $H$ é de classe $\mathcal{C}^1$ em $A_0$. Como $H(x_0,0,y_0) = F(x_0,y_0)=0$ e $\frac{\partial H}{\partial w}(x_0,0,y_0)= \frac{\partial F}{\partial y}(x_0,y_0) \neq 0$, concluímos que $H$ satisfaz as hipóteses do teorema anterior. Logo, existem $B \subset \mathbb{R}^2$ uma bola aberta centrada em $(x_0,0)$ e $J \subset \mathbb{R}$ um intervalo aberto centrado em $y_0$ satisfazendo:
+\begin{enumerate}[($a$)]
+\item $(B \times J) \subset A_0$;
+\item $\frac{\partial H}{\partial w}$ não se anula em $B \times J$;
+\item Para cada $(u,v) \in B$ existe um único número real $h(u,v) \in J$ tal que $H(u,v,h(u,v)) = 0$;
+\item A função $h : B \to J$ é de classe $\mathcal{C}^1$ e
+$$\frac{\partial h}{\partial u}(u,v) = -\frac{\frac{\partial H}{\partial u}(u,v,h(u,v))}{\frac{\partial H}{\partial w}(u,v,h(u,v))},$$
+para todo $(x,y) \in B_1$.
+\end{enumerate}
+Seja $R > 0$ o raio da bola $B$, defina $I =\; ]x_0-R, x_0+R[$ e considere a função $g : I \to J$ dada por
+$$g(x) = h(x,0).$$
+Notemos que $I$ e $J$ estão centrados em $x_0$ e em $y_0$, respectivamente. Para encerrar a demonstração, vamos mostrar que os intervalos $I, J$ e a função $g$ assim construídos satisfazem as propriedades $(i), (ii), (iii)$ e $(iv)$ exigidas pelo enunciado.
+
+\textbf{Prova de $(i)$.} Por construção, $B$ é a bola aberta centrada em $(x_0,0)$, seu raio é $R$ e $B \times J \subset A_0$. Deste modo, dados $x \in I$ e $y \in J$, o ponto $(x,0,y)$ pertence a $A_0$ e, portanto, $(x,y) \in A$. Provamos, assim, que $(I \times J) \subset A$, estabelecendo a propriedade $(i)$.
+
+\textbf{Prova de $(ii)$.} Fixemos um ponto $(x,y) \in I \times J$ qualquer. A propriedade $(i)$ garante que $(x,y)$ pertence a $A$ e, pela definição de $A_0$, o ponto $(x,0,y)$ pertence a $A_0$. Usando a propriedade $(b)$, concluímos que
+$$\frac{\partial H}{\partial w}(x,0,y) \neq 0.$$
+Lembrando que
+$$\frac{\partial H}{\partial w}(x,0,y)=\frac{\partial F}{\partial y}(x,y),$$
+obtemos
+$$\frac{\partial F}{\partial y}(x,y) \neq 0,$$
+como desejado.
+
+\textbf{Prova de $(iii)$.} Dado $x \in I$, sabemos que $(x,0) \in B$. A propriedade $(c)$ nos conta que $h(x,0)$ é o único número real pertencente a $J$ que satisfaz
+$$H(x,0,h(x,0))= 0,$$
+ou seja,
+$$F(x,h(x,0))=0.$$
+Substituindo $g(x)=h(x,0)$, concluímos que $g(x)$ é o único número real pertencente a $J$ que satisfaz $F(x,g(x))=0$, provando $(iii)$.
+
+\textbf{Prova de $(iv)$.} A diferenciabilidade de $h$ e a definição de $g$ implicam imediatamente que $g$ é derivável em $I$. Usando a definição de derivada parcial, a propriedade $(d)$ e as expressões de $\frac{\partial H}{\partial u}$ e de $\frac{\partial H}{\partial w}$ acima, obtemos
+$$g'(x) = \frac{\partial h}{\partial u}(x,0) = -\frac{\frac{\partial H}{\partial u}(x,0,h(x,0))}{\frac{\partial H}{\partial w}(x,0,h(x,0))} =  -\frac{\frac{\partial F}{\partial x}(x,g(x))}{\frac{\partial F}{\partial y}(x,g(x))},$$
+completando a prova de $(iv)$ (e do teorema).
+\end{proof}
+
+
+
+Vamos introduzir a seguinte notação: dadas $F$ e $G$ duas funções que admitem derivadas parciais em um ponto $p \in \mathbb{R}^3$, o determinante
+$$\begin{vmatrix}
+	\frac{\partial F}{\partial x}(p) & \frac{\partial F}{\partial y}(p)\\
+	\frac{\partial G}{\partial x}(p) & \frac{\partial G}{\partial y}(p)
+\end{vmatrix}
+$$
+será denotado simplesmente por
+$$\frac{\partial (F,G)}{\partial (x,y)}(p).$$
+De modo análogo, substituindo as variáveis adequadas, definimos $\frac{\partial (F,G)}{\partial (x,z)}(p)$ e $\frac{\partial (F,G)}{\partial (y,z)}(p)$.
+
+Enunciamos a seguir uma outra versão do Teorema da Função Implícita em três variáveis. Ela será obtida como consequência das duas versões que já provamos.
+
+\begin{teorema}[Teorema da Função Implícita II]\label{implicita2}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^3$, $F, G : A \to \mathbb{R}$ duas funções de classe $\mathcal{C}^1$ e $(x_0,y_0,z_0) \in A$ tal que $F(x_0,y_0,z_0) = G(x_0,y_0,z_0) = 0$. Se
+$$\frac{\partial (F,G)}{\partial (y,z)}(x_0,y_0,z_0) \neq 0,$$
+então existem intervalos abertos $I, J_1, J_2 \subset \mathbb{R}$ centrados em $x_0, y_0$ e $z_0$, respectivamente, satisfazendo:
+\begin{enumerate}[(i)]
+\item $(I \times J_1 \times J_2) \subset A$;
+\item O determinante $\frac{\partial (F,G)}{\partial (y,z)}$ não se anula em $I \times J_1 \times J_2$;
+\item Para cada $x \in I$ existem únicos números reais $f(x)\in J_1$ e $g(x)\in J_2$ tais que
+$$F(x,f(x),g(x)) = G(x,f(x),g(x)) = 0;$$
+\item As funções $f: I \to J_1$ e $g : I \to J_2$ assim definidas são de classe $\mathcal{C}^1$. Além disso,
+$$f'(x) = - \frac{\frac{\partial (F,G)}{\partial (x,z)}}{\frac{\partial (F,G)}{\partial (y,z)}}\;\;\; \text{e}\;\;\; g'(x) = \frac{\frac{\partial (F,G)}{\partial (x,y)}}{\frac{\partial (F,G)}{\partial (y,z)}},$$
+onde os determinantes são calculados no ponto $(x,f(x),g(x))$, para todo $x \in I$.
+\end{enumerate}
+\end{teorema}
+\begin{proof}
+As funções $F$ e $G$ são de classe $\mathcal{C}^1$. Assim, a função
+$$\frac{\partial (F,G)}{\partial (y,z)} = \begin{vmatrix}
+	\frac{\partial F}{\partial y} & \frac{\partial F}{\partial z}\\
+	\frac{\partial G}{\partial y} & \frac{\partial G}{\partial z}
+\end{vmatrix}$$
+também é contínua em $A$, como soma de produtos de contínuas. Como, por hipótese, $\frac{\partial (F,G)}{\partial (y,z)}(x_0,y_0,z_0) \neq 0$, a continuidade de $\frac{\partial (F,G)}{\partial (y,z)}$ garante que existe um subconjunto aberto $A_0 \subset A$ que contém $(x_0,y_0,z_0)$ e no qual $\frac{\partial (F,G)}{\partial (y,z)}$ não se anula.
+
+Usando novamente a hipótese
+$$\frac{\partial (F,G)}{\partial (y,z)}(x_0,y_0,z_0) = \begin{vmatrix}
+	\frac{\partial F}{\partial y}(x_0,y_0,z_0) & \frac{\partial F}{\partial z}(x_0,y_0,z_0)\\
+	\frac{\partial G}{\partial y}(x_0,y_0,z_0) & \frac{\partial G}{\partial z}(x_0,y_0,z_0)
+\end{vmatrix} \neq 0,
+$$
+necessariamente devemos ter
+$$\frac{\partial F}{\partial y}(x_0,y_0,z_0) \neq 0\;\;\; \text{ou}\;\;\; \frac{\partial F}{\partial z}(x_0,y_0,z_0)\neq 0.$$
+Suponhamos, sem perda de generalidade, que $\frac{\partial F}{\partial z}(x_0,y_0,z_0)\neq 0$. Notemos que a função $F$ satisfaz as hipóteses do Teorema da Função Implícita I (Teorema \ref{implicita1}). Logo, existem $B \subset \mathbb{R}^2$ uma bola aberta centrada em $(x_0,y_0)$ e $J_2 \subset \mathbb{R}$ um intervalo aberto centrado em $z_0$ satisfazendo:
+\begin{enumerate}[($a$)]
+\item $(B \times J_2) \subset A_0$;
+\item $\frac{\partial F}{\partial z}$ não se anula em $B \times J_2$;
+\item Para cada $(x,y) \in B$ existe um único número real $h(x,y) \in J_2$ tal que $F(x,y,h(x,y)) = 0$;
+\item A função $h : B \to J_2$ é de classe $\mathcal{C}^1$ e suas derivadas parciais são
+$$\frac{\partial h}{\partial x}(x,y) = -\frac{\frac{\partial F}{\partial x}(x,y,h(x,y))}{\frac{\partial F}{\partial z}(x,y,h(x,y))}\;\;\; \text{e}\;\;\; \frac{\partial h}{\partial y}(x,y) = -\frac{\frac{\partial F}{\partial y}(x,y,h(x,y))}{\frac{\partial F}{\partial z}(x,y,h(x,y))},$$
+para todo $(x,y) \in B$.
+\end{enumerate}
+
+Consideremos, agora, a função de duas variáveis $H : B \to \mathbb{R}$ dada por
+$$H(x,y) = G(x,y,h(x,y)).$$
+Notemos primeiramente que $H$ é de classe $\mathcal{C}^1$, uma vez que, pela Regra da Cadeia,
+\begin{align*}
+\frac{\partial H}{\partial x}(x,y) &= \frac{\partial G}{\partial x}(x,y,h(x,y)) + \frac{\partial G}{\partial z}(x,y,h(x,y)) \frac{\partial h}{\partial x}(x,y),\\
+\frac{\partial H}{\partial y}(x,y) &= \frac{\partial G}{\partial y}(x,y,h(x,y)) + \frac{\partial G}{\partial z}(x,y,h(x,y)) \frac{\partial h}{\partial y}(x,y).
+\end{align*}
+Afirmamos que $\frac{\partial H}{\partial y}(x_0,y_0)\neq 0$. Com efeito, substituindo $h(x_0,y_0)=z_0$ na equação acima, obtemos
+\begin{equation}\label{implicitaII1}
+	\frac{\partial H}{\partial y}(x_0,y_0) = \frac{\partial G}{\partial y}(x_0,y_0,z_0) + \frac{\partial G}{\partial z}(x_0,y_0,z_0) \frac{\partial h}{\partial y}(x_0,y_0).
+\end{equation}
+Usando a propriedade ($d$), concluímos que
+\begin{equation}\label{implicitaII2}
+	\frac{\partial h}{\partial y}(x_0,y_0) = -\frac{\frac{\partial F}{\partial y}(x_0,y_0,z_0)}{\frac{\partial F}{\partial z}(x_0,y_0,z_0)}.
+\end{equation}
+Substituindo \eqref{implicitaII2} em \eqref{implicitaII1}, resulta
+$$\frac{\partial H}{\partial y}(x_0,y_0) = \frac{\partial G}{\partial y}(x_0,y_0,z_0) - \frac{\partial G}{\partial z}(x_0,y_0,z_0) \frac{\frac{\partial F}{\partial y}(x_0,y_0,z_0)}{\frac{\partial F}{\partial z}(x_0,y_0,z_0)},$$
+ou seja,
+$$\frac{\partial F}{\partial z}(x_0,y_0,z_0)\frac{\partial H}{\partial y}(x_0,y_0)= \frac{\partial F}{\partial z}(x_0,y_0,z_0)\frac{\partial G}{\partial y}(x_0,y_0,z_0) - \frac{\partial G}{\partial z}(x_0,y_0,z_0)\frac{\partial F}{\partial y}(x_0,y_0,z_0).$$
+Isto significa que
+$$\frac{\partial F}{\partial z}(x_0,y_0,z_0)\frac{\partial H}{\partial y}(x_0,y_0)=  - \frac{\partial (F,G)}{\partial (y,z)}(x_0,y_0,z_0) \neq 0$$
+e, portanto, $\frac{\partial H}{\partial y}(x_0,y_0)$ não pode se anular.
+
+Provamos, deste modo, que $H$ satisfaz as hipóteses do Teorema \ref{implicitaR2}. Logo, existem dois intervalos abertos $I, J_1 \subset \mathbb{R}$ centrados em $x_0$ e em $y_0$, respectivamente, que satisfazem:
+\begin{enumerate}[($a'$)]
+\item $(I \times J_1) \subset B$;
+\item $\frac{\partial H}{\partial y}$ não se anula em $I \times J_1$;
+\item Para cada $x \in I$ existe um único número real $f(x) \in J_1$ tal que $H(x,f(x)) = 0$;
+\item A função $f : I \to J_1$ é de classe $\mathcal{C}^1$ e, para todo $x \in I$,
+$$f'(x) = -\frac{\frac{\partial H}{\partial x}(x,f(x))}{\frac{\partial H}{\partial y}(x,f(x))}.$$
+\end{enumerate}
+Finalmente, consideremos a função $g: I \to J_2$ dada por
+$$g(x) = h(x,f(x)).$$
+Por construção, os intervalos $I,J_1$ e $J_2$ estão centrados em $x_0,y_0$ e em $z_0$, respectivamente. Para encerrar a demonstração, vamos mostrar que as propriedades $(i),(ii),(iii)$ e $(iv)$ são satisfeitas pelos intervalos $I,J_1,J_2$ e pelas funções $f,g$ que construímos.
+
+\textbf{Prova de $(i)$.} Combinando as propriedades $(a)$ e $(a')$, obtemos
+$$(I \times J_1 \times J_2) = ((I \times J_1) \times J_2) \subset (B \times J_2) \subset A,$$
+provando $(i)$.
+
+\textbf{Prova de $(ii)$.} No início da demonstração, construímos o aberto $A_0 \subset A$ de modo que $\frac{\partial (F,G)}{\partial (y,z)}$ não se anula em $A_0$. Em particular, $\frac{\partial (F,G)}{\partial (y,z)}$ também não se anula em $(I \times J_1 \times J_2)$.
+
+\textbf{Prova de $(iii)$.} Fixemos $x \in I$ qualquer. Pela propriedade $(c)$ e pela definição de $g$, temos
+$$F(x,f(x),g(x))=F(x,f(x),h(x,f(x)))=0.$$
+Além disso, pela propriedade $(c')$, sabemos que
+$$G(x,f(x),g(x))=G(x,f(x),h(x,f(x))) = H(x,f(x)) = 0.$$
+
+Suponhamos, agora, que $a \in J_1$ e $b \in J_2$ sejam tais que
+$$F(x,a,b) = 0 = G(x,a,b).$$
+Como $(x,a) \in (I \times J_1) \subset B$, decorre da propriedade $(c)$ que $h(x,a)=b$. Isto implica que
+$$G(x,a,h(x,a))=0,$$
+isto é,
+$$H(x,a) =0.$$
+Agora, pela propriedade $(c')$, concluímos que $f(x)=a$. Logo, $b= h(x,a)=h(x,f(x))=g(x)$, estabelecendo a propriedade $(iii)$.
+
+\textbf{Prova de $(iv)$.} A derivabilidade das funções $f$ e $g$ decorre imediatamente das propriedades $(d)$ e $(d')$ e da Regra da Cadeia. Além disso, como
+$$F(x,f(x),g(x)) = 0 = G(x,f(x),g(x)), \forall x \in I,$$
+concluímos que
+\begin{align*}
+F_x +F_y f'(x) + F_z g'(x) &= 0,\\
+G_x + G_y f'(x) + G_z g'(x) &= 0,
+\end{align*}
+onde as derivadas parcias de $F$ e de $G$ são calculadas nos pontos $(x,f(x),g(x))$, para todo $x \in I$. Escrevendo o sistema acima em notação matricial, obtemos
+$$\begin{bmatrix}
+	F_y & F_z\\
+	G_y & G_z
+\end{bmatrix} \begin{bmatrix}
+	f'(x)\\
+	g'(x)
+\end{bmatrix} = - \begin{bmatrix}
+	F_x\\
+	G_x
+\end{bmatrix}.
+$$
+Como o determinante $\frac{\partial (F,G)}{\partial (y,z)}$ não se anula, a matriz $2 \times 2$ do membro esquerdo tem como inversa a seguinte matriz:
+$$\left(\frac{\partial (F,G)}{\partial (y,z)}\right)^{-1} \begin{bmatrix}
+	G_z & -F_z\\
+	-G_y & F_y
+\end{bmatrix}.
+$$
+Isto significa que
+$$\begin{bmatrix}
+	f'(x)\\
+	g'(x)
+\end{bmatrix} = - \left(\frac{\partial (F,G)}{\partial (y,z)}\right)^{-1} \begin{bmatrix}
+	G_z & -F_z\\
+	-G_y & F_y
+\end{bmatrix}\begin{bmatrix}
+	F_x\\
+	G_x
+\end{bmatrix},
+$$
+ou seja,
+$$\begin{bmatrix}
+	f'(x)\\
+	g'(x)
+\end{bmatrix} = - \left(\frac{\partial (F,G)}{\partial (y,z)}\right)^{-1} \begin{bmatrix}
+	F_xG_z -F_zG_x\\
+	-F_xG_y + F_yG_x
+\end{bmatrix}.
+$$
+Logo,
+$$f'(x)= - \frac{\frac{\partial (F,G)}{\partial (x,z)}}{\frac{\partial (F,G)}{\partial (y,z)}}$$
+e
+$$g'(x) = \frac{\frac{\partial (F,G)}{\partial (x,y)}}{\frac{\partial (F,G)}{\partial (y,z)}}= -\frac{\frac{\partial (F,G)}{\partial (y,x)}}{\frac{\partial (F,G)}{\partial (y,z)}},$$
+como desejávamos.
+\end{proof}
+
+
+
+
+
+
+
+\section{Multiplicadores de Lagrange}
+
+\begin{teorema}[Multiplicadores de Lagrange, 1 restrição]\label{lagrange1}
+Sejam $A$ um subconjunto aberto e não-vazio de $\mathbb{R}^3$, $f : A \to \mathbb{R}$ uma função diferenciável e $g : A \to \mathbb{R}$ uma função de classe $\mathcal{C}^1$. Seja
+$$S = \{(x,y,z) \in A : g(x,y,z)=0\}$$
+e suponhamos que $\nabla g(x,y,z) \neq (0,0,0)$ para todo $(x,y,z) \in S$. Se $(x_0,y_0,z_0) \in S$ é um extremante local de $f$ em $S$, então os vetores $\nabla f(x_0,y_0,z_0)$ e $\nabla g(x_0,y_0,z_0)$ são linearmente dependentes, isto é, existe $\lambda \in \mathbb{R}$ tal que
+$$\nabla f(x_0,y_0,z_0) = \lambda \nabla g(x_0,y_0,z_0).$$
+\end{teorema}
+\begin{proof}
+Suponhamos, sem perda de generalidade, que $(x_0,y_0,z_0) \in S$ seja um máximo local de $f$ em $S$ e seja $B_1 \subset \mathbb{R}^3$ uma bola aberta centrada em $(x_0,y_0,z_0)$ tal que
+\begin{equation}\label{eqlagrange1}
+f(x_0,y_0,z_0) \geq f(x,y,z),
+\end{equation}
+para todo $(x,y,z) \in S \cap B_1$. Por hipótese, temos
+$$\nabla g(x_0,y_0,z_0) \neq (0,0,0).$$
+Podemos supor $\frac{\partial g}{\partial z}(x_0,y_0,z_0) \neq 0$ (os outros casos são análogos). Como $g$ é de classe $\mathcal{C}^1$ e $g(x_0,y_0,z_0)=0$, pelo Teorema da Função Implícita (Teorema \ref{implicita1}) existem $B \subset \mathbb{R}^2$ uma bola aberta centrada em $(x_0,y_0)$ e $J \subset \mathbb{R}$ um intervalo aberto centrado em $z_0$ satisfazendo:
+\begin{enumerate}[(i)]
+\item $(B \times J) \subset B_0$;
+\item $\frac{\partial g}{\partial z}$ não se anula em $B \times J$;
+\item Para cada $(x,y) \in B$ existe um único número real $h(x,y) \in J$ tal que $g(x,y,h(x,y)) = 0$;
+\item A função $h : B \to J$ é de classe $\mathcal{C}^1$ e, além disso,
+$$\frac{\partial h}{\partial x}(x,y) = -\frac{\frac{\partial g}{\partial x}(x,y,h(x,y))}{\frac{\partial g}{\partial z}(x,y,h(x,y))}\;\;\; \text{e}\;\;\; \frac{\partial h}{\partial y}(x,y) = -\frac{\frac{\partial g}{\partial y}(x,y,h(x,y))}{\frac{\partial g}{\partial z}(x,y,h(x,y))},$$
+para todo $(x,y) \in B$.
+\end{enumerate}
+Seja $R>0$ o raio da bola $B$. Consideremos as curvas
+\begin{align*}
+\alpha &: \;]x_0-R,x_0+R[\; \to B \times J,\\
+\beta &: \;]y_0-R,y_0+R[\; \to B \times J
+\end{align*}
+dadas por
+\begin{align*}
+\alpha(t) &= (t,y_0,h(t,y_0)),\\
+\beta(s) &= (x_0,s,h(x_0,s)).
+\end{align*}
+Pela propriedade (iii), as imagens de $\alpha$ e de $\beta$ estão contidas em $S$ e
+$$\alpha(x_0) =\beta(y_0) = (x_0,y_0,h(x_0,y_0)) = (x_0,y_0,z_0).$$
+Além disso, devido à diferenciabilidade de $h$, $\alpha$ e $\beta$ são deriváveis e
+%\begin{align*}
+%\alpha'(t) &= \left(1,0,\frac{\partial h}{\partial x}(t,y_0)\right),\\
+%\beta'(s) &= \left(0,1,\frac{\partial h}{\partial y}(x_0,s)\right).
+%\end{align*}
+%Em particular,
+\begin{align*}
+\alpha'(x_0) &= \left(1,0,\frac{\partial h}{\partial x}(x_0,y_0)\right),\\
+\beta'(y_0) &= \left(0,1,\frac{\partial h}{\partial y}(x_0,y_0)\right).
+\end{align*}
+Notemos que $\alpha'(x_0)$ e $\beta'(y_0)$ são linearmente independentes.
+
+Consideremos agora as compostas $f_1 = f \circ \alpha: \;]x_0-R,x_0+R[\; \to \mathbb{R}$ e $f_2 = f \circ \beta : \;]y_0-R,y_0+R[\; \to \mathbb{R}$. Pela Regra da Cadeia, $f_1$ e $f_2$ são deriváveis e
+\begin{align}
+f_1'(x_0) &= \nabla f(\alpha(x_0))\boldsymbol{\cdot}  \alpha'(x_0) = \nabla f(x_0,y_0,z_0) \boldsymbol{\cdot}  \alpha'(x_0),\label{eqlagrange2}\\
+f_2'(y_0) &= \nabla f(\beta(y_0))\boldsymbol{\cdot}  \beta'(y_0) = \nabla f(x_0,y_0,z_0) \boldsymbol{\cdot} \beta'(y_0).\label{eqlagrange3}
+\end{align}
+Por outro lado, como $(x_0,y_0,z_0)$ é máximo local de $f$ em $S$ e
+$$f_1(x_0) = f(x_0,y_0,z_0)=f_2(y_0),$$
+concluímos que $x_0$ é máximo local de $f_1$ e $y_0$ é máximo local de $f_2$. Portanto,
+\begin{equation}\label{eqlagrange4}
+f_1'(x_0)=0=f_2'(y_0).
+\end{equation}
+\eqref{eqlagrange2}, \eqref{eqlagrange3} e \eqref{eqlagrange4} implicam que $\nabla f(x_0,y_0,z_0)\perp \alpha'(x_0)$ e $\nabla f(x_0,y_0,z_0)\perp \beta'(y_0)$. Como os vetores $\alpha'(x_0)$ e $\beta'(y_0)$ são linearmente independentes, $\nabla f(x_0,y_0,z_0)$ e $\alpha'(x_0) \times \beta'(y_0)$ são linearmente dependentes. É fácil verificar que
+$$\alpha'(x_0) \times \beta'(y_0) = \left( -\frac{\partial h}{\partial x}(x_0,y_0), -\frac{\partial h}{\partial y}(x_0,y_0), 1\right).$$
+Usando (iv), obtemos
+$$\alpha'(x_0) \times \beta'(y_0)= \left( \frac{\frac{\partial g}{\partial x}(x_0,y_0,z_0)}{\frac{\partial g}{\partial z}(x_0,y_0,z_0)}, \frac{\frac{\partial g}{\partial y}(x_0,y_0,z_0)}{\frac{\partial g}{\partial z}(x_0,y_0,z_0)}, 1\right),$$
+isto é,
+$$\frac{\partial g}{\partial z}(x_0,y_0,z_0) [\alpha'(x_0) \times \beta'(y_0)] = \nabla g(x_0,y_0,z_0).$$
+Concluímos, portanto, que $\nabla f(x_0,y_0,z_0)$ e $\nabla g(x_0,y_0,z_0)$ são linearmente dependentes, como desejado.
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

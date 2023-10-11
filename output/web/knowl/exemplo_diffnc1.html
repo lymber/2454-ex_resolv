@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Exemplo</span><span class="space"> </span><span class="codenumber">A.4.12</span><span class="period">.</span>
+</h3>
+<div class="para">A função <span class="process-math">\(f(x,y)=\begin{cases}
+\dfrac{x^2y^2}{x^2+y^4},&amp;(x,y)\neq (0,0);\\ \hfill 0,&amp;
+(x,y)=(0,0)\end{cases}\)</span> é diferenciável na origem, mas uma de suas derivadas parciais não é contínua nesse ponto.</div> <div class="para logical">
+<div class="para">A continuidade de <span class="process-math">\(f\)</span> segue de que <span class="process-math">\(\dfrac{x^2}{x^2+y^4}\)</span> é limitado e <span class="process-math">\(y^2\to 0\)</span> se <span class="process-math">\(y\to
+0\text{.}\)</span> As derivadas parciais são calculadas via regras de derivação fora da origem e pela definição na origem. Fazendo as contas, obtemos</div>
+<div class="displaymath process-math">
+\begin{align*}
+\dfrac{\partial f}{\partial x}(x,y)&amp;=\begin{cases}
+\dfrac{2xy^6}{(x^2+y^4)^2},&amp; (x,y)\neq(0,0)\\
+\hfill 0,&amp; (x,y)=(0,0);
+\end{cases};\\
+\dfrac{\partial f}{\partial y}(x,y)&amp;=\begin{cases}
+\dfrac{2x^4y-2x^2y^5}{(x^2+y^4)^2},&amp; (x,y)\neq(0,0)\\
+\hfill 0,&amp; (x,y)=(0,0).
+\end{cases};
+\end{align*}
+</div>
+</div> <div class="para logical">
+<div class="para">Verifiquemos a diferenciabilidade pela definição: calcular</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{(h,k)\to(0,0)}\dfrac{h^2k^2}{(h^2+k^4)\sqrt{h^2+k^2}}
+=\lim\limits_{(h,k)\to(0,0)}\dfrac{h^2}{h^2+k^4}\dfrac{k}{\sqrt{h^2+k^2}}k=0,
+\end{equation*}
+</div>
+<div class="para">logo <span class="process-math">\(f\)</span> é diferenciável na origem.</div>
+</div> <div class="para logical">
+<div class="para">Agora, a continuidade das derivadas parciais:</div>
+<ul class="disc">
+<li><div class="para">A derivada parcial em <span class="process-math">\(x\)</span> não é contínua na origem, basta tomar a curva <span class="process-math">\(\gamma(t)=(t^2,t)\text{,}\)</span> para obter<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{t\to 0}f_x\big(\gamma(t)\big)=\lim\limits_{t\to
+0}\dfrac{2t^2\cdot t^6}{(t^4+t^4)^2}=\dfrac{1}{2}\neq f_x(0,0).
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">Já a derivada parcial em <span class="process-math">\(y\)</span> é contínua na origem, pois<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{(x,y)\to(0,0)}f_y(x,y)=
+\lim\limits_{(x,y)\to(0,0)}2y\dfrac{x^4}{(x^2+y^4)^2}
+-2y\dfrac{x^2y^4}{(x^2+y^4)^2}=0,
+\end{equation*}
+</div>pois cada parcela tem o segundo fator limitado e o primeiro tendendo a zero.</div></li>
+</ul>
+</div></article><span class="incontext"><a class="internal" href="ap_diff.html#exemplo_diffnc1">em contexto</a></span>
+</body>
+</html>

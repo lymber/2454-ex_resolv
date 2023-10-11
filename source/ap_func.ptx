@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section  xml:id="ap_func" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Curvas de Nível</title>
+  <definition xml:id="curva_nivel">
+    Sejam <m>f\colon A\subseteq\R^2\to\R</m> e <m>c\in\R</m>. A
+    <term>curva de nível</term> ou <term>conjunto de nível </term> do
+    nível <m>c</m> de <m>f</m> é o conjunto <me>f^{-1}(c)=\{(x,y)\in
+    A\colon f(x,y)=c\},</me>
+  </definition>
+
+  <p>A curva de nível <m>c</m> é, em outras palavras, o conjunto de
+  todos os pontos no domínio de <m>f</m>, onde esta vale <m>c</m>.
+  </p>
+
+  <example>
+    <statement>
+      <p>
+        Determine as curvas nível da função <m>f\colon\R^2\to\R</m> dada
+	por <m>f(x,y)=x^2+y^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Começamos observando que o domínio de <m>f</m> é todo o
+	<m>\R^2</m> e sua imagem é o conjunto dos reais não-negativos,
+	indicado por <m>\R_{\geq 0}</m>. Isto posto notamos que, para
+	todo <m>c&lt;0</m>, temos <m>f^{-1}(c)=\emptyset</m>. Vejamos o
+	que acontece com <m>c\geq0</m>:
+	<ul>
+	  <li><m>c=0</m>: <m>f(x,y)=0\iff x^2+y^2=0\iff
+	  (x,y)=(0,0)</m>;</li>
+	  <li><m>c>0</m>: <m>f(x,y)=c\iff x^2+y^2=c</m>. Neste caso, as
+	  soluções são exatamente pontos da circunferência de raio
+	  <m>\sqrt{c}</m>, centrada na origem.</li>
+	</ul>
+	<sidebyside widths="40% 40%" valign="middle">
+	  <figure xml:id="fig_parabeli">
+	    <caption>Curvas de nível.</caption>
+	    <image width="100%" xml:id="fig_parabeli-nivel">
+	      <latex-image>
+		\begin{tikzpicture}
+		\draw[->] (-3,0) -- (3,0) node[below] {$x$};
+		\draw[->] (0,-3) -- (0,3) node[right] {$y$};
+		\draw[orange] (0,0) circle (1pt);
+		\foreach \i in {1,2,3,4} {\draw[orange] (0,0) circle (\i/2);};
+		\end{tikzpicture}
+	      </latex-image>
+	    </image>
+	  </figure>
+	  <figure xml:id="fig_parabeli3d">
+	    <caption>Gráfico de função e cortes de nível</caption>
+	    <image width="100%" xml:id="fig_parabeli-graf" archive="html">
+	      <description>Gráfico</description>
+	      <asymptote>
+		import solids;
+		size(10cm);
+		currentprojection=orthographic(3,2,3);
+		limits((-2,-2,-0.5),(2,2,3.5));
+		
+		currentlight=light(white,(0,0,2),(2,-2,-2));
+		// uncomment for transparent background
+		// currentlight.background=black+opacity(0);
+		
+		path3 parayz=graph(new triple(real z) {
+		return (0,z,z*z);},-2,2,20,operator ..);
+		
+		revolution paraframe=revolution(parayz,axis=Z);
+		surface paraboloideeli=surface(paraframe);
+		
+		draw(surface(plane(4*X,4*Y,5/2*Z-2*X-2*Y)), orange+opacity(0.4));
+		draw(paraboloideeli,lightblue); <!-- +opacity(0.8)); -->
+		draw(circle((0,0,5/2),sqrt(5/2),Z),2bp+orange);
+		dot(O,orange);
+		
+		xaxis3("$x$",Arrow3);
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+	</sidebyside>
+      </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Determine as curvas nível da função <m>f\colon\R^2\to\R</m> dada
+	por <m>f(x,y)=y^2-x^2</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+	Começamos observando que o domínio de <m>f</m> é todo o
+	<m>\R^2</m> e sua imagem é o conjunto de todos os reais.
+	Vejamos o que acontece com <m>c\in\R</m>:
+	<ul>
+	  <li><m>c&lt;0</m>: <m>f(x,y)=c\iff y^2-x^2=c\iff</m>, que
+	  descreve uma hipérbole com focos no eixo <m>Ox</m>;</li>
+	  <li><m>c=0</m>: <m>f(x,y)=0\iff y^2-x^2=0</m>, que descreve o
+	  par de retas concorrentes <m>y=x</m> e <m>y=-x</m>.</li>
+	  <li><m>c&gt;0</m>: <m>f(x,y)=c\iff y^2-x^2=c\iff</m>, que
+	  descreve uma hipérbole com focos no eixo <m>Oy</m>;</li>
+	</ul>
+	<sidebyside widths="40% 40%" valign="middle">
+	  <figure xml:id="fig_parabhip">
+	    <caption>Curvas de nível.</caption>
+	    <image width="50%" xml:id="fig_parabhip-nivel">
+	      <latex-image>
+		\begin{tikzpicture}
+		\draw[->] (-3,0) -- (3,0) node[below] {$x$};
+		\draw[->] (0,-3) -- (0,3) node[right] {$y$};
+		\draw[orange] (-3,3) -- (3,-3);
+		\draw[orange] (-3,-3) -- (3,3);
+		\draw[green,variable=\t,domain=-1.75:1.75,samples=100]
+		plot ({sinh(\t)},{cosh(\t)});
+		\draw[green,variable=\t,domain=-1.75:1.75,samples=100]
+		plot ({sinh(\t)},{-cosh(\t)});
+		\draw[red,variable=\t,domain=-1.75:1.75,samples=100]
+		plot ({cosh(\t)},{sinh(\t)});
+		\draw[red,variable=\t,domain=-1.75:1.75,samples=100]
+		plot ({-cosh(\t)},{sinh(\t)});
+		\end{tikzpicture}
+	      </latex-image>
+	    </image>
+	  </figure>
+	  <figure xml:id="fig_parabhip3d">
+	    <caption>Gráfico de função e cortes de nível</caption>
+	    <image width="50%" xml:id="fig_parabhip-graf" archive="html">
+	      <description>Gráfico</description>
+	      <asymptote>
+		import graph3;
+		size(10cm);
+		currentprojection=orthographic(3,2,3);
+		limits((-2,-2,-2),(2,2,2));
+		
+		currentlight=light(white,(0,0,2),(2,-2,-2));
+		// uncomment for transparent background
+		// currentlight.background=black+opacity(0);
+		
+		real f(pair z){return z.y**2-z.x**2;}
+		path3 reta=graph(new triple(real z) {
+		return (z,z,0);},-1.75,1.75,20,operator ..);
+		path3 hip=graph(new triple(real z) {
+		return (z,sqrt(1+z*z),1);},-sqrt(33)/4,sqrt(33)/4,20,operator ..);
+		
+		draw(surface(plane(4*X,4*Y,Z-2*X-2*Y)),
+		lightgreen+opacity(0.4));
+		draw(surface(plane(4*X,4*Y,-2*X-2*Y)),
+		orange+opacity(0.4));
+		draw(surface(plane(4*X,4*Y,-Z-2*X-2*Y)),
+		red+opacity(0.4));
+		draw(surface(f,(-1.75,-1.75),(1.75,1.75),20,Spline),lightblue);
+		
+		draw(reta,orange);
+		draw(reflect(O,Y,Z)*reta,orange);
+		draw(hip,lightgreen);
+		draw(reflect(O,X,Z)*hip,lightgreen);
+		draw(reflect(O,X,Y)*rotate(90,Z)*hip,red);
+		draw(rotate(180,Y)*rotate(90,Z)*hip,red);
+		
+		xaxis3("$x$",Arrow3);
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+	</sidebyside>
+      </p>
+    </solution>
+  </example>
+
+  <example>
+    <statement>
+      <p>
+        Determine as curvas nível da função <m>f\colon\R^2\to\R</m> dada
+	por <m>f(x,y)=\dfrac{x^2}{x^2-y^2}</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Aqui o domínio da função é o conjunto
+	<me>D_f=\big\{(x,y\in\R^2\colon x^2\neq y^2\big\}.</me> Isto
+	significa obviamente, mas nunca é demais alertar que, os pontos
+	das bissetrizes dos quadrantes não podem estar em nenhuma curva
+	de nível da função deste exemplo. Com isso em mente temos que
+	equação que define cada curva de nível é <men xml:id="niv_exemplo">
+	\dfrac{x^2}{x^2-y^2}=c \iff (1-c)x^2+cy^2=0, y\neq\pm x.</men>
+      </p>
+      <p>Separando em casos:
+      <ul>
+	<li><m>c=1</m>: A queação torna-se <m>y^2=0\iff y=0</m>, que é o
+	eixo <m>Ox</m>, exceto a origem (restrição no domínio);</li>
+	<li><m>c=0</m>: A queação torna-se <m>x^2=0\iff x=0</m>, que é o
+	eixo <m>Oy</m>, novamente excluindo-se a origem;</li>
+	<li><m>0&lt;c&lt;1</m>: os coeficiente de <m>x^2</m> e
+	<m>y^2</m> são ambos positivos na equação <xref
+	ref="niv_exemplo" />, donde a única solução seria <m>(0,0)</m>,
+	que não pertence a <m>D_f</m>, isso mostra que a função não
+	assume valores entre <m>0</m> e <m>1</m>;</li>
+	<li>Para os demais valores de <m>c</m>, <m>c&lt; 0</m>
+	ou <m>c&gt;1</m>, as soluções são retas concorrentes, exceto a
+	origem.</li>
+      </ul>
+      </p>
+      <p>
+	<sidebyside widths="40% 40%" valign="middle">
+	  <figure xml:id="fig_exemplo">
+	    <caption>Curvas de nível.</caption>
+	    <image width="50%" xml:id="fig_exemplo-nivel">
+	      <latex-image>
+		\begin{tikzpicture}
+		\draw[->] (-3,0) -- (3,0) node[below] {$x$};
+		\draw[->] (0,-3) -- (0,3) node[right] {$y$};
+		\draw[dashed] (-3,3) -- (3,-3);
+		\draw[dashed] (-3,-3) -- (3,3);
+		\draw (0,0) circle (2pt);
+		\foreach \a in {55,65,...,125} {
+		\draw[red] ({2pt*cos(\a)},{2pt*sin(\a)}) -- ({3*cos(\a)},{3*sin(\a)});};
+		\foreach \a in {235,245,...,305} {
+		\draw[red] ({2pt*cos(\a)},{2pt*sin(\a)}) --
+		({3*cos(\a)},{3*sin(\a)});};
+		\foreach \a in {-35,-25,...,35} {
+		\draw[orange] ({2pt*cos(\a)},{2pt*sin(\a)}) -- ({3*cos(\a)},{3*sin(\a)});};
+		\foreach \a in {145,155,...,215} {
+		\draw[orange] ({2pt*cos(\a)},{2pt*sin(\a)}) -- ({3*cos(\a)},{3*sin(\a)});};
+		\end{tikzpicture}
+	      </latex-image>
+	    </image>
+	  </figure>
+	  <figure xml:id="fig_exemplo-nivel3d">
+	    <caption>Gráfico de função e cortes de nível</caption>
+	    <image width="50%" xml:id="fig_exemplonivel-graf" archive="html">
+	      <description>Gráfico</description>
+	      <asymptote>
+		import graph3;
+		currentprojection=orthographic(5,2,3);
+		limits((-75,-75,-75),(75,75,75));
+		
+		currentlight=light(white,(2,2,2),(2,-2,-2));
+		// uncomment for transparent background
+		//currentlight.background=black+opacity(0);
+		
+		triple grf1(pair z) {
+		real r=z.x;
+		real t=z.y;
+		real x=t;
+		real y=r*t;
+		real z=x^2/(x^2-y^2);
+		return (x,y,z);
+		}
+		
+		triple grf2(pair z) {
+		real r=z.x;
+		real t=z.y;
+		real x=r*t;
+		real y=t;
+		real z=x^2/(x^2-y^2);
+		return (x,y,z);
+		}
+      
+		surface s1 = scale(10,10,10)*surface(grf1,(0.0,0.05),(0.9,5),nu=20,nv=20,Spline);
+		surface s2 = scale(10,10,10)*surface(grf2,(0.0,0.05),(0.9,5),nu=20,nv=20,Spline);
+		surface s3 = reflect(O,X,Z)*surface(s1,s2);
+		surface s4 = reflect(O,Y,Z)*surface(s1,s2,s3);
+		
+		draw(surface(plane(150*X,150*Y,20*Z-75*X-75*Y)),orange+opacity(0.4));
+		draw(surface(plane(150*X,150*Y,-20*Z-75*X-75*Y)),red+opacity(0.4));
+		draw(s1,lightblue); //+opacity(0.8));
+		draw(s2,lightblue); //+opacity(0.8));
+		draw(s3,lightblue); //+opacity(0.8));
+		draw(s4,lightblue); //+opacity(0.8));
+		
+		xaxis3("$x$",Arrow3);
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+	</sidebyside>
+      </p>
+    </solution>
+  </example>
+</section>

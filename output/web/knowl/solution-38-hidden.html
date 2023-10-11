@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Como, para todo <span class="process-math">\(k\in\R\text{,}\)</span> a função <span class="process-math">\(f\)</span> é de classe <span class="process-math">\(\mathscr{C}^2\)</span> em todo o plano vamos utilizar o critério do Hessiano (<a href="" class="xref" data-knowl="./knowl/teo_hess.html" title="Teorema A.8.6">Teorema A.8.6</a>). Para isso precisamos de suas derivadas até segunda ordem, indicadas convenientemente no vetor gradiente e matriz Hessiana:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_hess.html">
+\begin{equation*}
+\nabla f(x,y)=(2x-2ky,2y-2kx)\quad\text{e}\quad H_f(x,y)=
+\begin{bmatrix}
+2 &amp; -2k\\ -2k &amp; 2
+\end{bmatrix}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Os pontos críticos de <span class="process-math">\(f\)</span> são aqueles que anulam o gradiente e portanto as soluções do sistema</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases}
+x&amp;=ky,\\ y&amp;=kx.  \end{cases}
+\end{equation*}
+</div>
+<div class="para">Subsituindo a segunda equação na primeira, temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+x=k^2 x \implies (k^2 - 1)x=0 \implies k = \pm 1\quad
+\text{ou}\quad x = 0.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Temos então três casos as considerar:</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(k=1\text{:}\)</span> nesse caso temos<div class="displaymath process-math">
+\begin{equation*}
+f(x,y)=x^2+y^2-2xy=(x-y)^2\geq 0,
+\end{equation*}
+</div>para todos <span class="process-math">\((x,y)\in\R^2\text{.}\)</span> Aqui os pontos críticos satisfazem <span class="process-math">\(y=x\)</span> e o determinante da matriz Hessiana se anula, não permitindo a aplicação do critério. Por outro lado,<div class="displaymath process-math">
+\begin{equation*}
+f(x,x)=0\leq(x-y)^2=f(x,y)\text{,}
+\end{equation*}
+</div>mostrando que todos os pontos da forma <span class="process-math">\((x,x)\text{,}\)</span> <span class="process-math">\(x\in\R\)</span> são pontos de mínimo global de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(k=-1\text{:}\)</span> agora<div class="displaymath process-math">
+\begin{equation*}
+f(x,y)=x^2+y^2+2xy=(x+y)^2\geq
+0,
+\end{equation*}
+</div>para todos <span class="process-math">\((x,y)\in\R^2\text{.}\)</span> Aqui os pontos críticos satisfazem <span class="process-math">\(y=-x\)</span> e o determinante da matriz Hessiana novamente se anula. Mas<div class="displaymath process-math">
+\begin{equation*}
+f(x,-x)=0\leq(x+y)^2=f(x,y)\text{,}
+\end{equation*}
+</div>mostrando que todos os pontos da forma <span class="process-math">\((x,x)\text{,}\)</span> <span class="process-math">\(x\in\R\)</span> são pontos de mínimo global de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(k\neq\pm 1\)</span> e <span class="process-math">\(x=0\text{:}\)</span> isso garante que <span class="process-math">\(y=0\)</span> e portanto o ponto <span class="process-math">\((0,0)\)</span> é crítico para qualquer <span class="process-math">\(k\in\R\text{.}\)</span> Nesse caso temos<div class="displaymath process-math">
+\begin{equation*}
+\det
+H_f(0,0)=4(1-k^2)\quad\text{e}\quad f_{xx}(0,0)=2
+\end{equation*}
+</div>e então quando <span class="process-math">\(|k|&lt; 1\)</span> a origem é um ponto de mínimo local, enquanto que <span class="process-math">\(|k|&gt; 1\)</span> garante a origem como um ponto de sela.</div></li>
+</ul>
+</div> <div class="para">Veja os gráficos da função para alguns valores de <span class="process-math">\(k\text{:}\)</span>
+</div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:50%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 193.197278911565%"><iframe src="generated/asymptote/gabpsubq21-2022.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabpsubq21-2022.html">html</a></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.1<span class="period">.</span></span><span class="space"> </span>Gráfico de <span class="process-math">\(f\)</span> para <span class="process-math">\(k=1\)</span></figcaption></figure></div>
+<div class="sbspanel middle" style="width:50%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 202.127659574468%"><iframe src="generated/asymptote/gabpsubq22-2022.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabpsubq22-2022.html">html</a></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.2<span class="period">.</span></span><span class="space"> </span>Gráfico de <span class="process-math">\(f\)</span> para <span class="process-math">\(k=-1\)</span></figcaption></figure></div>
+</div></div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:50%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 158.659217877095%"><iframe src="generated/asymptote/gabpsubq23-2022.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabpsubq23-2022.html">html</a></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.3<span class="period">.</span></span><span class="space"> </span>Gráfico de <span class="process-math">\(f\)</span> para <span class="process-math">\(k=\dfrac{1}{2}\)</span></figcaption></figure></div>
+<div class="sbspanel middle" style="width:50%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 169.642857142857%"><iframe src="generated/asymptote/gabpsubq24-2022.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabpsubq24-2022.html">html</a></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.4<span class="period">.</span></span><span class="space"> </span>Gráfico de <span class="process-math">\(f\)</span> para <span class="process-math">\(k=-\dfrac{1}{2}\)</span></figcaption></figure></div>
+</div></div> <div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel middle" style="width:50%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 290.816326530612%"><iframe src="generated/asymptote/gabpsubq25-2022.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabpsubq25-2022.html">html</a></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.5<span class="period">.</span></span><span class="space"> </span>Gráfico de <span class="process-math">\(f\)</span> para <span class="process-math">\(k=-2\)</span></figcaption></figure></div>
+<div class="sbspanel middle" style="width:50%;"><figure class="figure figure-like"><div class="asymptote-box" style="padding-top: 291.752577319588%"><iframe src="generated/asymptote/gabpsubq26-2022.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabpsubq26-2022.html">html</a></div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.6<span class="period">.</span></span><span class="space"> </span>Gráfico de <span class="process-math">\(f\)</span> para <span class="process-math">\(k=2\)</span></figcaption></figure></div>
+</div></div> <div class="para">E por que não uma animação no Geogebra?</div> <figure class="figure figure-like"><iframe src="https://www.geogebra.org/material/iframe/id/prdrqfyf/width/800/height/450/border/888888/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" id="interactive-1" width="600" height="600"></iframe><figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.7<span class="period">.</span></span><span class="space"> </span>Gráfico de <span class="process-math">\(f\)</span> para diversos valores de <span class="process-math">\(k\)</span></figcaption></figure>
+</div></body>
+</html>

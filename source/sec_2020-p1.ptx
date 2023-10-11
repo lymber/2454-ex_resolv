@@ -1,0 +1,702 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2020-p1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Primeira Prova</title>
+  <exercises xml:id="gab_2020-p1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="p1q1-2020">
+      <statement>
+	<p>O valor da integral <m>\displaystyle{\int_0^1 2x\left[\int_2^{2x^2}
+	e^{−t^2}\,dt\right]\, dx}</m> é
+	<ol marker="a" cols="3">
+	  <li><m>\dfrac{e^{-4}-1}{4}</m>.</li>
+	  <li><m>\dfrac{1-e}{2}</m>.</li>
+	  <li><m>\dfrac{e-1}{2}</m>.</li>
+	  <li><m>\dfrac{e^{-4}}{2}</m>.</li>
+	  <li><m>\dfrac{1-e^{-4}}{4}</m>.</li>
+	</ol></p>
+      </statement>
+      <answer>
+	<p>Alternativa a.</p>
+      </answer>
+      <solution>
+	<p>Usaremos aqui integração por parter, fazendo <m>du=2x</m> e
+	<m>v=\int_2^{2x^2} e^{−t^2}\,dt</m>, donde <m>u=x^2</m> e
+	<m>dv=4xe^{-4x^4}</m>. Assim,
+	<md>
+	  <mrow>\int_0^1 2x\left[\int_2^{2x^2}
+	  e^{−t^2}\,dt\right]\, dx&amp;=\left[x^2 \int_2^{2x^2}
+	  e^{−t^2}\,dt\right]_0^1-\int_0^1 (x^2)(4xe^{-4x^4})\, dx</mrow>
+	  <mrow>&amp;\stackrel{(\ast)}{=} 0-\int_0^{-4}
+	  \dfrac{e^{s}}{-4}\, dx</mrow>
+	  <mrow>&amp;=\dfrac{e^{-4}-1}{4}.</mrow>
+	</md>
+	Em <m>(\ast)</m> temos que o primeiro termo se anula devido ao
+	primeiro fator quando <m>x=0</m> e devido ao segundo (extremos
+	de integração coindicentes) quando <m>x=1</m>. Além disso,
+	fazemos a mudança <m>s=-4x^4\implies ds=-16x^3\, dx</m> na segunda
+	parcela.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q2-2020">
+      <statement>
+	<p>Considere a curva <m>\gamma\colon\R\to\R^2</m> dada por
+	<m>\gamma(t)=\big(t^2\cos(\pi t),t^2\sin(\pi
+	t)\big)</m>. Sabe-se que a trajetória de <m>\gamma</m> admite
+	duas retas tangentes distintas no ponto <m>(4,0)</m>. O produto
+	escalar dos vetores tangentes à trajetória de <m>\gamma</m>
+	neste ponto é igual a:
+	<ol marker="a" cols="3">
+	  <li><m>0</m>.</li>
+	  <li><m>-4(4\pi^2+4)</m>.</li>
+	  <li><m>4(4\pi^2-4)</m>.</li>
+	  <li><m>4(4\pi^2+4)</m>.</li>
+	  <li><m>4(4-4\pi^2)</m>.</li>
+	</ol></p>
+      </statement>
+      <answer>
+	<p>Alternativa c.</p>
+      </answer>
+      <solution>
+	<p>O ponto <m>(4,0)</m> está na imagem da curva <m>\gamma</m> e
+	é atingido quando <m>t=\pm2</m>. O vetor tangente em cada
+	instante de tempo <m>t</m> é <m>\gamma'(t)=\big(2t\cos(\pi
+	t)−\pi t^2\sin(\pi t),2t\sin(\pi t)+\pi t^2\cos(\pi
+	t)\big)</m>. Calculando nos dois pontos temos
+	<m>\gamma'(2)=(4,4\pi)</m> e <m>\gamma'(−2)=(−4,4\pi)</m>.</p>
+	<p>Logo,
+	<m>\big\langle\gamma'(2),\gamma'(−2)\big\rangle=4(4\pi^2−4)</m>.</p>
+	<p>Apesar de desnecessário, segue um esboço da curva e os
+	vetores tangentes pedidos:
+        <figure xml:id="fig_gabp1q2-2020">
+          <caption>A curva <m>\gamma</m> e suas duas tangentes em <m>(4,0)</m>.</caption>
+          <image xml:id="gabp1q2-2020" width="50%">
+            <description>A  curva <m>\gamma</m> e suas duas tangentes
+	    em <m>(4,0)</m>.</description>
+            <latex-image>
+              \begin{tikzpicture}
+              \draw[thick,->] (-2.5,0)--(2.5,0) node[below]{$x$};
+              \draw[thick,->] (0,-2.5)--(0,2.5) node[right]{$y$};
+	      \draw[red,domain=-pi:pi,samples=200] plot({1/4.5*(\x)^2*cos(pi*\x r)},
+	      {1/4.5*(\x)^2*sin(pi*\x r)});
+	      \draw[->, blue] (4/4.5,0)--++(4/4.5,4*pi/4.5) node[right]
+	      {$\gamma'(2)$};
+	      \draw[->, olive] (4/4.5,0)--++(-4/4.5,4*pi/4.5) node[left] {$\gamma'(-2)$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+	</p>
+	<p>Verifique o que acontece com a imagem da curva, pois aqui
+	temos representado apenas o trecho para <m>t\in[-\pi,\pi]</m>.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q3-2020">
+      <statement>
+	<p>Seja <m>F(x,y)=x^2y−5xy</m>. Sabe-se que o plano tangente ao
+	gráfico de <m>F</m> em um ponto <m>\big(x_0,y_0,F(x_0,y_0)\big)</m>
+	tem equação <m>−15x+50y−z−75=0</m>. Nestas condições, a soma das
+	coordenadas <m>x_0+y_0</m> é igual a:
+	<ol marker="a" cols="5">
+	  <li><m>9</m>.</li>
+	  <li><m>-4</m>.</li>
+	  <li><m>10</m>.</li>
+	  <li><m>11</m>.</li>
+	  <li><m>0</m>.</li>
+	</ol></p>
+      </statement>
+      <answer>
+	<p>Alternativa b.</p>
+      </answer>
+      <solution>
+	<p>Derivando <m>F</m> diretamente em <m>(x_0,y_0)</m> temos
+	<m>F_x(x_0,y_0)=2x_0y_0−5y_0</m> e
+	<m>F_y(x_0,y_0)=x^2_0−5x_0</m>.</p>
+	<p>Da equação do planotangente no enunciado concluímos que
+	<m>F_x(x_0,y_0)=−15</m> e <m>F_y(x_0,y_0)=50</m>. Com isso temos
+	o sistema 
+	<me>\begin{cases}
+	2x_0y_0−5y_0&amp;=15\\
+	x^2_0−5x_0&amp;=50,
+	\end{cases}</me>
+	cujas soluções são <m>x_0=−5</m> e <m>y_0=1</m> ou
+	<m>x_0=10</m> e <m>y_0=−1</m>. Como o ponto
+	<m>\big(x0,y0,F(x0,y0)\big)</m> pertence ao plano tangente,
+	temos que <m>−15x_0+50y_0−F(x_0,y_0)−75=0</m>, que só é
+	verificado por <m>x_0=−5</m> e <m>y_0=1</m>, donde
+	<m>x_0+y_0=−4</m>.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q4-2020">
+      <statement>
+	<p>Seja <m>f\colon\R^2\to\R</m> dada por <m>f(x,y)=e^{\alpha
+	x}\sin(8\beta y)</m>, onde <m>\alpha</m> e <m>\beta\neq 0</m>
+	são números reais fixados. Suponha que, para todo <m>(x,y)\in\R^2</m>, a
+	função <m>f</m> satisfaça
+	<me>\dfrac{\partial^2 f}{\partial x^2}(x,y)+2\dfrac{\partial^2
+	f}{\partial x\partial y}(x,y)−\dfrac{\partial^2 f}{\partial
+	y^2}(x,y)=\dfrac{\partial f}{\partial x}(x,y)+\dfrac{\partial
+	f}{\partial y}(x,y).</me></p>
+	<p>Nestas condições o valor de <m>\dfrac{\alpha^2}{\beta^2}</m> é</p>
+      </statement>
+      <answer>
+	<p><m>64</m></p>
+      </answer>
+      <solution>
+	<p>Calculando explicitamente as derivadas parciais de <m>f</m>
+	que aparecem no enunciado, temos:
+	<md>
+	  <mrow>\dfrac{\partial f}{\partial x}(x,y)=&amp;\alpha e^{\alpha
+	x}\sin(8\beta y)</mrow>
+	  <mrow>\dfrac{\partial f}{\partial y}(x,y)=&amp;8\beta e^{\alpha
+	  x}\cos(8\beta y)</mrow>
+	  <mrow>\dfrac{\partial^2 f}{\partial x^2}(x,y)=&amp;\alpha^2 e^{\alpha
+	  x}\sin(8\beta y)</mrow>
+	  <mrow>\dfrac{\partial^2 f}{\partial x\partial y}(x,y)=&amp;
+	  \dfrac{\partial f}{\partial x}\Big(\dfrac{\partial f}{\partial
+	  y}\Big)(x,y)=8\alpha\beta e^{\alpha x}\cos(8\beta y)</mrow>
+	  <mrow>\dfrac{\partial^2 f}{\partial y^2}(x,y)=&amp;-64\beta^2 e^{\alpha
+	  x}\sin(8\beta y)</mrow>
+	</md>
+	Com isso, a equação do enunciado escreve-se como
+	<me>\big(\alpha^2+64\beta^2-\alpha\big)e^{\alpha
+	x}\sin(8\beta y)+\big(16\alpha\beta-8\beta\big)e^{\alpha
+	x}\cos(8\beta y)=0,</me>
+	ou ainda, lembrando que <m>e^{\alpha x}\neq 0</m>,
+	<me>\big(\alpha^2+64\beta^2-\alpha\big)\sin(8\beta
+	y)+\big(16\alpha\beta-8\beta\big)\cos(8\beta y)=0.</me>
+	</p>
+	<p>Esta equação vale para todos <m>(x,y)\in\R^2</m> e, portanto,
+	podemos atribuir valores convenientes a estas variáveis a fim de
+	obter equações para <m>\alpha</m> e <m>\beta</m>:
+	<md>
+	  <mrow>y=0\colon&amp; 16\alpha\beta-8\beta=0\implies
+	  \alpha=\dfrac{1}{2};</mrow>
+	  <mrow>y=\dfrac{\pi}{16\beta}\colon&amp; \alpha^2+64\beta^2-\alpha=0\implies
+	  \beta^2=\dfrac{\alpha-\alpha^2}{64}=\dfrac{1}{256}.</mrow>
+	</md>
+	Assim, <m>\dfrac{\alpha^2}{\beta^2}=\dfrac{1/4}{1/256}=64</m>.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q52020">
+      <statement>
+	<p>Seja <m>f\colon\R\to\R</m> uma função derivável até quarta
+	ordem tal que <me>f(0) = -3,\quad f’(0) = 4,\quad f''(0) =
+	3\quad \mbox {e}\quad f'''(0) = 1.</me>
+	Suponha que <m>f^{(4)}(x) = \sqrt {1+9x^4}</m>, para todo <m>x
+	\in \mathbb {R}</m>.</p>
+	<p>Usando o Polinômio de Taylor de ordem <m>3</m> de <m>f</m> em
+	torno de <m>x_0 = 0</m>, obtemos a seguinte aproximação para
+	<m>f(1/2)</m> com 5 casas decimais:
+	<m>\boxed{\phantom{-0,60417}}</m>.</p>
+	<p>O erro cometido nesta aproximação pertence ao intervalo:
+	<ol marker="a" cols="3">
+	  <li><m>(1/384, 5/1536);</m></li>
+	  <li><m>(1/480, 1/384);</m></li>
+	  <li><m>(1/600, 1/480);</m></li>
+	  <li><m>(1/750, 1/600);</m></li>
+	  <li><m>(5/1536, 25/6144).</m></li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p><m>-0,60147</m></p>
+	<p>Alternativa a.</p>
+      </answer>
+      <solution>
+	<p>Com os dados fornecidos no enunciado recuperamos o polinômio
+	de ordem <m>3</m> de <m>f</m>, centrado em <m>x_0=0</m>:
+	<md>
+	  <mrow>P_3(x)&amp;=f(0)+f'(0)(x-0)+\dfrac{f''(0)}{2}(x-0)^2
+	  +\dfrac{f'''(0)}{3!}(x-0)^3</mrow>
+	  <mrow>&amp;=-3+4x+\dfrac{3x^2}{2}+\dfrac{x^3}{6}.</mrow>
+	</md>
+	Substituindo então  <m>x=\dfrac{1}{2}</m>, temos
+	<me>f\big(\dfrac{1}{2}\big)\approx
+	P_3\big(\dfrac{1}{2}\big)=-3+2+\dfrac{3}{8}+\dfrac{1}{48}
+	=-\dfrac{29}{48}\approx -0.60147.</me>
+	</p>
+	<p>A estimativa do erro na aproximação de <m>f(x)</m> pelo
+	polinômio de Taylor de odem <m>3</m>, centrado em <m>x_0</m>,
+	quando <m>f</m> é uma função que admite quarta derivada é dada
+	por <me>E_3(x)=\dfrac{f^{(4)}(\overline{x})}{4!}(x-x_0)^4,</me>
+	com <m>\overline{x}</m> entre <m>x</m> e <m>x_0</m>. Neste
+	exercício, a função é de classe <m>\mathscr{C}^4</m>, e essa
+	expressão fica <me>E_3\big(\dfrac{1}{2}\big)=
+	\dfrac{\sqrt{1+9\overline{x}^4}}{24}\big(\frac{1}{2}\big)^4=
+	\dfrac{\sqrt{1+9\overline{x}^4}}{384}.</me> Como
+	<m>0&lt;\overline{x}&lt;\dfrac{1}{2}</m>, temos que
+	<m>\dfrac{1}{384}&lt; E_3\big(\dfrac{1}{2}\big)&lt;
+	\dfrac{\sqrt{1+\frac{9}{16}}}{384}=\dfrac{5}{1536}</m>.
+      </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q62020">
+      <statement>
+	<p>Seja <m>f\colon\R^2\to\R</m> uma função e defina
+	<m>g\colon\R^2\to\R</m> por <m>g(x,y) = \arctan
+	\big(f(x,y)\big)</m>. Suponha que os conjuntos <me>\big\{(x,y)
+	\in \mathbb {R}^2\colon y = x^2\big\}\text{ e } \big\{ (x,y) \in
+	\mathbb {R}^2\colon 0&lt;x&lt;1, xy = 1\big\}</me> sejam as
+	curvas de nível <m>c=-1</m> e <m>c=0</m>, respectivamente, de
+	<m>f</m>.</p>
+	<p>Sobre o limite <m>\lim \limits _{(x,y) \to (1,1)} g(x,y)</m>,
+	é correto afirmar que:
+	<ol marker="a">
+	  <li>o limite não existe.</li>
+	  <li>o limite existe e é igual a <m>0</m>.</li>
+	  <li>o limite existe e é igual a <m>\pi/4</m>.</li>
+	  <li>o limite existe e é igual a <m>-\pi/4</m>.</li>
+	  <li>o limite existe e é um número real, mas não temos
+	  informações suficientes para determinar seu valor.</li>
+	  <li>Não temos informações suficientes para determinar se o
+	  limite existe ou não.</li>
+	</ol>
+	</p>
+	<p>Sobre o limite <m>\lim \limits _{(x,y) \to (1,1)}
+	g(x,x^2)+\dfrac {(x-1)^2}{(x-1)^2+y^2}g(x,y)</m>, é correto
+	afirmar que:
+	<ol marker="a">
+	  <li>o limite não existe.</li>
+	  <li>o limite existe e é igual a <m>0</m>.</li>
+	  <li>o limite existe e é igual a <m>\pi/4</m>.</li>
+	  <li>o limite existe e é igual a <m>-\pi /4</m>.</li>
+	  <li>o limite existe e é um número real, mas não temos
+	  informações suficientes para determinar seu valor.</li>
+	  <li>Não temos informações suficientes para determinar se o
+	  limite existe ou não.</li>
+	  </ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa a.</p>
+	<p>Alternativa d.</p>
+      </answer>
+      <solution>
+	<p>Para o primeiro limite observamos que a curva
+	<m>\gamma_1(t)=(t,t^2)</m> é tal que <me>\lim\limits_{t\to
+	1}g\big(\gamma_1(t)\big)=\arctan(-1)=-\dfrac{\pi}{4},</me> pois esta curva parametriza a
+	curva de nível <m>-1</m> de <m>g</m>. De modo análogo, a curva
+	<m>\gamma_2(t)=\big(t,\dfrac{1}{t}\big)</m>, <m>0&lt; t&lt;
+	1</m>, nos dá que  <me>\lim\limits_{t\to
+	1}g\big(\gamma_1(t)\big)=\arctan(0)=0,</me> mostrando que <m>\lim \limits
+	_{(x,y) \to (1,1)} g(x,y)</m> não existe.</p>
+	<p>Para o segundo limite, notamos que a primeira parcela vale
+	<m>-\dfrac{\pi}{4},</m> (exatamente o limite de <m>g</m> ao
+	longo de <m>\gamma_1</m> no parágrafo acima). Já segunda parcela
+	tem limite nulo, pois um produto que tem <m>g(x,y)</m> como um
+	fator limitado (entre <m>-\dfrac{\pi}{2}</m> e
+	<m>\dfrac{\pi}{2}</m>) e <m>\dfrac{(x-1)^2}{(x-1)^2+y^2}</m>
+	como fator que tende a zero (pois é uma função contínua no ponto
+	<m>(1,1)</m>). Desta forma a soma tem limite igual a
+	<m>-\dfrac{\pi}{4}</m>.
+      </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q72020">
+      <statement>
+	<p>Seja <m>f\colon\R^2\to\R</m> dada por
+	<m>f(x,y)=\begin{cases}
+	\dfrac {\sin (xy^3)}{x^2+y^4},&amp;\text{ se }(x,y) \neq (0,0)\\
+	\hfill 0,&amp;\text{ se }(x,y)=(0,0)
+	\end{cases}</m>.</p>
+	<p>Decida se cada uma das afirmações abaixo é verdadeira ou falsa.
+	<ol marker="a">
+	  <li><m>f</m> é contínua em <m>(0,0)</m>.</li>
+	  <li><m>f</m> é diferenciável em <m>(0,0)</m>.</li>
+	  <li><m>\dfrac {\partial f}{\partial x}</m> e <m>\dfrac {\partial
+	  f}{\partial y}</m> existem em todos os pontos de
+	  <m>\R^2</m>.</li>
+	  <li>O plano <m>z=0</m> é tangente ao gráfico de <m>f</m> em
+	  <m>(0,0,0)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<ol marker="a" cols="2">
+	  <li>Verdadeira</li>
+	  <li>Falsa</li>
+	  <li>Verdadeira</li>
+	  <li>Falsa</li>
+	</ol>
+      </answer>
+      <solution>
+	<ol marker="a">
+	  <li><p>Precisamos verificar se <m>\lim \limits _{(x,y) \to (0,0)}
+	  f(x,y)=f(0,0)=0</m>. Para tanto, se <m>(x,y)\neq (0,0)</m>
+	  podemos escrever
+	  <me>f(x,y)=\dfrac {\sin
+	  (xy^3)}{x^2+y^4}=y\dfrac{xy^2}{x^2+y^4}\dfrac{\sin(xy^3)}{xy^3},</me>
+	  onde
+	  <ul>
+	    <li>o primeiro fator tende a zero;</li>
+	    <li>o segundo fator é limitado: basta trocar <m>y</m> por
+	    <m>y^2</m> no exemplo aos 4min 20seg de 
+	    <xref ref="vid_limitada" />;</li>
+	    <li>o terceiro fator tende a <m>1</m>:
+	    aplique a <xref ref="prop_comp" /> com as funções
+	    <m>f(u)=\begin{cases}\dfrac{\sin u}{u},&amp; u\neq 0\\ \hfill
+	    1,&amp; u=0\end{cases}</m> e <m>g(x,y)=xy^3</m>.</li>
+	  </ul>
+	  Segue então, do <xref ref="cor_confronto" />, a verificação da
+	  igualdade incial, garantindo a continuidade de <m>f</m> na
+	  origem.	  
+	  </p></li>
+	  <li><p>A diferenciabilidade de <m>f</m> em <m>(0,0)</m>
+	  depende da verificação da igualdade <me>\lim \limits _{(h,k)
+	  \to (0,0)}
+	  \dfrac{f(0+h,0+k)-f(0,0)-f_x(0,0)h-f_y(0,0)k}{\sqrt{h^2+k^2}}=0.</me></p>
+	  <p>Para isso precisamos das derivadas parciais de <m>f</m> na
+	  origem:
+	  <ul>
+	    <li><m>\dfrac {\partial f}{\partial x}(0,0)=\lim\limits_{h\to
+	    0}\dfrac{f(0+h,0)-f(0,0)}{h}=\lim\limits_{h\to
+	    0}\dfrac{\sin(h\cdot 0^3)}{(h^2+0^4)h}=0</m>;</li>
+	    <li><m>\dfrac {\partial f}{\partial y}(0,0)=\lim\limits_{k\to
+	    0}\dfrac{f(0,0+k)-f(0,0)}{h}=\lim\limits_{k\to
+	    0}\dfrac{\sin(0\cdot k^3)}{(0^2+k^4)k}=0</m>.</li>
+	  </ul>
+	  Assim o limite em questão resume-se a <me>\lim \limits _{(h,k)
+	  \to (0,0)}
+	  \dfrac{\sin(hk^3)}{(h^2+k^4)\sqrt{h^2+k^2}}=\lim \limits _{(h,k)
+	  \to (0,0)}
+	  \dfrac{\sin(hk^3)}{hk^3}\dfrac{hk^2}{h^2+k^4}\dfrac{k}{\sqrt{h^2+k^2}},</me>
+	  onde o primeiro fator tende a <m>1</m> (visto acima), mas o
+	  segundo e terceiro, apesar de limitados, não possuem limite
+	  (aqui você já deve ser capaz de encontrar as curvas que
+	  atestam isso). Em particular, o limite em questão não se anula
+	  e, desta forma, concluímos que <m>f</m> não é diferenciável em
+	  <m>(0,0)</m>.
+	  </p>
+	  </li>
+	  <li>A existência das derivadas parciais na origem é parte da
+	  solução do item anterior. Nos demais pontos observamos que
+	  <m>f</m> é dada por uma expressão que nos permite aplicar as
+	  regras de derivação (é um bom exercício fazer essas contas!) e
+	  portanto as derivadas parcias fora da origem também
+	  existem.</li>
+	  <li>Como <m>f</m> não é difrenciável na origem, ela não admite
+	  plano tangente neste ponto de seu domínio, apesar das
+	  derivadas parciais existirem ali e ser possível escrever a
+	  equação do que seria o plano tangente (neste caso este plano
+	  daria boas aproximações nas direções dos eixos coordenados,
+	  mas não em outras direções. Veja a figura:
+	  <figure xml:id="fig_gabp1q7-2020">
+            <caption>Gráfico da função e candidato a plano tangente</caption>
+            <image xml:id="gabp1q7-2020" archive="html" width="50%">
+              <description>Gráfico da função e candidato a plano
+	      tangente</description>
+              <asymptote>
+		import graph3;
+		size(10cm);
+		
+		currentprojection=orthographic(3,4,2);
+		limits((-2.25,-2.25,-.5),(2.25,2.25,.5));
+		// currentlight=light(white,(-2,-2,2),(2,2,-2));
+		
+		triple f(pair z){
+		real r=z.x;
+		real t=z.y;
+		real x=r*cos(t);
+		real y=r*sin(t);
+		real z=sin(r^4*cos(t)*sin(t)^3)/(r^2*(1+r^2sin(t)^4));
+		return (x,y,z);
+		}
+		
+		surface grafico=surface(f,(0.01,0),(2,2*pi),1,750);
+		surface plano=surface(plane(2*X,2*Y,O));
+		
+		draw(grafico,lightblue);//+opacity(0.6));
+		draw(plano, green+opacity(0.4));
+
+		dot(O);
+		
+		xaxis3("$x$",Arrow3);
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+              </asymptote>
+            </image>
+          </figure>
+	  </li>
+	</ol>
+      </solution>
+    </exercise>
+    
+    <exercise xml:id="p1q82020">
+      <statement>
+	<p>Considere uma função <m>F\colon\R^2\to\R</m> e as duas curvas
+	abaixo: <me>\gamma (t) = (-5,2t ), \forall t \in \mathbb
+	{R}\quad \mbox {e}\quad \sigma (t) = (-5 +t,1), \forall t \in
+	\mathbb {R}.</me>
+	Sabe-se que <me>F\big(\gamma (t)\big )= -20t^2, \forall t \in
+	\mathbb {R}\quad \mbox {e}\quad F\big (\sigma (t)\big )=\ln
+	(t^2+1)-5, \forall t \in \mathbb {R}.</me></p>
+	<p>Escolha a alternativa correta para cada caso:
+	<ol marker="i">
+	  <li><p>Sobre a continuidade de <m>F</m> em <m>(-5,1)</m> podemos
+	  afirmar que:
+	  <ol marker="a">
+	    <li>é contínua em <m>(-5,1)</m>.</li>
+	    <li>não é contínua em <m>(-5,1)</m>.</li>
+	    <li>não temos informação suficiente para dizer algo.</li>
+	  </ol></p></li>
+	  <li><p>Sobre a diferenciabilidade de <m>F</m> em
+	  <m>(-5,1)</m>, podemos afirmar que:
+	  <ol marker="a">
+	    <li>é diferenciável em <m>(-5,1)</m>.</li>
+	    <li>não é diferenciável em <m>(-5,1)</m>.</li>
+	    <li>não temos informação suficiente para dizer algo.</li>
+	  </ol></p></li>
+	  <li><p>Sobre <m>\dfrac {\partial F}{\partial x} (-5,1)</m>
+	  podemos afirmar que:
+	  <ol marker="a">
+	    <li>vale <m>-5</m>.</li>
+	    <li>vale <m>0</m>.</li>
+	    <li>não existe.</li>
+	    <li>não é possível garantir sua existência.</li>
+	  </ol></p></li>
+	  <li><p>Sobre <m>\dfrac {\partial F}{\partial y} (-5,1)</m>
+	  <ol marker="a">
+	    <li>vale <m>-10</m>.</li>
+	    <li>vale <m>-12</m>.</li>
+	    <li>não existe.</li>
+	    <li>não é possível garantir sua existência.</li>
+	  </ol></p></li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<ol marker="i" cols="2">
+	  <li>Alternativa c.</li>
+	  <li>Alternativa c.</li>
+	  <li>Alternativa b.</li>
+	  <li>Alternativa a.</li>
+	</ol>
+      </answer>
+      <solution>
+	<ol marker="i">
+	  <li><p>Apesar das curvas <m>\gamma</m> e <m>\sigma</m> serem
+	  contínuas, <m>\gamma(1/2)=\sigma(0)=(-5,1)</m>,
+	  <m>F(-5,1)=F\big(\gamma(1/2)\big)=-20(\frac{1}{2})^2=-5</m>,
+	  <m>F\big(\sigma(0)\big)=\ln(0^2+1)-5</m>,
+	  <md>
+	    <mrow>\lim\limits_{t\to 1/2}F\big(\gamma(t)\big)&amp;
+	    =\lim\limits_{t\to 1/2}-20t^2=-5\text{ e}</mrow>
+	    <mrow>\lim\limits_{t\to 0}F\big(\sigma(t)\big)&amp;
+	    =\lim\limits_{t\to 0}\ln(t^2+1)-5=-5,</mrow>
+	  </md>
+	  temos informações sobre <m>F</m> apenas ao longo de duas
+	  curvas. Poderia haver uma terceira curva ao longo da qual a
+	  função não tem o mesmo comportamento, o que mostraria sua
+	  descontinuidade ali.</p></li>
+	  <li><p>O mesmo argumento acima também se aplica aqui.</p></li>
+	  <li><p>As curvas dadas têm imagens paralelas aos eixos
+	  coordenados, ambas passando por <m>(-5,1)</m>, logo podemos usá-las
+	  para obter as derivadas parciais!</p>
+	  <p>Usando as definições temos que
+	  <md>
+	    <mrow>\dfrac{\partial F}{\partial x}(-5,1)&amp;
+	    =\lim\limits_{h\to 0}\dfrac{F(-5+h,1)-F(-5,1)}{h}</mrow>
+	    <mrow>&amp;=\lim\limits_{h\to 0}\dfrac{F\big(\sigma(h)\big)+5}{h}=
+	  \lim\limits_{t\to
+	  0}\dfrac{\ln(t^2+1)}{t}=0.</mrow></md></p></li>
+	  <li><p>De modo totalmente análogo,
+	  <md>
+	    <mrow>\dfrac{\partial F}{\partial y}(-5,1)&amp;
+	    =\lim\limits_{k\to 0}\dfrac{F(-5,1+k)-F(-5,1)}{k}</mrow>
+	    <mrow>&amp;
+	    \stackrel{(\ast)}{=}\lim\limits_{t\to
+	    1/2}\dfrac{F\big(\gamma(t)\big)+5}{2t-1}
+	    =\lim\limits_{t\to
+	  1/2}\dfrac{-20t^2+5}{2t-1}=-10,</mrow></md>
+	  onde, em <m>(\ast)</m>, fizemos a mudança
+	  <m>k=2t-1</m>.</p></li>
+	</ol>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q9-2020">
+      <statement>
+	<p>Nesta questão <m>m</m> e <m>k</m> são números reais
+	fixados. Considere a função <m>F(x,y) = \sqrt
+	{1+mx^2+ky^2}</m>. Sabe-se que:
+	<ul>
+	  <li>A intersecção de <m>\text {graf}(F)</m> com o plano
+	  <m>x=0</m> está contida numa elipse no plano <m>x=0</m> que
+	  tem parametrização <m>y(t) = 2 \cos (t)</m>, <m>z(t) = \sin
+	  (t)</m>, para todo <m>t \in \mathbb {R}.</m></li>
+	  <li>A curva de nível <m>c = \sqrt {2}</m> de <m>F</m> é uma
+	  hipérbole de assíntotas <m>y = \pm 2x</m>.</li>
+	</ul></p>
+	<p>Com essas informações:
+	<ol marker="a">
+	  <li>determine <m>m</m> e <m>k</m>;</li>
+	  <li>descreva o conjunto <m>\text {Dom}(F)</m> e faça um
+	  esboço;</li>
+	  <li>encontre uma parametrização para a parte da curva de nível
+	  que contém o ponto <m>(x_0,y_0) = (1,2\sqrt {2})</m> e
+	  determine a reta tangente a essa curva em
+	  <m>(x_0,y_0)</m>;</li>
+	  <li>esboce o gráfico de <m>F</m>.</li>
+	</ol></p>
+      </statement>
+      <answer>
+	<ol marker="a">
+	  <li><m>m=1</m> e <m>k=-\dfrac{1}{4}</m>.</li>
+	  <li><m>\text {Dom}(F)=\big\{(x,y)\in\mathbb R^2\colon
+	  1+x^2-\dfrac{y^2}{4}\geq 0 \big\}</m>. Veja o esboço do
+	  domínio na solução.</li>
+	  <li><m>\gamma(t)=(\tan t, 2\sec(t))</m>, <m>t\in
+	  \big(-\dfrac{\pi}{2},\dfrac{\pi}{2}\big)</m> e <m>r\colon
+	  y=\sqrt{2}x+\sqrt{2}</m>.</li>
+	  <li>Veja o gráfico de <m>F</m> na solução.</li>
+	  </ol>
+      </answer>
+      <solution>
+	<ol marker="a">
+	  <li><p>A primeira informação do enunciado nos diz que
+	  <me>z=F(0,y)=\sqrt{1+ky^2}\implies z^2-ky^2=1.</me> Para que
+	  isso seja descrito pela parametrização dada (uma elipse),
+	  devemos ter <m>k&lt; 0</m>. Além disso, tal elipse tem equação
+	  cartesiana <m>z^2+\dfrac{y^2}{4}=1</m>. Fica fácil então ver
+	  que <m>k=-\dfrac{1}{4}</m>.</p>
+	  <p>A segunda informação nos diz que
+	  <me>F(x,y)=\sqrt{2}\implies 1+mx^2-\dfrac{y^2}{4}=2\implies
+	  mx^2-\dfrac{y^2}{4}=1,</me> é uma hipérbole de assíntotas
+	  <m>y=\pm 2x</m>.  Observe que isso garante <m>m&gt;0</m>, uma
+	  vez que <m>k&lt;0</m>. Da equação desta hipérbole, vemos que
+	  seus focos estão no eixo <m>Ox</m> e podemos escrever sua
+	  porção nos quadrantes <m>y&gt; 0</m> como
+	  <m>y=2\sqrt{mx^2-1}</m>, que tem como assíntotas as retas
+	  <m>y=\pm 2\sqrt{m}x</m>. Assim, <m>2\sqrt{m}=2\implies
+	  m=1</m>.</p>
+	  </li>
+	  <li><p>De posse dos valores de <m>m</m> e <m>k</m>, temos a
+	  expressão de <m>F</m>:
+	  <m>F(x,y)=\sqrt{1+x^2-\dfrac{y^2}{4}}</m>. Seu domínio máximo
+	  é, então, aquele onde o termo na raiz é não-negativo, ou seja,
+	  <me>\text {Dom}(F)=\big\{(x,y)\in\mathbb R^2\colon
+	  1+x^2-\dfrac{y^2}{4}\geq 0\big\}.</me>
+	  Sua representação gráfica corresponte à região entre os ramos
+	  da hipérbole <m>-x^2+\dfrac{y^2}{4}=1</m> (atenção aos eixos
+	  fora de escala!):
+          <figure xml:id="fig_gabp1q91-2020">
+            <caption>O domínio de <m>F</m> e a tangente pedida no item abaixo.</caption>
+            <image xml:id="gabp1q91-2020" width="50%">
+              <description>O domínio de <m>F</m> e a tangente pedida no
+              item abaixo.</description>
+              <latex-image>
+		\begin{tikzpicture}
+		\begin{axis}[axis lines = middle,enlargelimits,
+                xlabel = {$x$},
+                ylabel = {$y$},
+                axis on top=true]
+                \addplot[name path=A, domain=-2:2, blue]
+		({sinh(x)},{2*cosh(x)});
+		\addplot[name path=B, domain=-2:2, blue]
+		({sinh(x)},{-2*cosh(x)});
+		\addplot [teal!30] fill between [of = A and B, soft
+                  clip={domain=-3.5:3.5}];
+		\addplot[domain=-2:3, olive]
+		{sqrt(2)*(1+x)};
+                \end{axis}
+		\end{tikzpicture}
+              </latex-image>
+            </image>
+          </figure>
+	  </p></li>
+	  <li><p>Como <m>F(1,2\sqrt
+	  {2})=\sqrt{1+1^2-\dfrac{(2\sqrt{2})^2}{4}}=0</m>, estamos
+	  falando da curva de nível <m>0</m> de <m>F</m>, a qual (por
+	  pura sorte) é exatamente aquela que delimira o domínio, da
+	  qual pedimos a parte que contém o ponto dado, ou seja, vamos
+	  trabalhar com o ramo "superior" da hipérbole.</p>
+	  <p>Existem muitas maneiras de parametrizar esse ramo: funções
+	  trigonométricas, trigonométricas hiperbólicas ou mesmo
+	  descrevê-la como o gráfico de uma função a uma variável:
+	  <ul>
+	    <li><m>\gamma(t)=(\tan t, 2\sec(t))</m>, <m>t\in
+	    \big(-\dfrac{\pi}{2},\dfrac{\pi}{2}\big)</m>;</li>
+	    <li><m>\beta(t)=(\sinh t, 2\cosh t(t))</m>,
+	    <m>t\in\R</m>;</li>
+	    <li><m>\alpha(t)=(t,2\sqrt{t^2+1})</m>, <m>t\in\R</m>.</li>
+	  </ul>
+	  </p>
+	  <p>Usaremos o primeiro caso para determinar a reta tangente
+	  pedida. Para isso precisamos de
+	  <m>t_0\in\big(-\dfrac{\pi}{2},\dfrac{\pi}{2}\big)</m> tal que
+	  <m>\gamma(t_0)=(1,2\sqrt {2})</m>, fácil:
+	  <m>t_0=\dfrac{\pi}{4}</m>. A equação da reta pedida
+	  escreve-se:
+	  <me>r\colon (x,y)=\gamma(t_0)+\gamma\beta'(t_0)=(1,2\sqrt
+	  {2})+\lambda(2,2\sqrt{2}),\lambda\in\R.</me>
+	  A equação geral de tal reta é <m>r\colon
+	  y=\sqrt{2}x+\sqrt{2}</m>.</p>
+	  </li>
+	  <li><p>Pode-se perceber, fazendo <m>z=F(x,y)</m> que o gráfico
+	  de <m>F</m> satisfaz <m>-x^2+\dfrac{y^2}{4}+z^2=1</m>, com
+	  <m>z\geq 0</m>, ou seja, é um hiperbolóide de uma folha
+	  (seções elípticas) em torno do eixo <m>Ox</m>. Sem isso, o
+	  gráfico da função é construído analisando-se suas curvas de
+	  nível e cortes por planos verticais. Começando pelos últimos
+	  temos:
+	  <ul>
+	    <li><m>z=F(0,y)=\sqrt{1-\dfrac{y^2}{4}}</m>, uma parte de elipse;</li>
+	    <li><m>z=F(x,0)=\sqrt{1+x^2}</m>, um ramo de hipérbole;</li>
+	  </ul>
+	  Já as curvas de nível <m>c</m> tem uma alteração no
+	  comportamento:
+	  <ul>
+	    <li><m>0\leq c&lt; 1</m>: hipérboles com focos no eixo
+	    <m>Oy</m>;</li>
+	    <li><m>c=1</m>: par de retas concorrentes na origem,
+	    <m>y=\pm 2x</m>;</li>
+	    <li><m>c&gt; 1</m>: hipérboles com focos no eixo
+	    <m>Ox</m>;</li>
+	  </ul>
+	</p>
+	<p>Uma figura:
+	<figure xml:id="fig_gabp1q92-2020">
+          <caption>Gráfico da função.</caption>
+          <image xml:id="gabp1q92-2020" archive="html" width="50%">
+            <description>Gráfico da função.</description>
+            <asymptote>
+	      import solids;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(3,4,3);
+	      limits((-2.25,-2.25,-.5),(2.25,2.25,2.5));
+	      // currentlight=light(white,(-2,-2,2),(2,2,-2));
+
+	      path3 hipyx=graph(new triple(real x) {
+	      return (x,sqrt(1+x*x),0);},-2,2,20,operator ..);
+
+	      revolution hip1frame=revolution(hipyx,axis=X,0,180);
+	      surface hiperboloide1f=scale(1,2,1)*surface(hip1frame);
+	      
+	      draw(hiperboloide1f,lightblue+opacity(0.8));
+
+	      xaxis3("$x$",Arrow3);
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+            </asymptote>
+          </image>
+        </figure>
+	</p>
+	</li>
+	</ol>
+      </solution>
+    </exercise>
+    
+  </exercises>
+</section>
+ 

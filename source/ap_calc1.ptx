@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section  xml:id="ap_calc1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Cálculo 1</title>
+   
+  <theorem xml:id="teo_cauchy">
+    <title>(Cauchy)</title>
+    
+    <statement>
+      <p>
+	Sejam <m>f,g\colon [a,b]\to\R</m> duas funções contínuas, que
+	são deriváveis em <m>(a,b)</m>. Então existe <m>c\in (a,b)</m>
+	tal que
+	<me>\big(f(b)-f(a)\big)g'(c)=\big(g(b)-g(a)\big)f'(c)</me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+	Vamos construir uma função e aplicar a ela o <url
+	href="https://pt.wikipedia.org/wiki/Teorema_de_Rolle"
+	visual="https://pt.wikipedia.org/wiki/Teorema_de_Rolle">Teorema
+	de Rolle</url>. Consideremos então <m>h\colon [a,b]\to\R</m>
+	dada por
+	<me>h(x)=\big(f(b)-f(a)\big)g(x)-\big(g(b)-g(a)\big)f(x).</me>
+	Esta função é contínua em <m>[a,b]</m> e derivável em
+	<m>(a,b)</m>. Cálculos diretos mostram que
+	<m>h(b)=g(a)f(b)-g(b)f(a)=h(a)</m>. Segue, do Teorema de
+	Rolle, que existe <m>c\in (a,b)</m> tal que <m>h'(c)=0</m>, ou
+	seja,
+	<me>\big(f(b)-f(a)\big)g'(c)-\big(g(b)-g(a)\big)f'(c)=0.</me>
+      </p>
+    </proof>
+    <remark> Este teorema é uma generalização do
+    Teorema do Valor Médio, o qual é obtido fazendo <m>g(x)=x</m>.
+    </remark>
+  </theorem>
+
+  <theorem xml:id="teo_fermat">
+    <title>(Fermat)</title>
+    
+    <statement>
+      <p>
+	Seja <m>f\colon ]a,b[\to\R</m> derivável em <m>x_0\in
+	]a,b[</m>. Se <m>x_0</m> é um ponto de máximo ou mínimo local de
+	<m>f</m>, então <m>f'(x_0)=0</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+	Lembramos que <m>f</m> é derivável em <m>x_0</m>, se existe
+	<m>\rho\colon ]a,b[\to\R</m> contínua em <m>x_0</m>, tal que
+	<men xml:id="eq_fermat"> f(x)=f(x_0)+(x-x_0)\rho(x),</men> e,
+	nesse caso, temos <m>\rho(x_0)=f'(x_0)</m>.</p>
+      <p>Suponha que <m>x_0</m> é um ponto de máximo local de
+      <m>f</m>. O caso de mínimo local é análogo e um excelente
+      exercício para testar sua compreensão da
+      demonstração. Consideremos duas situações: 
+      <ul>
+	<li><m>f'(x_0)&gt;0</m>: nesse caso, <m>\rho(x_0)&gt;0</m> e, da
+	continuidade de <m>\rho</m>, temos que <m>\rho(x)&gt;0</m> para
+	todo <m>x\in I</m>, onde <m>I</m> é um intervalo aberto centrado
+	em <m>x_0</m> e inteiramente contido em <m>]a,b[</m>. Se <m>x\in
+	I</m>, <m>x&gt;x_0</m>, então a equação <xref ref="eq_fermat" />
+	nos diz que <me>f(x)=f(x_0)+(x-x_0)\rho(x)&gt;f(x_0),</me>
+	contradizendo o fato de <m>x_0</m> ser máximo local.</li>
+	<li><m>f'(x_0)&lt;0</m>: agora, <m>\rho(x_0)&lt;0</m> e, como
+	antes, <m>\rho(x)&lt;0</m> para todo <m>x\in I</m>, onde
+	<m>I</m> é um intervalo como o do caso anterior. Se <m>x\in I</m>,
+	<m>x&lt;x_0</m>, então a equação <xref ref="eq_fermat" /> nos
+	diz que <me>f(x)=f(x_0)+(x-x_0)\rho(x)&gt;f(x_0),</me>
+	contradizendo o fato de <m>x_0</m> ser máximo local.</li>
+      </ul>
+      Com isso, só é possível <m>f'(x_0)=0</m>.
+      </p>
+    </proof>
+    <remark>
+      <p>O teorema não vale se o domínio de <m>f</m> é um intervalo
+    fechado: <m>f(x)=x</m>, <m>x\in [0,1]</m>, não tem derivada nula em
+    nenhum ponto e assume valores máximo e mínimo (nos extremos do
+      intervalo).</p>
+      <p>O teorema não admite recíproca, ou seja, se <m>f'(x_0)=0</m>
+      não podemos dizer que <m>x_0</m> é ponto de máximo ou mínimo local
+      de <m>f</m>: <m>f(x)=x^3</m>, <m>x\in ]-1,1[</m>, é tal que
+      <m>f'(0)=0</m>, mas <m>x_0=0</m> não é máximo nem mínimo local de
+      <m>f</m>.</p>
+    </remark>
+  </theorem>
+  
+</section>

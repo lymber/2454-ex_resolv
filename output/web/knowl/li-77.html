@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h5 class="heading">
+<span class="type">Item</span><span class="period">.</span>
+</h5>
+<div class="para logical">
+<div class="para">Candidatos nas arestas de <span class="process-math">\(R\text{:}\)</span> as arestas de <span class="process-math">\(R\)</span> são os segmentos de reta</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_lag32.html ./knowl/maxmincpt-4b.html">
+\begin{align*}
+A_1 &amp;= \big\{(x,y,z) \in \R^3\colon y=z=0\text{ e }
+0 \leq x \leq 4\big\},\\
+A_2 &amp;= \big\{(x,y,z) \in \R^3\colon x=z=0\text{ e }
+0 \leq y \leq 4\big\},\\
+A_3 &amp;= \big\{(x,y,z) \in \R^3\colon x=y=0\text{ e }
+0 \leq z \leq 4\big\},\\
+A_4 &amp;= \{(x,y,z) \in \R^3\colon z=0\text{ e }
+x+y=4\big\},\\
+A_5 &amp;= \{(x,y,z) \in \R^3\colon y=0\text{ e }
+x+z=4\big\},\\
+A_6 &amp;= \{(x,y,z) \in \R^3\colon x=0\text{ e }
+y+z=4\big\}.
+\end{align*}
+</div>
+<div class="para">A estratégia é parametrizar cada aresta a estudar a composta de <span class="process-math">\(f\)</span> com as parametrizações. Poderíamos aqui aplicar o Método dos Multiplicadores de Lagrange (<a href="" class="xref" data-knowl="./knowl/teo_lag32.html" title="Teorema A.9.9">Teorema A.9.9</a>), como fizemos no <a href="" class="xref" data-knowl="./knowl/maxmincpt-4b.html" title="Exercício 1.11.4.b">Exercício 1.11.4.b</a>.</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_1\text{,}\)</span> consideramos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_1(x) = f(x,0,0) = x^2 + 3x, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">A derivada de <span class="process-math">\(h_1\)</span> se anula somente em <span class="process-math">\(x=-\frac{3}{2}\text{,}\)</span> de modo que não há candidatos em <span class="process-math">\(]0,4[\text{.}\)</span> Ficamos apenas com <span class="process-math">\(x=0\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem aos vértices <span class="process-math">\((0,0,0)\)</span> e <span class="process-math">\((4,0,0)\)</span> de <span class="process-math">\(R\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_2\text{,}\)</span> estudamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_2(y) = f(0,y,0) = y^2, y \in [0,4].
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(h_2\)</span> é estritamente crescente, os candidatos são <span class="process-math">\(y=0\)</span> e <span class="process-math">\(y=4\text{,}\)</span> que correspondem aos vértices <span class="process-math">\((0,0,0)\)</span> e <span class="process-math">\((0,4,0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_3\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_3(z) = 2z^2 -4z, z \in
+[0,4],
+\end{equation*}
+</div>
+<div class="para">cuja derivada se anula em <span class="process-math">\(z=1\text{.}\)</span> Os candidatos são <span class="process-math">\(z=0\text{,}\)</span> <span class="process-math">\(z=1\)</span> e <span class="process-math">\(z=4\text{,}\)</span> que correspondem, respectivamente, a <span class="process-math">\((0,0,0)\text{,}\)</span> <span class="process-math">\((0,0,1)\)</span> e <span class="process-math">\((0,0,4)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_4\text{,}\)</span> podemos escrever <span class="process-math">\(y=4-x\)</span> para obter</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_4(x) = f(x,4-x,0) = 6x^2 -21x + 16, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_4\)</span> é <span class="process-math">\(x=\dfrac{7}{4} \in
+]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(x= \dfrac{7}{4}\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,4,0)\text{,}\)</span> <span class="process-math">\(\Big(\dfrac{7}{4}, \dfrac{9}{4}, 0\Big)\)</span> e <span class="process-math">\((4, 0,
+0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_5\text{,}\)</span> fazemos <span class="process-math">\(z=4-x\)</span> e estudamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_5(x) =
+f(x,0,4-x) = 3x^2 -9x+16, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_5\)</span> é <span class="process-math">\(x=\dfrac{3}{2} \in ]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(x= \dfrac{3}{2}\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,0,4)\text{,}\)</span> <span class="process-math">\(\Big( \dfrac{3}{2},0,
+\dfrac{5}{2}\Big)(4, 0, 0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Finalmente, em <span class="process-math">\(A_6\text{,}\)</span> escrevemos <span class="process-math">\(z=4-y\)</span> e</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_6(y) = f(0,y,4-y) = 3y^2 -12y+16, y \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_6\)</span> é <span class="process-math">\(y=2\in ]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(y= 2\)</span> e <span class="process-math">\(y=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,0,4)\text{,}\)</span> <span class="process-math">\((0, 2,2)\)</span> e <span class="process-math">\((0, 4, 0)\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec_maxmincpt.html#li-77">em contexto</a></span>
+</body>
+</html>

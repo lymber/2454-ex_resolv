@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Calculando explicitamente as derivadas parciais de <span class="process-math">\(f\)</span> que aparecem no enunciado, temos:</div>
+<div class="displaymath process-math">
+\begin{align*}
+\dfrac{\partial f}{\partial x}(x,y)=&amp;\alpha e^{\alpha
+x}\sin(8\beta y)\\
+\dfrac{\partial f}{\partial y}(x,y)=&amp;8\beta e^{\alpha
+x}\cos(8\beta y)\\
+\dfrac{\partial^2 f}{\partial x^2}(x,y)=&amp;\alpha^2 e^{\alpha
+x}\sin(8\beta y)\\
+\dfrac{\partial^2 f}{\partial x\partial y}(x,y)=&amp;
+\dfrac{\partial f}{\partial x}\Big(\dfrac{\partial f}{\partial
+y}\Big)(x,y)=8\alpha\beta e^{\alpha x}\cos(8\beta y)\\
+\dfrac{\partial^2 f}{\partial y^2}(x,y)=&amp;-64\beta^2 e^{\alpha
+x}\sin(8\beta y)
+\end{align*}
+</div>
+<div class="para">Com isso, a equação do enunciado escreve-se como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\big(\alpha^2+64\beta^2-\alpha\big)e^{\alpha
+x}\sin(8\beta y)+\big(16\alpha\beta-8\beta\big)e^{\alpha
+x}\cos(8\beta y)=0,
+\end{equation*}
+</div>
+<div class="para">ou ainda, lembrando que <span class="process-math">\(e^{\alpha x}\neq 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\big(\alpha^2+64\beta^2-\alpha\big)\sin(8\beta
+y)+\big(16\alpha\beta-8\beta\big)\cos(8\beta y)=0.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Esta equação vale para todos <span class="process-math">\((x,y)\in\R^2\)</span> e, portanto, podemos atribuir valores convenientes a estas variáveis a fim de obter equações para <span class="process-math">\(\alpha\)</span> e <span class="process-math">\(\beta\text{:}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+y=0\colon&amp; 16\alpha\beta-8\beta=0\implies
+\alpha=\dfrac{1}{2};\\
+y=\dfrac{\pi}{16\beta}\colon&amp; \alpha^2+64\beta^2-\alpha=0\implies
+\beta^2=\dfrac{\alpha-\alpha^2}{64}=\dfrac{1}{256}.
+\end{align*}
+</div>
+<div class="para">Assim, <span class="process-math">\(\dfrac{\alpha^2}{\beta^2}=\dfrac{1/4}{1/256}=64\text{.}\)</span>
+</div>
+</div>
+</div></body>
+</html>

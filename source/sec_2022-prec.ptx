@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2022-prec" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- Change title when you have one: -->
+  <title>Prova de Recuperação</title>
+  <!-- If the chapter has sections, there may be an introduction -->
+  <!-- before those sections. Note the <p> tags around content.  -->
+  <exercises xml:id="gab_prec-2022" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise xml:id="precq1-2022">
+      <statement>
+	<p>Considere a função <m>f\colon\R^2\to\R</m> dada por
+	<me>f(x,y)=
+	\begin{cases}
+	\dfrac{x^{4/3}\sin(x^2)}{x^2+y^4},&amp;\text{ se } (x,y) \neq (0,0),\\
+	\hfill 0,&amp;\text{ se } (x,y)=(0,0).
+	\end{cases}</me>
+	<ol marker="a.">
+	  <li>Calcule as derivadas parciais de <m>f</m> em
+	  todos os pontos onde elas existirem.</li>
+	  <li>Decida se <m>f</m> é diferenciável em <m>(0,0)</m>.</li>
+	  <li>Calcule <m>\dfrac{\partial f}{\partial \vec{u}}(0,0)</m>
+	  sendo <m>\vec{u} =(a,b)</m> um vetor unitário.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a.">
+	    <li><m>f_x(x,y)=
+	    \begin{cases}
+	    2\sqrt[3]{x}\dfrac{\Big(\frac{2}{3}\sin(x^2)+x^2\cos(x^2)\Big)
+		(x^2+y^4)-x^2\sin(x^2)}{(x^2+y^4)^2},&amp;\text{ se } (x,y) \neq (0,0),\\
+	    \hfill 0,&amp;\text{ se } (x,y)=(0,0).
+	    \end{cases}</m> e
+	    <m>f_y(x,y)=
+	    \begin{cases}
+	    \dfrac{x^{4/3}\sin(x^2)}{x^2+y^4},&amp;\text{ se } (x,y) \neq (0,0),\\
+	    \hfill 0,&amp;\text{ se } (x,y)=(0,0).
+	    \end{cases}</m>.</li>
+	    <li>É diferenciável em <m>(0,0)</m>.</li>
+	    <li><m>\dfrac{\partial f}{\partial \vec{u}}(0,0)=0</m>.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a.">
+	    <li><p>O denominador da primeira expressão que define <m>f</m>
+	    se anula em <m>(0,0)</m>, então não podemos usar as regras
+	    de derivação. Temos dois casos a tratar:
+	    <ul>
+	        <li><m>(x,y)\neq (0,0)</m>: qualquer desses pontos admite
+	        uma vizinhança onde <m>f</m> é dada pelo quociente de duas
+	        funções diferenciáveis, com denominador não nulo. Podemos
+	        aplicar diretamente a regra do quociente para cada
+	        variável:
+	        <md>
+		<mrow>\dfrac{\partial f}{\partial x}(x,y)&amp;
+		=2\sqrt[3]{x}\dfrac{\Big(\frac{2}{3}\sin(x^2)+x^2\cos(x^2)\Big)
+		(x^2+y^4)-x^2\sin(x^2)}{(x^2+y^4)^2}</mrow>
+		<mrow>\dfrac{\partial f}{\partial y}(x,y)
+		&amp;=-\dfrac{4x^{4/3}\sin(x^2)y^3}{(x^2+y^4)^2}</mrow>
+	        </md></li>
+	        <li><m>(x,y)=(0,0)</m>: não podemos aplicar a regra do
+	        quociente, utilizada no caso anterior. É preciso seguir
+	        pela <xref ref="def_derpar" />:
+	        <md>
+		<mrow>\dfrac{\partial f}{\partial x}(0,0) &amp;
+		=\lim\limits_{h\to
+		0}\dfrac{f(0+h,0)-f(0,0)}{h}=\lim\limits_{h\to
+		0}\dfrac{\dfrac{h^{4/3}\sin(h^2)}{h^2+0^4}-0}{h}</mrow>
+		<mrow>&amp;=\lim\limits_{h\to
+		0}\dfrac{\sin(h^2)}{h^{5/3}}=\lim\limits_{h\to
+		0}h^{1/3}\dfrac{\sin(h^2)}{h^2}=0.</mrow>
+		<mrow>\dfrac{\partial f}{\partial y}(0,0) &amp;
+		=\lim\limits_{k\to 0}\dfrac{f(0,0+k)-f(0,0)}{k}=\lim\limits_{h\to
+		0}\dfrac{\dfrac{0^{4/3}\sin(0^2)}{0^2+k^4}-0}{k}</mrow>
+		<mrow>&amp;=\lim\limits_{k\to
+		0}\dfrac{0}{k}=0.</mrow>
+	        </md></li>
+	      </ul>
+	    </p></li>
+	    <li><p>Já que as derivadas parciais de <m>f</m> existem em
+	    <m>(0,0)</m>, verificar sua diferenciabilidade nesse ponto
+	    requer o uso da definição, ou seja, verificar se existe e é
+	    nulo o limite
+	    <md>
+	      <mrow>\lim\limits_{(h,k)\to(0,0)}&amp;\dfrac{f(0+h,0+k)-\dfrac{\partial
+	      f}{\partial x}(0,0)h-f(0,0)-\dfrac{\partial
+	      f}{\partial
+	      y}(0,0)k}{\sqrt{h^2+k^2}}</mrow>
+	      <mrow>&amp;=\lim\limits_{(h,k)\to(0,0)}\dfrac{\dfrac{h^{4/3}\sin(h^2)}{h^2+k^4}
+              -0-0\cdot h-0\cdot k}{\sqrt{h^2+k^2}}</mrow>
+	      <mrow>&amp;=\lim\limits_{(h,k)\to(0,0)}h^{1/3}\dfrac{h}{\sqrt{h^2+k^2}}
+              \dfrac{\sin(h^2)}{h^2+k^4}</mrow>
+	      <mrow>&amp;=\lim\limits_{(h,k)\to(0,0)}h^{1/3}\dfrac{h}{\sqrt{h^2+k^2}}
+              \dfrac{\sin(h^2)}{h^2}\dfrac{h^2}{h^2+k^4}=0,</mrow>
+	    </md>
+	    pois o primeiro fator na expressão acima tende a <m>0</m>,
+	    enquanto o terceito vai a <m>1</m> e o demais fatores são
+	    todos limitados.</p>
+	    <p>Com isso mostramos que <m>f</m> é diferenciável na
+	    origem.</p>
+	    <remark>Outra opção seria tentar verificar a continuidade
+	    das derivadas parciais, mas atenção: caso isso não aconteça
+	    ainda assim a função pode ser diferenciável (e não de classe
+	    <m>\mathscr{C}^1</m>).</remark>
+	    </li>
+	    <li><p>Em vista do item acima podemos usar a <xref
+	    ref="prop_derdir" />, obtendo <me>\dfrac{\partial
+	    f}{\partial\vec{u}}(0,0)=\Big\langle\nabla
+	    f(0,0),\vec{u}\Big\rangle=\big\langle(0,0),(a,b)\rangle=0.</me></p>
+	    <p>Caso nenhum dos itens anteriores fosse resolvido, poderíamos
+	    proceder pela <xref ref="def_derdir" />:
+	    <mdn>
+	      <mrow number="no">\dfrac{\partial
+	      f}{\partial\vec{u}}(0,0)&amp;=\lim\limits_{t\to
+	      0}\dfrac{f\big((0,0)+t(a,b)\big)-f(0,0)}{t}</mrow>
+	      <mrow xml:id="preceq1" tag="dagger">&amp;=\lim\limits_{t\to
+	      0}\dfrac{\dfrac{(at)^{4/3}\sin\big((at)^2\big)}{(at)^2+(bt)^4}}{t}</mrow>
+	    </mdn></p>
+	    <p>Se <m>a=0</m> então a expressão no limite acima é
+	    identicamente nula e temos <m>\dfrac{\partial
+	    f}{\partial\vec{u}}(0,0)=0</m>. Se <m>a\neq 0</m>, então podemos
+	    escrever <xref ref="preceq1" /> como
+	    <md>
+	      <mrow>\dfrac{\partial
+	      f}{\partial\vec{u}}(0,0)&amp;=\lim\limits_{t\to
+	      0}\dfrac{1}{a^2+b^4t^2}\,\dfrac{\sin(at)^2}{(at)^2}\,\dfrac{(at)^{10/3}}{t^3}</mrow>
+	      <mrow>&amp;=\lim\limits_{t\to
+	    0}\dfrac{1}{a^2+b^4t^2}\,\dfrac{\sin(at)^2}{(at)^2}\,a^{10/3}t^{1/3}=0,</mrow></md>
+	    pois o primeiro fator tende a <m>1/a^2</m>, o segundo tende a <m>1</m>
+	    e o terceiro tende a <m>0</m>.</p></li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="precq2-2022">
+      <statement>
+	<p>Determine os pontos críticos de <m>f(x,y)=
+	3x^2y+y^3-3x^2-3y^2+2</m> e classifique-os. A função <m>f</m>
+	tem ponto de máximo global? E mínimo global?
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  Os pontos críticos são <m>P_1=(0,0)</m> (ponto de máximo local),
+	  <m>P_2=(0,2)</m> (ponto de mínimo local), <m>P_3=(1,1)</m>
+	  (ponto de sela) e <m>P_1=(-1,1)</m> (ponto de sela).
+	</p>
+      </answer>
+      <solution>
+	<p>Os pontos críticos de <m>f</m> são, por definição, aqueles
+	onde <m>\nabla f(x,y)=(0,0)</m>. Isso nos dá o seguinte sistema
+	<me>
+	  \begin{cases} 6xy-6x\amp=0\\ 3x^2+3y^2-6y\amp=0.  \end{cases}\iff
+	\begin{cases} 6x(y-1)\amp=0\\ 3x^2+3y^2-6y\amp=0.
+	\end{cases}</me></p>
+	<p>Assim, temos dois casos a analisar:
+	<ul>
+	  <li><m>x=0</m>: na segunda equação isso diz que <m>3y^2-6y=0</m>, ou seja, <m>y=0</m> ou
+	  <m>y=2</m>. Temos então os pontos críticos <m>\boxed{P_1=(0,0)}</m> e
+	  <m>\boxed{P_2=(0,2)}</m>.</li>
+	  <li><m>x\neq 0</m>: na primeira equação isso diz que <m>y=1</m> o
+	  que, na segunda equação, dá <m>3x^2=3</m>, ou seja <m>x=\pm
+	  1</m>. Aparecem mais dois pontos críticos: <m>\boxed{P_3=(1,1)}</m> e
+	  <m>\boxed{P_4=(-1,1)}</m>.</li>
+	</ul></p>
+	<p>Para classificá-los, observamos que <m>f</m> é de classe
+	<m>\mathscr{C}^2</m>, e portanto podemos considerar a matriz
+	Hessiana de <m>f</m>, conforme o <xref ref="teo_hess" />:
+	<me>H_f(x,y)= \begin{bmatrix} f_{xx}(x,y)\amp f_{xy}(x,y)\\
+	f_{yx}(x,y)\amp f_{yy}(x,y) \end{bmatrix}= \begin{bmatrix}
+	6y-6\amp 6x\\
+	6x\amp 6y-6 \end{bmatrix},</me> cujo determinante é <m>\det
+	H_f(x,y)=36\big((y-1)^2-x^2\big)</m>. Aplicando então o critério do
+	Hessiano, temos
+	<ul>
+	  <li><m>H_f(P_1)=36\gt 0</m> e <m>f_{xx}(P_1)=-6\lt 0</m>,
+	  <m>P_1</m> é um ponto de máximo local.</li>
+	  <li><m>H_f(P_2)=36\gt 0</m> e <m>f_{xx}(P_2)=6\gt 0</m>,
+	  <m>P_2</m> é um ponto de mínimo local.</li>
+	  <li><m>H_f(P_3)=-36\lt 0</m>, <m>P_3</m> é um ponto de
+	  sela.</li>
+	  <li><m>H_f(P_4)=-36\lt 0</m>, <m>P_4</m> é um ponto de
+	  sela.</li>
+	</ul></p>
+	<p>A função <m>f</m> não tem ponto de máximo global. De fato,
+	olhando para a sua restrição de ao eixo <m>Oy</m>, <m>f(0,y)=y^3-3y^2</m>
+	verificamos que
+	<m>\lim\limits_{y\to+\infty}f(0,y)=+\infty</m>.</p>
+	<p>Ao longo do mesmo eixo temos que
+	<m>\lim\limits_{y\to-\infty}f(0,y)=-\infty</m>, mostrando que
+	<m>f</m> também não tem ponto de mínimo global.</p>
+
+	<p>Veja o gráfico da função e, em destaque, os pontos do gráfico
+	correspondentes aos pontos críticos encontrados:</p>
+	<figure xml:id="fig_gabrecq2-2022">
+	  <caption>Gráfico "re-escalado" de <m>f</m></caption>
+	  <image width="50%" xml:id="gabprecq2-2022" archive="html">
+	    <description>Gráfico de <m>f</m> para <m>k=-1</m></description>
+	    <asymptote>
+	      import graph3;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(3,-1,2);
+	      limits((-1.5,-1.5,-1.5),(3.5,3.5,1.5));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      real f(pair z){
+	      return 1/20*(3*z.x^2*z.y+z.y^3-3*(z.x^2+z.y^2)+2);}
+	      
+	      draw(surface(f,(-1.5,-1.5),(3,3),Spline),lightblue+opacity(.8),blue);
+	      
+	      dot(Label("$Q_3$"),(-1,1,f((-1,1))),N,orange);
+	      dot(Label("$Q_4$"),(1,1,f((1,1))),N,orange);
+	      dot(Label("$Q_1$"),(0,0,f((0,0))),N,orange);
+	      dot(Label("$Q_2$"),(0,2,f((0,2))),N,orange);
+	      
+	      xaxis3("$x$",Arrow3);
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="precq3-2022">
+      <statement>
+	<p> Sejam <m>f\colon\R^2\to\R</m> uma função diferenciável e
+	<m>g\colon\R^2\to\R</m> dada por <me>g(x, y) = f (x^2 + 2y, x -
+	y^2).</me>
+	<ol marker="a.">
+	  <li>Sabendo que a direção de maior crescimento de <m>f</m> em
+	  <m>(5, -3)</m> é a direção de <m>\vec{v} = (1, 1)</m>,
+	  determine a equação da reta normal a curva de nível de <m>g</m>
+	  passando por <m>(1, 2)</m>.</li>
+	  <li><em>Item anulado</em>. A nota obtida nas demais questões
+	  foi multiplicada por <m>20/17</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p><m>r\colon (x,y)=(1,2)+\lambda (3,-2),\quad\lambda\in\R</m>
+	</p>
+      </answer>
+      <solution>
+	<ol marker="a.">
+	  <li><p>A direção de crescimento máximo de uma função em cada
+	  ponto é sempre a direção do gradiente da função nesse ponto
+	  (veja <xref ref="prop_crescmax" />). Neste exercício, tal fato
+	  resume-se a dizer que <m>\nabla f(5,-3)</m> é paralelo a
+	  <m>\vec{v}=(1,1)</m>.</p>
+
+	  <p>Por outro lado, segue-se do <xref ref="cor_cadeiagradniv"
+	  /> que a reta normal à curva de nível de <m>g</m> que passa
+	  pelo ponto <m>(1,2)</m> tem a direção de <m>\nabla
+	  g(1,2)</m>. Tendo o ponto e esta direção conseguimos construir
+	  a equação da reta pedida. Vamos determinar o gradiente de
+	  <m>g</m> em termos do gradiente de <m>f</m>, usando a Regra da
+	  Cadeia (<xref ref="cor_cadeiaturbo" />), pensando em
+	  <m>f=f(u,v)</m>, com <m>u(x,y)=x^2+2y</m> e
+	  <m>v(x,y)=x-y^2</m>, temos:
+	  <md>
+	    <mrow>g_x(x,y)\amp
+	    =2xf_u(x^2+2y,x-y^2)+f_v(x^2+2y,x-y^2)</mrow>
+	    <mrow>g_y(x,y)\amp
+	    =2f_u(x^2+2y,x-y^2)-2yf_v(x^2+2y,x-y^2).</mrow>
+	  </md></p>
+	  <p>Fazendo <m>(x,y)=(1,2)</m>, temos <m>(u,v)=(5,-3)</m>. Além
+	  disso, a condição de paralelismo do primeiro parágrafo nos diz
+	  que <m>f_u(5,-3)=f_v(5,-3)</m>. Chamemos esse valor de
+	  <m>a=f_u(5,-3)</m>. Isto, nas equações acima, dá:
+	  <md>
+	    <mrow>g_x(1,2)\amp =2f_u(5,-3)+f_v(5,-3)=3a</mrow>
+	    <mrow>g_y(1,2)\amp =2f_u(5,-3)-4f_v(5,-3)=-2a.</mrow>
+	  </md></p>
+	  <p>Assim, <m>\nabla g(1,2)=(3a,-2a)</m>, que é paralelo ao vetor
+	  <m>(3,-2)</m>. Desta forma, a reta normal pedida é <me>\boxed{r\colon
+	  (x,y)=(1,2)+\lambda (3,-2),\quad\lambda\in\R}.</me></p></li>
+	  <li><em>Item anulado</em>.</li>
+	</ol>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="precq4-2022">
+      <statement>
+	<p>Determine o maior volume que um paralelepípedo de faces
+	paralelas aos planos coordenados e inscrito no elipsoide
+	<m>x^2+y^2 +4z^2 =1</m> pode ter.
+	</p>
+      </statement>
+      <hint>
+	Basta encontrar um vértice de tal paralelepípedo que os demais ficam
+	determinados.
+      </hint>
+      <answer>
+	<p>Os oito vértices do paralelepípedo são os pontos
+	<m>\Big(\pm\dfrac{\sqrt{3}}{3},\pm\dfrac{\sqrt{3}}{3},
+	\pm\dfrac{\sqrt{3}}{6}\Big)</m>, e o volume máximo é
+	<m>V=\dfrac{\sqrt{3}}{12}</m>.</p>
+      </answer>
+      <solution>
+	<p>Vamos usar o Método dos Multiplicadores de Lagrange, com uma
+	restrição (<xref ref="teo_lag31" />). Outra opção, um tanto mais
+	trabalhosa, seria eliminar uma das variáveis usando a equação do
+	elipsoide, escrevendo o volume do paralelepípedo em termos das
+	outras duas e estudar máximos e mínimos desse volume no compacto
+	definido por essas duas variáveis. Em sua fronteira o volume
+	será <m>0</m> e o valor máximo será atingido num ponto crítico
+	(que está no interior). Estes pontos podem ser obtido com o
+	método utilizado no <xref ref="precq2-2022" /> (não precisa do 
+	teste com o Hessiano! Por que?).</p>
+
+	<p>As condições dadas no problema implicam que, se
+	<m>(x,y,z)</m> é o vértice de tal paralelepído no primeiro
+	octante, então os demais vértices são obtidos com as sete
+	comibinações restantes de sinais nas coordenadas.</p>
+
+	<p>O volume de tal paralelepípedo, se existir, será
+	<m>V(x,y,z)=|(2x)(2y)(2z)|=8|xyz|</m>, uma função contínua
+	definida no elipsoide de equação <m>x^2+y^2 +4z^2 =1</m>, que é
+	compacto. Com isso o teorema de Weierstrass garante a existência
+	do paralelepípedo pedido. Devido às simetrias observadas (ou à
+	dica), podemos nos restringir apenas a valores positivos das
+	variáveis, ou seja, o pedaço do elipsoide contido no primeiro
+	quadrante (fechado). Aqui temos uma função a três variáveis que,
+	da última observação escreve-se <m>V(x,y,z)=8xyz</m> (agora de
+	classe <m>\mathscr{C}^1</m>), e desejamos encontrar seu ponto de
+	máximo no elipsoide, que pode ser visto como a superfície de
+	nível <m>0</m> da função
+	<m>g(x,y,z)=x^2+y^2+4z^2-1</m>. Utilizando-se a teoria de
+	máximos e mínimos condicionados (multiplicadores de Lagrange),
+	sabemos que os pontos <m>(x,y,z)</m>, de máximo ou mínimo local
+	de <m>V</m> sobre <m>g^{-1}(0)</m>, são aqueles onde
+	<me>\begin{cases} \big\{\nabla V(x,y,z),\nabla
+	g(x,y,z)\big\}\amp\text{ é linearmente dependente}\\
+	g(x,y,z)\amp=0, \end{cases}</me> ou seja <me>\begin{cases}
+	\nabla V(x,y,z)\times\nabla g(x,y,z)\amp =\vec{0}\\ g(x,y,z)\amp
+	=0.  \end{cases}</me></p>
+	<p> Aqui temos <m>\nabla V(x,y,z)=8(yz,xz,xy)</m> e <m>\nabla
+	g(x,y,z)=2(x,y,4z)</m> e então
+	<md>
+	  <mrow>\nabla V(x,y,z)\times\nabla g(x,y,z)\amp =16 \left|\begin{vmatrix}
+	  \vec{i}\amp\vec{j}\amp\vec{k}\\ yz\amp xz\amp xy\\ x\amp y\amp
+	  4z\end{vmatrix}\right|</mrow>
+	  <mrow>\amp
+	  =16\big(x(4z^2-y^2),y(x^2-4z^2),z(y^2-x^2)\big).</mrow>
+	</md>
+	  Explicitamente, o sistema torna-se então <me> \begin{cases}
+	  x(4z^2-y^2)\amp =0\\ y(x^2-4z^2)\amp =0\\ z(y^2-x^2)\amp =0\\
+	  x^2+y^2+4z^2\amp =1.  \end{cases}</me></p>
+      
+	<p>A solução completa do sistema resume-se a analisar os casos:
+	<ul>
+	  <li><m>x=0</m>: sob essa condição a segunda e terceira equação
+	  são equivalentes e dizem que <m>y=0</m> ou <m>z=0</m>. Isso na
+	  última equação dá, repectivamete os candidatos
+	  <m>\boxed{(0,0,1/2)}</m> e <m>\boxed{(0,1,0)}</m>. Em ambos a
+	  função volume é nula.
+	  </li>
+  	  <li><m>y=0</m>: como acima, temos que <m>x=0</m> ou <m>z=0</m>
+  	  e os pontos <m>\boxed{(0,0,1/2)}</m> e <m>\boxed{(1,0,0)}</m>,
+  	  nos quais o volume também é nulo.
+	  </li>
+	  <li><m>z=0</m>: aqui teremos que <m>x=0</m> ou <m>y=0</m>,
+	  dando os pontos <m>\boxed{(0,1,0)}</m> e
+	  <m>\boxed{(1,0,0)}</m>. Mais uma vez o volume se anula nesses
+	  candidatos.
+	  </li>
+	  <li><m>xyz\neq 0</m>: aqui as três primeiras equações dizem
+	  que <m>x^2=y^2=4z^2</m>. Na última equação isso dá
+	  <m>12z^2=1</m>, ou seja <m>z=\sqrt{3}/6</m>, donde
+	  <m>x=y=\sqrt{3}/3</m>. Nesse ponto o volume vale
+	  <m>V=\sqrt{3}/12</m>, maior valor entre os candidatos viáveis
+	  e portanto solução do problema.
+	  </li>
+	</ul>
+	</p>
+	<p>Por que não uma figura?</p>
+	<figure xml:id="fig_gabrecq4-2022">
+	  <caption>O paralelepípedo de volume máximo é o de tom alaranjado.</caption>
+	  <image width="50%" xml:id="gabprecq4-2022" archive="html">
+	    <description>Paralelepídos no elipsoide.</description>
+	    <asymptote>
+	      import solids;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(2,2,1);
+	      limits((-1.5,-1.5,-1),(1.5,1.5,1));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      surface elipsoide = scale(1,1,1/2)*surface(unitsphere);
+	      surface prllot = scale (2*sqrt(3)/3,2*sqrt(3)/3,sqrt(3)/3)*shift(-1/2,-1/2,-1/2)*surface(unitcube);
+	      surface prll1 = scale (2*3/5*cos(pi/6),2*3/5*sin(pi/6),4/5)*shift(-1/2,-1/2,-1/2)*surface(unitcube);
+	      surface prll2 = scale (2*sqrt(21/25)*cos(pi/3),2*sqrt(21/25)*sin(pi/3),4/10)*shift(-1/2,-1/2,-1/2)*surface(unitcube);
+	      
+	      draw(elipsoide,lightblue+opacity(.4));
+	      draw(prll1,lightgreen);
+	      draw(prll2,lightred);
+	      draw(prllot,orange);
+	      
+	      
+	      dot((sqrt(3)/3,sqrt(3)/3,sqrt(3)/6));
+	      dot((sqrt(3)/3,-sqrt(3)/3,sqrt(3)/6));
+	      dot((-sqrt(3)/3,sqrt(3)/3,sqrt(3)/6));
+	      dot((-sqrt(3)/3,-sqrt(3)/3,sqrt(3)/6));
+	      dot((sqrt(3)/3,sqrt(3)/3,-sqrt(3)/6));
+	      dot((sqrt(3)/3,-sqrt(3)/3,-sqrt(3)/6));
+	      dot((-sqrt(3)/3,sqrt(3)/3,-sqrt(3)/6));
+	      dot((-sqrt(3)/3,-sqrt(3)/3,-sqrt(3)/6));
+	      
+	      dot((3/5*cos(pi/6),3/5*sin(pi/6),2/5));
+	      dot((3/5*cos(pi/6),-3/5*sin(pi/6),2/5));
+	      dot((-3/5*cos(pi/6),3/5*sin(pi/6),2/5));
+	      dot((-3/5*cos(pi/6),-3/5*sin(pi/6),2/5));
+	      dot((3/5*cos(pi/6),3/5*sin(pi/6),-2/5));
+	      dot((3/5*cos(pi/6),-3/5*sin(pi/6),-2/5));
+	      dot((-3/5*cos(pi/6),3/5*sin(pi/6),-2/5));
+	      dot((-3/5*cos(pi/6),-3/5*sin(pi/6),-2/5));
+	      
+	      dot((sqrt(21/25)*cos(pi/3),sqrt(21/25)*sin(pi/3),1/5));
+	      dot((sqrt(21/25)*cos(pi/3),-sqrt(21/25)*sin(pi/3),1/5));
+	      dot((-sqrt(21/25)*cos(pi/3),sqrt(21/25)*sin(pi/3),1/5));
+	      dot((-sqrt(21/25)*cos(pi/3),-sqrt(21/25)*sin(pi/3),1/5));
+	      dot((sqrt(21/25)*cos(pi/3),sqrt(21/25)*sin(pi/3),-1/5));
+	      dot((sqrt(21/25)*cos(pi/3),-sqrt(21/25)*sin(pi/3),-1/5));
+	      dot((-sqrt(21/25)*cos(pi/3),sqrt(21/25)*sin(pi/3),-1/5));
+	      dot((-sqrt(21/25)*cos(pi/3),-sqrt(21/25)*sin(pi/3),-1/5));
+	      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+      </solution>
+    </exercise>
+  </exercises>
+</section>

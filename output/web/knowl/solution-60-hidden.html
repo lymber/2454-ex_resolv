@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math"><div class="solution solution-like"><ol class="lower-roman">
+<li><div class="para logical">
+<div class="para">Apesar das curvas <span class="process-math">\(\gamma\)</span> e <span class="process-math">\(\sigma\)</span> serem contínuas, <span class="process-math">\(\gamma(1/2)=\sigma(0)=(-5,1)\text{,}\)</span> <span class="process-math">\(F(-5,1)=F\big(\gamma(1/2)\big)=-20(\frac{1}{2})^2=-5\text{,}\)</span> <span class="process-math">\(F\big(\sigma(0)\big)=\ln(0^2+1)-5\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{align*}
+\lim\limits_{t\to 1/2}F\big(\gamma(t)\big)&amp;
+=\lim\limits_{t\to 1/2}-20t^2=-5\text{ e}\\
+\lim\limits_{t\to 0}F\big(\sigma(t)\big)&amp;
+=\lim\limits_{t\to 0}\ln(t^2+1)-5=-5,
+\end{align*}
+</div>
+<div class="para">temos informações sobre <span class="process-math">\(F\)</span> apenas ao longo de duas curvas. Poderia haver uma terceira curva ao longo da qual a função não tem o mesmo comportamento, o que mostraria sua descontinuidade ali.</div>
+</div></li>
+<li><div class="para">O mesmo argumento acima também se aplica aqui.</div></li>
+<li>
+<div class="para">As curvas dadas têm imagens paralelas aos eixos coordenados, ambas passando por <span class="process-math">\((-5,1)\text{,}\)</span> logo podemos usá-las para obter as derivadas parciais!</div>
+<div class="para logical">
+<div class="para">Usando as definições temos que</div>
+<div class="displaymath process-math">
+\begin{align*}
+\dfrac{\partial F}{\partial x}(-5,1)&amp;
+=\lim\limits_{h\to 0}\dfrac{F(-5+h,1)-F(-5,1)}{h}\\
+&amp;=\lim\limits_{h\to 0}\dfrac{F\big(\sigma(h)\big)+5}{h}=
+\lim\limits_{t\to
+0}\dfrac{\ln(t^2+1)}{t}=0.
+\end{align*}
+</div>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">De modo totalmente análogo,</div>
+<div class="displaymath process-math">
+\begin{align*}
+\dfrac{\partial F}{\partial y}(-5,1)&amp;
+=\lim\limits_{k\to 0}\dfrac{F(-5,1+k)-F(-5,1)}{k}\\
+&amp;
+\stackrel{(\ast)}{=}\lim\limits_{t\to
+1/2}\dfrac{F\big(\gamma(t)\big)+5}{2t-1}
+=\lim\limits_{t\to
+1/2}\dfrac{-20t^2+5}{2t-1}=-10,
+\end{align*}
+</div>
+<div class="para">onde, em <span class="process-math">\((\ast)\text{,}\)</span> fizemos a mudança <span class="process-math">\(k=2t-1\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></body>
+</html>

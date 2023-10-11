@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_maxminloc" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Classificação de pontos críticos em abertos de <m>\R^2</m></title>
+
+  <exercises xml:id="ex_maxminloc" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="2" xml:id="maxminloc-2">
+      <statement>
+	<p>Determine os valores de <m>a</m> para os quais a função
+	<m>f(x,y) = 2ax^4 + y^2 -ax^2 - 2y</m>
+	<ol marker="a.">
+	  <li>tenha exatamente um ponto de sela e dois pontos de mínimo
+	  local;</li>
+	  <li>tenha exatamente dois pontos de sela e um ponto de mínimo
+	  local.</li>
+	  <li>Existe <m>a\in\R</m> para o qual <m>f</m> tenha ao menos
+	  um ponto de máximo local?</li>
+	  <li>Existe <m>a\in\R</m> para o qual <m>f</m> tenha mais de
+	  <m>3</m> pontos críticos?</li>
+	</ol>
+	</p>
+      </statement>
+      <hint>
+	<p>Para todos os itens, encontre os pontos críticos de <m>f</m>
+	e classifique-os usando o Critério da Hessiana. Convém separar
+	os casos <m>a&gt;0</m>, <m>a&lt;0</m> e <m>a=0</m>.
+	</p>
+      </hint>
+      <answer>
+	<p><ol marker="a.">
+	  <li><m>a&gt;0</m></li>
+	  <li><m>a&lt;0</m></li>
+	  <li>Não existe valor de <m>a</m> para o qual <m>f</m> tenha ao
+	  menos um ponto de máximo local.</li>
+	  <li>Sim, apenas <m>a=0</m>.</li>
+	</ol>
+	</p>
+      </answer>
+      <solution>
+	<p>O gradiente de <m>f</m> é <m>\nabla(x,y) = (8ax^3 -2ax,
+	2y-2)</m>. Deste modo, <me>\nabla(x,y) = (0,0) \iff
+	\begin{cases} ax(4x^2-1)=0\\ y=1 \end{cases} \iff \begin{cases}
+	a=0 \text{ ou } x=0\text{ ou }x= \pm \dfrac{1}{2} \\ y=1 \end{cases}.</me>
+	Assim, se <m>a\neq 0</m>, os únicos pontos críticos de <m>f</m>
+	são <m>(0,1)</m> e <m>\Big(\pm \dfrac{1}{2}, 1\Big)</m>. Por outro lado, se
+	<m>a=0</m>, então os pontos críticos de <m>f</m> são todos os
+	pontos da forma <m>(x,1)</m> com <m>x \in \R</m>. Para
+	classificá-los, dividiremos a análise em três casos. Observamos
+	que as derivadas de segunda ordem de <m>f</m> são
+	<me>\frac{\partial^2 f}{\partial x^2}(x,y) = 24a x^2 -2a, \quad
+	\frac{\partial^2 f}{\partial y \partial x}(x,y) = 0 \quad
+	\text{e} \quad \frac{\partial^2 f}{\partial y^2} (x,y) = 2.</me>
+	</p>
+	<p>
+	  Se <m>a&gt;0</m>, usando o critério do Hessiano (<xref ref="teo_hess" />), temos
+	  <ul>
+	    <li><m>\det H_f(0,1) = \det\begin{bmatrix}
+	    -2a &amp; 0\\
+	    0 &amp; 2
+	    \end{bmatrix} = -4a &lt; 0 \implies (0,1)</m> é ponto de
+	    sela de <m>f</m>.</li>
+	    <li><m>\det H_f\Big(\pm\dfrac{1}{2},1\Big) = \det\begin{bmatrix}
+	    4a &amp; 0\\
+	    0 &amp; 2
+	    \end{bmatrix} = 8a &gt; 0</m> e <m>8a&gt;0 \implies
+	    \Big(\pm\dfrac{1}{2},1\Big)</m> são pontos de mínimo locais
+	    <m>f</m>.</li>
+	  </ul>
+	</p>
+	<p>
+	  Se <m>a&lt;0</m>, usamos novamente o critério do Hessiano:
+	  <ul>
+	    <li><m>\det H_f(0,1) =\det \begin{bmatrix}
+	    -2a &amp; 0\\
+	    0 &amp; 2
+	    \end{bmatrix} = -4a &gt; 0</m> e <m>-2a&gt;0 \implies
+	    (0,1)</m> é ponto de mínimo local de <m>f</m>.</li>
+	    <li><m>\det H_f\Big(\pm\dfrac{1}{2},1\Big) = \det\begin{bmatrix}
+	    4a &amp; 0\\
+	    0 &amp; 2
+	    \end{bmatrix} = 8a &lt; 0 \implies \Big(\pm\dfrac{1}{2},1\Big)</m> são pontos
+	    de sela de <m>f</m>.
+	    </li>
+	  </ul>
+	</p>
+	<p>Finalmente, se  <m>a=0</m>, notamos que <m>f(x,y)=y^2 - 2y =
+	(y-1)^2 -1 \geq -1</m> para todo <m>(x,y) \in \R^2</m>. Como
+	<m>f(x,1) = -1</m> para todo <m>x\in\R</m>, todos os pontos
+	críticos de <m>f</m> são pontos de mínimo (globais) neste caso.</p>
+	<p>Com a análise acima, estamos em condições de responder cada
+	item do enunciado:
+	<ol marker="a.">
+	  <li><m>f</m> terá exatamente um ponto de sela e dois pontos de
+	  mínimo local se, e somente se, <m>a&gt;0</m>.</li>
+	  <li><m>f</m> terá exatamente um ponto de mínimo local e dois
+	  pontos de sela se, e somente se, <m>a&lt;0</m>.</li>
+	  <li>Não existe valor de <m>a</m> para o qual <m>f</m> tenha ao
+	  menos um ponto de máximo local.</li>
+	  <li><m>f</m> terá mais de <m>3</m> pontos críticos se, e
+	  somente se, <m>a=0</m>.</li>
+	</ol>
+	</p>
+	<figure xml:id="fig_exmaxminlocapos">
+	  <caption>Gráfico de <m>f</m>, com <m>a&gt;0</m>.</caption>
+	  <image width="50%" xml:id="exmaxminlocapos" archive="html">
+	    <asymptote>
+	      import graph3;
+	      size(10cm);
+      
+	      currentprojection=orthographic(3,2,1);
+	      limits((-2,-2,-2),(2,2,2));
+      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+
+	      real a=1;
+
+	      real f(pair z) {return 2*a*z.x^4+z.y^2-a*z.x^2-2*z.y;}
+      
+	      draw(surface(f,(-1,-1),(1,2.25),10,Spline),lightblue+opacity(0.8),blue);
+      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	<figure>
+	  <caption>Gráfico de <m>f</m>, com <m>a&lt;0</m>.</caption>
+	  <image width="50%" xml:id="exmaxminlocaneg" archive="html">
+	    <asymptote>
+	      import graph3;
+	      size(10cm);
+      
+	      currentprojection=orthographic(3,2,1);
+	      limits((-2,-2,-2),(2,2,2));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      real a=-1;
+	      
+	      real f(pair z) {return 2*a*z.x^4+z.y^2-a*z.x^2-2*z.y;}
+	      
+	      draw(surface(f,(-1,-1),(1,2.25),10,Spline),lightblue+opacity(0.8),blue);
+	      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	<figure xml:id="fig_exmaxminlocanul">
+	  <caption>Gráfico de <m>f</m>, com <m>a=0</m>.</caption>
+	  <image width="50%" xml:id="exmaxminlocanul" archive="html">
+	    <asymptote>
+	      import graph3;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(3,2,1);
+	      limits((-2,-2,-2),(2,2,2));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      real a=0;
+	      
+	      real f(pair z) {return 2*a*z.x^4+z.y^2-a*z.x^2-2*z.y;}
+	      
+	      draw(surface(f,(-1,-1),(1,2.25),10,Spline),lightblue+opacity(0.8),blue);
+	      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	
+      </solution>
+    </exercise>
+   
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

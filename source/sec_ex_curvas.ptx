@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_curvas" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Curvas no Plano</title>
+
+  <exercises xml:id="ex_curvas" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="6" xml:id="involuta">
+      <statement>
+	<p>
+          Um barbante é enrolado ao redor de um círculo e então
+          desenrolado, sendo mantido esticado. A curva traçada pelo
+          ponto <m>P</m> no final do barbante é chamada de <em>involuta
+          do círculo</em>. Se o círculo tiver raio <m>r</m> e centro
+          <m>O</m>, a posição inicial de <m>P</m> for <m>(r, 0)</m>, e
+          se o parâmetro <m>\theta</m> for escolhido como na <xref
+          ref="fig_involuta" />, mostre que as equações
+          paramétricas da involuta são: <me>x(\theta) = r
+          (\cos\theta+\theta\sin\theta)\qquad\text{e} \qquad y(\theta) =
+          r (\sin\theta-\theta\cos\theta).</me>
+	</p>
+
+	<sidebyside widths="40% 40%" valign="middle">
+	  <figure xml:id="fig_involuta">
+	    <caption>A involuta do círculo.</caption>
+	    <image width="100%" xml:id="inv_circ">
+	      <latex-image>
+		\begin{tikzpicture}
+		\draw[->] (-3,0) -- (3,0) node[below] {$x$};
+		\draw[->] (0,-3) -- (0,3) node[right] {$y$};
+		\draw[red, thick,variable=\t,domain=0:5*pi/8,samples=100]
+		plot ({2*(cos(\t r)+\t*sin(\t r))},{2*(sin(\t r)-\t*cos(\t r))});
+		\filldraw ({2*(cos(pi/3 r)+pi/3*sin(pi/3 r))},{2*(sin(pi/3
+		r)-pi/3*cos(pi/3 r))}) circle (2pt) node[right]{$P(\theta)$};
+		\draw (0,0) circle (2);
+		\draw[dashed] (0,0) -- ({2*cos(pi/3 r)},{2*sin(pi/3 r)})
+		node[above]{$T$};
+		\draw[dashed] ({2*cos(pi/3 r)},{2*sin(pi/3 r)}) -- ({2*(cos(pi/3
+		r)+pi/3*sin(pi/3 r))},{2*(sin(pi/3 r)-pi/3*cos(pi/3 r))});
+		\draw (1/2,0) arc (0:60:1/2) node[right,xshift=3pt]{$\theta$};
+		\end{tikzpicture}
+	      </latex-image>
+	    </image>
+	  </figure>
+	  <figure xml:id="vid_involuta">
+	    <caption>Uma animação desta involuta.</caption>
+	    <video youtube="7qDIxKTk6Qc" aspect="1" />
+	  </figure>
+	</sidebyside>
+      </statement>
+      <hint>
+	<p>
+          Procure triângulos retângulos semelhantes, um com a hipotenusa
+	  paralela a um dos eixos coordenados e o outro com com os
+	  catetos paralelos aos eixos. Com eles escreva essa hipotenusa
+	  e um dos catetos em termos de <m>\theta</m>.
+	</p>
+      </hint>
+      <solution>
+	<p>
+          Seguido a dica, identificamos os triângulos <m>\triangle
+          OAT</m> e <m>\triangle TBP</m>, na figura abaixo:
+	  <figure xml:id="fig_involuta_sol">
+	    <caption>Solução do <xref ref="involuta" /></caption>
+	    <image width="50%" xml:id="inv_circ_sol">
+	      <latex-image>
+		\begin{tikzpicture}
+		\draw[->] (-3,0) -- (3,0) node[below] {$x$};
+		\draw[->] (0,-3) -- (0,3) node[right] {$y$};
+		\draw[red,thick,variable=\t,domain=0:5*pi/8,samples=100]
+		plot ({2*(cos(\t r)+\t*sin(\t r))},{2*(sin(\t r)-\t*cos(\t r))});
+		\filldraw ({2*(cos(pi/3 r)+pi/3*sin(pi/3 r))},{2*(sin(pi/3
+		r)-pi/3*cos(pi/3 r))}) circle (2pt) node[right]{$P(\theta)$};
+		\draw (0,0) circle (2);
+		\draw[dashed] (0,0) -- ({2*cos(pi/3 r)},{2*sin(pi/3 r)})
+		node[above]{$T$};
+		\draw[dashed] ({2*cos(pi/3 r)},{2*sin(pi/3 r)}) -- ({2*(cos(pi/3
+		r)+pi/3*sin(pi/3 r))},{2*(sin(pi/3 r)-pi/3*cos(pi/3 r))});
+		\draw (1/2,0) arc (0:60:1/2) node[right,xshift=3pt]{$\theta$};
+		\draw[thick,blue] (0,0) node[below left]{$O$} -- ({2*cos(pi/3
+		r)},{2*sin(pi/3 r)}) -- ({2*cos(pi/3 r)},0)
+		node[below]{$A$} -- cycle;
+		\draw[thick,blue] ({2*cos(pi/3 r)},{2*sin(pi/3 r)}) --
+		({2*(cos(pi/3 r)+pi/3*sin(pi/3 r))},{2*(sin(pi/3
+		r)-pi/3*cos(pi/3 r))}) --
+		({2*cos(pi/3 r)},{2*(sin(pi/3
+		r)-pi/3*cos(pi/3 r))}) node[below right]{$B$} -- cycle;
+		\end{tikzpicture}
+	      </latex-image>
+	    </image>
+	  </figure>
+	</p>
+	<p>
+	  Como os triângulos indicados são retângulos e os ângulos
+	  <m>T\hat{O}A</m> e <m>B\hat{T}P</m> são congruente e medem
+	  <m>\theta</m> (por que?), temos que <m>B\hat{P}T</m> mede
+	  <m>\dfrac{\pi}{2}-\theta</m>. Outra observação importante é
+	  que a medida do segmento <m>\overline{PT}</m> é a mesma do
+	  arco da circunferência relativo ao ângulo <m>\theta</m>, ou
+	  seja, <m>m(PT)=r\theta</m>.
+	</p>
+	<p>
+	  Além disso, se escrevemos <m>P(\theta)=\big(x(\theta),
+	  y(\theta)\big)</m>, é fácil ver que
+	  <m>x(\theta)=m(OA)+m(BP)</m> e <m>y(\theta)=m(AT)-m(BT)</m>.
+	</p>
+	<p>
+	  Da trigonometria, sabemos que
+	  <md>
+	    <mrow>m(OA)=r\cos\theta;\quad
+	    m(BP)=r\theta\cos\big(\dfrac{\pi}{2}-\theta\big)=r\theta\sin\theta;</mrow>
+	    <mrow>m(AT)=r\sin\theta;\quad
+	    m(BT)=r\theta\sin\big(\dfrac{\pi}{2}-\theta\big)=r\theta\cos\theta;</mrow>
+	  </md>
+	</p>
+	<p>
+	  Segue daí que <m>x(\theta)=r(\cos\theta+\theta\sin\theta)</m>
+	  e <m>y(\theta)=r(\sin\theta-\theta\cos\theta)</m>, como
+	  desejado.
+	</p>
+      </solution>
+    </exercise>
+  
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

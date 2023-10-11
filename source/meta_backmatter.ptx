@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This file contains all of the "backmatter" material  -->
+<!-- We show examples of how to have hints to divisional  -->
+<!-- excercies appear in a section, and then their        -->
+<!-- solutions in the next.  Then there is an appendix    -->
+<!-- with all notation generated, and finally the index.  -->
+<backmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="meta_backmatter">
+  <title>Apêndice</title>
+  
+  <!-- <solutions divisional="hint"> -->
+  <!--   <title>Selected Hints</title> -->
+  <!-- </solutions> -->
+  
+  <!-- <solutions divisional="solution"> -->
+  <!--   <title>Selected Solutions</title> -->
+  <!-- </solutions> -->
+
+  <!-- <appendix> -->
+  <!--   <title>List of Symbols</title> -->
+  <!--   <notation-list/> -->
+  <!-- </appendix> -->
+  
+  <appendix xml:id="apendice">
+    <title>Principais Resultados</title>
+    <introduction>
+      <p>
+	Nas sessões abaixo listamos, quase sempre sem demonstração,
+	alguns dos principais resultados teóricos e definições
+	utilizados na resolução dos exercícios selecionados.
+      </p>
+      <p>
+	É um material para referência rápida. Os detalhes devem ser
+	preenchidos com a leitura da bibliografia recomendada em cada
+	curso.
+      </p>
+    </introduction>
+    <xi:include href="./ap_calc1.ptx" />
+    <xi:include href="./ap_func.ptx" />
+    <xi:include href="./ap_limcont.ptx" />
+    <xi:include href="./ap_diff.ptx" />
+    <xi:include href="./ap_derivseg.ptx" />
+    <xi:include href="./ap_cadeiadir.ptx" />
+    <xi:include href="./ap_supnivel.ptx" />
+    <xi:include href="./ap_maxminloc.ptx" />
+    <xi:include href="./ap_maxmincond.ptx" />
+  </appendix>
+
+  <!-- <index> -->
+  <!--   <title>Index</title> -->
+  <!--   <index-list/> -->
+  <!-- </index> -->
+
+  <colophon>
+    <p>
+      Este material foi preparado utilizando o <pretext/>.
+    </p>
+  </colophon>
+</backmatter>
+

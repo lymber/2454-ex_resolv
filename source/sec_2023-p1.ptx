@@ -1,0 +1,368 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2023-p1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Primeira Prova</title>
+  <exercises xml:id="gab_2023-p1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="p1q1-2023">
+      <statement>
+	<p>Considere a função
+	<m>f(x,y)=\dfrac{2x^2-2y^2-1}{x^2+y^2-1}</m>.
+	<ol marker="a"> 
+	  <li>Determine o domínio de <m>f</m>, e faça seu esboço com
+	  linhas tracejadas, no plano cartesiano abaixo, os pontos que
+	  não pertencem a este domínio.</li>
+	  <li>Determine as curvas de
+	  nível <m>c=0</m> e <m>c=1</m>, esboçando-as também no plano cartesiano
+	  abaixo.</li>
+	  <li>Decida, justificando, a existência de
+	  <m>\lim\limits_{(x,y)\to (\sqrt{3}/2,1/2)}
+	  f(x,y)</m>.</li>
+	</ol>
+	<figure xml:id="fig_gabp1q1a-2023">
+          <caption>Espaço para os esboços pedidos.</caption>
+          <image xml:id="gabp1q1-2023a" width="50%">
+            <description>Espaço para os esboços pedidos.</description>
+            <latex-image>
+	      \begin{tikzpicture}[scale=1]
+	      \draw[help lines,line width=0.1pt,lightgray] (-3.4, -3.4) grid
+	      (3.4, 3.4);
+	      \draw[->] (-3.5,0)--(3.5,0) node[below]{$x$};
+	      \draw[->] (0,-3.5)--(0,3.5) node[right]{$y$};
+	      \end{tikzpicture}
+	    </latex-image>
+	  </image>
+	  </figure>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><m>\mathrm{Dom} f=\big\{(x,y)\in\R^2\colon x^2+y^2\neq 1\big\}</m>.</li>
+	    <li>Veja na solução.</li>
+	    <li>O limite pedido não existe.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li><p>A expressão de <m>f</m> está definida para todo
+	    <m>(x,y)\in\R^2</m>, tal que <m>x^2+y^2\neq 1</m>. Em símbolos,
+	    <me>\mathrm{Dom} f=\big\{(x,y)\in\R^2\colon x^2+y^2\neq
+	    1\big\}.</me> A região a ser excluída no domínio de <m>f</m> é a
+	    circunferência de raio 1 e centro na origem. Veja na figura
+	    abaixo.</p>
+	    </li> 
+	    <li><p>Usando a <xref ref="curva_nivel" />, escrevemos as curvas
+	    de nível (lembrando que em cada equação devemos ter
+	    <m>x^2+y^2\neq 1</m>):
+	    <md>
+	      <mrow>f^{-1}(0)\colon f(x,y)=0&amp;\iff
+	      2x^2-2y^2-1=0</mrow>
+	      <mrow>&amp;\iff (\sqrt{2}x)^2-(\sqrt{2}y)^2=1;</mrow>
+	      <mrow>f^{-1}(1)\colon f(x,y)=1&amp;\iff
+	      2x^2-2y^2-1=x^2+y^2-1</mrow>
+	      <mrow>&amp;\iff x^2-3y^2=0,</mrow>
+	    </md>
+	    que são, respectivamente, parte de uma hipérbole com focos
+	    no eixo <m>Ox</m> e parte de um par de retas concorrentes na
+	    origem (esboçadas abaixo).</p>
+	    <p>Observamos que na outra versão da provas as curvas de
+	    nível pedidas são parte de uma elipse e parte de um par de
+	    retas paralelas (também indicadas na figura).</p>
+	    </li>
+	    <li><p>Em vista das duas curvas de nível acima se
+	    aproximarem arbitrariamente do ponto
+	    <m>(\frac{\sqrt{3}}{2},\frac{1}{2})</m>, temos que ao longo
+	    de cada uma dessas curvas a função <m>f</m> tende ao valor
+	    do nível da curva (na verdade é constante igual a esse nível
+	    em cada curv).</p>
+	    <p>Isso mostra que
+	    <m>\lim\limits_{(x,y)\to (\sqrt{3}/2,1/2)}
+	    f(x,y)</m> não existe.</p></li>
+	  </ol>
+	  <p>Aqui estão os esboços pedidos:
+	  <figure xml:id="fig_gabp1q1b-2023">
+          <caption>Restrições do domínio e curvas de nível pedidas.</caption>
+          <image xml:id="gabp1q1b-2023b" width="50%">
+            <description>Restrições do domínio e curvas de nível pedidas.</description>
+            <latex-image>
+	      \begin{tikzpicture}[scale=1]
+	      \draw[help lines,line width=0.1pt,lightgray] (-3.4, -3.4) grid
+	      (3.4, 3.4);
+	      \draw[->] (-3.5,0)--(3.5,0) node[below]{$x$};
+	      \draw[->] (0,-3.5)--(0,3.5) node[right]{$y$};
+
+	      \draw[dashed] (0,0) circle (1);
+
+	      \draw[blue] (-3,{-sqrt(3)})--(3,{sqrt(3)})
+	      node[right]{$c=1$};
+	      \draw[blue] (-3,{sqrt(3)})--(3,{-sqrt(3)});
+	      
+	      \draw[olive, domain=-2*pi/5:2*pi/5]
+	      plot({1/sqrt(2)*sec(\x r)},{1/sqrt(2)*tan(\x r)})
+	      node[right]{$c=0$};
+	      \draw[olive, domain=-2*pi/5:2*pi/5]
+	      plot({-1/sqrt(2)*sec(\x r)},{1/sqrt(2)*tan(\x r)});
+
+	      \draw[red] (-3,1/2)--(3,1/2) node[right]{$c=2$};
+	      \draw[red] (-3,-1/2)--(3,-1/2);
+
+	      \draw[orange] (0,0) ellipse ({sqrt(2)} and {sqrt(2/5)})
+	      node[right,xshift=40,yshift=5]{$c=3$};
+
+	      \filldraw[fill=white] ({sqrt(3)/2},1/2) circle (1pt);
+	      \filldraw[fill=white] ({-sqrt(3)/2},1/2) circle (1pt);
+	      \filldraw[fill=white] ({sqrt(3)/2},-1/2) circle (1pt);
+	      \filldraw[fill=white] ({-sqrt(3)/2},-1/2) circle (1pt);
+	      
+	      \end{tikzpicture}
+	    </latex-image>
+	  </image>
+	  </figure>
+	  </p>
+	  <p>Por que não um esboço do gráfico da função enfatizando os
+	  níveis indicados:
+	  <figure xml:id="fig_gabp1q1c-2023">
+            <caption>Gráfico de função e cortes de nível</caption>
+            <image xml:id="gabp1q1c-2023" archive="html" width="50%">
+              <description>Gráfico e cortes de nível</description>
+              <asymptote>
+                import graph3;
+                size(10cm);
+                currentprojection=orthographic(3,2,3);
+                limits((-3,-3,-2),(3,3,2));
+                
+                currentlight=light(white,(0,0,2),(2,-2,-2));
+                // uncomment for transparent background
+                // currentlight.background=black+opacity(0);
+                
+                triple f(pair z){
+ 		  real r=z.x;
+		  real t=z.y;
+		  real x=r*cos(t);
+		  real y=r*sin(t);
+		  real z=(2*r^2*cos(2*t)-1)/(r^2-1);
+		  return (x,y,z);}
+                path3 reta1=graph(new triple(real z) {
+                  return (sqrt(3)*z,z,1);},-1,1,20,operator ..);
+                path3 reta2=graph(new triple(real z) {
+		  return (z,1/2,2);},-2,2,20,operator ..);
+                path3 hip=graph(new triple(real z) {
+                  return (sqrt((1+2*z*z)/2),z,0);},-2,2,20,operator ..);
+		path3 elip=graph(new triple(real z) {
+                  return (sqrt(2)*cos(z),sqrt(2/5)*sin(z),3);},0,2*pi,20,operator ..);		  
+                
+                draw(surface(plane(4*X,4*Y,Z-2*X-2*Y)),
+                  lightgreen+opacity(0.4));
+                draw(surface(plane(4*X,4*Y,-2*X-2*Y)),
+                  orange+opacity(0.4));
+                draw(surface(plane(4*X,4*Y,2*Z-2*X-2*Y)),
+                  red+opacity(0.4));
+                draw(surface(plane(4*X,4*Y,3*Z-2*X-2*Y)),
+                  yellow+opacity(0.4));
+                draw(surface(f,(0,0),(.75,2*pi),20,Spline),lightblue);
+		draw(surface(f,(1.25,0),(2,2*pi),20,Spline),lightblue);
+                draw(reta1,green);
+                draw(reflect(O,Y,Z)*reta1,green);
+                draw(hip,orange);
+                draw(reflect(O,Y,Z)*hip,orange);
+                draw(reta2,red);
+                draw(reflect(O,X,Z)*reta2,red);
+                draw(elip,yellow);
+                xaxis3("$x$",Arrow3);
+                yaxis3("$y$",Arrow3);
+                zaxis3("$z$",Arrow3);
+              </asymptote>
+            </image>
+          </figure>
+	  </p>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q2-2023">
+      <statement>
+	<p>
+	<ol marker="a"> 
+	  <li><p>Calcule ou mostre que não existe:
+	  <ol marker="i">
+	    <li><m>\lim\limits_{(x,y)\to
+	    (0,0)}\dfrac{x^2y}{x^4+y^2}e^{-1/(x^4+y^2)}</m>;</li>
+	    <li><m>\lim\limits_{(x,y)\to (1,0)}\dfrac{y^2}{x-1}</m>.</li>
+	  </ol></p>
+	  </li>
+	  <li>Seja <m>F(x,y)=
+	  \begin{cases}
+	  \dfrac{\sin x}{y},&amp; \text{ se }y\neq0;\\
+	  \hfill 1,&amp; \text{ se }y=0
+	  \end{cases}</m>. Decida, justificando, se <m>F</m> é contínua
+	  em <m>(0,0)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><p>
+	      <ol marker="i">
+		<li><m>0</m>;</li>
+		<li>Não existe.</li>
+	    </ol></p></li>
+	    <li><m>F</m> não é contínua em <m>(0,0)</m>.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>
+	      <ol marker="i">
+		<li><p>Temos ao menos duas soluções diferentes aqui:
+		<ul>
+		  <li><p>Notamos que <m>\dfrac{x^2y}{x^4+y^2}</m> é
+		  limitada (análogo ao caso de
+		  <m>\dfrac{xy}{x^2+y^2}</m>) e que
+		  <m>e^{-1/(x^4+y^2)}</m>tende a zero, já que
+		  <m>u=x^4+y^2</m> é contínua e tende a zero quando
+		  <m>(x,y)\to (0,0)</m> e então
+		  <me>\lim\limits_{(x,y)\to
+		  (0,0)}e^{-1/(x^4+y^2)}=\lim\limits_{u\to
+		  0}e^{-1/u}=0,</me> este último seguindo de fatos
+		  conhecidos do cálculo 1.</p>
+		  <p>Com isso, o limite pedido é produto de um fator
+		  limitado com um que vai a zero e, pelo <xref ref="cor_confronto" />,
+		  <me>\lim\limits_{(x,y)\to
+		  (0,0)}\dfrac{x^2y}{x^4+y^2}e^{-1/(x^4+y^2)}=0.</me></p></li>
+		  <li>Alternativamente, temos que
+		  <m>\lim\limits_{(x,y)\to (0,0)}x^2y=0</m> e que
+		  <me>\lim\limits_{(x,y)\to
+		  (0,0)}{x^4+y^2}e^{-1/(x^4+y^2)}=\lim\limits_{u\to
+		  0}ue^{-1/u}=0,</me> onde a última passagem pode ser
+		  verificada usando-se a regra de L'Hospital.</li>
+		</ul></p></li>
+		<li><p>Escolhemos duas curvas contínuas passando por
+		<m>(1,0)</m> para mostrar a não existência do limite:
+		<ul>
+		  <li><m>\gamma_1(t)=(t,0), t\in\R:
+		  f\big(\gamma_1(t))=\dfrac{0}{t-1}=0</m>, donde <m>\boxed{\lim\limits_{t\to
+		  1} f\big(\gamma_1(t)\big)=0}</m>;
+		  </li>
+		  <li><m>\gamma_2(t)=(t^2+1,t), t\in\R:
+		  f\big(\gamma_2(t))=\dfrac{t^2}{t^2+1-1}=1</m>, logo <m>\boxed{\lim\limits_{t\to
+		  0} f\big(\gamma_2(t)\big)=1}</m>.
+		  </li>
+		</ul></p></li>
+	    </ol></li>
+	    <li><p>Para que <m>F</m> seja contínua em <m>(0,0)</m>, devemos
+	    ter <me>\lim\limits_{(x,y)\to
+	    (0,0)}F(x,y)=1.</me></p>
+	    <p>Considerando a curva <m>\gamma(t)=(0,t)</m>,
+	    <m>t\in\R</m>, temos
+	    <me>\lim\limits_{t\to
+	    0}F\big(\gamma(t)\big)=\lim\limits_{t\to
+	    0}F(0,t)=\lim\limits_{t\to 0}\dfrac{\sin 0}{t}=0\neq
+	    1=F(0,0),</me> mostranto que <m>F</m> não é contínua em <m>(0,0)</m>.
+	    </p>
+	    </li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q3-2023">
+      <statement>
+	<p>Considere a curva <m>\gamma\colon
+	\big[0,2\pi\big]\to\R^2</m>, dada por <m>\gamma(t)=\big(\cos t,
+	\sin(3t)\big)</m>.
+	<ol marker="a"> 
+	  <li>Determine	os dois instantes <m>t\in \big[0,2\pi\big]</m> nos quais
+	  <m>\gamma(t)=\big(\frac{1}{2},0\big)</m>.</li>
+	  <li>Determine as equações das duas retas tangentes à imagem da curva <m>\gamma</m>
+	  no ponto <m>P</m>. </li>
+	  <li>Indique na figura o sentido do percurso de <m>\gamma</m>.</li>
+	</ol>
+	<figure xml:id="fig_gabp1q3-2023">
+          <caption>A imagem de <m>\gamma</m>.</caption>
+          <image xml:id="gabp1q3-2023a" width="50%">
+            <description>A imagem de <m>\gamma</m>.</description>
+            <latex-image>
+	      \begin{tikzpicture}[scale=2]
+	      \draw[->] (-1.5,0)--(1.5,0) node[below]{$x$};
+	      \draw[->] (0,-1.5)--(0,1.5) node[right]{$y$};
+	      \draw[domain=0:2*pi,thick,samples=100]
+	      plot({cos(\x r)},{sin(3*\x r)});
+	      \filldraw[black] (0.5,0) circle (1pt);
+	      \draw[->] (0.5,-1.25)
+	      node[below]{$P=\big(\frac{1}{2},0\big)$}-- (0.5,-0.25);
+	      \draw[blue,->,thick] (1/2,0)--++({-sqrt(3)/2},-3)
+	      node[right]{$\gamma'(\frac{\pi}{3})$};
+	      \draw[orange,->,thick] (1/2,0)--++({sqrt(3)/2},-3)
+	      node[right]{$\gamma'(\frac{5\pi}{3})$};
+	      \filldraw[red] (1,0) circle (1pt) node[below right]{$\gamma(0)$};
+	      \draw[red,->, thick] (1,0)--++(0,3) node[right]{$\gamma'(0)$};
+	      \end{tikzpicture}
+	    </latex-image>
+	  </image>
+	  </figure>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><m>t=\frac{\pi}{3}</m> e <m>t=\frac{5\pi}{3}</m>.</li>
+	    <li><m>r\colon
+	    (x,y)=(\frac{1}{2},0)+\lambda(-\frac{\sqrt{3}}{2},-3)</m>,
+	    <m>\lambda\in\R</m> e <m>s\colon
+	    (x,y)=(\frac{1}{2},0)+\lambda(\frac{\sqrt{3}}{2},-3)</m>,
+	    <m>\lambda\in\R</m>.</li>
+	    <li>O sentido de percurso é aquele dado pelos vetores
+	    tangentes acima. Note que não há inversão de sentido do ou
+	    "bico"em nenhum momento do percurso , pois <m>\gamma</m> é
+	    de classe <m>\mathscr{C}^1</m> e as suas duas componentes
+	    nunca se anulam simultaneamente.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li><p>Queremos <m>t\in\big[0,2\pi\big]</m> tal que
+	    <m>\gamma(t)=(1/2,0)</m>, ou seja, devemos resolver o
+	    sistema <me>\begin{cases}
+	    \cos(t)&amp;=1/2\\
+	    \sin(3t)&amp;=0
+	    \end{cases}\implies t=\dfrac{\pi}{3}\text{ ou
+	    }t=\dfrac{5\pi}{3}.</me>
+	    </p></li>
+	    <li><p>Retas tangentes à imagem de uma curva <m>\gamma</m>
+	    escrevem-se na forma <me>r\colon
+	    (x,y)=\gamma(t_0)+\lambda\gamma'(t_0),\quad\lambda\in\R.</me>
+	    Aqui temos <m>\gamma(t_0)=\big(\cos t_0,\sin(3t_0)\big)</m>
+	    e <m>\gamma'(t_0)=\big(-\sin
+	    t_0,3\cos(3t_0)\big)</m>. Aplicando os valores de
+	    <m>t_0</m> encontrados acima, temos
+	    <md>
+	      <mrow>t_0=\dfrac{\pi}{3}:&amp;\ 
+	      (x,y)=\gamma(\dfrac{\pi}{3})+\lambda\gamma'(\dfrac{\pi}{3})
+	      =(\frac{1}{2},0)+\lambda(-\frac{\sqrt{3}}{2},-3),\lambda\in\R</mrow>
+	      <mrow>t_0=\dfrac{5\pi}{3}: &amp;\ 
+	      (x,y)=\gamma(\dfrac{5\pi}{3})+\lambda\gamma'(\dfrac{5\pi}{3})
+	      =(\frac{1}{2},0)+\lambda(\frac{\sqrt{3}}{2},-3),\lambda\in\R</mrow>
+	    </md>
+	    </p></li>
+	  <li><p>O sentido de percurso é o indicado pelos vetores tangentes
+	  no ponto <m>P</m>. Indicamos o vetor tangente em <m>t=0</m>
+	  para facilitar a visualização (extendemos aqui o conceito de
+	  derivada para funções definidas em intervalos fechados,
+	  acontece...). Importante notar que a trajetória não faz bicos,
+	  suas coordenadas são deriváveis e não e anula simultaneamente.</p></li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+    
+  </exercises>
+</section>

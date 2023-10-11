@@ -1,0 +1,425 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2021-p1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Primeira Prova</title>
+  <exercises xml:id="gab_2021-p1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="p1q1-2021">
+      <statement>
+	<p>
+	  Sejam <m>f</m> e <m>g</m> duas funções que admitem derivadas
+	  de qualquer ordem, tais que <m>P_n</m> e <m>Q_n</m> são os
+	  respectivos polinômios de Taylor de ordem <m>n</m> em torno de
+	<m>x_0=0</m>.</p>
+	<p>Assinale, dentre as alternativas abaixo, precisamente aquelas
+	que são verdadeiras (marcar uma incorreta descontará nota).
+	  <ol marker="a">
+	    <li>Se <m>f</m> é uma função par, então <m>P_n</m> é a soma
+	    de monômios com potências pares de <m>x</m>.</li>
+	    <li>Se <m>P_n(x)=Q_n(x)</m>, para algum <m>n</m>, então
+	    <m>f(x)=g(x)</m>.</li>
+	    <li>O polinômio de Taylor de ordem <m>n</m> para a função
+	    <m>f(x)g(x)</m>, em torno de <m>x_0=0</m>, é
+	    <me>f(0)g(0)+f'(0)g'(0)x+\dfrac{f''(0)g''(0)}{2!}x^2+\ldots+
+	    \dfrac{f^{(n)}(0)g^{(n)}(0)}{n!}x^n.</me></li> 
+	    <li>Se <m>R_n</m> é o polinômio de Taylor de ordem <m>n</m>
+	    de <m>f'</m> em torno de <m>x_0=0</m>, então
+	    <m>R_n(x)=\dfrac{d}{dx}P_{n+1}(x)</m>.</li>.
+	  </ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li>Verdadeira</li>
+	    <li>Falsa</li>
+	    <li>Falsa</li>
+	    <li>Verdadeira</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>Se <m>f</m> é par, então <m>f(−x)=f(x)</m> que,
+	    derivando em <m>x_0=0</m>, nos dá <m>−f'(−0)=f'(0)\implies
+	    f'(0)=0</m>, mostrando que o coeficiente de <m>x</m> em
+	    <m>P_n</m> é nulo. Repetindo esse argumento para todas as
+	    derivadas de ordem ímpar temos o resultado.</li>
+	    <li>Se <m>f(x)=x</m> e <m>g(x)=\sin x</m>, então
+	    <m>P_1(x)=x=Q_1(x)</m> mas <m>f(x)\neq g(x)</m>.</li>
+	    <li>Observe que a derivada de <m>f(x)g(x)</m> não é
+	    <m>f'(x)g'(x)</m> e portanto o coeficiente de um dado termo
+	    do polinômio de <m>f(x)g(x)</m> não é simplesmente o produto
+	    dos coeficientes. Caso concreto: considere <m>f(x)=1</m> e
+	    <m>g(x)=\sin x</m>, então <m>f(x)g(x)=\sin x=g(x)</m> tem como
+	    polinômio de Taylor de ordem 3, centrado em <m>x_0=0</m>,
+	    <m>x−x^3/3!</m> (o mesmo de <m>g</m>), mas aplicando a fórmula
+	    proposta teríamos o polinômio nulo.</li>
+	    <li>Observando que <m>f^{(n+1)}(x_0)=(f')(n)(x_0)</m> e que
+	    <m>\dfrac{d}{dx}\left(\dfrac{(x−x0)^{k+1}}{(k+1)!}\right)=\dfrac{(x−x0)^k}{k!}</m>,
+	    segue-se que <m>R_n(x)=\dfrac{d}{dx}P_{n+1}(x)</m>.</li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q2-2021">
+      <statement>
+	<p>Considere a curva <m>\gamma(t)=\left(15\cos t,\dfrac{\sin
+	t}{2+\cos t}\right)</m>, <m>t\in[0,2\pi]</m>, e o triângulo
+	delimitado delimitado pelas retas tangentes à <m>\gamma</m> nos
+	pontos <m>(−15,0)</m>,<m>(0,1/2)</m> e <m>(0,−1/2)</m>. A área
+	deste triângulo é:
+	<ol marker="a" cols="5">
+	  <li><m>15</m></li>
+	  <li><m>\dfrac{135}{2}</m></li>
+	  <li><m>\dfrac{15}{2}</m></li>
+	  <li><m>\dfrac{135}{4}</m></li>
+	  <li><m>\dfrac{45}{4}</m></li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa d.
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  Os pontos dados são atingidos pela curva quanto <m>t=\pi</m>,
+	  <m>t=\pi/2</m> e <m>t=3\pi/2</m>, respectivamente. Os vetores
+	  tangentes nesse pontos são <m>\gamma'(\pi)=(0,−1)</m>,
+	  <m>\gamma'(\pi/2)=(−15,1/4)</m> e
+	  <m>\gamma'(3\pi/2)=(15,1/4)</m>. Com isso, temos as retas
+	  tangentes <me>r1\colon x=−15,\quad r2\colon
+	  x+60y=30\quad\text{e}\quad r3\colon x−60y=30</me>. As
+	  interseções são os pontos <m>(30,0)</m>, <m>(−15,3/4)</m> e
+	  <m>(−15,−3/4)</m>, que formam um triângulo de altura <m>45</m> e
+	  base <m>3/2</m>, com área <m>135/4</m>. Veja a figura:
+	  <figure xml:id="fig_gabp1q2-2021">
+	    <caption>Imagem de <m>\gamma</m> e tangentes.</caption>
+            <image xml:id="gabp1q2-2021" width="50%">
+              <description>Imagem da curva e tangentes.</description>
+              <latex-image>
+                \begin{tikzpicture}
+                \draw[thick,->] (-2,0)--(3,0) node[below]{$x$};
+                \draw[thick,->] (0,-1.5)--(0,1.5) node[right]{$y$};
+		\draw[domain=0:2*pi,red, samples=100] plot({cos(\x r)},{sin(\x
+		r)/(2+cos(\x r))});
+		\draw[blue] (-1,-1) -- (-1,1) node[left]{{$r_1$}};
+		\draw[olive] (-1.5,{{3.5/4}}) -- (2.5,{{-1/8}})
+		node[below]{{$r_2$}};
+		\draw[orange] (-1.5,{{-3.5/4}}) -- (2.5,{{1/8}})
+		node[above]{{$r_3$}}; 
+                \end{tikzpicture}
+              </latex-image>
+            </image>
+	  </figure>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q3-2021">
+      <statement>
+	<p>Considere a função
+	<m>f(x,y)=\dfrac{7(x−1)^2+2(y−1)^2}{x^2+y^2}</m>, definida em
+	<m>\R^2\setminus\big\{(0,0)\big\}</m>. As curvas de nível
+	<m>7</m> e <m>9/2</m> são, respectivamente: 
+	<ol marker="a">
+	  <li>um par de retas concorrentes e uma elipse.</li>
+	  <li>um par de retas paralelas e uma elipse.</li>
+	  <li>uma hipérbole e uma parábola.</li>
+	  <li>uma parábola e uma hipérbole.</li>
+	  <li>uma parábola e um par de retas concorrentes.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa d.
+	</p>
+      </answer>
+      <solution>
+	<p>Escrevendo <m>f(x,y)=k</m>, para <m>(x,y)\neq (0,0)</m>,
+	temos
+	<me>\dfrac{7(x−1)^2+2(y−1)^2}{x^2+y^2}=k\iff
+	(7-k)x^2-14x+(2-k)y^2-4y+9=0.</me></p>
+	<p>Aplicando os valores de <m>k</m> indicados, a equação acima escreve-se
+	<ul>
+	  <li><m>k=7</m>: <m>-14x-5y^2-4y+9=0</m>, ou seja
+	  <m>x=\dfrac{9-4y-5y^2}{14}</m>, que descreve uma
+	  parábola.</li>
+	<li><m>k=9/2</m>:
+	<m>\dfrac{5}{2}x^2-14x-\dfrac{5}{2}y^2-4y+9=0</m> que
+	completando quadrados, fica <m>5(x-14/5)^2-5(y+4/5)^2=18</m>,
+	isto é, uma hiperbole.</li>
+	</ul></p>
+	<p>Veja ambas numa figura:
+	<figure xml:id="fig_gabp1q3-2021">
+	    <caption>Curvas de nível para <m>f(x,y)</m>.</caption>
+            <image xml:id="gabp1q3-2021" width="50%">
+              <description>As curvas de nível de <m>f</m>.</description>
+              <latex-image>
+                \begin{tikzpicture}
+                \draw[thick,->] (-3,0)--(6,0) node[below]{$x$};
+                \draw[thick,->] (0,-3)--(0,3) node[right]{$y$};
+		\draw[domain=-2.5:2.5,red, samples=100]
+		plot({(9-4*\x-5*(\x)^2)/14},{\x}) node[above]{$c=7$};
+		\draw[domain=-1:1,olive, samples=100]
+		plot({sqrt(18/5)*cosh(\x)+14/5},{sqrt(18/5)*sinh(\x)-4/5})
+		node[above]{$c=\frac{9}{2}$};
+		\draw[dashed] (14/5,-3)--(14/5,3);
+		\draw[dashed] (-3,-4/5)--(6,-4/5);
+		\draw[domain=-1:1,olive, samples=100]
+		plot({2*14/5-(sqrt(18/5)*cosh(\x)+14/5)},{sqrt(18/5)*sinh(\x)-4/5});
+		\end{tikzpicture}
+              </latex-image>
+            </image>
+	  </figure>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q4-2021">
+      <statement>
+	<p>Seja <m>f(x,y)</m> uma função diferenciável em <m>(3,−2)</m>
+	tal que <m>f(3,−2)=−3</m>. Sabe-se também que <m>\dfrac{\partial
+	f}{\partial \vec{u}}(3,−2)=1</m> e <m>\dfrac{\partial
+	f}{\partial \vec{v}}(3,−2)=-2</m>, onde
+	<m>\vec{u}=\left(-\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}}\right)</m>
+	e
+	<m>\vec{v}=\left(\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}}\right)</m>. A
+	equação do plano tangente ao gráfico de <m>f</m> no ponto
+	<m>(3,−2,−3)</m> é:
+	<me>\boxed{\phantom{AAA}}x+\boxed{\phantom{AAA}}y-z+\boxed{\phantom{AAA}}=0.</me></p>
+	<p>O valor máximo que uma derivada direcional de <m>f</m> no ponto
+	<m>(3,−2)</m> assume é <m>\boxed{\phantom{AAA}}</m>.
+	</p>
+      </statement>
+      <answer>
+	<p><m>\left(-\dfrac{3}{\sqrt{2}},-\dfrac{1}{\sqrt{2}},\dfrac{7\sqrt{2}-6}{2}\right)</m>.</p>
+	<p><m>\sqrt{5}</m>.</p>
+      </answer>
+      <solution>
+	<p>Sabendo que <m>f</m> é diferenciável em
+	<m>(x_0,y_0)=(3,−2)</m> e dadas as derivadas direcionais no
+	enunciado, podemos determinar <m>\nabla f(3,−2)</m> através do
+	sistema de equações lineares <me>\begin{cases} \big\langle\nabla
+	f(3,-2),\vec{u}\big\rangle= \dfrac{\partial f}{\partial
+	\vec{u}}(3,−2)&amp;=1\\ \big\langle\nabla
+	f(3,-2),\vec{v}\big\rangle= \dfrac{\partial f}{\partial
+	\vec{v}}(3,−2)&amp;=-2, \end{cases}</me> que tem uma matriz de
+	coeficientes ortogonal (fica fácil resolver) e encontrar
+	<m>\nabla
+	f(3,−2)=\left(-\dfrac{3}{\sqrt{2}},-\dfrac{1}{\sqrt{2}}\right),</m>
+	cujas coordenadas são, respectivamente, os coeficientes da
+	equação do plano pedido, já que o coeficiente de <m>z</m> é
+	<m>−1</m>. O termo independente é
+	<m>d=f(x_0,y_0)−f_x(x_0,y_0)x_0−f_y(x_0,y_0)y_0=\dfrac{7\sqrt{2}-6}{2}</m>.</p>
+	<p>O valor máximo da derivada direcional é precisamente
+	<m>\|\nabla f(3,−2)\|=\sqrt{5}</m>.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q5-2021">
+      <statement>
+	<p>Seja <m>f\colon \R^2\to\R</m> dada por
+	<m>f(x,y)=\max\Big\{\dfrac{x}{3+|y|},\dfrac{y}{3+|x|}\Big\}</m>.</p>
+	<p>O valor de <m>\dfrac{\partial f}{\partial x}(0,0)</m> é
+	<ol marker="a." cols="5">
+	  <li><m>0</m>.</li>
+	  <li><m>-\dfrac{1}{3}</m>.</li>
+	  <li><m>\dfrac{1}{3}</m>.</li>
+	  <li>3<m>0</m></li>
+	  <li>inexistente.</li>
+	</ol></p>
+	<p>O valor de <m>\dfrac{\partial f}{\partial x}(1,0)</m> é
+	<ol marker="a." cols="5">
+	  <li><m>0</m>.</li>
+	  <li><m>-\dfrac{1}{3}</m>.</li>
+	  <li><m>\dfrac{1}{3}</m>.</li>
+	  <li>3<m>0</m></li>
+	  <li>inexistente.</li>
+	</ol></p>
+      </statement>
+      <hint>
+	<p>Lembre-se do significado conceitual da derivada parcial (não
+	a definição) e tudo fica muito simples.</p>
+      </hint>
+      <answer>
+	<p>Alternativa e.</p>
+	<p>Alternativa c.</p>
+      </answer>
+      <solution>
+	<p>Basta olhar para
+	<m>g(x)=f(x,0)=\max\Big\{\dfrac{x}{3},0\Big\}</m> e observar que
+	a existência e o valor de <m>\dfrac{\partial f}{\partial
+	x}(x_0,0)</m> são dados exatamente por <m>g'(x_0)</m>.</p>
+	<p>Em <m>x_0=0</m>, temos que <m>g</m> não é derivável:
+	<me>\lim\limits_{h\to 0^+}\dfrac{g(h)-g(0)}{h}=\dfrac{1}{3}\neq
+	0=\lim\limits_{h\to 0^-}\dfrac{g(h)-g(0)}{h}.</me></p>
+	<p>Já em <m>x_0=0</m>, consideramos o limite
+	<me>\lim\limits_{h\to
+	0}\dfrac{g(1+h)-g(1)}{h}=\dfrac{1}{3},</me> pois <m>h\to 0</m>
+	nos permite considerar <m>h&gt;1</m> e portanto
+	<m>g(1+h)=\dfrac{1+h}{3}</m>.</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q6-2021">
+      <statement>
+	<p>
+	  Sejam <m>f\colon\R^2\to\R</m> uma função e
+	  <m>(x_0,y_0)\in\R^2</m>. Assinale, dentre as alternativas
+	  abaixo, precisamente aquelas que são verdadeiras (marcar uma
+	  incorreta descontará nota):
+	  <ol marker="a">
+	    <li>Se <m>f</m> não é diferenciável em <m>(x_0,y_0)</m>,
+	    então <m>f</m> não admite derivadas parciais em
+	    <m>(x_0,y_0)</m>.</li>
+	    <li>Se <m>f</m> não é diferenciável em <m>(x_0,y_0)</m>,
+	    então <m>f</m> não é contínua em <m>(x_0,y_0)</m>.</li>
+	    <li>Se <m>f</m> não é contínua em <m>(x_0,y_0)</m>, então
+	    <m>f</m> não admite derivadas parciais em
+	    <m>(x_0,y_0)</m>.</li>
+	    <li>Se <m>f</m> não admite derivadas parciais em
+	    <m>(x_0,y_0)</m>, então <m>f</m> não é diferenciável em
+	    <m>(x_0,y_0)</m>.</li>
+	    <li>Se <m>f</m> não é diferenciável em <m>(x_0,y_0)</m>,
+	    então <m>f</m> as derivadas parciais de <m>f</m> não são
+	    contínuas em <m>(x_0,y_0)</m>.</li>
+	  </ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li>Falsa</li>
+	    <li>Falsa</li>
+	    <li>Falsa</li>
+	    <li>Verdadeira</li>
+	    <li>Verdadeira</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>Falsa. A função <m>f(x,y)=\begin{cases}
+	    \dfrac{xy}{x^2+y^2},&amp;\text{ se }(x,y)\neq (0,0)\\
+	    \hfill 0,&amp;\text{ se} (x,y)=(0,0)
+	    \end{cases}</m> admite as duas derivadas parciais na origem
+	    e não é sequer contínua ali, quando mais diferenciável.</li>	    
+	    <li>Falsa. O exemplo acima reflete isso.</li>
+	    <li>Falsa. Mais uma vez o mesmo exemplo ilustra isso.</li>
+	    <li>Verdadeira. Pois a definição de diferenciabilidade via limite
+	    exige a existência das derivadas parciais.</li>
+	    <li>Verdadeira. Se as derivadas parciais de <m>f</m> são
+	    contínuas num ponto, então <m>f</m> é diferenciável nesse
+	    ponto.</li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q7-2021">
+      <statement>
+	<p>Seja <m>f\colon\R^2\to\R</m> uma função diferenciável tal que
+	<m>f(sx,sy)=sf(x,y)</m>, para todos <m>(x,y)\in\R^2</m> e
+	<m>s\in\R</m>. Se <m>\nabla f(0,0)=(8,9)</m>, então
+	<m>f(7,3)</m>
+	<ol marker="a">
+	  <li>vale <m>83</m></li>
+	  <li>vale <m>87</m></li>
+	  <li>não ode ser determinado a partir dos dados fornecidos</li>
+	  <li>vale <m>0</m></li>
+	  <li>vale <m>17</m></li>	  
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa a.</p>
+      </answer>
+      <hint>
+	<p>Use a regra da cadeia para <m>f</m> e o segmento que liga a
+	origem até cada ponto <m>(x,y)</m> do plano.
+	</p>
+      </hint>
+      <solution>
+	<p>Das hipóteses temos que <m>sf(7,3)=f(7s,3s)</m> e, derivando em
+	relação a <m>s</m> temos <m>f(7,3)=\big\langle\nabla
+	f(7s,3s),(7,3)\big\rangle</m>. Fazendo <m>s=0</m> vem que
+	<m>f(7,3)=83</m>.
+	</p>
+      </solution>
+    </exercise>
+    
+    
+    <exercise xml:id="p1q8-2021">
+      <statement>
+	<p>Seja <m>f\colon\R^2\to\R</m> uma função
+	diferenciável. Sabendo que <m>7x+3y+2z+5=0</m> é a equação do
+	plano tangente ao gráfico de <m>f</m> no ponto <m>(2,3)</m>,
+	determine:
+	<ol marker="a">
+	  <li><m>f(2,3)</m></li>
+	  <li><m>\nabla f(2,3)</m></li>
+	  <li><m>\dfrac{\partial f}{\partial\vec{u}}(2,3)</m>, onde
+	  <m>\vec{u}</m> é o versor do vetor <m>\vec{v}=(3,2)</m></li>
+	  <li>a reta tangente ao gráfico da função
+	  <m>g(t)=f(3\sin(t)+t^4+2,2\cos(t)+e^{−3t})</m> no ponto de
+	  abscissa <m>t_0=0</m>.</li>
+	  <li>o plano tangente ao gráfico de <m>h(u,v)=uf(u+v,u−v)</m>
+	  no ponto <m>\big(5/2,−1/2,h(5/2,−1/2)\big)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<ol marker="a">
+	  <li><m>-14</m></li>
+	  <li><m>(-7/2.-3/2)</m></li>
+	  <li><m>-\dfrac{27}{2\sqrt{13}}</m></li>
+	  <li><m>y=-6x-14</m></li>
+	  <li><m>\pi\colon -\frac{53}{2}(x−5/2)-5(y+1/2)−z-35=0</m></li>
+	</ol>
+      </answer>
+      <solution>
+	<ol marker="a">
+	  <li>Substituindo <m>(2,3)</m> na equação do plano tangente
+	  dado temos <m>f(2,3)=z=−14</m>.</li>
+	  <li>Da mesma equação do plano temos que <m>\nabla
+	  f(2,3)=(−7/2,−3/2)</m>.</li>
+	  <li>Inicialmente notamos que
+	  <m>\vec{u}=\Big(\dfrac{3}{\sqrt{9+4}},\frac{2}{\sqrt{9+4}}\Big)</m>. Como
+	  <m>f</m> é diferenciável temos, pela regra da cadeia, que
+	  <m>/dfrac{\partial f}{\vec{u}}(2,3)=\big\langle\nabla
+	  f(2,3),\vec{u}\big\rangle=−\dfrac{27}{2\sqrt{13}}</m>.</li>
+	  <li>Precisamos dos valores de <m>g(0)</m> e
+	  <m>g'(0)</m>. Olhando <m>g(t)=(f\circ\gamma)(t)</m>, com
+	  <m>\gamma(t)=(3\sin(t)+t^4+2,2\cos(t)+e^{−3t})</m>, temos
+	  <m>g(0)=f\big(\gamma(0)\big)=f(2,3)=−14</m> e
+	  <m>g'(0)=big\langle\nabla
+	  f(2,3),\gamma'(0)\big\rangle=\big\langle(−7/2,−3/2),(3,−3)\big\rangle=−6</m>. Assim
+	  a reta tangente procurada é <me>y=g(0)+g'(0)(x−0)\implies
+	  y=−6x−14.</me></li> <li>Finalmente, para o plano pedido
+	  precisamos de <m>d=h(5/2,−1/2)=5/2f(2,3)=−35</m> e de
+	  <m>\nabla h(5/2,−1/2)</m>, que pode ser calculado com a regra
+	  da cadeia. Escrevendo <m>h(u,v)=f(x,y)</m>, com
+	  <m>x=g_1(u,v)=u+v</m> e <m>y=g_2(u,v)=u−v</m>, temos, omitindo
+	  os pontos de aplicação, <m>h_u=f_x x_u+f_y y_u</m> e
+	  <m>h_v=f_x xv+f_y y_v</m>. Explicitamente,
+	  <md>
+	    <mrow>h_u(u,v)&amp;=f(u+v,u−v)+u\big(f_x(u+v,u−v)\cdot
+	    1+f_y(u+v,u−v)\cdot 1\big)\text{ e}\\</mrow>
+	    <mrow>h_v(u,v)&amp;=u\big(f_x(u+v,u−v)\cdot
+	    1+f_y(u+v,u−v)\cdot(−1)\big).</mrow>
+	  </md>
+	  No ponto <m>(5/2,−1/2)</m> temos <m>a=h_u(5/2,−1/2)=−53/2</m>
+	  e <m>b=hv(5/2,−1/2)=−5</m>.  O plano tem equação <me>\pi\colon
+	  \dfrac{53}{2}(x−5/2)-5(y+1/2)−z-35=0.</me></li>
+	  </ol>
+      </solution>
+    </exercise>
+  </exercises>
+</section>

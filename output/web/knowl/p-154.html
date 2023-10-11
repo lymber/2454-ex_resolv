@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Parágrafo</span></h5>
+<div class="para logical">
+<div class="para">Ao trabalho:</div>
+<ul class="disc">
+<li><div class="para logical">
+<div class="para">Candidatos no interior de <span class="process-math">\(R\text{:}\)</span> o interior de <span class="process-math">\(R\)</span> é o conjunto (aberto)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_crit.html">
+\begin{equation*}
+\text{int}(R) = \big\{(x,y,z) \in
+\R^3\colon x+y+z &lt; 4, x&gt; 0, y&gt; 0\text{ e } z&gt;
+0\big\}.
+\end{equation*}
+</div>
+<div class="para">Neste caso, usamos a versão para três variáveis (totalmente análoga) do <a href="" class="xref" data-knowl="./knowl/teo_crit.html" title="Teorema A.8.4">Teorema A.8.4</a>, concluindo que os candidatos são os pontos críticos de <span class="process-math">\(f\)</span> neste conjunto. Como</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_crit.html">
+\begin{equation*}
+\nabla f(x,y,z) = (2x-4y+3, 2y-4x,
+4z-4),
+\end{equation*}
+</div>
+<div class="para">o único ponto crítico é <span class="process-math">\(\big(\dfrac{1}{2}, 1,
+1\big)\text{.}\)</span> Note que este ponto pertence a int<span class="process-math">\((R)\text{.}\)</span>
+</div>
+</div></li>
+<li>
+<div class="para logical">
+<div class="para">Candidatos nas faces (excluídas as arestas): procuramos os candidatos nos conjuntos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_lag31.html ./knowl/maxminarb-5.html">
+\begin{align*}
+F_1 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z = 4,
+x&gt;0, y&gt;0\text{ e } z&gt;0\big\},\\
+F_2 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x= 0, y&gt; 0\text{ e } z&gt; 0\big\},\\
+F_3 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x&gt; 0, y= 0\text{ e } z&gt; 0\big\},\\
+F_4 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x&gt; 0, y&gt; 0\text{ e } z= 0\big\}.
+\end{align*}
+</div>
+<div class="para">São as faces de <span class="process-math">\(R\text{,}\)</span> excluídas as arestas. Em cada face, vamos "eliminar" uma das variáveis e reduzir o problema ao estudo de funções de duas variáveis em abertos de <span class="process-math">\(\R^2\text{.}\)</span> Outra abordagem possível seria usar o Método dos Multiplicadores de Lagrange (<a href="" class="xref" data-knowl="./knowl/teo_lag31.html" title="Teorema A.9.7">Teorema A.9.7</a>), o qual foi utilizado no <a href="" class="xref" data-knowl="./knowl/maxminarb-5.html" title="Exercício 1.12.5">Exercício 1.12.5</a>.</div>
+</div>
+<div class="para logical">
+<div class="para">Na face <span class="process-math">\(F_1\text{,}\)</span> podemos escrever <span class="process-math">\(z = 4 - x - y\)</span> e estudar a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_1(x,y) = f(x,y,4-x-y) = 3x^2 + 3y^2 -9x
+-12y +16
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_1 = \big\{ (x,y) \in \R^2\colon
+x+ y&lt;4, x &gt;0\text{ e } y&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_1(x,y) = (6x-9, 6y-12),
+\end{equation*}
+</div>
+<div class="para">o ponto <span class="process-math">\(\Big(
+\dfrac{3}{2}, 2\Big) \in U_1\)</span> é o único ponto crítico de <span class="process-math">\(g_1\text{.}\)</span> Este ponto corresponde ao candidato <span class="process-math">\(\Big(
+\dfrac{3}{2}, 2, \dfrac{1}{2}\Big) \in F_1\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Na face <span class="process-math">\(F_2\text{,}\)</span> temos <span class="process-math">\(x=0\)</span> e estudamos a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_2(y,z) = f(0,y,z) = y^2 + 2z^2 -4z
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_2 = \big\{ (y,z) \in \R^2\colon y+z &lt; 4, y &gt;
+0\text{ e } z&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_2(y,z) =
+(2y,4z-4),
+\end{equation*}
+</div>
+<div class="para">o único ponto crítico de <span class="process-math">\(g_2\)</span> é <span class="process-math">\((0,1)\text{,}\)</span> que <em class="emphasis">não</em> pertence a <span class="process-math">\(U_2\text{.}\)</span> Deste modo, não há candidatos em <span class="process-math">\(F_2\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(F_3\text{,}\)</span> obtemos a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_3(x,z) = f(x,0,z) =
+x^2 + 2z^2 -4z + 3x
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_3 = \big\{ (x,z) \in
+\R^2\colon x+z &lt; 4, x &gt; 0\text{ e } z&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">O gradiente de <span class="process-math">\(g_3\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_3(x,z) = (2x+3,4z-4)
+\end{equation*}
+</div>
+<div class="para">se anula apenas no ponto <span class="process-math">\(\Big( -\dfrac{3}{2}, 1\Big)\text{,}\)</span> que <em class="emphasis">não</em> pertence a <span class="process-math">\(U_3\text{.}\)</span> Também não temos candidatos em <span class="process-math">\(F_3\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Finalmente, em <span class="process-math">\(F_4\text{,}\)</span> analisamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_4(x,y)=f(x,y,0)
+= x^2 + y^2 -4xy+3x
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_4 =
+\big\{(x,y)\in\R^2\colon x+y &lt; 4, x&gt;0\text{ e }y&gt;
+0\big\}=U_1.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_4(x,y) = (2x-4y+3,
+2y-4x),
+\end{equation*}
+</div>
+<div class="para">o único ponto crítico de <span class="process-math">\(g_4\)</span> é o ponto <span class="process-math">\(\Big(\dfrac{1}{2},1\Big) \in U_4\text{,}\)</span> que corresponde ao candidato <span class="process-math">\(\Big( \dfrac{1}{2}, 1, 0\Big) \in F_4\text{.}\)</span>
+</div>
+</div>
+<div class="para">Isto completa a busca dos candidatos nas faces de <span class="process-math">\(R\text{.}\)</span>
+</div>
+</li>
+<li>
+<div class="para logical">
+<div class="para">Candidatos nas arestas de <span class="process-math">\(R\text{:}\)</span> as arestas de <span class="process-math">\(R\)</span> são os segmentos de reta</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_lag32.html ./knowl/maxmincpt-4b.html">
+\begin{align*}
+A_1 &amp;= \big\{(x,y,z) \in \R^3\colon y=z=0\text{ e }
+0 \leq x \leq 4\big\},\\
+A_2 &amp;= \big\{(x,y,z) \in \R^3\colon x=z=0\text{ e }
+0 \leq y \leq 4\big\},\\
+A_3 &amp;= \big\{(x,y,z) \in \R^3\colon x=y=0\text{ e }
+0 \leq z \leq 4\big\},\\
+A_4 &amp;= \{(x,y,z) \in \R^3\colon z=0\text{ e }
+x+y=4\big\},\\
+A_5 &amp;= \{(x,y,z) \in \R^3\colon y=0\text{ e }
+x+z=4\big\},\\
+A_6 &amp;= \{(x,y,z) \in \R^3\colon x=0\text{ e }
+y+z=4\big\}.
+\end{align*}
+</div>
+<div class="para">A estratégia é parametrizar cada aresta a estudar a composta de <span class="process-math">\(f\)</span> com as parametrizações. Poderíamos aqui aplicar o Método dos Multiplicadores de Lagrange (<a href="" class="xref" data-knowl="./knowl/teo_lag32.html" title="Teorema A.9.9">Teorema A.9.9</a>), como fizemos no <a href="" class="xref" data-knowl="./knowl/maxmincpt-4b.html" title="Exercício 1.11.4.b">Exercício 1.11.4.b</a>.</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_1\text{,}\)</span> consideramos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_1(x) = f(x,0,0) = x^2 + 3x, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">A derivada de <span class="process-math">\(h_1\)</span> se anula somente em <span class="process-math">\(x=-\frac{3}{2}\text{,}\)</span> de modo que não há candidatos em <span class="process-math">\(]0,4[\text{.}\)</span> Ficamos apenas com <span class="process-math">\(x=0\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem aos vértices <span class="process-math">\((0,0,0)\)</span> e <span class="process-math">\((4,0,0)\)</span> de <span class="process-math">\(R\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_2\text{,}\)</span> estudamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_2(y) = f(0,y,0) = y^2, y \in [0,4].
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(h_2\)</span> é estritamente crescente, os candidatos são <span class="process-math">\(y=0\)</span> e <span class="process-math">\(y=4\text{,}\)</span> que correspondem aos vértices <span class="process-math">\((0,0,0)\)</span> e <span class="process-math">\((0,4,0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_3\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_3(z) = 2z^2 -4z, z \in
+[0,4],
+\end{equation*}
+</div>
+<div class="para">cuja derivada se anula em <span class="process-math">\(z=1\text{.}\)</span> Os candidatos são <span class="process-math">\(z=0\text{,}\)</span> <span class="process-math">\(z=1\)</span> e <span class="process-math">\(z=4\text{,}\)</span> que correspondem, respectivamente, a <span class="process-math">\((0,0,0)\text{,}\)</span> <span class="process-math">\((0,0,1)\)</span> e <span class="process-math">\((0,0,4)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_4\text{,}\)</span> podemos escrever <span class="process-math">\(y=4-x\)</span> para obter</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_4(x) = f(x,4-x,0) = 6x^2 -21x + 16, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_4\)</span> é <span class="process-math">\(x=\dfrac{7}{4} \in
+]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(x= \dfrac{7}{4}\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,4,0)\text{,}\)</span> <span class="process-math">\(\Big(\dfrac{7}{4}, \dfrac{9}{4}, 0\Big)\)</span> e <span class="process-math">\((4, 0,
+0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(A_5\text{,}\)</span> fazemos <span class="process-math">\(z=4-x\)</span> e estudamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_5(x) =
+f(x,0,4-x) = 3x^2 -9x+16, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_5\)</span> é <span class="process-math">\(x=\dfrac{3}{2} \in ]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(x= \dfrac{3}{2}\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,0,4)\text{,}\)</span> <span class="process-math">\(\Big( \dfrac{3}{2},0,
+\dfrac{5}{2}\Big)(4, 0, 0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Finalmente, em <span class="process-math">\(A_6\text{,}\)</span> escrevemos <span class="process-math">\(z=4-y\)</span> e</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_6(y) = f(0,y,4-y) = 3y^2 -12y+16, y \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_6\)</span> é <span class="process-math">\(y=2\in ]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(y= 2\)</span> e <span class="process-math">\(y=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,0,4)\text{,}\)</span> <span class="process-math">\((0, 2,2)\)</span> e <span class="process-math">\((0, 4, 0)\text{.}\)</span>
+</div>
+</div>
+</li>
+<li><div class="para logical">
+<div class="para">Avaliando <span class="process-math">\(f\)</span> em cada candidato: só resta calcular <span class="process-math">\(f\)</span> nos pontos encontrados nas etapas anteriores e comparar os valores. Confira as contas!</div>
+<div class="displaymath process-math">
+\begin{align*}
+f( 1/2, 1, 1) &amp;= -5/4\\
+f( {3}/{2}, 2,{1}/{2}) &amp;= -{11}/{4}\\
+f( {1}/{2}, 1, 0) &amp;= {3}/{4}\\
+f\left( 0,0,0\right) &amp;= 0\\
+f\left(4, 0, 0\right) &amp;= 28\\
+f\left( 0,4,0\right) &amp;= 16\\
+f\left( 0,0,4 \right) &amp;= 16\\
+f\left( 0, 0, 1\right) &amp;= -2\\
+f\left( {7}/{4}, {9}/{4}, 0\right) &amp;= -{19}/{8}\\
+f\left( {3}/{2}, 0, {5}/{2}\right) &amp;= {37}/{4}\\
+f\left( 0, 2, 2\right) &amp;= 4
+\end{align*}
+</div>
+</div></li>
+</ul>
+<div class="para"><div class="para">Logo, o maior valor de <span class="process-math">\(f\)</span> em <span class="process-math">\(R\)</span> é <span class="process-math">\(28\)</span> e o menor valor é <span class="process-math">\(-\frac{11}{4}\text{.}\)</span>
+</div></div>
+</div>
+<span class="incontext"><a class="internal" href="sec_maxmincpt.html#p-154">em contexto</a></span>
+</body>
+</html>

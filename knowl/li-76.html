@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h5 class="heading">
+<span class="type">Item</span><span class="period">.</span>
+</h5>
+<div class="para logical">
+<div class="para">Candidatos nas faces (excluídas as arestas): procuramos os candidatos nos conjuntos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_lag31.html ./knowl/maxminarb-5.html">
+\begin{align*}
+F_1 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z = 4,
+x&gt;0, y&gt;0\text{ e } z&gt;0\big\},\\
+F_2 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x= 0, y&gt; 0\text{ e } z&gt; 0\big\},\\
+F_3 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x&gt; 0, y= 0\text{ e } z&gt; 0\big\},\\
+F_4 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x&gt; 0, y&gt; 0\text{ e } z= 0\big\}.
+\end{align*}
+</div>
+<div class="para">São as faces de <span class="process-math">\(R\text{,}\)</span> excluídas as arestas. Em cada face, vamos "eliminar" uma das variáveis e reduzir o problema ao estudo de funções de duas variáveis em abertos de <span class="process-math">\(\R^2\text{.}\)</span> Outra abordagem possível seria usar o Método dos Multiplicadores de Lagrange (<a href="" class="xref" data-knowl="./knowl/teo_lag31.html" title="Teorema A.9.7">Teorema A.9.7</a>), o qual foi utilizado no <a href="" class="xref" data-knowl="./knowl/maxminarb-5.html" title="Exercício 1.12.5">Exercício 1.12.5</a>.</div>
+</div>
+<div class="para logical">
+<div class="para">Na face <span class="process-math">\(F_1\text{,}\)</span> podemos escrever <span class="process-math">\(z = 4 - x - y\)</span> e estudar a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_1(x,y) = f(x,y,4-x-y) = 3x^2 + 3y^2 -9x
+-12y +16
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_1 = \big\{ (x,y) \in \R^2\colon
+x+ y&lt;4, x &gt;0\text{ e } y&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_1(x,y) = (6x-9, 6y-12),
+\end{equation*}
+</div>
+<div class="para">o ponto <span class="process-math">\(\Big(
+\dfrac{3}{2}, 2\Big) \in U_1\)</span> é o único ponto crítico de <span class="process-math">\(g_1\text{.}\)</span> Este ponto corresponde ao candidato <span class="process-math">\(\Big(
+\dfrac{3}{2}, 2, \dfrac{1}{2}\Big) \in F_1\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Na face <span class="process-math">\(F_2\text{,}\)</span> temos <span class="process-math">\(x=0\)</span> e estudamos a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_2(y,z) = f(0,y,z) = y^2 + 2z^2 -4z
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_2 = \big\{ (y,z) \in \R^2\colon y+z &lt; 4, y &gt;
+0\text{ e } z&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_2(y,z) =
+(2y,4z-4),
+\end{equation*}
+</div>
+<div class="para">o único ponto crítico de <span class="process-math">\(g_2\)</span> é <span class="process-math">\((0,1)\text{,}\)</span> que <em class="emphasis">não</em> pertence a <span class="process-math">\(U_2\text{.}\)</span> Deste modo, não há candidatos em <span class="process-math">\(F_2\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em <span class="process-math">\(F_3\text{,}\)</span> obtemos a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_3(x,z) = f(x,0,z) =
+x^2 + 2z^2 -4z + 3x
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_3 = \big\{ (x,z) \in
+\R^2\colon x+z &lt; 4, x &gt; 0\text{ e } z&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">O gradiente de <span class="process-math">\(g_3\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_3(x,z) = (2x+3,4z-4)
+\end{equation*}
+</div>
+<div class="para">se anula apenas no ponto <span class="process-math">\(\Big( -\dfrac{3}{2}, 1\Big)\text{,}\)</span> que <em class="emphasis">não</em> pertence a <span class="process-math">\(U_3\text{.}\)</span> Também não temos candidatos em <span class="process-math">\(F_3\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">Finalmente, em <span class="process-math">\(F_4\text{,}\)</span> analisamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_4(x,y)=f(x,y,0)
+= x^2 + y^2 -4xy+3x
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_4 =
+\big\{(x,y)\in\R^2\colon x+y &lt; 4, x&gt;0\text{ e }y&gt;
+0\big\}=U_1.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_4(x,y) = (2x-4y+3,
+2y-4x),
+\end{equation*}
+</div>
+<div class="para">o único ponto crítico de <span class="process-math">\(g_4\)</span> é o ponto <span class="process-math">\(\Big(\dfrac{1}{2},1\Big) \in U_4\text{,}\)</span> que corresponde ao candidato <span class="process-math">\(\Big( \dfrac{1}{2}, 1, 0\Big) \in F_4\text{.}\)</span>
+</div>
+</div>
+<div class="para">Isto completa a busca dos candidatos nas faces de <span class="process-math">\(R\text{.}\)</span>
+</div></article><span class="incontext"><a href="sec_maxmincpt.html#li-76" class="internal">em contexto</a></span>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_supptddir" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Superfícies de nível, planos tangente e derivadas direcionais</title>
+
+  <exercises xml:id="ex_supptddir" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="3" xml:id="supptdir-3">
+      <statement>
+	<p>Seja <m>a&gt;0</m> e considere o plano tangente à superfície
+	<m>xyz=a</m> num ponto do primeiro octante. Mostre que o
+	tetraedro formado por este plano e os planos coordenados tem
+	volume independente do ponto de tangência.
+	</p>
+      </statement>
+      <hint>
+	<p>Escreva a equação do plano tangente à superfície dada num
+	ponto <m>(x_0,y_0,z_0)</m> arbitrário do primeiro octante,
+	encontre os vértices do tetraedro pedido e calcule seu volume.
+	</p>
+      </hint>
+      <answer>
+	<p>O volume do tetraedro pedido é igual a <m>\dfrac{9a}{2}</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Seguindo o contexto da <xref ref="def_planotangente" />, a
+	superfície dada é a superfície de nível <m>c=a</m> da função
+	<m>f(x,y,z) = xyz</m>, que é de classe
+	<m>\mathscr{C}^1</m>. Fixado <m>(x_0,y_0,z_0)</m> um ponto tal
+	que <m>x_0y_0z_0 = a</m>, <m>x_0&gt; 0</m>, <m>y_0&gt; 0</m> e
+	<m>z_0&gt; 0</m>, o plano tangente a essa superfície neste ponto
+	é o único plano que passa por <m>(x_0,y_0,z_0)</m> e é normal ao
+	vetor <m>\nabla f(x_0,y_0,z_0)</m>. Como <me>\nabla f(x,y,z) =
+	(yz, xz, xy),</me> uma equação deste plano é <m>\pi\colon
+	y_0z_0(x-x_0) + x_0z_0(y-y_0) + x_0y_0(z-z_0)=0</m> ou ainda
+	<me>y_0z_0 x + x_0z_0 y + x_0y_0 z = 3x_0y_0z_0.</me> Um dos
+	vértices do tetraedro formado por este plano e pelos planos
+	coordenados é a origem. Os demais vértices podem ser encontrados
+	igualando duas coordenadas a zero: tratam-se dos pontos
+	<me>(3x_0,0,0), \quad (0,3y_0,0) \quad \text{e} \quad
+	(0,0,3z_0).</me> Deste modo, o volume do tetraedro pedido é igual
+	a <me>\frac{1}{3} \cdot \frac{3x_0 \cdot 3y_0}{2} \cdot 3z_0 =
+	\frac{9x_0y_0z_0}{2} = \frac{9a}{2},</me> que não depende do
+	ponto de tangência escolhido.
+	<figure xml:id="fig_4-3">
+	  <caption>A superfície de nível <m>a</m> de <m>f</m> e seu plano
+	  tangente num ponto.</caption>
+	  <image width="50%" xml:id="ex4-3" archive="html">
+	    <asymptote>
+	      import graph3;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(3,-2,1);
+	      limits((-0.5,-0.5,-0.5),(3,5,4.5));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      real z0=.5;
+	      
+	      real f(pair z){
+	      return z0/(z.x*z.y);}
+	      
+	      draw(surface(f,(0.25,0.5),(2.75,2.75),25,Spline),lightblue+opacity(0.6),blue);
+	      
+	      triple ponto=(2/3,3/2,.5);
+	      
+	      //vertices for the plane
+	      draw(surface((2,0,0)--(0,9/2,0)--(0,0,3*z0)--cycle),orange);
+	      
+	      dot((2/3,3/2,z0));
+	      dot((2,0,0));
+	      dot((0,9/2,0));
+	      dot((0,0,3*z0));
+	      
+	      xaxis3("$x$",Arrow3);
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	</p>
+	
+      </solution>
+    </exercise>
+
+    <exercise number="5" xml:id="supptdir-5">
+      <statement>
+	<p>Ache a reta tangente à intersecção do gráfico da função
+	<m>f(x,y) = x^3+y^3+2</m> com o cilindro <m>x^2+y^2=2</m> no
+	ponto <m>(1,1,4)</m>.
+	</p>
+      </statement>
+      <hint>
+	<p>Reconheça as superfícies dadas como superfícies de nível de
+	duas funções de três variáveis.
+	</p>
+      </hint>
+      <answer>
+	<p>A reta desejada tem equação <m>r\colon (x,y,z) = (1,1,4) +
+	\lambda (1,-1,0)</m>, <m>\lambda \in \mathbb{R}</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Seguindo o resultado da <xref ref="prop_intsupniv" />,
+	consideremos as funções de classe <m>\mathscr{C}^1</m> dadas por
+	<me>F(x,y,z) = x^3 + y^3 +2 - z \quad \text{e} \quad G(x,y,z) =
+	x^2 + y^2.</me> O gráfico de <m>f</m> e o cilindro dado são,
+	respectivamente, a superfície de nível <m>c=0</m> de <m>F</m> e
+	a superfície de nível <m>c=2</m> de <m>G</m>. Como os vetores
+	<me>\nabla F(1,1,4) = (3,3, -1) \quad \text{e} \quad \nabla
+	G(1,1,4) = (2,2,0)</me> são linearmente independentes, sabemos
+	que a reta pedida é a única reta que passa pelo ponto
+	<m>(1,1,4)</m> e tem o vetor <me>\vec{v}=\nabla F(1,1,4) \times
+	\nabla G(1,1,4) = (1,-1,0)</me> como vetor diretor. Sua equação
+	é, portanto, <me>r\colon (x,y,z) = (1,1,4) + \lambda (1,-1,0),
+	\lambda \in \mathbb{R}.</me>
+	<figure xml:id="fig_ex4-5">
+	  <caption>As superfícies de nível e sua interseção no ponto
+	  dado.</caption>
+	  <image width="50%" xml:id="ex4-5" archive="html">
+	    <asymptote>
+	      import graph3;
+	      size(10cm);
+
+	      currentprojection=orthographic(3,-1,1);
+	      limits((-2.5,-2.5,-2),(2.5,2.5,6.5));
+      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      surface cilindro=shift(0,0,-2)*scale(sqrt(2),sqrt(2),8)*surface(unitcylinder);
+      
+	      triple f(pair z){
+	      real x=z.x*cos(z.y);
+	      real y=z.x*sin(z.y);
+	      return (x,y,x^3+y^3+2);}
+
+	      draw(surface(f,(0,0),(1.75,2*pi),25,Spline),lightblue);
+	      draw(cilindro,lightgreen+opacity(0.6));
+      
+	      triple ponto=(1,1,4);
+
+	      dot(ponto);
+	      draw(Label("$\nabla F(1,1,4)$",position=EndPoint),ponto--ponto+(3,3,-1),lightblue,Arrow3);
+	      draw(Label("$\nabla G(1,1,4)$",position=EndPoint),ponto--ponto+(2,2,0),lightgreen,Arrow3);
+	      draw(Label("$\vec{v}$",position=EndPoint),ponto--ponto+(1,-1,0),Arrow3);
+
+	      xaxis3("$x$",Arrow3);
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise number="7" xml:id="supptdir-7">
+      <statement>
+	<p>Determine a equação da esfera que tangencia a superfície
+	<m>(x-1)^2 + \dfrac{(y-2)^2}{4} - (z-1)^2 =0</m> nos pontos
+	<m>(2,2,2)</m> e <m>(2,2,0)</m>.
+	</p>
+      </statement>
+      <hint>
+	<p>Escreva a equação de uma esfera arbitrária em <m>\R^3</m> e
+	use as condições do enunciado para determinar seu centro e seu
+	raio.
+	</p>
+      </hint>
+      <answer>
+	<p>A esfera desejada tem equação <m>(x-3)^2 + (y-2)^2 + (z-1)^2
+	= 2</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Nosso objetivo é determinar <m>(x_0,y_0,z_0) \in \R^3</m>
+	(centro) e <m>R&gt;0</m> (raio) de modo que a esfera de equação
+	<m>(x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2 = R^2</m> tangencie o cone
+	<m>(x-1)^2 + \dfrac{(y-2)^2}{4} - (z-1)^2 =0</m> nos pontos
+	<m>(2,2,2)</m> e <m>(2,2,0)</m>. Isto significa que esta esfera
+	deve passar pelos pontos <m>(2,2,2)</m> e <m>(2,2,0)</m> e, além
+	disso, seus planos tangentes nestes pontos devem coincidir com
+	os respectivos planos tangentes do cone. Vamos considerar, em
+	vista da <xref ref="prop_supniv" />, as funções de classe
+	<m>\mathscr{C}^1</m> dadas por
+	<md>
+	  <mrow>F(x,y,z)&amp; = (x-x_0)^2 + (y-y_0)^2 + (z-z_0)^2\quad\text{e}</mrow>
+	  <mrow>G(x,y,z)&amp; = (x-1)^2 + \frac{(y-2)^2}{4} -
+	  (z-1)^2.</mrow>
+	</md>
+	</p>
+	<p>A esfera procurada e o cone dado são, respectivamente, a
+	superfície de nível <m>c=R^2</m> de <m>F</m> e a superfície de
+	nível <m>c=0</m> de <m>G</m>. Lembrando que os gradientes são
+	normais às superfícies de nível, queremos
+	<md>
+	  <mrow>
+	    \nabla F(2,2,2) \parallel\nabla G(2,2,2) &amp;\implies
+	    (4-2x_0, 4-2y_0, 4-2z_0) \parallel (2,0,-2)
+	  </mrow>
+	  <mrow>
+	    &amp;\implies \begin{cases} 2-x_0 = z_0-2\\ 2-y_0=0
+	    \end{cases} \implies \begin{cases} z_0 = 4-x_0\\ y_0=2,
+	    \end{cases}
+	  </mrow>
+	</md> bem como
+	<md>
+	  <mrow>\nabla F(2,2,0)\parallel \nabla G(2,2,0) &amp;\implies
+	  (4-2x_0, 4-2y_0, -2z_0)\parallel (2,0,2)
+	  </mrow>
+	  <mrow>
+	    &amp;\implies \begin{cases} 2-x_0 = -z_0\\2-y_0=2
+	    \end{cases} \implies \begin{cases} z_0 = x_0 - 2\\ y_0=2
+	    \end{cases}
+	  </mrow>
+	</md> de modo que <m>x_0 = 3</m>, <m>y_0 = 2</m> e
+	<m>z_0=1</m>. Para encontrar o raio, basta usarmos que os pontos
+	<m>(2,2,2)</m> e <m>(2,2,0)</m> devem pertenver à esfera: <me>(2-3)^2 + (2-2)^2 +
+	(2-1)^2 = R^2 = (2-3)^2 + (2-2)^2 + (0-1)^2\implies R =
+	\sqrt{2}.</me> Logo, a esfera procurada tem equação <m>(x-3)^2 +
+	(y-2)^2 + (z-1)^2 = 2</m>.
+	<figure xml:id="fig_ex4-7">
+	  <caption>As superfícies de nível e os pontos de tangência.</caption>
+	  <image width="50%" xml:id="ex4-7" archive="html">
+	    <asymptote>
+	      import solids;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(2,5,1);
+	      limits((-2.5,-2.5,-1.5),(2.5,2.5,3.5));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      path3 reta=graph(new triple(real t) {
+	      return (0,t,t);},-2,2,operator ..);
+	      revolution coneframe=revolution(reta,axis=Z);
+	      surface cone=shift(1,2,1)*scale(1,2,1)*surface(coneframe);
+	      
+	      surface esfera=shift(3,2,1)*scale3(sqrt(2))*unitsphere;
+	      
+	      draw(cone,lightblue+opacity(0.6));
+	      draw(esfera,lightgreen+opacity(0.6));
+	      
+	      triple ponto1=(2,2,2);
+	      triple ponto2=(2,2,0);
+	      
+	      dot(ponto1);
+	      dot(ponto2);
+	      
+	      draw(Label("$\nabla F(2,2,2)$",position=EndPoint),
+	      ponto1--ponto1+(-2,0,2),lightgreen,Arrow3);
+	      draw(Label("$\nabla G(2,2,2)$",position=EndPoint),
+	      ponto1--ponto1+(2,0,-2),lightblue,Arrow3);
+	      
+	      draw(surface(((1,0,1)--(3,0,3)--(3,4,3)--(1,4,1)--cycle)),orange);
+	      
+	      xaxis3("$x$",Arrow3);
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	</p>
+	<p>Representamos os gradientes e o plano tangente compartilhado
+	apenas no ponto <m>(2,2,2)</m> para evitar poluição visual na
+	figura acima.</p>
+      </solution>
+    </exercise>
+   
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

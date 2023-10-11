@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_maxminarb" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Máximos e mínimos em conjuntos arbitrários</title>
+
+  <exercises xml:id="ex_maxminarb" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="5" xml:id="maxminarb-5">
+      <statement>
+	<p>Determine as dimensões do paralelepípedo de volume máximo,
+	com faces paralelas aos planos coordenados, inscrito no
+	elipsoide <m>9x^2 + 36y^2 + 4z^2 = 36</m>. Justifique a
+	existência de solução.
+	</p>
+      </statement>
+      <hint>
+	<p>Use o Método dos Multiplicadores de Lagrange para estudar a
+	função volume sujeita à condição <m>9x^2 + 36y^2 + 4z^2 =
+	36</m>.
+	</p>
+      </hint>
+      <answer>
+	<p>Os vértices do paralelepípedo procurado são os pontos
+	<m>\big( \pm \dfrac{2}{\sqrt{3}}, \pm \dfrac{1}{\sqrt{3}}, \pm
+	\sqrt{3}\big)</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Considere um paralelepípedo inscrito no elipsoide <m>9x^2 +
+	36y^2 + 4z^2 = 36</m> com faces paralelas aos planos
+	coordenados. Se <m>(x,y,z)</m> é o vértice pertencente ao
+	primeiro octante, então as dimensões do paralelepípedo são
+	<m>2x</m>, <m>2y</m> e <m>2z</m>, de modo que seu volume é igual
+	a <me>V(x,y,z) = 8xyz.</me> Isto sugere estudar a função
+	<m>V</m> sujeita à condição <m>9x^2 + 36y^2 + 4z^2 =
+	36</m>. Vamos usar o Método dos Multiplicadores de Lagrange
+	(<xref ref="teo_lag31" />) e, depois, mostrar que o resultado
+	obtido é, de fato, solução do problema. Observamos apenas que
+	<m>V</m> é contínua e o elipsoide é compacto; de acordo com o
+	Teorema de Weierstrass (<xref ref="teo_wei" />), <m>V</m> possui
+	máximo e mínimo neste elipsoide.</p>
+
+	<p>Escrevendo <m>g(x,y,z) = 9x^2 + 36y^2 + 4z^2 = 36</m>, temos
+	<me>\nabla g(x,y,z) = 2(9x,36y,4z),</me> que se anula apenas na
+	origem. Assim, os candidatos a máximos e mínimos de <m>V</m> são
+	as soluções de
+	<me>\begin{cases}
+	\big\{\nabla V(x,y,z), \nabla
+	g(x,y,z)\big\}\text{ é linearmente dependente},\\
+	9x^2 + 36y^2 +4z^2 = 36.
+	\end{cases}</me> A primeira condição equivale a
+	<md>
+	  <mrow>
+	  \nabla V(x,y,z) \times \nabla g(x&amp;,y,z) = (0,0,0)</mrow>
+	  <mrow>&amp;\iff
+	    (4x(z^2 - 9y^2), y(9x^2 - 4z^2), 9z(4y^2 -x^2)) =
+	  (0,0,0)</mrow>
+	  <mrow>&amp;\iff \begin{cases}
+	  x=0\text{ ou }z=\pm 3y,\\
+	  y=0\text{ ou }3x=\pm 2z,\\
+	  z=0\text{ ou }x=\pm2 y.
+	  \end{cases}</mrow>
+	</md></p>
+
+	<p>Nas soluções <m>(x,y,z)</m> do sistema acima com pelo menos uma das
+	coordendas nulas temos <m>V(x,y,z)=0</m>.</p>
+
+	<p>Resta então o caso em que <m>z=\pm 3y</m> e <m>3x=\pm 2z</m>,
+	com <m>xyz\neq 0</m>. Substituindo estas equações em <m>9x^2 +
+	36y^2 + 4z^2 = 36</m>, obtemos <m>108y^2 = 36</m>, de modo que
+	<m>y=\pm \frac{1}{\sqrt{3}}</m>. Os candidatos são os (oito)
+	pontos <m>\Big(\pm \dfrac{2}{\sqrt{3}}, \pm \dfrac{1}{\sqrt{3}},
+	\pm\sqrt{3}\Big)</m>, onde <m>V</m> vale
+	<m>\dfrac{16}{\sqrt{3}}</m> ou <m>-\dfrac{16}{\sqrt{3}}</m>, de
+	acordo com os sinais das coordenadas.</p>
+
+	<p>Para verificar que os pontos <m>\Big( \pm
+	\dfrac{2}{\sqrt{3}}, \pm \dfrac{1}{\sqrt{3}}, \pm
+	\sqrt{3}\Big)</m> são os vértices do paralelepípedo de volume
+	máximo satisfazendo as condições do enunciado, basta notar que a
+	função contínua <m>|V|</m> atinge seu valor máximo precisamente
+	nestes pontos.</p>
+      </solution>
+    </exercise>
+    
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

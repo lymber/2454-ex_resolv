@@ -1,0 +1,8 @@
+INFO    : PreTeXt project found in `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv`.
+INFO    : Now preparing local server to preview your project directory `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv`.
+INFO    :   (Reminder: use `pretext deploy` to deploy your built project to a public
+INFO    :   GitHub Pages site that can be shared with readers who cannot access your
+INFO    :   personal computer.)
+INFO    : 
+INFO    : Server will soon be available at http://localhost:8128
+INFO    : Opening browser for target `web` at http://localhost:8128/output/web in 3 seconds

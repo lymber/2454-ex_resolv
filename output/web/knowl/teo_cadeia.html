@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="theorem theorem-like"><h3 class="heading">
+<span class="type">Teorema</span><span class="space"> </span><span class="codenumber">A.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">(Regra da Cadeia).</span>
+</h3>
+<div class="para logical">
+<div class="para">Sejam <span class="process-math">\(f\colon A\subseteq\R^2\to\R\)</span> uma função diferenciável em <span class="process-math">\((x_0,y_0)\)</span> e <span class="process-math">\(\gamma\colon
+I\subseteq\R\to\R\)</span> derivável em <span class="process-math">\(t_0\in I\)</span> tal que <span class="process-math">\(\gamma(t_0)=(x_0,y_0)\text{.}\)</span> Então <span class="process-math">\(f\circ\gamma \)</span> é derivável em <span class="process-math">\(t_0\)</span> e</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(f\circ\gamma)'(t_0)=\big\langle\nabla
+f(x_0,y_0),\gamma'(t_0)\big\rangle.
+\end{equation*}
+</div>
+</div></article><details class="hiddenproof"><summary><h3 class="heading"><span class="type">Demonstração<span class="period">.</span></span></h3></summary><article class="hiddenproof"><div class="para logical">
+<div class="para">Começamos recordando que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(f\circ\gamma)'(t_0)=\lim\limits_{t\to t_0}
+\dfrac{(f\circ\gamma)(t)-(f\circ\gamma)(t_0)}{t-t_0}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Podemos aplicar o <a href="" class="xref" data-knowl="./knowl/lem_cadeia.html" title="Lema A.6.2">Lema A.6.2</a> aos termos do numerador acima, com <span class="process-math">\((x,y)=\gamma(t)\)</span> e <span class="process-math">\((x_0,y_0)=\gamma(t_0)\text{,}\)</span> obtendo</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/lem_cadeia.html">
+\begin{align*}
+(f\circ\gamma)'(t_0)&amp;
+=\lim\limits_{t\to t_0}\big\langle\nabla
+f(x_0,y_0),\dfrac{\gamma(t)-\gamma(t_0)}{t-t_0}\big\rangle+\phi\big(\gamma(t)\big)\dfrac{\big\|\gamma(t)-\gamma(t_0)\big\|}{t-t_0}\\
+&amp;
+=\big\langle\nabla f(x_0,y_0),\gamma'(t_0)\big\rangle+
+\lim\limits_{t\to t_0}
+\phi\big(\gamma(t)\big)
+\Big\|\dfrac{\gamma(t)-\gamma(t_0)}
+{t-t_0}\Big\|\dfrac{|t-t_0|}{t-t_0}\\
+&amp;
+=\big\langle\nabla f(x_0,y_0),\gamma'(t0)\big\rangle,
+\end{align*}
+</div>
+<div class="para">pois <span class="process-math">\(\lim\limits_{t\to
+t_0}\phi\big(\gamma(t)\big)=\phi(x_0,y_0)=0\text{,}\)</span> <span class="process-math">\(\lim\limits_{t\to t_0}\Big\|\dfrac{\gamma(t)-\gamma(t_0)}
+{t-t_0}\Big\|=\big\|\gamma'(t_0)\|\)</span> e <span class="process-math">\(\dfrac{|t-t_0|}{t-t_0}\)</span> é limitado.</div>
+</div></article></details><span class="incontext"><a class="internal" href="ap_cadeiadir.html#teo_cadeia">em contexto</a></span>
+</body>
+</html>

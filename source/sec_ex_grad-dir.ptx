@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_grad-dir" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Vetor Gradiente e Derivada direcional</title>
+
+  <exercises xml:id="ex_grad-dir" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="4" xml:id="grad-dir4">
+      <statement>
+	<p>Considere uma função <m>f\colon \R^2 \to \R</m> de
+	classe <m>\mathscr{C}^1</m>. Suponha que:
+	<ol marker="i">
+	  <li>a imagem da curva plana <m>\gamma(t)=\big(\cot (t), \sec^2
+	  (t)\big)</m>, para <m>t \in ]0, \pi/2 [</m>, esteja contida
+	  numa curva de nível de <m>f</m>;</li>
+	  <li> a imagem da curva no espaço <m>\sigma(u)
+	  =\Big(\sqrt[3]{u}, u^2+1, \dfrac{u^3}{2} -
+	  \dfrac{\sqrt[3]{u}}{2} +1\Big)</m>, com <m>u&gt;0</m>, esteja
+	  contida no gráfico de <m>f</m>.</li>
+	</ol></p>
+	<p>
+	  <ol marker="a">
+	    <li>Determine <m>\nabla f(1,2)</m>.</li>
+	    <li>Calcule <m>\dfrac{\partial f}{\partial
+	    \vec{v}}(1,2)</m>, onde <m>\vec{v} = \Big( \dfrac{1}{2},
+	    \dfrac{\sqrt{3}}{2}\Big)</m>.</li>
+	    <li>Determine uma equação do plano tangente ao gráfico de
+	    <m>f</m> no ponto <m>\big(1,2,f(1,2)\big)</m>.</li>
+	  </ol>
+	</p>
+      </statement>
+      <hint>
+	<p>Em itens:
+	<ol marker="a.">
+	  <li>Use a Regra da Cadeia para derivar compostas de <m>f</m> com
+	  certas curvas convenientes.</li>
+	  <li>Lembre-se, sob certas condições, da relação entre o
+	  gradiente de <m>f</m> e suas derivadas direcionais.</li>
+	  <li>Os ingredientes necessários para construir o plano
+	  tangente ao gráfico de <m>f</m> em <m>\big(1,2,f(1,2)\big)</m> são <m>f(1,2)</m> e
+	  <m>\nabla f(1,2)</m>.</li>
+	</ol>
+	</p>
+      </hint>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><m>\nabla f(1,2)=\Big(1, \frac{1}{2}\Big)</m>.</li>
+	    <li><m>\dfrac{\partial f}{\partial \vec{v}}(1,2) =
+	    \dfrac{2+\sqrt{3}}{4}</m>.</li>
+	    <li><m>2x+y-2x-2=0</m>.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol>
+	    <li><p>Observamos primeiramente que <m>f</m> é diferenciável
+	    (veja o <xref ref="teo_diff-c1" />) e
+	    <m>\gamma, \sigma</m> são curvas deriváveis. Consideramos
+	    então a função composta <m>g\colon ]0, \pi/2[\to\R</m> dada por
+	    <m>g(t) = f\big(\gamma(t)\big)</m>. A condição (i) diz
+	    <m>g</m> é constante e então, derivando e aplicando o <xref
+	    ref="cor_cadeiagradniv" />, obtemos
+	    <me>0=\left\langle
+	    \nabla f(\gamma(t)) , \gamma'(t)\right\rangle = \left\langle
+	    \nabla f(\gamma(t)) , \left(-\csc^2 (t), 2\sec^2(t)
+	    \tan(t)\right)\right\rangle, \forall t \in ]0,
+	    \pi/2[.</me></p>
+	    <p>Em particular, para <m>t=\pi/4</m>, temos
+	    <me>\left\langle \nabla f(1,2) , (-2,4) \right\rangle = 0
+	    \implies \boxed{\dfrac{\partial f}{\partial x}(1,2) = 2
+	    \frac{\partial f}{\partial y}(1,2)}.</me></p>
+	    <p>Por outro lado, de acordo com a condição (ii), sabemos
+	    que
+	    <men xml:id="grad-dir4-eq1">
+	      \frac{u^3}{2} - \frac{\sqrt[3]{u}}{2} +1 = f\big(\sqrt[3]{u}, u^2+1\big), \forall u &gt;0.</men>
+	    </p>
+	    <p>Usando a Regra da Cadeia (<xref ref="teo_cadeia" />),
+	    derivamos os dois membros em relação a <m>u</m>, concluindo
+	    que <me>\frac{3u^2}{2} - \frac{1}{6\sqrt[3]{u^2}} =
+	    \left\langle \nabla f(\sqrt[3]{u}, u^2+1) ,
+	    \Big(\frac{1}{3\sqrt[3]{u^2}},2u\Big)\right\rangle,
+	    \forall u > 0.</me>
+	    </p>
+	    <p>Tomando <m>u=1</m>, obtemos <me>\frac{8}{6} =
+	    \left\langle \nabla f(1,2) ,
+	    \Big(\frac{1}{3},2\Big)\right\rangle \implies
+	    \boxed{\frac{\partial f}{\partial x}(1,2) + 6\frac{\partial
+	    f}{\partial y}(1,2) = 4}.</me> Logo, usando as equações para
+	    as derivadas parciais em destaque, <m>\nabla f(1,2) = \Big(
+	    1 , \dfrac{1}{2}\Big)</m>.</p>
+	    </li>
+	    <li>Como <m>f</m> é diferenciável, usamos a <xref
+	    ref="prop_derdir" /> para calcular a derivada direcional:
+	    <me>\dfrac{\partial f}{\partial \vec{v}}(1,2) = \big\langle
+	    \nabla f(1,2), \vec{v}\big\rangle =
+	    \frac{2+\sqrt{3}}{4}.</me></li>
+	    <li>Fazendo <m>u=1</m> na equação <ref xref="grad-dir4-eq1"
+	    />, encontramos <m>f(1,2)=1</m>. Deste modo, o plano
+	    desejado tem equação <me>\dfrac{\partial f}{\partial
+	    x}(1,2)(x-1) + \frac{\partial f}{\partial
+	    y}(1,2)(y-2)-z+f(1,2)=0,</me> ou seja,
+	    <m>2x+y-2z-2=0</m>.</li>
+	  </ol>
+	</p>
+	<p>Para enxergar geometricamente o que acontece, notamos que
+	<m>1=f(1,2)=\gamma(\pi/4)</m> e, como a curva <m>\gamma</m> tem
+	sua imagem contida numa curva de nível de <m>f</m>, então tal
+	curva é a curva de nível <m>1</m>. Com isso a curva
+	<m>\Gamma(t)=\big(\cot (t), \sec^2 (t),1\big)</m> tem sua imagem
+	contida no gráfico de <m>f</m>, assim como a imagem de
+	<m>\sigma</m>, conforme a hipótese (ii).</p>
+	<p>A função <m>f</m> é de classe <m>\mathscr{C}^1</m> (portanto
+	diferenciável) e seus valores são conecidos ao longo de duas
+	curvas no domínio, a saber <m>\gamma</m> e a projeção de
+	<m>\sigma</m> no plano <m>Oxy</m>, dada por
+	<m>\hat\sigma(u)=(\sqrt[3]{u},u^2+1)</m>. Isso, aliado ao fato
+	de <m>\Gamma'(\pi/4)</m> e <m>\sigma'(1)</m> serem linearmente
+	independentes, determinam o plano tangente ao gráfico de
+	<m>f</m> no ponto <m>\big(1,2,f(1,2)\big)</m>, que aquele que
+	contém as retas tangentes a <m>\Gamma</m> e <m>\sigma</m> em
+	<m>\big(1,2,f(1,2)\big)</m>, onde se interceptam. Tudo isso é
+	feito sem saber o valor de <m>f</m> nos demais pontos do seu
+	domínio.</p>
+	<p>Em outras palavras, o plano tangente a qualquer que seja a
+	superfície (gráfico de uma função a duas variáveis) que contenha
+	estas duas curvas é sempre o mesmo!</p>
+	<figure xml:id="fig_2-4">
+	  <caption>Cortes do gráfico de <m>f</m> e o plano tangente determinado
+	  por eles.</caption>
+	  <image width="100%" xml:id="ex2-4" archive="html">
+	    <asymptote>
+	      import solids;
+	      size(10cm);
+     
+	      currentprojection=orthographic(3,2,1);
+	      limits((-2,-2,-2),(2,2,2));
+      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      path3 curva1=graph(new triple(real t) {
+	      return (1/(tan(t)),1/(cos(t)^2),1);},pi/8,3*pi/8,20,operator ..);
+	      
+	      path3 curva2=graph(new triple(real t) {
+	      return (t^(1/3),t^2+1,t^3/2-t^(1/3)/2+1);},0,2,20,operator ..);
+	      
+	      draw(curva1, blue);
+	      draw(curva2, orange);
+	      
+	      //vectors and point for the plane
+	      triple u=(-2,4,0),v=(1/3,2,4/3),o=(1,2,1);
+	      draw(surface(plane(2.5*u,2.5*v,o-u-v)),green+opacity(0.4));
+	      
+	      dot(Label("$(1,2,1)$"),(1,2,1),S);
+	      draw(Label("$\sigma'(1)$",position=EndPoint),(1,2,1)--(1,2,1)+v,orange,Arrow3);
+	      draw(Label("$\gamma'(\pi/4)$",position=EndPoint),(1,2,1)--(1,2,1)+u,blue,Arrow3);
+	      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+      </solution>
+    </exercise>
+
+    <exercise number="8" xml:id="grad-dir8">
+      <statement>
+	<p>Mostre que <m>f(x,y) = \sqrt[3]{x^2y}</m> é contínua em
+	<m>(0,0)</m> e tem todas as derivadas direcionais em
+	<m>(0,0)</m>. A função <m>f</m> é diferenciável em
+	<m>(0,0)</m>?</p>
+      </statement>
+      <hint>
+	<p>Use a definição para calcular as derivadas direcionais e
+	compare com a <xref ref="prop_derdir" />.
+	</p>
+      </hint>
+      <answer>
+	<p>
+	  <m>f</m> não é diferenciável em <m>(0,0)</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Notemos que <m>f</m> é composta de funções contínuas (raiz
+	cúbica e função polinomial), de modo que <m>f</m> é contínua em
+	todos os pontos de seu domínio (todo o plano <m>\R^2</m>). Para
+	calcular as derivadas direcionais em <m>(0,0)</m>, procedemos
+	usando a <xref ref="def_derdir" />: se <m>\vec{v}= (h,k)</m> é
+	um vetor unitário, então
+	<men xml:id="eq2_8">
+	\dfrac{\partial f}{\partial \vec{v}}(0,0)= \lim_{t \to 0}
+	\frac{f((0,0)+t\vec{v}) - f(0,0)}{t} = \lim_{t \to 0}
+	\frac{\sqrt[3]{t^3h^2k}}{t} = \sqrt[3]{h^2k}.</men>
+	</p>
+	<p>Embora todas as derivadas direcionais de <m>f</m> em
+	<m>(0,0)</m> existam, <m>f</m> não é diferenciável neste
+	ponto. De fato, aplicando <xref ref="eq2_8" /> para os vetores
+	<m>e_1=(1,0)</m>, <m>e_2=(0,1)</m> e <m>\vec{v} = \left(
+	\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right)</m>, obtemos
+	<me>\dfrac{\partial f}{\partial x}(0,0) = \frac{\partial
+	f}{\partial e_1}(0,0) = 0, \quad \frac{\partial f}{\partial
+	y}(0,0) = \frac{\partial f}{\partial e_2}(0,0) = 0 \quad
+	\text{e} \quad \frac{\partial f}{\partial \vec{v}}(0,0) =
+	\frac{\sqrt{2}}{2}.</me> Isto implica que <me>\left\langle
+	\nabla f(0,0), \vec{v}\right \rangle = 0 \neq \frac{\sqrt{2}}{2}
+	=\frac{\partial f}{\partial \vec{v}}(0,0)</me> e, portanto,
+	<m>f</m> não é diferenciável em <m>(0,0)</m>.</p>
+
+	<remark>O fato de <xref ref="eq2_8" /> não ser linear nas
+	variáveis <m>h,k</m> já implica, como indicado após a <ref
+	xref="prop_derdir" /> que <m>f</m> não pode ser diferenciável em
+	<m>(0,0)</m>. De fato, se <m>f</m> fosse diferenciável em
+	<m>(0,0)</m>, com <m>\nabla f(0,0)=(A,B)</m>, teríamos
+	<me>\dfrac{\partial f}{\partial \vec{v}}(0,0) = \left\langle
+	\nabla f(0,0), (h,k)\right\rangle = Ah + Bk,</me> uma aplicação
+	linear de <m>\R^2</m> em <m>\R</m>, usualmente denotada por
+	<m>Df_{(x_0,y_0)}\colon\R^2\to\R</m>, dada por
+	<m>Df_{(x_0,y_0)}(\vec{v})=\langle\nabla
+	f(x_0,y_0),\vec{v}\rangle</m>.
+	</remark>
+	<figure xml:id="fig_2-8">
+	  <caption>O gráfico de <m>f</m>.</caption>
+	  <image width="100%" xml:id="ex2-8" archive="html">
+	    <asymptote>
+	      import graph3;
+	      
+	      size(10cm);
+	      
+	      currentprojection=orthographic(3,-2,1);
+	      limits((-2,-2,-2),(2,2,2));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      real f(pair z){
+	      return (z.x^2*z.y)^(1/3);
+	      }
+	      
+	      surface grfq1=surface(f,(0,0),(1.75,1.75),10,Spline);
+	      
+	      surface grfq14=surface(grfq1,rotate(180,X)*grfq1);
+	      
+	      draw(grfq14,lightblue+opacity(0.4),blue);
+	      draw(reflect(O,Y,Z)*grfq14,lightblue+opacity(0.4),blue);
+	      
+	      xaxis3("$x$",Arrow3);
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+      </solution>
+    </exercise>
+   
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

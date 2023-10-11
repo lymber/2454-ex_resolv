@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Parágrafo</span></h5>
+<div class="para logical">
+<div class="para"><em class="emphasis">Solução 2 (Parametrizando a curva "por partes"):</em></div>
+<ol class="lower-alpha">
+<li>
+<div class="para logical">
+<div class="para">Somando as equações que definem <span class="process-math">\(C\)</span> e completando quadrados, obtemos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\Big(x - \frac{1}{2}\Big)^2 + \Big(y
+- \frac{1}{2}\Big)^2 = \frac{1}{2}
+\end{equation*}
+</div>
+<div class="para">e podemos escrever</div>
+<div class="displaymath process-math">
+\begin{align*}
+x - \frac{1}{2} = \dfrac{\sqrt{2}}{2}\cos t
+&amp;\implies x = \frac{\sqrt{2}}{2}\cos t +
+\frac{1}{2},\\
+y - \frac{1}{2} = \frac{\sqrt{2}}{2}\sin t
+&amp;\implies y = \frac{\sqrt{2}}{2}\sin t +
+\frac{1}{2}.
+\end{align*}
+</div>
+<div class="para">Para determinar <span class="process-math">\(z\)</span> em termos de <span class="process-math">\(t\text{,}\)</span> basta substituir na primeira equação:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z^2 = \dfrac{\sqrt{2}}{2}
+(\sin t + \cos t) \implies z = \pm \frac{\sqrt{\sin t + \cos
+t}}{\sqrt[4]{2}}.
+\end{equation*}
+</div>
+<div class="para">Como estamos interessados no ponto <span class="process-math">\((1,1,1)\text{,}\)</span> vamos considerar apenas</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z =
+\frac{\sqrt{\sin t + \cos t}}{\sqrt[4]{2}}.
+\end{equation*}
+</div>
+<div class="para">Note que a expressão dentro da raiz quadrada acima deve ser maior ou igual a zero, o que impõe uma restrição ao domínio da nossa parametrização procurada. Devemos ter <span class="process-math">\(\sin t + \cos t \geq
+0\text{,}\)</span> o que equivale a <span class="process-math">\(t \in
+\Big[-\frac{\pi}{4},\frac{3\pi}{4}\Big]\text{.}\)</span>
+</div>
+</div>
+<div class="para logical">
+<div class="para">(Uma maneira rápida de verificar isto é notar que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sin t
++ \cos t \geq 0 \iff \frac{\sqrt{2}}{2} \sin t +
+\frac{\sqrt{2}}{2} \cos t \geq 0 \iff \sin(t + \pi/4) \geq
+0.)
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">A curva <span class="process-math">\(\gamma\colon \Big[ -\frac{\pi}{4},
+\frac{3\pi}{4}\Big]\to\R^3\)</span> dada por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma(t) =
+\Big( \frac{\sqrt{2}}{2}\cos t + \frac{1}{2},
+\frac{\sqrt{2}}{2}\sin t + \frac{1}{2},\frac{\sqrt{\sin t +
+\cos t}}{\sqrt[4]{2}}\Big)
+\end{equation*}
+</div>
+<div class="para">é, portanto, uma parametrização de parte de <span class="process-math">\(C\)</span> que passa por <span class="process-math">\((1,1,1)\text{.}\)</span> Para encontrar um vetor tangente a <span class="process-math">\(\gamma\)</span> em <span class="process-math">\((1,1,1)\text{,}\)</span> precisamos calcular determinar <span class="process-math">\(t_0 \in \Big] -\frac{\pi}{4},
+\frac{3\pi}{4}\Big[\)</span> tal que <span class="process-math">\(\gamma(t_0) = (1,1,1)\)</span> e, em seguida, calcular a derivada de <span class="process-math">\(\gamma\)</span> neste ponto.</div>
+</div>
+<div class="para logical">
+<div class="para">Notemos que <span class="process-math">\(\gamma(t) = (1,1,1)\)</span> se, e somente se,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\sqrt{2}}{2}\cos t + \frac{1}{2} =
+\frac{\sqrt{2}}{2}\sin t + \frac{1}{2} = \frac{\sqrt{\sin t
++ \cos t}}{\sqrt[4]{2}} = 1,
+\end{equation*}
+</div>
+<div class="para">que admite apenas <span class="process-math">\(t=
+\frac{\pi}{4}\)</span> como solução no intervalo <span class="process-math">\(\Big]
+-\frac{\pi}{4}, \frac{3\pi}{4}\Big[\)</span> (verifique).</div>
+</div>
+<div class="para logical">
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma'(t) = \left( -\frac{\sqrt{2}}{2}\sin t,
+\frac{\sqrt{2}}{2}\cos t,\frac{\cos t - \sin
+t}{2\sqrt[4]{2}\sqrt{\sin t + \cos t}}\right), \forall t \in
+\left] -\frac{\pi}{4}, \frac{3\pi}{4}\right[,
+\end{equation*}
+</div>
+<div class="para">concluímos que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma'\left(\frac{\pi}{4}\right) =
+\left( - \frac{1}{2}, \frac{1}{2}, 0\right)
+\end{equation*}
+</div>
+<div class="para">é tangente a <span class="process-math">\(C\)</span> em <span class="process-math">\((1,1,1)\text{.}\)</span> Note que este vetor é paralelo ao vetor <span class="process-math">\(\vec{v}\)</span> obtido na solução anterior!</div>
+</div>
+</li>
+<li><div class="para">Uma vez encontrado o vetor tangente a <span class="process-math">\(C\)</span> a derivada direcional é calculada como na solução anterior.</div></li>
+</ol>
+</div>
+<span class="incontext"><a class="internal" href="sec_2022-p2.html#p-237">em contexto</a></span>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section  xml:id="ap_maxminloc" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Máximos e mínimos locais em abertos de <m>\R^2</m></title>
+
+  <introduction>
+    <p>Iniciamos agora o estudo dos máximos e mínimos locais de funções
+    de várias variáveis reais. Neste primeiro momento vamos tratar a
+    situação análoga ao que vimos no Cálculo 1 para pontos de máximo e
+    mínimo em intervalos abertos: o <xref ref="teo_fermat" /> e o teste
+    da segunda derivada, dado no <xref ref="teste_segder" />.</p>
+    <p>Para tanto, estabelecemos as definições de ponts de máximos e
+    mínimos (locais e globais) de uma função <m>f\colon
+    A\subseteq\R^n\to\R</m> (faremos com <m>n=2</m>, mas tudo se
+    generaliza funções de <m>n</m> variáveis a valores reais).</p>
+  </introduction>
+
+  <definition xml:id="bola">
+    A <term>bola aberta</term> de centro em <m>(x_0,y_0)</m> e raio
+    <m>r>0</m> de <m>\R^2</m> é o conjunto
+    <me>B_r(x_0,y_0)=\big\{(x,y)\in\R^2\colon\|(x,y)-(x_0,y_0)\|&lt;r\big\}.</me>
+  </definition>
+
+  
+  <definition xml:id="pto_maxmincrit">
+    <p>Sejam <m>f\colon A\subseteq\R^2\to\R</m> e <m>(x_0,y_0)\in
+    A</m>. Dizemos que
+    <ul>
+      <li><m>(x_0,y_0)</m> é um <term>ponto de máximo local</term> de
+      <m>f</m> se existe <m>r>0</m> tal que para todo <m>(x,y)\in
+      B_r(x_0,y_0)\bigcap A</m>, temos <m>f(x,y)\leq
+      f(x_0,y_0)</m>.</li>
+      <li><m>(x_0,y_0)</m> é um <term>ponto de mínimo local</term> de
+      <m>f</m> se existe <m>r>0</m> tal que para todo <m>(x,y)\in
+      B_r(x_0,y_0)\bigcap A</m>, temos <m>f(x,y)\geq
+      f(x_0,y_0)</m>.</li>
+      <li><m>(x_0,y_0)</m> é um <term>ponto de máximo</term> (global) de
+      <m>f</m> se <m>f(x,y)\leq f(x_0,y_0)</m> para todo <m>(x,y)\in A</m>.</li>
+      <li><m>(x_0,y_0)</m> é um <term>ponto de mínimo</term> (global) de
+      <m>f</m> se <m>f(x,y)\geq f(x_0,y_0)</m> para todo <m>(x,y)\in
+      A</m>.</li>
+    </ul>
+    </p>
+    <p>Se <m>f</m> admite derivadas parciais em <m>(x_0,y_0)</m> e
+    <m>\nabla f(x_0,y_0)=(0,0)</m>, então <m>(x_0,y_0)</m> é um
+    <term>ponto crítico de <m>f</m></term>.</p>
+  </definition>
+
+  <p>Assista ao vídeo abaixo para uma motivação dos resultados a
+  seguir.
+  <figure xml:id="vid_maxminloc">
+    <caption>Máximos e mínimos locais.</caption>
+    <video youtube="2e9JD35yfL0" aspect="16:9" />
+  </figure>
+  </p>
+  
+  <theorem xml:id="teo_crit">
+    <statement>
+      Sejam <m>A\subseteq\R^2</m> um aberto contendo o ponto
+      <m>(x_0,y_0)</m> e <m>f\colon A\to\R</m> uma função que admite
+      derivadas parciais em <m>(x_0,y_0)</m>. Se <m>(x_0,y_0)</m> é um
+      opnto de máximo ou mínimo local de <m>f</m>, então <m>\nabla
+      f(x_0,y_0)=(0,0)</m>. 
+    </statement>
+    <proof>
+      <p>Se <m>(x_0,y_0)</m> é, digamos um ponto de máximo local, então
+      <m>x_0</m> é ponto de máximo local de <m>g(x)=f(x,y_0)</m> num
+      intervalo aberto <m>I</m>, contendo o ponto <m>x_0</m>. Segue-se
+      então, do <xref ref="teo_fermat" /> que <me>g'(x_0)=0\implies
+      f_x(x_0,y_0)=0.</me></p> <p>De maneira análoga, <m>y_0</m> é ponto
+      de máximo local de <m>h(y)=f(x_0,y)</m>, e então
+      <me>h'(y_0)=0\implies f_y(x_0,y_0)=0.</me></p> Ou seja, <m>\nabla
+      f(x_0,y_0)=(0,0)</m>.
+    </proof>
+  </theorem>
+
+  <p>É importante mencionar que a recíproca do teorema acima, assim como
+  visto na nota do <xref ref="teo_fermat" /> para o caso de uma
+  veriável, é falsa: considere <m>f(x,y)=x^2-y^2</m>, definida em todo o
+  plano <m>\R^2</m> (um aberto). Temos que <m>\nabla f(0,0)=(0,0)</m> e
+  este não é um ponto de máximo local, nem de mínimo local, já que
+  <m>f(0,y)&lt; f(0,0) &lt; f(x,0)</m>, para quaisquer <m>(x,y)\neq
+  (0,0)</m>.
+  </p>
+
+  <p>Um ponto crítico, no domínio de uma função, que não é de máximo
+  local nem de mínimo local é chamado de <term>ponto de sela</term>
+  daquela função. A nomenclatura vem da semelhança do gráfico da função
+  acima com uma sela. Veja a <xref ref="fig_parabhip3d" />.</p>
+
+  <p>A fim de tentar generalizar o <em>teste da segunda</em> para
+  classificar os pontos críticos de funções de duas variáveis,
+  precisamos levar em conta as quatro segundas derivadas e aplicar
+  técnica análoga à empregada no <xref ref="teste_segder" />. Para isso
+  apresentamos rapidamente a fórmula de Taylor para funções de classe
+  <m>\mathscr{C}^2</m> a duas variáveis reais.</p>
+
+  <theorem>
+    <title>(Fórmula de Taylor)</title>
+    <statement>
+      Sejam <m>f\colon A\subseteq\R^2\to\R</m> de classe
+      <m>\mathscr{C}^2</m> no ponto <m>(x_0,y_0)</m> do convexo
+      <m>A</m>. Então
+      <me>f(x,y)=f(x_0,y_0)+f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)+E(x,y),</me>
+      onde
+      <me>E(x,y)=\dfrac{1}{2}\Big(f_{xx}(\overline{x},\overline{y})(x-x_0)^2+2f_{xy}(\overline{x},\overline{y})(x-x_0)(y-y_0)+f_{yy}(\overline{x},\overline{y})(y-y_0)^2\Big),</me>
+      com <m>(\overline{x},\overline{y})</m> no segmento ligando
+      <m>(x_0,y_0)</m> a <m>(x,y)</m>.
+    </statement>
+    <proof>
+      <p>Basta aplicar a fórmula de Taylor de uma variável real,
+      centrada em <m>t_0=0</m>, para a função
+      <me>g(t)=f\big(\gamma(t)\big),</me> com
+      <m>\gamma(t)=\big(x(t),y(t)\big)=(x_0,y_0)+t(x-x_0,y-y_0)</m>, para <m>t</m> num
+      intervalo abeto contendo <m>[0,1]</m> tal que a imagem de
+      <m>\gamma</m> esteja contida em <m>A</m>.</p>
+      <p>Assim, temos <m>g(0)=f(x_0,y_0)</m> e, aplicando a regra da
+      cadeia sucessivas vezes, que <md>
+      <mrow>g'(0)&amp;=\big\langle\nabla
+      f(x_0,y_0),(x-x_0,y-y_0)\big\rangle=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)</mrow>
+      <mrow>g''(t)&amp;=\Big(f_{xx}\big(\gamma(t)\big)(x-x_0)^2+
+      2f_{xy}\big(\gamma(t)\big)(x-x_0)(y-y_0)+
+      f_{yy}\big(\gamma(t)\big)(y-y_0)^2\Big)</mrow>.</md>
+      </p>
+      <p>Logo,
+      <me>g(1)=g(0)+g'(0)(1-0)+\dfrac{g''(\overline{t})}{2}(1-0)^2,\quad
+      \overline{t}\in ]0,1[,</me> ou seja, a fórmula apresentada no
+      enunciado, onde
+      <m>(\overline{x},\overline{y})=\gamma(\overline{t})</m>.
+      </p>
+    </proof>
+  </theorem>
+
+  <p>Com isso podemos apresentar o chamado <term>critério do
+  Hessiano</term>:</p>
+
+  <theorem xml:id="teo_hess">
+    <statement>
+      Sejam <m>A\subseteq\R^2</m> um aberto e <m>(x_0,y_0)\in A</m> um
+      ponto crítico da função <m>f\colon A\to\R</m>, de classe
+      <m>\mathscr{C}^2</m> em <m>(x_0,y_0)</m>. Se
+      <ol marker="(i)">
+	<li><m>\det H_f(x_0,y_0)&gt; 0</m> e <m>f_{xx}(x_0,y_0)&gt;
+	0</m>, então <m>(x_0,y_0)</m> é um ponto de mínimo local de
+	<m>f</m>.</li>
+	<li><m>\det H_f(x_0,y_0)&gt; 0</m> e <m>f_{xx}(x_0,y_0)&lt;
+	0</m>, então <m>(x_0,y_0)</m> é um ponto de máximo local de
+	<m>f</m>.</li>
+	<li><m>\det H_f(x_0,y_0)&lt; 0</m> então <m>(x_0,y_0)</m> é um
+	ponto de sela de <m>f</m>.</li>
+      </ol>
+      Aqui <m>H_f(x_0,y_0)=\begin{bmatrix} f_{xx}(x_0,y_0)&amp;
+      f_{yx}(x_0,y_0)\\ f_{xy}(x_0,y_0)&amp; f_{yy}(x_0,y_0)\\
+      \end{bmatrix}</m> é a <term>matriz Hessiana</term> de <m>f</m> em
+      <m>(x_0,y_0)</m>.
+    </statement>
+    <proof>
+      Veja <url href="./external/classif-ptos-crit.pdf">aqui</url>.
+    </proof>
+    <remark>
+      Note que este resultado nada afirma no caso em que <m>\det
+      H_f(x_0,y_0)=0</m>. Tais casos devem ser estudados de maneira
+      "artesanal".
+    </remark>
+  </theorem>
+</section>

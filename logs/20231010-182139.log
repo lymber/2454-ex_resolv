@@ -1,0 +1,16 @@
+INFO    : PreTeXt project found in `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv`.
+INFO    : Preparing to build into /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/output/web.
+INFO    : discovering source file's directory name: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source
+INFO    : verifying and expanding input directory: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/../generated-assets
+INFO    : input directory expanded to absolute path: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets
+INFO    : verifying and expanding input directory: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/../assets
+INFO    : input directory expanded to absolute path: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/assets
+INFO    : Runestone Services (via PreTeXt repository): version 7.1.2
+INFO    : Runestone Services (using newer, via online CDN query): version 7.1.7
+INFO    : converting /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to HTML in /tmp/tmpxvhj98ko
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/pretext-html.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/pretext-html.xsl
+INFO    : 
+Success! Run `pretext view` to see the results.
+

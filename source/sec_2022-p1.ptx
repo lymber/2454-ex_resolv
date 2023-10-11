@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2022-p1" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Primeira Prova</title>
+  <exercises xml:id="gab_2022-p1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="p1q1a-2022">
+      <statement>
+	<p>
+	  Seja <m>f\colon[0,\infty[\to\R</m> dada por <m>f(x)=\sqrt{x}</m>.
+	  <ol marker="a">
+	    <li>Determine o polinômio de Taylor de ordem <m>3</m> de
+	    <m>f</m> em torno de <m>x_0=4</m>.</li>
+	    <li>Use o item anterior para obter uma aproximação, na forma
+	    de fração irredutível, de <m>\sqrt{4,8}</m>. Mostre também que o
+	    erro cometido nesta aproximação é inferior, em módulo, a
+	    <m>1,25\cdot 10^{-4}</m>.</li>
+	  </ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><m>\dfrac{2191}{1000}</m>.</li>
+	    <li>Veja a solução.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>As derivadas de <m>f</m> até quarta ordem são
+	    <me>f'(x)=\dfrac{1}{2x^{1/2}},\quad
+	    f''(x)=-\dfrac{1}{4x^{3/2}}, % \quad
+	    f'''(x)=\dfrac{3}{8x^{5/2}}\quad\text{e}\quad
+	    f^{(4)}(x)=-\dfrac{15}{16x^{7/2}},</me> para todo
+	    <m>x&gt;0</m>. Assim, o polinômio de Taylor de ordem <m>3</m>
+	    para <m>f</m> em torno de <m>x_0=4</m> é
+	    <md>
+	      <mrow>P_3(x)&amp;=f(4)+f'(4)(x-4)+\dfrac{f''(4)}{2!}(x-4)^2+
+	      \dfrac{f'''(4)}{3!}(x-4)^3</mrow> 
+	      <mrow>&amp;=2+\dfrac{x-4}{4}-\dfrac{(x-4)^2}{64}+\frac{(x-4)^3}{512}.</mrow>
+	    </md></li> 
+	    <li>Usando <m>P_3</m>, obtemos
+	    <me>
+	      P_3(4,8)=2+\dfrac{0,8}{4}-\dfrac{0,64}{64}+\dfrac{0,512}{512}
+	      =2+\dfrac{2}{10}-\dfrac{1}{100}+\frac{1}{1000}=\dfrac{2191}{1000}.
+	    </me>
+	    Para estimar, em módulo, o erro cometido nesta aproximação,
+	    lembramos que <me> E_3(4,8)=\Big|\sqrt{4,8}-P_3(4,8)\Big|
+	    =\dfrac{|f^{(4)}(c)|}{4!}(4,8-4)^4=\dfrac{2^4\cdot
+	    10^{-3}}{c^{7/2}},</me> para algum <m>c</m> tal que
+	    <m>4&lt;c&lt;4,8</m>. Com isso, <me>4&lt;c\implies
+	    2^7&lt;c^{7/2}\implies\dfrac{1}{c^{7/2}}&lt;\dfrac{1}{2^7},</me>
+	    e então,<me>\Big|\sqrt{4,8}-P_3(4,8)\Big|&lt;\dfrac{2^4\cdot
+	    10^{-3}}{2^7}=2^{-3}\cdot 10^{-3}=1,25\cdot 10^{-4}.</me>
+	    </li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+    <exercise xml:id="p1q2a-2022">
+      <statement>
+	Considere a função <m>f(x,y)=\dfrac{2x^2+2y^2-12}{x^2-y^2}</m>.
+	<ol marker="a">
+	  <li>Esboce, no plano cartesiano abaixo, o domínio de <m>f</m>,
+	  indicando pontos que não pertençam ao seu domínio com linhas
+	  tracejadas. Determine as curvas de nível <m>c=1</m> e
+	  <m>c=2</m> de <m>f</m> e esboce suas imagens, também no plano
+	  abaixo.
+	  <figure xml:id="fig_gabp1aq2-2022">
+	    <caption>Desenhe aqui a restrição no domínio e as curvas de nível
+	    pedidas.</caption>
+	    <image xml:id="gabp1aq2-2022" width="50%">
+	      <description>Plano para esboço das curvas.</description>
+	      <latex-image>
+		\begin{tikzpicture}
+		\draw[step=0.5,lightgray,thin] (-3.9,-3.9) grid (3.9,3.9);
+		\draw[step=1.0,gray,thin] (-3.9,-3.9) grid (3.9,3.9);
+		\draw[thick,->] (-4,0)--(4,0) node[below]{$x$};
+		\draw[thick,->] (0,-4)--(0,4) node[right]{$y$};
+		\end{tikzpicture}
+	      </latex-image>
+	    </image>
+	  </figure>
+	  </li>
+	  <li> Decida, justificando, se
+	  <m>\lim\limits_{(x,y)\to(\sqrt{3},\sqrt{3})}f(x,y)</m>
+	  existe.</li>
+	</ol>
+      </statement>
+      <answer>
+	<ol marker="a">
+	  <li>Veja a solução com a figura completa.</li>
+	  <li>Não existe.</li>
+	</ol>
+      </answer>
+      <solution>
+	<ol marker="a">
+	  <li><p>O domínio de <m>f</m> é o conjunto
+	  <me>D=\big\{(x,y)\in\R^2\colon x^2\neq 
+	  y^2\big\}=\big\{(x,y)\in\R^2\colon |x|\neq |y|\big\}</me>, isto
+	  é, o complementar das bissetrizes <m>y=x</m> e <m>y=-x</m>,
+	  indicadas em vermelho tracejado na <xref
+	  ref="fig_gabp1aq2sol-2022" />.</p>
+	  <p>As curvas de nível pedidas são dadas, conforme a <xref
+	  ref="curva_nivel" />, respectivamente por
+	  <ul>
+	    <li>nível <m>c=1</m>: é o conjunto
+	    <md>
+	      <mrow>f^{-1}(1)&amp;=\big\{(x,y)\in D\colon
+	      f(x,y)=1\big\}</mrow>
+	      <mrow>&amp;= \big\{(x,y)\in D\colon
+	      2x^2+2y^2-12=x^2-y^2\big\}</mrow>
+	      <mrow>&amp;= \Big\{(x,y)\in D\colon
+	      \Big(\frac{x}{2\sqrt{3}}\Big)^2
+	      +\Big(\frac{y}{2}\Big)^2=1\Big\},</mrow>
+	    </md> tratando-se da interseção de uma elipse com o domínio
+	    de <m>f</m>, esboçada em azul na <xref
+	    ref="fig_gabp1aq2sol-2022" />.</li>
+	    <li>
+	      nível <m>c=2</m> é o conjunto
+	      <md>
+		<mrow>f^{-1}(2)&amp;\big\{(x,y)\in D\colon
+		f(x,y)=2\big\}</mrow>
+		<mrow>&amp;=\big\{(x,y)\in D\colon
+		2x^2+2y^2-12=2x^2-2y^2\big\}</mrow>
+		<mrow>&amp;=\big\{(x,y)\in D\colon y=\pm\sqrt{3}\big\},
+		</mrow>
+		</md> que descreve um par de retas paralelas, removidas
+		as intersecções com as bissetrizes (em laranja na figura
+		<xref ref="fig_gabp1aq2sol-2022" />).
+	    </li>
+	  </ul></p>
+	  <p>
+	    <figure xml:id="fig_gabp1aq2sol-2022">
+	      <caption>A restrição do domínio e as curvas de nível pedidas.</caption>
+	      <image xml:id="gabp1aq2sol-2002">
+		<description>Plano com o esboço das curvas.</description>
+		<latex-image>
+		  \begin{tikzpicture}
+		  \draw[step=0.5,lightgray,thin] (-3.9,-3.9) grid (3.9,3.9);
+		  \draw[step=1.0,gray,thin] (-3.9,-3.9) grid (3.9,3.9);
+		  \draw[thick,->] (-4,0)--(4,0) node[below]{$x$};
+		  \draw[thick,->] (0,-4)--(0,4) node[right]{$y$};
+		  \draw[dashed,red] (-4,-4)--(4,4);
+		  \draw[dashed,red] (-4,4)--(4,-4);
+		  \draw[blue] (0,0) ellipse [x radius={2*sqrt(3)}, y radius=2] node[xshift=80,yshift=30] {$c=1$}; 
+		  \draw[orange] (-3.9,{sqrt(3)})--(3.9,{sqrt(3)});
+		  \draw[orange] (-3.9,{-sqrt(3)}) node[above]{$c=2$} --(3.9,{-sqrt(3)});
+		  \filldraw[fill=white,draw=red] ({sqrt(3)},{sqrt(3)}) circle (2pt);
+		  \filldraw[fill=white,draw=red] ({-sqrt(3)},{sqrt(3)}) circle (2pt);
+		  \filldraw[fill=white,draw=red] ({sqrt(3)},{-sqrt(3)}) circle (2pt);
+		  \filldraw[fill=white,draw=red] ({-sqrt(3)},{-sqrt(3)}) circle (2pt);
+		  \end{tikzpicture}
+		</latex-image>
+	      </image>
+	    </figure></p></li>
+	  <li>De acordo com a figura, qualquer vizinhança do ponto
+	  <m>(\sqrt{3},\sqrt{3})</m> contém pontos da curva de nível
+	  <m>c=1</m> de <m>f</m>, nos quais esta vale <m>1</m>. Da mesma
+	  forma, uma tal vizinhança contém pontos da curva de nível
+	  <m>c=2</m> de <m>f</m>, onde esta vale <m>2</m>. Deste modo,
+	  pelo <xref ref="teo_limcurvas" />, o limite indicado não
+	  existe.
+	  </li>
+	  </ol>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q3a-2022">
+      <statement>
+	Seja <m>f\colon\R^2\to\R</m> dada por <m>f(x,y)=
+	\begin{cases}
+	\dfrac{x^3y}{x^2+y^2},&amp;\text{ se $(x,y)\neq (0,0)$;}\\
+	\hfill 0,&amp;\text{ se $(x,y)= (0,0)$}.
+	\end{cases}</m>.
+	<ol marker="a">
+	  <li>Decida se <m>f</m> é contínua em <m>(0,0)</m>.</li>
+	  <li>Calcule <m>\dfrac{\partial f}{\partial x}(0,0)</m> e
+    <m>\dfrac{\partial f}{\partial y}(0,0)</m>. </li>
+	  <li>A função <m>f</m> é diferenciável em <m>(0,0)</m>?</li>
+	</ol>
+      </statement>
+      <answer>
+	<ol marker="a">
+	  <li>Sim, <m>f</m> é contínua em <m>(0,0)</m>.</li>
+	  <li><m>\dfrac{\partial f}{\partial x}(0,0)=0</m> e
+	  <m>\dfrac{\partial f}{\partial y}(0,0)=0</m>.</li>
+	  <li>Sim, <m>f</m> é diferenciável em <m>(0,0)</m>.</li>
+	</ol>
+      </answer>
+      <solution>
+	<ol marker="a">
+	  <li>Em vista do <xref ref="teo_limcont" />, basta calcular
+	  <me>
+	    \lim\limits_{(x,y)\to(0,0)} f(x,y)
+	    =\lim\limits_{(x,y)\to(0,0)}\dfrac{x^3y}{x^2+y^2}
+	    =\lim\limits_{(x,y)\to(0,0)}x^2\,\dfrac{xy}{x^2+y^2}\stackrel{(\ast)}{=}0=f(0,0).
+	  </me>
+	  </li>
+	  <li>
+	    Pela <xref ref="def_derpar" />:
+	    <md>
+	      <mrow>f_x(0,0)=\dfrac{\partial f}{\partial x}(0,0)
+	      &amp;=\lim\limits_{h\to
+	      0}\dfrac{f(0+h,0)-f(0,0)}{h}=\lim\limits_{h\to
+	      0}\dfrac{0-0}{h}=0</mrow>
+	      <mrow>f_y(0,0)=\dfrac{\partial f}{\partial y}(0,0)
+	      &amp;=\lim\limits_{k\to 0}\dfrac{f(0,0+k)-f(0,0)}{k}
+	      =\lim\limits_{k\to 0}\dfrac{0-0}{k}=0</mrow>
+	    </md>
+	  </li>
+	  <li>
+	    Agora, pela <xref ref="def_diff" />:
+	    <md>
+	      <mrow>\lim\limits_{(h,k)\to(0,0)}&amp;\dfrac{f(0+h,0+k)-f(0,0)
+	      -f_x(0,0)h-f_y(0,0)k}{\sqrt{h^2+k^2}}</mrow>
+	      <mrow>&amp;=\lim\limits_{(h,k)\to(0,0)}
+	      \dfrac{h^3k}{(h^2+k^2)\sqrt{h^2+k^2}}=0,</mrow> </md> pois
+	      <m>h\to0</m>, enquanto que <m>\dfrac{h^2}{h^2+k^2}</m> e
+	      <m>\dfrac{k}{\sqrt{h^2+k^2}}</m> são ambos limitados.
+	  </li>
+	</ol>
+	<remark>
+	  <ul>
+	    <li>Em <m>(*)</m>, o limite vale <m>0</m> pois é um produto de
+	    um fator limitado com um que tende a zero (<xref
+	    ref="teo_confronto" />). A limitação do primeiro fator é feita
+	    em <xref ref="vid_limitada" /> aos 4m18s.</li>
+	    <li> A primeira limitação utilizada no último está feita aos
+	    2m06s da <xref ref="vid_limitada" />. Já a segunda se verifica
+	    assim: para todo <m>(x,y)\neq (0,0)</m>, temos
+	    <me>|y|=\sqrt{y^2}\leq \sqrt{x^2+y^2}\implies
+	    \left|\dfrac{y}{\sqrt{x^2+y^2}}\right|\leq 1\implies -1\leq
+	    \dfrac{y}{\sqrt{x^2+y^2}}\leq 1.</me></li>
+	  </ul>
+	</remark>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p1q4a-2022">
+      <statement>
+	Seja <m>f\colon\R^2\to\R</m> dada por
+	<m>f(x,y)=x\sqrt{x^4+y^2}</m>. Decida se <m>f</m> admite plano
+	tangente ao seu gráfico no ponto <m>\big(0,0,f(0,0)\big)</m> e,
+	em caso afirmativo, escreva a equação deste plano.
+      </statement>
+      <answer>
+	Sim, a função admite plano tangente no ponto, dado por
+	<m>\pi\colon z=0</m>.
+      </answer>
+      <solution>
+	<p>Para garantir a existência do plano tangente, precisamos
+	mostrar que <m>f</m> é diferenciável no ponto <m>(0,0)</m>. Isso
+	pode ser feito de duas maneiras: verificando que <m>f</m> é
+	diferenciável em <m>(0,0)</m> diretamente pela <xref
+	ref="def_derpar" /> ou mostrando que <m>f</m> é de classe
+	<m>\mathscr{C}^1</m> nesse ponto, conforme o <xref
+	ref="teo_diff-c1" />. Vamos resolver das duas formas e, em
+	qualquer caso precisamos das derivadas parciais de <m>f</m> na
+	origem.</p>
+	<p>Isso deve ser feito pela definição, uma vez que o termo do
+	qual extraímos a raiz quadrada se anula. Usando que
+	<m>f(0,0)=0</m>, temos
+	<mdn>
+	  <mrow xml:id="p1aq4fxorig">f_x(0,0)
+	  &amp;=\lim\limits_{h\to 0}\dfrac{f(0+h,0)-f(0,0)}{h}
+	  =\lim\limits_{h\to 0}\dfrac{h\sqrt{h^4+0^2}-0}{h}
+	  =\lim\limits_{h\to 0}h^2=0;</mrow>
+	  <mrow xml:id="p1aq4fyorig">f_y(0,0)
+	  &amp;=\lim\limits_{k\to 0}\dfrac{f(0,0+k)-f(0,0)}{k}
+	  =\lim\limits_{k\to 0}\dfrac{0\sqrt{0^4+k^2}-0}{k}
+	  =\lim\limits_{k\to 0}0 =0.</mrow>
+	</mdn>
+	</p>
+	<p>Cada uma das possibilidades mencionadas:
+	<ul>
+	  <li>diferenciabilidade de <m>f</m> em <m>(0,0)</m>: resume-se
+	  a verificar que
+	  <md>
+	    <mrow>\lim\limits_{(h,k)\to(0,0)}&amp;\dfrac{f(0+h,0+k)-f(0,0)
+	    -f_x(0,0)h-f_y(0,0)k}{\sqrt{h^2+k^2}}</mrow>
+	    <mrow>&amp;=\lim\limits_{(h,k)\to(0,0)}
+	    \dfrac{h}{\sqrt{h^2+k^2}}\sqrt{h^4+k^2}=0,</mrow> </md> pois
+	    <m>\dfrac{h}{\sqrt{h^2+k^2}}</m> é limitado (veja em 2m06s da
+	    <xref ref="vid_limitada" />) e
+	    <m>\lim\limits_{(h,k)\to(0,0)}\sqrt{h^4+k^2}=0</m>.
+	  </li>
+	  <li><m>f</m> é de classe <m>\mathscr{C}^1</m> em <m>(0,0)</m>:
+	  precisamos mostrar que
+	  <m>\lim\limits_{(x,y)\to(0,0)}f_x(x,y)=f_x(0,0)</m> e
+	  <m>\lim\limits_{(x,y)\to(0,0)}f_y(x,y)=f_x(0,0)</m>. Se
+	  <m>(x,y)\neq (0,0)</m>, então <m>f</m> é dada pela composta,
+	  soma e produto de funções deriváveis de <m>x</m> e de <m>y</m>
+	  separadamente. Usando as regras de derivação, temos
+	  <mdn>
+	    <mrow xml:id="p1aq4fx">
+	    f_x(x,y)&amp;=\sqrt{x^4+y^2}+\dfrac{2x^4}{\sqrt{x^4+y^2}};</mrow>
+	    <mrow xml:id="p1aq4fy">
+	    f_y(x,y)&amp;=\dfrac{xy}{\sqrt{x^4+y^2}}</mrow>
+	  </mdn>
+	  Finalmente, com as expressões acima e os valores obtidos em
+	  <xref ref="p1aq4fxorig" /> e <xref ref="p1aq4fyorig" />, temos
+	  <md>
+	    <mrow>\lim\limits_{(x,y)\to(0,0)}f_x(x,y)
+	    &amp;=\lim\limits_{(x,y)\to(0,0)}\sqrt{x^4+y^2}+\dfrac{2x^4}{\sqrt{x^4+y^2}}</mrow>
+	    <mrow>&amp;=\lim\limits_{(x,y)\to(0,0)}\sqrt{x^4+y^2}+\lim\limits_{(x,y)\to(0,0)}2x^2\,\dfrac{x^2}{\sqrt{x^4+y^2}}</mrow>
+	    <mrow>&amp;\stackrel{(*)}=0+0=0=f_x(0,0);</mrow>
+	    <mrow>\lim\limits_{(x,y)\to(0,0)}f_y(x,y)
+	    &amp;=\lim\limits_{(x,y)\to(0,0)}\dfrac{xy}{\sqrt{x^4+y^2}}</mrow>
+	    <mrow>&amp;=\lim\limits_{(x,y)\to(0,0)}x\,\dfrac{y}{\sqrt{x^4+y^2}}\stackrel{(\dagger)}{=}0=f_y(0,0).</mrow>
+	  </md>
+	  </li>
+	</ul>
+	</p>
+	<remark> Para verificar as afirmações <m>(\ast)</m> e
+	<m>(\dagger)</m>, usamos uma variante do argumento para a
+	limitação feita aos 2m06s da <xref ref="vid_limitada" />,
+	trocando <m>x</m> por <m>x^2</m> na primeira, por exemplo).
+	</remark>
+      </solution>
+    </exercise>
+  </exercises>
+</section>

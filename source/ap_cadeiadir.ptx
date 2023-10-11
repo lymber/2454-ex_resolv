@@ -1,0 +1,569 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section  xml:id="ap_cadeiadir" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Regras da Cadeia e Derivadas direcionais</title>
+
+  <introduction>
+    <p>Nesta seção vamos apresentar a derivação da composta de uma
+    função de duas variáveis com uma curva plana e, como consequência,
+    maneiras de derivar outras compostas e também derivadas em direções
+    que não são paralelas aos eixos coordenados, sempre ilustrados com
+    exemplos e contra-exemplos.</p>
+  </introduction>
+
+  <p>Começamos com uma definição e uma lema técnico que permitirá
+  enunciar o resultado principal desta seção.</p>
+
+  <definition xml:id="def_gradiente">
+    <title>(Vetor Gradiente)</title>
+    
+    <statement>
+      <p>
+	Seja <m>f\colon A\subseteq\R^2\to\R</m> uma função que admite
+	derivadas pariciais em <m>(x_0,y_0)\in A</m>. O
+	<term>gradiente</term> de <m>f</m> em <m>(x_0,y_0)</m> é o vetor
+	<me>\nabla f(x_0,y_0)=\Big(\dfrac{\partial f}{\partial
+	x}(x_0,y_0),\dfrac{\partial f}{\partial y}(x_0,y_0)\Big).</me>
+      </p>
+    </statement>
+  </definition>
+  
+  <lemma xml:id="lem_cadeia">
+    <!-- <title>(Derivadas parciais contínuas)</title> -->
+    <statement>
+      <p>
+	Seja <m>f\colon A\subseteq\R^2\to\R</m> uma função diferenciável
+	em <m>(x_0,y_0)</m>, então existe <m>\phi\colon
+	A\subseteq\R^2\to\R</m>, contínua em <m>(x_0,y_0)</m> tal que
+	<me>f(x,y)=f(x_0,y_0)+\big\langle\nabla
+	f(x_0,y_0),(x-x_0,y-y_0)\big\rangle+\phi(x,y)\big\|(x-x_0,y-y_0)\big\|.
+	</me>
+      </p>
+    </statement>
+    <proof>
+      <p>Queremos construir uma função <m>\phi</m> que verifique a
+      propriedade acima. Se <m>(x,y)\neq (x_0,y_0)</m>, é claro que tal
+      função deve satisfazer
+
+      <me>\phi(x,y)=\dfrac{f(x,y)-f(x_0,y_0)-\big\langle\nabla
+      f(x_0,y_0),(x-x_0,y-y_0)\big\rangle}{\big\|(x-x_0,y-y_0)\big\|}.</me>
+
+      O valor de <m>\phi</m> em <m>(x_0,y_0)</m> deve ser tal que a
+      função seja contínua nesse ponto, ou seja,
+      <m>\phi(x_0,y_0)=\lim\limits_{(x,y)\to (x_0,y_0)}
+      \phi(x,y)</m>. Fazendo <m>x=x_0+h</m> e <m>y=y_0+k</m>, vemos que
+      este limite é nada mais que o limite da <xref ref="def_diff" />,
+      que é zero aqui, uma vez que <m>f</m> é diferenciável em
+      <m>(x_0,y_0)</m>.</p>
+      <p>Assim, definimos 
+      <me>
+	\phi(x,y)=\begin{cases}
+	\dfrac{f(x,y)-f(x_0,y_0)-\big\langle\nabla
+	f(x_0,y_0),(x-x_0,y-y_0)\big\rangle}{\big\|(x-x_0,y-y_0)\big\|},&amp;(x,y)\neq
+	(x_0,y_0)\\
+	\hfill 0,&amp; (x,y)=(x_0,y_0).
+	\end{cases}
+      </me>
+      </p>
+    </proof>
+  </lemma>
+
+  <remark><p>Note inicialmente que as duas primeiras parcelas do lado
+  direito na expressão em destaque são exatamente as parcelas
+  independentes de <m>z</m> na equação do plano tangente gráfico de
+  <m>f</m> em <m>(x_0,y_0)</m>.</p>
+  <p>Com isto, este enunciado é uma generalização natural do que
+  acontece com funções de uma variável, quando olhamos para o polinômio
+  de Taylor de ordem 1: o erro na aproximação, ali pela reta tangente,
+  aqui pelo plano tangente, dá um erro que tende a zero "mais
+  rapidamente" do que <m>(x,y)</m> se aproxima de
+  <m>(x_0,y_0)</m>.</p></remark>
+
+  <theorem xml:id="teo_cadeia">
+    <title>(Regra da Cadeia)</title>
+    
+    <statement>
+      <p>
+	Sejam <m>f\colon A\subseteq\R^2\to\R</m> uma função
+	diferenciável em <m>(x_0,y_0)</m> e <m>\gamma\colon
+	I\subseteq\R\to\R</m> derivável em <m>t_0\in I</m> tal que
+	<m>\gamma(t_0)=(x_0,y_0)</m>. Então <m>f\circ\gamma </m> é
+	derivável em <m>t_0</m> e
+	<me>(f\circ\gamma)'(t_0)=\big\langle\nabla
+	f(x_0,y_0),\gamma'(t_0)\big\rangle.</me>
+      </p>
+    </statement>
+    <proof>
+      <p>Começamos recordando que
+      <me>(f\circ\gamma)'(t_0)=\lim\limits_{t\to t_0}
+      \dfrac{(f\circ\gamma)(t)-(f\circ\gamma)(t_0)}{t-t_0}.</me></p>
+      <p>Podemos aplicar o <xref ref="lem_cadeia" /> aos termos do
+      numerador acima, com <m>(x,y)=\gamma(t)</m> e
+      <m>(x_0,y_0)=\gamma(t_0)</m>, obtendo
+      <md>
+	<mrow>(f\circ\gamma)'(t_0)&amp;
+	=\lim\limits_{t\to t_0}\big\langle\nabla
+	f(x_0,y_0),\dfrac{\gamma(t)-\gamma(t_0)}{t-t_0}\big\rangle+\phi\big(\gamma(t)\big)\dfrac{\big\|\gamma(t)-\gamma(t_0)\big\|}{t-t_0}</mrow>
+	<mrow>&amp;
+	=\big\langle\nabla f(x_0,y_0),\gamma'(t_0)\big\rangle+
+	\lim\limits_{t\to t_0}
+	\phi\big(\gamma(t)\big)
+	\Big\|\dfrac{\gamma(t)-\gamma(t_0)}
+	{t-t_0}\Big\|\dfrac{|t-t_0|}{t-t_0}</mrow>
+	<mrow>&amp;
+	=\big\langle\nabla f(x_0,y_0),\gamma'(t0)\big\rangle,</mrow>
+      </md>
+      pois <m>\lim\limits_{t\to
+      t_0}\phi\big(\gamma(t)\big)=\phi(x_0,y_0)=0</m>,
+      <m>\lim\limits_{t\to t_0}\Big\|\dfrac{\gamma(t)-\gamma(t_0)}
+      {t-t_0}\Big\|=\big\|\gamma'(t_0)\|</m> e
+      <m>\dfrac{|t-t_0|}{t-t_0}</m> é limitado.
+      </p>
+    </proof>
+  </theorem>
+
+  <remark><p>Uma interpretação para a Regra da Cadeia apresentada acima é
+  que a derivada, ou taxa de variação, de <m>f</m> ao longo de uma curva
+  está ligada com a projeção ortogonal do gradiente de <m>f</m> sobre o
+  vetor velocidade da curva.</p>
+  <figure xml:id="fig_cadeiadir">
+    <caption>A composta <m>f\circ\gamma</m>.</caption>
+    <image width="90%" xml:id="cadeiadir">
+      <latex-image>
+	\begin{tikzpicture}
+        \draw (-3,2) -- (-2,0) node[left] {$t$};
+        \filldraw (-2.5,1) circle (1pt) node[left]{$t_0$};
+        \draw[->] (-.5,0) -- (2.5,0) node[below] {$x$};
+        \draw[->] (0,-.5) -- (0,2) node[right] {$y$};
+        \draw[red, thick,variable=\t,domain=0.7:2,samples=10,smooth]
+        plot (\t,{1/2*(-3*sin(\t r)+sin(5*\t r))+2});
+        \draw[->] (-2.25,1) to[bend left] node[above]{$\gamma$}
+	(-.75,1.25);
+        \filldraw (1.5,{1/2*(-3*sin(1.5 r)+sin(5*1.5 r))+2}) circle (1pt)
+        node[above left]{$\gamma(t_0)$};
+	\draw[thick,->,blue] (1.5,{1/2*(-3*sin(1.5 r)+sin(5*1.5
+	r))+2}) -- ++(0.5,{0.5*(-3/2*cos (1.5 r)+5/2*cos(5*1.5 r))})
+	node [right] {$\gamma'(t_0)$};
+	\draw[thick,->,blue] (1.5,{1/2*(-3*sin(1.5 r)+sin(5*1.5
+	r))+2}) -- ++(0.5,1.5)
+	node [right] {$\nabla f(x_0,y_0)$};
+        \draw (4,0) -- (5,2) node[right] {$z$};
+        \filldraw (4.5,1) circle (1pt)
+        node[right]{$f\big(\gamma(t_0)\big)$};
+        \draw[->] (2.75,.75) to[bend left] node[below]{$f$} (4,1.25);
+	\end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
+  </remark>
+
+  <p>Além de seu valor no cálculo de derivadas de compostas, a Regra da
+  Cadeia é uma poderosa ferramenta para mostrar que uma função não é
+  diferenciável. Veja como no exemplo abaixo:</p>
+
+  <example xml:id="exemplo_cadeianaodiff">
+    <p>A função <m>f(x,y)=\begin{cases}
+    \dfrac{x^3}{x^2+y^2},&amp;(x,y)\neq (0,0);\\ \hfill 0,&amp;
+    (x,y)=(0,0)\end{cases}</m> não é diferenciável na origem. De fato,
+    <m>\gamma(t)=(t,t)</m>, é uma curva derivável tal que
+    <m>\gamma(0)=(0,0)</m> e <m>\gamma'(0)=(1,1)</m>. Temos, calculando
+    explicitamente, que <me>(f\circ \gamma)(t)=\dfrac{t}{2}\implies
+    (f\circ \gamma)'(0)=\dfrac{1}{2}</me>. No <xref ref="dif5" />
+    calculamos as derivadas parciais de <m>f</m>, obtendo <m>\nabla
+    f(0,0)=(1,0)</m>. derivadas parciais em <m>(0,0)</m>, mas não é
+    contínua em <m>(0,0)</m>. Assim, <me>\big\langle\nabla
+    f(0,0),\gamma'(0)\big\rangle=1\neq\frac{1}{2}=(f\circ
+    \gamma)'(0).</me> Se <m>f</m> fosse derivável na origem, a igualdade
+    deveria valer para qualquer curva nas condições do enunciado do
+    <xref ref="teo_cadeia" />
+    </p>
+  </example>
+  
+  <p>No caso especial em que a curva considerada é uma curva de nível da
+  função temos um resultado bastante interessante:</p>
+
+  <corollary xml:id="cor_cadeiagradniv">
+    <title>(<m>\nabla f\perp f^{-1}(c)</m>)</title>
+
+    <statement>
+      Sejam <m>f\colon A\subseteq\R^2\to\R</m> uma função diferenciável
+      e <m>\gamma\colon I\subseteq\R\to\R^2</m>, que é uma curva
+      derivável tal que <m>\mathrm{Im}\gamma\subset f^{-1}(c)</m> (a
+      curva parametriza parte de uma curva de nível de <m>f</m>). Então,
+      <me>\Big\langle\nabla
+      f\big(\gamma(t)\big),\gamma'(t)\Big\rangle=0,</me> para todo
+      <m>t\in I</m>.
+    </statement>
+
+    <proof>
+      Basta observar que, nas condições do enunciado, temos
+      <m>(f\circ\gamma)(t)=c\in\R</m> e portanto
+      <m>(f\circ\gamma)'(t)=0</m> para todo <m>t\in I</m>. O resultado
+      segue disto aplicado ao <xref ref="teo_cadeia" />.
+    </proof>
+    
+    <remark>Este é o famoso resultado que se traduz na frase "<em>O
+    gradiente é perpendicular às curvas de nível.</em>".
+    </remark>
+  </corollary>
+
+  <example xml:id="exemplo_cadeianivel">
+    <p>Seja <m>f(x,y)=x^2+y^2</m>, que é diferenciável em todo seu
+    domínio. Sua curva de nível <m>c&lt;0</m> é um círculo centrado na
+    origem e de raio <m>\sqrt{c}</m>, que pode ser parametrizado por
+    <m>\gamma(t)=\sqrt{c}(\cos t, \sin t)</m>, <m>t\in
+    [0,2\pi]</m>. Como <m>\nabla f(x,y)=(2x,2y)</m> e
+    <m>\gamma'(t)=\sqrt{c}(-\sin t, \cos t)</m>, temos <me>
+    \Big\langle\nabla
+    f\big(\gamma(t)\big),\gamma'(t)\Big\rangle=\big\langle
+    (2\sqrt{c}\cos t, 2\sqrt{c}\sin t),(-\sqrt{c}\sin t,\sqrt{c}\cos
+    t)\big\rangle =0</me>
+    </p>
+
+    <figure xml:id="fig_cadeianivel">
+      <caption>O gradiente ao longo de uma curva de nível.</caption>
+      <image width="50%" xml:id="cadeianivel">
+	<latex-image>
+	  \begin{tikzpicture}
+          \draw[->] (-1.5,0) -- (1.5,0) node[below] {$x$};
+          \draw[->] (0,-1.5) -- (0,1.5) node[right] {$y$};
+	  \draw[red] (0,0) circle (1) node[xshift=30,yshift=-30] {$f^{-1}(c)$};
+	  \filldraw ({cos(30)},{sin(30)}) circle (1pt);
+	  \draw[->,blue] ({cos(30)},{sin(30)}) -- ++ ({-sin(30)},{cos(30)})
+	  node[right] {$\gamma'(t)$};
+	  \draw[->,blue] ({cos(30)},{sin(30)}) -- ++ ({2*cos(30)},{2*sin(30)})
+	  node[above] {$\nabla f\big(\gamma(t)\big)$};
+	  \end{tikzpicture}
+	</latex-image>
+      </image>
+    </figure>
+    
+    <p>Note que nessas condições a projeção do gradiente na direção
+    tangente à da curva é nula, ou seja, que caminha ao longo de uma
+    curva de nível "não sente" as derivadas de <m>f</m> (e por isso ela
+    é constante ao longo dessa trajetória.</p>
+  </example>
+
+  <corollary xml:id="cor_cadeiaturbo">
+    <statement>
+      Sejam <m>g,h\colon B\subseteq\R^2\to\R</m> funções diferenciáveis
+      em <m>(u_0,v_0)</m> e <m>f\colon A\subseteq\R^2\to\R</m>
+      diferenciável em <m>\big(g(u_0,v_0),h(u_0,v_0)\big)</m>. Então a
+      função <me>F\colon B\to\R,\quad
+      F(u,v)=f\big(g(u,v),h(u,v)\big)</me> é diferenciável em
+      <m>(u_0,v_0)</m> e 
+      <md>
+	<mrow>\dfrac{\partial F}{\partial u}(u_0,v_0)
+	=\dfrac{\partial f}{\partial
+	x}\big(g(u_0,v_0),&amp;h(u_0,v_0)\big)\dfrac{\partial g}{\partial
+	u}(u_0,v_0)+</mrow>
+	<mrow>&amp;\dfrac{\partial f}{\partial
+	y}\big(g(u_0,v_0),h(u_0,v_0)\big)\dfrac{\partial h}{\partial
+	u}(u_0,v_0);</mrow>
+	<mrow>\dfrac{\partial F}{\partial v}(u_0,v_0)
+	=\dfrac{\partial f}{\partial
+	x}\big(g(u_0,v_0),&amp;h(u_0,v_0)\big)\dfrac{\partial g}{\partial
+	v}(u_0,v_0)+</mrow>
+	<mrow>&amp;
+	\dfrac{\partial f}{\partial
+	y}\big(g(u_0,v_0),h(u_0,v_0)\big)\dfrac{\partial h}{\partial
+	v}(u_0,v_0).</mrow>
+      </md>
+    </statement>
+
+    <proof>
+      <p>Lembrando que as derivadas parciais deixam uma das variáveis
+      fixadas, podemos aplicar o <xref ref="teo_cadeia" /> a cada uma
+      das curvas indicadas no plano <m>Oxy</m> da figura abaixo.
+      <figure xml:id="fig_cadeiaturbo">
+	<caption>A composta <m>f\circ\gamma</m>.</caption>
+	<image width="90%" xml:id="cadeiaturbo">
+	  <latex-image>
+	    \begin{tikzpicture}
+            \draw[->] (-5,0) -- (-2,0) node[below] {$u$};
+            \draw[->] (-4.5,-.5) -- (-4.5,2) node[right] {$v$};
+	    \filldraw (-3.5,1) circle (1pt);
+	    \draw[dashed] (-3.5,1) -- (-3.5,0) node[below]{$u_0$};
+	    \draw[dashed] (-3.5,1) -- (-4.5,1) node[left]{$v_0$};
+	    \draw[red] (-4,1)--(-3,1);
+	    \draw[blue] (-3.5,0.5)--(-3.5,1.5);
+	    
+	    \draw[->] (-3.45,1.05) to[bend left] (1.45,0.05);
+	    \draw[->] (-3.45,1.05) to[bend left] (-0.05,1.25);
+	
+	    \draw[->] (-.5,0) -- (2.5,0) node[below] {$x$};
+            \draw[->] (0,-.5) -- (0,2) node[right] {$y$};
+	    \filldraw (1.5,0) circle (1pt) node[above right]{$g(u_0,v_0)$};
+	    \filldraw (0,1.25) circle (1pt) node[above right]{$h(u_0,v_0)$};
+            \filldraw (1.5,1.25) circle (1pt);
+	    \draw[dashed] (1.5,1.25) -- (1.5,0);
+	    \draw[dashed] (1.5,1.25) -- (0,1.25);
+	    
+	    \draw[red,domain=1.25:1.75,samples=10,smooth] plot
+	    (\x,{exp(\x)*1.25/exp(1.5)});
+	    \draw[blue,domain=1.25:1.75,samples=10,smooth] plot
+	    (\x,{1.5*1.25/\x});
+            \draw[->] (-2.5,-2) -- (.5,-2) node[above] {$z$};
+            \draw[->] (1.45,-0.1) -- node[right]{$f$} (-0.95,-1.95);
+	    \filldraw (-1,-2) circle (1pt) node[below, xshift=40]{$f\big(g(u_0,v_0),h(u_0,v_0)\big)$};
+	    \end{tikzpicture}
+	  </latex-image>
+	</image>
+      </figure>
+      </p>
+      <p>Considerando então a curva
+      <m>\beta(u)=\big(g(u,v_0),h(u,v_0)\big)</m>, para a qual
+      <m>\beta'(u)=\big(g_u(u,v_0),h_u(u,v_0)\big)</m> e aplicando a
+      Regra da Cadeia do <xref ref="teo_cadeia" />, temos
+      <md>
+	<mrow>\dfrac{\partial F}{\partial u}(u_0,v_0)&amp;
+	=(f\circ\beta)'(u_0)</mrow>
+	<mrow>&amp;=\big\langle \nabla f(x_0,y_0),\beta'(u_0)\big\rangle=
+      \dfrac{\partial f}{\partial x}(x_0,y_0)\dfrac{\partial g}{\partial
+      u}(u_0,v_0)+\dfrac{\partial f}{\partial y}(x_0,y_0)\dfrac{\partial
+	h}{\partial u}(u_0,v_0),</mrow>
+      </md>
+      onde <m>(x_0,y_0)=\big(g(u_0,v_0),h(u_0,v_0)\big)</m>.
+      </p>
+      <p>Procedendo de maneira análoga para a curva
+      <m>\gamma(v)=\big(g(u_0,v),h(u_0,v)\big)</m>, obtemos a expressão
+      para a derivada em <m>v</m> de <m>F</m>, no ponto
+      <m>(u_0,v_0)</m>.</p>
+    </proof>
+    
+    <remark><p>Omitindo os pontos de aplicação (tenha cuidado ao fazer
+    isso!) e, escrevendo <m>x(u,v)=g(u,v)</m>, <m>y(u,v)=h(u,v)</m> e
+    (abusando muito!) <m>f(u,v)=f\big(g(u,v),h(u,v)\big)</m>, temos uma notação
+    mais sintética para as expressões acima:
+    <me>
+      \dfrac{\partial f}{\partial u}=\dfrac{\partial f}{\partial x}
+      \dfrac{\partial x}{\partial u}+\dfrac{\partial f}{\partial y}
+      \dfrac{\partial y}{\partial u};\qquad
+      \dfrac{\partial f}{\partial v}=\dfrac{\partial f}{\partial x}
+      \dfrac{\partial x}{\partial v}+\dfrac{\partial f}{\partial y}
+      \dfrac{\partial y}{\partial v}.
+    </me></p>
+    <p>De maneira ainda mais curta, podemos escrever <men
+    xml:id="eq_gradparc">f_u=f_x x_u+f_y y_u;\quad f_v=f_x x_v+f_y
+    y_v.</men>
+    </p>
+    </remark>
+  </corollary>
+
+  <p>Podemos, naturalmente, calcular as <em>derivadas segundas</em> de tais
+  compostas. Para tanto, basta lembrar que vamos precisar dos gradientes
+  de <m>f_x</m> e <m>f_y</m>: <me>\nabla
+  f_x(x,y)=\big(f_{xx}(x,y),f_{xy}(x,y)\big); \qquad \nabla
+  f_x(x,y)=\big(f_{xx}(x,y),f_{xy}(x,y)\big).</me> Assim, com as
+  hipóteses de derivadas parciais de <m>f</m> sendo diferenciáveis e
+  <m>\gamma</m> admitindo segunda derivada nos respectivos pontos, e
+  escrevendo <m>\gamma(t)=\big(x(y),y(t)\big)</m>, temos, com a Regra da
+  Cadeia, que
+  <md>
+    <mrow>(f\circ\gamma)''(t_0)&amp;=\Big(\big\langle\nabla
+    f\big(\gamma(t)\big),\gamma'(t)\big\rangle\Big)'(t_0)</mrow>
+    <mrow>=&amp;\Big(f_x\big(\gamma(t)\big)x'(t)+
+    f_y\big(\gamma(t)\big)y'(t)\Big)'(t_0).</mrow>
+  </md>
+  </p>
+
+  <p>Derivando cada parcela com a regra do produto e usando novamente a
+  Regra da Cadeia (aplicada às derivadas parciais de <m>f</m>), temos
+  <md>
+    <mrow>\Big(f_x\big(\gamma(t)\big)&amp;x'(t)+
+    f_y\big(\gamma(t)\big)y'(t)\Big)'(t_0)</mrow>
+    <mrow>&amp;=\big\langle \nabla
+    f_x\big(\gamma(t_0)\big),\gamma'(t_0)\Big\rangle x'(t_0)+
+    f_x\big(\gamma(t_0)\big)x''(t_0)+</mrow>
+    <mrow>&amp;\big\langle \nabla
+    f_y\big(\gamma(t_0)\big),\gamma'(t_0)\Big\rangle y'(t_0)+
+    f_y\big(\gamma(t_0)\big)y''(t_0).</mrow>
+  </md>
+  </p>
+
+  <p>Abrindo os produtos internos usando <xref ref="eq_gradparc" /> e
+  escrevendo tudo nas notações mais sintéticas (cuidado com os pontos de
+  aplicação!), temos
+  <mdn>
+    <mrow number="no">(f\circ\gamma)''(t_0)
+    =f_{xx}&amp;(x_0,y_0)\big(x'(t_0)\big)^2+f_{yy}(x_0,y_0)\big(y'(t_0)\big)^2+</mrow>
+    <mrow
+	number="no">&amp;\big(f_{xy}(x_0,y_0)+f_{yx}(x_0,y_0)\big)x'(t_0)y'(t_0)+</mrow>
+    <mrow
+	xml:id="eq_cadeiaderseg">&amp;f_x\big(\gamma(t_0)\big)x''(t_0)+
+    f_y\big(\gamma(t_0)\big)y''(t_0).</mrow>
+  </mdn>
+  </p>
+
+  <p>No caso especial em que <m>f</m> é de classe <m>\mathscr{C}^2</m> em
+  <m>(x_0,y_0)</m>, usamos o <xref ref="teo_schwarz" /> para escrever
+  <mdn>
+    <mrow number="no">(f\circ\gamma)''(&amp;t_0)=</mrow>
+    <mrow
+    number="no">&amp;f_{xx}(x_0,y_0)\big(x'(t_0)\big)^2+f_{yy}(x_0,y_0)\big(y'(t_0)\big)^2+</mrow>
+    <mrow
+    xml:id="eq_cadeiadersegc2">&amp;2f_{xy}(x_0,y_0)x'(t_0)y'(t_0)+f_x\big(\gamma(t_0)\big)x''(t_0)+
+    f_y\big(\gamma(t_0)\big)y''(t_0).</mrow>
+  </mdn>
+  </p>
+
+  <p>Assim como usamos o <xref ref="teo_cadeia" /> para provar o <xref
+  ref="cor_cadeiaturbo" />, é possível usar as expressões acima para
+  calcular as derivadas parciais de segunda ordem de compostas do tipo
+  <m>f\big(g(u,v),h(u,v)\big)</m>. Fazemos isso no <xref
+  ref="cadeia6" />.</p>
+
+  <definition xml:id="def_derdir">
+    <title>(Derivada Direcional)</title>
+    
+    <statement>
+      <p>
+	Sejam <m>f\colon A\subseteq\R^2\to\R</m> uma função e
+	<m>\vec{v}\in\R^2</m> um vetor unitário. A <term>derivada
+	direcional</term> de <m>f</m>, na direção de <m>\vec{v}</m>, em
+	<m>(x_0,y_0)</m> é dada por <me>\dfrac{\partial f}{\partial
+	\vec{v}}(x_0,y_0)=\lim\limits_{t\to
+	0}\dfrac{f\big((x_0,y_0)+t\vec{v}\big)-f(x_0,y_0)}{t}.</me>
+      </p>
+    </statement>
+    <remark>No caso especial em que <m>\vec{v}=\vec{e_1}=(1,0)</m> ou
+    <m>\vec{v}=\vec{e_2}=(0,1)</m>, recuperamos, respectivamente,
+    <m>f_x(x_0,y_0)</m> e <m>f_y(x_0,y_0)</m>. A interpretação
+    geométrica é análoga à feita na <xref ref="obs_apintderpar" />, com
+    cortes por planos não paralelos aos eixos <m>Ox</m> ou <m>Oy</m>.
+    </remark>
+  </definition>
+
+  <p>Quando a função <m>f</m> é diferenciável, o
+  vetor gradiente determina completamente as derivadas direcionais:</p>
+
+  <proposition xml:id="prop_derdir">
+    <statement>
+      Sejam <m>f\colon A\subseteq\R^2\to\R</m> uma função diferenciável
+      em <m>(x_0,y_0)</m> e <m>\vec{v}</m> um vetor unitário. Então
+      <me>\dfrac{\partial f}{\partial\vec{v}}(x_0,y_0)=\big\langle\nabla
+      f(x_0,y_0),\vec{v}\big\rangle.</me>
+    </statement>
+    <proof>
+      Basta parametrizar um segmento de reta que passa por
+      <m>(x_0,y_0)</m> e tem a direção de <m>\vec{v}</m>:
+      <m>\gamma(t)=(x_0,y_0)+t\vec{v}</m>, <m>t\in
+      (-\epsilon,\epsilon)</m> (com <m>\epsilon &gt; 0</m>). Assim,
+      <me>\dfrac{\partial f}{\partial
+	\vec{v}}(x_0,y_0)=\lim\limits_{t\to
+	0}\dfrac{f\big((x_0,y_0)+t\vec{v}\big)-f(x_0,y_0)}{t}=(f\circ\gamma)'(t_0)=\big\langle\nabla
+      f(x_0,y_0),\vec{v}\big\rangle.</me>
+    </proof>
+  </proposition>
+
+  <remark>
+    Se <m>\gamma:I\subseteq\R\to\R^2</m> é qualquer curva derivável em
+    <m>t_0\in I</m> tal que <m>\gamma(t_0)=(x_0,y_0)</m> e
+    <m>\gamma'(t_0)=\vec{v}</m>, então
+    <me>(f\circ\gamma)'(t_0)=\big\langle\nabla
+    f(x_0,y_0),\gamma'(t_0)\big\rangle=\big\langle\nabla
+    f(x_0,y_0),\vec{v}\big\rangle=\dfrac{\partial f}{\partial
+    \vec{v}}(x_0,y_0),</me> ou seja, a derivada de <m>f</m> ao longo de
+    <m>\gamma</m> em <m>t_0</m> depende apenas de
+    <m>\gamma'(t_0)</m>. Em outras palavras, se duas curvas passam por
+    um mesmo ponto do plano e têm o mesmo tangente nesse ponto, então
+    qualquer função diferenciável terá a mesma derivada quando composta
+    com essas curvas naquele ponto.
+  </remark>
+
+  <remark>
+    <p>A existência de derivadas direcionais em todas as direções não
+    garante diferenciabilidade. Por exemplo, vimos que a função do <xref
+    ref="dif5" /> não é diferenciável na origem, mas admite derivadas
+    direcionais nesse ponto em todas as direções: se
+    <m>\vec{v}=(a,b)</m>, com <m>a^2+b^2=1</m>, temos:
+    <me>\dfrac{\partial f}{\partial\vec{v}}(0,0)=\lim\limits_{t\to
+    0}\dfrac{f(at,bt)-f(0,0)}{t}=\lim\limits_{t\to
+    0}\dfrac{a^3t}{t}=a^3.</me></p>
+    <p>Em vista da fórmula na <xref ref="prop_derdir" /> acima, sabemos
+    a derivada direcional de qualquer função diferenciável deve depender
+    linearmente das coordenadas da direção em que estamos derivando.</p>
+  </remark>
+
+  <proposition xml:id="prop_crescmax"> 
+    <title>Direções de crescimento máximo</title>
+    <statement>
+      Se <m>f\colon A\subseteq\R^2\to\R</m> uma função diferenciável
+      em <m>(x_0,y_0)</m>, então a direção em que <m>f</m> tem a maior
+      taxa de variação nesse ponto é a de <m>\nabla f (x_0,y_0)</m>.
+    </statement>
+    <proof>
+      <p>
+      Basta olhar para a definição geométrica do produto escalar em
+      <m>\R^2</m>:
+      <me>\dfrac{\partial f}{\partial\vec{v}}(x_0,y_0)=\big\langle\nabla
+      f(x_0,y_0),\vec{v}\big\rangle=\|\nabla
+      f(x_0,y_0)\|\|\vec{v}\|\cos\theta</me>.</p>
+      <p>Como <m>(x_0,y_0)</m> está fixado, <m>\|\nabla
+      f(x_0,y_0)\|\|\vec{v}\|</m> é uma constant e
+      <m>\|\vec{v}\|=1</m>. Desta forma o valor da derivada direcional
+      depende somente <m>\theta</m> e assumirá seu máximo, quando
+      <m>\theta=0</m>, ou seja, quando <m>\vec{v}=\dfrac{\nabla
+      f(x_0,y_0)}{\|\nabla f(x_0,y_0)\|}</m></p>
+    </proof>
+  </proposition>
+
+  <p>O vídeo abaixo ilustra uma aplicação interessante da <xref
+  ref="prop_crescmax" /></p>
+  <figure xml:id="vid_crescmax">
+    <caption>Trajetórias ortogonais a curvas de nível.</caption>
+    <video youtube="fCsK9Hnap_I" aspect="16:9" />
+  </figure>
+  
+  <p>Fechamos esta revisão com uma curiosidade:</p>
+  
+  <fact xml:id="fato_outrasdir">
+    <title>Outras direções</title>
+    <p>Podemos generalizar um pouco o resultado acima: se uma função é
+    diferenciável em <m>(x_0,y_0)</m>, basta conhecer as derivadas
+    direcionais nesse ponto, em duas direções linearmente independentes,
+    para determinarmos a derivada direcional em <m>(x_0,y_0)</m> em
+    qualquer direção. Para tanto, se <m>\vec{u}</m> e <m>\vec{v}</m> são
+    vetores unitários que definem tais direções, temos que
+    <m>\big\{\vec{u},\vec{v}\big\}</m> é uma base de <m>\R^2</m> e,
+    portanto
+    <me>\vec{e_1}=\alpha_1\vec{u}+\beta_1\vec{v}\quad\text{e}\quad
+    \vec{e_2}=\alpha_2\vec{u}+\beta_2\vec{v}.</me></p>
+  
+    <p>Desta forma, temos <me>f_x(x_0,y_0)=\dfrac{\partial
+    f}{\partial\vec{e_1}}(x_0,y_0)=\big\langle\nabla
+    f(x_0,y_0),\vec{e_1}\big\rangle=\big\langle\nabla
+    f(x_0,y_0),\alpha_1\vec{u}+\beta_1\vec{v}\big\rangle.</me>
+    </p>
+
+    <p>Expandindo o produto interno pela sua linearidade e procedento de
+    maneira análoga com o vetor <m>\vec{e_2}</m>, temos então que 
+    <md>
+      <mrow>f_x(x_0,y_0)&amp;=\alpha_1\dfrac{\partial f}{\partial
+      \vec{u}}(x_0,y_0)+\beta_1\dfrac{\partial f}{\partial
+      \vec{v}}(x_0,y_0);</mrow>
+      <mrow>f_y(x_0,y_0)&amp;=\alpha_2\dfrac{\partial f}{\partial
+      \vec{u}}(x_0,y_0)+\beta_2\dfrac{\partial f}{\partial
+      \vec{v}}(x_0,y_0).</mrow>
+    </md></p>
+
+    <p>Mais frequentemente, temos as coordenadas de <m>\vec{u}</m> e
+    <m>\vec{v}</m> na base canônica, digamos <m>\vec{u}=(a,b)</m> e
+    <m>\vec{v}=(c,d)</m>. Procedendo de maneira inversa, temos um sistema
+    para determinar o gradiente de <m>f</m> (e consequentemente todas as
+    derivadas direcionais):
+    <me>
+      \begin{cases}
+      \dfrac{\partial f}{\partial
+      \vec{u}}(x_0,y_0)&amp;=af_x(x_0,y_0)+bf_y(x_0,y_0)\\
+      \dfrac{\partial f}{\partial
+      \vec{v}}(x_0,y_0)&amp;=cf_x(x_0,y_0)+df_y(x_0,y_0)
+      \end{cases},
+    </me>
+    cujas soluções são dadas invertendo-se a matriz <m> \begin{pmatrix}
+    a&amp;b\\ c&amp;d \end{pmatrix}</m> de coeficientes, o que é possível
+    se e somente se os vetores <m>\vec{u}</m> e <m>\vec{v}</m> são
+    linearmente independentes.
+    </p>
+  </fact>
+</section>

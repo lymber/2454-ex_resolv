@@ -1,0 +1,434 @@
+INFO    : PreTeXt project found in `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv`.
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'exfunca'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpb27r919k/exfunca.asy to /tmp/user/1000/tmpb27r919k/exfunca.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'exfuncb'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpon_1nq24/exfuncb.asy to /tmp/user/1000/tmpon_1nq24/exfuncb.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'surf_level'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpberagwl9/surf_level.asy to /tmp/user/1000/tmpberagwl9/surf_level.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex5-7b'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpg8jp0g43/ex5-7b.asy to /tmp/user/1000/tmpg8jp0g43/ex5-7b.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex5-9'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmprq2iwyiu/ex5-9.asy to /tmp/user/1000/tmprq2iwyiu/ex5-9.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex5-14'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmp3rdpbx6c/ex5-14.asy to /tmp/user/1000/tmp3rdpbx6c/ex5-14.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex5-17'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmp6vwe72da/ex5-17.asy to /tmp/user/1000/tmp6vwe72da/ex5-17.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex2-4'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpventlcfe/ex2-4.asy to /tmp/user/1000/tmpventlcfe/ex2-4.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex2-8'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmprnsfxond/ex2-8.asy to /tmp/user/1000/tmprnsfxond/ex2-8.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex3-2a'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpxdj03fmh/ex3-2a.asy to /tmp/user/1000/tmpxdj03fmh/ex3-2a.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex3-2d'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpsr83n5fi/ex3-2d.asy to /tmp/user/1000/tmpsr83n5fi/ex3-2d.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex4-3'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpptmj62gs/ex4-3.asy to /tmp/user/1000/tmpptmj62gs/ex4-3.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex4-5'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpbmsnilen/ex4-5.asy to /tmp/user/1000/tmpbmsnilen/ex4-5.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'ex4-7'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmp6t1rrx8m/ex4-7.asy to /tmp/user/1000/tmp6t1rrx8m/ex4-7.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'exmaxminlocapos'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmp4obutg11/exmaxminlocapos.asy to /tmp/user/1000/tmp4obutg11/exmaxminlocapos.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'exmaxminlocaneg'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpqpm5pfo5/exmaxminlocaneg.asy to /tmp/user/1000/tmpqpm5pfo5/exmaxminlocaneg.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'exmaxminlocanul'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpulc28_lf/exmaxminlocanul.asy to /tmp/user/1000/tmpulc28_lf/exmaxminlocanul.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabp1q1c-2023'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmp2th_jfec/gabp1q1c-2023.asy to /tmp/user/1000/tmp2th_jfec/gabp1q1c-2023.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabp2aq2-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpgay7e_wf/gabp2aq2-2022.asy to /tmp/user/1000/tmpgay7e_wf/gabp2aq2-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabpsubq21-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpwyif9kdy/gabpsubq21-2022.asy to /tmp/user/1000/tmpwyif9kdy/gabpsubq21-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabpsubq22-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmp69n6zcct/gabpsubq22-2022.asy to /tmp/user/1000/tmp69n6zcct/gabpsubq22-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabpsubq23-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmprh2e88l3/gabpsubq23-2022.asy to /tmp/user/1000/tmprh2e88l3/gabpsubq23-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabpsubq24-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpbda7av9h/gabpsubq24-2022.asy to /tmp/user/1000/tmpbda7av9h/gabpsubq24-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabpsubq25-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmphh6ihvk6/gabpsubq25-2022.asy to /tmp/user/1000/tmphh6ihvk6/gabpsubq25-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabpsubq26-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpphe0taz1/gabpsubq26-2022.asy to /tmp/user/1000/tmpphe0taz1/gabpsubq26-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabpsubq3'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpycpxtllh/gabpsubq3.asy to /tmp/user/1000/tmpycpxtllh/gabpsubq3.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabpsubq4'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpab8o3jqs/gabpsubq4.asy to /tmp/user/1000/tmpab8o3jqs/gabpsubq4.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabprecq2-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpntsm9wtg/gabprecq2-2022.asy to /tmp/user/1000/tmpntsm9wtg/gabprecq2-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabprecq4-2022'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpxutz5ics/gabprecq4-2022.asy to /tmp/user/1000/tmpxutz5ics/gabprecq4-2022.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabp1q7-2020'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpd1306qvx/gabp1q7-2020.asy to /tmp/user/1000/tmpd1306qvx/gabp1q7-2020.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'gabp1q92-2020'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpjaoj184e/gabp1q92-2020.asy to /tmp/user/1000/tmpjaoj184e/gabp1q92-2020.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'fig_parabeli-graf'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpwgcski21/fig_parabeli-graf.asy to /tmp/user/1000/tmpwgcski21/fig_parabeli-graf.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'fig_parabhip-graf'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpbjl5w5p2/fig_parabhip-graf.asy to /tmp/user/1000/tmpbjl5w5p2/fig_parabhip-graf.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'fig_exemplonivel-graf'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmp958mxa13/fig_exemplonivel-graf.asy to /tmp/user/1000/tmp958mxa13/fig_exemplonivel-graf.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'apderpar'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpsc3jzha6/apderpar.asy to /tmp/user/1000/tmpsc3jzha6/apderpar.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'dercont'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpbj_p3ovv/dercont.asy to /tmp/user/1000/tmpbj_p3ovv/dercont.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'segder'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpam8lciqh/segder.asy to /tmp/user/1000/tmpam8lciqh/segder.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'apesffol'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpqe10qlq7/apesffol.asy to /tmp/user/1000/tmpqe10qlq7/apesffol.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'aphipfol'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpe3y1_f0v/aphipfol.asy to /tmp/user/1000/tmpe3y1_f0v/aphipfol.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'appltgsupniv'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpymp0abcm/appltgsupniv.asy to /tmp/user/1000/tmpymp0abcm/appltgsupniv.pdf
+INFO    : converting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/publication/publication.ptx', 'subtree': 'appltgintsupniv'}
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-asymptote.xsl
+INFO    : converting /tmp/user/1000/tmpt4skiilf/appltgintsupniv.asy to /tmp/user/1000/tmpt4skiilf/appltgintsupniv.pdf
+INFO    : converting Sage diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to PDF graphics for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/sageplot
+INFO    : extracting Sage diagrams from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-sageplot.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-sageplot.xsl
+INFO    : converting taylor.sage to taylor.pdf
+INFO    : Checking for update for required playwright chromium browser.
+INFO    : using playwright package to create previews for interactives from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/preview
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-interactive.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-interactive.xsl
+INFO    : discovering source file's directory name: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source
+INFO    : verifying and expanding input directory: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/../generated-assets
+INFO    : input directory expanded to absolute path: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets
+INFO    : verifying and expanding input directory: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/../assets
+INFO    : input directory expanded to absolute path: /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/assets
+INFO    : Opening subprocess http.server with port=8888
+INFO    : Closing http.server subprocess
+INFO    : downloading YouTube thumbnails from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : downloading http://i.ytimg.com/vi/7qDIxKTk6Qc/default.jpg as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube/video-1.jpg...
+INFO    : YouTube thumbnail download complete
+INFO    : downloading YouTube thumbnails from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : downloading http://i.ytimg.com/vi/TBGL6NZ7HEk/default.jpg as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube/video-2.jpg...
+INFO    : YouTube thumbnail download complete
+INFO    : downloading YouTube thumbnails from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : downloading http://i.ytimg.com/vi/fCsK9Hnap_I/default.jpg as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube/video-3.jpg...
+INFO    : YouTube thumbnail download complete
+INFO    : downloading YouTube thumbnails from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : downloading http://i.ytimg.com/vi/2e9JD35yfL0/default.jpg as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube/video-4.jpg...
+INFO    : YouTube thumbnail download complete
+INFO    : downloading YouTube thumbnails from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-youtube.xsl
+INFO    : downloading http://i.ytimg.com/vi/18GrQBXVlJ4/default.jpg as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/youtube/video-5.jpg...
+INFO    : YouTube thumbnail download complete
+INFO    : Generating generic video preview, aka "play button" into /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/play-button
+INFO    : manufacturing QR codes from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : creating URL with content "interactive-1.html" as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode/interactive-1.png...
+INFO    : QR code creation complete
+INFO    : manufacturing QR codes from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : creating URL with content "https://www.youtube.com/watch?v=TBGL6NZ7HEk" as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode/video-2.png...
+INFO    : QR code creation complete
+INFO    : manufacturing QR codes from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : creating URL with content "https://www.youtube.com/watch?v=7qDIxKTk6Qc" as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode/video-1.png...
+INFO    : QR code creation complete
+INFO    : manufacturing QR codes from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : creating URL with content "https://www.youtube.com/watch?v=fCsK9Hnap_I" as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode/video-3.png...
+INFO    : QR code creation complete
+INFO    : manufacturing QR codes from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : creating URL with content "https://www.youtube.com/watch?v=18GrQBXVlJ4" as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode/video-5.png...
+INFO    : QR code creation complete
+INFO    : manufacturing QR codes from /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx for placement in /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    : successful application of /home/lymber/.ptx/xsl/extract-qrcode.xsl
+INFO    : creating URL with content "https://www.youtube.com/watch?v=2e9JD35yfL0" as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/generated-assets/qrcode/video-4.png...
+INFO    : QR code creation complete
+INFO    : Removing temporary directory /tmp/user/1000/tmpb27r919k
+INFO    : Removing temporary directory /tmp/user/1000/tmpon_1nq24
+INFO    : Removing temporary directory /tmp/user/1000/tmpberagwl9
+INFO    : Removing temporary directory /tmp/user/1000/tmpg8jp0g43
+INFO    : Removing temporary directory /tmp/user/1000/tmprq2iwyiu
+INFO    : Removing temporary directory /tmp/user/1000/tmp3rdpbx6c
+INFO    : Removing temporary directory /tmp/user/1000/tmp6vwe72da
+INFO    : Removing temporary directory /tmp/user/1000/tmpventlcfe
+INFO    : Removing temporary directory /tmp/user/1000/tmprnsfxond
+INFO    : Removing temporary directory /tmp/user/1000/tmpxdj03fmh
+INFO    : Removing temporary directory /tmp/user/1000/tmpsr83n5fi
+INFO    : Removing temporary directory /tmp/user/1000/tmpptmj62gs
+INFO    : Removing temporary directory /tmp/user/1000/tmpbmsnilen
+INFO    : Removing temporary directory /tmp/user/1000/tmp6t1rrx8m
+INFO    : Removing temporary directory /tmp/user/1000/tmp4obutg11
+INFO    : Removing temporary directory /tmp/user/1000/tmpqpm5pfo5
+INFO    : Removing temporary directory /tmp/user/1000/tmpulc28_lf
+INFO    : Removing temporary directory /tmp/user/1000/tmp2th_jfec
+INFO    : Removing temporary directory /tmp/user/1000/tmpgay7e_wf
+INFO    : Removing temporary directory /tmp/user/1000/tmpwyif9kdy
+INFO    : Removing temporary directory /tmp/user/1000/tmp69n6zcct
+INFO    : Removing temporary directory /tmp/user/1000/tmprh2e88l3
+INFO    : Removing temporary directory /tmp/user/1000/tmpbda7av9h
+INFO    : Removing temporary directory /tmp/user/1000/tmphh6ihvk6
+INFO    : Removing temporary directory /tmp/user/1000/tmpphe0taz1
+INFO    : Removing temporary directory /tmp/user/1000/tmpycpxtllh
+INFO    : Removing temporary directory /tmp/user/1000/tmpab8o3jqs
+INFO    : Removing temporary directory /tmp/user/1000/tmpntsm9wtg
+INFO    : Removing temporary directory /tmp/user/1000/tmpxutz5ics
+INFO    : Removing temporary directory /tmp/user/1000/tmpd1306qvx
+INFO    : Removing temporary directory /tmp/user/1000/tmpjaoj184e
+INFO    : Removing temporary directory /tmp/user/1000/tmpwgcski21
+INFO    : Removing temporary directory /tmp/user/1000/tmpbjl5w5p2
+INFO    : Removing temporary directory /tmp/user/1000/tmp958mxa13
+INFO    : Removing temporary directory /tmp/user/1000/tmpsc3jzha6
+INFO    : Removing temporary directory /tmp/user/1000/tmpbj_p3ovv
+INFO    : Removing temporary directory /tmp/user/1000/tmpam8lciqh
+INFO    : Removing temporary directory /tmp/user/1000/tmpqe10qlq7
+INFO    : Removing temporary directory /tmp/user/1000/tmpe3y1_f0v
+INFO    : Removing temporary directory /tmp/user/1000/tmpymp0abcm
+INFO    : Removing temporary directory /tmp/user/1000/tmpt4skiilf
+INFO    : Removing temporary directory /tmp/user/1000/tmpi_bi8oad
+INFO    : Removing temporary directory /tmp/user/1000/tmptoest26n
+INFO    : Removing temporary directory /tmp/user/1000/tmppzjn148b
+INFO    : Removing temporary directory /tmp/user/1000/tmp51wanppp
+INFO    : Removing temporary directory /tmp/user/1000/tmpvfmgb2ql
+INFO    : Removing temporary directory /tmp/user/1000/tmp68sn1qmz
+INFO    : Removing temporary directory /tmp/user/1000/tmpshl4cp0u
+INFO    : Removing temporary directory /tmp/user/1000/tmpowi5rp85
+INFO    : Removing temporary directory /tmp/user/1000/tmp3qd1cl1s
+INFO    : Removing temporary directory /tmp/user/1000/tmp145qzv9b
+INFO    : Removing temporary directory /tmp/user/1000/tmpko263xlc
+INFO    : Removing temporary directory /tmp/user/1000/tmpq38urij7
+INFO    : Removing temporary directory /tmp/user/1000/tmp2h1anyvm
+INFO    : Preparing to build into /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/output/print-latex.
+INFO    : converting /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to LaTeX as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/output/print-latex/main.tex
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/pretext-latex.xsl
+CRITICAL: [Errno 2] No such file or directory
+INFO    : ------------------------
+INFO    : While running pretext, the following errors occurred:
+

@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section  xml:id="ap_diff" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Derivadas Parciais e Diferenciabilidade</title>
+
+  <introduction>
+    <p>Apresentamos a seguir as principais definições e resultados sobre
+    derivadas parciais, diferenciabilidade e plano tangente ao gráfico
+    de uma função, sempre ilustrados com exemplos e contra-exemplos.</p>
+  </introduction>
+
+  <definition xml:id="def_derpar">
+    <title>(Derivadas parciais)</title>
+    
+    <statement>
+      <p>
+	Sejam <m>f\colon A\subseteq\R^2\to\R</m> uma função e
+	<m>(x_0,y_0)</m> um ponto no <url
+	href="https://pt.wikipedia.org/wiki/Interior_(topologia)"
+	visual="https://pt.wikipedia.org/wiki/Interior_(topologia)">interior</url>
+	de <m>A</m>. As <term>derivadas parciais</term> de <m>f</m> em
+	<m>(x_0,y_0)</m> são dadas por
+	<md>
+	  <mrow>\dfrac{\partial f}{\partial x}(x_0,y_0)
+	  &amp;=\lim\limits_{h\to
+	  0}\dfrac{f(x_0+h,y_0)-f(x_0,y_0)}{h};</mrow>
+	  <mrow>\dfrac{\partial f}{\partial y}(x_0,y_0)
+	  &amp;=\lim\limits_{k\to
+	  0}\dfrac{f(x_0,y_0+k)-f(x_0,y_0)}{k}.</mrow>
+	</md>
+      </p>
+
+      <p>É frequente na literatura encontrar <m>f_x(x_0,y_0)</m>
+      indicando <m>\dfrac{\partial f}{\partial x}(x_0,y_0)</m> e
+      <m>f_y(x_0,y_0)</m> no lugar de <m>\dfrac{\partial f}{\partial
+      y}(x_0,y_0)</m>.</p>
+    </statement>
+  </definition>
+  
+  <remark xml:id="obs_apintderpar">
+    <p>Na definição acima apenas uma das coordenadas varia, o que se
+    generalizaria para derivadas parciais de funções com mais de duas
+    variáveis. Veja abaixo uma figura que dá a interpretação geométrica
+    das derivadas parciais num ponto.
+    <figure xml:id="fig_apderpar">
+      <caption>Interpretação das derivadas parciais</caption>
+      <image xml:id="apderpar" archive="html" width="50%">
+	<description>Interpretação das derivadas parciais</description>
+	<asymptote>
+	  import graph3;
+	  size(10cm);
+	  
+	  currentprojection=orthographic(5,2,3);
+	  currentlight=light(white,(-2,2,2),(2,-2,-2));
+	  
+	  triple f(pair z){
+	  real r=z.x;
+	  real t=z.y;
+	  real x=r*cos(t);
+	  real y=r*sin(t);
+	  real z=1-4*(x)^2-3*(y)^2;
+	  return (x,y,z);
+	  }
+	  
+	  surface grafico=surface(f,(0,0),(0.5,2*pi),Spline);
+	  surface planoy=shift(0,1/8,0)*surface(plane(2*X,2*Z,-.5*X-.5*Z));
+	  surface planox=shift(1/4,0,0)*surface(plane(2*Y,2*Z,-.5*Y-.5*Z));
+	  path3 curvax=graph(new triple(real x) {
+	  return (x,1/8,1-4*x^2-3*(1/8)^2);},-1/4,3/8,20,operator ..);
+	  path3 curvay=graph(new triple(real y) {
+	  return (1/4,y,1-4*(1/4)^2-3*y^2);},-1/4,3/8,20,operator ..);
+	  
+	  draw(grafico,lightblue);//+opacity(0.6));
+	  draw(planoy, green+opacity(0.3));
+	  draw(planox, red+opacity(0.3));
+	  draw(curvax,1bp+green);
+	  draw(curvay,1bp+red);
+	  
+	  triple p0=(1/4,0,1-4*(1/4)^2+2*(1/8)^2),
+	  p1=(1/4,(1-(1/4)^2+5*(1/8)^2)/(3/4),0),
+	  q0=(0,1/8,1+4*(1/4)^2-3*(1/8)^2),
+	  q1=((1+4*(1/4)^2-3*(1/8)^2)/2,1/8,0);
+	  draw(p0--p1,1bp+black);
+	  draw(q0--q1,1bp+black);
+	  draw((1/4,0,0)--(1/4,1.5,0),dashed);
+	  draw((0,1/8,0)--(1.5,1/8,0),dashed);
+	  dot((1/4,1/8,1-4*(1/4)^2-3*(1/8)^2));
+	  
+	  draw(arc(q1,q1+0.1*X,q1+0.1*(-cos(atan(-2)),0,sin(atan(2)))),
+	  L=Label("$\alpha$",position=MidPoint));
+	  draw(arc(p1,p1+0.1*Y,p1+0.1*(0,-cos(atan(-3/4)),sin(atan(3/4)))),
+	  L=Label("$\beta$"));
+          
+	  xaxis3("$x$",Arrow3);
+	  yaxis3("$y$",Arrow3);
+	  zaxis3("$z$",Arrow3);
+	</asymptote>
+      </image>
+    </figure>
+    </p>
+    <p>Assim, <m>\dfrac{\partial f}{\partial x}(x_0,y_0)=\tan \alpha</m> e
+    <m>\dfrac{\partial f}{\partial y}(x_0,y_0)=\tan \beta</m>.</p>
+    
+    <p>Fixando uma das variáveis de <m>f</m>, digamos <m>y=y_0</m> (pense
+    nela como uma constante real), temos a função de uma variável
+    <m>g(x)=f(x,y_0)</m>. Se <m>g</m> derivável em <m>x_0</m>, então
+    <m>f_x(x_0,y_0)=g'(x_0)</m>. Analogamente, se <m>h(y)=f(x_0,y)</m> é
+    derivável em <m>y_0</m>, então <m>f_y(x_0,y_0)=h'(y_0)</m>.</p>
+  </remark>
+
+  <remark>Aqui aparece uma primeira diferença em relação ao cálculo em
+  uma variável: lá toda função derivável num ponto é automaticamente
+  contínua nesse ponto; aqui a existência das derivadas parciais em
+  <m>(x_0,y_0)</m> não garante a continuidade da função em
+  <m>(x_0,y_0)</m>. Veja um exemplo a seguir.</remark>
+
+  <example xml:id="exemplo_parcont">
+    <p>A função <m>f(x,y)=\begin{cases}
+    \dfrac{xy}{x^2+y^2},&amp;(x,y)\neq (0,0);\\
+    \hfill 0,&amp; (x,y)=(0,0)\end{cases}</m> admite derivadas parciais em
+    <m>(0,0)</m>, mas não é contínua em <m>(0,0)</m>.
+    </p>
+
+    <p>Precisamos calcular as derivadas parciais pela definição, já que
+    a regras de derivação do quociente não se aplica (denominador se
+    anula no ponto estudado). Então
+    <md>
+      <mrow>\dfrac{\partial f}{\partial x}(0,0)
+      &amp;=\lim\limits_{h\to 0}\dfrac{f(0+h,0)-f(0,0)}{h}
+      =\lim\limits_{h\to 0}\dfrac{\dfrac{h\cdot 0}{h^2+0^2}-0}{h}
+      =0;</mrow>
+      <mrow>\dfrac{\partial f}{\partial y}(0,0)
+      &amp;=\lim\limits_{k\to 0}\dfrac{f(0,0+k)-f(0,0)}{k}
+      =\lim\limits_{k\to 0}\dfrac{\dfrac{0\cdot k}{0^2+k^2}-0}{k}
+      =0,</mrow>
+    </md>
+    o que era de se esperar, uma vez que <m>f</m> é constante (nula) ao
+    longo dos eixos coordenados.
+    </p>
+    <p>Porém, ao longo da curva <m>\gamma(t)=(t,t)</m>, temos
+    <me>\lim\limits_{t\to 0}f\big(\gamma(t)\big)=\lim\limits_{t\to 0}
+    \dfrac{t^2}{2t^2}=\dfrac{1}{2}\neq 0=f(0,0),</me> mostrando, de
+    acordo com o <xref ref="teo_limcurvas" />, que <m>f</m> não é
+    contínua em <m>(0,0)</m>.</p>
+    <p>Veja o gráfico de <m>f</m> e verifique que o comportamento ao
+    longo dos eixos <m>Ox</m> e <m>Oy</m> não dertermina o que acontece
+    em outras direções no domínio.
+    <figure xml:id="fig_apdercont">
+      <caption>Gráfico de função e cortes de nível</caption>
+      <image xml:id="dercont" archive="html" width="50%">
+	<description>Curvas de nível</description>
+	<asymptote>
+	  import graph3;
+	  size(10cm);
+      
+	  currentprojection=orthographic(5,2,3);
+	  limits((-1.1,-1.1,-3/4),(1.1,1.1,3/4));
+	  currentlight=light(white,(-2,2,2),(2,-2,-2));
+	  
+	  triple f(pair z) {
+	  real r=z.x;
+	  real t=z.y;
+	  real x=r*cos(t);
+	  real y=r*sin(t);
+	  real z=cos(t)*sin(t);
+	  return (x,y,z);
+	  }
+	  
+	  draw(surface(f,(0.01,0),(1,2*pi),Spline),lightblue,blue);
+	  
+	  dot((0,0,0),lightblue);
+	  
+	  xaxis3("$x$",Arrow3);
+	  yaxis3("$y$",Arrow3);
+	  zaxis3("$z$",Arrow3);
+	</asymptote>
+      </image>
+    </figure>
+    </p>
+  </example>
+  
+  <p>Isto mostra que precisamos de algo "mais forte" do que exigir
+  apenas a existência de derivadas parciais sequeremos aproximar a
+  função por algo linear numa vizinhança de um ponto, independentemente
+  como nos aproximamos desse ponto (e não apenas paralelamente aos eixos
+  coordenados, como ocorre nas derivadas parciais).</p>
+
+  <definition xml:id="def_diff">
+    <title>(Diferenciabilidade e Plano Tangente)</title>
+    
+    <statement>
+      <p>
+	Sejam <m>f\colon A\subseteq\R^2\to\R</m> uma função e
+	<m>(x_0,y_0)</m> um ponto no interior de <m>A</m>. A função
+	<m>f</m> é <term>diferenciável</term> em <m>(x_0,y_0)</m> se
+	<me>
+	  \lim\limits_{(h,k)\to(0,0)}
+	  \dfrac{f(x_0+h,y_0+k)-f(x_0,y_0)-f_x(x_0,y_0)h-f_y(x_0,y_0)k}
+	  {\sqrt{h^2+k^2}}=0.
+	</me>
+      </p>
+
+      <p>Se <m>f</m> é diferenciável em <m>(x_0,y_0)</m>, o <term>plano
+      tangente</term> ao seu gráfico no ponto
+      <m>\big(x_0,y_0,f(x_0,y_0)\big)</m> tem equação
+      <me>\pi\colon
+      f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)-z+f(x_0,y_0)=0.</me>
+      </p>
+    </statement>
+  </definition>
+
+  <p>Com isso, o <term>vetor normal</term> ao gráfico nesse pontos é
+  <me>n_f(x_0,y_0)=\big(f_x(x_0,y_0),f_y(x_0,y_0),-1\big),</me> e a
+  equação da <term>reta normal</term> naquele ponto é
+  <me>r\colon (x,yz)=\big(x_0,y_0,f(x_0,y_0)\big)+\lambda
+  n_f(x_0,y_0),\quad\\lambda\in\R.</me></p>
+
+  <remark>
+    A equação do plano tangente pode ser reescrita como uma função afim
+    <me>z(x,y)=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0). </me> Com isso,
+    de maneira intuitiva, a definição de diferenciabilidade diz que a
+    diferença entre o valor de <m>f(x_0+h,y_0+k)</m> e a sua estimativa
+    por <m>z(x_0+h,y_0+k)</m> tende a zero "mais rapidamente" que a
+    distância entre <m>(x_0+h,y_0+k)</m> e <m>(x_0,y_0)</m>. Isto é
+    exatamente o que acontece para funções deriváveis a uma variável
+    real.
+  </remark>
+  
+  <proposition xml:id="prop_diffcont">
+    <!-- <title></title> -->
+    <statement>
+      <p>Se <m>f\colon A\subseteq\R^2\to\R</m> é diferenciável em
+      <m>(x_0,y_0)</m>, então <m>f</m> é contínua em
+      <m>(x_0,y_0)</m>.</p>
+    </statement>
+
+    <proof>
+      <p>
+	Se <m>f\colon A\subseteq\R^2\to\R</m> é diferenciável em
+	<m>(x_0,y_0)</m>, então
+	<me>
+	  \lim\limits_{(h,k)\to(0,0)}
+	  \dfrac{f(x_0+h,y_0+k)-f(x_0,y_0)-f_x(x_0,y_0)h-f_y(x_0,y_0)k}
+	  {\sqrt{h^2+k^2}}=0.
+	</me>
+      </p>
+      <p>
+	Em particular, <me>\lim\limits_{(h,k)\to(0,0)}
+	f(x_0+h,y_0+k)-f(x_0,y_0)-f_x(x_0,y_0)h-f_y(x_0,y_0)k=0</me> e,
+	fazendo <m>x=x_0+h</m>, <m>y=y_0+k</m> na expressão acima,
+	temos <me>\lim\limits_{(x,y)\to(x_0,y_0)}
+	f(x,y)=f(x_0,y_0),</me> que pelo <xref ref="teo_limcont" />,
+	garante a continuidade de <m>f</m> em <m>(x_0,y_0)</m>.
+      </p>
+    </proof>
+  </proposition>
+
+  <p>Como vimos anteriormente a existência das derivadas parciais não
+  garante sequer continuidade, quanto mais diferenciabilidade. Porém, se
+  as derivadas parciais são bem comportadas, a situação é bem
+  melhor:</p>
+  
+  <theorem xml:id="teo_diff-c1">
+    <title>(Derivadas parciais contínuas)</title>
+    
+    <statement>
+      <p>
+	Se <m>f\colon A\subseteq\R^2\to\R</m> é uma função, cujas
+	derivadas pariciais existem e são funções contínuas em
+	<m>(x_0,y_0)</m>, então <m>f</m> é diferenciável em
+	<m>(x_0,y_0)</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>Observamos incialmente que
+      <me>f(x_0+h,y_0+k)-f(x_0,y_0)=f(x_0+h,y_0+k)-f(x_0,y_0+k)
+      +f(x_0,y_0+k)f(x_0,y_0).</me>
+      </p>
+      <p>Escrevendo <m>g(x)=f(x,y_0+k)</m>, podemos usar o TMV (caso
+      particular do <xref ref="teo_cauchy" />) para concluir que
+      <me>g(x_0+h)-g(x_0)=g'(\overline{x})h\implies
+      f(x_0+h,y_0+k)-f(x_0,y_0+k) = f_x(\overline{x},y_0+k)h,</me> para
+      algum <m>\overline{x}</m> entre <m>x_0</m> e <m>x_0+h</m>.
+      </p>
+      <p>De maneira totalmente análoga, temos
+      <me>f(x_0,y_0+k)-f(x_0,y_0) = f_y(x_0,\overline{y})k,</me> para
+      algum <m>\overline{y}</m> entre <m>y_0</m> e <m>y_0+k</m>. Desta
+      forma, usando o limite para verificar a diferenciabilidade de <m>f</m> em
+      <m>(x_0,y_0)</m> escreve-se
+      <md>
+	<mrow>\lim\limits_{(h,k)\to(0,0)}&amp;
+	  \dfrac{f(x_0+h,y_0+k)-f(x_0,y_0)-f_x(x_0,y_0)h-f_y(x_0,y_0)k}
+	{\sqrt{h^2+k^2}}=</mrow>
+	<mrow>\lim\limits_{(h,k)\to(0,0)}&amp;
+	\Big[f_x(\overline{x},y_0+k)-f_x(x_0,y_0)\Big]
+	\dfrac{h}{\sqrt{h^2+k^2}}+</mrow>
+	<mrow>&amp;
+	\Big[f_y(x_0,\overline{y})-f_y(x_0,y_0)\Big]
+	\dfrac{k}{\sqrt{h^2+k^2}}=0,</mrow>
+      </md>
+      pois, em cada parcela, o segundo fator é limitado e a continuidade
+      das derivadas parciais diz que o primeiro vai a zero. Verificamos
+      isso para a derivada parcial em <m>x</m>
+      <me>\lim\limits_{(h,k)\to(0,0)}f_x(\overline{x},y_0+k)=f_x(x_0,y_0),
+      </me> já que <m>h\to 0\implies \overline{x}\to x_0</m> e <m>k\to
+      0\implies y_0+k\to y_0</m>. O argumento é idêntico para a segunda
+      parcela. Logo <m>f</m> é diferenciável em <m>(x_0,y_0)</m>.
+      </p>
+    </proof>
+    <remark>Usando a notação da <xref ref="def_classeCk" />, dizemos que
+    se <m>f</m> é de classe <m>\mathscr{C}^1</m> em <m>(x_0,y_0)</m>,
+    então <m>f</m> é diferenciável em <m>(x_0,y_0)</m>.</remark>
+  </theorem>
+
+  <p>O exemplo a seguir mostra que o resultado acima é uma condição
+  suficiente mas não necessária.</p>
+  
+  <example xml:id="exemplo_diffnc1">
+    <p>A função <m>f(x,y)=\begin{cases}
+    \dfrac{x^2y^2}{x^2+y^4},&amp;(x,y)\neq (0,0);\\ \hfill 0,&amp;
+    (x,y)=(0,0)\end{cases}</m> é diferenciável na origem, mas uma de
+    suas derivadas parciais não é contínua nesse ponto.
+    </p>
+
+    <p>A continuidade de <m>f</m> segue de que
+    <m>\dfrac{x^2}{x^2+y^4}</m> é limitado e <m>y^2\to 0</m> se <m>y\to
+    0</m>. As derivadas parciais são calculadas via regras de derivação
+    fora da origem e pela definição na origem. Fazendo as contas,
+    obtemos
+    <md>
+      <mrow>\dfrac{\partial f}{\partial x}(x,y)&amp;=\begin{cases}
+      \dfrac{2xy^6}{(x^2+y^4)^2},&amp; (x,y)\neq(0,0)\\
+      \hfill 0,&amp; (x,y)=(0,0);
+      \end{cases};</mrow>
+      <mrow>\dfrac{\partial f}{\partial y}(x,y)&amp;=\begin{cases}
+      \dfrac{2x^4y-2x^2y^5}{(x^2+y^4)^2},&amp; (x,y)\neq(0,0)\\
+      \hfill 0,&amp; (x,y)=(0,0).
+      \end{cases};</mrow>
+    </md>
+  </p>
+  <p>Verifiquemos a diferenciabilidade pela definição: calcular
+  <me>\lim\limits_{(h,k)\to(0,0)}\dfrac{h^2k^2}{(h^2+k^4)\sqrt{h^2+k^2}}
+  =\lim\limits_{(h,k)\to(0,0)}\dfrac{h^2}{h^2+k^4}\dfrac{k}{\sqrt{h^2+k^2}}k=0,</me>
+  logo <m>f</m> é diferenciável na origem.</p>
+  <p>Agora, a continuidade das derivadas parciais:
+  <ul>
+    <li>A derivada parcial em <m>x</m> não é contínua na origem, basta
+    tomar a curva <m>\gamma(t)=(t^2,t)</m>, para obter <me>
+    \lim\limits_{t\to 0}f_x\big(\gamma(t)\big)=\lim\limits_{t\to
+    0}\dfrac{2t^2\cdot t^6}{(t^4+t^4)^2}=\dfrac{1}{2}\neq f_x(0,0).</me>
+    </li>
+    <li>Já a derivada parcial em <m>y</m> é contínua na origem, pois 
+    <me>
+      \lim\limits_{(x,y)\to(0,0)}f_y(x,y)=
+      \lim\limits_{(x,y)\to(0,0)}2y\dfrac{x^4}{(x^2+y^4)^2}
+      -2y\dfrac{x^2y^4}{(x^2+y^4)^2}=0,</me> pois cada parcela tem o
+      segundo fator limitado e o primeiro tendendo a zero.
+    </li>
+  </ul>
+  </p>
+  </example>
+  
+  <p>Encerramos esta guia de consulta rápida da teoria com um diagrama
+  de implicações entre os conceitos de continuidade, existência de
+  derivadas parciais e diferenciabilidade num ponto do interior do
+  domínio de uma função.
+  <figure xml:id="fig_apdiffdiag">
+    <caption>Diagrama de implicações entre os conceitos</caption>
+    <image xml:id="apdiffdiag" width="75%">
+      <description>Diagrama de implicações entre os conceitos</description>
+      <latex-image>
+	\begin{tikzpicture}[node distance=3cm, auto]
+        \node[ellipse,draw = brown,text = orange,fill = cyan!20,minimum
+	width = 3cm,minimum height = 1.2cm] (Dif) at (0,2) {Diferenciável};
+	\node[ellipse,draw = brown,text = orange,fill = cyan!20,minimum
+	width = 3cm,minimum height = 1.2cm] (Cont) at (-4,0) {Contínua};
+	\node[ellipse,draw = brown,text = orange,fill = cyan!20,minimum
+	width = 3cm,minimum height = 1.2cm] (Derpar) at (4,0)
+	{Derivadas parciais existem};
+	\node[ellipse,draw = brown,text = orange,fill = cyan!20,minimum
+	width = 3cm,minimum height = 1.2cm] (Derparcont) at (0,-2)
+	{Derivadas parciais contínuas};
+	\draw[->] (Dif) to (Cont);
+	\draw[->] (Dif) to (Derpar);
+	\draw[->] (Derparcont) to (Dif);
+	\end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
+  </p>
+  <p>No diagrama acima, se não existe uma seta conectando dois conceitos
+  é por que não há relação de causa e consequência entre eles. Procure,
+  nos exemplos e exercícios resolvidos, situações que ilustram as
+  ausências de setas (em algum ou nos dois sentidos) ligando os termos.
+  </p>
+
+</section>

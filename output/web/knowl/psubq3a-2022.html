@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercício</span><span class="space"> </span><span class="codenumber">3<span class="period">.</span></span>
+</h4>
+<div class="para logical">
+<div class="para">Seja <span class="process-math">\(f\colon\R\to\R\)</span> uma função diferenciável. Sabe-se que:</div>
+<ol class="lower-roman">
+<li><div class="para">A imagem da curva <span class="process-math">\(\sigma(t)=(e^{t-1}, -1 +
+e^{2t-2})\text{,}\)</span> <span class="process-math">\(t\in\R\)</span> está contida na curva de nível <span class="process-math">\(1\)</span> de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+<li><div class="para">A imagem da curva <span class="process-math">\(\gamma(u) = (2+u, 4(u+1), u^2)\text{,}\)</span> <span class="process-math">\(u\in\R\)</span> está contida no gráfico de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+</ol>
+</div> <div class="para">Determine a equação do plano tangente ao gráfico de <span class="process-math">\(f\)</span> no ponto <span class="process-math">\(\big(1,0,f(1,0)\big)\text{.}\)</span> Explicite claramente <span class="process-math">\(f(1,0)\)</span> e <span class="process-math">\(\nabla f(1,0)\text{.}\)</span>
+</div>
+<div class="solutions">
+<details class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">
+<span class="process-math">\(f(1,0)=1\text{,}\)</span> <span class="process-math">\(\nabla f(1,0)=(2,-1)\)</span> e <span class="process-math">\(\pi\colon
+z=2x-y-1\text{.}\)</span>
+</div></div></details><details class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical">
+<div class="para">Para calcular <span class="process-math">\(f(1,0)\)</span> podemos usar as informações dadas em qualquer um dos itens (i) e (ii) do enunciado. De (i) temos que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\big(\sigma(t)\big) = 1, \forall t \in \mathbb{R}.
+\end{equation*}
+</div>
+<div class="para">Em particular, para <span class="process-math">\(t=1\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sigma(1) = (1,0)
+\implies \boxed{f(1,0) = 1}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">De (ii) segue-se que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(2+u, 4(u+1))=u^2, \forall u \in
+\mathbb{R}
+\end{equation*}
+</div>
+<div class="para">e, tomando <span class="process-math">\(u=-1\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boxed{f(1,0) =
+(-1)^2 = 1}.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Nosso próximo passo é calcular o gradiente de <span class="process-math">\(f\)</span> em <span class="process-math">\((1,0)\text{.}\)</span> Para isso derivamos as expressões acima com a regra da cadeia:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases}
+f\big(\sigma(t)\big)&amp; = 1\\
+f(2+u, 4(u+1))&amp;=u^2
+\end{cases}\implies
+\begin{cases}
+\Big\langle\nabla f\big(\sigma (t)\big),
+\sigma'(t)\Big\rangle&amp;=0\\
+\Big\langle\nabla f\big(2+u, 4(u+1)\big),
+(2+u, 4(u+1))'\Big\rangle&amp;=2u\\
+\end{cases}
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Escrevendo os vetores em coordenadas, substituindo <span class="process-math">\(t=1\)</span> na primeira das equações do sistema acima e <span class="process-math">\(u=-1\)</span> na segunda, temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases}
+\dfrac{\partial f}{\partial x}(1,0) + 2 \dfrac{\partial
+f}{\partial y}(1,0)&amp;=0\\
+\dfrac{\partial f}{\partial x}(1,0) + 4\dfrac{\partial f}{\partial
+y}(1,0)&amp;= -2.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Resolvendo o sistema, encontramos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\boxed{\nabla f(1,0) = (2,-1)}
+\end{equation*}
+</div>
+<div class="para">e, portanto, o plano tangente ao gráfico de <span class="process-math">\(f\)</span> em <span class="process-math">\((1,0,1)\)</span> tem equação</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\pi\colon z=f(1,0) + \frac{\partial f}{\partial x}(1,0)(x-1) +
+\frac{\partial f}{\partial y}(1,0)(y-0)\implies \pi\colon z= 2x-y-1.
+\end{equation*}
+</div>
+</div> <div class="para">Uma figura para ilustrar a situação:</div> <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<div class="asymptote-box" style="padding-top: 68.5512367491166%"><iframe src="generated/asymptote/gabpsubq3.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabpsubq3.html">html</a></div>
+</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.8<span class="period">.</span></span><span class="space"> </span>Cortes do gráfico de <span class="process-math">\(f\)</span> e o plano tangente determinado por eles.</figcaption></figure>
+</div></details>
+</div></article><span class="incontext"><a class="internal" href="sec_2022-psub.html#psubq3a-2022">em contexto</a></span>
+</body>
+</html>

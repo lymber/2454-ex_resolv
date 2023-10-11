@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<figure xml:id="fig_gabrecq2-2022">
+    <caption>Gráfico "re-escalado" de <m>f</m></caption>
+    <image width="50%" xml:id="gabprecq2-2022" archive="html">
+    <description>Gráfico de <m>f</m> para <m>k=-1</m></description>
+    <asymptote>
+      import graph3;
+      size(10cm);
+      
+      currentprojection=orthographic(3,-1,2);
+      limits((-1.5,-1.5,-1.5),(3.5,3.5,1.5));
+      
+      currentlight=light(white,(2,2,2),(2,-2,-2));
+      // uncomment for transparent background
+      // currentlight.background=black+opacity(0);
+
+      real f(pair z){
+      return 1/20*(3*z.x^2*z.y+z.y^3-3*(z.x^2+z.y^2)+2);}
+
+      draw(surface(f,(-1.5,-1.5),(3,3),Spline),lightblue+opacity(.8),blue);
+
+      dot(Label("$Q_3$"),(-1,1,f((-1,1))),N,orange);
+      dot(Label("$Q_4$"),(1,1,f((1,1))),N,orange);
+      dot(Label("$Q_1$"),(0,0,f((0,0))),N,orange);
+      dot(Label("$Q_2$"),(0,2,f((0,2))),N,orange);
+
+      xaxis3("$x$",Arrow3);
+      yaxis3("$y$",Arrow3);
+      zaxis3("$z$",Arrow3);
+    </asymptote>
+    </image>
+</figure>

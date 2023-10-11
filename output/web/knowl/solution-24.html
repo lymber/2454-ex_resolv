@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">1.11.4.b.1</span><span class="period">.</span>
+</h4>
+<div class="para">Note que <span class="process-math">\(f\)</span> é contínua e <span class="process-math">\(C\)</span> é compacto, de modo que o Teorema de Weierstrass (veja <a href="" class="xref" data-knowl="./knowl/teo_wei.html" title="Teorema A.9.2">Teorema A.9.2</a>) assegura que o problema proposto tem solução.</div> <ul class="disc">
+<li>
+<div class="para">Primeira solução: Usando o Método dos Multiplicadores de Lagrange.</div>
+<div class="para logical">
+<div class="para">Nosso objetivo é encontrar os pontos de máximo e mínimo de <span class="process-math">\(f\)</span> sujeita às condições <span class="process-math">\(x^2 + y^2 = z\)</span> e <span class="process-math">\(z=2y\text{.}\)</span> Consideremos as funções de classe <span class="process-math">\(\mathscr{C}^1\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(x,y,z) = x^2 + y^2 - z \quad
+\text{e}\quad h(x,y,z) = 2y-z.
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">O conjunto <span class="process-math">\(C\)</span> é a intersecção das superfícies de nível <span class="process-math">\(c=0\)</span> de <span class="process-math">\(g\)</span> e de <span class="process-math">\(h\text{.}\)</span> Observamos primeiramente que os gradientes de <span class="process-math">\(g\)</span> e <span class="process-math">\(h\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g(x,y,z) = (2x,2y,-1), \quad
+\nabla h(x,y,z) = (0,2,-1),
+\end{equation*}
+</div>
+<div class="para">são linearmente independentes em <span class="process-math">\(C\text{.}\)</span> De fato, estes vetores são paralelos se, e somente se, <span class="process-math">\(x=0\)</span> e <span class="process-math">\(y=1\text{,}\)</span> e nenhum ponto da forma <span class="process-math">\((0,1,z)\)</span> pode pertencer a <span class="process-math">\(C\)</span> (por quê?). Deste modo, o Método dos Multiplicadores de Lagrange garante que os candidatos a pontos de máximo e mínimo de <span class="process-math">\(f\)</span> são as soluções do sistema</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases}
+\big\{\nabla f(x,y,z), \nabla g(x,y,z), \nabla
+h(x,y,z)\big\}\text{ é linearmente dependente},\\
+x^2 + y^2 = z,\\
+z=2y.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(\nabla f(x,y,z) = (1,0,-1)\text{,}\)</span> a primeira condição equivale a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det\begin{bmatrix}
+1&amp; 0 &amp; -1\\
+2x &amp; 2y &amp; -1\\
+0 &amp; 2 &amp; -1
+\end{bmatrix} = 0 \iff y
+= -2x+1.
+\end{equation*}
+</div>
+<div class="para">Substituindo esta equação nas outras duas, obtemos <span class="process-math">\(z=-4x+2\)</span> e <span class="process-math">\(x = \pm \frac{1}{\sqrt{5}}\text{.}\)</span> Os candidatos são, portanto, os pontos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\big( \sfrac{1}{\sqrt{5}}, 1 -
+\sfrac{2}{\sqrt{5}}, 2 - \sfrac{4}{\sqrt{5}}\big) \quad
+\text{e} \quad \big( -\dfrac{1}{\sqrt{5}}, 1 +
+\dfrac{2}{\sqrt{5}}, 2 + \dfrac{4}{\sqrt{5}}\big).
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(f\big( \dfrac{1}{\sqrt{5}}, 1 - \dfrac{2}{\sqrt{5}}, 2 -
+\dfrac{4}{\sqrt{5}}\big) = \sqrt{5}-2\)</span> e <span class="process-math">\(f\big(
+-\dfrac{1}{\sqrt{5}}, 1 + \dfrac{2}{\sqrt{5}}, 2 +
+\dfrac{4}{\sqrt{5}}\big) = -\sqrt{5} -2\text{,}\)</span> tratam-se, respectivamente, do ponto de máximo e do ponto de mínimo de <span class="process-math">\(f\)</span> em <span class="process-math">\(C\text{.}\)</span>
+</div>
+</div>
+</li>
+<li>
+<div class="para">Segunda solução: Parametrizando o conjunto <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="para logical">
+<div class="para">Escrevendo <span class="process-math">\(z = x^2 + y^2 = 2y\)</span> e completando quadrados, obtemos <span class="process-math">\(x^2 + (y-1)^2 = 1\text{.}\)</span> Assim, uma parametrização de <span class="process-math">\(C\)</span> é <span class="process-math">\(\gamma\colon [0,2\pi]\to\R^3\)</span> dada por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma(t) =
+(\cos t, \sin t + 1, 2\sin t + 2).
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Desejamos encontrar os pontos de máximo e mínimo da composta</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(t) = f(\gamma(t)) = \cos t - 2\sin t -2,
+\end{equation*}
+</div>
+<div class="para">no intervalo <span class="process-math">\([0,2\pi]\)</span> (um problema de Cálculo I). Os candidatos são os pontos críticos de <span class="process-math">\(g\)</span> no intervalo <span class="process-math">\(]0, 2\pi[\)</span> e os extremos <span class="process-math">\(t=0, t=2\pi\text{.}\)</span> Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g'(t) = -\sin t -2 \cos t = 0 \iff \sin t = -2 \cos
+t,
+\end{equation*}
+</div>
+<div class="para">os pontos críticos de <span class="process-math">\(g\)</span> são as soluções (no intervalo <span class="process-math">\(]0, 2\pi[\)</span>) da equação</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos^2 t = 1 -
+\sin^2 t = 1 - 4 \cos^2 t \iff \cos t = \pm
+\dfrac{1}{\sqrt{5}}.
+\end{equation*}
+</div>
+<div class="para">Para <span class="process-math">\(\cos t =
+\dfrac{1}{\sqrt{5}}\text{,}\)</span> temos <span class="process-math">\(\sin t =
+-\dfrac{2}{\sqrt{5}}\text{,}\)</span> que corresponde ao ponto <span class="process-math">\(\big(
+\dfrac{1}{\sqrt{5}}, 1 - \dfrac{2}{\sqrt{5}}, 2 -
+\dfrac{4}{\sqrt{5}}\big) \in C\text{.}\)</span> Analogamente, <span class="process-math">\(\cos t =
+-\dfrac{1}{\sqrt{5}}\)</span> corresponde ao ponto <span class="process-math">\(\big(
+-\dfrac{1}{\sqrt{5}}, 1 + \dfrac{2}{\sqrt{5}}, 2 +
+\dfrac{4}{\sqrt{5}}\big) \in C\text{.}\)</span> O outro candidato é o ponto <span class="process-math">\(\gamma(0) = \gamma(2\pi) = (1,1,2) \in C\text{,}\)</span> no qual <span class="process-math">\(f\)</span> atinge o valor <span class="process-math">\(-1\text{.}\)</span>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<span class="incontext"><a class="internal" href="sec_maxmincpt.html#solution-24">em contexto</a></span>
+</body>
+</html>

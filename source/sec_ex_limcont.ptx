@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_limcont" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Limites e Continuidade</title>
+
+  <exercises xml:id="ex_limcont" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="1.n" xml:id="lim41n">
+      <statement>
+	<p>
+	  Calcule, caso exista, <m>\lim\limits_{(x,y)\to(0,0)}
+	  \dfrac{x^3\big(1-\cos(x^2+y^2)\big)}{(x^2+y^2)^3}</m>. Justifique,
+	  caso não exista.
+	</p>
+      </statement>
+      <hint>
+	<p>
+          Como você calcularia, sem usar a regra de L'Hospital,
+	  <m>\lim\limits_{x\to 0}\dfrac{1-\cos x}{x}</m>?
+	</p>
+      </hint>
+      <answer>
+	<p>
+	  <m>0</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Seguindo a ideia da dica vamos multiplicar numerador e
+	denominador por <m>1+\cos(x^2+y^2)</m>, obtendo
+	<md>
+	  <mrow>
+	    \lim\limits_{(x,y)\to(0,0)}
+	    \dfrac{x^3\big(1-\cos(x^2+y^2)\big)}{(x^2+y^2)^3}
+	    &amp;=\lim\limits_{(x,y)\to(0,0)}
+	    \dfrac{x^3\big(1-\cos^2(x^2+y^2)\big)}
+	    {\big(1+\cos(x^2+y^2)\big)(x^2+y^2)^3}
+	  </mrow>
+	  <mrow>
+	    &amp;=\lim\limits_{(x,y)\to(0,0)}
+	    x\dfrac{x^2}{x^2+y^2}\dfrac{\sin(x^2+y^2)}{x^2+y^2}
+	    \dfrac{\sin(x^2+y^2)}{x^2+y^2}=0,
+	  </mrow>
+	</md> pois o primeiro fator tende a <m>0</m>, o segundo é
+	limitado, enquanto que o terceiro e quarto (iguais) tendem a
+	<m>1</m>, como feito no <xref ref="exemplo_comp" />.</p>
+      </solution>
+    </exercise>
+
+    <exercise number="2.c" xml:id="lim42c">
+      <statement>
+	<p>
+	  Calcule, caso exista, <m>\lim\limits_{(x,y)\to(0,0)}
+	  x^2\ln(3x^2+y^2)\arctan\big(\dfrac{1}{y^2-x^2}\big)</m>. Justifique,
+	  caso não exista.
+	</p>
+      </statement>
+      <hint>
+	<p>
+          Como você calcularia, usando a regra de L'Hospital,
+          <m>\lim\limits_{x\to 0}x\ln x</m>?
+	</p>
+      </hint>
+      <answer>
+	<p>
+	  <m>0</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  Seguindo a ideia da dica, vamos multiplicar numerador e
+	  denominador por <m>3x^2+y^2</m>, obtendo
+	  <md>
+	    <mrow>
+	      \lim\limits_{(x,y)\to(0,0)}x^2\ln(3x^2&amp;+y^2)\arctan\big(\dfrac{1}{y^2-x^2}\big)
+	    </mrow>
+	    <mrow>
+	      &amp;=\lim\limits_{(x,y)\to(0,0)}
+	      \dfrac{x^2}{3x^2+y^2}(3x^2+y^2)\ln(3x^2+y^2)\arctan\big(\dfrac{1}{y^2-x^2}\big),
+	    </mrow>
+	 </md> onde
+	 <ul>
+	   <li>o primeiro fator é limitado (análogo ao primeiro
+	   exemplo em <xref ref="vid_limitada" />);</li>
+	   <li>usando a <xref ref="prop_comp" /> com
+	   <m>f(t)=\begin{cases}t\ln t,&amp; t\neq 0\\\hfill 0,&amp;
+	   t=0\end{cases}</m> e <m>g(x,y)=3x^2+y^2</m>, temos que o
+	   segundo tende a zero, e</li>
+	   <li>o terceiro fator é limitado, pois
+	   <m>-\dfrac{\pi}{2}&lt;\arctan(t)&lt;\dfrac{\pi}{2}</m>,
+	   para todo <m>t\in\R</m>.</li>
+	 </ul>
+	</p>
+	<p>Sendo o produto de fatores limitados também um termo
+	limitado, o <xref ref="cor_confronto" /> garante que o limite
+	pedido vale <m>0</m>.</p>
+      </solution>
+    </exercise>
+    
+    <exercise number="2.d" xml:id="lim42d">
+      <statement>
+	<p>
+	  Calcule, caso exista, <m>\lim\limits_{(x,y)\to(1,1)}
+	  x^2\ln(3x^2+y^2)\arctan\big(\dfrac{1}{y^2-x^2}\big)</m>. Justifique,
+	  caso não exista.
+	</p>
+      </statement>
+      <hint>
+	<p>
+          Será que temos aqui uma indeterminação, como no exercício
+          acima?
+	</p>
+      </hint>
+      <answer>
+	<p>
+	  Não existe.
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  Seguindo a ideia da dica, notamos que
+	  <me>\lim\limits_{(x,y)\to(1,1)}
+	x^2\ln(3x^2+y^2)=\ln(4).</me></p>
+	<p>
+	  Para o termo <m>\arctan\big(\dfrac{1}{y^2-x^2}\big)</m>,
+	  consideramos a curva <m>\gamma(t)=(t,1)</m>, onde temos os
+	  limites laterais
+	   <me>
+	     \lim\limits_{t\to
+	     1^\pm}\arctan\big(\gamma(t)\big)=\lim\limits_{t\to
+	     1^\pm}\arctan\big(\dfrac{1}{1-t^2}\big)=\mp\frac{\pi}{2}.
+	   </me>
+	   O <xref ref="teo_limcurvas" /> garante que este fator não
+	   tem limite.
+	</p>
+	<p>Como a expressão original é composta pelo produto dos dois
+	primeiros fatores, que tem limite não nulo, e o terceiro, que
+	isoladamente não tem limite, o produto dos três fatores não
+	pode ter limite.</p>
+      </solution>
+    </exercise>
+    
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

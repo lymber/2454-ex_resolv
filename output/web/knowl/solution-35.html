@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.2.3.1</span><span class="period">.</span>
+</h4>
+<div class="para logical">
+<div class="para">Note que <span class="process-math">\(f\)</span> é de classe <span class="process-math">\(\mathscr{C}^2\)</span> e seu gradiente é</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla f(x,y) = (2xy+y^2 -y, 2xy+x^2 - x).
+\end{equation*}
+</div>
+<div class="para">Deste modo, os pontos críticos de <span class="process-math">\(f\)</span> são as soluções do sistema</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} 2xy+y^2-y&amp;=0,\\
+2xy+x^2-x&amp;=0.\end{cases}
+\end{equation*}
+</div>
+<div class="para">A primeira equação equivale a <span class="process-math">\(y=0\)</span> ou <span class="process-math">\(y=1-2x\text{.}\)</span> Vamos analisar os dois casos:</div>
+<ul class="disc">
+<li><div class="para">substituindo <span class="process-math">\(y=0\)</span> na segunda equação, obtemos <span class="process-math">\(x^2-x=0\text{,}\)</span> isto é, <span class="process-math">\(x=0\)</span> ou <span class="process-math">\(x=1\text{.}\)</span> Temos, assim, os pontos <span class="process-math">\((0,0)\)</span> e <span class="process-math">\((1,0)\text{;}\)</span>
+</div></li>
+<li><div class="para">substituindo <span class="process-math">\(y=1-2x\)</span> na segunda equação, obtemos <span class="process-math">\(-3x^2+x=0\text{,}\)</span> isto é, <span class="process-math">\(x=0\)</span> ou <span class="process-math">\(x=1/3\text{.}\)</span> Para <span class="process-math">\(x=0\)</span> temos <span class="process-math">\(y=1\text{;}\)</span> para <span class="process-math">\(x=1/3\)</span> temos <span class="process-math">\(y=1/3\text{.}\)</span> Isto nos dá os pontos <span class="process-math">\((0,1)\)</span> e <span class="process-math">\((1/3,1/3)\text{.}\)</span>
+</div></li>
+</ul>
+</div> <div class="para logical">
+<div class="para">Uma vez encontrados os pontos críticos de <span class="process-math">\(f\text{,}\)</span> vamos classificá-los usando o Critério da Hessiana (<a href="" class="xref" data-knowl="./knowl/teo_hess.html" title="Teorema A.8.6">Teorema A.8.6</a>). Precisamos das derivadas de segunda ordem de $f$:</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_hess.html">
+\begin{equation*}
+\frac{\partial^2 f}{\partial x^2}(x,y) = 2y, \quad
+\frac{\partial^2 f}{\partial y\partial x}(x,y) = 2x+2y-1, \quad
+\frac{\partial^2 f}{\partial y^2}(x,y) = 2x.
+\end{equation*}
+</div>
+<div class="para">Denotando por <span class="process-math">\(H_f(x,y)\)</span> a matriz Hessiana de <span class="process-math">\(f\)</span> no ponto <span class="process-math">\((x,y)\text{,}\)</span> temos:</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\(\det H_f(0,0) = \det\begin{bmatrix} 0 &amp;
+-1\\ -1 &amp; 0 \end{bmatrix} = -1 &lt; 0 \implies (0,0)\)</span> é ponto de sela de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\det H_f(1,0) = \det\begin{bmatrix} 0 &amp; 1\\ 1 &amp; 2
+\end{bmatrix} = -1 &lt; 0 \implies (1,0)\)</span> é ponto de sela de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\det H_f(0,1) = \det\begin{bmatrix} 2 &amp; 1\\ 1 &amp; 0 \end{bmatrix} =
+-1 &lt; 0 \implies (0,1)\)</span> é ponto de sela de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+<li><div class="para">
+<span class="process-math">\(\det H_f(1/3,1/3) = \det\begin{bmatrix} 2/3 &amp; 1/3\\ 1/3 &amp; 2/3
+\end{bmatrix} = 1/3 &gt; 0\)</span> e <span class="process-math">\(\dfrac{\partial^2
+f}{\partial x^2}(1/3,1/3) = 2/3&gt; 0 \implies (1/3,1/3)\)</span> é ponto de mínimo local de <span class="process-math">\(f\text{.}\)</span>
+</div></li>
+</ul>
+</div>
+</div>
+<span class="incontext"><a class="internal" href="sec_2022-p2.html#solution-35">em contexto</a></span>
+</body>
+</html>

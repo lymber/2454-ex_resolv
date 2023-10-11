@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="exercise exercise-like"><h4 class="heading">
+<span class="type">Exercício</span><span class="space"> </span><span class="codenumber">4<span class="period">.</span></span>
+</h4>
+<div class="para logical">
+<div class="para">Determine o valor máximo e o valor mínimo de <span class="process-math">\(f(x,y,z)=y-z\)</span> na elipse</div>
+<div class="displaymath process-math">
+\begin{equation*}
+C = \big\{(x,y,z)\in\R^3\colon
+x^2 + y^2 - z^2 =0\text{ e } x+y-2z+1=0\big\}.
+\end{equation*}
+</div>
+<div class="para">Explicite os pontos de <span class="process-math">\(C\)</span> onde ocorrem esses valores.</div>
+</div>
+<div class="solutions">
+<details class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para">
+<span class="process-math">\(f(0,1,1)=0\)</span> (máximo) e <span class="process-math">\(f(1,0,1)=-1\)</span> (mínimo).</div></div></details><details class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para">Vamos usar o Método dos Multiplicadores de Lagrange, com duas restrições. Outra opção, um tanto mais trabalhosa (precisaria saber eliminar termos mistos em equações de cônicas - uma aplicação de diagonalização de matrizes simétricas), seria parametrizar a elipse <span class="process-math">\(C\text{.}\)</span>
+</div> <div class="para logical">
+<div class="para">Sejam <span class="process-math">\(g,h\colon\R^3\to\R\)</span> dadas por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(x,y,z) = x^2
++ y^2 - z^2 \quad \text{e} \quad h(x,y,z) = x+y-2z.
+\end{equation*}
+</div>
+<div class="para">Ambas são de classe <span class="process-math">\(\mathscr{C}^1\)</span> e a elipse <span class="process-math">\(C\)</span> é a intersecção da superfície de nível <span class="process-math">\(c=0\)</span> de <span class="process-math">\(g\)</span> e da superfície de nível <span class="process-math">\(c=-1\)</span> de <span class="process-math">\(h\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">De acordo com o Método dos Multiplicadores de Lagrange, os candidatos são as soluções do sistema</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases}
+\{\nabla f(x,y,z), \nabla g(x,y,z), \nabla h(x,y,z)\}\text{ é
+linearmente dependente},\\
+x^2 + y^2 - z^2 = 0,\\
+x+y-2z+1=0.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">A primeira condição equivale a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det\begin{bmatrix}
+0 &amp; 1 &amp; -1\\
+x &amp; y &amp; -z\\
+1 &amp; 1 &amp;-2
+\end{bmatrix} = 0 \iff x+ y -z=0.
+\end{equation*}
+</div>
+</div> <div class="para logical">
+<div class="para">Subtraindo as equações <span class="process-math">\(x+ y -z =0\)</span> e <span class="process-math">\(x+y-2z+1=0\)</span> obtemos $z=1$ e, portanto,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases} x+y=1,\\ x^2 +
+y^2=1, \end{cases}
+\end{equation*}
+</div>
+<div class="para">o que implica que <span class="process-math">\(x=0\)</span> e <span class="process-math">\(y=1\text{,}\)</span> ou <span class="process-math">\(x=1\)</span> e <span class="process-math">\(y=0\text{.}\)</span>
+</div>
+</div> <div class="para logical">
+<div class="para">Os candidatos são, portanto, os pontos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(0,1,1) \quad
+\text{e} \quad (1,0,1),
+\end{equation*}
+</div>
+<div class="para">nos quais <span class="process-math">\(f\)</span> atinge, respectivamente, os valores <span class="process-math">\(f(0,1,1)=0\)</span> (máximo) e <span class="process-math">\(f(1,0,1)=-1\)</span> (mínimo).</div>
+</div> <div class="para">Uma figura:</div> <figure class="figure figure-like"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;">
+<div class="asymptote-box" style="padding-top: 116.942148760331%"><iframe src="generated/asymptote/gabpsubq4.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabpsubq4.html">html</a></div>
+</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">3.3.9<span class="period">.</span></span><span class="space"> </span>Cortes do gráfico de <span class="process-math">\(f\)</span> e o plano tangente determinado por eles.</figcaption></figure>
+</div></details>
+</div></article><span class="incontext"><a class="internal" href="sec_2022-psub.html#psubq4a-2022">em contexto</a></span>
+</body>
+</html>

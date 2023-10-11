@@ -1,0 +1,4 @@
+INFO    : PreTeXt project found in `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv`.
+WARNING : Project's CLI version could not be detected from `requirements.txt`.
+WARNING : Try `pretext init --refresh` to produce a compatible file.
+INFO    : Run `pretext --help` for help.

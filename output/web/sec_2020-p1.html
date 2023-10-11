@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Primeira Prova</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="MAT–2454">
+<meta property="book:author" content="Alexandre Lymberopoulos &amp; Vinícius Morelli Cortes">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.32</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.32/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.32/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.32/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.82/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/book-logo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="exsol-2454.html"><span class="title">MAT–2454:</span> <span class="subtitle">Soluções de Exercícios e de Provas</span></a></h1>
+<p class="byline">Alexandre Lymberopoulos &amp; Vinícius Morelli Cortes</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Sumário"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Sumário</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Buscando por: </h2>
+<div id="searchempty" class="searchempty"><span>Não encontrado.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch_2020.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="ch_2020.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="ch_antigas.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\newcommand{\sfrac}[2]{{#1}/{#2}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-1.html" class="internal"><span class="title">Ficha técnica</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="dedication-1.html" class="internal"><span class="title">Dedicatória</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgement-1.html" class="internal"><span class="title">Agradecimentos</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="meta_frontmatter-preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_listas.html" class="internal"><span class="codenumber">1</span> <span class="title">Exercícios Selecionados</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Polinômios de Taylor</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor.html#ex_taylor" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_curvas.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Curvas no Plano</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_curvas.html#ex_curvas" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_func.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Funções de duas variáveis e curvas de nível</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_func.html#ex_func" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limcont.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Limites e Continuidade</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limcont.html#ex_limcont" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_derdifpt.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Derivadas Parciais, Diferenciabilidade e Plano Tangente</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_derdifpt.html#ex_derdifpt" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cadeia.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Regras da Cadeia</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cadeia.html#ex_cadeia" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_grad-dir.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Vetor Gradiente e Derivada direcional</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_grad-dir.html#ex_grad-dir" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_curvasR3.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Curvas no <span class="process-math">\(\R^3\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_curvasR3.html#ex_curvasR3" class="internal"><span class="codenumber">1.8</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_supptddir.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Superfícies de nível, planos tangente e derivadas direcionais</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_supptddir.html#ex_supptddir" class="internal"><span class="codenumber">1.9</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_maxminloc.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Classificação de pontos críticos em abertos de <span class="process-math">\(\R^2\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_maxminloc.html#ex_maxminloc" class="internal"><span class="codenumber">1.10</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_maxmincpt.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Máximos e mínimos em conjuntos compactos</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_maxmincpt.html#ex_maxmincpt" class="internal"><span class="codenumber">1.11</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_maxminarb.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Máximos e mínimos em conjuntos arbitrários</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_maxminarb.html#ex_maxminarb" class="internal"><span class="codenumber">1.12</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_2023.html" class="internal"><span class="codenumber">2</span> <span class="title">Provas de 2023</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2023-p1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Primeira Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2023-p1.html#gab_2023-p1" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_2022.html" class="internal"><span class="codenumber">3</span> <span class="title">Provas de 2022</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2022-p1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Primeira Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2022-p1.html#gab_2022-p1" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2022-p2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Segunda Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2022-p2.html#gab_p2a-2022" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2022-psub.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Prova Substitutiva</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2022-psub.html#gab_psub-2022" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2022-prec.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Prova de Recuperação</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2022-prec.html#gab_prec-2022" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_2021.html" class="internal"><span class="codenumber">4</span> <span class="title">Provas de 2021</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2021-p1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Primeira Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2021-p1.html#gab_2021-p1" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_2020.html" class="internal"><span class="codenumber">5</span> <span class="title">Provas de 2020</span></a></div>
+<ul class="structural toc-item-list contains-active"><li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec_2020-p1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Primeira Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2020-p1.html#gab_2020-p1" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch_antigas.html" class="internal"><span class="codenumber">6</span> <span class="title">Provas até 2019</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Apêndice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="apendice.html" class="internal"><span class="codenumber">A</span> <span class="title">Principais Resultados</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_calc1.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Cálculo 1</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_func.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Curvas de Nível</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_limcont.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Cálculo de Limites</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_diff.html" class="internal"><span class="codenumber">A.4</span> <span class="title">Derivadas Parciais e Diferenciabilidade</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_derivseg.html" class="internal"><span class="codenumber">A.5</span> <span class="title">Derivadas de Segunda Ordem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_cadeiadir.html" class="internal"><span class="codenumber">A.6</span> <span class="title">Regras da Cadeia e Derivadas direcionais</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_supnivel.html" class="internal"><span class="codenumber">A.7</span> <span class="title">Superfícies de nível e Curvas no espaço</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_maxminloc.html" class="internal"><span class="codenumber">A.8</span> <span class="title">Máximos e mínimos locais em abertos de <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_maxmincond.html" class="internal"><span class="codenumber">A.9</span> <span class="title">Máximos e mínimos condicionados</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-2.html" class="internal"><span class="title">Ficha técnica</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_2020-p1"><h2 class="heading hide-type">
+<span class="type">Seção</span><span class="space"> </span><span class="codenumber">5.1</span><span class="space"> </span><span class="title">Primeira Prova</span>
+</h2>
+<section class="exercises" id="gab_2020-p1"><h3 class="heading hide-type">
+<span class="type">Exercícios</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="p1q1-2020"><h4 class="heading"><span class="codenumber">1<span class="period">.</span></span></h4>
+<div class="para logical" id="p-354">
+<div class="para">O valor da integral <span class="process-math">\(\displaystyle{\int_0^1 2x\left[\int_2^{2x^2}
+e^{−t^2}\,dt\right]\, dx}\)</span> é</div>
+<ol class="lower-alpha cols3">
+<li id="li-282"><div class="para" id="p-derived-li-282"><span class="process-math">\(\dfrac{e^{-4}-1}{4}\text{.}\)</span></div></li>
+<li id="li-283"><div class="para" id="p-derived-li-283"><span class="process-math">\(\dfrac{1-e}{2}\text{.}\)</span></div></li>
+<li id="li-284"><div class="para" id="p-derived-li-284"><span class="process-math">\(\dfrac{e-1}{2}\text{.}\)</span></div></li>
+<li id="li-285"><div class="para" id="p-derived-li-285"><span class="process-math">\(\dfrac{e^{-4}}{2}\text{.}\)</span></div></li>
+<li id="li-286"><div class="para" id="p-derived-li-286"><span class="process-math">\(\dfrac{1-e^{-4}}{4}\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions">
+<details id="answer-48" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-355">Alternativa a.</div></div></details><details id="solution-53" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><div class="para logical" id="p-356">
+<div class="para">Usaremos aqui integração por parter, fazendo <span class="process-math">\(du=2x\)</span> e <span class="process-math">\(v=\int_2^{2x^2} e^{−t^2}\,dt\text{,}\)</span> donde <span class="process-math">\(u=x^2\)</span> e <span class="process-math">\(dv=4xe^{-4x^4}\text{.}\)</span> Assim,</div>
+<div class="displaymath process-math" id="md-47">
+\begin{align*}
+\int_0^1 2x\left[\int_2^{2x^2}
+e^{−t^2}\,dt\right]\, dx&amp;=\left[x^2 \int_2^{2x^2}
+e^{−t^2}\,dt\right]_0^1-\int_0^1 (x^2)(4xe^{-4x^4})\, dx\\
+&amp;\stackrel{(\ast)}{=} 0-\int_0^{-4}
+\dfrac{e^{s}}{-4}\, dx\\
+&amp;=\dfrac{e^{-4}-1}{4}.
+\end{align*}
+</div>
+<div class="para">Em <span class="process-math">\((\ast)\)</span> temos que o primeiro termo se anula devido ao primeiro fator quando <span class="process-math">\(x=0\)</span> e devido ao segundo (extremos de integração coindicentes) quando <span class="process-math">\(x=1\text{.}\)</span> Além disso, fazemos a mudança <span class="process-math">\(s=-4x^4\implies ds=-16x^3\, dx\)</span> na segunda parcela.</div>
+</div></div></details>
+</div></article><article class="exercise exercise-like" id="p1q2-2020"><h4 class="heading"><span class="codenumber">2<span class="period">.</span></span></h4>
+<div class="para logical" id="p-357">
+<div class="para">Considere a curva <span class="process-math">\(\gamma\colon\R\to\R^2\)</span> dada por <span class="process-math">\(\gamma(t)=\big(t^2\cos(\pi t),t^2\sin(\pi
+t)\big)\text{.}\)</span> Sabe-se que a trajetória de <span class="process-math">\(\gamma\)</span> admite duas retas tangentes distintas no ponto <span class="process-math">\((4,0)\text{.}\)</span> O produto escalar dos vetores tangentes à trajetória de <span class="process-math">\(\gamma\)</span> neste ponto é igual a:</div>
+<ol class="lower-alpha cols3">
+<li id="li-287"><div class="para" id="p-derived-li-287"><span class="process-math">\(0\text{.}\)</span></div></li>
+<li id="li-288"><div class="para" id="p-derived-li-288"><span class="process-math">\(-4(4\pi^2+4)\text{.}\)</span></div></li>
+<li id="li-289"><div class="para" id="p-derived-li-289"><span class="process-math">\(4(4\pi^2-4)\text{.}\)</span></div></li>
+<li id="li-290"><div class="para" id="p-derived-li-290"><span class="process-math">\(4(4\pi^2+4)\text{.}\)</span></div></li>
+<li id="li-291"><div class="para" id="p-derived-li-291"><span class="process-math">\(4(4-4\pi^2)\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions">
+<details id="answer-49" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-358">Alternativa c.</div></div></details><details id="solution-54" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="p-359">O ponto <span class="process-math">\((4,0)\)</span> está na imagem da curva <span class="process-math">\(\gamma\)</span> e é atingido quando <span class="process-math">\(t=\pm2\text{.}\)</span> O vetor tangente em cada instante de tempo <span class="process-math">\(t\)</span> é <span class="process-math">\(\gamma'(t)=\big(2t\cos(\pi
+t)−\pi t^2\sin(\pi t),2t\sin(\pi t)+\pi t^2\cos(\pi
+t)\big)\text{.}\)</span> Calculando nos dois pontos temos <span class="process-math">\(\gamma'(2)=(4,4\pi)\)</span> e <span class="process-math">\(\gamma'(−2)=(−4,4\pi)\text{.}\)</span>
+</div> <div class="para" id="p-360">Logo, <span class="process-math">\(\big\langle\gamma'(2),\gamma'(−2)\big\rangle=4(4\pi^2−4)\text{.}\)</span>
+</div> <div class="para" id="p-361">Apesar de desnecessário, segue um esboço da curva e os vetores tangentes pedidos: <figure class="figure figure-like" id="fig_gabp1q2-2020"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="generated/latex-image/gabp1q2-2020.svg" role="img" class="contained" alt="described in detail following the image" aria-describedby="gabp1q2-2020-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe873;</span></summary><div id="gabp1q2-2020-description">A  curva <span class="process-math">\(\gamma\)</span> e suas duas tangentes em <span class="process-math">\((4,0)\text{.}\)</span>
+</div></details>
+</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.1<span class="period">.</span></span><span class="space"> </span>A curva <span class="process-math">\(\gamma\)</span> e suas duas tangentes em <span class="process-math">\((4,0)\text{.}\)</span></figcaption></figure>
+</div> <div class="para" id="p-362">Verifique o que acontece com a imagem da curva, pois aqui temos representado apenas o trecho para <span class="process-math">\(t\in[-\pi,\pi]\text{.}\)</span>
+</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="p1q3-2020"><h4 class="heading"><span class="codenumber">3<span class="period">.</span></span></h4>
+<div class="para logical" id="p-363">
+<div class="para">Seja <span class="process-math">\(F(x,y)=x^2y−5xy\text{.}\)</span> Sabe-se que o plano tangente ao gráfico de <span class="process-math">\(F\)</span> em um ponto <span class="process-math">\(\big(x_0,y_0,F(x_0,y_0)\big)\)</span> tem equação <span class="process-math">\(−15x+50y−z−75=0\text{.}\)</span> Nestas condições, a soma das coordenadas <span class="process-math">\(x_0+y_0\)</span> é igual a:</div>
+<ol class="lower-alpha cols5">
+<li id="li-292"><div class="para" id="p-derived-li-292"><span class="process-math">\(9\text{.}\)</span></div></li>
+<li id="li-293"><div class="para" id="p-derived-li-293"><span class="process-math">\(-4\text{.}\)</span></div></li>
+<li id="li-294"><div class="para" id="p-derived-li-294"><span class="process-math">\(10\text{.}\)</span></div></li>
+<li id="li-295"><div class="para" id="p-derived-li-295"><span class="process-math">\(11\text{.}\)</span></div></li>
+<li id="li-296"><div class="para" id="p-derived-li-296"><span class="process-math">\(0\text{.}\)</span></div></li>
+</ol>
+</div>
+<div class="solutions">
+<details id="answer-50" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-364">Alternativa b.</div></div></details><details id="solution-55" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="p-365">Derivando <span class="process-math">\(F\)</span> diretamente em <span class="process-math">\((x_0,y_0)\)</span> temos <span class="process-math">\(F_x(x_0,y_0)=2x_0y_0−5y_0\)</span> e <span class="process-math">\(F_y(x_0,y_0)=x^2_0−5x_0\text{.}\)</span>
+</div> <div class="para logical" id="p-366">
+<div class="para">Da equação do planotangente no enunciado concluímos que <span class="process-math">\(F_x(x_0,y_0)=−15\)</span> e <span class="process-math">\(F_y(x_0,y_0)=50\text{.}\)</span> Com isso temos o sistema</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases}
+2x_0y_0−5y_0&amp;=15\\
+x^2_0−5x_0&amp;=50,
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">cujas soluções são <span class="process-math">\(x_0=−5\)</span> e <span class="process-math">\(y_0=1\)</span> ou <span class="process-math">\(x_0=10\)</span> e <span class="process-math">\(y_0=−1\text{.}\)</span> Como o ponto <span class="process-math">\(\big(x0,y0,F(x0,y0)\big)\)</span> pertence ao plano tangente, temos que <span class="process-math">\(−15x_0+50y_0−F(x_0,y_0)−75=0\text{,}\)</span> que só é verificado por <span class="process-math">\(x_0=−5\)</span> e <span class="process-math">\(y_0=1\text{,}\)</span> donde <span class="process-math">\(x_0+y_0=−4\text{.}\)</span>
+</div>
+</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="p1q4-2020"><h4 class="heading"><span class="codenumber">4<span class="period">.</span></span></h4>
+<div class="para logical" id="p-367">
+<div class="para">Seja <span class="process-math">\(f\colon\R^2\to\R\)</span> dada por <span class="process-math">\(f(x,y)=e^{\alpha
+x}\sin(8\beta y)\text{,}\)</span> onde <span class="process-math">\(\alpha\)</span> e <span class="process-math">\(\beta\neq 0\)</span> são números reais fixados. Suponha que, para todo <span class="process-math">\((x,y)\in\R^2\text{,}\)</span> a função <span class="process-math">\(f\)</span> satisfaça</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\dfrac{\partial^2 f}{\partial x^2}(x,y)+2\dfrac{\partial^2
+f}{\partial x\partial y}(x,y)−\dfrac{\partial^2 f}{\partial
+y^2}(x,y)=\dfrac{\partial f}{\partial x}(x,y)+\dfrac{\partial
+f}{\partial y}(x,y).
+\end{equation*}
+</div>
+</div> <div class="para" id="p-368">Nestas condições o valor de <span class="process-math">\(\dfrac{\alpha^2}{\beta^2}\)</span> é</div>
+<div class="solutions">
+<details id="answer-51" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-369"><span class="process-math">\(64\)</span></div></div></details><details id="solution-56" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="p-370">
+<div class="para">Calculando explicitamente as derivadas parciais de <span class="process-math">\(f\)</span> que aparecem no enunciado, temos:</div>
+<div class="displaymath process-math" id="md-48">
+\begin{align*}
+\dfrac{\partial f}{\partial x}(x,y)=&amp;\alpha e^{\alpha
+x}\sin(8\beta y)\\
+\dfrac{\partial f}{\partial y}(x,y)=&amp;8\beta e^{\alpha
+x}\cos(8\beta y)\\
+\dfrac{\partial^2 f}{\partial x^2}(x,y)=&amp;\alpha^2 e^{\alpha
+x}\sin(8\beta y)\\
+\dfrac{\partial^2 f}{\partial x\partial y}(x,y)=&amp;
+\dfrac{\partial f}{\partial x}\Big(\dfrac{\partial f}{\partial
+y}\Big)(x,y)=8\alpha\beta e^{\alpha x}\cos(8\beta y)\\
+\dfrac{\partial^2 f}{\partial y^2}(x,y)=&amp;-64\beta^2 e^{\alpha
+x}\sin(8\beta y)
+\end{align*}
+</div>
+<div class="para">Com isso, a equação do enunciado escreve-se como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\big(\alpha^2+64\beta^2-\alpha\big)e^{\alpha
+x}\sin(8\beta y)+\big(16\alpha\beta-8\beta\big)e^{\alpha
+x}\cos(8\beta y)=0,
+\end{equation*}
+</div>
+<div class="para">ou ainda, lembrando que <span class="process-math">\(e^{\alpha x}\neq 0\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\big(\alpha^2+64\beta^2-\alpha\big)\sin(8\beta
+y)+\big(16\alpha\beta-8\beta\big)\cos(8\beta y)=0.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-371">
+<div class="para">Esta equação vale para todos <span class="process-math">\((x,y)\in\R^2\)</span> e, portanto, podemos atribuir valores convenientes a estas variáveis a fim de obter equações para <span class="process-math">\(\alpha\)</span> e <span class="process-math">\(\beta\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-49">
+\begin{align*}
+y=0\colon&amp; 16\alpha\beta-8\beta=0\implies
+\alpha=\dfrac{1}{2};\\
+y=\dfrac{\pi}{16\beta}\colon&amp; \alpha^2+64\beta^2-\alpha=0\implies
+\beta^2=\dfrac{\alpha-\alpha^2}{64}=\dfrac{1}{256}.
+\end{align*}
+</div>
+<div class="para">Assim, <span class="process-math">\(\dfrac{\alpha^2}{\beta^2}=\dfrac{1/4}{1/256}=64\text{.}\)</span>
+</div>
+</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="p1q52020"><h4 class="heading"><span class="codenumber">5<span class="period">.</span></span></h4>
+<div class="para logical" id="p-372">
+<div class="para">Seja <span class="process-math">\(f\colon\R\to\R\)</span> uma função derivável até quarta ordem tal que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(0) = -3,\quad f’(0) = 4,\quad f''(0) =
+3\quad \mbox {e}\quad f'''(0) = 1.
+\end{equation*}
+</div>
+<div class="para">Suponha que <span class="process-math">\(f^{(4)}(x) = \sqrt {1+9x^4}\text{,}\)</span> para todo <span class="process-math">\(x
+\in \mathbb {R}\text{.}\)</span>
+</div>
+</div> <div class="para" id="p-373">Usando o Polinômio de Taylor de ordem <span class="process-math">\(3\)</span> de <span class="process-math">\(f\)</span> em torno de <span class="process-math">\(x_0 = 0\text{,}\)</span> obtemos a seguinte aproximação para <span class="process-math">\(f(1/2)\)</span> com 5 casas decimais: <span class="process-math">\(\boxed{\phantom{-0,60417}}\text{.}\)</span>
+</div> <div class="para logical" id="p-374">
+<div class="para">O erro cometido nesta aproximação pertence ao intervalo:</div>
+<ol class="lower-alpha cols3">
+<li id="li-297"><div class="para" id="p-derived-li-297"><span class="process-math">\(\displaystyle (1/384, 5/1536);\)</span></div></li>
+<li id="li-298"><div class="para" id="p-derived-li-298"><span class="process-math">\(\displaystyle (1/480, 1/384);\)</span></div></li>
+<li id="li-299"><div class="para" id="p-derived-li-299"><span class="process-math">\(\displaystyle (1/600, 1/480);\)</span></div></li>
+<li id="li-300"><div class="para" id="p-derived-li-300"><span class="process-math">\(\displaystyle (1/750, 1/600);\)</span></div></li>
+<li id="li-301"><div class="para" id="p-derived-li-301"><span class="process-math">\(\displaystyle (5/1536, 25/6144).\)</span></div></li>
+</ol>
+</div>
+<div class="solutions">
+<details id="answer-52" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para" id="p-375"><span class="process-math">\(-0,60147\)</span></div> <div class="para" id="p-376">Alternativa a.</div>
+</div></details><details id="solution-57" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="p-377">
+<div class="para">Com os dados fornecidos no enunciado recuperamos o polinômio de ordem <span class="process-math">\(3\)</span> de <span class="process-math">\(f\text{,}\)</span> centrado em <span class="process-math">\(x_0=0\text{:}\)</span>
+</div>
+<div class="displaymath process-math" id="md-50">
+\begin{align*}
+P_3(x)&amp;=f(0)+f'(0)(x-0)+\dfrac{f''(0)}{2}(x-0)^2
++\dfrac{f'''(0)}{3!}(x-0)^3\\
+&amp;=-3+4x+\dfrac{3x^2}{2}+\dfrac{x^3}{6}.
+\end{align*}
+</div>
+<div class="para">Substituindo então  <span class="process-math">\(x=\dfrac{1}{2}\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f\big(\dfrac{1}{2}\big)\approx
+P_3\big(\dfrac{1}{2}\big)=-3+2+\dfrac{3}{8}+\dfrac{1}{48}
+=-\dfrac{29}{48}\approx -0.60147.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-378">
+<div class="para">A estimativa do erro na aproximação de <span class="process-math">\(f(x)\)</span> pelo polinômio de Taylor de odem <span class="process-math">\(3\text{,}\)</span> centrado em <span class="process-math">\(x_0\text{,}\)</span> quando <span class="process-math">\(f\)</span> é uma função que admite quarta derivada é dada por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_3(x)=\dfrac{f^{(4)}(\overline{x})}{4!}(x-x_0)^4,
+\end{equation*}
+</div>
+<div class="para">com <span class="process-math">\(\overline{x}\)</span> entre <span class="process-math">\(x\)</span> e <span class="process-math">\(x_0\text{.}\)</span> Neste exercício, a função é de classe <span class="process-math">\(\mathscr{C}^4\text{,}\)</span> e essa expressão fica</div>
+<div class="displaymath process-math">
+\begin{equation*}
+E_3\big(\dfrac{1}{2}\big)=
+\dfrac{\sqrt{1+9\overline{x}^4}}{24}\big(\frac{1}{2}\big)^4=
+\dfrac{\sqrt{1+9\overline{x}^4}}{384}.
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(0&lt;\overline{x}&lt;\dfrac{1}{2}\text{,}\)</span> temos que <span class="process-math">\(\dfrac{1}{384}&lt; E_3\big(\dfrac{1}{2}\big)&lt;
+\dfrac{\sqrt{1+\frac{9}{16}}}{384}=\dfrac{5}{1536}\text{.}\)</span>
+</div>
+</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="p1q62020"><h4 class="heading"><span class="codenumber">6<span class="period">.</span></span></h4>
+<div class="para logical" id="p-379">
+<div class="para">Seja <span class="process-math">\(f\colon\R^2\to\R\)</span> uma função e defina <span class="process-math">\(g\colon\R^2\to\R\)</span> por <span class="process-math">\(g(x,y) = \arctan
+\big(f(x,y)\big)\text{.}\)</span> Suponha que os conjuntos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\big\{(x,y)
+\in \mathbb {R}^2\colon y = x^2\big\}\text{ e } \big\{ (x,y) \in
+\mathbb {R}^2\colon 0&lt;x&lt;1, xy = 1\big\}
+\end{equation*}
+</div>
+<div class="para">sejam as curvas de nível <span class="process-math">\(c=-1\)</span> e <span class="process-math">\(c=0\text{,}\)</span> respectivamente, de <span class="process-math">\(f\text{.}\)</span>
+</div>
+</div> <div class="para logical" id="p-380">
+<div class="para">Sobre o limite <span class="process-math">\(\lim \limits _{(x,y) \to (1,1)} g(x,y)\text{,}\)</span> é correto afirmar que:</div>
+<ol class="lower-alpha">
+<li id="li-302"><div class="para" id="p-derived-li-302">o limite não existe.</div></li>
+<li id="li-303"><div class="para" id="p-derived-li-303">o limite existe e é igual a <span class="process-math">\(0\text{.}\)</span>
+</div></li>
+<li id="li-304"><div class="para" id="p-derived-li-304">o limite existe e é igual a <span class="process-math">\(\pi/4\text{.}\)</span>
+</div></li>
+<li id="li-305"><div class="para" id="p-derived-li-305">o limite existe e é igual a <span class="process-math">\(-\pi/4\text{.}\)</span>
+</div></li>
+<li id="li-306"><div class="para" id="p-derived-li-306">o limite existe e é um número real, mas não temos informações suficientes para determinar seu valor.</div></li>
+<li id="li-307"><div class="para" id="p-derived-li-307">Não temos informações suficientes para determinar se o limite existe ou não.</div></li>
+</ol>
+</div> <div class="para logical" id="p-381">
+<div class="para">Sobre o limite <span class="process-math">\(\lim \limits _{(x,y) \to (1,1)}
+g(x,x^2)+\dfrac {(x-1)^2}{(x-1)^2+y^2}g(x,y)\text{,}\)</span> é correto afirmar que:</div>
+<ol class="lower-alpha">
+<li id="li-308"><div class="para" id="p-derived-li-308">o limite não existe.</div></li>
+<li id="li-309"><div class="para" id="p-derived-li-309">o limite existe e é igual a <span class="process-math">\(0\text{.}\)</span>
+</div></li>
+<li id="li-310"><div class="para" id="p-derived-li-310">o limite existe e é igual a <span class="process-math">\(\pi/4\text{.}\)</span>
+</div></li>
+<li id="li-311"><div class="para" id="p-derived-li-311">o limite existe e é igual a <span class="process-math">\(-\pi /4\text{.}\)</span>
+</div></li>
+<li id="li-312"><div class="para" id="p-derived-li-312">o limite existe e é um número real, mas não temos informações suficientes para determinar seu valor.</div></li>
+<li id="li-313"><div class="para" id="p-derived-li-313">Não temos informações suficientes para determinar se o limite existe ou não.</div></li>
+</ol>
+</div>
+<div class="solutions">
+<details id="answer-53" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like">
+<div class="para" id="p-382">Alternativa a.</div> <div class="para" id="p-383">Alternativa d.</div>
+</div></details><details id="solution-58" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para logical" id="p-384">
+<div class="para">Para o primeiro limite observamos que a curva <span class="process-math">\(\gamma_1(t)=(t,t^2)\)</span> é tal que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{t\to
+1}g\big(\gamma_1(t)\big)=\arctan(-1)=-\dfrac{\pi}{4},
+\end{equation*}
+</div>
+<div class="para">pois esta curva parametriza a curva de nível <span class="process-math">\(-1\)</span> de <span class="process-math">\(g\text{.}\)</span> De modo análogo, a curva <span class="process-math">\(\gamma_2(t)=\big(t,\dfrac{1}{t}\big)\text{,}\)</span> <span class="process-math">\(0&lt; t&lt;
+1\text{,}\)</span> nos dá que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim\limits_{t\to
+1}g\big(\gamma_1(t)\big)=\arctan(0)=0,
+\end{equation*}
+</div>
+<div class="para">mostrando que <span class="process-math">\(\lim \limits
+_{(x,y) \to (1,1)} g(x,y)\)</span> não existe.</div>
+</div> <div class="para" id="p-385">Para o segundo limite, notamos que a primeira parcela vale <span class="process-math">\(-\dfrac{\pi}{4},\)</span> (exatamente o limite de <span class="process-math">\(g\)</span> ao longo de <span class="process-math">\(\gamma_1\)</span> no parágrafo acima). Já segunda parcela tem limite nulo, pois um produto que tem <span class="process-math">\(g(x,y)\)</span> como um fator limitado (entre <span class="process-math">\(-\dfrac{\pi}{2}\)</span> e <span class="process-math">\(\dfrac{\pi}{2}\)</span>) e <span class="process-math">\(\dfrac{(x-1)^2}{(x-1)^2+y^2}\)</span> como fator que tende a zero (pois é uma função contínua no ponto <span class="process-math">\((1,1)\)</span>). Desta forma a soma tem limite igual a <span class="process-math">\(-\dfrac{\pi}{4}\text{.}\)</span>
+</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="p1q72020"><h4 class="heading"><span class="codenumber">7<span class="period">.</span></span></h4>
+<div class="para" id="p-386">Seja <span class="process-math">\(f\colon\R^2\to\R\)</span> dada por <span class="process-math">\(f(x,y)=\begin{cases}
+\dfrac {\sin (xy^3)}{x^2+y^4},&amp;\text{ se }(x,y) \neq (0,0)\\
+\hfill 0,&amp;\text{ se }(x,y)=(0,0)
+\end{cases}\text{.}\)</span>
+</div> <div class="para logical" id="p-387">
+<div class="para">Decida se cada uma das afirmações abaixo é verdadeira ou falsa.</div>
+<ol class="lower-alpha">
+<li id="li-314"><div class="para" id="p-derived-li-314">
+<span class="process-math">\(f\)</span> é contínua em <span class="process-math">\((0,0)\text{.}\)</span>
+</div></li>
+<li id="li-315"><div class="para" id="p-derived-li-315">
+<span class="process-math">\(f\)</span> é diferenciável em <span class="process-math">\((0,0)\text{.}\)</span>
+</div></li>
+<li id="li-316"><div class="para" id="p-derived-li-316">
+<span class="process-math">\(\dfrac {\partial f}{\partial x}\)</span> e <span class="process-math">\(\dfrac {\partial
+f}{\partial y}\)</span> existem em todos os pontos de <span class="process-math">\(\R^2\text{.}\)</span>
+</div></li>
+<li id="li-317"><div class="para" id="p-derived-li-317">O plano <span class="process-math">\(z=0\)</span> é tangente ao gráfico de <span class="process-math">\(f\)</span> em <span class="process-math">\((0,0,0)\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions">
+<details id="answer-54" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><ol class="lower-alpha cols2">
+<li id="li-318"><div class="para" id="p-derived-li-318">Verdadeira</div></li>
+<li id="li-319"><div class="para" id="p-derived-li-319">Falsa</div></li>
+<li id="li-320"><div class="para" id="p-derived-li-320">Verdadeira</div></li>
+<li id="li-321"><div class="para" id="p-derived-li-321">Falsa</div></li>
+</ol></div></details><details id="solution-59" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-322"><div class="para logical" id="p-388">
+<div class="para">Precisamos verificar se <span class="process-math">\(\lim \limits _{(x,y) \to (0,0)}
+f(x,y)=f(0,0)=0\text{.}\)</span> Para tanto, se <span class="process-math">\((x,y)\neq (0,0)\)</span> podemos escrever</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/vid_limitada.html ./knowl/prop_comp.html ./knowl/cor_confronto.html">
+\begin{equation*}
+f(x,y)=\dfrac {\sin
+(xy^3)}{x^2+y^4}=y\dfrac{xy^2}{x^2+y^4}\dfrac{\sin(xy^3)}{xy^3},
+\end{equation*}
+</div>
+<div class="para">onde</div>
+<ul class="disc">
+<li id="li-323"><div class="para" id="p-derived-li-323">o primeiro fator tende a zero;</div></li>
+<li id="li-324"><div class="para" id="p-derived-li-324">o segundo fator é limitado: basta trocar <span class="process-math">\(y\)</span> por <span class="process-math">\(y^2\)</span> no exemplo aos 4min 20seg de <a href="" class="xref" data-knowl="./knowl/vid_limitada.html" title="Figura A.3.6">Figura A.3.6</a>;</div></li>
+<li id="li-325"><div class="para" id="p-derived-li-325">o terceiro fator tende a <span class="process-math">\(1\text{:}\)</span> aplique a <a href="" class="xref" data-knowl="./knowl/prop_comp.html" title="Proposição A.3.1: (Limite da composta)">Proposição A.3.1</a> com as funções <span class="process-math">\(f(u)=\begin{cases}\dfrac{\sin u}{u},&amp; u\neq 0\\ \hfill
+1,&amp; u=0\end{cases}\)</span> e <span class="process-math">\(g(x,y)=xy^3\text{.}\)</span>
+</div></li>
+</ul>
+<div class="para">Segue então, do <a href="" class="xref" data-knowl="./knowl/cor_confronto.html" title="Corolário A.3.7: (Limitada \times Tende a zero)">Corolário A.3.7</a>, a verificação da igualdade incial, garantindo a continuidade de <span class="process-math">\(f\)</span> na origem.</div>
+</div></li>
+<li id="li-326">
+<div class="para logical" id="p-389">
+<div class="para">A diferenciabilidade de <span class="process-math">\(f\)</span> em <span class="process-math">\((0,0)\)</span> depende da verificação da igualdade</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim \limits _{(h,k)
+\to (0,0)}
+\dfrac{f(0+h,0+k)-f(0,0)-f_x(0,0)h-f_y(0,0)k}{\sqrt{h^2+k^2}}=0.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-390">
+<div class="para">Para isso precisamos das derivadas parciais de <span class="process-math">\(f\)</span> na origem:</div>
+<ul class="disc">
+<li id="li-327"><div class="para" id="p-derived-li-327"><span class="process-math">\(\dfrac {\partial f}{\partial x}(0,0)=\lim\limits_{h\to
+0}\dfrac{f(0+h,0)-f(0,0)}{h}=\lim\limits_{h\to
+0}\dfrac{\sin(h\cdot 0^3)}{(h^2+0^4)h}=0\text{;}\)</span></div></li>
+<li id="li-328"><div class="para" id="p-derived-li-328"><span class="process-math">\(\dfrac {\partial f}{\partial y}(0,0)=\lim\limits_{k\to
+0}\dfrac{f(0,0+k)-f(0,0)}{h}=\lim\limits_{k\to
+0}\dfrac{\sin(0\cdot k^3)}{(0^2+k^4)k}=0\text{.}\)</span></div></li>
+</ul>
+<div class="para">Assim o limite em questão resume-se a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim \limits _{(h,k)
+\to (0,0)}
+\dfrac{\sin(hk^3)}{(h^2+k^4)\sqrt{h^2+k^2}}=\lim \limits _{(h,k)
+\to (0,0)}
+\dfrac{\sin(hk^3)}{hk^3}\dfrac{hk^2}{h^2+k^4}\dfrac{k}{\sqrt{h^2+k^2}},
+\end{equation*}
+</div>
+<div class="para">onde o primeiro fator tende a <span class="process-math">\(1\)</span> (visto acima), mas o segundo e terceiro, apesar de limitados, não possuem limite (aqui você já deve ser capaz de encontrar as curvas que atestam isso). Em particular, o limite em questão não se anula e, desta forma, concluímos que <span class="process-math">\(f\)</span> não é diferenciável em <span class="process-math">\((0,0)\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="li-329"><div class="para" id="p-derived-li-329">A existência das derivadas parciais na origem é parte da solução do item anterior. Nos demais pontos observamos que <span class="process-math">\(f\)</span> é dada por uma expressão que nos permite aplicar as regras de derivação (é um bom exercício fazer essas contas!) e portanto as derivadas parcias fora da origem também existem.</div></li>
+<li id="li-330">Como <span class="process-math">\(f\)</span> não é difrenciável na origem, ela não admite plano tangente neste ponto de seu domínio, apesar das derivadas parciais existirem ali e ser possível escrever a equação do que seria o plano tangente (neste caso este plano daria boas aproximações nas direções dos eixos coordenados, mas não em outras direções. Veja a figura: <figure class="figure figure-like" id="fig_gabp1q7-2020"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<div class="asymptote-box" style="padding-top: 45.9649122807018%"><iframe src="generated/asymptote/gabp1q7-2020.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabp1q7-2020.html">html</a></div>
+</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.2<span class="period">.</span></span><span class="space"> </span>Gráfico da função e candidato a plano tangente</figcaption></figure>
+</li>
+</ol></div></details>
+</div></article><article class="exercise exercise-like" id="p1q82020"><h4 class="heading"><span class="codenumber">8<span class="period">.</span></span></h4>
+<div class="para logical" id="p-391">
+<div class="para">Considere uma função <span class="process-math">\(F\colon\R^2\to\R\)</span> e as duas curvas abaixo:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma (t) = (-5,2t ), \forall t \in \mathbb
+{R}\quad \mbox {e}\quad \sigma (t) = (-5 +t,1), \forall t \in
+\mathbb {R}.
+\end{equation*}
+</div>
+<div class="para">Sabe-se que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F\big(\gamma (t)\big )= -20t^2, \forall t \in
+\mathbb {R}\quad \mbox {e}\quad F\big (\sigma (t)\big )=\ln
+(t^2+1)-5, \forall t \in \mathbb {R}.
+\end{equation*}
+</div>
+</div> <div class="para logical" id="p-392">
+<div class="para">Escolha a alternativa correta para cada caso:</div>
+<ol class="lower-roman">
+<li id="li-331"><div class="para logical" id="p-393">
+<div class="para">Sobre a continuidade de <span class="process-math">\(F\)</span> em <span class="process-math">\((-5,1)\)</span> podemos afirmar que:</div>
+<ol class="lower-alpha">
+<li id="li-332"><div class="para" id="p-derived-li-332">é contínua em <span class="process-math">\((-5,1)\text{.}\)</span>
+</div></li>
+<li id="li-333"><div class="para" id="p-derived-li-333">não é contínua em <span class="process-math">\((-5,1)\text{.}\)</span>
+</div></li>
+<li id="li-334"><div class="para" id="p-derived-li-334">não temos informação suficiente para dizer algo.</div></li>
+</ol>
+</div></li>
+<li id="li-335"><div class="para logical" id="p-394">
+<div class="para">Sobre a diferenciabilidade de <span class="process-math">\(F\)</span> em <span class="process-math">\((-5,1)\text{,}\)</span> podemos afirmar que:</div>
+<ol class="lower-alpha">
+<li id="li-336"><div class="para" id="p-derived-li-336">é diferenciável em <span class="process-math">\((-5,1)\text{.}\)</span>
+</div></li>
+<li id="li-337"><div class="para" id="p-derived-li-337">não é diferenciável em <span class="process-math">\((-5,1)\text{.}\)</span>
+</div></li>
+<li id="li-338"><div class="para" id="p-derived-li-338">não temos informação suficiente para dizer algo.</div></li>
+</ol>
+</div></li>
+<li id="li-339"><div class="para logical" id="p-395">
+<div class="para">Sobre <span class="process-math">\(\dfrac {\partial F}{\partial x} (-5,1)\)</span> podemos afirmar que:</div>
+<ol class="lower-alpha">
+<li id="li-340"><div class="para" id="p-derived-li-340">vale <span class="process-math">\(-5\text{.}\)</span>
+</div></li>
+<li id="li-341"><div class="para" id="p-derived-li-341">vale <span class="process-math">\(0\text{.}\)</span>
+</div></li>
+<li id="li-342"><div class="para" id="p-derived-li-342">não existe.</div></li>
+<li id="li-343"><div class="para" id="p-derived-li-343">não é possível garantir sua existência.</div></li>
+</ol>
+</div></li>
+<li id="li-344"><div class="para logical" id="p-396">
+<div class="para">Sobre <span class="process-math">\(\dfrac {\partial F}{\partial y} (-5,1)\)</span>
+</div>
+<ol class="lower-alpha">
+<li id="li-345"><div class="para" id="p-derived-li-345">vale <span class="process-math">\(-10\text{.}\)</span>
+</div></li>
+<li id="li-346"><div class="para" id="p-derived-li-346">vale <span class="process-math">\(-12\text{.}\)</span>
+</div></li>
+<li id="li-347"><div class="para" id="p-derived-li-347">não existe.</div></li>
+<li id="li-348"><div class="para" id="p-derived-li-348">não é possível garantir sua existência.</div></li>
+</ol>
+</div></li>
+</ol>
+</div>
+<div class="solutions">
+<details id="answer-55" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><ol class="lower-roman cols2">
+<li id="li-349"><div class="para" id="p-derived-li-349">Alternativa c.</div></li>
+<li id="li-350"><div class="para" id="p-derived-li-350">Alternativa c.</div></li>
+<li id="li-351"><div class="para" id="p-derived-li-351">Alternativa b.</div></li>
+<li id="li-352"><div class="para" id="p-derived-li-352">Alternativa a.</div></li>
+</ol></div></details><details id="solution-60" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><ol class="lower-roman">
+<li id="li-353"><div class="para logical" id="p-397">
+<div class="para">Apesar das curvas <span class="process-math">\(\gamma\)</span> e <span class="process-math">\(\sigma\)</span> serem contínuas, <span class="process-math">\(\gamma(1/2)=\sigma(0)=(-5,1)\text{,}\)</span> <span class="process-math">\(F(-5,1)=F\big(\gamma(1/2)\big)=-20(\frac{1}{2})^2=-5\text{,}\)</span> <span class="process-math">\(F\big(\sigma(0)\big)=\ln(0^2+1)-5\text{,}\)</span>
+</div>
+<div class="displaymath process-math" id="md-51">
+\begin{align*}
+\lim\limits_{t\to 1/2}F\big(\gamma(t)\big)&amp;
+=\lim\limits_{t\to 1/2}-20t^2=-5\text{ e}\\
+\lim\limits_{t\to 0}F\big(\sigma(t)\big)&amp;
+=\lim\limits_{t\to 0}\ln(t^2+1)-5=-5,
+\end{align*}
+</div>
+<div class="para">temos informações sobre <span class="process-math">\(F\)</span> apenas ao longo de duas curvas. Poderia haver uma terceira curva ao longo da qual a função não tem o mesmo comportamento, o que mostraria sua descontinuidade ali.</div>
+</div></li>
+<li id="li-354"><div class="para" id="p-398">O mesmo argumento acima também se aplica aqui.</div></li>
+<li id="li-355">
+<div class="para" id="p-399">As curvas dadas têm imagens paralelas aos eixos coordenados, ambas passando por <span class="process-math">\((-5,1)\text{,}\)</span> logo podemos usá-las para obter as derivadas parciais!</div>
+<div class="para logical" id="p-400">
+<div class="para">Usando as definições temos que</div>
+<div class="displaymath process-math" id="md-52">
+\begin{align*}
+\dfrac{\partial F}{\partial x}(-5,1)&amp;
+=\lim\limits_{h\to 0}\dfrac{F(-5+h,1)-F(-5,1)}{h}\\
+&amp;=\lim\limits_{h\to 0}\dfrac{F\big(\sigma(h)\big)+5}{h}=
+\lim\limits_{t\to
+0}\dfrac{\ln(t^2+1)}{t}=0.
+\end{align*}
+</div>
+</div>
+</li>
+<li id="li-356"><div class="para logical" id="p-401">
+<div class="para">De modo totalmente análogo,</div>
+<div class="displaymath process-math" id="md-53">
+\begin{align*}
+\dfrac{\partial F}{\partial y}(-5,1)&amp;
+=\lim\limits_{k\to 0}\dfrac{F(-5,1+k)-F(-5,1)}{k}\\
+&amp;
+\stackrel{(\ast)}{=}\lim\limits_{t\to
+1/2}\dfrac{F\big(\gamma(t)\big)+5}{2t-1}
+=\lim\limits_{t\to
+1/2}\dfrac{-20t^2+5}{2t-1}=-10,
+\end{align*}
+</div>
+<div class="para">onde, em <span class="process-math">\((\ast)\text{,}\)</span> fizemos a mudança <span class="process-math">\(k=2t-1\text{.}\)</span>
+</div>
+</div></li>
+</ol></div></details>
+</div></article><article class="exercise exercise-like" id="p1q9-2020"><h4 class="heading"><span class="codenumber">9<span class="period">.</span></span></h4>
+<div class="para logical" id="p-402">
+<div class="para">Nesta questão <span class="process-math">\(m\)</span> e <span class="process-math">\(k\)</span> são números reais fixados. Considere a função <span class="process-math">\(F(x,y) = \sqrt
+{1+mx^2+ky^2}\text{.}\)</span> Sabe-se que:</div>
+<ul class="disc">
+<li id="li-357"><div class="para" id="p-derived-li-357">A intersecção de <span class="process-math">\(\text {graf}(F)\)</span> com o plano <span class="process-math">\(x=0\)</span> está contida numa elipse no plano <span class="process-math">\(x=0\)</span> que tem parametrização <span class="process-math">\(y(t) = 2 \cos (t)\text{,}\)</span> <span class="process-math">\(z(t) = \sin
+(t)\text{,}\)</span> para todo <span class="process-math">\(t \in \mathbb {R}.\)</span>
+</div></li>
+<li id="li-358"><div class="para" id="p-derived-li-358">A curva de nível <span class="process-math">\(c = \sqrt {2}\)</span> de <span class="process-math">\(F\)</span> é uma hipérbole de assíntotas <span class="process-math">\(y = \pm 2x\text{.}\)</span>
+</div></li>
+</ul>
+</div> <div class="para logical" id="p-403">
+<div class="para">Com essas informações:</div>
+<ol class="lower-alpha">
+<li id="li-359"><div class="para" id="p-derived-li-359">determine <span class="process-math">\(m\)</span> e <span class="process-math">\(k\text{;}\)</span>
+</div></li>
+<li id="li-360"><div class="para" id="p-derived-li-360">descreva o conjunto <span class="process-math">\(\text {Dom}(F)\)</span> e faça um esboço;</div></li>
+<li id="li-361"><div class="para" id="p-derived-li-361">encontre uma parametrização para a parte da curva de nível que contém o ponto <span class="process-math">\((x_0,y_0) = (1,2\sqrt {2})\)</span> e determine a reta tangente a essa curva em <span class="process-math">\((x_0,y_0)\text{;}\)</span>
+</div></li>
+<li id="li-362"><div class="para" id="p-derived-li-362">esboce o gráfico de <span class="process-math">\(F\text{.}\)</span>
+</div></li>
+</ol>
+</div>
+<div class="solutions">
+<details id="answer-56" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><ol class="lower-alpha">
+<li id="li-363"><div class="para" id="p-derived-li-363">
+<span class="process-math">\(m=1\)</span> e <span class="process-math">\(k=-\dfrac{1}{4}\text{.}\)</span>
+</div></li>
+<li id="li-364"><div class="para" id="p-derived-li-364">
+<span class="process-math">\(\text {Dom}(F)=\big\{(x,y)\in\mathbb R^2\colon
+1+x^2-\dfrac{y^2}{4}\geq 0 \big\}\text{.}\)</span> Veja o esboço do domínio na solução.</div></li>
+<li id="li-365"><div class="para" id="p-derived-li-365">
+<span class="process-math">\(\gamma(t)=(\tan t, 2\sec(t))\text{,}\)</span> <span class="process-math">\(t\in
+\big(-\dfrac{\pi}{2},\dfrac{\pi}{2}\big)\)</span> e <span class="process-math">\(r\colon
+y=\sqrt{2}x+\sqrt{2}\text{.}\)</span>
+</div></li>
+<li id="li-366"><div class="para" id="p-derived-li-366">Veja o gráfico de <span class="process-math">\(F\)</span> na solução.</div></li>
+</ol></div></details><details id="solution-61" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like"><ol class="lower-alpha">
+<li id="li-367">
+<div class="para logical" id="p-404">
+<div class="para">A primeira informação do enunciado nos diz que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+z=F(0,y)=\sqrt{1+ky^2}\implies z^2-ky^2=1.
+\end{equation*}
+</div>
+<div class="para">Para que isso seja descrito pela parametrização dada (uma elipse), devemos ter <span class="process-math">\(k&lt; 0\text{.}\)</span> Além disso, tal elipse tem equação cartesiana <span class="process-math">\(z^2+\dfrac{y^2}{4}=1\text{.}\)</span> Fica fácil então ver que <span class="process-math">\(k=-\dfrac{1}{4}\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-405">
+<div class="para">A segunda informação nos diz que</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(x,y)=\sqrt{2}\implies 1+mx^2-\dfrac{y^2}{4}=2\implies
+mx^2-\dfrac{y^2}{4}=1,
+\end{equation*}
+</div>
+<div class="para">é uma hipérbole de assíntotas <span class="process-math">\(y=\pm 2x\text{.}\)</span>  Observe que isso garante <span class="process-math">\(m&gt;0\text{,}\)</span> uma vez que <span class="process-math">\(k&lt;0\text{.}\)</span> Da equação desta hipérbole, vemos que seus focos estão no eixo <span class="process-math">\(Ox\)</span> e podemos escrever sua porção nos quadrantes <span class="process-math">\(y&gt; 0\)</span> como <span class="process-math">\(y=2\sqrt{mx^2-1}\text{,}\)</span> que tem como assíntotas as retas <span class="process-math">\(y=\pm 2\sqrt{m}x\text{.}\)</span> Assim, <span class="process-math">\(2\sqrt{m}=2\implies
+m=1\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="li-368"><div class="para logical" id="p-406">
+<div class="para">De posse dos valores de <span class="process-math">\(m\)</span> e <span class="process-math">\(k\text{,}\)</span> temos a expressão de <span class="process-math">\(F\text{:}\)</span> <span class="process-math">\(F(x,y)=\sqrt{1+x^2-\dfrac{y^2}{4}}\text{.}\)</span> Seu domínio máximo é, então, aquele onde o termo na raiz é não-negativo, ou seja,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\text {Dom}(F)=\big\{(x,y)\in\mathbb R^2\colon
+1+x^2-\dfrac{y^2}{4}\geq 0\big\}.
+\end{equation*}
+</div>
+<div class="para">Sua representação gráfica corresponte à região entre os ramos da hipérbole <span class="process-math">\(-x^2+\dfrac{y^2}{4}=1\)</span> (atenção aos eixos fora de escala!): <figure class="figure figure-like" id="fig_gabp1q91-2020"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<img src="generated/latex-image/gabp1q91-2020.svg" role="img" class="contained" alt="described in detail following the image" aria-describedby="gabp1q91-2020-description"><details class="image-description" aria-live="polite"><summary title="details"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe873;</span></summary><div id="gabp1q91-2020-description">O domínio de <span class="process-math">\(F\)</span> e a tangente pedida no item abaixo.</div></details>
+</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.3<span class="period">.</span></span><span class="space"> </span>O domínio de <span class="process-math">\(F\)</span> e a tangente pedida no item abaixo.</figcaption></figure>
+</div>
+</div></li>
+<li id="li-369">
+<div class="para" id="p-407">Como <span class="process-math">\(F(1,2\sqrt
+{2})=\sqrt{1+1^2-\dfrac{(2\sqrt{2})^2}{4}}=0\text{,}\)</span> estamos falando da curva de nível <span class="process-math">\(0\)</span> de <span class="process-math">\(F\text{,}\)</span> a qual (por pura sorte) é exatamente aquela que delimira o domínio, da qual pedimos a parte que contém o ponto dado, ou seja, vamos trabalhar com o ramo "superior" da hipérbole.</div>
+<div class="para logical" id="p-408">
+<div class="para">Existem muitas maneiras de parametrizar esse ramo: funções trigonométricas, trigonométricas hiperbólicas ou mesmo descrevê-la como o gráfico de uma função a uma variável:</div>
+<ul class="disc">
+<li id="li-370"><div class="para" id="p-derived-li-370">
+<span class="process-math">\(\gamma(t)=(\tan t, 2\sec(t))\text{,}\)</span> <span class="process-math">\(t\in
+\big(-\dfrac{\pi}{2},\dfrac{\pi}{2}\big)\text{;}\)</span>
+</div></li>
+<li id="li-371"><div class="para" id="p-derived-li-371">
+<span class="process-math">\(\beta(t)=(\sinh t, 2\cosh t(t))\text{,}\)</span> <span class="process-math">\(t\in\R\text{;}\)</span>
+</div></li>
+<li id="li-372"><div class="para" id="p-derived-li-372">
+<span class="process-math">\(\alpha(t)=(t,2\sqrt{t^2+1})\text{,}\)</span> <span class="process-math">\(t\in\R\text{.}\)</span>
+</div></li>
+</ul>
+</div>
+<div class="para logical" id="p-409">
+<div class="para">Usaremos o primeiro caso para determinar a reta tangente pedida. Para isso precisamos de <span class="process-math">\(t_0\in\big(-\dfrac{\pi}{2},\dfrac{\pi}{2}\big)\)</span> tal que <span class="process-math">\(\gamma(t_0)=(1,2\sqrt {2})\text{,}\)</span> fácil: <span class="process-math">\(t_0=\dfrac{\pi}{4}\text{.}\)</span> A equação da reta pedida escreve-se:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+r\colon (x,y)=\gamma(t_0)+\gamma\beta'(t_0)=(1,2\sqrt
+{2})+\lambda(2,2\sqrt{2}),\lambda\in\R.
+\end{equation*}
+</div>
+<div class="para">A equação geral de tal reta é <span class="process-math">\(r\colon
+y=\sqrt{2}x+\sqrt{2}\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="li-373">
+<div class="para logical" id="p-410">
+<div class="para">Pode-se perceber, fazendo <span class="process-math">\(z=F(x,y)\)</span> que o gráfico de <span class="process-math">\(F\)</span> satisfaz <span class="process-math">\(-x^2+\dfrac{y^2}{4}+z^2=1\text{,}\)</span> com <span class="process-math">\(z\geq 0\text{,}\)</span> ou seja, é um hiperbolóide de uma folha (seções elípticas) em torno do eixo <span class="process-math">\(Ox\text{.}\)</span> Sem isso, o gráfico da função é construído analisando-se suas curvas de nível e cortes por planos verticais. Começando pelos últimos temos:</div>
+<ul class="disc">
+<li id="li-374"><div class="para" id="p-derived-li-374">
+<span class="process-math">\(z=F(0,y)=\sqrt{1-\dfrac{y^2}{4}}\text{,}\)</span> uma parte de elipse;</div></li>
+<li id="li-375"><div class="para" id="p-derived-li-375">
+<span class="process-math">\(z=F(x,0)=\sqrt{1+x^2}\text{,}\)</span> um ramo de hipérbole;</div></li>
+</ul>
+<div class="para">Já as curvas de nível <span class="process-math">\(c\)</span> tem uma alteração no comportamento:</div>
+<ul class="disc">
+<li id="li-376"><div class="para" id="p-derived-li-376">
+<span class="process-math">\(0\leq c&lt; 1\text{:}\)</span> hipérboles com focos no eixo <span class="process-math">\(Oy\text{;}\)</span>
+</div></li>
+<li id="li-377"><div class="para" id="p-derived-li-377">
+<span class="process-math">\(c=1\text{:}\)</span> par de retas concorrentes na origem, <span class="process-math">\(y=\pm 2x\text{;}\)</span>
+</div></li>
+<li id="li-378"><div class="para" id="p-derived-li-378">
+<span class="process-math">\(c&gt; 1\text{:}\)</span> hipérboles com focos no eixo <span class="process-math">\(Ox\text{;}\)</span>
+</div></li>
+</ul>
+</div>
+<div class="para" id="p-411">Uma figura: <figure class="figure figure-like" id="fig_gabp1q92-2020"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;">
+<div class="asymptote-box" style="padding-top: 67.0175438596491%"><iframe src="generated/asymptote/gabp1q92-2020.html" class="asymptote"></iframe></div>
+<div class="image-archive"><a href="generated/asymptote/gabp1q92-2020.html">html</a></div>
+</div>
+<figcaption><span class="type">Figura</span><span class="space"> </span><span class="codenumber">5.1.4<span class="period">.</span></span><span class="space"> </span>Gráfico da função.</figcaption></figure>
+</div>
+</li>
+</ol></div></details>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch_2020.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch_antigas.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

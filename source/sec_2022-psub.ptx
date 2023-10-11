@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2022-psub" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- Change title when you have one: -->
+  <title>Prova Substitutiva</title>
+  <exercises xml:id="gab_psub-2022" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise xml:id="psubq1a-2022">
+      <statement>
+	<p>Considere a função <m>f\colon\R^2\to\R</m> dada por
+	<me>f(x,y)=
+	\begin{cases}
+	\dfrac{x^3-y^3}{x^2+y^2},&amp;\text{ se } (x,y) \neq (0,0),\\
+	\hfill 0,&amp;\text{ se } (x,y)=(0,0).
+	\end{cases}</me>
+	<ol marker="a.">
+	  <li>Decida se <m>f</m> é contínua em <m>(0,0)</m>.</li>
+	  <li>Calcule as derivadas parciais de <m>f</m> em
+	  <m>(0,0)</m>.</li>
+	  <li>Decida se <m>f</m> é diferenciável em <m>(0,0)</m>.</li>
+	  <li>Calcule <m>\dfrac{\partial f}{\partial \vec{u}}(0,0)</m>
+	  sendo <m>\vec{u} =(a,b)</m> um vetor unitário.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a.">
+	    <li>Sim, é contínua em <m>(0,0)</m>;</li>
+	    <li><m>f_x(0,0)=1</m> e <m>f_y(0,0)=-1</m>.</li>
+	    <li>Não é diferenciável em <m>(0,0)</m>.</li>
+	    <li><m>\dfrac{\partial f}{\partial \vec{u}}(0,0)=a^3-b^3</m>.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>Resolveremos cada item usando as definições.</p>
+	<p>
+	  <ol marker="a.">
+	    <li>Basta usar o <xref ref="teo_limcont" /> e verificar que
+	    <md>
+	      <mrow>\lim_{(x,y) \to (0,0)} f(x,y) &amp;=
+	      \lim_{(x,y) \to (0,0)}\frac{x^3-y^3}{x^2+y^2}</mrow>
+	      <mrow>&amp;=\lim_{(x,y)\to (0,0)} \left( \underbrace{x}_{\to 0}
+	    \underbrace{\frac{x^2}{x^2+y^2}}_{\text{limitado}} -
+	    \underbrace{y}_{\to 0}
+	      \underbrace{\frac{y^2}{x^2+y^2}}_{\text{limitado}}\right)</mrow>
+	      <mrow>&amp;=0=f(0,0),</mrow>
+	      </md>para concluir que <m>f</m> é contínua em
+	    <m>(0,0)</m>.</li>
+	    <li>O denominador da primeira expressão que define <m>f</m> se
+	    anula em <m>(0,0)</m>, então não podemos usar as regras de
+	    derivação. Procedemos utilizando a <xref ref="def_derpar"
+	    />:
+	    <md>
+	      <mrow>f_x(0,0)=\dfrac{\partial f}{\partial x}(0,0) &amp;=
+	      \lim_{t \to 0} \frac{f(t,0) -f(0,0)}{t} = \lim_{t \to 0}
+	      \frac{{t^3}/{t^2}}{t} = 1,</mrow>
+	      <mrow>f_y(0,0)=\dfrac{\partial f}{\partial y}(0,0) &amp;=
+	      \lim_{t \to 0} \frac{f(0,t) -f(0,0)}{t} = \lim_{t \to 0}
+	      \frac{{-t^3}/{t^2}}{t} = -1.</mrow>
+	    </md></li>
+	    <li>Devemos determinar se o limite <me>\lim_{(h,k)\to (0,0)}
+	    \frac{f(h,k)-f(0,0) - f_x(0,0)h - f_y(0,0)k}{\sqrt{h^2+k^2}} =
+	    \lim_{(h,k) \to (0,0)} \frac{h^2k -
+	    hk^2}{(h^2+k^2)^{3/2}}</me> existe e é igual a
+	    zero. Através da curva <m>\alpha\colon\R\to\R^2</m> dada por
+	    <m>\alpha(t) = (-t,t)</m>, este limite se torna <me>\lim_{t
+	    \to 0} \frac{2t^3}{2t^2 \sqrt{2t^2}} = \lim_{t \to 0}
+	    \frac{t}{\sqrt{2}|t|},</me> que não existe (os limites laterais
+	    não coincidem). Isso implica que o limite original também
+	    não existe e, portanto, <m>f</m> não é diferenciável em
+	    <m>(0,0)</m>.</li>
+	    <li>Dado <m>\vec{u}=(a,b)</m> unitário, temos <me>\dfrac{\partial
+	    f}{\partial \vec{u}}(0,0) = \lim_{t \to 0} \frac{f(ta,tb)
+	    -f(0,0)}{t} = \lim_{t \to 0}
+	    \frac{1}{t}\frac{t^3(a^3-b^3)}{t^2(a^2+b^2)} = a^3 - b^3,</me>
+	    pois <m>a^2+b^2 = 1</m>. Convém observar que não podemos
+	    simplesmente tomar o produto interno do gradiente de <m>f</m> em
+	    <m>(0,0)</m> pelo vetor <m>\vec{u}</m> porque <m>f</m> não é diferenciável
+	    em <m>(0,0)</m>!</li>
+	  </ol>
+	</p>
+	<p>Apresentamos outra solução possível do item (c) usando os
+	itens (b) e (d). Caso <m>f</m> fosse diferenciável em
+	<m>(0,0)</m>, teríamos <me>\frac{\partial f}{\partial
+	\vec{u}}(0,0) = \big\langle \nabla f(0,0), \vec{u}\big\rangle =
+	\big\langle (1,-1), (a,b)\big\rangle= a-b.</me> Assim, para
+	provar que <m>f</m> não é diferenciável é suficiente exibir um
+	vetor unitário <m>\vec{u}=(a,b)</m> tal que <m>a^3 - b^3 \neq a
+	- b</m> como, por exemplo, <m>\vec{u} = \Big(
+	\dfrac{\sqrt{2}}{2}, -\dfrac{\sqrt{2}}{2}\Big)</m> (verifique).
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="psubq2a-2022">
+      <statement>
+	<p>Considere a função <m>f(x, y) = x^2 + y^2 - 2kxy</m>, sendo
+	<m>k</m> um número real. Para cada valor de <m>k</m>, determine
+	todos os pontos críticos de <m>f</m> e classifique-os. 
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ul>
+	    <li><m>k=1</m>: <m>(x,x)</m>, <m>x\in\R</m> são os únicos
+	    pontos críticos, os quais são pontos de mínimo (globais) de
+	    <m>f</m>.</li>
+	    <li><m>k=-1</m>: <m>(x,-x)</m>, <m>x\in\R</m> são os únicos
+	    pontos críticos, os quais são pontos de mínimo (globais) de
+	    <m>f</m>.</li>
+	    <li><m>|k|&lt;1</m>: <m>(0,0)</m> é o único ponto crítico,
+	    o qual é um ponto de mínimo (global) de <m>f</m>.</li>
+	    <li><m>|k|&gt;1</m>: <m>(0,0)</m> é o único ponto crítico,
+	    o qual é um ponto de sela de <m>f</m>.</li>
+	  </ul>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  Como, para todo <m>k\in\R</m>, a função <m>f</m> é de classe
+	  <m>\mathscr{C}^2</m> em todo o plano vamos utilizar o critério
+	  do Hessiano (<xref ref="teo_hess" />). Para isso precisamos de
+	  suas derivadas até segunda ordem, indicadas convenientemente
+	  no vetor gradiente e matriz Hessiana:
+	  <me>\nabla f(x,y)=(2x-2ky,2y-2kx)\quad\text{e}\quad H_f(x,y)=
+	  \begin{bmatrix}
+	    2 &amp; -2k\\ -2k &amp; 2
+	  \end{bmatrix}</me>
+	</p>
+	<p>
+	  Os pontos críticos de <m>f</m> são aqueles que anulam o
+	  gradiente e portanto as soluções do sistema <me>\begin{cases}
+	  x&amp;=ky,\\ y&amp;=kx.  \end{cases}</me>
+	  Subsituindo a segunda equação na primeira, temos
+	  <me>x=k^2 x \implies (k^2 - 1)x=0 \implies k = \pm 1\quad
+	  \text{ou}\quad x = 0.</me>
+	</p>
+	<p>Temos então três casos as considerar:
+	<ul>
+	  <li><m>k=1</m>: nesse caso temos
+	  <me>f(x,y)=x^2+y^2-2xy=(x-y)^2\geq 0,</me> para todos
+	  <m>(x,y)\in\R^2</m>. Aqui os pontos críticos satisfazem
+	  <m>y=x</m> e o determinante da matriz Hessiana se anula, não
+	  permitindo a aplicação do critério. Por outro lado,
+	  <me>f(x,x)=0\leq(x-y)^2=f(x,y)</me>, mostrando que todos os
+	  pontos da forma <m>(x,x)</m>, <m>x\in\R</m> são pontos de
+	  mínimo global de <m>f</m>.</li>
+	  <li><m>k=-1</m>: agora <me>f(x,y)=x^2+y^2+2xy=(x+y)^2\geq
+	  0,</me> para todos <m>(x,y)\in\R^2</m>. Aqui os pontos
+	  críticos satisfazem <m>y=-x</m> e o determinante da matriz
+	  Hessiana novamente se anula. Mas
+	  <me>f(x,-x)=0\leq(x+y)^2=f(x,y)</me>, mostrando que todos os
+	  pontos da forma <m>(x,x)</m>, <m>x\in\R</m> são pontos de
+	  mínimo global de <m>f</m>.</li>
+	  <li><m>k\neq\pm 1</m> e <m>x=0</m>: isso garante que
+	  <m>y=0</m> e portanto o ponto <m>(0,0)</m> é crítico para
+	  qualquer <m>k\in\R</m>. Nesse caso temos <me>\det
+	  H_f(0,0)=4(1-k^2)\quad\text{e}\quad f_{xx}(0,0)=2</me> e então
+	  quando <m>|k|&lt; 1</m> a origem é um ponto de mínimo local,
+	  enquanto que <m>|k|&gt; 1</m> garante a origem como um ponto
+	  de sela.
+	  </li>
+	</ul>
+	</p>
+	<p>Veja os gráficos da função para alguns valores de
+	<m>k</m>:</p>
+	<sidebyside widths="50% 50%" valign="middle">
+	  <figure xml:id="fig_gabpsubq21-2022">
+	    <caption>Gráfico de <m>f</m> para <m>k=1</m></caption>
+	    <image width="50%" xml:id="gabpsubq21-2022" archive="html">
+	      <description>Gráfico de <m>f</m> para <m>k=1</m></description>
+	      <asymptote>
+		import graph3;
+		size(10cm);
+      
+		currentprojection=orthographic(3,2,1);
+		limits((-1.5,-1.5,-1.5),(1.5,1.5,1.5));
+		
+		currentlight=light(white,(2,2,2),(2,-2,-2));
+		// uncomment for transparent background
+		// currentlight.background=black+opacity(0);
+		
+		real f(pair z){
+		return z.x^2+z.y^2-2*z.x*z.y;}
+		
+		draw(surface(f,(-1,-1),(1,1),Spline),lightblue+opacity(.8),blue);
+		
+		draw((-1,-1,0)--(1,1,0),orange+1bp);
+		
+		xaxis3("$x$",Arrow3); 
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+	  <figure xml:id="fig_gabpsubq22-2022">
+	    <caption>Gráfico de <m>f</m> para <m>k=-1</m></caption>
+	    <image width="50%" xml:id="gabpsubq22-2022" archive="html">
+	      <description>Gráfico de <m>f</m> para <m>k=-1</m></description>
+	      <asymptote>
+		import graph3;
+		size(10cm);
+		
+		currentprojection=orthographic(3,2,1);
+		limits((-1.5,-1.5,-1.5),(1.5,1.5,1.5));
+		
+		currentlight=light(white,(2,2,2),(2,-2,-2));
+		// uncomment for transparent background
+		// currentlight.background=black+opacity(0);
+		
+		real f(pair z){
+		return z.x^2+z.y^2+2*z.x*z.y;}
+		
+		draw(surface(f,(-1,-1),(1,1),Spline),lightblue+opacity(.8),blue);
+		
+		draw((-1,1,0)--(1,-1,0),orange+1bp);
+		
+		xaxis3("$x$",Arrow3); 
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+        </sidebyside>
+	<sidebyside widths="50% 50%" valign="middle">
+	  <figure xml:id="fig_gabpsubq23-2022">
+	    <caption>Gráfico de <m>f</m> para <m>k=\dfrac{1}{2}</m></caption>
+	    <image width="50%" xml:id="gabpsubq23-2022" archive="html">
+	      <description>Gráfico de <m>f</m> para <m>k=\dfrac{1}{2}</m></description>
+	      <asymptote>
+		import graph3;
+		size(10cm);
+		
+		currentprojection=orthographic(3,2,1);
+		limits((-1.5,-1.5,-1.5),(1.5,1.5,1.5));
+		
+		currentlight=light(white,(2,2,2),(2,-2,-2));
+		// uncomment for transparent background
+		// currentlight.background=black+opacity(0);
+		
+		real f(pair z){
+		return z.x^2+z.y^2-z.x*z.y;}
+		
+		draw(surface(f,(-1,-1),(1,1),Spline),lightblue+opacity(.8),blue);
+		
+		dot((0,0,0),orange);
+		
+		xaxis3("$x$",Arrow3); 
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+	  <figure xml:id="fig_gabpsubq24-2022">
+	    <caption>Gráfico de <m>f</m> para <m>k=-\dfrac{1}{2}</m></caption>
+	    <image width="50%" xml:id="gabpsubq24-2022" archive="html">
+	      <description>Gráfico de <m>f</m> para <m>k=-\dfrac{1}{2}</m></description>
+	      <asymptote>
+		import graph3;
+		size(10cm);
+		
+		currentprojection=orthographic(3,2,1);
+		limits((-1.5,-1.5,-1.5),(1.5,1.5,1.5));
+		
+		currentlight=light(white,(2,2,2),(2,-2,-2));
+		// uncomment for transparent background
+		// currentlight.background=black+opacity(0);
+		
+		real f(pair z){
+		return z.x^2+z.y^2+z.x*z.y;}
+		
+		draw(surface(f,(-1,-1),(1,1),Spline),lightblue+opacity(.8),blue);
+		
+		dot((0,0,0),orange);
+		
+		xaxis3("$x$",Arrow3); 
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+        </sidebyside>
+	<sidebyside widths="50% 50%" valign="middle">
+	  <figure xml:id="fig_gabpsubq25-2022">
+	    <caption>Gráfico de <m>f</m> para <m>k=-2</m></caption>
+	    <image width="50%" xml:id="gabpsubq25-2022" archive="html">
+	      <description>Gráfico de <m>f</m> para <m>k=-\dfrac{1}{2}</m></description>
+	      <asymptote>
+		import graph3;
+		size(10cm);
+		
+		currentprojection=orthographic(3,2,1);
+		limits((-1.5,-1.5,-1.5),(1.5,1.5,1.5));
+		
+		currentlight=light(white,(2,2,2),(2,-2,-2));
+		// uncomment for transparent background
+		// currentlight.background=black+opacity(0);
+		
+		real f(pair z){
+		return z.x^2+z.y^2+4*z.x*z.y;}
+		
+		draw(surface(f,(-1,-1),(1,1),Spline),lightblue+opacity(.8),blue);
+		
+		dot((0,0,0),orange);
+		
+		xaxis3("$x$",Arrow3); 
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+	  <figure xml:id="fig_gabpsubq26-2022">
+	    <caption>Gráfico de <m>f</m> para <m>k=2</m></caption>
+	    <image width="50%" xml:id="gabpsubq26-2022" archive="html">
+	      <description>Gráfico de <m>f</m> para <m>k=-\dfrac{1}{2}</m></description>
+	      <asymptote>
+		import graph3;
+		size(10cm);
+		
+		currentprojection=orthographic(3,2,1);
+		limits((-1.5,-1.5,-1.5),(1.5,1.5,1.5));
+		
+		currentlight=light(white,(2,2,2),(2,-2,-2));
+		// uncomment for transparent background
+		// currentlight.background=black+opacity(0);
+		
+		real f(pair z){
+		return z.x^2+z.y^2-4*z.x*z.y;}
+		
+		draw(surface(f,(-1,-1),(1,1),Spline),lightblue+opacity(.8),blue);
+		
+		dot((0,0,0),orange);
+		
+		xaxis3("$x$",Arrow3); 
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+        </sidebyside>
+	<p>E por que não uma animação no Geogebra?</p>
+	<figure xml:id="fig_gabpsubq2ggb-2022">
+	  <interactive geogebra="prdrqfyf" width="100%" /> 
+	  <caption>Gráfico de <m>f</m> para diversos valores de
+	  <m>k</m></caption>
+	</figure>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="psubq3a-2022">
+      <statement>
+	<p>Seja <m>f\colon\R\to\R</m> uma função diferenciável. Sabe-se
+	que:
+	<ol marker="(i)">
+	  <li>A imagem da curva <m>\sigma(t)=(e^{t-1}, -1 +
+	  e^{2t-2})</m>, <m>t\in\R</m> está contida na curva de nível
+	  <m>1</m> de <m>f</m>.</li>
+	  <li>A imagem da curva <m>\gamma(u) = (2+u, 4(u+1), u^2)</m>, 
+	  <m>u\in\R</m> está contida no gráfico de <m>f</m>.</li>
+	</ol>
+	</p>
+	<p>Determine a equação do plano tangente ao gráfico de <m>f</m>
+	no ponto <m>\big(1,0,f(1,0)\big)</m>. Explicite claramente
+	<m>f(1,0)</m> e <m>\nabla f(1,0)</m>.</p>
+      </statement>
+      <answer>
+	<p><m>f(1,0)=1</m>, <m>\nabla f(1,0)=(2,-1)</m> e <m>\pi\colon
+	z=2x-y-1</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Para calcular <m>f(1,0)</m> podemos usar as informações dadas
+	em qualquer um dos itens (i) e (ii) do enunciado. De (i) temos
+	que <me>f\big(\sigma(t)\big) = 1, \forall t \in \mathbb{R}.</me>
+	Em particular, para <m>t=1</m>, temos <me>\sigma(1) = (1,0)
+	\implies \boxed{f(1,0) = 1}.</me></p>
+	<p>De (ii) segue-se que <me>f(2+u, 4(u+1))=u^2, \forall u \in
+	\mathbb{R}</me> e, tomando <m>u=-1</m>, obtemos <me>\boxed{f(1,0) =
+	(-1)^2 = 1}.</me></p>
+	<p>Nosso próximo passo é calcular o gradiente de <m>f</m> em
+	<m>(1,0)</m>. Para isso derivamos as expressões acima com a
+	regra da cadeia:
+	<me>\begin{cases}
+	f\big(\sigma(t)\big)&amp; = 1\\
+	f(2+u, 4(u+1))&amp;=u^2
+	\end{cases}\implies
+	\begin{cases}
+	\Big\langle\nabla f\big(\sigma (t)\big),
+	\sigma'(t)\Big\rangle&amp;=0\\
+	\Big\langle\nabla f\big(2+u, 4(u+1)\big),
+	(2+u, 4(u+1))'\Big\rangle&amp;=2u\\
+	\end{cases}</me></p>
+	<p>Escrevendo os vetores em coordenadas, substituindo
+	<m>t=1</m> na primeira das equações do sistema acima e
+	<m>u=-1</m> na segunda, temos
+	<me>\begin{cases}
+	\dfrac{\partial f}{\partial x}(1,0) + 2 \dfrac{\partial
+	f}{\partial y}(1,0)&amp;=0\\
+	\dfrac{\partial f}{\partial x}(1,0) + 4\dfrac{\partial f}{\partial
+	y}(1,0)&amp;= -2.
+	\end{cases}</me>
+	Resolvendo o sistema, encontramos <me>\boxed{\nabla f(1,0) = (2,-1)}</me> e,
+	portanto, o plano tangente ao gráfico de <m>f</m> em <m>(1,0,1)</m> tem
+	equação <me>\pi\colon z=f(1,0) + \frac{\partial f}{\partial x}(1,0)(x-1) +
+	\frac{\partial f}{\partial y}(1,0)(y-0)\implies \pi\colon z= 2x-y-1.</me>
+	</p>
+	<p>Uma figura para ilustrar a situação:</p>
+	<figure xml:id="fig_gabpsubq3">
+	  <caption>Cortes do gráfico de <m>f</m> e o plano tangente determinado
+	  por eles.</caption>
+	  <image width="100%" xml:id="gabpsubq3" archive="html">
+	    <asymptote>
+	      import solids;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(3,2,1);
+	      limits((-2,-2,-2),(2,2,2));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      path3 curva1=graph(new triple(real t) {
+	      return (exp(t-1),-1+exp(2*t-2),1);},1/2,3/2,20,operator ..);
+	      
+	      path3 curva2=graph(new triple(real t) {
+	      return (2+t,4*t+4,t^2);},-2,0,20,operator ..);
+	      
+	      draw(curva1, blue);
+	      draw(curva2, orange);
+	      
+	      //vectors and point for the plane
+	      triple u=(1,4,-2),v=(1,2,0),o=(1,0,1);
+	      draw(surface(plane(2.5*u,2.5*v,o-u-v)),green+opacity(0.4));
+	      
+	      dot(Label("$(1,0,1)$"),(1,0,1),S);
+	      draw(o--o+(1,4,-2),orange,Arrow3);
+	      draw(o--o+(1,2,0),blue,Arrow3);
+	      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="psubq4a-2022">
+      <statement>
+	<p>Determine o valor máximo e o valor mínimo de
+	<m>f(x,y,z)=y-z</m> na elipse <me>C = \big\{(x,y,z)\in\R^3\colon
+	x^2 + y^2 - z^2 =0\text{ e } x+y-2z+1=0\big\}.</me> Explicite os
+	pontos de <m>C</m> onde ocorrem esses valores.
+	</p>
+      </statement>
+      <answer>
+	<p><m>f(0,1,1)=0</m> (máximo) e <m>f(1,0,1)=-1</m> (mínimo).</p>
+      </answer>
+      <solution>
+	<p>Vamos usar o Método dos Multiplicadores de Lagrange, com duas
+	restrições. Outra opção, um tanto mais trabalhosa (precisaria
+	saber eliminar termos mistos em equações de cônicas - uma
+	aplicação de diagonalização de matrizes simétricas), seria
+	parametrizar a elipse <m>C</m>.
+	</p>
+	<p>Sejam <m>g,h\colon\R^3\to\R</m> dadas por <me>g(x,y,z) = x^2
+	+ y^2 - z^2 \quad \text{e} \quad h(x,y,z) = x+y-2z.</me> Ambas
+	são de classe <m>\mathscr{C}^1</m> e a elipse <m>C</m> é a
+	intersecção da superfície de nível <m>c=0</m> de <m>g</m> e da superfície
+	de nível <m>c=-1</m> de <m>h</m>.</p>
+	<p>De acordo com o Método dos Multiplicadores de Lagrange, os
+	candidatos são as soluções do sistema
+	<me>\begin{cases}
+	\{\nabla f(x,y,z), \nabla g(x,y,z), \nabla h(x,y,z)\}\text{ é
+	linearmente dependente},\\
+	x^2 + y^2 - z^2 = 0,\\
+	x+y-2z+1=0.
+	\end{cases}</me>
+	A primeira condição equivale a
+	<me>\det\begin{bmatrix}
+	0 &amp; 1 &amp; -1\\
+	x &amp; y &amp; -z\\
+	1 &amp; 1 &amp;-2
+	\end{bmatrix} = 0 \iff x+ y -z=0.</me></p>
+	<p>Subtraindo as equações <m>x+ y -z =0</m> e <m>x+y-2z+1=0</m>
+	obtemos $z=1$ e, portanto, <me>\begin{cases} x+y=1,\\ x^2 +
+	y^2=1, \end{cases}</me> o que implica que <m>x=0</m> e
+	<m>y=1</m>, ou <m>x=1</m> e <m>y=0</m>.</p>
+	<p>Os candidatos são, portanto, os pontos <me>(0,1,1) \quad
+	\text{e} \quad (1,0,1),</me> nos quais <m>f</m> atinge,
+	respectivamente, os valores <m>f(0,1,1)=0</m> (máximo) e
+	<m>f(1,0,1)=-1</m> (mínimo).</p>
+	<p>Uma figura:</p>
+	<figure xml:id="fig_gabpsubq4">
+	  <caption>Cortes do gráfico de <m>f</m> e o plano tangente determinado
+	  por eles.</caption>
+	  <image width="100%" xml:id="gabpsubq4" archive="html">
+	    <asymptote>
+	      import solids;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(3,2,1);
+	      limits((-2,-2,-2),(2,2,2));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      path3 geratriz=graph(new triple(real t) {
+	      return (0,t,t);},-2,2,operator ..);
+	      
+	      surface cone=surface(revolution(geratriz,axis=Z));
+	      
+	      real f(pair z){return (z.x+z.y+1)/2;}
+	      
+	      path3 curva=graph(new triple(real t) {
+	      return (sqrt(2)/2*cos(t)+sin(t)/2+1/2,sqrt(2)/2*cos(t)-1/2*sin(t)+1/2,sqrt(2)/2*cos(t)+1);},
+	      0,2*pi,20,operator ..);
+	      
+	      draw(cone, lightblue+opacity(0.8));
+	      draw(surface(f,(-1,-1),(2,2)),orange);
+	      draw(curva,red+2bp);
+	      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+      </solution>
+    </exercise>
+  </exercises>
+  
+</section>

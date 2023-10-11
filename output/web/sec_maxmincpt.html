@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="pt-BR" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Máximos e mínimos em conjuntos compactos</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="MAT–2454">
+<meta property="book:author" content="Alexandre Lymberopoulos &amp; Vinícius Morelli Cortes">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "https://pretextbook.org/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="https://pretextbook.org/js/0.32/pretext_search.js"></script><link href="https://pretextbook.org/css/0.82/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.32</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.32/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.32/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.32/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Executar (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="https://pretextbook.org/css/0.82/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.82/setcolors.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Ir ao conteúdo principal</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""><img src="external/images/book-logo.png" alt="Logo image"></a><div class="title-container">
+<h1 class="heading"><a href="exsol-2454.html"><span class="title">MAT–2454:</span> <span class="subtitle">Soluções de Exercícios e de Provas</span></a></h1>
+<p class="byline">Alexandre Lymberopoulos &amp; Vinícius Morelli Cortes</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Sumário"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Sumário</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Buscando por: </h2>
+<div id="searchempty" class="searchempty"><span>Não encontrado.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec_maxminloc.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="up-button button" href="ch_listas.html" title="Acima"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Acima</span></a><a class="next-button button" href="sec_maxminarb.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\newcommand{\sfrac}[2]{{#1}/{#2}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="meta_frontmatter.html" class="internal"><span class="title">Pré-textual</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-1.html" class="internal"><span class="title">Ficha técnica</span></a></div></li>
+<li class="toc-item toc-dedication"><div class="toc-title-box"><a href="dedication-1.html" class="internal"><span class="title">Dedicatória</span></a></div></li>
+<li class="toc-item toc-acknowledgement"><div class="toc-title-box"><a href="acknowledgement-1.html" class="internal"><span class="title">Agradecimentos</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="meta_frontmatter-preface.html" class="internal"><span class="title">Prefácio</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch_listas.html" class="internal"><span class="codenumber">1</span> <span class="title">Exercícios Selecionados</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_taylor.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Polinômios de Taylor</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_taylor.html#ex_taylor" class="internal"><span class="codenumber">1.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_curvas.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Curvas no Plano</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_curvas.html#ex_curvas" class="internal"><span class="codenumber">1.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_func.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Funções de duas variáveis e curvas de nível</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_func.html#ex_func" class="internal"><span class="codenumber">1.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_limcont.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Limites e Continuidade</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_limcont.html#ex_limcont" class="internal"><span class="codenumber">1.4</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_derdifpt.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Derivadas Parciais, Diferenciabilidade e Plano Tangente</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_derdifpt.html#ex_derdifpt" class="internal"><span class="codenumber">1.5</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_cadeia.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Regras da Cadeia</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_cadeia.html#ex_cadeia" class="internal"><span class="codenumber">1.6</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_grad-dir.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Vetor Gradiente e Derivada direcional</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_grad-dir.html#ex_grad-dir" class="internal"><span class="codenumber">1.7</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_curvasR3.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Curvas no <span class="process-math">\(\R^3\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_curvasR3.html#ex_curvasR3" class="internal"><span class="codenumber">1.8</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_supptddir.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Superfícies de nível, planos tangente e derivadas direcionais</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_supptddir.html#ex_supptddir" class="internal"><span class="codenumber">1.9</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_maxminloc.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Classificação de pontos críticos em abertos de <span class="process-math">\(\R^2\)</span></span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_maxminloc.html#ex_maxminloc" class="internal"><span class="codenumber">1.10</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section active">
+<div class="toc-title-box"><a href="sec_maxmincpt.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Máximos e mínimos em conjuntos compactos</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_maxmincpt.html#ex_maxmincpt" class="internal"><span class="codenumber">1.11</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_maxminarb.html" class="internal"><span class="codenumber">1.12</span> <span class="title">Máximos e mínimos em conjuntos arbitrários</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_maxminarb.html#ex_maxminarb" class="internal"><span class="codenumber">1.12</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_2023.html" class="internal"><span class="codenumber">2</span> <span class="title">Provas de 2023</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2023-p1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Primeira Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2023-p1.html#gab_2023-p1" class="internal"><span class="codenumber">2.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_2022.html" class="internal"><span class="codenumber">3</span> <span class="title">Provas de 2022</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2022-p1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Primeira Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2022-p1.html#gab_2022-p1" class="internal"><span class="codenumber">3.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2022-p2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Segunda Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2022-p2.html#gab_p2a-2022" class="internal"><span class="codenumber">3.2</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2022-psub.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Prova Substitutiva</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2022-psub.html#gab_psub-2022" class="internal"><span class="codenumber">3.3</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2022-prec.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Prova de Recuperação</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2022-prec.html#gab_prec-2022" class="internal"><span class="codenumber">3.4</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_2021.html" class="internal"><span class="codenumber">4</span> <span class="title">Provas de 2021</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2021-p1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">Primeira Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2021-p1.html#gab_2021-p1" class="internal"><span class="codenumber">4.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch_2020.html" class="internal"><span class="codenumber">5</span> <span class="title">Provas de 2020</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec_2020-p1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">Primeira Prova</span></a></div>
+<ul class="structural toc-item-list"><li class="toc-item toc-exercises"><div class="toc-title-box"><a href="sec_2020-p1.html#gab_2020-p1" class="internal"><span class="codenumber">5.1</span> <span class="title">Exercícios</span></a></div></li></ul>
+</li></ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch_antigas.html" class="internal"><span class="codenumber">6</span> <span class="title">Provas até 2019</span></a></div></li>
+<li class="toc-item toc-backmatter">
+<div class="toc-title-box"><a href="meta_backmatter.html" class="internal"><span class="title">Apêndice</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-appendix">
+<div class="toc-title-box"><a href="apendice.html" class="internal"><span class="codenumber">A</span> <span class="title">Principais Resultados</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_calc1.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Cálculo 1</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_func.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Curvas de Nível</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_limcont.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Cálculo de Limites</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_diff.html" class="internal"><span class="codenumber">A.4</span> <span class="title">Derivadas Parciais e Diferenciabilidade</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_derivseg.html" class="internal"><span class="codenumber">A.5</span> <span class="title">Derivadas de Segunda Ordem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_cadeiadir.html" class="internal"><span class="codenumber">A.6</span> <span class="title">Regras da Cadeia e Derivadas direcionais</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_supnivel.html" class="internal"><span class="codenumber">A.7</span> <span class="title">Superfícies de nível e Curvas no espaço</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_maxminloc.html" class="internal"><span class="codenumber">A.8</span> <span class="title">Máximos e mínimos locais em abertos de <span class="process-math">\(\R^2\)</span></span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="ap_maxmincond.html" class="internal"><span class="codenumber">A.9</span> <span class="title">Máximos e mínimos condicionados</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="colophon-2.html" class="internal"><span class="title">Ficha técnica</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec_maxmincpt"><h2 class="heading hide-type">
+<span class="type">Seção</span><span class="space"> </span><span class="codenumber">1.11</span><span class="space"> </span><span class="title">Máximos e mínimos em conjuntos compactos</span>
+</h2>
+<section class="exercises" id="ex_maxmincpt"><h3 class="heading hide-type">
+<span class="type">Exercícios</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Exercícios</span>
+</h3>
+<article class="exercise exercise-like" id="maxmincpt-3b"><h4 class="heading"><span class="codenumber">3.b<span class="period">.</span></span></h4>
+<div class="para" id="p-149">Determine o valor máximo e o valor mínimo de <span class="process-math">\(f(x,y,z) =
+x^2 + y^2 +2z^2 -4xy -4z + 3x\)</span> na região <span class="process-math">\(R = \big\{(x,y,z)
+\in \R^3\colon x+y+z \leq 4, x\geq 0, y\geq 0\text{ e }
+z\geq0\big\}\text{.}\)</span>
+</div>
+<div class="solutions">
+<details id="hint-23" class="hint solution-like"><summary><span class="type">Dica</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-150">Divida a análise em três etapas: no interior de <span class="process-math">\(R\text{,}\)</span> nas faces de <span class="process-math">\(R\)</span> (excluídas as arestas) e nas arestas (atenção aos vértices!).</div></div></details><details id="answer-18" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-151">O valor máximo de <span class="process-math">\(f\)</span> é <span class="process-math">\(28\)</span> e o valor mínimo de <span class="process-math">\(f\)</span> é <span class="process-math">\(-\dfrac{11}{4}\text{.}\)</span>
+</div></div></details><details id="solution-23" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="p-152">Note que <span class="process-math">\(f\)</span> é contínua e <span class="process-math">\(R\)</span> é um tetraedro sólido, fechado e limitado, portanto compacto. Deste modo o Teorema de Weierstrass (<a href="" class="xref" data-knowl="./knowl/teo_wei.html" title="Teorema A.9.2">Teorema A.9.2</a>) assegura que o problema proposto tem solução.</div> <div class="para" id="p-153">A análise será dividida em três etapas: encontraremos os candidatos no interior de <span class="process-math">\(R\text{,}\)</span> no "interior" das faces de <span class="process-math">\(R\)</span> (isto é, as faces com as arestas excluídas) e, finalmente, nas arestas de <span class="process-math">\(R\text{.}\)</span> O motivo dessa análise "excluindo" essas "fronteiras", fica claro ao estudar a demonstração dos teoremas finais da <a href="ap_maxmincond.html" class="internal" title="Seção A.9: Máximos e mínimos condicionados">Seção A.9</a> (<a href="" class="xref" data-knowl="./knowl/teo_lag31.html" title="Teorema A.9.7">Teorema A.9.7</a> e <a href="" class="xref" data-knowl="./knowl/teo_lag32.html" title="Teorema A.9.9">Teorema A.9.9</a>).</div> <div class="para logical" id="p-154">
+<div class="para">Ao trabalho:</div>
+<ul class="disc">
+<li id="li-75"><div class="para logical" id="p-155">
+<div class="para">Candidatos no interior de <span class="process-math">\(R\text{:}\)</span> o interior de <span class="process-math">\(R\)</span> é o conjunto (aberto)</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_crit.html">
+\begin{equation*}
+\text{int}(R) = \big\{(x,y,z) \in
+\R^3\colon x+y+z &lt; 4, x&gt; 0, y&gt; 0\text{ e } z&gt;
+0\big\}.
+\end{equation*}
+</div>
+<div class="para">Neste caso, usamos a versão para três variáveis (totalmente análoga) do <a href="" class="xref" data-knowl="./knowl/teo_crit.html" title="Teorema A.8.4">Teorema A.8.4</a>, concluindo que os candidatos são os pontos críticos de <span class="process-math">\(f\)</span> neste conjunto. Como</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_crit.html">
+\begin{equation*}
+\nabla f(x,y,z) = (2x-4y+3, 2y-4x,
+4z-4),
+\end{equation*}
+</div>
+<div class="para">o único ponto crítico é <span class="process-math">\(\big(\dfrac{1}{2}, 1,
+1\big)\text{.}\)</span> Note que este ponto pertence a int<span class="process-math">\((R)\text{.}\)</span>
+</div>
+</div></li>
+<li id="li-76">
+<div class="para logical" id="p-156">
+<div class="para">Candidatos nas faces (excluídas as arestas): procuramos os candidatos nos conjuntos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_lag31.html ./knowl/maxminarb-5.html" id="md-21">
+\begin{align*}
+F_1 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z = 4,
+x&gt;0, y&gt;0\text{ e } z&gt;0\big\},\\
+F_2 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x= 0, y&gt; 0\text{ e } z&gt; 0\big\},\\
+F_3 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x&gt; 0, y= 0\text{ e } z&gt; 0\big\},\\
+F_4 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+x&gt; 0, y&gt; 0\text{ e } z= 0\big\}.
+\end{align*}
+</div>
+<div class="para">São as faces de <span class="process-math">\(R\text{,}\)</span> excluídas as arestas. Em cada face, vamos "eliminar" uma das variáveis e reduzir o problema ao estudo de funções de duas variáveis em abertos de <span class="process-math">\(\R^2\text{.}\)</span> Outra abordagem possível seria usar o Método dos Multiplicadores de Lagrange (<a href="" class="xref" data-knowl="./knowl/teo_lag31.html" title="Teorema A.9.7">Teorema A.9.7</a>), o qual foi utilizado no <a href="" class="xref" data-knowl="./knowl/maxminarb-5.html" title="Exercício 1.12.5">Exercício 1.12.5</a>.</div>
+</div>
+<div class="para logical" id="p-157">
+<div class="para">Na face <span class="process-math">\(F_1\text{,}\)</span> podemos escrever <span class="process-math">\(z = 4 - x - y\)</span> e estudar a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_1(x,y) = f(x,y,4-x-y) = 3x^2 + 3y^2 -9x
+-12y +16
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_1 = \big\{ (x,y) \in \R^2\colon
+x+ y&lt;4, x &gt;0\text{ e } y&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_1(x,y) = (6x-9, 6y-12),
+\end{equation*}
+</div>
+<div class="para">o ponto <span class="process-math">\(\Big(
+\dfrac{3}{2}, 2\Big) \in U_1\)</span> é o único ponto crítico de <span class="process-math">\(g_1\text{.}\)</span> Este ponto corresponde ao candidato <span class="process-math">\(\Big(
+\dfrac{3}{2}, 2, \dfrac{1}{2}\Big) \in F_1\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-158">
+<div class="para">Na face <span class="process-math">\(F_2\text{,}\)</span> temos <span class="process-math">\(x=0\)</span> e estudamos a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_2(y,z) = f(0,y,z) = y^2 + 2z^2 -4z
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_2 = \big\{ (y,z) \in \R^2\colon y+z &lt; 4, y &gt;
+0\text{ e } z&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_2(y,z) =
+(2y,4z-4),
+\end{equation*}
+</div>
+<div class="para">o único ponto crítico de <span class="process-math">\(g_2\)</span> é <span class="process-math">\((0,1)\text{,}\)</span> que <em class="emphasis">não</em> pertence a <span class="process-math">\(U_2\text{.}\)</span> Deste modo, não há candidatos em <span class="process-math">\(F_2\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-159">
+<div class="para">Em <span class="process-math">\(F_3\text{,}\)</span> obtemos a função</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_3(x,z) = f(x,0,z) =
+x^2 + 2z^2 -4z + 3x
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_3 = \big\{ (x,z) \in
+\R^2\colon x+z &lt; 4, x &gt; 0\text{ e } z&gt;0\big\}.
+\end{equation*}
+</div>
+<div class="para">O gradiente de <span class="process-math">\(g_3\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_3(x,z) = (2x+3,4z-4)
+\end{equation*}
+</div>
+<div class="para">se anula apenas no ponto <span class="process-math">\(\Big( -\dfrac{3}{2}, 1\Big)\text{,}\)</span> que <em class="emphasis">não</em> pertence a <span class="process-math">\(U_3\text{.}\)</span> Também não temos candidatos em <span class="process-math">\(F_3\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-160">
+<div class="para">Finalmente, em <span class="process-math">\(F_4\text{,}\)</span> analisamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g_4(x,y)=f(x,y,0)
+= x^2 + y^2 -4xy+3x
+\end{equation*}
+</div>
+<div class="para">no aberto</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_4 =
+\big\{(x,y)\in\R^2\colon x+y &lt; 4, x&gt;0\text{ e }y&gt;
+0\big\}=U_1.
+\end{equation*}
+</div>
+<div class="para">Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g_4(x,y) = (2x-4y+3,
+2y-4x),
+\end{equation*}
+</div>
+<div class="para">o único ponto crítico de <span class="process-math">\(g_4\)</span> é o ponto <span class="process-math">\(\Big(\dfrac{1}{2},1\Big) \in U_4\text{,}\)</span> que corresponde ao candidato <span class="process-math">\(\Big( \dfrac{1}{2}, 1, 0\Big) \in F_4\text{.}\)</span>
+</div>
+</div>
+<div class="para" id="p-161">Isto completa a busca dos candidatos nas faces de <span class="process-math">\(R\text{.}\)</span>
+</div>
+</li>
+<li id="li-77">
+<div class="para logical" id="p-162">
+<div class="para">Candidatos nas arestas de <span class="process-math">\(R\text{:}\)</span> as arestas de <span class="process-math">\(R\)</span> são os segmentos de reta</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_lag32.html ./knowl/maxmincpt-4b.html" id="md-22">
+\begin{align*}
+A_1 &amp;= \big\{(x,y,z) \in \R^3\colon y=z=0\text{ e }
+0 \leq x \leq 4\big\},\\
+A_2 &amp;= \big\{(x,y,z) \in \R^3\colon x=z=0\text{ e }
+0 \leq y \leq 4\big\},\\
+A_3 &amp;= \big\{(x,y,z) \in \R^3\colon x=y=0\text{ e }
+0 \leq z \leq 4\big\},\\
+A_4 &amp;= \{(x,y,z) \in \R^3\colon z=0\text{ e }
+x+y=4\big\},\\
+A_5 &amp;= \{(x,y,z) \in \R^3\colon y=0\text{ e }
+x+z=4\big\},\\
+A_6 &amp;= \{(x,y,z) \in \R^3\colon x=0\text{ e }
+y+z=4\big\}.
+\end{align*}
+</div>
+<div class="para">A estratégia é parametrizar cada aresta a estudar a composta de <span class="process-math">\(f\)</span> com as parametrizações. Poderíamos aqui aplicar o Método dos Multiplicadores de Lagrange (<a href="" class="xref" data-knowl="./knowl/teo_lag32.html" title="Teorema A.9.9">Teorema A.9.9</a>), como fizemos no <a href="" class="xref" data-knowl="./knowl/maxmincpt-4b.html" title="Exercício 1.11.4.b">Exercício 1.11.4.b</a>.</div>
+</div>
+<div class="para logical" id="p-163">
+<div class="para">Em <span class="process-math">\(A_1\text{,}\)</span> consideramos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_1(x) = f(x,0,0) = x^2 + 3x, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">A derivada de <span class="process-math">\(h_1\)</span> se anula somente em <span class="process-math">\(x=-\frac{3}{2}\text{,}\)</span> de modo que não há candidatos em <span class="process-math">\(]0,4[\text{.}\)</span> Ficamos apenas com <span class="process-math">\(x=0\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem aos vértices <span class="process-math">\((0,0,0)\)</span> e <span class="process-math">\((4,0,0)\)</span> de <span class="process-math">\(R\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-164">
+<div class="para">Em <span class="process-math">\(A_2\text{,}\)</span> estudamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_2(y) = f(0,y,0) = y^2, y \in [0,4].
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(h_2\)</span> é estritamente crescente, os candidatos são <span class="process-math">\(y=0\)</span> e <span class="process-math">\(y=4\text{,}\)</span> que correspondem aos vértices <span class="process-math">\((0,0,0)\)</span> e <span class="process-math">\((0,4,0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-165">
+<div class="para">Em <span class="process-math">\(A_3\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_3(z) = 2z^2 -4z, z \in
+[0,4],
+\end{equation*}
+</div>
+<div class="para">cuja derivada se anula em <span class="process-math">\(z=1\text{.}\)</span> Os candidatos são <span class="process-math">\(z=0\text{,}\)</span> <span class="process-math">\(z=1\)</span> e <span class="process-math">\(z=4\text{,}\)</span> que correspondem, respectivamente, a <span class="process-math">\((0,0,0)\text{,}\)</span> <span class="process-math">\((0,0,1)\)</span> e <span class="process-math">\((0,0,4)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-166">
+<div class="para">Em <span class="process-math">\(A_4\text{,}\)</span> podemos escrever <span class="process-math">\(y=4-x\)</span> para obter</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_4(x) = f(x,4-x,0) = 6x^2 -21x + 16, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_4\)</span> é <span class="process-math">\(x=\dfrac{7}{4} \in
+]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(x= \dfrac{7}{4}\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,4,0)\text{,}\)</span> <span class="process-math">\(\Big(\dfrac{7}{4}, \dfrac{9}{4}, 0\Big)\)</span> e <span class="process-math">\((4, 0,
+0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-167">
+<div class="para">Em <span class="process-math">\(A_5\text{,}\)</span> fazemos <span class="process-math">\(z=4-x\)</span> e estudamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_5(x) =
+f(x,0,4-x) = 3x^2 -9x+16, x \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_5\)</span> é <span class="process-math">\(x=\dfrac{3}{2} \in ]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(x=0\text{,}\)</span> <span class="process-math">\(x= \dfrac{3}{2}\)</span> e <span class="process-math">\(x=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,0,4)\text{,}\)</span> <span class="process-math">\(\Big( \dfrac{3}{2},0,
+\dfrac{5}{2}\Big)(4, 0, 0)\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="p-168">
+<div class="para">Finalmente, em <span class="process-math">\(A_6\text{,}\)</span> escrevemos <span class="process-math">\(z=4-y\)</span> e</div>
+<div class="displaymath process-math">
+\begin{equation*}
+h_6(y) = f(0,y,4-y) = 3y^2 -12y+16, y \in [0,4].
+\end{equation*}
+</div>
+<div class="para">O único ponto crítico de <span class="process-math">\(h_6\)</span> é <span class="process-math">\(y=2\in ]0,4[\text{.}\)</span> Os candidatos são <span class="process-math">\(y=0\text{,}\)</span> <span class="process-math">\(y= 2\)</span> e <span class="process-math">\(y=4\text{,}\)</span> que correspondem a <span class="process-math">\((0,0,4)\text{,}\)</span> <span class="process-math">\((0, 2,2)\)</span> e <span class="process-math">\((0, 4, 0)\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="li-78"><div class="para logical" id="p-169">
+<div class="para">Avaliando <span class="process-math">\(f\)</span> em cada candidato: só resta calcular <span class="process-math">\(f\)</span> nos pontos encontrados nas etapas anteriores e comparar os valores. Confira as contas!</div>
+<div class="displaymath process-math" id="md-23">
+\begin{align*}
+f( 1/2, 1, 1) &amp;= -5/4\\
+f( {3}/{2}, 2,{1}/{2}) &amp;= -{11}/{4}\\
+f( {1}/{2}, 1, 0) &amp;= {3}/{4}\\
+f\left( 0,0,0\right) &amp;= 0\\
+f\left(4, 0, 0\right) &amp;= 28\\
+f\left( 0,4,0\right) &amp;= 16\\
+f\left( 0,0,4 \right) &amp;= 16\\
+f\left( 0, 0, 1\right) &amp;= -2\\
+f\left( {7}/{4}, {9}/{4}, 0\right) &amp;= -{19}/{8}\\
+f\left( {3}/{2}, 0, {5}/{2}\right) &amp;= {37}/{4}\\
+f\left( 0, 2, 2\right) &amp;= 4
+\end{align*}
+</div>
+</div></li>
+</ul>
+<div class="para"><div class="para" id="p-170">Logo, o maior valor de <span class="process-math">\(f\)</span> em <span class="process-math">\(R\)</span> é <span class="process-math">\(28\)</span> e o menor valor é <span class="process-math">\(-\frac{11}{4}\text{.}\)</span>
+</div></div>
+</div>
+</div></details>
+</div></article><article class="exercise exercise-like" id="maxmincpt-4b"><h4 class="heading"><span class="codenumber">4.b<span class="period">.</span></span></h4>
+<div class="para" id="p-171">Encontre os pontos de máximo e de mínimo de <span class="process-math">\(f(x,y,z) =
+x-z\)</span> em <span class="process-math">\(C = \big\{(x,y,z) \in \R^3\colon x^2 + y^2 =z
+\text{ e } z=2y\big\}\text{,}\)</span> sem parametrizar o conjunto <span class="process-math">\(C\text{.}\)</span> Repita o exercício parametrizando <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="solutions">
+<details id="hint-24" class="hint solution-like"><summary><span class="type">Dica</span><span class="period">.</span></summary><div class="hint solution-like"><div class="para" id="p-172">Use o Método dos Multiplicadores de Lagrange para resolver sem parametrizar <span class="process-math">\(C\text{.}\)</span>
+</div></div></details><details id="answer-19" class="answer solution-like"><summary><span class="type">Resposta</span><span class="period">.</span></summary><div class="answer solution-like"><div class="para" id="p-173">O ponto de máximo de <span class="process-math">\(f\)</span> em <span class="process-math">\(C\)</span> é <span class="process-math">\(\big(\dfrac{1}{\sqrt{5}}, 1 - \dfrac{2}{\sqrt{5}}, 2 -
+\dfrac{4}{\sqrt{5}}\big)\text{.}\)</span> O ponto de mínimo de <span class="process-math">\(f\)</span> em <span class="process-math">\(C\)</span> é <span class="process-math">\(\big( -\dfrac{1}{\sqrt{5}}, 1 + \dfrac{2}{\sqrt{5}}, 2 +
+\dfrac{4}{\sqrt{5}}\big)\text{.}\)</span>
+</div></div></details><details id="solution-24" class="solution solution-like"><summary><span class="type">Solução</span><span class="period">.</span></summary><div class="solution solution-like">
+<div class="para" id="p-174">Note que <span class="process-math">\(f\)</span> é contínua e <span class="process-math">\(C\)</span> é compacto, de modo que o Teorema de Weierstrass (veja <a href="" class="xref" data-knowl="./knowl/teo_wei.html" title="Teorema A.9.2">Teorema A.9.2</a>) assegura que o problema proposto tem solução.</div> <ul class="disc">
+<li id="li-79">
+<div class="para" id="p-175">Primeira solução: Usando o Método dos Multiplicadores de Lagrange.</div>
+<div class="para logical" id="p-176">
+<div class="para">Nosso objetivo é encontrar os pontos de máximo e mínimo de <span class="process-math">\(f\)</span> sujeita às condições <span class="process-math">\(x^2 + y^2 = z\)</span> e <span class="process-math">\(z=2y\text{.}\)</span> Consideremos as funções de classe <span class="process-math">\(\mathscr{C}^1\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(x,y,z) = x^2 + y^2 - z \quad
+\text{e}\quad h(x,y,z) = 2y-z.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-177">
+<div class="para">O conjunto <span class="process-math">\(C\)</span> é a intersecção das superfícies de nível <span class="process-math">\(c=0\)</span> de <span class="process-math">\(g\)</span> e de <span class="process-math">\(h\text{.}\)</span> Observamos primeiramente que os gradientes de <span class="process-math">\(g\)</span> e <span class="process-math">\(h\text{,}\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\nabla g(x,y,z) = (2x,2y,-1), \quad
+\nabla h(x,y,z) = (0,2,-1),
+\end{equation*}
+</div>
+<div class="para">são linearmente independentes em <span class="process-math">\(C\text{.}\)</span> De fato, estes vetores são paralelos se, e somente se, <span class="process-math">\(x=0\)</span> e <span class="process-math">\(y=1\text{,}\)</span> e nenhum ponto da forma <span class="process-math">\((0,1,z)\)</span> pode pertencer a <span class="process-math">\(C\)</span> (por quê?). Deste modo, o Método dos Multiplicadores de Lagrange garante que os candidatos a pontos de máximo e mínimo de <span class="process-math">\(f\)</span> são as soluções do sistema</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{cases}
+\big\{\nabla f(x,y,z), \nabla g(x,y,z), \nabla
+h(x,y,z)\big\}\text{ é linearmente dependente},\\
+x^2 + y^2 = z,\\
+z=2y.
+\end{cases}
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(\nabla f(x,y,z) = (1,0,-1)\text{,}\)</span> a primeira condição equivale a</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det\begin{bmatrix}
+1&amp; 0 &amp; -1\\
+2x &amp; 2y &amp; -1\\
+0 &amp; 2 &amp; -1
+\end{bmatrix} = 0 \iff y
+= -2x+1.
+\end{equation*}
+</div>
+<div class="para">Substituindo esta equação nas outras duas, obtemos <span class="process-math">\(z=-4x+2\)</span> e <span class="process-math">\(x = \pm \frac{1}{\sqrt{5}}\text{.}\)</span> Os candidatos são, portanto, os pontos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\big( \sfrac{1}{\sqrt{5}}, 1 -
+\sfrac{2}{\sqrt{5}}, 2 - \sfrac{4}{\sqrt{5}}\big) \quad
+\text{e} \quad \big( -\dfrac{1}{\sqrt{5}}, 1 +
+\dfrac{2}{\sqrt{5}}, 2 + \dfrac{4}{\sqrt{5}}\big).
+\end{equation*}
+</div>
+<div class="para">Como <span class="process-math">\(f\big( \dfrac{1}{\sqrt{5}}, 1 - \dfrac{2}{\sqrt{5}}, 2 -
+\dfrac{4}{\sqrt{5}}\big) = \sqrt{5}-2\)</span> e <span class="process-math">\(f\big(
+-\dfrac{1}{\sqrt{5}}, 1 + \dfrac{2}{\sqrt{5}}, 2 +
+\dfrac{4}{\sqrt{5}}\big) = -\sqrt{5} -2\text{,}\)</span> tratam-se, respectivamente, do ponto de máximo e do ponto de mínimo de <span class="process-math">\(f\)</span> em <span class="process-math">\(C\text{.}\)</span>
+</div>
+</div>
+</li>
+<li id="li-80">
+<div class="para" id="p-178">Segunda solução: Parametrizando o conjunto <span class="process-math">\(C\text{.}\)</span>
+</div>
+<div class="para logical" id="p-179">
+<div class="para">Escrevendo <span class="process-math">\(z = x^2 + y^2 = 2y\)</span> e completando quadrados, obtemos <span class="process-math">\(x^2 + (y-1)^2 = 1\text{.}\)</span> Assim, uma parametrização de <span class="process-math">\(C\)</span> é <span class="process-math">\(\gamma\colon [0,2\pi]\to\R^3\)</span> dada por</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\gamma(t) =
+(\cos t, \sin t + 1, 2\sin t + 2).
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="p-180">
+<div class="para">Desejamos encontrar os pontos de máximo e mínimo da composta</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(t) = f(\gamma(t)) = \cos t - 2\sin t -2,
+\end{equation*}
+</div>
+<div class="para">no intervalo <span class="process-math">\([0,2\pi]\)</span> (um problema de Cálculo I). Os candidatos são os pontos críticos de <span class="process-math">\(g\)</span> no intervalo <span class="process-math">\(]0, 2\pi[\)</span> e os extremos <span class="process-math">\(t=0, t=2\pi\text{.}\)</span> Como</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g'(t) = -\sin t -2 \cos t = 0 \iff \sin t = -2 \cos
+t,
+\end{equation*}
+</div>
+<div class="para">os pontos críticos de <span class="process-math">\(g\)</span> são as soluções (no intervalo <span class="process-math">\(]0, 2\pi[\)</span>) da equação</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos^2 t = 1 -
+\sin^2 t = 1 - 4 \cos^2 t \iff \cos t = \pm
+\dfrac{1}{\sqrt{5}}.
+\end{equation*}
+</div>
+<div class="para">Para <span class="process-math">\(\cos t =
+\dfrac{1}{\sqrt{5}}\text{,}\)</span> temos <span class="process-math">\(\sin t =
+-\dfrac{2}{\sqrt{5}}\text{,}\)</span> que corresponde ao ponto <span class="process-math">\(\big(
+\dfrac{1}{\sqrt{5}}, 1 - \dfrac{2}{\sqrt{5}}, 2 -
+\dfrac{4}{\sqrt{5}}\big) \in C\text{.}\)</span> Analogamente, <span class="process-math">\(\cos t =
+-\dfrac{1}{\sqrt{5}}\)</span> corresponde ao ponto <span class="process-math">\(\big(
+-\dfrac{1}{\sqrt{5}}, 1 + \dfrac{2}{\sqrt{5}}, 2 +
+\dfrac{4}{\sqrt{5}}\big) \in C\text{.}\)</span> O outro candidato é o ponto <span class="process-math">\(\gamma(0) = \gamma(2\pi) = (1,1,2) \in C\text{,}\)</span> no qual <span class="process-math">\(f\)</span> atinge o valor <span class="process-math">\(-1\text{.}\)</span>
+</div>
+</div>
+</li>
+</ul>
+</div></details>
+</div></article></section></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="sec_maxminloc.html" title="Anterior"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Anterior</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec_maxminarb.html" title="Próximo"><span class="name">Próximo</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

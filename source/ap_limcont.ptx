@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<section  xml:id="ap_limcont" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Cálculo de Limites</title>
+
+  <introduction>
+    <p>Apresentamos a seguir os principais resultados para o cálculo de
+    limites. Ao final apresentamos a conexão entre o cálculo de limites
+    e continuidade num ponto.</p>
+  </introduction>
+
+  <proposition xml:id="prop_comp">
+    <title>(Limite da composta)</title>
+
+    <statement>
+      <p>Sejam <m>f\colon I\subseteq\R\to\R</m>, contínua em <m>L\in
+      I</m> e <m>g\colon A\subseteq\R^r\to\R</m>, tal que
+      <m>\lim\limits_{(x,y)\to(x_0,y_0)} g(x,y)=L</m>. Então
+      <me>\lim\limits_{(x,y)\to(x_0,y_0)}f\big(g(x,y)\big)=f\Big(\lim\limits_{(x,y)\to(x_0,y_0)}g(x,y)\Big)=f(L)</me>.</p>
+    </statement>
+
+    <proof>
+      <p>
+      Junte os ingredientes:
+      <ol>
+	<li> <m>f</m> contínua em <m>L\in I</m> diz que, dado
+	<m>\epsilon&gt;0</m>, existe <m>\delta_1&gt;0</m> tal que <men
+	xml:id="limcomp1">|x-L|&lt;\delta_1\implies
+	|f(x)-f(L)|&lt;\epsilon.</men>
+	<li>
+	</li><m>\lim\limits_{(x,y)\to(x_0,y_0)} g(x,y)=L</m> diz que, dado
+	<m>\epsilon_2&gt;0</m>, existe <m>\delta_2&gt;0</m> tal que
+	<men xml:id="limcomp2">0&lt;\|(x,y)-(x_0,y_0)\|&lt;\delta_2 \implies
+	|g(x,y)-L|&lt;\epsilon_2.</men>
+	</li>
+      </ol></p>
+      <p>
+	Dado <m>\epsilon&gt;0</m>, aplicando <m>\delta_1</m> dado por <xref
+	ref="limcomp1" /> como <m>\epsilon_2</m> em <xref ref="limcomp2"
+	/> temos que <me>0&lt;\|(x,y)-(x_0,y_0)\|&lt;\delta_2 \implies
+	|g(x,y)-L|&lt;\delta_1\implies |f(x)-f(L)|&lt;\epsilon,</me>
+	ou seja,
+	<m>\lim\limits_{(x,y)\to(x_0,y_0)}f\big(g(x,y)\big)=f(L)</m>.
+      </p>
+    </proof>
+    <remark>Este é o resultado que permite "passar o
+      limite para dentro" de uma função contínua.
+    </remark>
+  </proposition>
+      
+  <example xml:id="exemplo_comp">
+    <statement>
+      <p> Calcule, caso exista,
+      <m>\lim\limits_{(x,y)\to(0,0)}\dfrac{\sin(x^2+y^2)}{x^2+y^2}</m>.
+      </p>
+    </statement>
+    <solution>
+      Considere <m>f(t)=\begin{cases} \dfrac{\sin t}{t},&amp; t\neq 0\\
+      \hfill 1,&amp; t=0\end{cases}</m> e
+      <m>g(x,y)=x^2+y^2</m>. Claramente, para todo <m>(x,y)\neq
+      (0,0)</m>,
+      <m>\dfrac{\sin(x^2+y^2)}{x^2+y^2}=f\big(g(x,y)\big)</m>. Como
+      <m>f</m> é contínua em <m>t=0</m> (limite trigonométrico
+      fundamental) e <m>\lim\limits_{(x,y)\to(0,0)}g(x,y)=0</m>, temos
+      <me>\lim\limits_{(x,y)\to(0,0)}\dfrac{\sin(x^2+y^2)}{x^2+y^2}=\lim\limits_{(x,y)\to(0,0)}f\big(g(x,y)\big)=f\Big(\lim\limits_{(x,y)\to(0,0)}g(x,y)\Big)=f(0)=1.</me>
+    </solution>
+  </example>
+
+  <theorem xml:id="teo_confronto">
+    <title>(Confronto)</title>
+    
+    <statement>
+      <p>
+	Sejam <m>f,g,h\colon A\subseteq\R^2\to\R</m> funções tais que
+	<m>g(x,y)\leq f(x,y)\leq h(x,y)</m> para todo <m>(x,y)\in
+	A</m>. Se <m>\lim\limits_{(x,y)\to(x_0,y_0)}
+	g(x,y)=\lim\limits_{(x,y)\to(x_0,y_0)} h(x,y)=L\in\R</m>, então
+	<m>\lim\limits_{(x,y)\to(x_0,y_0)} f(x,y)=L</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+	Basta escrever a definição de limite:
+      </p>
+      <p>
+	<m>\lim\limits_{(x,y)\to(x_0,y_0)}
+	g(x,y)=L\in\R</m> significa que dado <m>\epsilon&gt;0</m>,
+	existe <m>\delta_1&gt;0</m> tal que
+	<me>0&lt;\|(x,y)-(x_0,y_0)\|&lt;\delta_1 \implies
+	|g(x,y)-L|&lt;\epsilon</me> e
+	<m>\lim\limits_{(x,y)\to(x_0,y_0)}
+	h(x,y)=L\in\R</m> significa que dado <m>\epsilon&gt;0</m>,
+	existe <m>\delta_2&gt;0</m> tal que
+	<me>0&lt;\|(x,y)-(x_0,y_0)\|&lt;\delta_2 \implies
+	|h(x,y)-L|&lt;\epsilon</me>.
+      </p>
+      <p>Para cada <m>\epsilon&gt;0</m>, tome
+      <m>\delta=\min\{\delta_1,\delta_2\}</m>. Para todo
+      <m>(x,y)\in\R^2</m> tal que <m>\|(x,y)-(x_0,y_0)\|&lt; \delta</m>,
+      "abrindo os módulos" e usando as desigualdades da hipótese, temos
+      que
+      <me>-\epsilon&lt;g(x,y)-L&lt;f(x,y)-L&lt;h(x,y)-L&lt;\epsilon\implies
+      |f(x,y)-L|&lt;\epsilon</me>,
+      ou seja, <m>\lim\limits_{(x,y)\to(x_0,y_0)} f(x,y)=L</m>.</p>
+    </proof>
+  </theorem>
+
+  <definition xml:id="def_limitada">
+    <title>(Função Limitada)</title>
+    
+    <statement>
+      <p>
+	Uma função <m>f\colon A\subseteq\R^2\to\R</m> é
+	<term>limitada</term>, se existe <m>M\in\R</m> tal que
+	<m>|f(x,y)|&lt; M</m>, para todo <m>(x,y)\in A</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Veja alguns exemplos de funções limitadas no vídeo abaixo.
+  </p>
+  <figure xml:id="vid_limitada">
+    <caption>Funções limitadas (até 10m30s).</caption>
+    <video youtube="TBGL6NZ7HEk"/>
+  </figure>
+
+  <corollary xml:id="cor_confronto">
+    <title>(Limitada <m>\times</m> Tende a zero)</title>
+    
+    <statement>
+      <p>
+	Sejam <m>f,g\colon A\subseteq\R^2\to\R</m> funções tais que
+	<m>f</m> é limitada e <m>\lim\limits_{(x,y)\to(x_0,y_0)}
+	g(x,y)=0</m>. Então <m>\lim\limits_{(x,y)\to(x_0,y_0)}
+	f(x,y)\, g(x,y)=0</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+	Como <m>f</m> é limitada, existe <m>M&gt; 0</m> tal que
+	<m>|f(x,y)|&lt; M</m>. Multiplicando por <m>|g(x,y)|</m>, temos
+	<m>|f(x,y)\, g(x,y)|&lt; M|g(x,y)|</m>, ou seja,
+	<me>-M|g(x,y)|&lt; f(x,y)\, g(x,y)&lt; M|g(x,y)|</me>. Usando a
+	<xref ref="prop_comp" />, temos que
+	<m>\lim\limits_{(x,y)\to(x_0,y_0)} \pm M|g(x,y)|=\pm
+	M|\lim\limits_{(x,y)\to(x_0,y_0)} g(x,y)|=0</m>. Logo,
+	<m>\lim\limits_{(x,y)\to(x_0,y_0)} f(x,y)\, g(x,y)=0</m>.
+      </p>
+    </proof>
+  </corollary>
+
+  <theorem xml:id="teo_limcurvas">
+    <statement>
+      <p>Sejam <m>f\colon A\subseteq\R^2\to\R</m> uma função tal que
+      <m>\lim\limits_{(x,y)\to(x_0,y_0)} f(x,y)=L\in\R</m> e
+      <m>\gamma\colon I\subseteq\R\to\R^2</m> uma curva contínua tal que
+      <m>\lim\limits_{t\to t_0}\gamma(t)=(x_0,y_0)</m>. Então
+      <m>\lim\limits_{t\to t_0} f\big(\gamma(t)\big)=L</m>.
+      </p>
+    </statement>
+    <proof>
+      <p>
+	Mais uma vez, junte os ingredientes:
+      <ol>
+	<li><m>\lim\limits_{(x,y)\to(x_0,y_0)} f(x,y)=L</m> diz que, dado
+	<m>\epsilon&gt;0</m>, existe <m>\delta_1&gt;0</m> tal que
+	<men xml:id="limcomp3">0&lt;\|(x,y)-(x_0,y_0)\|&lt;\delta_1\implies
+	|f(x,y)-L|&lt;\epsilon.</men>
+	</li>
+	<li><m>\lim\limits_{t\to t_0} \gamma(t)=(x_0,y_0)</m> diz que, dado
+	<m>\epsilon_2&gt;0</m>, existe <m>\delta_2&gt;0</m> tal que
+	<men xml:id="limcomp4">0&lt;|t-t_0|&lt;\delta_2\implies
+	\|\gamma(t)-(x_0,y_0)\|&lt;\epsilon_2.</men>
+	</li>
+      </ol></p>
+      <p>
+	Como antes, dado <m>\epsilon&gt;0</m>, use <m>\delta_1</m> dado
+	em <xref ref="limcomp3" /> como <m>\epsilon_2</m> em <xref
+	ref="limcomp4" /> e então
+	<me>0&lt;|t-t_0|&lt;\delta_2\implies \|\gamma(t)-(x_0,y_0)\|&lt;
+	\delta_1\implies |f\big(\gamma(t)\big)-L|&lt;\epsilon,</me> ou
+	seja, <m>\lim\limits_{t\to t_0} f\big(\gamma(t)\big)=L</m>.
+      </p>
+    </proof>
+    <remark> Este teorema é bem mais interessante na contra-positiva:
+    se existem duas curvas <m>\gamma_1</m> e <m>\gamma_2</m> nas
+    condições do enunciado tais que
+    <ul>
+      <li><m>\lim\limits_{t\to t_0}
+      f\big(\gamma_1(t)\big)\neq\lim\limits_{t\to t_0}
+      f\big(\gamma_2(t)\big)</m>, ou</li>
+      <li><m>\lim\limits_{t\to t_0}
+      f\big(\gamma_1(t)\big)</m> não existe</li>
+    </ul>
+    então <m>\lim\limits_{(x,y)\to(x_0,y_0)} f(x,y)</m> não existe.
+    </remark>
+  </theorem>
+
+  <theorem xml:id="teo_limcont">
+    <title>(Limite e Continuidade)</title>
+    
+    <statement>
+      <p>
+	Sejam <m>f\colon A\subseteq\R^2\to\R</m> uma função e
+	<m>(x_0,y_0)\in A</m>. Então <m>f</m> é contínua em
+	<m>(x_0,y_0)</m> se, e somente se,
+	<me>\lim\limits_{(x,y)\to(x_0,y_0)} f(x,y)=f(x_0,y_0).</me>
+      </p>
+    </statement>
+    <proof>
+      <p>
+	É realmente uma consequência direta das definições de limite e continuidade.
+      </p>
+    </proof>
+  </theorem>
+  
+</section>

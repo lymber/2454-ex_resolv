@@ -1,0 +1,5 @@
+INFO    : PreTeXt project found in `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv`.
+INFO    : Since no target was supplied, we will use "web".
+
+INFO    : Server is already available at http://localhost:8128
+INFO    : Now opening browser for target `web` at http://localhost:8128/output/web

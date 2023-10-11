@@ -1,0 +1,12 @@
+INFO    : PreTeXt project found in `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv`.
+INFO    : Preparing to build into /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/output/print-latex.
+INFO    : converting /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx to LaTeX as /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/output/print-latex/main.tex
+INFO    : XSL conversion of /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/source/main.ptx by /home/lymber/.ptx/xsl/pretext-latex.xsl
+INFO    : comprehensive messages, warnings, and errors:
+INFO    :     * PTX:DEPRECATE: (2023-08-08) a "website" element with "address" and "name" children has changed.  Continue to use the "website" element as before, but replace the "address" and "name" children with a single "url" element, which is more flexible and reliable.  We will try to honor your intent, but you may prefer your own adjustments. (1 time)
+INFO    :     *              located within: "meta_frontmatter" (xml:id)
+INFO    :     * --------------
+INFO    : successful application of /home/lymber/.ptx/xsl/pretext-latex.xsl
+INFO    : 
+Success! Run `pretext view` to see the results.
+

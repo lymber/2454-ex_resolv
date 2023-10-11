@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_maxmincpt" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Máximos e mínimos em conjuntos compactos</title>
+
+  <exercises xml:id="ex_maxmincpt" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="3.b" xml:id="maxmincpt-3b">
+      <statement>
+	<p>Determine o valor máximo e o valor mínimo de <m>f(x,y,z) =
+	x^2 + y^2 +2z^2 -4xy -4z + 3x</m> na região <m>R = \big\{(x,y,z)
+	\in \R^3\colon x+y+z \leq 4, x\geq 0, y\geq 0\text{ e }
+	z\geq0\big\}</m>.
+	</p>
+      </statement>
+      <hint>
+	<p>Divida a análise em três etapas: no interior de <m>R</m>, nas
+	faces de <m>R</m> (excluídas as arestas) e nas arestas (atenção
+	aos vértices!).
+	</p>
+      </hint>
+      <answer>
+	<p>O valor máximo de <m>f</m> é <m>28</m> e o valor mínimo de
+	<m>f</m> é <m>-\dfrac{11}{4}</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Note que <m>f</m> é contínua e <m>R</m> é um tetraedro
+	sólido, fechado e limitado, portanto compacto. Deste modo o
+	Teorema de Weierstrass (<xref ref="teo_wei" />) assegura que o
+	problema proposto tem solução.</p>
+	<p>A análise será dividida em três etapas: encontraremos os
+	candidatos no interior de <m>R</m>, no "interior" das faces de
+	<m>R</m> (isto é, as faces com as arestas excluídas) e,
+	finalmente, nas arestas de <m>R</m>. O motivo dessa análise
+	"excluindo" essas "fronteiras", fica claro ao estudar a
+	demonstração dos teoremas finais da <xref ref="ap_maxmincond" />
+	(<xref ref="teo_lag31" /> e <xref ref="teo_lag32" />).
+	</p>
+	<p>Ao trabalho:
+	<ul>
+	  <li><p>Candidatos no interior de <m>R</m>: o interior de <m>R</m>
+	  é o conjunto (aberto) <me>\text{int}(R) = \big\{(x,y,z) \in
+	  \R^3\colon x+y+z &lt; 4, x&gt; 0, y&gt; 0\text{ e } z&gt;
+	  0\big\}.</me> Neste caso, usamos a versão para três variáveis
+	  (totalmente análoga) do <xref ref="teo_crit" />, concluindo
+	  que os candidatos são os pontos críticos de <m>f</m> neste
+	  conjunto. Como <me>\nabla f(x,y,z) = (2x-4y+3, 2y-4x,
+	  4z-4),</me> o único ponto crítico é <m>\big(\dfrac{1}{2}, 1,
+	  1\big)</m>. Note que este ponto pertence a int<m>(R)</m>.</p>
+	  </li>
+
+	  <li><p>Candidatos nas faces (excluídas as arestas): procuramos
+	  os candidatos nos conjuntos
+	  <md>
+	    <mrow>F_1 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z = 4,
+	    x&gt;0, y&gt;0\text{ e } z&gt;0\big\},</mrow>
+	    <mrow>F_2 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+	    x= 0, y&gt; 0\text{ e } z&gt; 0\big\},</mrow>
+	    <mrow>F_3 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+	    x&gt; 0, y= 0\text{ e } z&gt; 0\big\},</mrow>
+	    <mrow>F_4 &amp;= \big\{(x,y,z) \in \R^3\colon x+y+z &lt; 4,
+	    x&gt; 0, y&gt; 0\text{ e } z= 0\big\}.</mrow>
+	  </md>
+	  São as faces de <m>R</m>, excluídas as arestas. Em cada face,
+	  vamos "eliminar" uma das variáveis e reduzir o problema ao
+	  estudo de funções de duas variáveis em abertos de
+	  <m>\R^2</m>. Outra abordagem possível seria usar o Método dos
+	  Multiplicadores de Lagrange (<xref ref="teo_lag31" />), o qual
+	  foi utilizado no <xref ref="maxminarb-5" />.</p>
+	  
+	  <p>Na face <m>F_1</m>, podemos escrever <m>z = 4 - x - y</m> e
+	  estudar a função <me>g_1(x,y) = f(x,y,4-x-y) = 3x^2 + 3y^2 -9x
+	  -12y +16</me> no aberto <me>U_1 = \big\{ (x,y) \in \R^2\colon
+	  x+ y&lt;4, x &gt;0\text{ e } y&gt;0\big\}.</me> Como
+	  <me>\nabla g_1(x,y) = (6x-9, 6y-12),</me> o ponto <m>\Big(
+	  \dfrac{3}{2}, 2\Big) \in U_1</m> é o único ponto crítico de
+	  <m>g_1</m>. Este ponto corresponde ao candidato <m>\Big(
+	  \dfrac{3}{2}, 2, \dfrac{1}{2}\Big) \in F_1</m>.</p>
+
+	  <p>Na face <m>F_2</m>, temos <m>x=0</m> e estudamos a função
+	  <me>g_2(y,z) = f(0,y,z) = y^2 + 2z^2 -4z</me> no aberto
+	  <me>U_2 = \big\{ (y,z) \in \R^2\colon y+z &lt; 4, y &gt;
+	  0\text{ e } z&gt;0\big\}.</me> Como <me>\nabla g_2(y,z) =
+	  (2y,4z-4),</me> o único ponto crítico de <m>g_2</m> é
+	  <m>(0,1)</m>, que <em>não</em> pertence a <m>U_2</m>. Deste
+	  modo, não há candidatos em <m>F_2</m>.</p>
+
+	  <p>Em <m>F_3</m>, obtemos a função <me>g_3(x,z) = f(x,0,z) =
+	  x^2 + 2z^2 -4z + 3x</me> no aberto <me>U_3 = \big\{ (x,z) \in
+	  \R^2\colon x+z &lt; 4, x &gt; 0\text{ e } z&gt;0\big\}.</me> O
+	  gradiente de <m>g_3</m> <me>\nabla g_3(x,z) = (2x+3,4z-4)</me>
+	  se anula apenas no ponto <m>\Big( -\dfrac{3}{2}, 1\Big)</m>,
+	  que <em>não</em> pertence a <m>U_3</m>. Também não temos
+	  candidatos em <m>F_3</m>.</p>
+
+	  <p>Finalmente, em <m>F_4</m>, analisamos <me>g_4(x,y)=f(x,y,0)
+	  = x^2 + y^2 -4xy+3x</me> no aberto <me>U_4 =
+	  \big\{(x,y)\in\R^2\colon x+y &lt; 4, x&gt;0\text{ e }y&gt;
+	  0\big\}=U_1.</me> Como <me>\nabla g_4(x,y) = (2x-4y+3,
+	  2y-4x),</me> o único ponto crítico de <m>g_4</m> é o ponto
+	  <m>\Big(\dfrac{1}{2},1\Big) \in U_4</m>, que corresponde ao
+	  candidato <m>\Big( \dfrac{1}{2}, 1, 0\Big) \in F_4</m>.</p>
+	  <p>Isto completa a busca dos candidatos nas faces de
+	  <m>R</m>.</p>
+	  </li>
+
+	  <li><p>Candidatos nas arestas de <m>R</m>: as arestas de <m>R</m>
+	  são os segmentos de reta <md>
+	  <mrow>A_1 &amp;= \big\{(x,y,z) \in \R^3\colon y=z=0\text{ e }
+	  0 \leq x \leq 4\big\},</mrow>
+	  <mrow>A_2 &amp;= \big\{(x,y,z) \in \R^3\colon x=z=0\text{ e }
+	  0 \leq y \leq 4\big\},</mrow>
+	  <mrow>A_3 &amp;= \big\{(x,y,z) \in \R^3\colon x=y=0\text{ e }
+	  0 \leq z \leq 4\big\},</mrow>
+	  <mrow>A_4 &amp;= \{(x,y,z) \in \R^3\colon z=0\text{ e }
+	  x+y=4\big\},</mrow>
+	  <mrow>A_5 &amp;= \{(x,y,z) \in \R^3\colon y=0\text{ e }
+	  x+z=4\big\},</mrow>
+	  <mrow>A_6 &amp;= \{(x,y,z) \in \R^3\colon x=0\text{ e }
+	  y+z=4\big\}.</mrow>
+	  </md>
+	  A estratégia é parametrizar cada aresta a estudar a composta
+	  de <m>f</m> com as parametrizações. Poderíamos aqui aplicar o
+	  Método dos Multiplicadores de Lagrange (<xref ref="teo_lag32"
+	  />), como fizemos no <xref ref="maxmincpt-4b" />.</p>
+	  
+	  <p>Em <m>A_1</m>, consideramos 
+	  <me>h_1(x) = f(x,0,0) = x^2 + 3x, x \in [0,4].</me>
+	  A derivada de <m>h_1</m> se anula somente em
+	  <m>x=-\frac{3}{2}</m>, de modo que não há candidatos em
+	  <m>]0,4[</m>. Ficamos apenas com <m>x=0</m> e <m>x=4</m>, que
+	  correspondem aos vértices <m>(0,0,0)</m> e <m>(4,0,0)</m> de
+	  <m>R</m>.</p>
+	  
+	  <p>Em <m>A_2</m>, estudamos <me>h_2(y) = f(0,y,0) = y^2, y \in [0,4].</me>
+	  Como <m>h_2</m> é estritamente crescente, os candidatos são <m>y=0</m> e
+	  <m>y=4</m>, que correspondem aos vértices <m>(0,0,0)</m> e
+	  <m>(0,4,0)</m>.</p>
+	  
+	  <p>Em <m>A_3</m>, obtemos <me>h_3(z) = 2z^2 -4z, z \in
+	  [0,4],</me> cuja derivada se anula em <m>z=1</m>. Os candidatos
+	  são <m>z=0</m>, <m>z=1</m> e <m>z=4</m>, que correspondem,
+	  respectivamente, a <m>(0,0,0)</m>, <m>(0,0,1)</m> e
+	  <m>(0,0,4)</m>.</p>
+	  
+	  <p>Em <m>A_4</m>, podemos escrever <m>y=4-x</m> para obter
+	  <me>h_4(x) = f(x,4-x,0) = 6x^2 -21x + 16, x \in [0,4].</me> O
+	  único ponto crítico de <m>h_4</m> é <m>x=\dfrac{7}{4} \in
+	  ]0,4[</m>. Os candidatos são <m>x=0</m>, <m>x= \dfrac{7}{4}</m> e
+	  <m>x=4</m>, que correspondem a <m>(0,4,0)</m>,
+	  <m>\Big(\dfrac{7}{4}, \dfrac{9}{4}, 0\Big)</m> e <m>(4, 0,
+	  0)</m>.</p>
+	  
+	  <p>Em <m>A_5</m>, fazemos <m>z=4-x</m> e estudamos <me>h_5(x) =
+	  f(x,0,4-x) = 3x^2 -9x+16, x \in [0,4].</me> O único ponto
+	  crítico de <m>h_5</m> é <m>x=\dfrac{3}{2} \in ]0,4[</m>. Os
+	  candidatos são <m>x=0</m>, <m>x= \dfrac{3}{2}</m> e <m>x=4</m>, que
+	  correspondem a <m>(0,0,4)</m>, <m>\Big( \dfrac{3}{2},0,
+	  \dfrac{5}{2}\Big)<m> e </m>(4, 0, 0)</m>.</p>
+	  
+	  <p>Finalmente, em <m>A_6</m>, escrevemos <m>z=4-y</m> e
+	  <me>h_6(y) = f(0,y,4-y) = 3y^2 -12y+16, y \in [0,4].</me>
+	  O único ponto crítico de <m>h_6</m> é <m>y=2\in ]0,4[</m>. Os candidatos
+	  são <m>y=0</m>, <m>y= 2</m> e <m>y=4</m>, que correspondem a
+	  <m>(0,0,4)</m>, <m>(0, 2,2)</m> e <m>(0, 4, 0)</m>. </p>
+	  </li>
+
+	  <li><p>Avaliando <m>f</m> em cada candidato: só resta calcular
+	  <m>f</m> nos pontos encontrados nas etapas anteriores e
+	  comparar os valores. Confira as contas!
+	  <md>
+	    <mrow>f( 1/2, 1, 1) &amp;= -5/4</mrow>
+	    <mrow>f( {3}/{2}, 2,{1}/{2}) &amp;= -{11}/{4}</mrow>
+	    <mrow>f( {1}/{2}, 1, 0) &amp;= {3}/{4}</mrow>
+	    <mrow>f\left( 0,0,0\right) &amp;= 0</mrow>
+	    <mrow>f\left(4, 0, 0\right) &amp;= 28</mrow>
+	    <mrow>f\left( 0,4,0\right) &amp;= 16</mrow>
+	    <mrow>f\left( 0,0,4 \right) &amp;= 16</mrow>
+	    <mrow>f\left( 0, 0, 1\right) &amp;= -2</mrow>
+	    <mrow>f\left( {7}/{4}, {9}/{4}, 0\right) &amp;= -{19}/{8}</mrow>
+	    <mrow>f\left( {3}/{2}, 0, {5}/{2}\right) &amp;= {37}/{4}</mrow>
+	    <mrow>f\left( 0, 2, 2\right) &amp;= 4</mrow>
+	  </md></p>
+	  </li>
+	</ul>
+
+	<p>Logo, o maior valor de <m>f</m> em <m>R</m> é <m>28</m> e o menor
+	valor é <m>-\frac{11}{4}</m>.</p> 
+
+      </p>
+      </solution>
+    </exercise>
+
+    <exercise number="4.b" xml:id="maxmincpt-4b">
+      <statement>
+	<p>Encontre os pontos de máximo e de mínimo de <m>f(x,y,z) =
+	x-z</m> em <m>C = \big\{(x,y,z) \in \R^3\colon x^2 + y^2 =z
+	\text{ e } z=2y\big\}</m>, sem parametrizar o conjunto
+	<m>C</m>. Repita o exercício parametrizando <m>C</m>.
+	</p>
+      </statement>
+      <hint>
+	<p>Use o Método dos Multiplicadores de Lagrange para resolver
+	sem parametrizar <m>C</m>.
+	</p>
+      </hint>
+      <answer>
+	<p>O ponto de máximo de <m>f</m> em <m>C</m> é
+	<m>\big(\dfrac{1}{\sqrt{5}}, 1 - \dfrac{2}{\sqrt{5}}, 2 -
+	\dfrac{4}{\sqrt{5}}\big)</m>. O ponto de mínimo de <m>f</m> em <m>C</m> é
+	<m>\big( -\dfrac{1}{\sqrt{5}}, 1 + \dfrac{2}{\sqrt{5}}, 2 +
+	\dfrac{4}{\sqrt{5}}\big)</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Note que <m>f</m> é contínua e <m>C</m> é compacto, de modo
+	que o Teorema de Weierstrass (veja <xref ref="teo_wei" />)
+	assegura que o problema proposto tem solução.</p>
+
+	<ul>
+	  <li><p>Primeira solução: Usando o Método dos Multiplicadores
+	  de Lagrange.</p>
+
+	  <p>Nosso objetivo é encontrar os pontos de máximo e mínimo de
+	  <m>f</m> sujeita às condições <m>x^2 + y^2 = z</m> e
+	  <m>z=2y</m>. Consideremos as funções de classe
+	  <m>\mathscr{C}^1</m> <me>g(x,y,z) = x^2 + y^2 - z \quad
+	  \text{e}\quad h(x,y,z) = 2y-z.</me></p>
+
+	  <p>O conjunto <m>C</m>
+	  é a intersecção das superfícies de nível <m>c=0</m> de <m>g</m>
+	  e de <m>h</m>. Observamos primeiramente que os gradientes de
+	  <m>g</m> e <m>h</m>, <me>\nabla g(x,y,z) = (2x,2y,-1), \quad
+	  \nabla h(x,y,z) = (0,2,-1),</me> são linearmente independentes
+	  em <m>C</m>. De fato, estes vetores são paralelos se, e
+	  somente se, <m>x=0</m> e <m>y=1</m>, e nenhum ponto da forma
+	  <m>(0,1,z)</m> pode pertencer a <m>C</m> (por quê?). Deste
+	  modo, o Método dos Multiplicadores de Lagrange garante que os
+	  candidatos a pontos de máximo e mínimo de <m>f</m> são as soluções
+	  do sistema
+	  <me>\begin{cases}
+	  \big\{\nabla f(x,y,z), \nabla g(x,y,z), \nabla
+	  h(x,y,z)\big\}\text{ é linearmente dependente},\\
+	  x^2 + y^2 = z,\\
+	  z=2y.
+	  \end{cases}</me>
+	  Como <m>\nabla f(x,y,z) = (1,0,-1)</m>, a primeira condição
+	  equivale a
+	  <me>\det\begin{bmatrix}
+	  1&amp; 0 &amp; -1\\
+	  2x &amp; 2y &amp; -1\\
+	  0 &amp; 2 &amp; -1
+	  \end{bmatrix} = 0 \iff y
+	  = -2x+1.</me>
+	  Substituindo esta equação nas outras duas, obtemos
+	  <m>z=-4x+2</m> e <m>x = \pm \frac{1}{\sqrt{5}}</m>. Os
+	  candidatos são, portanto, os pontos
+	  <me>\big( \sfrac{1}{\sqrt{5}}, 1 -
+	  \sfrac{2}{\sqrt{5}}, 2 - \sfrac{4}{\sqrt{5}}\big) \quad
+	  \text{e} \quad \big( -\dfrac{1}{\sqrt{5}}, 1 +
+	  \dfrac{2}{\sqrt{5}}, 2 + \dfrac{4}{\sqrt{5}}\big).</me>
+	  Como <m>f\big( \dfrac{1}{\sqrt{5}}, 1 - \dfrac{2}{\sqrt{5}}, 2 -
+	  \dfrac{4}{\sqrt{5}}\big) = \sqrt{5}-2</m> e <m>f\big(
+	  -\dfrac{1}{\sqrt{5}}, 1 + \dfrac{2}{\sqrt{5}}, 2 +
+	  \dfrac{4}{\sqrt{5}}\big) = -\sqrt{5} -2</m>, tratam-se,
+	  respectivamente, do ponto de máximo e do ponto de mínimo de
+	  <m>f</m> em <m>C</m>.</p></li>
+	  
+	  <li><p>Segunda solução: Parametrizando o conjunto <m>C</m>.</p>
+
+	  <p>Escrevendo <m>z = x^2 + y^2 = 2y</m> e completando quadrados,
+	  obtemos <m>x^2 + (y-1)^2 = 1</m>. Assim, uma parametrização de <m>C</m>
+	  é <m>\gamma\colon [0,2\pi]\to\R^3</m> dada por <me>\gamma(t) =
+	  (\cos t, \sin t + 1, 2\sin t + 2).</me></p>
+	  
+	  <p>Desejamos encontrar os pontos de máximo e mínimo da
+	  composta <me>g(t) = f(\gamma(t)) = \cos t - 2\sin t -2,</me>
+	  no intervalo <m>[0,2\pi]</m> (um problema de Cálculo I). Os
+	  candidatos são os pontos críticos de <m>g</m> no intervalo
+	  <m>]0, 2\pi[</m> e os extremos <m>t=0, t=2\pi</m>. Como
+	  <me>g'(t) = -\sin t -2 \cos t = 0 \iff \sin t = -2 \cos
+	  t,</me> os pontos críticos de <m>g</m> são as soluções (no
+	  intervalo <m>]0, 2\pi[</m>) da equação <me>\cos^2 t = 1 -
+	  \sin^2 t = 1 - 4 \cos^2 t \iff \cos t = \pm
+	  \dfrac{1}{\sqrt{5}}.</me> Para <m>\cos t =
+	  \dfrac{1}{\sqrt{5}}</m>, temos <m>\sin t =
+	  -\dfrac{2}{\sqrt{5}}</m>, que corresponde ao ponto <m>\big(
+	  \dfrac{1}{\sqrt{5}}, 1 - \dfrac{2}{\sqrt{5}}, 2 -
+	  \dfrac{4}{\sqrt{5}}\big) \in C</m>. Analogamente, <m>\cos t =
+	  -\dfrac{1}{\sqrt{5}}</m> corresponde ao ponto <m>\big(
+	  -\dfrac{1}{\sqrt{5}}, 1 + \dfrac{2}{\sqrt{5}}, 2 +
+	  \dfrac{4}{\sqrt{5}}\big) \in C</m>. O outro candidato é o ponto
+	  <m>\gamma(0) = \gamma(2\pi) = (1,1,2) \in C</m>, no qual <m>f</m> atinge
+	  o valor <m>-1</m>.</p></li>
+	</ul>
+      </solution>
+    </exercise>
+    
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

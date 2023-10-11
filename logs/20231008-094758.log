@@ -1,0 +1,19 @@
+INFO    : PreTeXt project found in `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv`.
+WARNING : A new project.ptx file has been generated at /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/project.ptx.
+WARNING : Your existing project.ptx file has been backed up at /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/project.ptx.bak.
+INFO    : Generated `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/project.ptx`
+
+INFO    : Generated `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/codechat_config.yaml`
+
+WARNING : A new .gitignore file has been generated at /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/.gitignore.
+WARNING : Your existing .gitignore file has been backed up at /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/.gitignore.bak.
+INFO    : Generated `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/.gitignore`
+
+INFO    : Generated `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/.devcontainer.json`
+
+WARNING : A new requirements.txt file has been generated at /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/requirements.txt.
+WARNING : Your existing requirements.txt file has been backed up at /home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/requirements.txt.bak.
+INFO    : Generated `/home/lymber/Dropbox/Documents/aulas/ime/2022/2022-2454/2454-ex_resolv/requirements.txt`
+
+INFO    : Success! Your project files have been refreshed. If you manage any of these
+INFO    : manually, be sure to compare these new versions with your old .bak files.

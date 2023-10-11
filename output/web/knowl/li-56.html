@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="li"><h5 class="heading">
+<span class="type">Item</span><span class="space"> </span><span class="codenumber">1.7.4.a</span><span class="period">.</span>
+</h5>
+<div class="para logical">
+<div class="para">Observamos primeiramente que <span class="process-math">\(f\)</span> é diferenciável (veja o <a href="" class="xref" data-knowl="./knowl/teo_diff-c1.html" title="Teorema A.4.10: (Derivadas parciais contínuas)">Teorema A.4.10</a>) e <span class="process-math">\(\gamma, \sigma\)</span> são curvas deriváveis. Consideramos então a função composta <span class="process-math">\(g\colon ]0, \pi/2[\to\R\)</span> dada por <span class="process-math">\(g(t) = f\big(\gamma(t)\big)\text{.}\)</span> A condição (i) diz <span class="process-math">\(g\)</span> é constante e então, derivando e aplicando o <a href="" class="xref" data-knowl="./knowl/cor_cadeiagradniv.html" title="Corolário A.6.8: (\nabla f\perp f^{-1}(c))">Corolário A.6.8</a>, obtemos</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_diff-c1.html ./knowl/cor_cadeiagradniv.html">
+\begin{equation*}
+0=\left\langle
+\nabla f(\gamma(t)) , \gamma'(t)\right\rangle = \left\langle
+\nabla f(\gamma(t)) , \left(-\csc^2 (t), 2\sec^2(t)
+\tan(t)\right)\right\rangle, \forall t \in ]0,
+\pi/2[.
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Em particular, para <span class="process-math">\(t=\pi/4\text{,}\)</span> temos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left\langle \nabla f(1,2) , (-2,4) \right\rangle = 0
+\implies \boxed{\dfrac{\partial f}{\partial x}(1,2) = 2
+\frac{\partial f}{\partial y}(1,2)}.
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Por outro lado, de acordo com a condição (ii), sabemos que</div>
+<div class="displaymath process-math">
+\begin{equation}
+\frac{u^3}{2} - \frac{\sqrt[3]{u}}{2} +1 = f\big(\sqrt[3]{u}, u^2+1\big), \forall u &gt;0.\tag{1.7.1}
+\end{equation}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Usando a Regra da Cadeia (<a href="" class="xref" data-knowl="./knowl/teo_cadeia.html" title="Teorema A.6.4: (Regra da Cadeia)">Teorema A.6.4</a>), derivamos os dois membros em relação a <span class="process-math">\(u\text{,}\)</span> concluindo que</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_cadeia.html">
+\begin{equation*}
+\frac{3u^2}{2} - \frac{1}{6\sqrt[3]{u^2}} =
+\left\langle \nabla f(\sqrt[3]{u}, u^2+1) ,
+\Big(\frac{1}{3\sqrt[3]{u^2}},2u\Big)\right\rangle,
+\forall u &gt; 0.
+\end{equation*}
+</div>
+</div>
+<div class="para logical">
+<div class="para">Tomando <span class="process-math">\(u=1\text{,}\)</span> obtemos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{8}{6} =
+\left\langle \nabla f(1,2) ,
+\Big(\frac{1}{3},2\Big)\right\rangle \implies
+\boxed{\frac{\partial f}{\partial x}(1,2) + 6\frac{\partial
+f}{\partial y}(1,2) = 4}.
+\end{equation*}
+</div>
+<div class="para">Logo, usando as equações para as derivadas parciais em destaque, <span class="process-math">\(\nabla f(1,2) = \Big(
+1 , \dfrac{1}{2}\Big)\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec_grad-dir.html#li-56">em contexto</a></span>
+</body>
+</html>

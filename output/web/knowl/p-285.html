@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h5 class="heading"><span class="type">Parágrafo</span></h5>
+<div class="para logical">
+<div class="para">O denominador da primeira expressão que define <span class="process-math">\(f\)</span> se anula em <span class="process-math">\((0,0)\text{,}\)</span> então não podemos usar as regras de derivação. Temos dois casos a tratar:</div>
+<ul class="disc">
+<li><div class="para">
+<span class="process-math">\((x,y)\neq (0,0)\text{:}\)</span> qualquer desses pontos admite uma vizinhança onde <span class="process-math">\(f\)</span> é dada pelo quociente de duas funções diferenciáveis, com denominador não nulo. Podemos aplicar diretamente a regra do quociente para cada variável:<div class="displaymath process-math">
+\begin{align*}
+\dfrac{\partial f}{\partial x}(x,y)&amp;
+=2\sqrt[3]{x}\dfrac{\Big(\frac{2}{3}\sin(x^2)+x^2\cos(x^2)\Big)
+(x^2+y^4)-x^2\sin(x^2)}{(x^2+y^4)^2}\\
+\dfrac{\partial f}{\partial y}(x,y)
+&amp;=-\dfrac{4x^{4/3}\sin(x^2)y^3}{(x^2+y^4)^2}
+\end{align*}
+</div>
+</div></li>
+<li><div class="para">
+<span class="process-math">\((x,y)=(0,0)\text{:}\)</span> não podemos aplicar a regra do quociente, utilizada no caso anterior. É preciso seguir pela <a href="" class="xref" data-knowl="./knowl/def_derpar.html" title="Definição A.4.1: (Derivadas parciais)">Definição A.4.1</a>:<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_derpar.html">
+\begin{align*}
+\dfrac{\partial f}{\partial x}(0,0) &amp;
+=\lim\limits_{h\to
+0}\dfrac{f(0+h,0)-f(0,0)}{h}=\lim\limits_{h\to
+0}\dfrac{\dfrac{h^{4/3}\sin(h^2)}{h^2+0^4}-0}{h}\\
+&amp;=\lim\limits_{h\to
+0}\dfrac{\sin(h^2)}{h^{5/3}}=\lim\limits_{h\to
+0}h^{1/3}\dfrac{\sin(h^2)}{h^2}=0.\\
+\dfrac{\partial f}{\partial y}(0,0) &amp;
+=\lim\limits_{k\to 0}\dfrac{f(0,0+k)-f(0,0)}{k}=\lim\limits_{h\to
+0}\dfrac{\dfrac{0^{4/3}\sin(0^2)}{0^2+k^4}-0}{k}\\
+&amp;=\lim\limits_{k\to
+0}\dfrac{0}{k}=0.
+\end{align*}
+</div>
+</div></li>
+</ul>
+</div>
+<span class="incontext"><a class="internal" href="sec_2022-prec.html#p-285">em contexto</a></span>
+</body>
+</html>

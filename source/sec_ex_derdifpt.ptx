@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_derdifpt" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Derivadas Parciais, Diferenciabilidade e Plano Tangente</title>
+
+  <exercises xml:id="ex_derdifpt" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise number="5" xml:id="dif5">
+      <statement>
+	<p>
+	  Seja <m>f(x,y)=\begin{cases}
+	  \dfrac{x^3}{x^2+y^2},&amp;(x,y)\neq(0,0)\\
+	  \hfill 0,&amp;(x,y)=(0,0).
+	  \end{cases}</m>
+	  <ol marker="a">
+	    <li>Mostre que <m>f</m> é contínua em <m>(0,0)</m>.</li>
+	    <li>Calcule <m>\dfrac{\partial f}{\partial x}(0,0)</m> e
+	    <m>\dfrac{\partial f}{\partial y}(0,0)</m>.</li>
+	    <li><m>f</m> é diferenciável em <m>(0,0)</m>?</li>
+	    <li><m>\dfrac{\partial f}{\partial x}</m> e
+	    <m>\dfrac{\partial f}{\partial y}</m> são contínuas em
+	    <m>(0,0)</m>?</li>
+	  </ol>
+	</p>
+      </statement>
+      <hint>
+	<p>Siga com o <xref ref="cor_confronto" /> no primeiro item e pela definição em
+	cada item seguinte.</p>
+      </hint>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li>Seguindo a dica é fácil.</li>
+	    <li><m>\dfrac{\partial f}{\partial x}(0,0)=1</m> e
+	    <m>\dfrac{\partial f}{\partial y}(0,0)=0</m>.</li>
+	    <li>Não.</li>
+	    <li>Não.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>Para mostrar que <m>f</m> é contínua em <m>(0,0)</m>,
+	    precisamos verificar que <m>\lim\limits_{(x,y)\to (0,0)}
+	    f(x,y)=f(0,0)</m>. De fato,
+	    <me>\lim\limits_{(x,y)\to (0,0)} f(x,y)=
+	    \lim\limits_{(x,y)\to (0,0)}\dfrac{x^3}{x^2+y^2}=
+	    \lim\limits_{(x,y)\to
+	    (0,0)}x\cdot\dfrac{x^2}{x^2+y^2}\stackrel{(\ast)}{=}0=f(0,0).
+	    </me>
+	    Logo, <m>f</m> é contínua em <m>(0,0)</m>. A igualdade
+	    <m>(\ast)</m> segue da aplicação do <xref
+	    ref="cor_confronto" />.
+	    </li>
+	    <li>Vamos seguir pela definição, já que não é possível
+	    aplicar as regras de derivação no ponto em questão (o
+	    denominador se anula ali):
+	    <md>
+	      <mrow>
+		\dfrac{\partial f}{\partial
+		x}(0,0)&amp;=\lim\limits_{h\to
+		0}\dfrac{f(0+h,0)-f(0,0)}{h}
+		=\lim\limits_{h\to
+	      0}\dfrac{\dfrac{h^3}{h^2+0^2}-0}{h}=1;</mrow>
+	      <mrow>
+		\dfrac{\partial f}{\partial
+		y}(0,0)&amp;=\lim\limits_{k\to
+		0}\dfrac{f(0,0+k)-f(0,0)}{k}
+		=\lim\limits_{k\to
+	      0}\dfrac{0-0}{k}=0;</mrow>
+	    </md></li>
+	    <li>
+	      Seguindo também pela definição, com
+	      <m>(x_0,y_0)=(0,0)</m>, temos
+	      <md>
+		<mrow>\lim\limits_{(h,k)\to(0,0)}
+		&amp;\dfrac{f(h,k)-f(0,0)-f_x(0,0)h-f_y(0,0)k}
+		{\sqrt{h^2+k^2}}
+		</mrow>
+		<mrow>
+		  &amp; =\lim\limits_{(h,k)\to(0,0)}
+		  \dfrac{\dfrac{h^3}{h^2+k^2}-h}{\sqrt{h^2+k^2}}=
+		  \lim\limits_{(h,k)\to(0,0)}
+		  -\dfrac{k^2}{(h^2+k^2)}\dfrac{k}{\sqrt{h^2+k^2}},
+		</mrow>
+	      </md>
+	      que não existe. Para verificar isso, observe que o limite
+	      acima não existe (laterais distintos) ao longo da curva
+	      <m>\gamma(t)=(t,t)</m>, conforme o <xref
+	      ref="teo_limcurvas" />.
+	    </li>
+	    <li>Para verificar a continuidade de qualquer função num ponto,
+	    precisamos do seu valor no ponto e numa vizinhança desse
+	    ponto. Os valores de <m>f_x(0,0)</m> e <m>f_y(0,0)</m> foram
+	    calculados no segundo item. Fora da origem podemos aplicar
+	    as regras derivação. Obtemos então
+	    <md>
+	      <mrow>
+		f_x(x,y)=&amp;\begin{cases}
+		\dfrac{x^4+3x^2y^2}{(x^2+y^2)^2},&amp; (x,y)\neq (0,0)\\
+		\hfill 0,&amp; (x,y)=(0,0).
+		\end{cases}
+	      </mrow>
+	      <mrow>
+		f_y(x,y)=&amp;\begin{cases}
+		\dfrac{-2x^3y}{(x^2+y^2)^2},&amp; (x,y)\neq (0,0)\\
+		\hfill 0,&amp; (x,y)=(0,0).
+		\end{cases}
+	      </mrow>
+	    </md>
+	    A continuidade dessas funções se dará pela verificação de
+	    <m>\lim\limits_{(x,y)\to (0,0)} f_x(x,y)=f_x(0,0)</m> e
+	    <m>\lim\limits_{(x,y)\to (0,0)}
+	    f_y(x,y)=f_y(0,0)</m>. Nenhuma das duas condições é
+	    verdadeira, vamos fazer apenas a primeira. Usando mais uma
+	    vez o <xref ref="teo_limcurvas" />, com
+	    <m>\gamma_1(t)=(t,0)</m> e <m>\gamma_2(t)=(0,t)</m>, temos
+	    <md>
+	      <mrow>
+		\lim\limits_{t\to 0} f_x\big(\gamma_1(t)\big)
+		&amp;=\lim\limits_{t\to 0}\dfrac{t^4}{t^4}=1
+	      </mrow>
+	      <mrow>
+		\lim\limits_{t\to 0} f_x\big(\gamma_2(t)\big)
+		&amp;=\lim\limits_{t\to 0}\dfrac{0}{t^4}=0.
+	      </mrow>
+	    </md>
+	    Verifique também que a derivada parcial em <m>y</m> não é
+	    contínua na origem.</li>
+	  </ol>
+	</p>
+	<remark>Neste exemplo, o candidato natural a plano tangente ao
+	gráfico de <m>f</m> em <m>\big(0,0,f(0,0)\big)=(0,0,0)</m> é
+	<m>\pi\colon z=x</m>. É esperado que tal plano contenha todos os
+	vetores tangentes a curvas deriváveis contidas no gráfico de
+	<m>f</m>, passando pela origem. Tais curvas são da forma
+	<m>\Gamma(t)=\Big(x(t),y(t),f\big(x(t),y(t)\big)\Big)</m>, com
+	<m>t\in I</m> e com algum <m>t_0\in I</m> tal que
+	<m>x(t_0)=y(t_0)=0</m>. Considere, então
+	<me>\Gamma(t)=\big(t,t,f(t,t)\big)=(t,t,t/2),\quad t\in\R.</me>
+	É fácil ver que <m>\Gamma(0)=(0,0,0)</m>, mas
+	<m>\Gamma'(0)=(1,1,\frac{1}{2})\not\in\pi</m>. Veja na figura
+	como o plano aproxima bem o gráfico da função ao longos dos
+	eixos, mas não sobre a curva:
+	<figure xml:id="fig_asymptote3d">
+	  <caption>Gráfico de função não derivável e candidato a plano tangente</caption>
+	  <image xml:id="surf_level" archive="html" width="50%">
+	    <description>Gráfico de função não derivável e candidato a plano tangente</description>
+	    <asymptote>
+	      import graph3;
+	      size(10cm);
+      
+	      currentprojection=orthographic(3,4,5);
+	      limits((-2.25,-2.25,-2.25),(2.25,2.25,2.25));
+	      currentlight=light(white,(-2,-2,2),(2,2,-2));
+	      
+	      triple f(pair z){
+	      real r=z.x;
+	      real t=z.y;
+	      real x=r*cos(t);
+	      real y=r*sin(t);
+	      real z=r*cos(t)^3;
+	      return (x,y,z);
+	      }
+	      
+	      surface grafico=surface(f,(0,0),(2,2*pi),1,750);
+	      surface plano=surface(plane(4*Y,4*X+4*Z,-2*X-2*Y-2*Z));
+	      
+	      path3 curva=graph(new triple(real t) {
+	      return (t,t,t/2);},-sqrt(2),sqrt(2),20,operator ..);
+	      
+	      draw(grafico,lightblue);//+opacity(0.6));
+	      draw(plano, green+opacity(0.4));
+	      draw(curva,1bp+red);
+	      
+	      xaxis3("$x$",Arrow3);
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	</remark>
+      </solution>
+    </exercise>
+
+    <exercise number="7.b" xml:id="dif7b">
+      <statement>
+	<p> Determine o conjunto de pontos de <m>\R^2</m> onde
+	<m>f(x,y)=x|y|</m> não é diferenciável.</p>
+      </statement>
+      <hint>
+	<p>
+	  Quando módulo de algo não é derivável? E um produto envolvendo
+	  módulo e uma função derivável?
+	</p>
+      </hint>
+      <answer>
+	<p>Nos pontos da forma <m>(a,0)</m>, com <m>a\neq 0</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  Observamos inicialmente que podemos reescrever a função como
+	  <m>f(x,y)=\begin{cases} xy,&amp; y\geq0\\ -xy&amp; y&lt;0
+	  \end{cases}.</m> Com isso, é fácil ver que <m>f</m> é contínua
+	  em todo o plano e também de classe <m>\mathscr{C}^1</m> em
+	  todo ponto <m>(x,y)\in\R^2</m> tal que <m>y\neq 0</m>
+	</p>
+	<p>
+	  Logo <m>f</m> é diferenciável nos pontos <m>(x,y)\in\R^2</m>,
+	  <m>y\neq0</m>.
+	</p>
+	<p>
+	  Lembrando <m>|y|</m> não é derivável quando <m>y=0</m>,
+	  precisamos de uma análise mais cuidadosa em tais
+	  pontos. Comecemos pelas derivadas parciais:
+	  <md>
+	    <mrow> \dfrac{\partial f}{\partial x}(x_0,0)
+	    &amp;=\lim\limits_{h\to 0}\dfrac{f(x_0+h,0)-f(0,0)}{h}
+	    =\lim\limits_{h\to 0}\dfrac{(x_0+h)|0|-0}{h}=0;</mrow>
+	    <mrow> \dfrac{\partial f}{\partial y}(x_0,0)
+	    &amp;=\lim\limits_{k\to 0}\dfrac{f(x_0,0+k)-f(0,0)}{k}
+	    =\lim\limits_{k\to 0}\dfrac{x_0|k|-0}{k}.</mrow>
+	  </md>
+	    
+	  Temos dois casos a considerar:
+	  <ul>
+	    <li> se <m>x_0=0</m>, então <m>f_x(0,0)=f_y(0,0)=0</m> e a
+	    diferenciabilidade nesse ponto verifica-se rapidamente pela
+	    definição:
+	    <me>
+	      \lim\limits_{(h,k)\to(0,0)}
+	      \dfrac{f(h,k)-f(0,0)-f_x(0,0)h-f_y(0,0)k} {\sqrt{h^2+k^2}}
+	      =\lim\limits_{(h,k)\to(0,0)}
+	      h\dfrac{|k|}{\sqrt{h^2+k^2}}=0, </me> pois é produto de um
+	      fator que tende a zero por outro limitado (veja o <xref
+	      ref="cor_confronto" /> e os exemplos em <xref
+	      ref="vid_limitada" />).
+	    </li>
+	    <li>se <m>x=x_0\neq0</m>, vemos que <m>f_y(x_0,0)</m>não
+	    existe (laterais distintos).</li>
+	  </ul>
+	</p>
+	<p>Logo <m>f</m> não é diferenciável nos pontos da forma
+	<m>(x_0,0)</m>, com <m>x_0\neq0</m>.
+	</p>
+	<p>Veja como é o gráfico de <m>f</m>:
+	<figure xml:id="fig_5-7b">
+	  <caption>Gráfico de <m>f</m>.</caption>
+	  <image width="50%" xml:id="ex5-7b" archive="html">
+	    <asymptote>
+	      import graph3;
+	      size(10cm);
+	      
+	      currentprojection=orthographic(3,2,3);
+	      limits((-2.5,-2.5,-2),(2.5,2.5,2));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      real f(pair z) {return z.x*abs(z.y);}
+	      
+	      
+	      draw(surface(f,(-2,-2),(2,2),10),lightblue,blue);
+	      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise number="9" xml:id="dif9">
+      <statement>
+	<p> Mostre que os gráficos das funções
+	<m>f(x,y)=\sqrt{x^2+y^2}</m> e
+	<m>g(x,y)=\frac{1}{10}(x^2+y^2)+\frac{5}{2}</m> se intersectam
+	no ponto <m>(3,4,5)</m> e têm o mesmo plano tangente nesse
+	ponto.
+	</p>
+      </statement>
+      <hint>
+	<p>
+	  Escreva as esquações dos planos tangente a cada gráfico no
+	  ponto pedido. (Talvez pergunte-se por que eles existem, para
+	  começar)
+	</p>
+      </hint>
+      <solution>
+	<p>
+	  Observamos inicialmente que as duas funções são de classe
+	  <m>\mathscr{C}^1</m> em <m>(3,4)</m> e portanto o plano
+	  tangente está definido para ambas nesse ponto.
+	</p>
+	<p>Como <m>f(3,4)=5=g(3,4)</m>, então <m>(3,4,5)\in Gr f\bigcap
+	Gr g</m>. Para verificar que os gráficos compartilham também do
+	mesmo plano tangente nesse ponto vamos para comparar as equações
+	do planos tangentes. Começamos calculando as derivadas
+	parciais:
+	<md>
+	  <mrow>f_x(x,y)=\dfrac{x}{\sqrt{x^2+y^2}}\implies
+	  f_x(3,4)=\dfrac{3}{5};&amp;\quad
+	  g_x(x,y)=\dfrac{x}{5}\implies
+	  g_x(3,4)=\dfrac{3}{5};
+	  </mrow>
+	  <mrow>f_y(x,y)=\dfrac{y}{\sqrt{x^2+y^2}}\implies
+	  f_y(3,4)=\dfrac{4}{5};&amp;\quad g_y(x,y)=\dfrac{y}{5}\implies
+	  g_y(3,4)=\dfrac{4}{5};</mrow>
+	</md>
+	</p>
+	<p>Com isso as equações dos planos tangentes são dados por
+	<md>
+	  <mrow>\pi_f\colon&amp;
+	  f_x(3,4)(x-3)+f_y(3,4)(y-4)-z+f(3,4)=0\implies</mrow>
+	  <mrow>&amp;\boxed{3(x-3)+4(x-4)-5z+25=0};</mrow>
+	  <mrow>\pi_g\colon&amp;
+	  g_x(3,4)(x-3)+g_y(3,4)(y-4)-z+g(3,4)=0\implies</mrow>
+	  <mrow>&amp;\boxed{3(x-3)+4(x-4)-5z+25=0}.</mrow>
+	</md>
+	ou seja, são mesmo, como desejado.</p>
+	<p>Veja os gráficos das funções e o plano pedido.
+	<figure xml:id="fig_5-9">
+	  <caption>Gráfico de <m>f</m>,<m>g</m> e o plano tangente a ambos.</caption>
+	  <image width="50%" xml:id="ex5-9" archive="html">
+	    <asymptote>
+	      import solids;
+	      size(10cm);
+     
+	      currentprojection=orthographic(3,2,1);
+	      limits((-5,-5,-0.5),(5,5,6));
+      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+
+	      path3 parayz=graph(new triple(real z) {
+	      return (0,z,z*z);},-10,10,20,operator ..);
+
+	      revolution paraframe=revolution(parayz,axis=Z);
+	      surface paraboloideeli=shift(0,0,5/2)*scale(1,1,1/10)*surface(paraframe);
+
+	      draw(paraboloideeli, lightblue);
+	      draw(surface(shift(0,0,10)*cone(10,-10)),1,1,lightred+opacity(0.6));
+
+	      //vectors and point for the plane
+	      triple u=(5,0,3),v=(0,5,4),o=(3,4,5);
+	      draw(surface(plane(2*u,2*v,o-u-v)),orange+opacity(0.4));
+	      
+	      dot(Label("$(3,4,5)$"),(3,4,5),SSE);
+	      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise number="14" xml:id="dif14">
+      <statement>
+	<p>Seja <m>f(x,y)=\begin{cases}
+	  \dfrac{xy^3}{x^2+y^2},&amp;(x,y)\neq(0,0)\\
+	  \hfill 0,&amp;(x,y)=(0,0).
+	  \end{cases}</m>
+	  <ol marker="a">
+	    <li>Verifique que <m>f_y(0,y)=y</m>, para todo <m>y\in\R</m>
+	    e que <m>f_x(x,0)=0</m>, para todo <m>x\in\R</m>.</li>
+	    <li>Verifique que <m>f_{yx}(0,0)=0</m> e que
+	    <m>f_{xy}(0,0)=1</m>.</li>
+	  </ol>
+	</p>
+      </statement>
+      <hint>
+	<p>É melhor fazer tudo seguindo a <xref ref="def_derpar" /> e
+	<xref ref="def_derivseg" />.</p>
+      </hint>
+      <solution>
+	<ol marker="a">
+	  <li>
+	    Seguindo a dica, vamos pela definição:
+	    <md>
+	      <mrow>f_x(0,y_0)&amp;
+	      =\lim\limits_{h\to0}\dfrac{f(0+h,y_0)-f(0,y_0)}{h}
+	      =\lim\limits_{h\to0}\dfrac{hy_0^3}{h(h^2+y_0^2)}=y_0</mrow>
+	      <mrow>f_y(x_0,0)&amp;
+	      =\lim\limits_{k\to0}\dfrac{f(x_0,0+k)-f(x_0,0)}{k}
+	      =\lim\limits_{k\to0}\dfrac{x_0k^3}{k(x_0^2+k^2)}=0</mrow>
+	    </md>
+	  </li>
+	  <li>Para as segundas derivadas, usamos as expressões do item anterior:
+	  <md>
+	    <mrow>\dfrac{\partial^2 f}{\partial x\partial
+	    y}(0,0)&amp;=\lim\limits_{h\to
+	    0}\dfrac{f_y(0+h,0)-f_y(0,0)}{h}=\lim\limits_{h\to
+	    0}\dfrac{0-0}{h}=0;
+	    </mrow>
+	    <mrow>\dfrac{\partial^2 f}{\partial y\partial
+	    x}(0,0)&amp;=\lim\limits_{k\to
+	    0}\dfrac{f_x(0,0+k)-f_x(0,0)}{k}=\lim\limits_{h\to
+	    0}\dfrac{k-0}{k}=1.</mrow>
+	  </md>
+	  </li>
+	</ol>
+	<remark>
+	  Note na figura abaixo como é quase imperceptível o fato das
+	  derivadas de mistas não coincidirem na origem.
+	  <figure xml:id="fig_5-14">
+	    <caption>Gráfico de função e cortes de nível</caption>
+	    <image xml:id="ex5-14" archive="html" width="50%">
+	      <description>Curvas de nível</description>
+	      <asymptote>
+		import graph3;
+		size(10cm);
+      
+		currentprojection=orthographic(5,2,3);
+		limits((-1.1,-1.1,-0.5),(1.1,1.1,0.5));
+		currentlight=light(white,(-2,2,2),(2,-2,-2));
+
+		triple f(pair z) {
+		real r=z.x;
+		real t=z.y;
+		real x=r*cos(t);
+		real y=r*sin(t);
+		real z=r^2*cos(t)*sin(t)^3;
+		return (x,y,z);
+		}
+
+		draw(surface(f,(0,0),(1,2*pi),Spline),lightblue,blue);
+
+		//      dot((0,0,0),lightblue);
+
+		xaxis3("$x$",Arrow3);
+		yaxis3("$y$",Arrow3);
+		zaxis3("$z$",Arrow3);
+	      </asymptote>
+	    </image>
+	  </figure>
+	</remark>
+      </solution>
+    </exercise>
+    
+    <exercise number="17" xml:id="dif17">
+      <statement>
+	<p>
+	  Sejam <m>\gamma\colon\R\to\R^2</m> e
+	  <m>\sigma\colon\R\to\R^2</m> dadas por <m>\gamma(t =(1,t)</m>
+	  e <m>\sigma(t)=(t,0)</m>, para todo <m>t\in\R</m>. Considere
+	  ainda <m>F\colon\R^2\to\R</m>, diferenciável e tal que
+	  <me>F\big(\gamma(t)\big)=−5t^2+t+1\quad \text{e}\quad
+	  F\big(\sigma(t)\big)=t^2, \forall t\in\R.</me> Dê a equação do
+	  plano tangente ao gráfico de <m>F</m> no ponto
+	  <m>(x_0,y_0)=(1,0)</m>.
+	</p>
+      </statement>
+      <hint>
+	<p>
+	  Como ficariam as derivadas parciais de <m>F</m> pela definição?
+	</p>
+      </hint>
+      <answer>
+	<p><m>\pi\colon 2x+y-z-1=0</m></p>
+      </answer>
+      <solution>
+	<p>
+	  Precisamos de <m>F(1,0)</m>, <m>F_x(1,0)</m> e <m>F_y(1,0)</m>
+	  para escrever a equação do plano pedido. Como
+	  <m>\gamma(0)=\sigma(1)=(1,0)</m> temos que
+	  <me>\boxed{F(1,0)=F\big(\gamma(0)\big)=F\big(\sigma(1)\big)=1}.</me>
+	</p>
+	<p>Seguindo a dica, temos
+	<md>
+	  <mrow>F_x(1,0)&amp;=\lim\limits_{h\to
+	  0}\dfrac{F(1+h,0)-F(1,0)}{h}</mrow>
+	  <mrow>&amp;\stackrel{(\dagger)}{=}\lim\limits_{t\to
+	  1}\dfrac{F(t,0)-F(1,0)}{t}</mrow>
+	  <mrow>&amp;=\lim\limits_{t\to 1}
+	  \dfrac{F\big(\sigma(t)\big)-F\big(\sigma(1)\big)}{t-1},</mrow>
+	</md>
+	que é, por definição, <m>(F\circ\sigma)'(1)</m>. Como
+	<m>F\big(\sigma(t)\big)=t^2</m>, então
+	<m>(F\circ\sigma)'(t)=2t</m> e <m>(F\circ\gamma)'(1)=2</m>. Logo
+	<m>\boxed{F_x(1,0)=2}</m>. Em <m>(\dagger)</m> fizemos a mudança <m>t=h+1</m>.
+	</p>
+	<p>Analogamente, 
+	<md>
+	  <mrow>F_y(1,0)&amp;=\lim\limits_{k\to
+	  0}\dfrac{F(1,0+k)-F(1,0)}{k}</mrow>
+	  <mrow>&amp;=\lim\limits_{t\to
+	  0}\dfrac{F(1,k)-F(1,0)}{t},</mrow>
+	</md>
+	que é, por definição, <m>(F\circ\gamma)'(0)</m>. Como
+	<m>F\big(\gamma(t)\big)=−5t^2+t+1</m>, então
+	<m>(F\circ\gamma)'(t)=-10t+1</m> e
+	<m>(F\circ\gamma)'(0)=1</m>. Logo <m>\boxed{F_y(1,0)=1}</m>.
+	</p>
+	<p>Com isso, o plano procuração tem equação <me>\pi\colon
+	F_x(1,0)(x-1)+F_y(1,0)(y-0)-z+F(1,0)=0\implies\boxed{2x+y-1=0}.</me>
+	</p>
+	<remark>A hipótese de diferenciabilidade permitiu determinar o
+	plano tangente ao seu gráfico conhecendo seus valores apenas ao
+	longo de retas paralelas aos eixos coordenados que passam por
+	<m>(1,0)</m>. Em outras palavras, quaisquer duas funções
+	diferenciáveis que, num dado ponto, tenham os mesmos cortes de
+	seus gráficos por planos paralelos a <m>Oxz</m> e <m>Oyz</m>,
+	que contenham o ponto <m>(x_0,y_0,0)</m>, terão o mesmo plano
+	tangente nesse ponto. Uma figura para ilustrar:
+	<figure xml:id="fig_5-17">
+	  <caption>Cortes do gráfico de <m>F</m> e o plano tangente determinado
+	  por eles.</caption>
+	  <image width="50%" xml:id="ex5-17" archive="html">
+	    <asymptote>
+	      import solids;
+	      size(10cm);
+     
+	      currentprojection=orthographic(3,2,1);
+	      limits((-2,-2,-2),(2,2,2));
+      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      path3 para1=graph(new triple(real z) {
+	      return (1,z,-5*z*z+z+1);},-1,1,20,operator ..);
+	      
+	      path3 para2=graph(new triple(real z) {
+	      return (z,0,z*z);},-1,2,20,operator ..);
+	      
+	      draw(para1, blue);
+	      draw(para2, orange);
+
+	      //vectors and point for the plane
+	      triple u=(1,0,2),v=(0,1,1),o=(1,0,1);
+	      draw(surface(plane(2*u,2*v,o-u-v)),green+opacity(0.4));
+      
+	      dot(Label("$(1,0,0)$"),(1,0,0),S);
+	      dot(Label("$(1,0,1)$"),(1,0,1),N);
+      
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	</remark>
+	<p>Com o desenvolvimento dos conteúdos veremos que, conhecendo
+	os cortes do gráfico de uma função por dois planos verticais não
+	paralelos passando por um ponto desse gráfico, determinamos o
+	plano tangente ao gráfico nesse ponto.</p>
+      </solution>
+    </exercise>
+
+    
+    <!-- For an example of WeBWorK, uncomment the next -->
+    <!-- exercise and run `pretext build html -w`.     -->
+    <!-- <exercise>
+	 <webwork xml:id="ex_first-webwork-add-numbers">
+	 <description>
+         Add two positive single-digit integers.
+	 </description>
+	 
+	 <pg-code>
+         $a = random(1, 9, 1);
+         $b = random(1, 9, 1);
+         $c = Compute($a + $b);
+	 </pg-code>
+	 
+	 <statement>
+         <p>
+         Compute the sum of <m><var name="$a" /></m> and <m><var name="$b" /></m>:
+         </p>
+         <p>
+         <m><var name="$a" /> + <var name="$b" /> =</m><var name="$c" width="5" category="integer" />
+         </p>
+	 </statement>
+	 
+	 <solution>
+	 <p>
+	 <m><var name="$a" /> + <var name="$b" /> = <var name="$c" /></m>.
+	 </p>
+	 </solution>
+	 </webwork>
+	 </exercise> -->
+  </exercises>
+  
+</section>

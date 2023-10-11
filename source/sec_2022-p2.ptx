@@ -1,0 +1,374 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2022-p2" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- Change title when you have one: -->
+  <title>Segunda Prova</title>
+  <exercises xml:id="gab_p2a-2022" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- You can ommit the title and just get the default "Exercises" -->
+    <!-- <title>Curvas no Plano</title> -->
+  
+    <exercise xml:id="p2q1a-2022">
+      <statement>
+	<p>Seja <m>f\colon\R^2\to\R</m> diferenciável tal que
+	<m>2x+3y+z=1</m> é o plano tangente ao gráfico de <m>f</m> no ponto
+	<m>\big(-1,2, f(-1,2)\big)</m>. Determine
+	<ol marker="a.">
+	  <li>O valor de <m>f(-1,2)</m>.</li>
+	  <li>A reta tangente ao gráfico de <m>g\colon\R\to\R</m> dada
+	  por <m>g(t)=f(te^t- \cos t, 2e^t +t)</m> no ponto
+	  <m>\big(0,g(0)\big)</m>.</li>
+	  <li>O plano tangente ao gráfico de <m>h(u,v)=u f(uv,
+	  u^2+v^2)</m> no ponto <m>\big(1,-1, h(1,-1)\big)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a.">
+	  <li><m>f(-1,2)=-3</m>.</li>
+	  <li><m>y= -11x-3</m>.</li>
+	  <li><m>7x-4y+z-8 = 0</m>.</li>
+	</ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	<ol marker="a.">
+	  <li>Basta lembrar que o ponto <m>\big(-1,2, f(-1,2)\big)</m>
+	  pertence do plano dado como tangente ao gráfico de <m>f</m>
+	  nesse ponto. Assim <m>2\cdot(-1)+3\cdot 2+f(-1,2)=1\implies
+	  \boxed{f(-1,2)=-3}</m>.</li>
+	  <li>Prestando a devida atenção aos sinais, a equação do plano
+	  dado nos diz que <m>\nabla f(-1,2)=(-2,-3)</m>. A equação da
+	  reta tangente ao gráfico de <m>g</m> (uma função de <m>\R</m>
+	  em <m>\R</m> é dada por <m>y=g(0)+g'(0)x</m>. Determinamos os
+	  coeficientes, observando que <m>g(t)=f\big(\gamma(t)\big)</m>,
+	  onde <m>\gamma(t)=(te^t- \cos t, 2e^t +t)</m>). Com isso,
+	  <md>
+	    <mrow>g(0)&amp;=f\big(\gamma(0)\big)=f(-1,2)=-3;</mrow>
+	    <mrow>g'(0)&amp;=(f\circ\gamma)'(0)=\big\langle\nabla
+	    f\big(\gamma(0)),\gamma'(0)\big\rangle=-11,</mrow>
+	  </md>
+	  pois <m>f</m> e <m>\gamma</m> são diferenciáveis, com
+	  <m>\nabla f(-1,2)=(-2,-3)</m> obtido no item anterior e
+	  <m>\gamma'(0)=(1,3)</m>. Assim, a reta procurada é
+	  <m>\boxed{y=-11x-3}</m>.</li>
+	  <li>Precisamos do valor <m>h(1,-1)=1\cdot f(-1,2)=-3</m> e das
+	  derivadas parciais de <m>h</m> no ponto <m>(1,-1)</m>, o que
+	  vem da Regra da Cadeia. Primeiro as derivadas num ponto
+	  qualquer:
+	  <md>
+	    <mrow>h_u(u,v)&amp;=f(uv,u^2+v^2)+u\Big[f_x(uv,u^2+v^2)v+f_y(uv,u^2+v^2)(2u)\Big];</mrow>
+	    <mrow>h_v(u,v)&amp;=u\Big[f_x(uv,u^2+v^2)u+f_y(uv,u^2+v^2)(2v)\Big];</mrow>
+	  </md>
+	  No ponto <m>(u,v)=(1,-1)</m>, temos <m>h_u(1,-1)=-7</m> e
+	  <m>h_v(1,-1)=4</m>. Assim o plano tangente pedido tem equação
+	  <me>\pi\colon -7(x-1)+4(y+1)-z-3=0\iff \boxed{\pi\colon 7x-4y+z-8 = 0}</me>.
+	  </li>
+	</ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q2a-2022">
+      <statement>
+	<p>
+	Seja <m>f\colon\R^3\to\R</m> dada por <m>f(x,y,z)=(x+y)z</m>
+	e considere <me>C=\big\{(x,y,z)\in\R\colon x^2 + y^2 - z^2 =
+	1\text{ e }(x-1)^2+(y-1)^2+z^2=1\big\}.</me>
+	<ol marker="a">
+	  <li>Encontre um vetor unitário tangente à curva <m>C</m> em
+	  <m>(1,1,1)</m>.</li>
+	  <li>Denotando por <m>\vec{u}</m> o vetor encontrado no item
+	  anterior, calcule <m>\dfrac{\partial f}{\partial
+	  \vec{u}}(1,1,1)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li>As duas possíveis respostas são
+	    <m>\vec{u_1}=\dfrac{1}{\sqrt{2}}(1,-1,0)</m> ou
+	    <m>\vec{u_2}=\dfrac{1}{\sqrt{2}}(-1,1,0)</m>;</li>
+	    <li><m>\dfrac{\partial f}{\partial \vec{u}}(1,1,1)=0</m>.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>Existem aqui duas estratégias de solução, uma usando a teoria
+	e fazendo menos contas e outras mais artesanal, parametrizando a
+	curva:</p>
+	<p><em>Solução 1 (utilizando a relação entre gradientes e
+	superfícies de nível):</em>
+	<ol>
+	  <li>Consideremos as funções (de classe <m>\mathscr{C}^1</m>)
+	  <m>g,h\colon\R^3\to\R</m> dadas por <me>g(x,y,z) = x^2 + y^2 -
+	  z^2 \quad \text{e} \quad h(x,y,z) = (x-1)^2 + (y-1)^2 +
+	  z^2,</me> cujos gradientes são <me>\nabla g(x,y,z) = 2(x,y,-z)
+	  \quad \text{e} \quad \nabla h(x,y,z) = 2 (x-1, y-1, z).</me>
+	  Em particular, <m>\nabla g(1,1,1) = 2(1,1,-1)</m> e <m>\nabla
+	  h(1,1,1) = 2(0,0,1)</m> são linearmente independentes. Como
+	  <m>C</m> é a intersecção das superfícies de nível <m>c=1</m>
+	  de <m>g</m> e <m>h</m>, sabemos que a reta tangente a <m>C</m>
+	  em <m>(1,1,1)</m> é a interseção dos planos tangentes às
+	  superfícies de nível acima e portanto normal aos vetores
+	  <m>(1,1,-1)</m> e <m>(0,0,1)</m>. Deste modo, um vetor diretor
+	  desta reta é <me>\vec{v} = (1,1,-1) \times (0,0,1) =
+	  (1,-1,0).</me> Assim, os vetores <me>\vec{u_1} =
+	  \frac{1}{\sqrt{2}}(1,-1,0) \quad \text{e} \quad \vec{u_2} =
+	  \frac{1}{\sqrt{2}}(-1,1,0)</me> são ambos unitários e
+	  tangentes a <m>C</m> em <m>(1,1,1)</m>.</li>
+	  <li>Como <m>f</m> é diferenciável, sabemos que
+	  <me>\frac{\partial f}{\partial \vec{u}}(1,1,1) = \big\langle
+	  \nabla f(1,1,1), \vec{u_1}\big\rangle = \big\langle (1,1,2),
+	  \vec{u_1}\big\rangle = 0</me> e, analogamente,
+	  <m>\dfrac{\partial f}{\partial \vec{u_2}}(1,1,1) =
+	  0</m>. Observe que <m>\nabla f(1,1,1) = (1,1,2)</m> é combinação
+	  linear de <m>\nabla g(1,1,1)</m> e <m>\nabla h(1,1,1)</m>. Tal
+	  fato está ligado à solução do <xref ref="p2q4a-2022" />.</li>
+	</ol>
+	</p>
+	<p><em>Solução 2 (Parametrizando a curva "por partes"):</em>
+	<ol marker="a">
+	  <li>
+	    <p>Somando as equações que definem <m>C</m> e completando
+	  quadrados, obtemos <me>\Big(x - \frac{1}{2}\Big)^2 + \Big(y
+	  - \frac{1}{2}\Big)^2 = \frac{1}{2}</me> e podemos escrever
+	  <md>
+	    <mrow>x - \frac{1}{2} = \dfrac{\sqrt{2}}{2}\cos t
+	    &amp;\implies x = \frac{\sqrt{2}}{2}\cos t +
+	    \frac{1}{2},</mrow>
+	    <mrow>y - \frac{1}{2} = \frac{\sqrt{2}}{2}\sin t
+	    &amp;\implies y = \frac{\sqrt{2}}{2}\sin t +
+	    \frac{1}{2}.</mrow>
+	  </md>
+	  Para determinar <m>z</m> em termos de <m>t</m>, basta
+	  substituir na primeira equação: <me>z^2 = \dfrac{\sqrt{2}}{2}
+	  (\sin t + \cos t) \implies z = \pm \frac{\sqrt{\sin t + \cos
+	  t}}{\sqrt[4]{2}}.</me> Como estamos interessados no ponto
+	  <m>(1,1,1)</m>, vamos considerar apenas <me>z =
+	  \frac{\sqrt{\sin t + \cos t}}{\sqrt[4]{2}}.</me> Note que a
+	  expressão dentro da raiz quadrada acima deve ser maior ou
+	  igual a zero, o que impõe uma restrição ao domínio da nossa
+	  parametrização procurada. Devemos ter <m>\sin t + \cos t \geq
+	  0</m>, o que equivale a <m>t \in
+	  \Big[-\frac{\pi}{4},\frac{3\pi}{4}\Big]</m>.</p>
+	  <p>
+	    (Uma maneira rápida de verificar isto é notar que <me>\sin t
+	    + \cos t \geq 0 \iff \frac{\sqrt{2}}{2} \sin t +
+	    \frac{\sqrt{2}}{2} \cos t \geq 0 \iff \sin(t + \pi/4) \geq
+	    0.)</me>
+	  </p>
+	  <p>
+	    A curva <m>\gamma\colon \Big[ -\frac{\pi}{4},
+	    \frac{3\pi}{4}\Big]\to\R^3</m> dada por <me>\gamma(t) =
+	    \Big( \frac{\sqrt{2}}{2}\cos t + \frac{1}{2},
+	    \frac{\sqrt{2}}{2}\sin t + \frac{1}{2},\frac{\sqrt{\sin t +
+	    \cos t}}{\sqrt[4]{2}}\Big)</me> é, portanto, uma
+	    parametrização de parte de <m>C</m> que passa por
+	    <m>(1,1,1)</m>. Para encontrar um vetor tangente a
+	    <m>\gamma</m> em <m>(1,1,1)</m>, precisamos calcular
+	    determinar <m>t_0 \in \Big] -\frac{\pi}{4},
+	    \frac{3\pi}{4}\Big[</m> tal que <m>\gamma(t_0) = (1,1,1)</m>
+	    e, em seguida, calcular a derivada de <m>\gamma</m> neste
+	    ponto.
+	  </p>
+	  <p>
+	    Notemos que <m>\gamma(t) = (1,1,1)</m> se, e somente se,
+	    <me>\frac{\sqrt{2}}{2}\cos t + \frac{1}{2} =
+	    \frac{\sqrt{2}}{2}\sin t + \frac{1}{2} = \frac{\sqrt{\sin t
+	    + \cos t}}{\sqrt[4]{2}} = 1,</me> que admite apenas <m>t=
+	    \frac{\pi}{4}</m> como solução no intervalo <m>\Big]
+	    -\frac{\pi}{4}, \frac{3\pi}{4}\Big[</m> (verifique).</p>
+	    <p>Como <me>\gamma'(t) = \left( -\frac{\sqrt{2}}{2}\sin t,
+	    \frac{\sqrt{2}}{2}\cos t,\frac{\cos t - \sin
+	    t}{2\sqrt[4]{2}\sqrt{\sin t + \cos t}}\right), \forall t \in
+	    \left] -\frac{\pi}{4}, \frac{3\pi}{4}\right[,</me>
+	    concluímos que <me>\gamma'\left(\frac{\pi}{4}\right) =
+	    \left( - \frac{1}{2}, \frac{1}{2}, 0\right)</me> é tangente
+	    a <m>C</m> em <m>(1,1,1)</m>. Note que este vetor é paralelo
+	    ao vetor <m>\vec{v}</m> obtido na solução anterior!
+	  </p></li>
+	  <li>Uma vez encontrado o vetor tangente a <m>C</m> a derivada direcional
+	  é calculada como na solução anterior.</li>
+	</ol>
+	</p>
+	<p>Um figura sempre ajuda:</p>
+	<figure xml:id="fig_gabp2aq2-2022">
+	  <caption>Superfícies da <xref ref="p2q2a-2022" /></caption>
+	  <image width="50%" xml:id="gabp2aq2-2022" archive="html">
+	    <description>Interseção de superfićies e seu vetor tangente.</description>
+	    <asymptote>
+	      import solids;
+	      size(10cm);
+      
+	      currentprojection=orthographic(3,-2,1);
+	      limits((-2,-2,-2),(2,2,2));
+	      
+	      currentlight=light(white,(2,2,2),(2,-2,-2));
+	      // uncomment for transparent background
+	      // currentlight.background=black+opacity(0);
+	      
+	      path3 hipxz=graph(new triple(real t) {
+	      return (sqrt(1+t*t),0,t);},-2,2,20,operator ..);
+	      
+	      revolution hip1frame=revolution(hipxz,axis=Z);
+	      surface hiperboloide1f=surface(hip1frame);
+
+	      surface esfera=shift(1,1,0)*unitsphere;
+
+	      path3 curva=graph(new triple(real t) {
+	      return (1/2*(sqrt(2)*cos(t)+1),1/2*(sqrt(2)*sin(t)+1),1/2^(1/4)*sqrt(cos(t)+sin(t)));},pi/4,3*pi/4,20,operator ..);
+
+	      draw(hiperboloide1f, lightblue);
+	      draw(esfera, orange+opacity(0.8));
+	      draw(curva,red+1bp);
+	      draw(reflect(O,X+Y,Z)*curva,red+1bp);
+	      draw(reflect(O,X,Y)*curva,red+1bp);
+	      draw(rotate(180,X+Y)*curva,red+1bp);
+	      
+	      triple ponto=(1,1,1);
+
+	      dot(ponto);
+	      draw(Label("$\nabla g(1,1,1)$",position=EndPoint),
+	      ponto--ponto+(2,2,-2),lightblue,Arrow3);
+	      draw(Label("$\nabla h(1,1,1)$",position=EndPoint),
+	      ponto--ponto+(0,0,2),orange,Arrow3);
+	      draw(Label("$\vec{u_1}$",position=EndPoint),
+	      ponto--ponto+1/sqrt(2)*(1,-1,0),black,Arrow3);
+
+	      xaxis3("$x$",Arrow3); 
+	      yaxis3("$y$",Arrow3);
+	      zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q3a-2022">
+      <statement>
+	Determine os pontos críticos da função <me>f(x,y) = x^2y +xy^2
+	-xy</me> e classifique-os como pontos de máximo local, mínimo
+	local ou de sela.
+      </statement>
+      <answer>
+	<p>Os pontos <m>(0,0)</m>, <m>(1,0)</m> e <m>(0,1)</m> são de
+	sela, enquanto que <m>(1/3,1/3)</m> é de mínimo local.</p>
+      </answer>
+      <solution>
+	<p>
+	  Note que <m>f</m> é de classe <m>\mathscr{C}^2</m> e seu gradiente é
+	<me>\nabla f(x,y) = (2xy+y^2 -y, 2xy+x^2 - x).</me> Deste modo,
+	os pontos críticos de <m>f</m> são as soluções do sistema
+	<me>\begin{cases} 2xy+y^2-y&amp;=0,\\
+	2xy+x^2-x&amp;=0.\end{cases}</me>
+	A primeira equação equivale a <m>y=0</m> ou <m>y=1-2x</m>. Vamos analisar os
+	dois casos:
+	<ul>
+	  <li>substituindo <m>y=0</m> na segunda
+	equação, obtemos <m>x^2-x=0</m>, isto é, <m>x=0</m> ou <m>x=1</m>. Temos,
+	  assim, os pontos <m>(0,0)</m> e <m>(1,0)</m>;</li>
+	  <li>substituindo <m>y=1-2x</m> na segunda equação, obtemos
+	  <m>-3x^2+x=0</m>, isto é, <m>x=0</m> ou <m>x=1/3</m>. Para
+	  <m>x=0</m> temos <m>y=1</m>; para <m>x=1/3</m> temos
+	  <m>y=1/3</m>. Isto nos dá os pontos <m>(0,1)</m> e
+	  <m>(1/3,1/3)</m>.</li>
+	</ul>
+    	</p>
+	<p>Uma vez encontrados os pontos críticos de <m>f</m>, vamos
+	classificá-los usando o Critério da Hessiana (<xref
+	ref="teo_hess" />). Precisamos das derivadas de segunda ordem de
+	$f$: <me>\frac{\partial^2 f}{\partial x^2}(x,y) = 2y, \quad
+	\frac{\partial^2 f}{\partial y\partial x}(x,y) = 2x+2y-1, \quad
+	\frac{\partial^2 f}{\partial y^2}(x,y) = 2x.</me> Denotando por
+	<m>H_f(x,y)</m> a matriz Hessiana de <m>f</m> no ponto
+	<m>(x,y)</m>, temos:
+	<ul>
+	  <li><m>\det H_f(0,0) = \det\begin{bmatrix} 0 &amp;
+	  -1\\ -1 &amp; 0 \end{bmatrix} = -1 &lt; 0 \implies (0,0)</m> é ponto de
+	  sela de <m>f</m>.</li>
+	  <li><m>\det H_f(1,0) = \det\begin{bmatrix} 0 &amp; 1\\ 1 &amp; 2
+	  \end{bmatrix} = -1 &lt; 0 \implies (1,0)</m> é ponto de sela de
+	  <m>f</m>.</li>
+	  <li><m>\det H_f(0,1) = \det\begin{bmatrix} 2 &amp; 1\\ 1 &amp; 0 \end{bmatrix} =
+	  -1 &lt; 0 \implies (0,1)</m> é ponto de sela de <m>f</m>.</li>
+	  <li><m>\det H_f(1/3,1/3) = \det\begin{bmatrix} 2/3 &amp; 1/3\\ 1/3 &amp; 2/3
+	\end{bmatrix} = 1/3 &gt; 0</m> e <m>\dfrac{\partial^2
+	f}{\partial x^2}(1/3,1/3) = 2/3&gt; 0 \implies (1/3,1/3)</m> é ponto
+	de mínimo local de <m>f</m>.</li>
+	</ul></p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q4a-2022">
+      <statement>
+	Seja <m>f\colon\R^3\to\R</m> dada por
+	<m>f(x,y,z)=(x+y)z</m>. Determine o valor máximo e o valor
+	mínimo de <m>f</m> em <me>C= \big\{ (x,y,z) \in \R^3\colon x^2 + y^2 -
+	z^2 = 1\text{ e } (x-1)^2 + (y-1)^2 +z^2 =1\big\}.</me>
+      </statement>
+      <answer>
+	O valor máximo de <m>f</m> é <m>2</m>, atingido no ponto
+	<m>(1,1,1)</m>, enquanto o mínimo é <m>-2</m>, atingido no ponto
+	<m>(1,1,-1)</m>.
+      </answer>
+      <solution>
+	<p>Observamos, primeiramente, que <m>f</m> é contínua e <m>C</m>
+	é compacto (é a intersecção de um hiperboloide de uma folha, que
+	é fechado, e uma esfera, que é fechada e limitada). O Teorema de
+	Weierstrass assegura então que o problema proposto tem
+	solução.</p>
+	<p>Usando a mesma notação da solução do <xref ref="p2q2a-2022"
+	/>, vamos considerar as funções <m>g,h\colon\R^3\to\R</m> dadas
+	por <me>g(x,y,z) = x^2 + y^2 - z^2 \quad\text{e}\quad h(x,y,z) =
+	(x-1)^2 + (y-1)^2 + z^2.</me> As funções <m>f</m>, <m>g</m> e
+	<m>h</m> são de classe <m>\mathscr{C}^1</m> e seus gradientes
+	são <m>\nabla f(x,y,z) = (z,z, x+y)</m>, <m>\nabla g(x,y,z) =
+	2(x,y,-z)</m> e <m>\nabla h(x,y,z) = 2 (x-1, y-1, z)</m>.
+	</p>
+	<p>O Método dos Multiplicadores de Lagrange (<xref
+	ref="teo_lag32" />) garante que os candidatos a máximos e
+	mínimos locais de <m>f</m> em <m>C</m> são as soluções do
+	sistema <me>\begin{cases} \{ \nabla f(x,y,z), \nabla g(x,y,z),
+	\nabla h(x,y,z)\}\; \text{é linearmente dependente},\\ x^2 +
+	y^2 - z^2 = 1,\\ (x-1)^2 +(y-1)^2+ z^2 = 1.  \end{cases}</me> A
+	primeira condição equivale a <me>\det\begin{bmatrix} z &amp; z
+	&amp; x+y\\ x &amp; y &amp; -z\\ x-1 &amp; y-1 &amp; z
+	\end{bmatrix} = 0 \iff 2z^2(y-x)+y^2 - x^2 = 0,</me> ou seja,
+	<m>(2z^2 + x+ y)(y-x)=0</m>, de modo que <m>x=y</m> ou
+	<m>x+y+2z^2=0</m>. Vamos analisar estes dois casos.</p>
+	<ul>
+	  <li><p>Caso 1 <m>x=y</m>. Substituindo isso nas outras duas
+	  equações temos <me>\begin{cases}
+	  2x^2 - z^2 &amp;= 1,\\
+	  2(x-1)^2 + z^2 &amp;= 1.
+	  \end{cases}</me>
+	  Somando estas equações, concluímos que <me>x^2 - x = 0
+	  \implies x = 0\; \text{ou}\; x = 1.</me></p>
+	  <p> Se <m>x=0</m>, então <m>y=0</m> e <m>z^2 + 1 = 0</m>, um
+	  absurdo. Se <m>x=1</m>, então <m>y=1</m> e <me>z^2 = 1 \implies
+	  z = \pm 1.</me> Isto nos dá os candidatos <m>(1,1,1)</m> e
+	  <m>(1,1,-1)</m>.</p>
+	  </li>
+	  <li>Caso 2 <m>2z^2+x+y=0</m>. Somando as duas últimas equações
+	  obtemos <m>x^2+y^2=x+y</m> que, junto com a hipótese desse
+	  caso, prodduz <m>x^2+y^2+2z^2=0</m>, ou seja,
+	  <m>(x,y,z)=(0,0,0)</m>. Este ponto não atende às restrições do
+	  problema (duas últimas equações do sistema de Lagrange).</li>
+	</ul>
+	<p>Com isso, os únicos candidatos são <m>(1,1,1)</m> e
+	<m>(1,1,-1)</m>, onde <m>f(1,1,1)=(1+1)\cdot 1=2</m> é valor
+	máximo e <m>f(1,1,-1)=(1+1)\cdot (-1)=-2</m> é o valor
+	mínimo.</p>
+	<p>Observamos que o problema poderia ser resolvido
+	parametrizando-se a curva <m>C</m> e analisando a derivada de
+	sua composta com a função <m>f</m>.</p>
+      </solution>
+    </exercise>
+  </exercises>
+</section>

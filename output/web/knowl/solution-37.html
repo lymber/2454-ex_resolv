@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<div class="solution solution-like">
+<h4 class="heading">
+<span class="type">Solução</span><span class="space"> </span><span class="codenumber">3.3.1.1</span><span class="period">.</span>
+</h4>
+<div class="para">Resolveremos cada item usando as definições.</div> <div class="para logical"><ol class="lower-alpha">
+<li><div class="para">Basta usar o <a href="" class="xref" data-knowl="./knowl/teo_limcont.html" title="Teorema A.3.10: (Limite e Continuidade)">Teorema A.3.10</a> e verificar que<div class="displaymath process-math" data-contains-math-knowls="./knowl/teo_limcont.html">
+\begin{align*}
+\lim_{(x,y) \to (0,0)} f(x,y) &amp;=
+\lim_{(x,y) \to (0,0)}\frac{x^3-y^3}{x^2+y^2}\\
+&amp;=\lim_{(x,y)\to (0,0)} \left( \underbrace{x}_{\to 0}
+\underbrace{\frac{x^2}{x^2+y^2}}_{\text{limitado}} -
+\underbrace{y}_{\to 0}
+\underbrace{\frac{y^2}{x^2+y^2}}_{\text{limitado}}\right)\\
+&amp;=0=f(0,0),
+\end{align*}
+</div>para concluir que <span class="process-math">\(f\)</span> é contínua em <span class="process-math">\((0,0)\text{.}\)</span>
+</div></li>
+<li><div class="para">O denominador da primeira expressão que define <span class="process-math">\(f\)</span> se anula em <span class="process-math">\((0,0)\text{,}\)</span> então não podemos usar as regras de derivação. Procedemos utilizando a <a href="" class="xref" data-knowl="./knowl/def_derpar.html" title="Definição A.4.1: (Derivadas parciais)">Definição A.4.1</a>:<div class="displaymath process-math" data-contains-math-knowls="./knowl/def_derpar.html">
+\begin{align*}
+f_x(0,0)=\dfrac{\partial f}{\partial x}(0,0) &amp;=
+\lim_{t \to 0} \frac{f(t,0) -f(0,0)}{t} = \lim_{t \to 0}
+\frac{{t^3}/{t^2}}{t} = 1,\\
+f_y(0,0)=\dfrac{\partial f}{\partial y}(0,0) &amp;=
+\lim_{t \to 0} \frac{f(0,t) -f(0,0)}{t} = \lim_{t \to 0}
+\frac{{-t^3}/{t^2}}{t} = -1.
+\end{align*}
+</div>
+</div></li>
+<li><div class="para">Devemos determinar se o limite<div class="displaymath process-math">
+\begin{equation*}
+\lim_{(h,k)\to (0,0)}
+\frac{f(h,k)-f(0,0) - f_x(0,0)h - f_y(0,0)k}{\sqrt{h^2+k^2}} =
+\lim_{(h,k) \to (0,0)} \frac{h^2k -
+hk^2}{(h^2+k^2)^{3/2}}
+\end{equation*}
+</div>existe e é igual a zero. Através da curva <span class="process-math">\(\alpha\colon\R\to\R^2\)</span> dada por <span class="process-math">\(\alpha(t) = (-t,t)\text{,}\)</span> este limite se torna<div class="displaymath process-math">
+\begin{equation*}
+\lim_{t
+\to 0} \frac{2t^3}{2t^2 \sqrt{2t^2}} = \lim_{t \to 0}
+\frac{t}{\sqrt{2}|t|},
+\end{equation*}
+</div>que não existe (os limites laterais não coincidem). Isso implica que o limite original também não existe e, portanto, <span class="process-math">\(f\)</span> não é diferenciável em <span class="process-math">\((0,0)\text{.}\)</span>
+</div></li>
+<li><div class="para">Dado <span class="process-math">\(\vec{u}=(a,b)\)</span> unitário, temos<div class="displaymath process-math">
+\begin{equation*}
+\dfrac{\partial
+f}{\partial \vec{u}}(0,0) = \lim_{t \to 0} \frac{f(ta,tb)
+-f(0,0)}{t} = \lim_{t \to 0}
+\frac{1}{t}\frac{t^3(a^3-b^3)}{t^2(a^2+b^2)} = a^3 - b^3,
+\end{equation*}
+</div>pois <span class="process-math">\(a^2+b^2 = 1\text{.}\)</span> Convém observar que não podemos simplesmente tomar o produto interno do gradiente de <span class="process-math">\(f\)</span> em <span class="process-math">\((0,0)\)</span> pelo vetor <span class="process-math">\(\vec{u}\)</span> porque <span class="process-math">\(f\)</span> não é diferenciável em <span class="process-math">\((0,0)\text{!}\)</span>
+</div></li>
+</ol></div> <div class="para logical">
+<div class="para">Apresentamos outra solução possível do item (c) usando os itens (b) e (d). Caso <span class="process-math">\(f\)</span> fosse diferenciável em <span class="process-math">\((0,0)\text{,}\)</span> teríamos</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial f}{\partial
+\vec{u}}(0,0) = \big\langle \nabla f(0,0), \vec{u}\big\rangle =
+\big\langle (1,-1), (a,b)\big\rangle= a-b.
+\end{equation*}
+</div>
+<div class="para">Assim, para provar que <span class="process-math">\(f\)</span> não é diferenciável é suficiente exibir um vetor unitário <span class="process-math">\(\vec{u}=(a,b)\)</span> tal que <span class="process-math">\(a^3 - b^3 \neq a
+- b\)</span> como, por exemplo, <span class="process-math">\(\vec{u} = \Big(
+\dfrac{\sqrt{2}}{2}, -\dfrac{\sqrt{2}}{2}\Big)\)</span> (verifique).</div>
+</div>
+</div>
+<span class="incontext"><a class="internal" href="sec_2022-psub.html#solution-37">em contexto</a></span>
+</body>
+</html>
