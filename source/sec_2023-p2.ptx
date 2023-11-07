@@ -117,8 +117,8 @@
 	    </md>
 	    Fazendo <m>(u,v)=(-1,1)</m> e usando as informações do item
 	    anterior, segue-se que <me>\dfrac{\partial F}{\partial
-	    u}(-1,1)=G(-3,2)+\big(G_x(-3,2)\cdot
-	    2+G_y(-3,2)\cdot(-3)=\dfrac{3}{2}.</me>
+	    u}(-1,1)=G(-3,2)-\big(G_x(-3,2)\cdot
+	    2+G_y(-3,2)\cdot(-3)=\dfrac{7}{2}.</me>
 	    </li>
 	  </ol>
 	</p>
