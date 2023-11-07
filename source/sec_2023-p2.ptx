@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2023-p2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Segunda Prova</title>
+  <exercises xml:id="gab_2023-p2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="p2q1-2023">
+      <statement>
+	<p>Considere a função <m>G\colon\R^2\to\R</m> dada por <me>
+	G(x,y)=\begin{cases}
+	\big((x-1)^2+y^2\big)\sin\Big(\dfrac{2xy}{(x-1)^2+y^2}\Big),&amp;\text{se
+	}(x,y)\neq(1,0)\\
+	\hfill 0,&amp;\text{se }(x,y)=(1,0).\end{cases}</me>
+	<ol marker="a.">
+	  <li>Calcule, caso existam, <m>\dfrac{\partial G}{\partial
+	  x}(1,0)</m> e <m>\dfrac{\partial G}{\partial y}(1,0)</m>.</li>
+	  <li>Verifique se <m>G</m> é diferenciável em
+	  <m>(1,0)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <hint>
+	Podemos usar as regra de derivação no primeiro item? Algum
+	teorema que evita a definição no segundo?
+      </hint>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><m>\dfrac{\partial G}{\partial x}(1,0)=0</m> e
+	    <m>\dfrac{\partial G}{\partial y}(1,0)=0</m>.</li>
+	    <li>Sim, o motivo está na solução abaixo.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>Não podemos aplicar as regras de derivação para
+	    <m>G</m> no ponto indicado pois este anula o
+	    denominador. Vamos pela definição:
+	    <md>
+	      <mrow>\dfrac{\partial G}{\partial x}(1,0)&amp;=\lim_{h\to
+	      0}\dfrac{G(1+h,0)-G(1,0)}{h}=\lim_{h\to
+	      0}\dfrac{h^2\sin\Big(\frac{0}{h^2}\Big)}{h^2}=\lim_{h\to
+	      0}0=0</mrow>
+	      <mrow>\dfrac{\partial G}{\partial y}(1,0)&amp;=\lim_{k\to
+	      0}\dfrac{G(1,k)-G(1,0)}{k}=\lim_{h\to
+	      0}\dfrac{k^2\sin\Big(\frac{0}{k^2}\Big)}{k}=\lim_{h\to
+	      0}0=0</mrow>
+	    </md></li> 
+	    <li>Neste caso, é mais fácil seguir pela definição:
+	    <md>
+	      <mrow>\lim_{(h,k)\to (0,0)}
+	      \dfrac{G(1+h,0+k)-G(1,0)-G_x(1,0)h-G_y(1,0)k}{\sqrt{h^2+k^2}}=&amp;</mrow>
+	      <mrow>\lim_{(h,k)\to (0,0)}
+	      \dfrac{\big(h^2+k^2\big)\sin\Big(\dfrac{2(1+h)k}{h^2+k^2}\Big)-0-0\cdot
+	      h-0\cdot k}{\sqrt{h^2+k^2}}=&amp;</mrow>
+	      <mrow>\lim_{(h,k)\to (0,0)}
+	      \sqrt{h^2+k^2}\sin\Big(\dfrac{2(1+h)k}{h^2+k^2}\Big)=&amp;0,</mrow>
+	      </md>pois o primeiro fator tende a zero e o segundo é
+	      limitado. Logo, <m>G</m> é diferenciável em
+	    <m>(1,0)</m>.</li>
+	  </ol>
+	  </p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q2-2023">
+      <statement>
+	<p>Seja <m>G=G(x,y)</m> uma função diferenciável em <m>\R^2</m> e tal que
+	o plano tangente ao gráfico de <m>G</m> no ponto
+	<m>\big(-3,2,G(-3,2)\big)</m> tem equação <m>4x+2y+2z+3=0</m>.
+	<ol marker="a">
+	  <li>Verifique, justificando, que <m>G(-3,2)=\dfrac{5}{2}</m> e
+	  <m>\nabla G(-3,2)=(-2,-1)</m>.</li>
+	  <li>Considerando <m>F(u,v)=uv^2G(2u-v,-3u-v)</m>, calcule
+	  <m>\dfrac{\partial F}{\partial u}(-1,1)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <hint>
+	<ol marker="a.">
+	  <li>Como é o protótipo da equação do plano tangente ao gráfico de
+	  uma função a duas variáveis?</li>
+	  <li>Lembra da regra da cadeia? (<xref ref="cor_cadeiaturbo" />)</li>
+	</ol>
+      </hint>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li>Veja as contas na solução.</li>
+	    <li><m>\dfrac{\partial F}{\partial u}(-1,1)=</m>.</li>
+	</ol></p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>A equação do plano tangente é apresentada na <xref
+	    ref="def_diff" />. Como o ponto de tangência no gráfico
+	    pertence ao plano tangente, temos
+	    <me>4(-3)+2(2)+2G(-3,2)+3=0\implies
+	    \boxed{G(-3,2)=\dfrac{5}{2}}.</me> Desta mesma equação, com
+	    atenção ao coeficiente de <m>z</m>, temos que
+	    <m>\boxed{\nabla
+	    G(-3,2)=(\frac{4}{-2},\frac{2}{-2})=(-2,-1)}</m>.
+	    </li>
+	    <li>Como <m>G</m> é diferenciável, <m>F</m> também o
+	    é. Podemos usar a regra do produto e o <xref
+	    ref="cor_cadeiaturbo" />, obtendo
+	    <md>
+	      <mrow>\dfrac{\partial F}{\partial
+	      u}(u,v)&amp;=\Big(uv^2G(2u-v,-3u-v)_u</mrow>
+	      <mrow>&amp;=v^2G(2u-v,-3u-v)</mrow>
+	      <mrow>&amp;+uv^2\big(G_x(2u-v,-3u-v)\cdot
+	      2+G_y(2u-v,-3u-v)\cdot(-3)</mrow>
+	    </md>
+	    Fazendo <m>(u,v)=(-1,1)</m> e usando as informações do item
+	    anterior, segue-se que <me>\dfrac{\partial F}{\partial
+	    u}(-1,1)=G(-3,2)+\big(G_x(-3,2)\cdot
+	    2+G_y(-3,2)\cdot(-3)=\dfrac{3}{2}.</me>
+	    </li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q3-2023">
+      <statement>
+	<p>Uma função <m>F:\R^2\to\R</m> é de classe <m>\mathscr{C}^1</m> e
+	satisfaz às duas afirmações abaixo:
+	<ol marker="i.">
+	  <li>A curva plana <m>\gamma\colon
+	  \big]-\dfrac{\pi}{2},\dfrac{\pi}{2}[\to\R^2</m> dada por
+	  <m>\gamma(t)=(\cos t,\tan t)</m> é tal que a imagem de <m>\gamma</m>
+	  está contida na curva de nível 2 de <m>F</m>.</li>
+	  <li><m>F\Big(\dfrac{1}{u},\sqrt{1+u}\Big)=\dfrac{4}{u^2}+\dfrac{2}{u}</m>,
+	  com <m>u\in\, ]0,+\infty[</m>.</li>
+	</ol>
+	Determine:
+	<ol marker="a.">
+	  <li>a equação da reta tangente à curva <m>\gamma</m> no ponto
+	  <m>\left(\dfrac{1}{2},\sqrt{3}\right)</m>;</li>
+	  <li>o vetor <m>\nabla
+	  F\left(\dfrac{1}{2},\sqrt{3}\right)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><m>r\colon
+	    (x,y)=\left(\dfrac{1}{2},\sqrt{3}\right)+\lambda(-\sqrt{3},8),\lambda\in\R.</m></li>
+	    <li><m>\nabla
+	  F\left(\dfrac{1}{2},\sqrt{3}\right)=(8,\sqrt{3})</m>.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>Para escrevermos a equação de uma reta precisamos de um
+	    de seus pontos e o seu vetor diretor. Neste caso usamos o
+	    ponto de tangência
+	    <m>P=\left(\dfrac{1}{2},\sqrt{3}\right)</m>, que está na
+	    imagem de <m>\gamma</m>:
+	    <m>P=\gamma\big(\frac{\pi}{3}\big)</m>; o vetor diretor é
+	    <m>\gamma'\left(\dfrac{\pi}{3}\right)=\left(-\frac{\sqrt{3}}{2},4\right)</m>. A
+	    equação da reta pedida é <me>r\colon
+	    (x,y)=\left(\dfrac{1}{2},\sqrt{3}\right)+\lambda(-\sqrt{3},8),\lambda\in\R.</me></li>
+	    <li><p>Para encontrar <m>\nabla
+	    F\left(\dfrac{1}{2},\sqrt{3}\right)</m>, que é um vetor com
+	    duas coordenadas, usamos as duas informações do enunciado
+	    para produzir um sistema de duas equações com suas
+	    coordenadas como incógnitas. Para obter tais equações,
+	    observamos que <m>F</m> é de classe <m>\mathscr{C}^1</m>, e
+	    portanto diferenciável. Temos a regra da cadeia à nossa
+	    disposição. Para simplificar notação, denotemos <m>\nabla
+	    F\left(\dfrac{1}{2},\sqrt{3}\right)=(a,b)</m>.</p>
+	    <p>A primeira informação se traduz no fato de que o
+	    gradiente de <m>F</m> é ortogonal a <m>\gamma(t)</m> para
+	    todo <m>t\in\big]-\dfrac{\pi}{2},\dfrac{\pi}{2}[</m>, ou
+	    seja, <m>\Big\langle\nabla
+	    F\big(\gamma(t)\big),\gamma'(t)\Big\rangle=0</m>. Em
+	    <m>t=\dfrac{\pi}{3}</m>, isto escreve-se
+	    <me>\Big\langle(a,b),\big(-\frac{\sqrt{3}}{2},4\big)\Big\rangle\implies
+	    \boxed{-\sqrt{3}a+8b=0}.</me></p>
+	    <p>A segunda informação vai nos ajudar se derivarmos dos
+	    dois lados em relação a <m>u</m>, usando a regra da cadeia
+	    do lado esquerdo:
+	    <me>\Big\langle\nabla
+	    F\big(\dfrac{1}{u},\sqrt{1+u}\big),\big(-\dfrac{1}{u^2},
+	    \dfrac{1}{2\sqrt{1+u}}\big)\Big\rangle=\dfrac{-8}{u^3}-\dfrac{2}{u^2}.</me>
+	    Fazendo agora <m>u=2</m> temos
+	    <me>\Big\langle(a,b),\big(-\dfrac{1}{4},\dfrac{1}{2\sqrt{3}}\big)\Big\rangle
+	    =-\dfrac{3}{2}\implies\boxed{-\sqrt{3}a+2b=-6\sqrt{3}}.</me></p>
+	    <p>Das duas equações temos <m>b=\sqrt{3}</m> e <m>a=8</m>,
+	    ou seja, <m>\boxed{\nabla
+	    F\left(\dfrac{1}{2},\sqrt{3}\right)=(8,\sqrt{3})}</m> que,
+	    não surpeendentemente, é ortogonal a
+	    <m>\gamma'\left(\dfrac{\pi}{3}\right)</m>.</p>
+	    </li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q4-2023">
+      <statement>
+	<p>Seja <m>F(x,y)=a\sec(x)\tan(y)+b\tan(x)</m>, onde <m>a</m> e <m>b</m> são
+	números reais.
+	<ol marker="a.">
+	  <li>Calcule <m>\nabla F(0,0)</m> em termos de <m>a</m> e
+	  <m>b</m>.</li>
+	  <li>Determine <m>a</m> e <m>b</m> sabendo-se que,
+	  para <m>\vec{u}=\Big(\dfrac{\sqrt 2}{2},\dfrac{\sqrt
+	  2}{2}\Big)</m>, temos <m>\dfrac{\partial F}{\partial \vec
+	  u}(0,0)=\sqrt{3}-1</m> e que, para <m>\vec{v}=\Big(\dfrac{\sqrt
+	  3}{2},\dfrac{1}{2}\Big)</m>, temos <m>\dfrac{\partial
+	  F}{\partial \vec v}(0,0)=\dfrac{\sqrt{3}-1}{2}</m>.</li>
+	  <li>Qual é o maior valor da derivada direcional de <m>F</m> no
+	  ponto <m>(0,0)</m>?</li>
+	</ol></p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><m>\nabla F(0,0)=(b,a)</m>.</li>
+	    <li><m>a=\sqrt{6}-1</m> e <m>b=1-\sqrt{2}</m>.</li>
+	    <li><m>\sqrt{10-2\sqrt{2}\big(1+\sqrt{3}\big)}</m>.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>Observamos inicialmente que o domínio de <m>F</m> é o
+	conjunto <m>D_f=\Big\{(x,y)\in\R^2\colon (x,y)\neq
+	\big(\frac{(2k+1)\pi}{2},\frac{(2l+1)\pi}{2}\big),
+	k,l\in\Z\Big\}</m>. Neste domínio <m>F</m> é de classe
+	<m>\mathscr{C}^1</m> e portanto diferenciável, garantindo a
+	existência de suas derivadas parciais e também a validade da
+	regra da cadeia com todas as suas consequência. Podemos então ir às contas:
+	  <ol marker="a">
+	    <li><m>F_x(x,y)=a\sec(x)\tan(x)\tan(y)+b\sec^2(x)\implies
+	    F_x(0,0)=b</m> e <m>F_y(x,y)=a\sec(x)\sec^2(y)\implies
+	    F_y(0,0)=a</m>. Logo <m>\boxed{\nabla
+	    F(0,0)=(b,a)}</m>.</li>
+	    <li>Como os vetores <m>\vec{u}</m> e <m>\vec{v}</m> são
+	    unitários e <m>F</m> é diferenciável, usamos as expressões
+	    para a derivadas direcionais em termos do gradiente, obtendo
+	    <md>
+	      <mrow>\sqrt{3}-1&amp;=\big\langle\nabla
+	      F(0,0),\vec{u}\big\rangle=\dfrac{\sqrt{2}}{2}(b+a);</mrow>
+	      <mrow>\dfrac{\sqrt{3}-1}{2}&amp;\big\langle\nabla
+	      F(0,0),\vec{v}\big\rangle=\frac{\sqrt{3}b+a}{2}.</mrow>
+	    </md>
+	    Com isso temos o sistema <me> \begin{cases}
+	    a+b=&amp;\sqrt{2}(\sqrt{3}-1)\\
+	    a+\sqrt{3}b=&amp;\sqrt{3}-1\end{cases}\implies
+	    \boxed{b=1-\sqrt{2}}\text{ e }\boxed{a=\sqrt{6}-1}.</me>
+	    (para resolvê-lo basta subtrair a segunda equação da
+	    primeira, obter <m>b</m> e então substituir na primeira
+	    equação; as contas são simples!)
+	    </li>
+	    <li>Sabemos que a derivada direcional de uma função num
+	    ponto atinge seu máximo no verso de mesma direção e sentido
+	    do gradiente da função naquele ponto. O valor dessa derivada
+	    direcional máxima é justamente a norma do gradiente no ponto
+	    em questão. Neste caso, <m>\nabla
+	    F(0,0)=(1-\sqrt{2},\sqrt{6}-1</m> e sua norma é <m>\|\nabla
+	    F(0,0)\|=\sqrt{(1-\sqrt{2})^2+(\sqrt{6}-1)^2}=
+	    \sqrt{10-2\sqrt{2}\big(1+\sqrt{3}\big)}</m>.</li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    
+  </exercises>
+</section>
