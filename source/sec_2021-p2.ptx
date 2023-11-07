@@ -1,0 +1,480 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2021-p2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Segunda Prova</title>
+  <exercises xml:id="gab_2021-p2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="p2q1-2021">
+      <statement>
+	<p>
+	  Seja <m>z=f(x,y)</m> uma função de classe <m>\mathscr{C}^2</m>
+	  qualquer, definida em todo o <m>\mathbb{R}^2</m>. Assinale
+	  todas as afirmações <strong>falsas</strong>
+	  <ol marker="a.">
+	    <li>Se <m>\dfrac{\partial f}{\partial x}(x,y)&gt;0</m> para
+	    todo <m>(x,y)\in\mathbb{R}^2</m>, então
+	    <m>f(2,2)&gt;f(1,1)</m>.</li>
+	    <li>Se <m>(1,2)</m> é um ponto de mínimo local de <m>f</m>,
+	    então <m>\dfrac{\partial^2 f}{\partial y\partial
+	    x}(1,2)&gt;0</m>.</li>
+	    <li>Se <m>(0,0)</m> é um ponto crítico de <m>f</m> tal que
+	    <m>\dfrac{\partial^2 f}{\partial x^2}(0,0)&gt;0</m> e
+	    <m>\dfrac{\partial^2 f}{\partial y^2}(0,0)&gt;0</m>, então
+	    <m>g(x)=f(x,x)</m> satisfaz <m>g''(0)&gt;0</m>.</li>
+	    <li>Se <m>f(1,1)=f(3,3)</m>, então <m>\dfrac{\partial
+	    f}{\partial x}(x,x)=-\dfrac{\partial f}{\partial y}(x,x)</m>
+	    para algum <m>x\in (1,3)</m>.</li>
+	  </ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a" cols="4">
+	    <li>Falsa</li>
+	    <li>Falsa</li>
+	    <li>Falsa</li>
+	    <li>Verdadeira</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>Falsa, o sinal da derivada de <m>f</m> em <m>x</m>
+	    garante crescimento na somente ao longo de direções
+	    paralelas àquele eixo. Exemplo concreto: <m>f(x,y)=x-2y</m>,
+	    onde <m>f_x(x,y)=1&gt;0</m> e
+	    <m>f(2,2)=-2&lt;-1=f(1,1)</m>.</li>
+	    <li>Falsa pois, como sabemos, o sinal de uma das derivadas
+	    mistas não é suficiente para determinar o sinal do
+	    determinante Hessiano. Exemplo concreto: <m>f(x,y)=y^2</m>
+	    tem mínimo em todo ponto da forma <m>(x,0)</m> e
+	    <m>f_{xy}(x,0)=0</m>.</li>
+	    <li>Falsa, a concavidade ao longo dos eixos coordenados não
+	    determina a mesma ao longo da bissetriz. Qualquer função de
+	    classe <m>\mathscr{C}^2</m> tal que <m>f(t,0)=f(0,t)=t^2</m>
+	    e <m>f(t,t)=-t^2</m> produz um contra exemplo,
+	    <m>f(x,y)=x^2+y^2-3xy</m> é uma delas.</li>
+	    <li>Verdadeira, pois considerando a função
+	    <m>g(t)=f(t,t)</m> que é derivável no intervalo <m>(1,3)</m>
+	    e contínua em <m>[1,3]</m> temos, pelo teorema de Rolle, que
+	    existe <m>t_0\in (1,3)</m> tal que <m>0=g'(t_0)=\langle\nabla
+	    f(t_0,t_0),(1,1)\rangle</m>, logo
+	    <m>f_x(t_0,t_0)+f_y(t_0,t_0)=0</m>.</li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q2-2021">
+      <statement>
+	<p>Seja <m>C</m> a interseção das superfícies dadas por
+	<m>x^2+2y^2+z^2=4</m> e <m>2x^3+y^2-z^2=2</m>. Qual
+	dos seguintes pontos pertence à reta tangente a <m>C</m> em
+	<m>(1,1,1)</m>?
+
+	<ol marker="a" cols="3">
+	  <li><m>(-11,17,-19)</m>;</li>
+	  <li><m>(-12,16,-20)</m>;</li>
+	  <li><m>(1,-1,1)</m>;</li>
+	  <li><m>(2,4,2)</m>;</li>
+	  <li><m>(6,2,-2)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa a.
+	</p>
+      </answer>
+      <solution>
+	<p>Considerando <m>f(x,y,z)=x^2+2y^2+z^2-4</m> e
+	<m>g(x,y,z)=2x^3+y^2-z^2-2</m> temos que <m>C=f^{-1}(0)\bigcap
+	g^{-1}(0)</m>. A direção tangente à curva <m>C</m> é a do vetor
+	<m>\nabla f(1,1,1)\times \nabla g(1,1,1)=(-12,16,-20)</m>, dando
+	a reta tangente <me>r\colon (x,y,z)=(1,1,1)+\lambda(-12,16,-20),
+	\quad\lambda\in\R.</me></p>
+	<p>Fazendo <m>\lambda=1</m> temos o
+	ponto <m>(-11,17,-19)\in r</m>.</p>
+	<p>Observe não precisamos conhecer a parametrização de <m>C</m>
+	para determinar sua reta tangente. Essa é a beleza da <xref
+	ref="prop_intsupniv" />. Vejamos uma figura:
+	<figure xml:id="fig_gabp2q2-2021">
+	  <caption>Superfície de nível <m>f</m> e seu plano tangente.</caption>
+	  <image width="50%" xml:id="gabp2q2-2021" archive="html">
+	    <description>Superfícies de nível e a reta tangente.</description>
+	    <asymptote>
+              import solids;
+	      import smoothcontour3;
+              size(10cm);
+	      
+              currentprojection=orthographic(3,2,1);
+              limits((-2.5,-2.5,-2.5),(3.5,2.5,2.5));
+	      
+              // currentlight=light(white,(2,2,2),(2,-2,-2));
+              // uncomment for transparent background
+              // currentlight.background=black+opacity(0);
+	      
+              triple ponto=(1,1,1);
+      
+              surface elipsoide= scale(2,sqrt(2),2)*unitsphere;
+
+	      real f(real x, real y, real z) {
+	        return 2*x^3+y^2-z^2-2;
+	      }
+
+	      //surface nivel= surface(f,(-2.5,-2.5),(2.5,2.5));
+	      
+              draw(elipsoide, lightblue+opacity(0.6));
+	      draw(implicitsurface(f,(-2,-2,-2),(2,2,2)),orange);
+	      //draw(nivel,green);
+              dot(ponto);
+	      draw(Label("$r$",position=EndPoint),(-1/2,3,-3/2)--(5/2,-1,7/2),black+1bp);
+
+	      xaxis3("$x$",Arrow3);
+              yaxis3("$y$",Arrow3);
+              zaxis3("$z$",Arrow3);
+	    </asymptote>
+	  </image>
+	</figure>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q3-2021">
+      <statement>
+	<p>A superfície de nível da função
+	<m>f(x,y,z)=xyz+x^3+y^3+z^3+3</m> que contém o ponto
+	<m>(2,1,-2)</m> é o gráfico de uma uma função <m>z=g(x,y)</m>,
+	diferenciável numa vizinhança de <m>(2,1)</m>. O polinômio de
+	Taylor de ordem 1 para <m>g(x,y)</m>, em torno do ponto
+	<m>(2,1)</m>, é:
+
+	<ol marker="a.">
+	  <li><m>P(x,y)=-2-\frac{5}{7}(x-2)+\frac{1}{14}(y-1)</m>.</li>
+	  <li><m>P(x,y)=-2-\frac{1}{14}(x-2)+\frac{5}{7}(y-1)</m>.</li>
+	  <li><m>P(x,y)=2-\frac{5}{7}(x-2)+\frac{1}{14}(y-1)</m>.</li>
+	  <li><m>P(x,y)=2-\frac{1}{14}(x-2)+\frac{5}{7}(y-1)</m>.</li>
+	  <li><m>P(x,y)=1-\frac{1}{14}(x-2)+\frac{5}{7}(y-1)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa a.
+	</p>
+      </answer>
+      <solution>
+	<p>Como <m>f(2,1,2)=0</m>, a superfície é o conjunto
+	<m>f^{-1}(0)</m>. Além disso, <m>f_z(2,1,-2)=14\neq 0</m> e
+	portanto o teorema da função implícita garante que existem
+	vizinhanças abertas de <m>U</m> <m>(2,1)</m> em
+	<m>\R^2</m> e <m>I</m> de <m>-2</m> em <m>\R</m>
+	e uma função <m>g\colon V\to I</m>, de classe
+	<m>\mathscr{C}^\infty</m> (assim como <m>f</m>), tal que
+	<m>g(2,1)=-2</m> e suas derivadas são dadas por
+	<md>
+	  <mrow>g_x(x,y)&amp;=-\dfrac{f_x(x,y,g(x,y))}{f_z(x,y,g(x,y))}</mrow>
+	  <mrow>g_y(x,y)&amp;=-\dfrac{f_y(x,y,g(x,y))}{f_z(x,y,g(x,y))}</mrow>
+	</md>
+	No ponto <m>(x,y,g(x,y))=(2,1,-2)</m>, temos
+	<m>g_x(2,1)=-\frac{5}{7}</m> e
+	<m>g_y(2,1)=\frac{1}{14}</m>. Deste modo, o polinômio de Taylor
+	procurado é
+	<me>P(x,y)=g(2,1)+g_x(2,1)(x-2)+g_y(2,1)(y-1)=
+	-2-\frac{5}{7}(x-2)+\frac{1}{14}(y-1).</me>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q4-2021">
+      <statement>
+	<p>Considere <m>f\colon\R^2\to\R</m> dada por
+	<m>f(x,y)=(1-x)(1-y)(x+y-1)</m>. Assinale a afirmação verdeira:
+
+	<ol marker="a.">
+	  <li><m>f</m> possui exatamente um ponto de máximo local e
+	  três pontos de sela.</li>
+	  <li><m>f</m> possui exatamente um ponto de sela e três pontos
+	  de máximo local.</li>
+	  <li><m>f</m> possui exatamente um ponto de sela e três pontos
+	  de mínimo local.</li>
+	  <li><m>f</m> possui exatamente um ponto mínimo local e três
+	  pontos de sela.</li>
+	  <li><m>f</m> não possui pontos críticos.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa a.</p>
+      </answer>
+      <solution>
+	<p>Como <m>f</m> está definida num conjunto aberto, os pontos de
+	extremo local estão entre aqueles onde <m>\nabla f =(0,0)</m>,
+	ou seja,
+	<me>
+	\begin{cases} (1-y)(2-2x-y)&amp;=0\\ (1-x)(2-x-2y)&amp;=0.
+	\end{cases}</me> Os candidatos são <m>P_1=(0,1)</m>,
+	<m>P_2=(1,1)</m>, <m>P_3=(1,0)</m> e
+	<m>P_4=\big(\frac{2}{3},\frac{2}{3}\big)</m>.</p>
+	<p>Para poder classificá-los, usamos o critério da matriz
+	Hessiana, <me>H_f(x,y)= \begin{bmatrix}
+	2(y-1)&amp;-3+2(x+y)\\ -3+2(x+y)&amp;2(x-1)
+	\end{bmatrix}</me>. Nos pontos obtidos temos
+	<ul>
+	  <li><m>\det H_f(P_1)=\det H_f(P_2)=\det
+	  H_f(P_3)=-1&lt;0</m>, logo <m>P_1</m>, <m>P_2</m> e
+	  <m>P_3</m> são pontos de sela.</li>
+	  <li><m>\det H_f(P_4)=\frac{1}{3}&gt;0</m> e
+	  <m>f_{{xx}}(P_4)=-\frac{2}{3}&lt;0</m>, logo <m>P_4</m> é
+	  ponto de máximo local.</li>
+	</ul>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q5-2021">
+      <statement>
+	<p>Sejam <m>D=\big\{(x,y)\in\R^2\colon x^4+4xy+4y^2\leq
+	4\big\}</m> e <m>f\colon\R^2\to\R</m>, dada por
+	<m>f(x,y)=x+y</m>. Se <m>m</m> e <m>M</m> são, respectivamente,
+	os valores máximo e mínimo globais de <m>f</m> em <m>D</m>,
+	então
+	<ol marker="a." cols="3">
+	  <li><m>2m+4M=\sqrt{6}</m>.</li>
+	  <li><m>m+3M=\sqrt{3}</m>.</li>
+	  <li><m>2m+M=2</m>.</li>
+	  <li><m>3m+2M=\sqrt{5}</m>.</li>
+	  <li><m>m+M=\sqrt{7}</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa a.</p>
+      </answer>
+      <solution>
+	<p>Observamos, inicialmente, que <m>D</m> é compacto e <m>f</m>
+	é contínua em <m>D</m>, logo existem tais <m>m</m> e <m>M</m>
+	indicados no enunciado. Como <m>\nabla f(x,y)=(1,1)</m>, não há
+	pontos críticos de <m>f</m> em <m>int\,D</m>, assim procuramos
+	os extremantes globais em <m>\partial D=\big\{(x,y)\in\R^2\colon
+	x^4+4xy+2y^2=2\big\}</m>. Notando que <m>\partial
+	D=g^{-1}(0)</m>, onde <m>g(x,y)=x^4+4xy+2y^2-2</m>, sabemos que
+	os extremantes procurados devem satisfazer
+	<me>\begin{cases}
+	\big\{\nabla f(x,y),\nabla g(x,y)\big\}\text{ é linearmente
+	dependente}\\
+	g(x,y)=0.  \end{cases}</me>
+	A primeira condição acima escreve-se de duas maneiras: <m>\nabla
+	f(x,y)=\lambda \nabla g(x,y)</m> (pois <m>\nabla g(x,y)\neq
+	(0,0)</m>, para <m>(x,y)\in D</m>) ou então <m>\det
+	\begin{pmatrix} \nabla f(x,y)\\ \nabla g(x,y)
+	\end{pmatrix}=0</m>. Nos dois casos obtemos a relação
+	<m>2x(2x^2-2)=0</m> e o sistema fica <me>\begin{cases}
+	2x(2x^2-2)&amp;=0\\ x^4+4xy+2y^2&amp;=2 \end{cases},</me> donde
+	temos
+	<ul>
+	  <li><m>x=0\implies y=\pm1</m>: <m>P_1=(0,1)</m> e
+	  <m>P_2=(0,-1)</m>.</li>
+	  <li><m>x=1\implies y=\frac{-2\pm\sqrt{6}}{2}</m>:
+	  <m>P_3=(1,\frac{-2+\sqrt{6}}{2})</m> e
+	  <m>P_4=(1,\frac{-2-\sqrt{6}}{2})</m>.</li>
+	  <li><m>x=-1\implies y=\frac{2\pm\sqrt{6}}{2}</m>:
+	  <m>P_5=(-1,\frac{2+\sqrt{6}}{2})</m> e
+	  <m>P_6=(-1,\frac{2-\sqrt{6}}{2})</m>.</li>
+	</ul></p>
+	<p>Os valores de <m>f</m> nesses pontos são: <m>f(P_1)=1</m>,
+	<m>f(P_2)=-1</m>, <m>f(P_3)=f(P_5)=\frac{\sqrt{6}}{2}</m> e
+	<m>f(P_4)=f(P_6)=-\frac{\sqrt{6}}{2}</m> e, então,
+	<m>m=-\frac{\sqrt{6}}{2}</m> e
+	<m>M=\frac{\sqrt{6}}{2}</m>.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q6-2021">
+      <statement>
+	<p> Sejam <m>S=\big\{(x,y,z)\in\R^3\colon x^2+y^2+z^2=27, x>0,
+	y>0, z>0\big\}</m> e <m>f(x,y,z)=\ln x+\ln y+2\ln z</m>,
+	definida no maior domínio possível. A soma das coordenadas
+	do ponto em que <m>f</m>, restrita a <m>S</m>, atinge seu valor
+	máximo é
+	<ol marker="a." cols="3">
+	  <li><m>\dfrac{3\sqrt{3}(2+\sqrt{3})}{2}</m>.</li>
+	  <li><m>\dfrac{3\sqrt{2}(3+\sqrt{2})}{\sqrt{5}}</m>.</li>
+	  <li><m>\dfrac{3\sqrt{3}(2+\sqrt{2})}{\sqrt{5}}</m>.</li>
+	  <li><m>\dfrac{3\sqrt{2}(3+\sqrt{2})}{\sqrt{2}}</m>.</li>
+	  <li><m>f</m> não atinge valor máximo em <m>S</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alterativa a.</p>
+      </answer>
+      <solution>
+	<p>Note incialmente que <m>S</m> não é compacto e portanto não
+	há garantia de que o problema admita solução. De fato, a imagem
+	de <m>f</m> não é limitada em <m>S</m> (<m>f</m> tende a
+	<m>-\infty</m> quando nos aproximamos dos planos
+	coordenados).</p>
+	<p>Restringindo-nos à parte de <m>S</m> em que cada uma das
+	coordenadas é no mínimo <m>a=1</m>, temos um compacto e ali
+	<m>f</m> assume valor máximo e mínimo. Verifique o mínimo de
+	<m>f</m> está na fronteira desta nova região e que esse valor
+	mínimo diminui conforme <m>a</m> se aproxima de <m>0</m>. Para
+	encontrar o ponto de máximo recorremos aos multiplicadores de
+	Lagrange (com uma restrição nesse caso): como <m>S\subset
+	g^{{-1}}(0)</m>, onde <m>g(x,y,z)=x^2+y^2+z^2-27</m>,
+	sabemos que o ponto procurado satisfaz
+	<me>\begin{cases}
+	\big\{\nabla f(x,y,z),\nabla g(x,y,z)\big\}\text{é
+	linearmente dependente}\\
+	g(x,y,z)=0\\
+	x>0,y>0,z>0
+	\end{cases}.</me> A primeira condição equivale a <m>\nabla
+	f(x,y,z)=\lambda \nabla g(x,y,z)</m> (pois <m>\nabla g(x,y,z)\neq
+	(0,0,0)</m>, para <m>(x,y,z)\in S</m>) ou então <m>\nabla
+	f(x,y,z)\times \nabla g(x,y,z)=(0,0,0)</m>. Nos dois casos
+	obtemos as relações
+	<m>(z^2-2y^2,2x^2-z^2,y^2-x^2)=(0,0,0)</m> e o sistema fica
+	<me>\begin{cases}
+	x^2-y^2&amp;=0\\ 2x^2-z^2&amp;=0\\x^2+y^2+z^2&amp;=27\\
+	x>0,y>0,z>0&amp;
+	\end{cases},</me> cuja
+	solução é
+	<m>(x,y,z)=(\frac{3\sqrt{3}}{2},
+	\frac{3\sqrt{3}}{2},\frac{3\sqrt{6}}{2})</m>.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q7-2021">
+      <statement>
+	<p>Sejam <m>C=\big\{(x,y,z)\in\R^3\colon x+y+z=1\text{ e }
+	y^2+z^2=9\big\}</m> e <m>f\colon\R^3\to\R</m>, dada por
+	<m>f(x,y,z)=x+3y</m>. Se <m>m</m> e <m>M</m> são,
+	respectivamente, os valores mínimo e máximo de <m>f</m> sobre
+	<m>C</m>, então
+	<ol marker="a">
+	  <li><m>m\cdot M=-44</m>.</li>
+	  <li><m>m\cdot M=2</m>.</li>
+	  <li><m>m\cdot M=6\sqrt{5}</m>.</li>
+	  <li><m>m\cdot M=\frac{1-3\sqrt{5}}{1+3\sqrt{5}}</m></li>
+	  <li><m>f</m> não admite pontos de máximo e mínimo sobre
+	  <m>C</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>Alternativa a.</p>
+      </answer>
+      <solution>
+	<p>Note incialmente que <m>C</m> compacto (interseção da esfera,
+	compacta, com o plano, fechado) e <m>f</m> contínua, portanto
+	existem tais <m>m</m> e <m>M</m> indicados no enunciado. Para
+	encontrar os pontos onde <m>m</m> e <m>M</m> são atingidos
+	recorremos aos multiplicadores de Lagrange (com duas restrições
+	nesse caso): <m>C=g^{-1}(0)\bigcap h^{-1}(0)</m>,
+	onde <m>g(x,y,z)=x+y+z-1</m> e <m>h(x,y,z)=y^2+z^2-9</m>.</p>
+	<p>Sabemos então que os pontos procurados satisfazem
+	<me>\begin{cases} \big\{\nabla f(x,y,z),\nabla g(x,y,z),\nabla
+	h(x,y,z)\big\}\text{ é linearmente dependente}\\ g(x,y,z)=0\\
+	h(x,y,z)=0 \end{cases}.</me> A primeira condição equivale a
+	<m>\nabla f(x,y,z)=\lambda \nabla g(x,y,z)+\mu \nabla
+	h(x,y,z)</m> (pois <m>\nabla g(x,y,z)</m> e <m>\nabla
+	h(x,y,z)</m> são linearmente independentes ao longo de <m>C</m>)
+	ou então <m>\big[\nabla f(x,y,z),\nabla g(x,y,z),\nabla
+	h(x,y,z)\big]=0</m>. Nos dois casos obtemos a relação
+	<m>y+2z=0</m> e o sistema fica <me>\begin{cases} y+2z&amp;=0\\
+	x+y+z&amp;=1\\ y^2+z^2&amp;=9 \end{cases},</me> cujas soluções
+	são <m>P_1=\big(1+\frac{3}{\sqrt{5}},
+	-\frac{6}{\sqrt{5}},\frac{3}{\sqrt{5}}\big)</m> e
+	<m>P_2=\big(1-\frac{3}{\sqrt{5}},\frac{6}{\sqrt{5}},
+	-\frac{3}{\sqrt{5}}\big)</m>. Assim,
+	<m>m=f(P_2)=1-3\sqrt{5}</m> e
+	<m>M=f(P_1)=1+3\sqrt{5}</m>.
+	</p>
+      </solution>
+    </exercise>
+    
+    <exercise xml:id="p2q8-2021">
+      <statement>
+	<p> Sejam <m>f\colon\R^2\to\R</m> dada por
+	<m>f(x,y)=2x^3-15x^2+y^3+6y^2</m> e
+	<m>D=\big\{{(x,y)\in\mathbb{{R}}^2\colon x^2+y^2\leq
+	49\big\}}</m>.
+	<ol marker="a">
+	  <li>Determine todos os pontos críticos de <m>f</m> em
+	  <m>\R^2</m>.</li>
+	  <li>Classifique todos os pontos críticos de <m>f</m> em
+	  <m>\R^2</m>.</li>
+	  <li>Determine os pontos de máximo e mínimo de <m>f</m> na
+	  circunferência <m>x^2+y^2=49</m>.</li>
+	  <li>Determine os pontos de máximo e mínimo de <m>f</m> em
+	  <m>D</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<ol marker="a">
+	  <li><m>P_1=(0,0)</m>, <m>P_2=(0,-4)</m>, <m>P_3=(5,0)</m> e
+	  <m>P_4=(5,-4)</m>.</li>
+	  <li><m>P_1</m> e <m>P_4</m> são pontos de sela, <m>P_2</m> é
+	  um ponto de máximo local e <m>P_3</m> é um ponto de mínimo local.</li>
+	  <li><m>P_5=(0,7)</m> e <m>P_8=(-7,0)</m> são respectivamente os
+	  pontos de máximo e mínimo de <m>f</m> sobre a circunferência <m>x^2+y^2=49</m>.</li>
+	  <li><m>P_5</m> é o ponto de máximo e <m>P_8</m> o de mínimo
+	  para <m>f</m> em <m>D</m>.</li>
+	</ol>
+      </answer>
+      <solution>
+	<ol marker="a">
+	  <li>Procuramos aqui pelos pontos onde <m>\nabla f
+	  (x,y)=(0,0)</m>, ou seja, as soluções do sistema <me>
+	  \begin{cases} 6x^2-30x&amp;=0\\ 3y^2+12y&amp;=0
+	  \end{cases},</me> que são <m>P_1=(0,0)</m>, <m>P_2=(0,-4)</m>,
+	  <m>P_3=(5,0)</m> e <m>P_4=(5,-4)</m>.</li>
+	 <li><p>Aplicamos o critério do Hessiano a cada um dos pontos
+	 encontrados no item anterior. Aqui, <m>H_f(x,y)=
+	 \begin{bmatrix} 12x-30&amp;0\\ 0&amp;6y+12 \end{bmatrix}</m>,
+	 tem como determinante <m>\det
+	 H_f(x,y)=(12x-30)(6y+12)</m>. Logo
+         <ul>
+           <li><m>\det H_f(P_1)=-360&lt;0</m> diz que <m>P_1</m> é um
+           ponto de sela e <m>f(P_1)=0</m>.</li>
+	   <li><m>\det H_f(P_2)=360&gt;0</m> e
+	   <m>f_{xx}(P_2)={-30}&lt;0</m>, dizem que <m>P_2</m> é um
+	   ponto de máximo local e <m>f(P_2)=32</m>.</li>
+	   <li><m>\det H_f(P_3)=360&gt;0</m> e <m>f_{xx}(P_3)=30&gt;0</m>, dizem
+	   que <m>P_3</m> é um ponto de mínimo local e
+	   <m>f(P_3)=-125</m>.</li>
+	   <li><m>\det H_f(P_4)=-360&lt;0</m>
+	   diz que <m>P_4</m> é um ponto de sela e
+	   <m>f(P_4)=-93</m>.</li>
+	 </ul></p></li>
+	 <li>A circuferência em questão é dada por <m>g^{-1}(0)</m>,
+	 onde <m>g(x,y)=x^2+y^2-49</m>, que é uma função de classe
+	 <m>\mathscr{C}^1</m>. O pontos procurados estão entre aqueles
+	 da circunferência onde os gradientes de <m>f</m> e <m>g</m>,
+	 <m>\nabla f(x,y)=(6x^2-30x,3y^2+12y)</m> e <m>\nabla
+	 g(x,y)=(2x,2y)</m>, são linearmente dependentes, ou seja, são
+	 soluções de um dos seguintes sistemas <me> \begin{cases}
+	 6x^2-30x&amp;=2\lambda x\\ 3y^2+12y&amp;=2\lambda y\\
+	 x^2+y^2&amp;=49 \end{cases}\qquad\text{ou}\qquad \begin{cases}
+	 xy(2x-y-14)&amp;=0\\ x^2+y^2&amp;=49 \end{cases},</me>
+	 cujas soluções são <m>P_5=(0,7)</m>, <m>P_6=(0,-7)</m>,
+	 <m>P_7=(7,0)</m>, <m>P_8=(-7,0)</m> e
+	 <m>P_9=\big(\frac{21}{5},-\frac{28}{5}\big)</m>. Com isso temos
+	 <m>f(P_5)=637</m>, <m>f(P_6)=f(P_7)=-49</m>,
+	 <m>f(P_8)=-1421</m> e <m>f(P_9)=\frac{2597}{25}</m>. Logo, o
+	 valor máximo de <m>f</m>, sobre a circunferência <m>\partial
+	 D</m>, é atingido em <m>P_5</m> e o mínimo em <m>P_8</m>.</li>
+	 <li>Basta verificar quais os pontos encontrados nos itens
+	 anteriores estão em <m>D</m> e comparar valores. Neste caso,
+	 todos os <m>9</m> candidatos encontrados pertencem àquela
+	 região e o máximo em <m>D</m> é atingido em <m>P_5</m>, euqnto
+	 o míninmo acontece em <m>P_8</m>.</li>
+	</ol>
+      </solution>
+    </exercise>
+  </exercises>
+</section>

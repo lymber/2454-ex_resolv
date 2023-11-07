@@ -34,7 +34,7 @@
   <!-- That way it is easy to include the section in a different -->
   <!-- chapter later if you change your mind about the order.    -->
   <xi:include href="./sec_2021-p1.ptx" />
-  <!-- <xi:include href="./sec_2021-p2.ptx" /> -->
+  <xi:include href="./sec_2021-p2.ptx" />
   <!-- <xi:include href="./sec_2021-psub.ptx" /> -->
   <!-- <xi:include href="./sec_2021-prec.ptx" /> -->
 

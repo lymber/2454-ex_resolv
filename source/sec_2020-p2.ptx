@@ -1,0 +1,398 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2020-p2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Segunda Prova</title>
+  <exercises xml:id="gab_2020-p2" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="p2q1-2020">
+      <statement>
+	<p>
+	  Sejam <m>f\colon\R^2\to\R</m> uma função diferenciável e
+	  <m>2x+12y+z=0</m> o plano tangente ao gráfico de <m>f</m> no
+	  ponto <m>\big(x_0,y_0,f(x_0,y_0)\big)</m>. Suponha ainda que
+	  <m>r(t)=(t^3,t^2)</m>, com <m>t\in (-\infty,-1)</m>, seja a
+	  curva de nível de <m>f</m> que contém o ponto
+	  <m>(x_0,y_0)</m>.
+
+	  <ol marker="a.">
+	    <li>A soma das coordenadas de <m>\nabla f(x_0,y_0)</m> é: </li>
+	    <li>A soma das coordenadas do ponto <m>\big(x_0,y_0,f(x_0,y_0)\big)</m>
+	    é:</li>
+	  </ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a" cols="4">
+	    <li>-14</li>
+	    <li>-112</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>Observando a equação do plano dada temos que <m>\nabla
+	f(x_0,y_0)=(-2,-12)</m>, cuja soma das coordenadas é
+	<m>\boxed{-14}</m>.</p>
+	<p>Suponha agora que <m>t_0\in (-\infty,-1)</m> é tal que
+	<m>r(t_0)=(x_0,y_0)</m>. Como <m>r(t)</m> é curva de nível de
+	<m>f</m>, existe <m>k\in\R</m> tal que, para todo
+	<m>t</m>, <me>(f\circ r)(t)=k\implies \big\langle \nabla
+	f(x_0,y_0),r'(t_0)\big\rangle=0\implies	-6t_0^2-24t_0=0\implies
+	t_0=-4.</me></p>
+	
+	<p>Logo, <m>(x_0,y_0)=r(t_0)=(-64,16)</m>. Usando esse valores
+	na equação do plano do tangente temos
+	<m>f(x_0,y_0)=z=-64</m>. Assim,
+	<m>\boxed{x_0+y_0+f(x_0,y_0)=-112}</m>.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q2-2020">
+      <statement>
+	<p>Sejam <m>f\colon\R^2\to\R</m> uma função diferenciável e
+	<m>\gamma\colon\R\to\R^2</m> a curva dada por
+	<m>\gamma(t)=\big(x(t),y(t)\big)</m>, onde <m>x(t)</m> é tal que
+	<m>x(0)=2</m> e <m>x'(0)=s</m>, e
+	<m>y(t)=3e^{t^2}\cos t</m>.  Sejam ainda
+	<m>\alpha(t)=e^t</m> e <m>g(t)=\alpha(t)
+	f\big(\gamma(t)\big)</m>.
+  
+	Sabendo que o plano tangente ao gráfico de <m>f</m> em
+	<m>\big(x_0,y_0,f(x_0,y_0)\big)</m> é <m>x+2y+z+3=0</m>, o valor
+	de <m>s</m> de modo que a reta tangente ao gráfico da função
+	<m>g</m> em <m>\big(0,g(0)\big)</m> seja paralela à reta
+	<m>y=x</m> é
+	</p>
+      </statement>
+      <answer>
+	<p><m>s=-12</m></p>
+      </answer>
+      <solution>
+	<p>A reta tangente ao gráfico da função <m>g</m> em
+	<m>\big(0,g(0)\big)</m> é paralela à reta <m>y=x</m> se e somente
+	se <m>g'(0)=1</m>. Assim,
+	<me>g'(t)=\alpha'(t)f\big(\gamma(t)\big)+\alpha(t)\big\langle
+	f\big(\gamma(t)\big),\gamma'(t)\big\rangle.</me></p>
+	<p>Em <m>t_0=0</m>, temos <m>\alpha'(0)=1</m>, <m>x'(0)=s</m>,
+	<m>y'(0)=0</m> e, da equação do plano tangente vem que <m>\nabla
+	f(x_0,y_0)=(-1,-2)</m> e <m>f(x_0,y_0)=-11</m>. Logo
+	<m>g'(0)=-11-s=1\iff \boxed{s=-12}</m>.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q3-2020">
+      <statement>
+	<p>Sejam <m>F\colon\R^3\to\R</m> e <m>f\colon\R^2\to\R</m>
+	funções de classe <m>\mathscr{C}^1</m>, tais que o gráfico de
+	<m>f</m> coincida com a superfície de nível <m>0</m> de
+	<m>F</m>.</p>
+	<p>Assuma que as curvas
+	<me>\gamma(t)=\big(\gamma_1(t),\gamma_2(t),\gamma_3(t)\big)
+	\quad\mbox{e}\quad
+	\alpha(t)=\big(\alpha_1(t),\alpha_2(t),\alpha_3(t)\big)</me> têm
+	suas imagens contidas no gráfico de <m>f</m> e, além disso,
+	<m>\gamma(0)=\alpha(0)=(x_0,y_0,2)</m>,
+	<m>\gamma'(0)=(1,2,3)</m> e
+	<m>\alpha'(0)=(1,-2,1)</m>.</p>
+	<p>A reta normal ao gráfico de <m>f</m> no ponto
+	<m>\big(x_0,y_0,f(x_0,y_0)\big)</m> corta o plano <m>Oxy</m> em
+	<m>(a,b,0)</m>. Sabendo que <m>x_0=y_0</m>, o valor de
+	<m>a-b</m> é</p>
+      </statement>
+      <answer>
+	<p><m>a-b=3</m>.</p>
+      </answer>
+      <solution>
+	<p>As hipóteses elencadas nos dizem que a imagem das curvas
+	<m>\gamma</m> e <m>\alpha</m> estão contidas no gráfico de
+	<m>f</m>. Como <m>\gamma(0)=\alpha(0)=(x_0,y_0,2)</m>, temos que
+	<m>f(x_0,y_0)=2</m>. Os vetores <m>\gamma'(0)</m> e
+	<m>\alpha'(0)</m> são linearmente independentes e portanto a
+	direção normal ao gráfico de <m>f</m> em
+	<m>\big(x_0,y_0,f(x_0,y_0)\big)</m> é dada por
+	<m>\gamma'(0)\times\alpha'(0)=(8,2,-4)</m>. Com isso a reta
+	normal tem a equação <me>r\colon (x,y,x)=(x_0,y_0,2)+\lambda
+	(8,2, -4), \quad\lambda\in\R,</me> que corta o plano <m>z=0</m>
+	quando <m>\lambda=\dfrac{1}{2}</m>. Logo, como
+	<m>x_0=y_0</m>, temos <m>\boxed{a-b=3}</m>.
+	</p>
+	<remark>A função <m>F</m> mencionada no enunciado é completamente
+	desnecessária, servindo apenas de dica para ajudar a determinar o
+	vetor normal ao gráfico de <m>f</m>.</remark>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q4-2020"> 
+      <statement>
+	<p>Sejam <m>f\colon\R^3\to\R</m>, dada por
+	<m>f(x,y,z)=x^2-2y^2-z^2</m> e a superfície <m>S</m> descrita
+	pela equação <m>z=-\sqrt{2x+4y}</m>. Seja <m>C</m> a curva dada
+	pela interseção da superfície de nível <m>1</m> de <m>f</m> com
+	<m>S</m>.
+	<ol marker="a.">
+	  <li>A reta tangente a <m>C</m> no ponto
+	  <m>(3,-1,-\sqrt{2})</m> corta o plano <m>Oxy</m> no ponto
+	  <m>(v_1,v_2,0)</m>. Então <m>v_1+v_2</m> vale:</li>
+	  <li>Dentre todos os vetores unitários
+	  <m>\vec{u}\in\R^3</m>, o valor máximo de
+	  <m>\dfrac{\partial f}{\partial\vec{u}}(3,0,4)</m>
+	  é</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<ol marker="a." cols="2">
+	  <li><m>1</m></li>
+	  <li><m>10</m></li>
+	</ol>
+      </answer>
+      <solution>
+	<ol marker="a.">
+	  <li>A direção da reta tangente a <m>C</m> no ponto
+	  <m>(x_0,y_0,z_0)=(3,-1,-\sqrt{2})</m> é dada pelo produto
+	  vetorial dos vetores normais às superfícies dadas. Para
+	  facilitar as contas, podemos considerar <m>S</m> como uma
+	  parte da superfície <m>z^2=2x+4y</m>, ou seja, parte da
+	  superfície de nível 0 da função
+	  <m>g(x,y,z)=2x+4y-z^2</m>. Deste modo, um vetor tangente a
+	  <m>C</m> no ponto <m>(x_0,y_0,z_0)</m> é <me>\nabla
+	  f(x_0,y_0,z_0)\times \nabla
+	  g(x_0,y_0,z_0)=(0,-8\sqrt{2},16),</me> e a equação da reta
+	  tangente é <me>r\colon (x,y,z)=(3,-1,-\sqrt{2})+\lambda
+	  (0,\sqrt{2},-2),\quad\lambda\in\R.</me> Esta reta corta o
+	  plano <m>Oxy</m> no ponto
+	  <m>(v_1,v_2,0)=(3,-2,0)</m>. Logo,
+	  <m>\boxed{v_1+v_2=1}</m>.</li>
+	  <li>Como <m>f</m> é diferenciável, <m>\dfrac{\partial
+	  f}{\partial\vec{u}}(3,0,4)=\big\langle \nabla f(3,0,4),
+	  \vec{u}\big\rangle=\|\nabla f(3,0,4)\|\cos \theta</m>, que
+	  assume valor máximo quando <m>\theta=0</m>. Tal valor é
+	  <m>\boxed{\|\nabla f(3,0,4)\|=10}</m>.</li>
+	</ol>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q5-2020">
+      <statement>
+	<p>Considere a função <m>f\colon\R^2\to\R</m>, dada por
+	<m>f(x,y)=\sin(2x)\cosh(3y)</m>.
+	
+	<ol marller="a.">
+	  <li>O número de pontos de mínimo local de <m>f</m> é:</li>
+	  <li>O número de pontos de máximo local de <m>f</m> é:</li>
+	  <li>O número de pontos de sela de <m>f</m> é:</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p><ol marller="a." cols="3">
+	  <li><m>0</m></li>
+	  <li><m>0</m></li>
+	  <li>Infinitos</li>
+	</ol>
+	</p>
+      </answer>
+      <solution>
+	<p> Os pontos críticos de <m>f</m> são aqueles onde <m>\nabla
+	f(x,y)=(0,0)</m>. Neste caso existem infinitas soluções, todas
+	sobre o eixo <m>Ox</m>. O determinante Hessiano de <m>f</m>
+	nesses pontos é o oposto de uma soma de quadrados, que se
+	verifica sempre negativo. Deste modo todos os infinitos pontos
+	críticos de <m>f</m> são pontos de sela.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p2q6-2020">
+      <statement>
+	<p> Seja <m>f\colon S\subseteq\R^3\to\R</m>, dada por
+	<m>f(x,y,z)=3(x-2)^2+2(y-3)^2-3(z-5)^2</m>, 
+	onde <m>S=\big\{(x,y,z)\in\R^3\colon
+	3(x-2)^2+2(y-3)^2+3(z-5)^2\leq 27\big\}</m>.
+	<ol marker="a.">
+	  <li>O número de pontos de máximo global de <m>f</m> é:</li>
+	  <li>O número de pontos de mínimo global de <m>f</m> é:</li>
+	  <li>O valor máximo de <m>f</m> é:</li>
+	  <li>O valor mínimo de <m>f</m> é:</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p><ol marller="a." cols="4">
+	  <li>Infinitos;</li>
+	  <li><m>2</m>;</li>
+	  <li><m>27</m>;</li>
+	  <li><m>-27</m>.</li>
+	</ol></p>
+      </answer>
+      <solution>
+	<p>A função <m>f</m> é contínua no conjunto <m>S</m>, que é uma
+	elipsoide sólido em <m>\R^3</m> e portanto um compacto. O
+	teorema de Weierstrass garante então a existência de pontos de
+	máximo e mínimo globais. Eles podem ser encontrados dividindo
+	<m>S</m> em seu interior e fronteira.</p>
+  
+	<p>No interior, <m>\mathring{S}=\big\{(x,y,z)\in\R^3\colon
+	3(x-2)^2+2(y-3)^2+3(z-5)^2&lt;27\big\}</m>, os candidatos a
+	extremantes devem ser pontos onde <m>\nabla
+	f=\big(6(x-2),4(y-3),-6(z-5)\big)</m> se anula, ou seja,
+	<m>(x,y,z)=(2,3,5)</m>. Nesse ponto temos <m>f(2,3,5)=0</m>.</p>
+	
+	<p>Na fronteira, <m>\partial S=\big\{(x,y,z)\in\R^3\colon
+	3(x-2)^2+2(y-3)^2+3(z-5)^2=27</m>, utilizamos multiplicadores de
+	Lagrange. A restrição é a superfície de nível <m>0</m> da função
+	suave <m>g(x,y,z)=3(x-2)^2+2(y-3)^2+3(z-5)^2-27</m>. Procuramos
+	um ponto em <m>g^{-1}(0)</m> no qual <m>\big\{\nabla f, \nabla
+	g\big\}</m> é linearmente dependente, o que equivale a <m>\nabla
+	f\times \nabla g= \vec{0}</m>. Assim temos o sistema <me>
+	\begin{cases}
+	(y-3)(z-5)&amp;=0\\
+	(x-2)(z-5)&amp;=0\\
+	3(x-2)^2+2(y-3)^2+3(z-5)^2&amp;=27.
+	\end{cases}</me></p>
+  
+	<p> Se <m>z=5</m>, temos <m>3(x-2)^2+2(y-3)^2=27</m>, uma elipse
+	de candidatos. Em todos esses infinitos pontos, da forma
+	<m>(x,y,5)</m>, temos
+	<m>\boxed{f(x,y,5)=27}</m>.</p>
+
+	<p> Se <m>z\neq5</m> então <m>x=2</m> e <m>y=3</m>, donde temos
+	<m>z=5\pm3</m> e <m>\boxed{f(2,3,5\pm3)=-27}</m>.
+	</p>
+      </solution>
+    </exercise>
+
+    <!-- <exercise xml:id="p2q7-2020"> -->
+    <!--   <statement> -->
+    <!-- 	<p>Sejam <m>C=\big\{(x,y,z)\in\R^3\colon x+y+z=1\text{ e } -->
+    <!-- 	y^2+z^2=9\big\}</m> e <m>f\colon\R^3\to\R</m>, dada por -->
+    <!-- 	<m>f(x,y,z)=x+3y</m>. Se <m>m</m> e <m>M</m> são, -->
+    <!-- 	respectivamente, os valores mínimo e máximo de <m>f</m> sobre -->
+    <!-- 	<m>C</m>, então -->
+    <!-- 	<ol marker="a"> -->
+    <!-- 	  <li><m>m\cdot M=-44</m>.</li> -->
+    <!-- 	  <li><m>m\cdot M=2</m>.</li> -->
+    <!-- 	  <li><m>m\cdot M=6\sqrt{5}</m>.</li> -->
+    <!-- 	  <li><m>m\cdot M=\frac{1-3\sqrt{5}}{1+3\sqrt{5}}</m></li> -->
+    <!-- 	  <li><m>f</m> não admite pontos de máximo e mínimo sobre -->
+    <!-- 	  <m>C</m>.</li> -->
+    <!-- 	</ol> -->
+    <!-- 	</p> -->
+    <!--   </statement> -->
+    <!--   <answer> -->
+    <!-- 	<p>Alternativa a.</p> -->
+    <!--   </answer> -->
+    <!--   <solution> -->
+    <!-- 	<p>Note incialmente que <m>C</m> compacto (interseção da esfera, -->
+    <!-- 	compacta, com o plano, fechado) e <m>f</m> contínua, portanto -->
+    <!-- 	existem tais <m>m</m> e <m>M</m> indicados no enunciado. Para -->
+    <!-- 	encontrar os pontos onde <m>m</m> e <m>M</m> são atingidos -->
+    <!-- 	recorremos aos multiplicadores de Lagrange (com duas restrições -->
+    <!-- 	nesse caso): <m>C=g^{-1}(0)\bigcap h^{-1}(0)</m>, -->
+    <!-- 	onde <m>g(x,y,z)=x+y+z-1</m> e <m>h(x,y,z)=y^2+z^2-9</m>.</p> -->
+    <!-- 	<p>Sabemos então que os pontos procurados satisfazem -->
+    <!-- 	<me>\begin{cases} \big\{\nabla f(x,y,z),\nabla g(x,y,z),\nabla -->
+    <!-- 	h(x,y,z)\big\}\text{ é linearmente dependente}\\ g(x,y,z)=0\\ -->
+    <!-- 	h(x,y,z)=0 \end{cases}.</me> A primeira condição equivale a -->
+    <!-- 	<m>\nabla f(x,y,z)=\lambda \nabla g(x,y,z)+\mu \nabla -->
+    <!-- 	h(x,y,z)</m> (pois <m>\nabla g(x,y,z)</m> e <m>\nabla -->
+    <!-- 	h(x,y,z)</m> são linearmente independentes ao longo de <m>C</m>) -->
+    <!-- 	ou então <m>\big[\nabla f(x,y,z),\nabla g(x,y,z),\nabla -->
+    <!-- 	h(x,y,z)\big]=0</m>. Nos dois casos obtemos a relação -->
+    <!-- 	<m>y+2z=0</m> e o sistema fica <me>\begin{cases} y+2z&amp;=0\\ -->
+    <!-- 	x+y+z&amp;=1\\ y^2+z^2&amp;=9 \end{cases},</me> cujas soluções -->
+    <!-- 	são <m>P_1=\big(1+\frac{3}{\sqrt{5}}, -->
+    <!-- 	-\frac{6}{\sqrt{5}},\frac{3}{\sqrt{5}}\big)</m> e -->
+    <!-- 	<m>P_2=\big(1-\frac{3}{\sqrt{5}},\frac{6}{\sqrt{5}}, -->
+    <!-- 	-\frac{3}{\sqrt{5}}\big)</m>. Assim, -->
+    <!-- 	<m>m=f(P_2)=1-3\sqrt{5}</m> e -->
+    <!-- 	<m>M=f(P_1)=1+3\sqrt{5}</m>. -->
+    <!-- 	</p> -->
+    <!--   </solution> -->
+    <!-- </exercise> -->
+    
+    <!-- <exercise xml:id="p2q8-2020"> <!-\- a=5 e b=2 -\-> -->
+    <!--   <statement> -->
+    <!-- 	<p> Sejam <m>f\colon\R^2\to\R</m> dada por -->
+    <!-- 	<m>f(x,y)=2x^3-15x^2+y^3+6y^2</m> e -->
+    <!-- 	<m>D=\big\{{(x,y)\in\mathbb{{R}}^2\colon x^2+y^2\leq -->
+    <!-- 	49\big\}}</m>. -->
+    <!-- 	<ol marker="a"> -->
+    <!-- 	  <li>Determine todos os pontos críticos de <m>f</m> em -->
+    <!-- 	  <m>\R^2</m>.</li> -->
+    <!-- 	  <li>Classifique todos os pontos críticos de <m>f</m> em -->
+    <!-- 	  <m>\R^2</m>.</li> -->
+    <!-- 	  <li>Determine os pontos de máximo e mínimo de <m>f</m> na -->
+    <!-- 	  circunferência <m>x^2+y^2=49</m>.</li> -->
+    <!-- 	  <li>Determine os pontos de máximo e mínimo de <m>f</m> em -->
+    <!-- 	  <m>D</m>.</li> -->
+    <!-- 	</ol> -->
+    <!-- 	</p> -->
+    <!--   </statement> -->
+    <!--   <answer> -->
+    <!-- 	<ol marker="a"> -->
+    <!-- 	  <li><m>P_1=(0,0)</m>, <m>P_2=(0,-4)</m>, <m>P_3=(5,0)</m> e -->
+    <!-- 	  <m>P_4=(5,-4)</m>.</li> -->
+    <!-- 	  <li><m>P_1</m> e <m>P_4</m> são pontos de sela, <m>P_2</m> é -->
+    <!-- 	  um ponto de máximo local e <m>P_3</m> é um ponto de mínimo local.</li> -->
+    <!-- 	  <li><m>P_5=(0,7)</m> e <m>P_8=(-7,0)</m> são respectivamente os -->
+    <!-- 	  pontos de máximo e mínimo de <m>f</m> sobre a circunferência <m>x^2+y^2=49</m>.</li> -->
+    <!-- 	  <li><m>P_5</m> é o ponto de máximo e <m>P_8</m> o de mínimo -->
+    <!-- 	  para <m>f</m> em <m>D</m>.</li> -->
+    <!-- 	</ol> -->
+    <!--   </answer> -->
+    <!--   <solution> -->
+    <!-- 	<ol marker="a"> -->
+    <!-- 	  <li>Procuramos aqui pelos pontos onde <m>\nabla f -->
+    <!-- 	  (x,y)=(0,0)</m>, ou seja, as soluções do sistema <me> -->
+    <!-- 	  \begin{cases} 6x^2-30x&amp;=0\\ 3y^2+12y&amp;=0 -->
+    <!-- 	  \end{cases},</me> que são <m>P_1=(0,0)</m>, <m>P_2=(0,-4)</m>, -->
+    <!-- 	  <m>P_3=(5,0)</m> e <m>P_4=(5,-4)</m>.</li> -->
+    <!-- 	 <li><p>Aplicamos o critério do Hessiano a cada um dos pontos -->
+    <!-- 	 encontrados no item anterior. Aqui, <m>H_f(x,y)= -->
+    <!-- 	 \begin{bmatrix} 12x-30&amp;0\\ 0&amp;6y+12 \end{bmatrix}</m>, -->
+    <!-- 	 tem como determinante <m>\det -->
+    <!-- 	 H_f(x,y)=(12x-30)(6y+12)</m>. Logo -->
+    <!--      <ul> -->
+    <!--        <li><m>\det H_f(P_1)=-360&lt;0</m> diz que <m>P_1</m> é um -->
+    <!--        ponto de sela e <m>f(P_1)=0</m>.</li> -->
+    <!-- 	   <li><m>\det H_f(P_2)=360&gt;0</m> e -->
+    <!-- 	   <m>f_{xx}(P_2)={-30}&lt;0</m>, dizem que <m>P_2</m> é um -->
+    <!-- 	   ponto de máximo local e <m>f(P_2)=32</m>.</li> -->
+    <!-- 	   <li><m>\det H_f(P_3)=360&gt;0</m> e <m>f_{xx}(P_3)=30&gt;0</m>, dizem -->
+    <!-- 	   que <m>P_3</m> é um ponto de mínimo local e -->
+    <!-- 	   <m>f(P_3)=-125</m>.</li> -->
+    <!-- 	   <li><m>\det H_f(P_4)=-360&lt;0</m> -->
+    <!-- 	   diz que <m>P_4</m> é um ponto de sela e -->
+    <!-- 	   <m>f(P_4)=-93</m>.</li> -->
+    <!-- 	 </ul></p></li> -->
+    <!-- 	 <li>A circuferência em questão é dada por <m>g^{-1}(0)</m>, -->
+    <!-- 	 onde <m>g(x,y)=x^2+y^2-49</m>, que é uma função de classe -->
+    <!-- 	 <m>\mathscr{C}^1</m>. O pontos procurados estão entre aqueles -->
+    <!-- 	 da circunferência onde os gradientes de <m>f</m> e <m>g</m>, -->
+    <!-- 	 <m>\nabla f(x,y)=(6x^2-30x,3y^2+12y)</m> e <m>\nabla -->
+    <!-- 	 g(x,y)=(2x,2y)</m>, são linearmente dependentes, ou seja, são -->
+    <!-- 	 soluções de um dos seguintes sistemas <me> \begin{cases} -->
+    <!-- 	 6x^2-30x&amp;=2\lambda x\\ 3y^2+12y&amp;=2\lambda y\\ -->
+    <!-- 	 x^2+y^2&amp;=49 \end{cases}\qquad\text{ou}\qquad \begin{cases} -->
+    <!-- 	 xy(2x-y-14)&amp;=0\\ x^2+y^2&amp;=49 \end{cases},</me> -->
+    <!-- 	 cujas soluções são <m>P_5=(0,7)</m>, <m>P_6=(0,-7)</m>, -->
+    <!-- 	 <m>P_7=(7,0)</m>, <m>P_8=(-7,0)</m> e -->
+    <!-- 	 <m>P_9=\big(\frac{21}{5},-\frac{28}{5}\big)</m>. Com isso temos -->
+    <!-- 	 <m>f(P_5)=637</m>, <m>f(P_6)=f(P_7)=-49</m>, -->
+    <!-- 	 <m>f(P_8)=-1421</m> e <m>f(P_9)=\frac{2597}{25}</m>. Logo, o -->
+    <!-- 	 valor máximo de <m>f</m>, sobre a circunferência <m>\partial -->
+    <!-- 	 D</m>, é atingido em <m>P_5</m> e o mínimo em <m>P_8</m>.</li> -->
+    <!-- 	 <li>Basta verificar quais os pontos encontrados nos itens -->
+    <!-- 	 anteriores estão em <m>D</m> e comparar valores. Neste caso, -->
+    <!-- 	 todos os <m>9</m> candidatos encontrados pertencem àquela -->
+    <!-- 	 região e o máximo em <m>D</m> é atingido em <m>P_5</m>, euqnto -->
+    <!-- 	 o míninmo acontece em <m>P_8</m>.</li> -->
+    <!-- 	</ol> -->
+    <!--   </solution> -->
+    <!-- </exercise> -->
+  </exercises>
+</section>
