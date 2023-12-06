@@ -42,13 +42,14 @@
 	    <md>
 	      <mrow>\dfrac{\partial G}{\partial x}(1,0)&amp;=\lim_{h\to
 	      0}\dfrac{G(1+h,0)-G(1,0)}{h}=\lim_{h\to
-	      0}\dfrac{h^2\sin\Big(\frac{0}{h^2}\Big)}{h^2}=\lim_{h\to
+	      0}\dfrac{h^2\sin\Big(\frac{0}{h^2}\Big)}{h}=\lim_{h\to
 	      0}0=0</mrow>
 	      <mrow>\dfrac{\partial G}{\partial y}(1,0)&amp;=\lim_{k\to
 	      0}\dfrac{G(1,k)-G(1,0)}{k}=\lim_{h\to
-	      0}\dfrac{k^2\sin\Big(\frac{0}{k^2}\Big)}{k}=\lim_{h\to
-	      0}0=0</mrow>
-	    </md></li> 
+	      0}\dfrac{k^2\sin\Big(\frac{2k}{k^2}\Big)}{k}=0,</mrow>
+	    </md>
+	    onde usamos o teorema do confronto em uma variável na última
+	    passagem.</li> 
 	    <li>Neste caso, é mais fácil seguir pela definição:
 	    <md>
 	      <mrow>\lim_{(h,k)\to (0,0)}
