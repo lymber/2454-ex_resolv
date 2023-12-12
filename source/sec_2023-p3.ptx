@@ -113,7 +113,7 @@
 	      0&amp;-16 \\
 	      -16&amp;0\end{bmatrix}</m>, que tem determinante negativo,
 	      logo este é um ponto de sela;</li>
-	      <li><m>H_f\big(2,0\big)=\begin{bmatrix}
+	      <li><m>H_f\big(2,4\big)=\begin{bmatrix}
 	      0&amp;16 \\
 	      16&amp;0\end{bmatrix}</m>, que tem determinante negativo,
 	      logo este também é um ponto de sela;</li>
