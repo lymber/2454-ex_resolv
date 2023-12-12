@@ -1,0 +1,328 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2023-p3" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Terceira Prova</title>
+  <exercises xml:id="gab_2023-p3" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="p3q1-2023">
+      <statement>
+	<p>Considere a superfície <m>S</m> em <m>\R^3</m> dada pela equação
+	<m>z^3+x^3+yz+xy^3=0</m> e uma função qualquer <m>f\colon\R^2\to\R</m>
+	diferenciável tal que <m>\nabla f(1,0)=(3,1)</m>. Sabendo-se que a
+	interseção de <m>S</m> com o gráfico de <m>f</m> define uma curva
+	<m>\gamma\colon I\to\R^3</m>, diferenciável e contendo o ponto
+	<m>P=(1,0,-1)</m>, determine a equação da reta tangente a <m>\gamma</m> em
+	<m>P</m>.
+	</p>
+      </statement>
+      <answer>
+	<p><m>r\colon (x,y,z)=(1,0,-1)+\lambda (-2,10,4)</m>, <m>\lambda\in\R</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Sabemos que, na condições do enunciado o vetor que dá a
+	direção tangente à curva é paralelo ao produto vetorial do vetor
+	normal a <m>S</m> com o vetor normal ao gráfico de
+	<m>f</m>, ambos calculados no ponto de tangência <m>P</m>.</p>
+	<p>O primeiro destes vetores pode ser obtido enxergando <m>S</m>
+	como a superfície de nível <m>0</m> da função
+	<m>g(x,y,z)=z^3+x^3+yz+xy^3</m>. Desta forma o vetor normal a
+	<m>S</m> em cada um de seus pontos é é o gradiente de <m>g</m>,
+	<m>\nabla g(x,y,z)=(3x^2+y^3,3xy^2+z,3z^2+y)</m>. Em <m>P</m>
+	isso dá <m>\boxed{\nabla g(1,0,-1)=(1,-1,3)}</m>.</p>
+	<p>O segundo vetor é obtido diretamente do que foi estudado na
+	parte anterior do curso:
+	<m>n_f(x,y)=\big(f_x(x,y),f_y(x,y),-1\big)</m>. Como
+	<m>P\in\mathrm{Gr}\, f</m>, vamos usar <m>(x,y)=(1,0)</m>, donde
+	até sabemos que <m>f(1,0)=-1</m>, mas não usamos aqui). Desta
+	forma temos, <m>\boxed{n_f(1,0)=(3,1,-1)}</m>.</p>
+	<p>O vetor diretor da reta pedida é então <me>v=\nabla
+	g(1,0,-1)\times n_f(1,0)= (1,-1,3)\times (3,1,-1)=(-2,10,4).</me> E a
+	equação da reta pedida é <me>r\colon (x,y,z)=(1,0,-1)+\lambda
+	(-2,10,4),\quad\lambda\in\R.</me></p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p3q2-2023">
+      <statement>
+	<p> Seja <m>f\colon\R^2\to\R</m> dada por
+	<m>f(x,y)=x^2y(x-2)(y-4)</m>. Sabe-se que <me>\dfrac{\partial
+	f}{\partial x}(x,y)=xy(3x-4)(y-4)\quad\text{e}\quad
+	\dfrac{\partial f}{\partial y}(x,y)=2x^2(x-2)(y-2).</me> Além
+	disso, também sabe-se que
+	<md>
+	  <mrow>\dfrac{\partial^2 f}{\partial
+	  x^2}(x,y)&amp;=(6x-4)(y-4)y,</mrow>
+	  <mrow>\dfrac{\partial^2 f}{\partial
+	  y\partial x}(x,y)&amp;=x(3x-4)(2y-4)\text{ e }</mrow>
+	  <mrow>\dfrac{\partial^2 f}{\partial
+	  y^2}(x,y)&amp;=2x^2(x-2).</mrow>
+	</md></p>
+	<p>Usando essas informações,
+	<ol marker="a">
+	  <li>determine <em>todos</em> os pontos críticos de
+	  <m>f</m>;</li>
+	  <li>monte a matriz hessiana de <m>f</m> e classifique os pontos
+	  críticos de <m>f</m> nos quais o determinante dessa matriz não
+	  se anula;</li>
+	  <li>classifique o ponto crítico <m>(0,0)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <hint>
+	<p>Use o critério da matriz Hessiana quando for possível. Quando
+	não for possível, examine a expressão da função ao longo de
+	caminhos passando pelo ponto em análise.</p>
+      </hint>
+      <answer>
+	<p>
+	  <ol marker="a">
+	    <li><m>(0,y)</m>, com <m>y\in\R</m>;
+	    <m>\big(\frac{4}{3},2\big)</m>; <m>(2,0)</m>; <m>(2,4)</m>.</li>
+	    <li>Veja solução abaixo.</li>
+	    <li><m>(0,0)</m> é um ponto crítico que não é máximo local
+	    nem mínimo local.</li>
+	</ol></p>
+      </answer>
+      <solution>
+	<p>
+	  <ol marker="a">
+	    <li>Seguimos aqui o roteiro da <xref ref="ap_maxminloc"
+	    />. Para determinar os pontos críticos de <m>f</m>,
+	    procuramos os pontos onde <m>\nabla f(x,y)=(0,0)</m>, ou
+	    seja, as soluções do sistema <me>\begin{cases}
+	    xy(3x-4)(y-4)&amp;=0\\ 2x^2(x-2)(y-2)&amp;=0
+	    \end{cases}\implies (x,y)\in\Big\{(0,y),\text{ com
+	    }y\in\R;\big(\frac{4}{3},2\big); (2,0); (2,4)\Big\}.</me>
+	    </li>
+	    <li><p>A matriz hessiana de <m>f</m> é dada por
+	    <me>H_f(x,y)=\begin{bmatrix}
+	    (6x-4)(y-4)y&amp; x(3x-4)(2y-4)\\
+	    x(3x-4)(2y-4)&amp; 2x^2(x-2)\end{bmatrix},</me> a qual
+	    claramente se anula em todos os pontos da forma
+	    <m>(x,y)=(0,y)</m> <m>y\in\R</m>.</p>
+	    <p>Resta então a análise nos três outros pontos
+	    <ul>
+	      <li><m>H_f\big(\frac{4}{3},2\big)=\begin{bmatrix}
+	      -16&amp;0 \\
+	      0&amp; -\frac{64}{27}\end{bmatrix}</m>, que tem
+	      determinante e primeira entrada positivos, logo este é um
+	      ponto de mínimo local;</li>
+	      <li><m>H_f\big(2,0\big)=\begin{bmatrix}
+	      0&amp;-16 \\
+	      -16&amp;0\end{bmatrix}</m>, que tem determinante negativo,
+	      logo este é um ponto de sela;</li>
+	      <li><m>H_f\big(2,0\big)=\begin{bmatrix}
+	      0&amp;16 \\
+	      16&amp;0\end{bmatrix}</m>, que tem determinante negativo,
+	      logo este também é um ponto de sela;</li>
+	    </ul></p></li>
+	    <li>Basta analisar <m>g(t)=f(t,t)=t^3(t-2)(t-4)</m>:
+	    <m>g(0)=f(0,0)=0</m> e, para <m>0&lt;t&lt;2</m>, temos
+	    <m>g(t)&gt; 0</m> enquanto que, para <m>t&lt;0</m>, temos
+	    <m>g(t)&lt; 0</m>. Isso mostra que <m>(0,0)</m> é um ponto
+	    crítico que não é máximo local nem mínimo local de
+	    <m>f</m>.</li>
+	  </ol>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p3q3-2023">
+      <statement>
+	<p>Sejam <m>D=\big\{(x,y)\in\R^2\colon x^2+y^2\leq 2, x\geq 0;
+	y\leq 0\big\}</m> e <m>f\colon D\to \R</m> dada por
+	<m>f(x,y)=xye^{-x^2-y^2}</m>. Justifique a existência dos pontos
+	onde <m>f</m> assume o maior e o menor valor. Determine tais
+	pontos.</p>
+      </statement>
+      <hint>
+	<p>Há pontos no interior? Podemos usar multiplicadores de
+	Lagrange?</p>
+      </hint>
+      <answer>
+	<p>Os pontos de máximo global são os de <m>D</m> que estão sobre
+	os eixos coordenados e o de mínimo local é
+	<m>\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big)</m>.</p>
+      </answer>
+      <solution>
+	<p>O conjunto <m>D</m>, indicado na figura abaixo, é um compacto
+	(fechado e limitado) e a função <m>f</m> é contínua em
+	<m>D</m>. Pelo teorema de Weierstrass, sabemos que existem
+	pontos de máximo e mínimo globais de <m>f</m> em <m>D</m>.</p>
+	<figure xml:id="fig_p3q3-2023">
+	  <caption>O conjunto <m>D</m>.</caption>
+	  <image width="50%" xml:id="gab_p3q3-2023">
+	    <latex-image>
+              \begin{tikzpicture}
+              \draw[->] (-2,0) -- (2,0) node[below] {$x$};
+	      \draw[->] (0,-2) -- (0,2) node[right] {$y$};
+	      \draw[dashed] (0,0) circle ({sqrt(2)});
+	      \filldraw[thick, draw=blue, fill=green!30, opacity=0.6] (0,0)--(0,{-sqrt(2)})
+	      arc(270:360:{sqrt(2)}) -- cycle;
+              \end{tikzpicture}
+	    </latex-image>
+	  </image>
+	</figure>
+	<p>Para determinar os pontos pedidos, precisamos decompor a
+	região em seu interior, dado pelas inequações
+	<m>x^2+y^2&lt;2</m>, <m>x&gt;0</m> e <m>y&lt;0</m>, e a
+	fronteira, dada por <m>x^2+y^2=2</m>, <m>(x,0),0\leq
+	x\leq\sqrt{2}</m> e <m>(0,y), -\sqrt{2}\leq y\leq 0</m>.</p>
+	<p>No interior os candidatos são aqueles onde <m>\nabla
+	f(x,y)=(0,0)</m>, ou seja, <me>\begin{cases} y(2x^2-1)&amp;=0\\
+	x(2y^2-1)&amp;=0 \end{cases}\implies
+	(x,y)=\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big),</me>
+	pois as demais soluções do sistema não estão no interior de
+	<m>D</m>. Aqui temos
+	<m>\boxed{f\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big)=-\frac{1}{2e}}</m>.</p>
+	<p>Na fronteira observamos incialmente que
+	<m>\boxed{f(x,0)=0}</m> e <m>\boxed{f(0,y)=0}</m>. O arco de
+	círculo poderia ser parametrizado e resolveríamos assim
+	utilizando técnicas do cálculo diferencial para funções de uma
+	variável. Vamos utilizar o método de Lagrange do <xref
+	ref="teo_lag2" />. A restrição aqui é a curva de nível <m>0</m>
+	da função <m>g(x,y)=x^2+y^2-2</m>, considerando-se apenas seu
+	quarto quadrante. Procuramos os pontos onde os gradientes de
+	<m>f</m> e <m>g</m> são paralelos e que estão na curva de nível
+	<m>0</m> de <m>g</m>. Algebricamente isso se traduz no sistema
+	<me> \begin{cases} \det\begin{bmatrix} y(2x^2-1)&amp;x(2y^2-1)\\
+	x&amp; y \end{bmatrix}&amp;=0\\ x^2+y^2-2&amp;=0\end{cases}\iff
+	\begin{cases} x^2-y^2&amp;=0\\ x^2+y^2-2&amp;=0\end{cases},
+	</me> cuja única solução em <m>D</m> é
+	<m>(x,y)=\big(1,-1\big)</m>. O valor da função neste ponto é
+	<m>\boxed{f\big(1,-1\big)=-\dfrac{1}{e^2}}</m>.
+	</p>
+	<p>Comparando os valores em destaque temos
+	<me>f\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big)&lt;
+	f\big(1,-1\big)&lt;f(x,0)=f(0,y),</me> donde os pontos onde a
+	função assume o maior valor são aquele em <m>D</m> que estão
+	sobre os eixos coordenados e o de menor valor é o ponto
+	<m>\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big)</m>.</p> Não
+	pode faltar a figura:
+	<figure xml:id="fig_p3q3-2-2023">
+          <caption>Gráfico de função não derivável e candidato a plano tangente</caption>
+          <image xml:id="gab_p3q3-2-2023" archive="html" width="50%">
+            <description>Gráfico da função <m>f</m> sobre seu domínio.</description>
+            <asymptote>
+              import graph3;
+              size(10cm);
+      
+              currentprojection=orthographic(3,-4,1);
+              limits((-.5,-1.5,-.5),(1.5,.5,.5));
+              currentlight=light(white,(-2,-2,2),(2,2,-2));
+              
+              triple f(pair z){
+              real r=z.x;
+              real t=z.y;
+              real x=r*cos(t);
+              real y=r*sin(t);
+              real z=5*x*y*exp(-x^2-y^2);
+              return (x,y,z);
+              }
+              
+              surface grafico=surface(f,(0,3*pi/2),(sqrt(2),2*pi),50);
+              
+              path3 curva=(0,0,0)--graph(new triple(real t) {
+              return
+	      (sqrt(2)*cos(t),sqrt(2)*sin(t),10*cos(t)*sin(t)*exp(-2));},3*pi/2,2*pi,20,operator
+	      ..)--cycle;
+              
+              draw(grafico,green+opacity(0.6));
+	      dot((sqrt(2)/2,-sqrt(2)/2,-5/2*exp(-1)));
+	      dot((1,-1, -5*exp(-2)));
+              draw(curva,1bp+orange);
+              
+              xaxis3("$x$",Arrow3);
+              yaxis3("$y$",Arrow3);
+              zaxis3("$z$",Arrow3);
+            </asymptote>
+          </image>
+        </figure>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="p3q4-2023">
+      <statement>
+	<p>Seja <m>S</m> a superfície de equação
+	<m>x^2+y^2+3z^2=21</m>. Justifique a existência dos pontos
+	<m>(x,y,z)\in S</m> tais que a soma de suas coordenadas é
+	máxima. Determine tais pontos.
+	</p>
+      </statement>
+      <hint>
+	<p>Uma função de três varíaveis para ser maximizada sobre um
+	elipsoide. Sabemos exatamente o que fazer!</p>
+      </hint>
+      <answer>
+	<p>
+	  O ponto de <m>S</m> que tem soma das coordenadas máxima é
+	  <m>(3,3,1)</m>.
+	</p>
+      </answer>
+      <solution>
+	<p>Queremos maximizar a função <m>f(x,y,z)=x+y+z</m>, que é
+	contínua, sobre a superfície <m>S</m>, um elipsoide e portanto
+	compacta. Pelo teorema de Weierstrass sabemos que o problema
+	admite solução.
+	</p>
+	<p>Para determiná-la, utilizamos a técnica dos multiplicadores
+	de Lagrange, vista no <xref ref="teo_lag31" />. Considerando
+	<m>S</m> como a superfície de nível <m>0</m> da função
+	<m>g(x,y,z)=x^2+y^2+3z^2-21</m>, procuramos por pontos de
+	<m>S</m> onde os gradientes de <m>f</m>, <m>\nabla
+	f(x,y,z)=(1,1,1)</m>, e de <m>g</m>, <m>\nabla
+	g(x,y,z)=(2x,2y,6z)</m> são linearmente dependentes.</p>
+	<p>Isso equivale a ter <m>\nabla f(x,y,z)\times \nabla
+	g(x,y,z)=(0,0,0)</m>. Mais explicitamente, como <me>\nabla
+	f(x,y,z)\times \nabla g(x,y,z)=2(3z-y,x-3z,y-x),</me> temos que
+	resolver o sistema <me>
+	\begin{cases}
+	y&amp;=3z\\
+	x&amp;=3z\\
+	x&amp;=y\\
+	x^2+y^2+3z^2-21&amp;=0
+	\end{cases}\iff 21z^2=21\iff z=\pm1,
+	</me>e portanto as soluções são apenas <m>(x,y,z)=(3,3,1)</m> e
+	<m>(x,y,z)=(-3,-3,-1)</m>.</p>
+	<p>Calculando os valores de <m>f</m> nesses pontos, temos
+	<me>f(3,3,1)=10&gt;-10=f(-3,-3,-1),</me> donde concluimos que o
+	ponto com soma máxima das coordenadas é <m>(3,3,1)</m>.</p>
+	<p>Geometricamente, procuramos pelo ponto de <m>S</m> onde seu
+	plano tangente é o mesmo que o de uma curva de nível de
+	<m>f</m>:
+	<figure xml:id="fig_p3q4-2-2023">
+          <caption>Gráfico de função não derivável e candidato a plano tangente</caption>
+          <image xml:id="gab_p3q4-2-2023" archive="html" width="50%">
+            <description>Ponto de máximo de <m>f</m> sobre
+	    <m>S</m>.</description>
+            <asymptote>
+              import graph3;
+              size(10cm);
+      
+              currentprojection=orthographic(6,-8,3);
+              limits((-5,-5,-3),(5,5,3));
+              currentlight=light(white,(-2,-2,2),(2,2,-2));
+              
+	      surface elipsoide=scale(sqrt(21),sqrt(21),sqrt(7))*unitsphere;
+	      
+              surface plano=surface(plane(-4*X+4*Y,-4*Y+4*Z,(5,3,-1)));
+              
+              draw(elipsoide,green+opacity(0.6));
+	      draw(plano,orange);
+	      dot((3,3,1));
+              draw(Label("$\nabla
+	      f(3,3,1)$",position=EndPoint),(3,3,1)--(4,4,2),orange,Arrow3);
+	      draw(Label("$\nabla g(3,3,1)$",position=EndPoint),(3,3,1)--(9,9,7),green,Arrow3);
+              xaxis3("$x$",Arrow3);
+              yaxis3("$y$",Arrow3);
+              zaxis3("$z$",Arrow3);
+            </asymptote>
+          </image>
+        </figure>
+	</p>
+      </solution>
+    </exercise>
+  </exercises>
+</section>

@@ -24,6 +24,7 @@
   <!-- chapter later if you change your mind about the order.    -->
   <xi:include href="./sec_2023-p1.ptx" />
   <xi:include href="./sec_2023-p2.ptx" />
+  <xi:include href="./sec_2023-p3.ptx" />
   <!-- <xi:include href="./sec_2022-psub.ptx" /> -->
   <!-- <xi:include href="./sec_2022-prec.ptx" /> -->
 
