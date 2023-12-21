@@ -1,0 +1,384 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2023-psub" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Prova Substitutiva</title>
+  <exercises xml:id="gab_2023-psub" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="psubq1-2023">
+      <statement>
+	 <p>Seja <m>f(x,y)=
+	 \begin{cases}
+	 \dfrac{(x-1)^3}{(x-1)^2+(y-1)^2}&amp;,\text{ se }(x,y)\neq(1,1)\\
+	 \hfill 0&amp;,\text{ se }(x,y)\neq(1,1)
+	 \end{cases}</m>.</p>
+	 <ol marler="a.">
+	   <li>Determine se <m>f</m> é contínua em <m>(1,1)</m>.</li>
+	   <li>Determine <m>\dfrac{\partial f}{\partial x}(1,1)</m> e
+    <m>\dfrac{\partial f}{\partial y}(1,1)</m>.</li>
+	   <li>Determine se <m>f</m> é diferenciável em <m>(1,1)</m>.</li>
+	 </ol>
+      </statement>
+      <answer>
+	<p><ol>
+	  <li>Sim, <m>f</m> é contínua em <m>(1,1)</m>.</li>
+	  <li><m>\dfrac{\partial f}{\partial x}(1,1)=1</m> e
+	  <m>\dfrac{\partial f}{\partial y}(1,1)=0</m>.</li>
+	  <li>Não, <m>f</m> não é diferenciável em <m>(1,1)</m>.</li>
+	</ol>
+	</p>
+      </answer>
+      <solution>
+	<ol marker="a.">
+	  <li><p>Para que <m>f</m> seja contínua em <m>(1,1)</m>, devemos ter
+	  <me>\lim\limits_{(x,y)\to (1,1)}f(x,y)=f(1,1).</me> basta fazer
+	  as contas:
+	  <md>
+	    <mrow>\lim\limits_{(x,y)\to
+	    (1,1)}f(x,y)&amp;=\lim\limits_{(x,y)\to
+	    (1,1)}\dfrac{(x-1)^3}{(x-1)^2+(y-1)^2}</mrow>
+	    <mrow>&amp;=\lim\limits_{(x,y)\to
+	    (1,1)}(x-1)\dfrac{(x-1)^2}{(x-1)^2+(y-1)^2}\stackrel{(\ast)}{=}0=f(1,1),</mrow> 
+	    </md> onde <m>(\ast)</m> segue do <xref ref="cor_confronto" />.
+	    Logo, <m>f</m> é contínua em <m>(1,1)</m>.
+	  </p>
+	  <p>Podemos usar o <url href="https://sagemath.org"
+	  visual="sagemath.org">SageMath</url> para realizar alguns
+	  cálculos simbólicos. Definimos as variáveis e a função:
+	  <sage>
+	    <input>
+	      x,y=var('x','y')
+	      f(x,y)=(x-1)^3/((x-1)^2+(y-1)^2)
+	      show(f(x,y))
+	    </input>
+	  </sage>
+	  Calculamos o limite necessário:
+	  <sage>
+	    <input>
+	      f(x,y).limit(x=1).limit(y=1)
+	    </input>
+	  </sage>
+	  </p></li>
+	  <li><p>Calcular as derivadas parciais nesse caso é aplicação
+	  direta da definição:
+	  <md>
+	    <mrow>\dfrac{\partial f}{\partial
+	    x}(1,1)&amp;=\lim\limits_{h\to
+	    0}\dfrac{f(1+h,1)-f(1,1)}{h}=\lim\limits_{h\to
+	    0}\dfrac{\frac{h^3}{h^2+0^2}-0}{h}=\lim\limits_{h\to
+	    0}\dfrac{h}{h}=1.</mrow>
+	    <mrow>\dfrac{\partial f}{\partial
+	    y}(1,1)&amp;=\lim\limits_{k\to
+	    0}\dfrac{f(1,1+k)-f(1,1)}{k}=\lim\limits_{k\to
+	    0}\dfrac{\frac{0^3}{0^2+k^2}-0}{k}=\lim\limits_{k\to
+	    0}0=0.</mrow>
+	  </md></p>
+	  <p>No SageMath:
+	  <sage>
+	    <input>
+	      h=var('h')
+	      (f(1+h,1)/h).limit(h=0)
+	    </input>
+	  </sage>
+	  <sage>
+	    <input>
+	      k=var('k')
+	      (f(1,1+k)/k).limit(k=0)
+	    </input>
+	  </sage>
+	  </p>
+	  </li>
+	  <li><p>A diferenciabilidade de <m>f</m> em <m>(1,1)</m> se dá
+	  verificando que <me>\lim\limits_{(h,k)\to(0,0)}
+	  \dfrac{f(1+h,1+k)-f(1,1)-f_x(1,1)h-f_y(1,1)k}{\sqrt{h^2+k^2}}=0.</me></p>
+	  <p>Aplicando a expressão de <m>f</m> e os valores do item
+	  anterior, o limite acima torna-se
+	  <me>\lim\limits_{(h,k)\to(0,0)}\dfrac{\frac{h^3}{h^2+k^2}-h}{\sqrt{h^2+k^2}}=\lim\limits_{(h,k)\to(0,0)}
+	  \dfrac{-hk^2}{(h^2+k^2)\sqrt{h^2+k^2}},</me> o qual sequer
+	  existe, logo não pode valer <m>0</m>. Tal afirmação
+	  verifica-se ao estudar o limite proposto ao longo da curva
+	  <m>\gamma(t)=(t,t)</m>: <me>\lim\limits_{t\to
+	  0}f\big(\gamma(t)\big)=\lim\limits_{t\to
+	  0}-\dfrac{\sqrt{2}t}{4|t|},</me> cujos limites laterais
+	  assumem valores distintos. No SageMath a expressão do limite
+	  acima pode ser calculada explicitamente:
+	  <sage>
+	    <input>
+	      g(h,k)=(f(1+h,1+k)-1*h-0*k)/(sqrt(h^2+k^2))
+	      show(g(h,k))
+	    </input>
+	  </sage>
+	  A restição à curva <m>\gamma</m> e o limite ao longo dela são:
+	  <sage>
+	    <input>
+	      t=var('t')
+	      show(g(t,t))
+	      g(t,t).limit(t=0)
+	    </input>
+	  </sage>
+	  </p>
+	  </li>
+	</ol>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="psubq2-2023">
+      <statement>
+	<p>Determine, caso existam, todos os pontos de máximo global e
+	os pontos de mínimo global da função
+	<m>f(x,y,z)=2x^2+y^2+2z^2-2x-2z</m> no conjunto
+	<m>C=\big\{(x,y,z)\in\R^3\colon x^2+y^2+z^2\leq 18\big\}</m>.
+	</p>
+      </statement>
+      <hint>
+	<p>Note que o conjunto <m>C</m> tem interior não-vazio, então
+	não basta apenas utilizar multiplicadores de Lagrange.</p>
+      </hint>
+      <answer>
+	<p>O ponto de máximo global é <m>(3,0,3)</m>, enquanto o de
+	mínimo global é <m>\big(\frac{1}{2},0,\frac{1}{2}\big)</m>.</p>
+      </answer>
+      <solution>
+	<p>Observamos incialmente que <m>C</m> é uma bola, portanto
+	compacta. Sendo <m>f</m> contínua, o
+	teorema de Weiertrass garante a existência de pontos de máximo e
+	mínimo global para <m>f</m> em <m>C</m>.</p>
+	<p>Observe ainda que <m>C</m> tem interior não vazio e portanto
+	precisamos analisar separadamente seu interior e sua
+	fronteira.</p>
+	<p><ul>
+	  <li><p>No interior: procuramos pontos críticos de <m>f</m> no
+	  conjunto <me>\mathrm{int}\, C=\big\{(x,y,z)\in\R^3\colon
+	  x^2+y^2+z^2&lt; 18\big\},</me> que são as soluções de
+	  <me>\nabla f(x,y,z)=(4x-2, 2y, 4z-2)=(0,0,0)\iff
+	  \boxed{(x,y,z)=\big(\frac{1}{2},0,\frac{1}{2}\big)},</me> que
+	  está em <m>\mathrm{int}\, C</m>. Nesse ponto temos
+	  <m>\boxed{f\big(\frac{1}{2},0,\frac{1}{2}\big)=-1}</m>.</p>
+	  <p>Implementando isso no SageMath, definimos <m>f</m> e
+	  calculamos seu gradiente:
+	  <sage>
+	    <input>
+	      x,y,z=var('x','y','z')
+	      f(x,y,z)=2*x^2+y^2+2*z^2-2*x-2*z
+	      gradf=f(x,y,z).gradient()
+	      show(gradf)
+	    </input>
+	  </sage>
+	  Encontramos os pontos críticos com os comandos:
+	  <sage>
+	    <input>
+	      crit=solve([gradf[0]==0,gradf[1]==0,gradf[2]==0],x,y,z)
+	      show(crit)
+	    </input>
+	  </sage>
+	  E o valor da função nesses candidatos é obtido com:
+	  <sage>
+	    <input>
+	      f(x,y,z).subs(crit)
+	    </input>
+	  </sage>
+	  </p>
+	  
+	  </li>
+	</ul>
+	</p>
+      </solution>
+    </exercise>
+
+    <!-- <exercise xml:id="psubq3-2023"> -->
+    <!--   <statement> -->
+    <!-- 	<p>Sejam <m>D=\big\{(x,y)\in\R^2\colon x^2+y^2\leq 2, x\geq 0; -->
+    <!-- 	y\leq 0\big\}</m> e <m>f\colon D\to \R</m> dada por -->
+    <!-- 	<m>f(x,y)=xye^{-x^2-y^2}</m>. Justifique a existência dos pontos -->
+    <!-- 	onde <m>f</m> assume o maior e o menor valor. Determine tais -->
+    <!-- 	pontos.</p> -->
+    <!--   </statement> -->
+    <!--   <hint> -->
+    <!-- 	<p>Há pontos no interior? Podemos usar multiplicadores de -->
+    <!-- 	Lagrange?</p> -->
+    <!--   </hint> -->
+    <!--   <answer> -->
+    <!-- 	<p>Os pontos de máximo global são os de <m>D</m> que estão sobre -->
+    <!-- 	os eixos coordenados e o de mínimo local é -->
+    <!-- 	<m>\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big)</m>.</p> -->
+    <!--   </answer> -->
+    <!--   <solution> -->
+    <!-- 	<p>O conjunto <m>D</m>, indicado na figura abaixo, é um compacto -->
+    <!-- 	(fechado e limitado) e a função <m>f</m> é contínua em -->
+    <!-- 	<m>D</m>. Pelo teorema de Weierstrass, sabemos que existem -->
+    <!-- 	pontos de máximo e mínimo globais de <m>f</m> em <m>D</m>.</p> -->
+    <!-- 	<figure xml:id="fig_psubq3-2023"> -->
+    <!-- 	  <caption>O conjunto <m>D</m>.</caption> -->
+    <!-- 	  <image width="50%" xml:id="gab_psubq3-2023"> -->
+    <!-- 	    <latex-image> -->
+    <!--           \begin{tikzpicture} -->
+    <!--           \draw[->] (-2,0) -\- (2,0) node[below] {<m>x<m>}; -->
+    <!-- 	      \draw[->] (0,-2) -\- (0,2) node[right] {<m>y<m>}; -->
+    <!-- 	      \draw[dashed] (0,0) circle ({sqrt(2)}); -->
+    <!-- 	      \filldraw[thick, draw=blue, fill=green!30, opacity=0.6] (0,0)-\-(0,{-sqrt(2)}) -->
+    <!-- 	      arc(270:360:{sqrt(2)}) -\- cycle; -->
+    <!--           \end{tikzpicture} -->
+    <!-- 	    </latex-image> -->
+    <!-- 	  </image> -->
+    <!-- 	</figure> -->
+    <!-- 	<p>Para determinar os pontos pedidos, precisamos decompor a -->
+    <!-- 	região em seu interior, dado pelas inequações -->
+    <!-- 	<m>x^2+y^2&lt;2</m>, <m>x&gt;0</m> e <m>y&lt;0</m>, e a -->
+    <!-- 	fronteira, dada por <m>x^2+y^2=2</m>, <m>(x,0),0\leq -->
+    <!-- 	x\leq\sqrt{2}</m> e <m>(0,y), -\sqrt{2}\leq y\leq 0</m>.</p> -->
+    <!-- 	<p>No interior os candidatos são aqueles onde <m>\nabla -->
+    <!-- 	f(x,y)=(0,0)</m>, ou seja, <me>\begin{cases} y(2x^2-1)&amp;=0\\ -->
+    <!-- 	x(2y^2-1)&amp;=0 \end{cases}\implies -->
+    <!-- 	(x,y)=\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big),</me> -->
+    <!-- 	pois as demais soluções do sistema não estão no interior de -->
+    <!-- 	<m>D</m>. Aqui temos -->
+    <!-- 	<m>\boxed{f\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big)=-\frac{1}{2e}}</m>.</p> -->
+    <!-- 	<p>Na fronteira observamos incialmente que -->
+    <!-- 	<m>\boxed{f(x,0)=0}</m> e <m>\boxed{f(0,y)=0}</m>. O arco de -->
+    <!-- 	círculo poderia ser parametrizado e resolveríamos assim -->
+    <!-- 	utilizando técnicas do cálculo diferencial para funções de uma -->
+    <!-- 	variável. Vamos utilizar o método de Lagrange do <xref -->
+    <!-- 	ref="teo_lag2" />. A restrição aqui é a curva de nível <m>0</m> -->
+    <!-- 	da função <m>g(x,y)=x^2+y^2-2</m>, considerando-se apenas seu -->
+    <!-- 	quarto quadrante. Procuramos os pontos onde os gradientes de -->
+    <!-- 	<m>f</m> e <m>g</m> são paralelos e que estão na curva de nível -->
+    <!-- 	<m>0</m> de <m>g</m>. Algebricamente isso se traduz no sistema -->
+    <!-- 	<me> \begin{cases} \det\begin{bmatrix} y(2x^2-1)&amp;x(2y^2-1)\\ -->
+    <!-- 	x&amp; y \end{bmatrix}&amp;=0\\ x^2+y^2-2&amp;=0\end{cases}\iff -->
+    <!-- 	\begin{cases} x^2-y^2&amp;=0\\ x^2+y^2-2&amp;=0\end{cases}, -->
+    <!-- 	</me> cuja única solução em <m>D</m> é -->
+    <!-- 	<m>(x,y)=\big(1,-1\big)</m>. O valor da função neste ponto é -->
+    <!-- 	<m>\boxed{f\big(1,-1\big)=-\dfrac{1}{e^2}}</m>. -->
+    <!-- 	</p> -->
+    <!-- 	<p>Comparando os valores em destaque temos -->
+    <!-- 	<me>f\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big)&lt; -->
+    <!-- 	f\big(1,-1\big)&lt;f(x,0)=f(0,y),</me> donde os pontos onde a -->
+    <!-- 	função assume o maior valor são aquele em <m>D</m> que estão -->
+    <!-- 	sobre os eixos coordenados e o de menor valor é o ponto -->
+    <!-- 	<m>\big(\frac{\sqrt{2}}{2},-\frac{\sqrt{2}}{2}\big)</m>.</p> Não -->
+    <!-- 	pode faltar a figura: -->
+    <!-- 	<figure xml:id="fig_psubq3-2-2023"> -->
+    <!--       <caption>Gráfico de função não derivável e candidato a plano tangente</caption> -->
+    <!--       <image xml:id="gab_psubq3-2-2023" archive="html" width="50%"> -->
+    <!--         <description>Gráfico da função <m>f</m> sobre seu domínio.</description> -->
+    <!--         <asymptote> -->
+    <!--           import graph3; -->
+    <!--           size(10cm); -->
+      
+    <!--           currentprojection=orthographic(3,-4,1); -->
+    <!--           limits((-.5,-1.5,-.5),(1.5,.5,.5)); -->
+    <!--           currentlight=light(white,(-2,-2,2),(2,2,-2)); -->
+              
+    <!--           triple f(pair z){ -->
+    <!--           real r=z.x; -->
+    <!--           real t=z.y; -->
+    <!--           real x=r*cos(t); -->
+    <!--           real y=r*sin(t); -->
+    <!--           real z=5*x*y*exp(-x^2-y^2); -->
+    <!--           return (x,y,z); -->
+    <!--           } -->
+              
+    <!--           surface grafico=surface(f,(0,3*pi/2),(sqrt(2),2*pi),50); -->
+              
+    <!--           path3 curva=(0,0,0)-\-graph(new triple(real t) { -->
+    <!--           return -->
+    <!-- 	      (sqrt(2)*cos(t),sqrt(2)*sin(t),10*cos(t)*sin(t)*exp(-2));},3*pi/2,2*pi,20,operator -->
+    <!-- 	      ..)-\-cycle; -->
+              
+    <!--           draw(grafico,green+opacity(0.6)); -->
+    <!-- 	      dot((sqrt(2)/2,-sqrt(2)/2,-5/2*exp(-1))); -->
+    <!-- 	      dot((1,-1, -5*exp(-2))); -->
+    <!--           draw(curva,1bp+orange); -->
+              
+    <!--           xaxis3("<m>x<m>",Arrow3); -->
+    <!--           yaxis3("<m>y<m>",Arrow3); -->
+    <!--           zaxis3("<m>z<m>",Arrow3); -->
+    <!--         </asymptote> -->
+    <!--       </image> -->
+    <!--     </figure> -->
+    <!--   </solution> -->
+    <!-- </exercise> -->
+
+    <!-- <exercise xml:id="psubq4-2023"> -->
+    <!--   <statement> -->
+    <!-- 	<p>Seja <m>S</m> a superfície de equação -->
+    <!-- 	<m>x^2+y^2+3z^2=21</m>. Justifique a existência dos pontos -->
+    <!-- 	<m>(x,y,z)\in S</m> tais que a soma de suas coordenadas é -->
+    <!-- 	máxima. Determine tais pontos. -->
+    <!-- 	</p> -->
+    <!--   </statement> -->
+    <!--   <hint> -->
+    <!-- 	<p>Uma função de três varíaveis para ser maximizada sobre um -->
+    <!-- 	elipsoide. Sabemos exatamente o que fazer!</p> -->
+    <!--   </hint> -->
+    <!--   <answer> -->
+    <!-- 	<p> -->
+    <!-- 	  O ponto de <m>S</m> que tem soma das coordenadas máxima é -->
+    <!-- 	  <m>(3,3,1)</m>. -->
+    <!-- 	</p> -->
+    <!--   </answer> -->
+    <!--   <solution> -->
+    <!-- 	<p>Queremos maximizar a função <m>f(x,y,z)=x+y+z</m>, que é -->
+    <!-- 	contínua, sobre a superfície <m>S</m>, um elipsoide e portanto -->
+    <!-- 	compacta. Pelo teorema de Weierstrass sabemos que o problema -->
+    <!-- 	admite solução. -->
+    <!-- 	</p> -->
+    <!-- 	<p>Para determiná-la, utilizamos a técnica dos multiplicadores -->
+    <!-- 	de Lagrange, vista no <xref ref="teo_lag31" />. Considerando -->
+    <!-- 	<m>S</m> como a superfície de nível <m>0</m> da função -->
+    <!-- 	<m>g(x,y,z)=x^2+y^2+3z^2-21</m>, procuramos por pontos de -->
+    <!-- 	<m>S</m> onde os gradientes de <m>f</m>, <m>\nabla -->
+    <!-- 	f(x,y,z)=(1,1,1)</m>, e de <m>g</m>, <m>\nabla -->
+    <!-- 	g(x,y,z)=(2x,2y,6z)</m> são linearmente dependentes.</p> -->
+    <!-- 	<p>Isso equivale a ter <m>\nabla f(x,y,z)\times \nabla -->
+    <!-- 	g(x,y,z)=(0,0,0)</m>. Mais explicitamente, como <me>\nabla -->
+    <!-- 	f(x,y,z)\times \nabla g(x,y,z)=2(3z-y,x-3z,y-x),</me> temos que -->
+    <!-- 	resolver o sistema <me> -->
+    <!-- 	\begin{cases} -->
+    <!-- 	y&amp;=3z\\ -->
+    <!-- 	x&amp;=3z\\ -->
+    <!-- 	x&amp;=y\\ -->
+    <!-- 	x^2+y^2+3z^2-21&amp;=0 -->
+    <!-- 	\end{cases}\iff 21z^2=21\iff z=\pm1, -->
+    <!-- 	</me>e portanto as soluções são apenas <m>(x,y,z)=(3,3,1)</m> e -->
+    <!-- 	<m>(x,y,z)=(-3,-3,-1)</m>.</p> -->
+    <!-- 	<p>Calculando os valores de <m>f</m> nesses pontos, temos -->
+    <!-- 	<me>f(3,3,1)=7&gt;-7=f(-3,-3,-1),</me> donde concluimos que o -->
+    <!-- 	ponto com soma máxima das coordenadas é <m>(3,3,1)</m>.</p> -->
+    <!-- 	<p>Geometricamente, procuramos pelo ponto de <m>S</m> onde seu -->
+    <!-- 	plano tangente é o mesmo que o de uma curva de nível de -->
+    <!-- 	<m>f</m>: -->
+    <!-- 	<figure xml:id="fig_psubq4-2-2023"> -->
+    <!--       <caption>Gráfico de função não derivável e candidato a plano tangente</caption> -->
+    <!--       <image xml:id="gab_psubq4-2-2023" archive="html" width="50%"> -->
+    <!--         <description>Ponto de máximo de <m>f</m> sobre -->
+    <!-- 	    <m>S</m>.</description> -->
+    <!--         <asymptote> -->
+    <!--           import graph3; -->
+    <!--           size(10cm); -->
+      
+    <!--           currentprojection=orthographic(6,-8,3); -->
+    <!--           limits((-5,-5,-3),(5,5,3)); -->
+    <!--           currentlight=light(white,(-2,-2,2),(2,2,-2)); -->
+              
+    <!-- 	      surface elipsoide=scale(sqrt(21),sqrt(21),sqrt(7))*unitsphere; -->
+	      
+    <!--           surface plano=surface(plane(-4*X+4*Y,-4*Y+4*Z,(5,3,-1))); -->
+              
+    <!--           draw(elipsoide,green+opacity(0.6)); -->
+    <!-- 	      draw(plano,orange); -->
+    <!-- 	      dot((3,3,1)); -->
+    <!--           draw(Label("<m>\nabla -->
+    <!-- 	      f(3,3,1)<m>",position=EndPoint),(3,3,1)-\-(4,4,2),orange,Arrow3); -->
+    <!-- 	      draw(Label("<m>\nabla g(3,3,1)<m>",position=EndPoint),(3,3,1)-\-(9,9,7),green,Arrow3); -->
+    <!--           xaxis3("<m>x<m>",Arrow3); -->
+    <!--           yaxis3("<m>y<m>",Arrow3); -->
+    <!--           zaxis3("<m>z<m>",Arrow3); -->
+    <!--         </asymptote> -->
+    <!--       </image> -->
+    <!--     </figure> -->
+    <!-- 	</p> -->
+    <!--   </solution> -->
+    <!-- </exercise> -->
+  </exercises>
+</section>

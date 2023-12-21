@@ -25,7 +25,7 @@
   <xi:include href="./sec_2023-p1.ptx" />
   <xi:include href="./sec_2023-p2.ptx" />
   <xi:include href="./sec_2023-p3.ptx" />
-  <!-- <xi:include href="./sec_2022-psub.ptx" /> -->
+  <xi:include href="./sec_2023-psub.ptx" />
   <!-- <xi:include href="./sec_2022-prec.ptx" /> -->
 
   <!-- One or more of the sections of a chapter might be exercises-->
