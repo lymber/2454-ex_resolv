@@ -31,7 +31,7 @@
       <solution>
 	<ol marker="a.">
 	  <li><p>Para que <m>f</m> seja contínua em <m>(1,1)</m>, devemos ter
-	  <me>\lim\limits_{(x,y)\to (1,1)}f(x,y)=f(1,1).</me> basta fazer
+	  <me>\lim\limits_{(x,y)\to (1,1)}f(x,y)=f(1,1).</me> Basta fazer
 	  as contas:
 	  <md>
 	    <mrow>\lim\limits_{(x,y)\to

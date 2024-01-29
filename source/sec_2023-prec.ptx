@@ -1,0 +1,341 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<section xml:id="sec_2023-prec" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Prova de Recuperação</title>
+  <exercises xml:id="gab_2023-prec" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <exercise xml:id="precq1-2023">
+      <statement>
+	 <p>Considere a função <m>f(x,y)=\sqrt[3]{x^4 + y^4}</m>, cuja
+	 derivada parcial em relação a <m>x</m> é dada por
+	 <me>\dfrac{\partial
+	 f}{\partial x}(x,y)=
+	 \begin{cases}
+	 \dfrac{4x^3}{3\sqrt[3]{(x^4+y^4)^2}},&amp;
+	 \text{se } (x,y) \neq (0,0) \\
+	 \hfill 0,&amp; \text{ se } (x,y) =(0,0).  \end{cases}
+	 </me></p>
+	 <ol marler="a.">
+	   <li>Determine se <m>\dfrac{\partial f}{\partial x}</m> é
+	   contínua em <m>(0,0)</m>.</li>
+	   <li>Determine <m>\dfrac{\partial f}{\partial y}(0,0)</m>.</li>
+	   <li>A função <m>f</m> é diferenciável em <m>(0,0)</m>?</li>
+	 </ol>
+      </statement>
+      <answer>
+	<p><ol>
+	  <li>Sim.</li>
+	  <li><m>\dfrac{\partial
+	 f}{\partial y}(x,y)=
+	 \begin{cases}
+	 \dfrac{4y^3}{3\sqrt[3]{(x^4+y^4)^2}},&amp;
+	 \text{se } (x,y) \neq (0,0) \\
+	 \hfill 0,&amp; \text{ se } (x,y) =(0,0).  \end{cases}
+	 </m></li>
+	  <li>Sim.</li>
+	</ol>
+	</p>
+      </answer>
+      <solution>
+	<ol marker="a.">
+	  <li><p>Para que <m>\dfrac{\partial f}{\partial x}</m> seja contínua em <m>(0,0)</m>, devemos ter
+	  <me>\lim\limits_{(x,y)\to (0,0)}\dfrac{\partial f}{\partial
+	  x}=\dfrac{\partial f}{\partial x}(0,0).</me> Basta fazer
+	  as contas:
+	  <md>
+	    <mrow>\lim\limits_{(x,y)\to
+	    (0,0)}\dfrac{\partial f}{\partial x}&amp;=\lim\limits_{(x,y)\to
+	    (0,0)}\dfrac{4x^3}{3\sqrt[3]{(x^4+y^4)^2}}</mrow>
+	    <mrow>&amp;=\lim\limits_{(x,y)\to
+	    (0,0)}\dfrac{4x^{1/3}}{3}\dfrac{x^{8/3}}{\sqrt[3]{(x^4+y^4)^2}}
+	    \stackrel{(\ast)}{=}0=\dfrac{\partial
+	    f}{\partial x}(0,0),</mrow>
+	    </md> onde <m>(\ast)</m> segue
+	    do <xref ref="cor_confronto" />, pois <m>0\leq
+	    x^{8/3}=\sqrt[3]{(x^4)^2}\leq\sqrt[3]{(x^4+y^4)^2}</m>,
+	    donde <m>0\leq \dfrac{x^{8/3}}{\sqrt[3]{(x^4+y^4)^2}}\leq
+	    1</m>.  Logo, <m>\dfrac{\partial f}{\partial x}</m> é
+	    contínua em <m>(0,0)</m>.</p>
+	  <p>No <url href="https://sagemath.org"
+	  visual="sagemath.org">SageMath</url>:
+	  <sage>
+	    <input>
+	      #Declarando as variáveis
+	      x,y=var('x','y')
+	      #Definindo a função via múltiplas sentenças
+	      fx = lambda x, y: 0 if ((x,y)==(0,0)) else 4/3*x^3*(x^4+y^4)^(-2/3)
+	      #Conferindo as expressões
+	      show(fx(x,y))
+	      show(fx(0,0))
+	      #verificando a igualdade do valor de f com o limite no ponto
+	      bool(fx(x,y).limit(x=0).limit(y=0) == fx(0,0))
+	    </input>
+	  </sage>
+	  </p></li>
+	  <li><p>A expressão para a derivada parcial em <m>y</m> segue
+	  da simetria de <m>f</m> nas variáveis, ou seja,
+	  <m>f(x,y)=f(y,x)</m>:
+	  <me>\dfrac{\partial
+	 f}{\partial y}(x,y)=
+	 \begin{cases}
+	 \dfrac{4y^3}{3\sqrt[3]{(x^4+y^4)^2}},&amp;
+	 \text{se } (x,y) \neq (0,0) \\
+	 \hfill 0,&amp; \text{ se } (x,y) =(0,0).  \end{cases}
+	 </me>
+	  </p></li>
+	  <li><p>Vimos no primeiro item que <m>\dfrac{\partial
+	  f}{\partial x}</m> é contínua em <m>(0,0)</m>. O segundo item
+	  mostra que o mesmo vale para <m>\dfrac{\partial f}{\partial
+	  y}</m>. Desta forma, <m>f</m> é uma função de classe
+	  <m>\mathscr{C}^1</m> em <m>(0,0)</m>, sendo então
+	  diferenciável nesse ponto.</p>
+	  </li>
+	</ol>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="precq2-2023">
+      <statement>
+	<p>Seja <m>F\colon\R^2\to\R</m> uma função de classe <m>\mathscr{C}^1</m>
+	satisfazendo <m>F(1,2)=1</m> e <m>\nabla F(1,2)= (0,1)</m>.
+	<ol marker="a.">
+	  <li>Dê a equação do plano tangente ao gráfico de <m>F</m> no
+	  ponto <m>(1,2,1)</m>.</li>
+	  <li>Seja <m>G(x,y)=xF(2x+y,-2y)</m>. Determine <m>\dfrac{\partial G}{\partial x}
+	  (1,-1)</m> e <m>\dfrac{\partial G}{\partial y}(1,-1)</m>.</li>
+	</ol>
+	</p>
+      </statement>
+      <answer>
+	<p>
+	  <ol marker="a.">
+	    <li><m>\pi\colon y-z-1=0</m>.</li>
+	    <li><m>\nabla G(1,-1)=(1,-2)</m>.</li>
+	  </ol>
+	</p>
+      </answer>
+      <solution>
+	<p>
+	  Vamos considerar, para evitar confusão, <m>F</m> dependendo
+	  das variáveis <m>u</m> e <m>v</m>.
+	  <ol marker="a.">
+	    <li>Basta aplicar os elementos à equação do plano tangente
+	    ao gráfico de uma função no ponto:
+	    <me>\pi\colon
+	    F_u(u_0,v_0)(u-u_0)+F_v(u_0,v_0)(v-v_0)-z+F(u_0,v_0)=0.</me>
+	    Neste caso, obtemos <m>\boxed{\pi\colon v-z-1=0}</m>.</li>
+	    <li><p>Aqui combinamos a regra do produto com o <xref ref="cor_cadeiaturbo" />:
+	    <ul>
+	      <li><m>\dfrac{\partial G}{\partial
+	      x}(x,y)=F(2x+y,-2y)+x\Big[2F_u(2x+y,-2y)+0F_v(2x+y,-2y)\Big]</m></li>
+	      <li><m>\dfrac{\partial G}{\partial
+	      y}(x,y)=x\Big[F_u(2x+y,-2y)-2F_v(2x+y,-2y)\big]</m></li>
+	    </ul>
+	    Aplicando <m>(x,y)=(1,-1)</m>, temos
+	    <md>
+	      <mrow>\dfrac{\partial G}{\partial
+	      x}(1,-1)&amp;=F(1,2)+2F_u(1,2)=1</mrow>
+	      <mrow>\dfrac{\partial G}{\partial
+	      y}(1,-1)&amp;=F_u(1,2)-2F_v(1,2)=-2</mrow>
+	    </md>
+	    </p></li>
+	  </ol>
+	  No SageMath:
+	  <sage>
+	    <input>
+	      u,v=var('u','v')
+	      F(u,v)=function('F')(u,v)
+	      G(x,y)=x*F(2*x+y,-2*y)
+	      show(LatexExpr('G(x,y)='),G(x,y))
+	      gradG(x,y)=G(x,y).gradient()
+	      show(LatexExpr('\\nabla G(x,y)='),gradG(x,y))
+	    </input>
+	  </sage>
+	  Substituindo os valores dados no enunciado na expressão acima
+	  obtemos o resultado.
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="precq3-2023">
+      <statement>
+	<p>Seja <m>S</m> a superfície em <m>\R^3</m> dada pela equação
+	<m>x+y+z^2= 10</m>.
+	<ol marker="a.">
+	  <li>Sabendo-se que existe pelo menos um ponto de <m>S</m> que é
+	  o mais próximo da origem, determine esse(s) ponto(s). Qual é
+	  essa distância mínima?</li>
+	  <li>Existe algum ponto em <m>S</m> que seja o mais distante da
+	  origem? Justifique.</li>
+	</ol>
+	</p>
+      </statement>
+      <hint>
+	<p>Minimizar distância é equivalente a minimizar o quadrado da
+	distância.</p>
+      </hint>
+      <answer>
+	<p>
+	  <ol>
+	    <li>Os pontos procurados são
+	    <m>\big(\frac{1}{2},\frac{1}{2},\pm 3\big)</m>.</li>
+	    <li>Não há ponto de <m>S</m> que maximize a distância até a
+	    origem.</li>
+	  </ol>
+	  </p>
+      </answer>
+      <solution>
+	<ol marker="a.">
+	  <li></li>
+	  <li>A curva <m>\gamma(t)=\big(t,-t,\sqrt{10}\big) tem sua
+	  imagem contida em <m>S</m> e a distância denão é compacta, pois </li>
+	  </ol>
+	<p>No SageMath:
+	<sage>
+	  <input>
+	    # Declarando as coordenadas do gradiente
+	    a,b=var('a','b')
+	    #Resolvendo o sistema obtido a partir das informações
+	    solve([3*a-6*b==1,3*a+b==0],a,b)
+	  </input>
+	</sage>
+	</p>
+      </solution>
+    </exercise>
+
+    <exercise xml:id="precq4-2023">
+      <statement>
+	<p>Seja <m>C</m> a curva resultante da interseção das superfícies
+	dadas pelas equações <m>(x-1)^2+4y^2=1</m> e <m>z=x^2-1</m> em
+	<m>\R^3</m>.
+	<ol marker="a.">
+	  <li>Determine uma parametrização para <m>C</m>.</li>
+	  <li>Determine quais os pontos de <m>C</m> em que sua reta tangente
+	  é paralela à reta de equação
+	  <me>(x,y,z)=(0,0,0)+\lambda(1,0,2),\quad
+	  \lambda\in\R.</me></li>
+	</ol></p>
+	<p><em>Observação:</em> Os itens acima podem ser
+	  resolvidos independentemente.</p>
+      </statement>
+      <answer>
+	<p><ol marker="a.">
+	  <li>Uma possível parametrização é <m>\gamma(t)=\Big(1+\cos t,
+	  \dfrac{\sin t}{2},\cos^2 t+2\cos t\Big)</m>, <m>t\in
+	  [0,2\pi]</m>.</li>
+	  <li>Os pontos são <m>\big(1,\pm\frac{1}{2},0\big)</m>.</li>
+	  </ol></p>
+      </answer>
+      <solution>
+	<ol marker="a.">
+	  <li><p>As duas superfícies que definem <m>C</m> são cilindros,
+	  o primeiro sobre uma elipse e o segundo sobre uma
+	  parábola. Precisamos encontrar uma curva
+	  <m>\gamma(t)=\big(x(t),y(t),z(t)\big)</m>, <m>t\in
+	  I\subseteq\R</m>, cujas coordenadas satisfaçam as equações das
+	  superfícies dadas no enunciado.</p> <p> A primeira das
+	  equações reescreve-se como <m>(x-1)^2+(2y)^2=1</m> e então
+	  podemos fazer <m>x(t)-1=\cos t</m> e <m>2y(t)=\sin t</m>, ou
+	  seja, <me>x(t)=1+\cos t\quad\text{e}\quad y(t)=\dfrac{\sin
+	  t}{2}.</me></p> <p>Com isso, da segunda equação, temos
+	  <me>z(t)=(1+\cos t )^2-1=\cos^2t+2\cos t,</me> com <m>t\in
+	  [0,2\pi]</m>.</p> <p>Assim, uma parametrização para <m>C</m> é
+	  <m>\gamma\colon[0,2\pi\to\mathbb{R}^3</m>, dada por
+	  <me>\gamma(t)=\Big(1+\cos t, \dfrac{\sin t}{2},\cos^2t+2\cos
+	  t\Big).</me></p></li>
+	  <li><p>O segundo item pode ser resolvido de duas
+	  maneiras:</p>
+	  <p><em>Utilizando o item anterior:</em> para que a reta
+	  tangente a <m>C</m> em <m>\gamma(t_0)</m> seja paralela à reta
+	  dada, devemos encontrar <m>t_0\in[0,2\pi]</m> tal que
+	  <me>\gamma'(t_0)=\Big(-\sin t_0,\dfrac{\cos t_0}{2},-2(1+\cos
+	  t_0)\sin t_0\Big)\quad\text{e}\quad\vec{v}=(1,0,2)</me> sejam
+	  paralelos.</p>
+	  <p>Isto pode pode ser obtido diretamente impondo
+	  proporcionalidade entre as respectivas coordenadas de
+	  <m>\gamma'(t_0)</m> e <m>\vec{v}</m> ou impondo que o produto
+	  vetorial <m>\gamma'(t_0)\times\vec{v}</m>seja nulo. De toda
+	  forma temos <m>t_0=\frac{\pi}{2}</m> ou
+	  <m>t_0=\frac{3\pi}{2}</m> e os pontos são então
+	  <m>\boxed{\gamma\Big(\frac{\pi}{2}\Big)=\Big(1, \frac{1}{2},
+	  0\Big)}</m> e <m>\boxed{\gamma\Big(\frac{3\pi}{2}\Big)=\Big(1,
+	  -\frac{1}{2}, 0\Big)}</m>.</p>
+	  <p>No SageMath:
+	  <sage>
+	    <input>
+	      #Declarando a variável para a curva
+	      t=var('t')
+	      #Definindo a parametrização e o vetor v
+	      c(t)=(1+cos(t),sin(t)/2,(1+cos(t))^2-1)
+	      v=vector([1,0,2])
+	      #Calculando o tangente à curva
+	      clinha(t)=diff(c(t),t)
+	      #Exibindo os vetores obtidos e o produto vetorial deles
+	      show(LatexExpr("\\gamma'(t)="),clinha(t))
+	      show(LatexExpr('\\vec{v}='),v)
+	      cross=clinha(t).cross_product(v)
+	      show(LatexExpr("\\gamma'(t)\\times\\vec{v}="),cross.simplify_trig())
+	      #Encontrando os pontos onde a primeira coordenada se
+	      #anula (que também anula as demais)
+	      #aqui znnnn representa qualquer inteiro.
+	      sol=solve(cross[0]==0,t,to_poly_solve='force')
+	      show(sol)
+	    </input>
+	  </sage>
+	  </p>
+	  <p><em>Vetores normais das superfícies:</em> aqui enxergamos
+	  cada um dos dois cilindros respectivamente como superfícies de
+	  nível <m>0</m> das funções <m>f(x,y,z)=(x-1)^2+4y^2-1</m> e
+	  <m>g(x,y,z)=x^2-z-1</m>. Assim, o vetor tangente à curva em
+	  cada ponto é dado pelo produto vetorial dos gradientes de
+	  <m>f</m> e <m>g</m>.</p>
+	  <p>Mais ainda: para que este vetor tangente seja paralelo a
+	  <m>\vec{v}=(1,0,2)</m> devemos procurar um ponto da curva
+	  <m>C</m> onde <m>(\nabla f\times\nabla g)\times\vec{v}</m>
+	  seja nulo. Disto obtemos o sistema: <me> \begin{cases}
+	  \big(\nabla f(x,y,z)\times\nabla
+	  g(x,y,z)\big)\times\vec{v}&amp;=(0,0,0)\\ f(x,y,z)&amp;=0\\
+	  g(x,y,z)&amp;=0 \end{cases}\iff \begin{cases} x-1&amp;=0\\
+	  8y(1-x)&amp;=0\\ 1-x&amp;=0\\ (x-1)^2+4y^2&amp;=1\\
+	  x^2-z&amp;=1 \end{cases},</me> cujas soluções são
+	  <m>(x,y,z)=\big(1,\pm\frac{1}{2},0\big)</m>.</p>
+	  <p>No SageMath:
+	  <sage>
+	    <input>
+	      #Declarando as variáveis de f e g
+	      x,y,z=var('x','y','z')
+	      #Definindo as funções f e g e calculando seus gradientes
+	      f(x,y,z)=(x-1)^2+4*y^2-1
+	      g(x,y,z)=x^2-z-1
+	      gradf=f(x,y,z).gradient([x,y,z])
+	      gradg=g(x,y,z).gradient([x,y,z])
+	      show(LatexExpr('\\nabla f(x,y,z)='),gradf)
+	      show(LatexExpr('\\nabla g(x,y,z)='),gradg)
+	      #Calculando o duplo produto vetorial:
+	      duplovec=(gradf.cross_product(gradg)).cross_product(v)
+	      show(LatexExpr('\\big(\\nabla f(x,y,z)\\times\\nabla g(x,y,z)\\big)\\times\\vec{v} ='),duplovec)
+	      #Resolvendo o sistema
+	      sols=solve([duplovec[0]==0,duplovec[1]==0,duplovec[2]==0,f(x,y,z)==0,g(x,y,z)==0],x,y,z)
+	      show(sols)
+	    </input>
+	  </sage>
+	  </p>
+	  <p>Uma figura, agora no SageMath:
+	  <sage>
+	    <input>
+	      sf=implicit_plot3d(f(x,y,z)==0,(x,-1,3),(y,-2,2),(z,-5,5),opacity=0.4)
+	      sg=implicit_plot3d(g(x,y,z)==0,(x,-1.5,2.5),(y,-2,2),(z,-5,5),color='green',opacity=0.4)
+	      inter=parametric_plot3d(c(t),(0,2*pi),color='black')
+	      r1=parametric_plot3d(c(pi/2)+t*clinha(pi/2),(-2,2),color='red')
+	      r2=parametric_plot3d(c(3*pi/2)+t*clinha(3*pi/2),(-2,2),color='red')
+	      sf+sg+inter+r1+r2
+	    </input>
+	  </sage>
+	  </p>
+	  </li>
+	</ol>
+      </solution>
+    </exercise>
+  </exercises>
+</section>
