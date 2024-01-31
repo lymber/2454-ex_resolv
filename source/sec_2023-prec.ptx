@@ -190,7 +190,7 @@
 	<ol marker="a.">
 	  <li><p>Já admtindo sua existência, procuramos o mínimo de
 	  <m>f(x,y,z)=x^2+y^2+z^2</m> (quadrado da distância à origem,
-	  segindo a dica) sobre a superfície <m>S</m> que pode ser vista
+	  seguindo a dica) sobre a superfície <m>S</m> que pode ser vista
 	  como superfície de nível <m>0</m> de
 	  <m>g(x,y,z)=x+y+z^2-10</m>.</p>
 	  <p>Estamos então nas condições do <xref ref="teo_lag31" /> e
